@@ -1,0 +1,545 @@
+{
+  "id": "limits-intro",
+  "course": "Calculus 1",
+  "unit": "Unit 1",
+  "title": "Limits",
+  "subtitle": "Where a graph is heading",
+  "version": 1,
+  "graphs": {
+    "L1": {"window": [-1, 5, -1, 6], "pieces": [{"expr": "x+1", "from": -1, "to": 5}]},
+    "L2": {"window": [-1, 5, -1, 6], "pieces": [{"expr": "x+1", "from": -1, "to": 5}], "holes": [[2, 3]]},
+    "L3": {"window": [-1, 5, -1, 6], "pieces": [{"expr": "x+1", "from": -1, "to": 5}], "holes": [[2, 3]], "dots": [[2, 5]]},
+    "L4": {"window": [-1, 5, -1, 6], "pieces": [{"expr": "0.5*x", "from": -1, "to": 2},{"expr": "x+1", "from": 2, "to": 5}], "dots": [[2, 1]], "holes": [[2, 3]]},
+    "D1": {"window": [-2, 4, -1, 6], "pieces": [{"expr": "(x-1)^2+1", "from": -1.2, "to": 3.2}], "holes": [[3, 5]], "dots": [[3, 2]]},
+    "D2": {"window": [-3, 4, -1, 5], "pieces": [{"expr": "x+2", "from": -3, "to": 0},{"expr": "4-x", "from": 0, "to": 4}], "holes": [[0, 2]], "dots": [[0, 4]]},
+    "D3": {
+      "window": [-3, 5, -1, 6],
+      "pieces": [{"expr": "2", "from": -3, "to": -1},{"expr": "x+3", "from": -1, "to": 2},{"expr": "1", "from": 2, "to": 5}],
+      "holes": [[-1, 2], [2, 1]],
+      "dots": [[-1, 4], [2, 5]]
+    },
+    "D4": {"window": [-3, 3, -2, 4], "pieces": [{"expr": "0.5*x^2-1", "from": -3, "to": 3}], "holes": [[2, 1]]},
+    "D5": {"window": [-3, 4, -2, 4], "pieces": [{"expr": "-x", "from": -3, "to": 1},{"expr": "x", "from": 1, "to": 4}], "holes": [[1, -1], [1, 1]], "dots": [[1, 3]]}
+  },
+  "lesson": {
+    "title": "What a limit is",
+    "slides": [
+      {
+        "id": "s01",
+        "type": "graph",
+        "title": "Start with something easy",
+        "text": "Here is the graph of a function $f$. Find the point on the graph above $x = 2$ and read its height.",
+        "graph": "L1",
+        "ask": "value",
+        "at": 2,
+        "answer": 3,
+        "hint": "Go to 2 on the x-axis, move straight up to the graph, then read the height on the y-axis.",
+        "explain": "The graph passes through $(2, 3)$, so $f(2) = 3$."
+      },
+      {
+        "id": "s02",
+        "type": "explore",
+        "title": "Now walk toward it",
+        "text": "Forget the point at $x = 2$ for a moment. Drag the slider so $x$ gets close to 2 from the left, then from the right. Watch the height $f(x)$.",
+        "graph": "L1",
+        "target": {"at": 2, "within": 0.15},
+        "start": -0.5,
+        "after": "From both sides, the height closes in on 3."
+      },
+      {
+        "id": "s03",
+        "type": "graph",
+        "text": "As $x$ gets close to 2, what height is the graph heading toward?",
+        "graph": "L1",
+        "ask": "limit",
+        "side": "both",
+        "at": 2,
+        "answer": 3,
+        "hint": "Think back to the slider. What number was $f(x)$ closing in on?",
+        "explain": "The heights close in on 3."
+      },
+      {
+        "id": "s04",
+        "type": "info",
+        "title": "That height is the limit",
+        "text": "The height the graph is heading toward as $x$ gets close to 2 is called the **limit**. We write\n\n$lim[x->2] f(x) = 3$\n\nand say “the limit of $f(x)$ as $x$ approaches 2 is 3.”\n\nSo far the limit and the value $f(2)$ are the same number. That will not always be true."
+      },
+      {
+        "id": "s05",
+        "type": "graph",
+        "title": "Take the point away",
+        "text": "This graph has an open circle at $x = 2$. An open circle means the function has no value there. What is $f(2)$?",
+        "graph": "L2",
+        "ask": "value",
+        "at": 2,
+        "answer": "UND",
+        "hint": "An open circle is a missing point. Is there any filled point above $x = 2$?",
+        "explain": "There is no point on the graph above $x = 2$, so $f(2)$ is undefined."
+      },
+      {
+        "id": "s06",
+        "type": "explore",
+        "text": "The point is gone. Drag toward $x = 2$ from both sides anyway. Where is the graph heading?",
+        "graph": "L2",
+        "target": {"at": 2, "within": 0.15},
+        "start": -0.5,
+        "after": "Still closing in on 3, even though the graph never gets there."
+      },
+      {
+        "id": "s07",
+        "type": "graph",
+        "text": "$f(2)$ is undefined. What is the limit?",
+        "graph": "L2",
+        "ask": "limit",
+        "side": "both",
+        "at": 2,
+        "answer": 3,
+        "hint": "The limit asks where the graph is heading, not what happens at $x = 2$ itself.",
+        "explain": "The graph heads to height 3 from both sides. The missing point does not matter."
+      },
+      {
+        "id": "s08",
+        "type": "graph",
+        "title": "Move the point somewhere else",
+        "text": "Now there is a filled point at $(2, 5)$, away from the rest of the graph. What is $f(2)$?",
+        "graph": "L3",
+        "ask": "value",
+        "at": 2,
+        "answer": 5,
+        "hint": "The filled point is the actual value. How high is it?",
+        "explain": "The filled point above $x = 2$ is at height 5."
+      },
+      {
+        "id": "s09",
+        "type": "graph",
+        "text": "Same graph. What is the limit as $x$ approaches 2?",
+        "graph": "L3",
+        "ask": "limit",
+        "side": "both",
+        "at": 2,
+        "answer": 3,
+        "hint": "Ignore the filled point. Follow the line toward $x = 2$ from each side.",
+        "explain": "The line still heads to height 3. The filled point at height 5 is $f(2)$, not the limit."
+      },
+      {
+        "id": "s10",
+        "type": "info",
+        "title": "The big idea",
+        "text": "Three graphs gave three different answers for $f(2)$: 3, undefined, and 5. The limit was 3 every time.\n\n**A limit is the height the graph looks like it is heading toward. It does not matter whether the function actually gets there.**"
+      },
+      {
+        "id": "s11",
+        "type": "tf",
+        "title": "Quick check",
+        "text": "If $f(2) = 5$, then $lim[x->2] f(x)$ must be 5.",
+        "answer": false,
+        "hint": "Think about the last graph. $f(2)$ was 5 there. What was the limit?",
+        "explain": "The value at the point and the limit can be different numbers."
+      },
+      {
+        "id": "s12",
+        "type": "explore",
+        "title": "When the two sides disagree",
+        "text": "This graph jumps at $x = 2$. Drag toward 2 from the left, then from the right. Do you get the same height?",
+        "graph": "L4",
+        "target": {"at": 2, "within": 0.15},
+        "start": -0.5,
+        "after": "From the left the height closes in on 1. From the right it closes in on 3."
+      },
+      {
+        "id": "s13",
+        "type": "graph",
+        "text": "Coming from the **left**, what height is the graph heading toward? This is the left-hand limit, written $lim[x->2^-] f(x)$.",
+        "graph": "L4",
+        "ask": "limit",
+        "side": "left",
+        "at": 2,
+        "answer": 1,
+        "hint": "Stay on the piece to the left of $x = 2$ and follow it toward 2.",
+        "explain": "The left piece heads to height 1."
+      },
+      {
+        "id": "s14",
+        "type": "graph",
+        "text": "Coming from the **right**, what height is the graph heading toward? This is the right-hand limit, written $lim[x->2^+] f(x)$.",
+        "graph": "L4",
+        "ask": "limit",
+        "side": "right",
+        "at": 2,
+        "answer": 3,
+        "hint": "Stay on the piece to the right of $x = 2$ and follow it back toward 2.",
+        "explain": "The right piece heads to the open circle at height 3."
+      },
+      {
+        "id": "s15",
+        "type": "info",
+        "title": "One-sided limits",
+        "graph": "L4",
+        "text": "$lim[x->2^-] f(x) = 1$ is the **left-hand limit**: $x$ approaches 2 through values less than 2.\n\n$lim[x->2^+] f(x) = 3$ is the **right-hand limit**: $x$ approaches 2 through values greater than 2.\n\nThe ordinary two-sided limit exists only when both sides head to the **same** height."
+      },
+      {
+        "id": "s16",
+        "type": "graph",
+        "text": "The left side heads to 1 and the right side heads to 3. What is the two-sided limit?",
+        "graph": "L4",
+        "ask": "limit",
+        "side": "both",
+        "at": 2,
+        "answer": "DNE",
+        "hint": "The two sides disagree. When that happens the limit does not exist. Use the DNE button.",
+        "explain": "The sides disagree, so the limit does not exist (DNE). Each one-sided limit still exists."
+      },
+      {
+        "id": "s17",
+        "type": "mc",
+        "title": "Put it together",
+        "text": "$lim[x->4^-] f(x) = 6$ and $lim[x->4^+] f(x) = 6$, but $f(4) = 1$. What is $lim[x->4] f(x)$?",
+        "options": ["6", "1", "3.5", "Does not exist"],
+        "answer": 0,
+        "hint": "Both sides agree. Does the value $f(4)$ change where the graph is heading?",
+        "explain": "Both sides head to 6, so the limit is 6. The value $f(4) = 1$ does not affect it."
+      },
+      {
+        "id": "s18",
+        "type": "bank",
+        "text": "A limit exists at $x = a$ only when the left-hand and right-hand limits are ___. The value of $f(a)$ ___ matter.",
+        "blanks": ["equal", "does not"],
+        "distractors": ["different", "does"],
+        "hint": "When do the two sides give one answer? And did the filled point ever change a limit?",
+        "explain": "Both sides must agree, and the value at the point is irrelevant."
+      },
+      {
+        "id": "s19",
+        "type": "info",
+        "title": "Practice unlocked",
+        "text": "You now know the three things this unit is built on:\n\n**1.** A limit is where the graph is heading, not the value at the point.\n**2.** $x -> a^-$ means from the left, $x -> a^+$ means from the right.\n**3.** The two-sided limit exists only when both sides agree. Otherwise it is DNE.\n\nThe two drills are open. Do them in either order."
+      }
+    ]
+  },
+  "drills": {
+    "theory": {
+      "title": "Theory drill",
+      "blurb": "True or false, multiple choice, fill in the blank",
+      "questions": [
+        {
+          "id": "t01",
+          "type": "tf",
+          "text": "If $lim[x->3] f(x) = 7$, then $f(3)$ must equal 7.",
+          "answer": false,
+          "explain": "The limit says where the graph is heading. $f(3)$ could be 7, another number, or undefined."
+        },
+        {
+          "id": "t02",
+          "type": "tf",
+          "text": "A function can have a limit at $x = a$ even if $f(a)$ is undefined.",
+          "answer": true,
+          "explain": "A graph with an open circle still heads toward that height from both sides."
+        },
+        {
+          "id": "t03",
+          "type": "tf",
+          "text": "If the left-hand and right-hand limits at $x = a$ are different numbers, the two-sided limit does not exist.",
+          "answer": true,
+          "explain": "The two-sided limit needs both sides to agree."
+        },
+        {
+          "id": "t04",
+          "type": "tf",
+          "text": "Changing the value of $f(2)$ changes $lim[x->2] f(x)$.",
+          "answer": false,
+          "explain": "The limit only depends on the values of $f$ near 2, not at 2."
+        },
+        {
+          "id": "t05",
+          "type": "mc",
+          "text": "$lim[x->a] f(x) = L$ means:",
+          "options": ["$f(a) = L$", "$f(x)$ gets close to $L$ as $x$ gets close to $a$ from both sides", "$f(x)$ never equals $L$", "$x$ gets close to $L$"],
+          "answer": 1,
+          "explain": "A limit describes the height the outputs approach as the inputs approach $a$."
+        },
+        {
+          "id": "t06",
+          "type": "mc",
+          "text": "The notation $x -> 4^-$ means $x$ approaches 4",
+          "options": [
+            "from the left, through values less than 4",
+            "from the right, through values greater than 4",
+            "and then becomes negative 4",
+            "from below the x-axis"
+          ],
+          "answer": 0,
+          "explain": "The small minus sign means from the left side, where $x$ is less than 4."
+        },
+        {
+          "id": "t07",
+          "type": "mc",
+          "text": "$lim[x->1^-] f(x) = 2$ and $lim[x->1^+] f(x) = 5$. What is $lim[x->1] f(x)$?",
+          "options": ["2", "5", "3.5", "Does not exist"],
+          "answer": 3,
+          "explain": "The sides disagree, so the two-sided limit does not exist. We never average them."
+        },
+        {
+          "id": "t08",
+          "type": "mc",
+          "text": "$lim[x->1^-] f(x) = 4$ and $lim[x->1^+] f(x) = 4$, but $f(1) = 9$. What is $lim[x->1] f(x)$?",
+          "options": ["4", "9", "6.5", "Does not exist"],
+          "answer": 0,
+          "explain": "Both sides head to 4. The value $f(1) = 9$ does not affect the limit."
+        },
+        {
+          "id": "t09",
+          "type": "bank",
+          "text": "A limit describes the height the graph is ___ as $x$ gets close to $a$, whether or not the function actually ___ it.",
+          "blanks": ["heading toward", "reaches"],
+          "distractors": ["moving away from", "avoids"],
+          "explain": "That is the whole idea of a limit."
+        },
+        {
+          "id": "t10",
+          "type": "bank",
+          "text": "In $x -> a^-$, $x$ approaches $a$ from the ___. In $x -> a^+$, $x$ approaches $a$ from the ___.",
+          "blanks": ["left", "right"],
+          "distractors": ["top", "bottom"],
+          "explain": "Minus means from the left (smaller values). Plus means from the right (larger values)."
+        },
+        {
+          "id": "t11",
+          "type": "tf",
+          "text": "If $f(5)$ is undefined, then $lim[x->5] f(x)$ does not exist.",
+          "answer": false,
+          "explain": "A hole in the graph does not stop the graph from heading toward a height."
+        },
+        {
+          "id": "t12",
+          "type": "mc",
+          "text": "Which of these is NOT needed to find $lim[x->2] f(x)$?",
+          "options": ["The value $f(2)$", "The values of $f$ just to the left of 2", "The values of $f$ just to the right of 2"],
+          "answer": 0,
+          "explain": "The limit looks at values near 2 on both sides and ignores what happens exactly at 2."
+        },
+        {
+          "id": "t13",
+          "type": "tf",
+          "text": "A one-sided limit can exist even when the two-sided limit does not.",
+          "answer": true,
+          "explain": "At a jump, each side heads to its own height. Both one-sided limits exist, but they disagree."
+        },
+        {
+          "id": "t14",
+          "type": "bank",
+          "text": "If a graph has only an open circle above $x = 3$, then $f(3)$ is ___, but the limit as $x$ approaches 3 can still ___.",
+          "blanks": ["undefined", "exist"],
+          "distractors": ["zero", "fail"],
+          "explain": "No value at the point, but the graph still heads toward the open circle."
+        },
+        {
+          "id": "t15",
+          "type": "bank",
+          "text": "The two-sided limit exists only when the two one-sided limits are ___. Otherwise the limit ___.",
+          "blanks": ["equal", "does not exist"],
+          "distractors": ["different", "is zero"],
+          "explain": "Agreement of the two sides is the test for a two-sided limit."
+        }
+      ]
+    },
+    "calc": {
+      "title": "Graph drill",
+      "blurb": "Read limits and values off a graph",
+      "questions": [
+        {
+          "id": "c01",
+          "type": "graph",
+          "graph": "D1",
+          "ask": "limit",
+          "side": "both",
+          "at": 3,
+          "answer": 5,
+          "explain": "From both sides the curve heads to the open circle at height 5. The filled point at height 2 is $f(3)$, not the limit."
+        },
+        {"id": "c02", "type": "graph", "graph": "D1", "ask": "value", "at": 3, "answer": 2, "explain": "The filled point above $x = 3$ is at height 2."},
+        {
+          "id": "c03",
+          "type": "graph",
+          "graph": "D1",
+          "ask": "limit",
+          "side": "both",
+          "at": 1,
+          "answer": 1,
+          "explain": "Nothing unusual happens at $x = 1$. The curve heads to height 1 from both sides."
+        },
+        {
+          "id": "c04",
+          "type": "graph",
+          "graph": "D1",
+          "ask": "limit",
+          "side": "left",
+          "at": 3,
+          "answer": 5,
+          "explain": "Coming from the left, the curve climbs toward the open circle at height 5."
+        },
+        {"id": "c05", "type": "graph", "graph": "D1", "ask": "limit", "side": "both", "at": 0, "answer": 2, "explain": "Both sides head to the point $(0, 2)$."},
+        {
+          "id": "c06",
+          "type": "graph",
+          "graph": "D2",
+          "ask": "limit",
+          "side": "left",
+          "at": 0,
+          "answer": 2,
+          "explain": "From the left, the line heads to the open circle at height 2."
+        },
+        {
+          "id": "c07",
+          "type": "graph",
+          "graph": "D2",
+          "ask": "limit",
+          "side": "right",
+          "at": 0,
+          "answer": 4,
+          "explain": "From the right, the line heads to the filled point at height 4."
+        },
+        {
+          "id": "c08",
+          "type": "graph",
+          "graph": "D2",
+          "ask": "limit",
+          "side": "both",
+          "at": 0,
+          "answer": "DNE",
+          "explain": "The left side heads to 2 and the right side heads to 4. They disagree, so the limit does not exist."
+        },
+        {"id": "c09", "type": "graph", "graph": "D2", "ask": "value", "at": 0, "answer": 4, "explain": "The filled point above $x = 0$ is at height 4."},
+        {
+          "id": "c10",
+          "type": "graph",
+          "graph": "D2",
+          "ask": "limit",
+          "side": "both",
+          "at": 2,
+          "answer": 2,
+          "explain": "Away from the jump, both sides head to the same point, $(2, 2)$."
+        },
+        {
+          "id": "c11",
+          "type": "graph",
+          "graph": "D3",
+          "ask": "limit",
+          "side": "both",
+          "at": -1,
+          "answer": 2,
+          "explain": "Both sides head to the open circle at height 2. The filled point at height 4 does not change the limit."
+        },
+        {"id": "c12", "type": "graph", "graph": "D3", "ask": "value", "at": -1, "answer": 4, "explain": "The filled point above $x = -1$ is at height 4."},
+        {
+          "id": "c13",
+          "type": "graph",
+          "graph": "D3",
+          "ask": "limit",
+          "side": "left",
+          "at": 2,
+          "answer": 5,
+          "explain": "From the left, the slanted line climbs to the filled point at height 5."
+        },
+        {
+          "id": "c14",
+          "type": "graph",
+          "graph": "D3",
+          "ask": "limit",
+          "side": "right",
+          "at": 2,
+          "answer": 1,
+          "explain": "From the right, the flat piece heads to the open circle at height 1."
+        },
+        {
+          "id": "c15",
+          "type": "graph",
+          "graph": "D3",
+          "ask": "limit",
+          "side": "both",
+          "at": 2,
+          "answer": "DNE",
+          "explain": "The left side heads to 5 and the right side heads to 1, so the limit does not exist."
+        },
+        {"id": "c16", "type": "graph", "graph": "D3", "ask": "value", "at": 2, "answer": 5, "explain": "The filled point above $x = 2$ is at height 5."},
+        {
+          "id": "c17",
+          "type": "graph",
+          "graph": "D4",
+          "ask": "limit",
+          "side": "both",
+          "at": 2,
+          "answer": 1,
+          "explain": "Both sides head to the open circle at height 1."
+        },
+        {
+          "id": "c18",
+          "type": "graph",
+          "graph": "D4",
+          "ask": "value",
+          "at": 2,
+          "answer": "UND",
+          "explain": "There is only an open circle above $x = 2$, so $f(2)$ has no value."
+        },
+        {
+          "id": "c19",
+          "type": "graph",
+          "graph": "D4",
+          "ask": "limit",
+          "side": "both",
+          "at": 0,
+          "answer": -1,
+          "explain": "The curve passes through $(0, -1)$ and heads there from both sides."
+        },
+        {
+          "id": "c20",
+          "type": "graph",
+          "graph": "D4",
+          "ask": "limit",
+          "side": "right",
+          "at": 2,
+          "answer": 1,
+          "explain": "One-sided limits also ignore the missing point. From the right the curve heads to height 1."
+        },
+        {
+          "id": "c21",
+          "type": "graph",
+          "graph": "D5",
+          "ask": "limit",
+          "side": "left",
+          "at": 1,
+          "answer": -1,
+          "explain": "From the left, the line heads down to the open circle at height −1."
+        },
+        {
+          "id": "c22",
+          "type": "graph",
+          "graph": "D5",
+          "ask": "limit",
+          "side": "right",
+          "at": 1,
+          "answer": 1,
+          "explain": "From the right, the line heads to the open circle at height 1."
+        },
+        {
+          "id": "c23",
+          "type": "graph",
+          "graph": "D5",
+          "ask": "limit",
+          "side": "both",
+          "at": 1,
+          "answer": "DNE",
+          "explain": "The left side heads to −1 and the right side heads to 1, so the limit does not exist."
+        },
+        {
+          "id": "c24",
+          "type": "graph",
+          "graph": "D5",
+          "ask": "value",
+          "at": 1,
+          "answer": 3,
+          "explain": "Both open circles are missing points. The filled point above $x = 1$ is at height 3."
+        }
+      ]
+    }
+  }
+}

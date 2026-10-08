@@ -1,0 +1,132 @@
+{
+  "course": "Calculus 1",
+  "world": 4,
+  "id": "integration",
+  "title": "Integration",
+  "height": 204,
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "start",
+      "title": "Start",
+      "x": 50,
+      "y": 10,
+      "deck": null,
+      "requires": [],
+      "blurb": "Tap a stop on the map to walk there."
+    },
+    {
+      "id": "areas",
+      "kind": "main",
+      "title": "Areas and Distance",
+      "x": 16,
+      "y": 38,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Estimating area under a curve with rectangles."
+    },
+    {
+      "id": "definite",
+      "kind": "main",
+      "title": "Definite Integral",
+      "x": 50,
+      "y": 38,
+      "deck": null,
+      "requires": [
+        "areas"
+      ],
+      "blurb": "Area as a limit of sums, and the definite integral."
+    },
+    {
+      "id": "anti",
+      "kind": "main",
+      "title": "Antiderivatives",
+      "x": 84,
+      "y": 38,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Running differentiation backwards."
+    },
+    {
+      "id": "sumnot",
+      "kind": "review",
+      "title": "Summation Notation",
+      "x": 16,
+      "y": 66,
+      "deck": null,
+      "requires": [
+        "areas"
+      ],
+      "blurb": "Review: reading and writing sigma notation."
+    },
+    {
+      "id": "ftc",
+      "kind": "main",
+      "title": "Fundamental Theorem of Calculus",
+      "label": "Fundamental Theorem",
+      "x": 50,
+      "y": 94,
+      "deck": null,
+      "requires": [
+        "definite",
+        "anti"
+      ],
+      "blurb": "The link between derivatives and integrals."
+    },
+    {
+      "id": "proof",
+      "kind": "extra",
+      "title": "Proof of the Fundamental Theorem",
+      "label": "Proof of FTC",
+      "x": 84,
+      "y": 94,
+      "deck": null,
+      "requires": [
+        "ftc"
+      ],
+      "blurb": "Optional: why the Fundamental Theorem is true."
+    },
+    {
+      "id": "indef",
+      "kind": "main",
+      "title": "Indefinite Integral and Net Change Theorem",
+      "label": "Indefinite integral",
+      "x": 50,
+      "y": 122,
+      "deck": null,
+      "requires": [
+        "ftc"
+      ],
+      "blurb": "Antiderivatives with +C, and total change from a rate."
+    },
+    {
+      "id": "subst",
+      "kind": "main",
+      "title": "Substitution",
+      "x": 50,
+      "y": 150,
+      "deck": null,
+      "requires": [
+        "indef"
+      ],
+      "blurb": "Undoing the chain rule."
+    },
+    {
+      "id": "review",
+      "kind": "boss",
+      "title": "Chapter Review",
+      "x": 50,
+      "y": 180,
+      "deck": null,
+      "requires": [
+        "subst"
+      ],
+      "blurb": "Questions from every stop in this world."
+    }
+  ],
+  "short": "Integration"
+}

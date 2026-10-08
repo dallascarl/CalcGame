@@ -1,0 +1,225 @@
+{
+  "course": "Calculus 1",
+  "world": 3,
+  "id": "applications",
+  "title": "Applications of Derivatives",
+  "height": 262,
+  "regions": [
+    {
+      "label": "Curve sketching",
+      "x": 3,
+      "y": 110,
+      "w": 94,
+      "h": 112
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "start",
+      "title": "Start",
+      "x": 50,
+      "y": 10,
+      "deck": null,
+      "requires": [],
+      "blurb": "Tap a stop on the map to walk there."
+    },
+    {
+      "id": "newton",
+      "kind": "main",
+      "title": "Newton's Method",
+      "label": "Newton's Method",
+      "x": 16,
+      "y": 36,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Using tangent lines to home in on a root."
+    },
+    {
+      "id": "max",
+      "kind": "main",
+      "title": "Max and Mins",
+      "x": 50,
+      "y": 36,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Critical points, and the first and second derivative tests."
+    },
+    {
+      "id": "lhop",
+      "kind": "main",
+      "title": "L'Hopital's Rule",
+      "label": "L'Hopital's Rule",
+      "x": 84,
+      "y": 36,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Using derivatives to evaluate 0/0 and infinity/infinity limits."
+    },
+    {
+      "id": "related",
+      "kind": "main",
+      "title": "Related Rates",
+      "x": 16,
+      "y": 64,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "How the rates of change of connected quantities are linked."
+    },
+    {
+      "id": "opt",
+      "kind": "main",
+      "title": "Optimization",
+      "x": 50,
+      "y": 64,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "blurb": "Finding the best value in a real situation."
+    },
+    {
+      "id": "lin",
+      "kind": "main",
+      "title": "Linearization and Differentials",
+      "label": "Linearization",
+      "x": 84,
+      "y": 64,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Approximating a function with its tangent line."
+    },
+    {
+      "id": "geom",
+      "kind": "review",
+      "title": "Standard Geometry",
+      "x": 50,
+      "y": 92,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "from": [
+        "opt"
+      ],
+      "blurb": "Review: area, volume and perimeter formulas."
+    },
+    {
+      "id": "mvt",
+      "kind": "main",
+      "title": "Mean Value Theorem",
+      "x": 84,
+      "y": 92,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "blurb": "Where the slope of a tangent equals the average slope."
+    },
+    {
+      "id": "curve",
+      "kind": "main",
+      "title": "Curve Sketching",
+      "x": 16,
+      "y": 126,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "blurb": "Putting the pieces together to sketch a function."
+    },
+    {
+      "id": "domain",
+      "kind": "review",
+      "title": "Domain",
+      "x": 16,
+      "y": 164,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "from": [
+        "curve"
+      ],
+      "blurb": "Review: where a function is defined."
+    },
+    {
+      "id": "intercepts",
+      "kind": "review",
+      "title": "Intercepts",
+      "x": 50,
+      "y": 164,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "from": [
+        "curve"
+      ],
+      "blurb": "Review: where a graph crosses the axes."
+    },
+    {
+      "id": "asym",
+      "kind": "review",
+      "title": "Asymptotes",
+      "x": 84,
+      "y": 164,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "from": [
+        "curve"
+      ],
+      "blurb": "Review: vertical, horizontal and slant asymptotes."
+    },
+    {
+      "id": "longdiv",
+      "kind": "review",
+      "title": "Long Division",
+      "x": 84,
+      "y": 200,
+      "deck": null,
+      "requires": [
+        "max"
+      ],
+      "from": [
+        "asym"
+      ],
+      "blurb": "Review: polynomial long division for slant asymptotes."
+    },
+    {
+      "id": "review",
+      "kind": "boss",
+      "title": "Chapter Review",
+      "x": 50,
+      "y": 240,
+      "deck": null,
+      "requires": [
+        "curve",
+        "opt",
+        "mvt",
+        "newton",
+        "lin",
+        "related",
+        "lhop"
+      ],
+      "from": [
+        "curve",
+        "mvt"
+      ],
+      "blurb": "Questions from every stop in this world."
+    }
+  ],
+  "short": "Applications"
+}

@@ -6,7 +6,8 @@ A practice game for Calculus 1. Students walk a map, and each stop has a lesson 
 
 | File | What it is |
 | --- | --- |
-| `map.json` | The world map: every stop, where it sits, what it requires, and which deck it opens |
+| `worlds.json` | The list of world map files, in order |
+| `maps/*.json` | One map per world: every stop, where it sits, what it requires, and which deck it opens |
 | `decks/*.json` | One file per stop: its graphs, lesson steps, and drill questions |
 | `js/app.js` | The game engine. Does not change when content changes |
 | `css/app.css` | The look |
@@ -16,7 +17,9 @@ A practice game for Calculus 1. Students walk a map, and each stop has a lesson 
 
 Edit the JSON files directly on GitHub (pencil icon) or on your computer. After a change, open the game, tap **Instructor: deck test** at the bottom of the map, and check for errors.
 
-### map.json
+### maps/*.json
+
+Add a new world by creating a map file in `maps/` and listing it in `worlds.json`. Each map has `id`, `world` (its number), `title`, `short` (tab name), `height`, optional `regions`, and `nodes`.
 
 Each stop:
 

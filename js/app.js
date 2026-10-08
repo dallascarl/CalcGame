@@ -94,7 +94,7 @@ function plot(g,marker){
 
 
 /* ---------- content loading ---------- */
-let MAP=null,DECK=null; const DECKS={};
+let MAP=null,DECK=null,WORLDS=[]; const DECKS={};
 async function getJSON(path){
   const r=await fetch(path,{cache:'no-cache'}); if(!r.ok)throw Error('Could not load '+path+' ('+r.status+')');
   const t=await r.text(); try{return JSON.parse(t);}catch(e){throw Error(path+' is not valid JSON: '+e.message);}
@@ -103,7 +103,7 @@ const nodeById=id=>MAP.nodes.find(n=>n.id===id);
 
 /* ---------- saved progress (this browser only for now) ---------- */
 const KEY='calcgame.v1';
-const fresh=()=>({at:'',decks:{},streak:0,plays:0,points:0,day:'',playsToday:0,setDay:{},game:null,preview:false});
+const fresh=()=>({world:'',pos:{},decks:{},streak:0,plays:0,points:0,day:'',playsToday:0,setDay:{},game:null,preview:false});
 let S=fresh();
 try{const raw=localStorage.getItem(KEY); if(raw)S=Object.assign(fresh(),JSON.parse(raw));}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
@@ -136,7 +136,10 @@ function record(q,ok){
 /* ---------- screen plumbing ---------- */
 let keyHook=null,itemKeys=null;
 document.addEventListener('keydown',e=>{if(keyHook)keyHook(e);});
-app.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b&&!b.disabled)go(b.dataset.go);});
+app.addEventListener('click',e=>{
+  const w=e.target.closest('[data-world]');
+  if(w){const m=WORLDS.find(x=>x.id===w.dataset.world);if(m&&m!==MAP&&!walking){MAP=m;S.world=m.id;save();home();window.scrollTo(0,0);}return;}
+  const b=e.target.closest('[data-go]');if(b&&!b.disabled)go(b.dataset.go);});
 function screen(p){
   keyHook=null;itemKeys=null;
   app.innerHTML=(p.top||'')+'<main class="body">'+(p.body||'')+'</main>'+(p.foot?'<footer class="foot">'+p.foot+'</footer>':'');
@@ -279,7 +282,7 @@ function home(){
   rollDay(); walking=false;
   const H=MAP.height,lvl={}; let num=0;
   MAP.nodes.forEach(n=>{if(n.kind==='main')lvl[n.id]=++num;});
-  if(!nodeById(S.at))S.at=MAP.nodes[0].id;
+  if(!nodeById(S.pos[MAP.id]))S.pos[MAP.id]=MAP.nodes[0].id;
   let svg='<svg class="roads" viewBox="0 0 100 '+H+'" aria-hidden="true">';
   (MAP.regions||[]).forEach(r=>{svg+='<rect class="region" x="'+r.x+'" y="'+r.y+'" width="'+r.w+'" height="'+r.h+'" rx="4"/><text class="region-t" x="'+(r.x+3)+'" y="'+(r.y+5.5)+'">'+esc(r.label)+'</text>';});
   MAP.nodes.forEach(n=>edgesOf(n).forEach(id=>{const m=nodeById(id); if(!m)return; const side=n.kind==='review'||n.kind==='extra';
@@ -289,7 +292,8 @@ function home(){
     return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':'')+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+(done?', cleared':'')+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span><span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
   const left=RULES.streak-S.streak;
   screen({
-    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div></div>'+
+    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+' of '+WORLDS.length+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div></div>'+
+      '<nav class="worlds" aria-label="Worlds">'+WORLDS.map(w=>'<button class="wt'+(w===MAP?' on':'')+'" data-world="'+w.id+'" aria-pressed="'+(w===MAP)+'"><b>'+w.world+'</b><span>'+esc(w.short||w.title)+'</span></button>').join('')+'</nav>'+
       '<div class="hud-b">'+pips()+'<span class="tiny">'+left+' more new '+(left===1?'answer':'answers')+' for a play</span><button class="mb" data-go="game">Match Board'+(S.plays?' · '+S.plays:'')+'</button></div></header>',
     body:(S.preview?'<p class="banner">Preview mode is on. Every stop is open and nothing is recorded.</p>':'')+
       '<div class="map" style="aspect-ratio:100/'+H+'">'+svg+tiles+'<div class="hero-ch" id="ch">'+HERO+'</div></div>'+
@@ -312,15 +316,15 @@ function home(){
     return h+'<div class="acts">'+a+'</div>';
   };
   const select=id=>{
-    const n=nodeById(id),d=n.deck?DECKS[n.deck]:null; S.at=id; save(); DECK=d&&!d.error?d:null;
+    const n=nodeById(id),d=n.deck?DECKS[n.deck]:null; S.pos[MAP.id]=id; save(); DECK=d&&!d.error?d:null;
     $('#stop').innerHTML=stopHTML(n);
     app.querySelectorAll('.node').forEach(b=>b.classList.toggle('here',b.dataset.n===id));
   };
   $('.map').onclick=e=>{
     const b=e.target.closest('.node'); if(!b||walking)return;
-    const id=b.dataset.n,n=nodeById(id); if(id===S.at)return;
+    const id=b.dataset.n,n=nodeById(id); if(id===S.pos[MAP.id])return;
     if(!nodeOpen(n)){$('#stop').innerHTML=stopHTML(n);toast('Locked for now');return;}
-    const path=route(S.at,id),still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const path=route(S.pos[MAP.id],id),still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(!path||path.length<2||still){place(n);return select(id);}
     const pts=path.map(nodeById); let seg=0,t0=null; walking=true; ch.classList.add('walk');
     const step=ts=>{
@@ -334,7 +338,7 @@ function home(){
     };
     requestAnimationFrame(step);
   };
-  place(nodeById(S.at)); select(S.at); ch.scrollIntoView({block:'center'});
+  place(nodeById(S.pos[MAP.id])); select(S.pos[MAP.id]); ch.scrollIntoView({block:'center'});
 }
 
 /* ---------- lesson ---------- */
@@ -533,7 +537,7 @@ function validate(D){
   return out;
 }
 function validateMap(M){
-  const out=[],add=(l,m)=>out.push({l,m}),ids=new Set(),kinds=['start','main','review','extra','boss'];
+  const out=[],add=(l,m)=>out.push({l,m:M.title+' · '+m}),ids=new Set(),kinds=['start','main','review','extra','boss'];
   if(!(M.height>0))add('fail','Map: height must be a positive number');
   (M.nodes||[]).forEach(n=>{
     const tag='Stop '+(n.id||'(no id)'),errs=[];
@@ -551,12 +555,12 @@ function validateMap(M){
   return out;
 }
 function test(){
-  let res=validateMap(MAP);
+  let res=[]; WORLDS.forEach(w=>{res=res.concat(validateMap(w));});
   const ids=Object.keys(DECKS).filter(id=>!DECKS[id].error);
   ids.forEach(id=>{res=res.concat(validate(DECKS[id]).map(r=>({l:r.l,m:id+' · '+r.m})));});
   const cnt=l=>res.filter(r=>r.l===l).length,f=cnt('fail'),w=cnt('warn'),p=cnt('pass');
   const li=l=>res.filter(r=>r.l===l).map(r=>'<li class="'+l+'"><b>'+(l==='fail'?'Error':l==='warn'?'Warning':'OK')+'</b>'+esc(r.m)+'</li>').join('');
-  const soon=MAP.nodes.filter(n=>n.kind!=='start'&&!n.deck).length;
+  const allNodes=[].concat(...WORLDS.map(w=>w.nodes)),soon=allNodes.filter(n=>n.kind!=='start'&&!n.deck).length;
   const rows=ids.map(id=>{const d=DECKS[id];return '<span>'+esc(id)+'</span><span>'+(d.lesson?d.lesson.slides.length+' steps, ':'')+drillKinds(d).reduce((s,k)=>s+d.drills[k].questions.length,0)+' questions</span>';}).join('');
   screen({top:bar('Deck test',null),
     body:'<div class="test"><h2>Deck test</h2>'+
@@ -564,7 +568,7 @@ function test(){
       (f||w?'<ul class="res">'+li('fail')+li('warn')+'</ul>':'')+
       '<details><summary>'+p+' checks passed</summary><ul class="res">'+li('pass')+'</ul></details>'+
       '<p class="tiny">Every graph question is solved from its own graph and compared with the answer key.</p>'+
-      '<h3>What is in this world</h3><div class="kv"><span>Stops on the map</span><span>'+MAP.nodes.length+'</span><span>Stops still to build</span><span>'+soon+'</span>'+rows+'</div>'+
+      '<h3>What is built</h3><div class="kv"><span>Worlds</span><span>'+WORLDS.length+'</span><span>Stops on the maps</span><span>'+allNodes.filter(n=>n.kind!=='start').length+'</span><span>Stops still to build</span><span>'+soon+'</span>'+rows+'</div>'+
       '<h3>Preview</h3><label class="switch" for="pv"><input type="checkbox" id="pv"'+(S.preview?' checked':'')+'> Preview mode</label>'+
       '<p class="tiny">Opens every stop on the map, adds Skip to lessons, runs every drill question in deck order, and records nothing.</p>'+
       '<h3>Testing tools</h3><div class="row"><button class="btn small ghost" id="addplay">Add a game play</button><button class="btn small ghost" id="reset">Reset my progress</button></div></div>'});
@@ -580,9 +584,11 @@ function test(){
 /* ---------- start up ---------- */
 async function boot(){
   app.innerHTML='<main class="body"><p class="tiny">Loading the map…</p></main>';
-  try{MAP=await getJSON('map.json');}
+  try{const idx=await getJSON('worlds.json'); WORLDS=await Promise.all(idx.worlds.map(getJSON));
+    WORLDS.forEach(w=>{if(!w.id)throw Error('A map file has no "id"');}); WORLDS.sort((a,b)=>a.world-b.world);
+    MAP=WORLDS.find(w=>w.id===S.world)||WORLDS[0]; S.world=MAP.id;}
   catch(e){app.innerHTML='<main class="body"><p class="verdict bad">'+esc(e.message)+'</p><p class="tiny">If you opened index.html straight from a folder, it cannot read the map and deck files. Open the GitHub Pages address instead.</p></main>';return;}
-  const ids=[...new Set(MAP.nodes.map(n=>n.deck).filter(Boolean))];
+  const ids=[...new Set([].concat(...WORLDS.map(w=>w.nodes)).map(n=>n.deck).filter(Boolean))];
   await Promise.all(ids.map(async id=>{try{DECKS[id]=await getJSON('decks/'+id+'.json');}catch(e){DECKS[id]={error:e.message};}}));
   home();
 }

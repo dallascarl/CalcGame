@@ -1,0 +1,234 @@
+{
+  "course": "Calculus 1",
+  "world": 2,
+  "id": "derivatives",
+  "title": "Derivatives",
+  "height": 196,
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "start",
+      "title": "Start",
+      "x": 16,
+      "y": 12,
+      "deck": null,
+      "requires": [],
+      "blurb": "Tap a stop on the map to walk there."
+    },
+    {
+      "id": "defn",
+      "kind": "main",
+      "title": "Definition of Derivative",
+      "label": "Definition",
+      "x": 50,
+      "y": 12,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "The derivative as the limit of the difference quotient."
+    },
+    {
+      "id": "dfunc",
+      "kind": "main",
+      "title": "Derivative as a Function",
+      "label": "Derivative function",
+      "x": 84,
+      "y": 12,
+      "deck": null,
+      "requires": [
+        "defn"
+      ],
+      "blurb": "Turning the derivative at a point into a function of x."
+    },
+    {
+      "id": "rules",
+      "kind": "main",
+      "title": "Derivative Rules",
+      "x": 84,
+      "y": 58,
+      "deck": null,
+      "requires": [
+        "dfunc"
+      ],
+      "blurb": "Constant, sum, power, product and quotient rules."
+    },
+    {
+      "id": "trig",
+      "kind": "main",
+      "title": "Trig Functions",
+      "x": 50,
+      "y": 58,
+      "deck": null,
+      "requires": [
+        "rules"
+      ],
+      "blurb": "Derivatives of sine, cosine and the other trig functions."
+    },
+    {
+      "id": "chain",
+      "kind": "main",
+      "title": "Chain Rule",
+      "x": 16,
+      "y": 58,
+      "deck": null,
+      "requires": [
+        "trig"
+      ],
+      "blurb": "Differentiating a function inside a function."
+    },
+    {
+      "id": "implicit",
+      "kind": "main",
+      "title": "Implicit Differentiation",
+      "label": "Implicit diff.",
+      "x": 16,
+      "y": 104,
+      "deck": null,
+      "requires": [
+        "chain"
+      ],
+      "blurb": "Finding dy/dx when y is not solved for."
+    },
+    {
+      "id": "exp",
+      "kind": "main",
+      "title": "Derivative of Exponentials",
+      "label": "Exponentials",
+      "x": 50,
+      "y": 104,
+      "deck": null,
+      "requires": [
+        "implicit"
+      ],
+      "blurb": "Derivatives of e^x and other exponential functions."
+    },
+    {
+      "id": "dlog",
+      "kind": "main",
+      "title": "Derivatives of Logarithms and Inverse Functions",
+      "label": "Logs and inverses",
+      "x": 84,
+      "y": 104,
+      "deck": null,
+      "requires": [
+        "exp"
+      ],
+      "blurb": "Derivatives of ln x and of inverse functions."
+    },
+    {
+      "id": "logdiff",
+      "kind": "main",
+      "title": "Logarithmic Differentiation",
+      "label": "Log. differentiation",
+      "x": 84,
+      "y": 150,
+      "deck": null,
+      "requires": [
+        "dlog"
+      ],
+      "blurb": "Using logarithms to differentiate products, quotients and variable exponents."
+    },
+    {
+      "id": "invtrig",
+      "kind": "main",
+      "title": "Inverse Trig Functions Differentiation",
+      "label": "Inverse trig",
+      "x": 50,
+      "y": 150,
+      "deck": null,
+      "requires": [
+        "logdiff"
+      ],
+      "blurb": "Derivatives of arcsine, arccosine and arctangent."
+    },
+    {
+      "id": "review",
+      "kind": "boss",
+      "title": "Chapter Review",
+      "x": 16,
+      "y": 150,
+      "deck": null,
+      "requires": [
+        "invtrig"
+      ],
+      "blurb": "Questions from every stop in this world."
+    },
+    {
+      "id": "compose",
+      "kind": "review",
+      "title": "Compositions of Functions",
+      "x": 16,
+      "y": 34,
+      "deck": null,
+      "requires": [
+        "start"
+      ],
+      "blurb": "Review: building and taking apart f(g(x))."
+    },
+    {
+      "id": "trigrev",
+      "kind": "review",
+      "title": "Trigonometry Review",
+      "label": "Trig review",
+      "x": 60,
+      "y": 34,
+      "deck": null,
+      "requires": [
+        "rules"
+      ],
+      "blurb": "Review: unit circle values and trig identities."
+    },
+    {
+      "id": "solvey",
+      "kind": "review",
+      "title": "Algebra in Solving for y",
+      "label": "Solving for y",
+      "x": 36,
+      "y": 81,
+      "deck": null,
+      "requires": [
+        "chain"
+      ],
+      "blurb": "Review: isolating y in an equation."
+    },
+    {
+      "id": "invfun",
+      "kind": "review",
+      "title": "Inverse Functions",
+      "x": 50,
+      "y": 127,
+      "deck": null,
+      "requires": [
+        "exp"
+      ],
+      "blurb": "Review: what an inverse function is and how to find one."
+    },
+    {
+      "id": "invtrigrev",
+      "kind": "review",
+      "title": "Inverse Functions Trig Functions",
+      "label": "Inverse trig review",
+      "x": 84,
+      "y": 174,
+      "deck": null,
+      "requires": [
+        "logdiff"
+      ],
+      "blurb": "Review: the inverse trig functions and their ranges."
+    },
+    {
+      "id": "hyper",
+      "kind": "extra",
+      "title": "Hyperbolic Trig",
+      "x": 50,
+      "y": 174,
+      "deck": null,
+      "requires": [
+        "invtrig"
+      ],
+      "blurb": "Optional: sinh, cosh and their derivatives."
+    }
+  ],
+  "short": "Derivatives"
+}

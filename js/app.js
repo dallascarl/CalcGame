@@ -11,7 +11,10 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const neg=s=>String(s).replace(/-/g,'−');
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function mpart(t){
-  return esc(t).replace(/-&gt;/g,'→').replace(/\^([+-])/g,(_,c)=>'<sup>'+(c==='-'?'−':'+')+'</sup>').replace(/!=/g,'≠').replace(/-/g,'−')
+  return esc(t).replace(/-&gt;/g,'→').replace(/&lt;=/g,'≤').replace(/&gt;=/g,'≥').replace(/!=/g,'≠')
+    .replace(/\^([+-])(?![A-Za-z0-9.])/g,(_,c)=>'<sup>'+(c==='-'?'−':'+')+'</sup>')
+    .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a:b)+'</sup>')
+    .replace(/-/g,'−').replace(/\bpi\b/g,'π').replace(/\binfty\b/g,'∞').replace(/\bsqrt\b/g,'√')
     .replace(/[A-Za-z]+/g,w=>w.length===1?'<i>'+w+'</i>':w);
 }
 function math(m){
@@ -23,13 +26,19 @@ function fmt(s){
 }
 
 /* ---------- expression parser (no eval) ---------- */
-const FN={sin:Math.sin,cos:Math.cos,tan:Math.tan,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp,ln:Math.log};
+const FN={sin:Math.sin,cos:Math.cos,tan:Math.tan,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp,ln:Math.log,cbrt:Math.cbrt};
+/* a^b, with real roots of negative numbers when b = p/q and q is odd (so x^(3/5) works for x < 0) */
+function rpow(a,b){
+  if(a>=0||Number.isInteger(b))return Math.pow(a,b);
+  for(let q=1;q<=15;q++){const p=b*q; if(Math.abs(p-Math.round(p))<1e-9){return q%2?(Math.round(p)%2?-1:1)*Math.pow(-a,b):NaN;}}
+  return NaN;
+}
 function compile(src){
   const s=String(src).replace(/\s+/g,''); let i=0;
   const expr=()=>{let a=term();while(s[i]==='+'||s[i]==='-'){const op=s[i++],l=a,r=term();a=op==='+'?x=>l(x)+r(x):x=>l(x)-r(x);}return a;};
   const term=()=>{let a=unary();while(s[i]==='*'||s[i]==='/'){const op=s[i++],l=a,r=unary();a=op==='*'?x=>l(x)*r(x):x=>l(x)/r(x);}return a;};
   const unary=()=>{if(s[i]==='-'){i++;const a=unary();return x=>-a(x);}return power();};
-  const power=()=>{const a=atom();if(s[i]==='^'){i++;const b=unary();return x=>Math.pow(a(x),b(x));}return a;};
+  const power=()=>{const a=atom();if(s[i]==='^'){i++;const b=unary();return x=>rpow(a(x),b(x));}return a;};
   const atom=()=>{
     if(s[i]==='('){i++;const a=expr();if(s[i]!==')')throw Error('missing )');i++;return a;}
     const num=/^\d*\.?\d+/.exec(s.slice(i));
@@ -56,7 +65,29 @@ function sideLimit(g,a,dir){
   const p=g.pieces.find(p=>dir<0?(p.from<a&&a<=p.to):(p.from<=a&&a<p.to)); if(!p)return null;
   const v=fn(p.expr)(a+dir*1e-6); return Number.isFinite(v)&&Math.abs(v)<1e4?v:null;
 }
+const EXTASK=['absmax','absmin','argmax','argmin'];
+/* Reads the highest or lowest point off a graph the way a student would. 'NONE' when it is never reached. */
+function extTruth(g,q){
+  const want=/max$/.test(q.ask)?1:-1,[,,y0,y1]=g.window,holes=g.holes||[],dots=g.dots||[],pts=[];
+  let step=0;
+  for(const p of g.pieces||[]){
+    const f=fn(p.expr),N=2000; step=Math.max(step,(p.to-p.from)/N);
+    for(let k=0;k<=N;k++){
+      const x=p.from+(p.to-p.from)*k/N; if(holes.some(h=>Math.abs(h[0]-x)<1e-9))continue;
+      const d=dots.find(d=>Math.abs(d[0]-x)<1e-9),y=d?d[1]:f(x); if(!Number.isFinite(y))continue;
+      pts.push({x,y,open:(k===0&&/L/.test(p.arrow||''))||(k===N&&/R/.test(p.arrow||''))});
+    }
+  }
+  dots.forEach(d=>pts.push({x:d[0],y:d[1],open:false}));
+  if(!pts.length)return 'NONE';
+  let b=pts[0]; pts.forEach(t=>{if(want*(t.y-b.y)>1e-9)b=t;});
+  if(b.open||b.y>y1+1e-9||b.y<y0-1e-9||holes.some(h=>Math.abs(h[0]-b.x)<=step*1.5))return 'NONE';
+  if(q.ask==='absmax'||q.ask==='absmin')return b.y;
+  const xs=[]; pts.forEach(t=>{if(Math.abs(t.y-b.y)<1e-5&&!xs.some(v=>Math.abs(v-t.x)<0.05))xs.push(t.x);});
+  return xs.length>1?'MULTI':b.x;
+}
 function truth(g,q){
+  if(EXTASK.includes(q.ask))return extTruth(g,q);
   if(q.ask==='value'){const v=valueAt(g,q.at);return v==null?'UND':v;}
   const L=sideLimit(g,q.at,-1),R=sideLimit(g,q.at,1);
   if(q.side==='left')return L==null?'DNE':L;
@@ -70,21 +101,33 @@ function evalAt(g,x){
 
 /* ---------- graph drawing ---------- */
 function plot(g,marker){
-  const [x0,x1,y0,y1]=g.window,m=14,W=320,u=(W-2*m)/(x1-x0),H=2*m+u*(y1-y0);
-  const sx=x=>m+(x-x0)*u,sy=y=>m+(y1-y)*u,r=n=>Math.round(n*10)/10;
+  const [x0,x1,y0,y1]=g.window,m=14,W=320,u=(W-2*m)/(x1-x0);
+  /* keep the picture a sensible shape: squares unless that would make it very tall or very flat */
+  const nat=2*m+u*(y1-y0),H=Math.min(Math.max(nat,0.62*W),1.25*W),uy=(H-2*m)/(y1-y0);
+  const nice=n=>n<=9?1:n<=18?2:n<=45?5:n<=90?10:n<=180?20:50,tx=g.xstep||nice(x1-x0),ty=g.ystep||nice(y1-y0);
+  const xt=[],yt=[]; for(let x=Math.ceil(x0/tx)*tx;x<=x1+1e-9;x+=tx)if(Math.abs(x)>1e-9)xt.push(Math.round(x*100)/100);
+  for(let y=Math.ceil(y0/ty)*ty;y<=y1+1e-9;y+=ty)if(Math.abs(y)>1e-9)yt.push(Math.round(y*100)/100);
+  const sx=x=>m+(x-x0)*u,sy=y=>m+(y1-y)*uy,r=n=>Math.round(n*10)/10;
   const ax=Math.min(Math.max(0,x0),x1),ay=Math.min(Math.max(0,y0),y1);
   let s='<svg class="graph" viewBox="0 0 '+W+' '+r(H)+'" role="img" aria-label="Graph of the function f"><rect class="g-bg" x="'+m+'" y="'+m+'" width="'+(W-2*m)+'" height="'+r(H-2*m)+'"/>';
-  for(let x=Math.ceil(x0);x<=x1;x++)if(x!==0)s+='<line class="g-grid" x1="'+r(sx(x))+'" x2="'+r(sx(x))+'" y1="'+m+'" y2="'+r(H-m)+'"/>';
-  for(let y=Math.ceil(y0);y<=y1;y++)if(y!==0)s+='<line class="g-grid" x1="'+m+'" x2="'+(W-m)+'" y1="'+r(sy(y))+'" y2="'+r(sy(y))+'"/>';
+  xt.forEach(x=>{s+='<line class="g-grid" x1="'+r(sx(x))+'" x2="'+r(sx(x))+'" y1="'+m+'" y2="'+r(H-m)+'"/>';});
+  yt.forEach(y=>{s+='<line class="g-grid" x1="'+m+'" x2="'+(W-m)+'" y1="'+r(sy(y))+'" y2="'+r(sy(y))+'"/>';});
   s+='<line class="g-axis" x1="'+r(sx(ax))+'" x2="'+r(sx(ax))+'" y1="'+m+'" y2="'+r(H-m)+'"/><line class="g-axis" x1="'+m+'" x2="'+(W-m)+'" y1="'+r(sy(ay))+'" y2="'+r(sy(ay))+'"/>';
-  for(let x=Math.ceil(x0);x<=x1;x++)if(x!==0)s+='<text class="g-t" text-anchor="middle" x="'+r(sx(x))+'" y="'+r(sy(ay)+11)+'">'+neg(x)+'</text>';
-  for(let y=Math.ceil(y0);y<=y1;y++)if(y!==0)s+='<text class="g-t" text-anchor="end" x="'+r(sx(ax)-4)+'" y="'+r(sy(y)+3.5)+'">'+neg(y)+'</text>';
+  xt.forEach(x=>{s+='<text class="g-t" text-anchor="middle" x="'+r(sx(x))+'" y="'+r(sy(ay)+11)+'">'+neg(x)+'</text>';});
+  yt.forEach(y=>{s+='<text class="g-t" text-anchor="end" x="'+r(sx(ax)-4)+'" y="'+r(sy(y)+3.5)+'">'+neg(y)+'</text>';});
+  for(const v of g.vlines||[])s+='<line class="g-vline" x1="'+r(sx(v))+'" x2="'+r(sx(v))+'" y1="'+m+'" y2="'+r(H-m)+'"/>';
   for(const p of g.pieces||[]){
     let f; try{f=fn(p.expr);}catch(e){continue;}
     let d='',pen=false; const N=96;
     for(let k=0;k<=N;k++){const x=p.from+(p.to-p.from)*k/N,y=f(x);
       if(Number.isFinite(y)&&y>=y0-0.5&&y<=y1+0.5){d+=(pen?'L':'M')+r(sx(x))+' '+r(sy(y));pen=true;}else pen=false;}
     s+='<path class="g-curve" d="'+d+'"/>';
+    for(const end of ['L','R'])if((p.arrow||'').includes(end)){
+      const xe=end==='L'?p.from:p.to,dx=(end==='L'?1:-1)*(p.to-p.from)*0.01,ye=f(xe),yi=f(xe+dx);
+      if(!Number.isFinite(ye)||!Number.isFinite(yi)||ye<y0||ye>y1)continue;
+      const ex=sx(xe),ey=sy(ye),vx=ex-sx(xe+dx),vy=ey-sy(yi),n=Math.hypot(vx,vy)||1,ux=vx/n,uy=vy/n;
+      s+='<polygon class="g-arrow" points="'+r(ex+ux*5)+','+r(ey+uy*5)+' '+r(ex-ux*5-uy*4.2)+','+r(ey-uy*5+ux*4.2)+' '+r(ex-ux*5+uy*4.2)+','+r(ey-uy*5-ux*4.2)+'"/>';
+    }
   }
   for(const [x,y] of g.holes||[])s+='<circle class="g-hole" cx="'+r(sx(x))+'" cy="'+r(sy(y))+'" r="4.4"/>';
   for(const [x,y] of g.dots||[])s+='<circle class="g-dot" cx="'+r(sx(x))+'" cy="'+r(sy(y))+'" r="4.8"/>';
@@ -169,23 +212,30 @@ function mountItem(it,host,onChange){
   if(it.title)h+='<h2>'+fmt(it.title)+'</h2>';
   const text=it.text||(it.type==='graph'?'Use the graph of $f$.':'');
   if(text&&it.type!=='bank')h+='<p class="txt">'+fmt(text)+'</p>';
+  if(it.show&&it.fn)h+='<div class="gwrap">'+plot(autoGraph(it.fn),false).svg+'</div>';
   if(it.graph&&DECK.graphs[it.graph])h+='<div class="gwrap">'+plot(DECK.graphs[it.graph],it.type==='explore').svg+'</div>';
   host.innerHTML=h+'<div class="ix"></div>';
-  const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank}[it.type];
+  const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
+  if(q.ask==='absmax')return 'Absolute maximum =';
+  if(q.ask==='absmin')return 'Absolute minimum =';
+  if(q.ask==='argmax')return 'The maximum occurs at $x$ =';
+  if(q.ask==='argmin')return 'The minimum occurs at $x$ =';
   if(q.ask==='value')return '$f('+q.at+')$ =';
   return '$lim[x->'+q.at+(q.side==='left'?'^-':q.side==='right'?'^+':'')+'] f(x)$ =';
 }
 function answerText(q){
-  if(q.type==='graph')return typeof q.answer==='string'?(q.answer==='UND'?'undefined':'DNE'):neg(q.answer);
+  if(q.type==='graph')return typeof q.answer==='string'?(q.answer==='UND'?'undefined':q.answer==='NONE'?'none (there is no such point)':'DNE'):neg(q.answer);
+  if(q.type==='num')return neg(q.answer);
+  if(q.type==='crit')return q.answers.length?q.answers.map(neg).join(', '):'no critical numbers';
   if(q.type==='mc')return q.options[q.answer];
   if(q.type==='tf')return q.answer?'True':'False';
   return q.blanks.join(', ');
 }
 function mountGraphQ(q,ix,onChange){
-  const sp=q.ask==='value'?'UND':'DNE',spWord=q.ask==='value'?'Undefined':'DNE'; let val='',locked=false;
+  const ext=EXTASK.includes(q.ask),sp=ext?'NONE':q.ask==='value'?'UND':'DNE',spWord=ext?'None':q.ask==='value'?'Undefined':'DNE'; let val='',locked=false;
   const keys=['7','8','9','back','4','5','6','-','1','2','3','.'];
   ix.innerHTML='<div class="ans"><span>'+fmt(answerLabel(q))+'</span><output class="ans-box empty" aria-live="polite">?</output></div><div class="pad">'+
     keys.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k)+'</button>').join('')+
@@ -264,6 +314,124 @@ function mountExplore(sl,ix,onChange,host){
   return {kind:'pass',canGo:()=>L&&R};
 }
 
+
+/* ---------- number pad shared by the typed-answer items ---------- */
+function makePad(ix,o){
+  let val='',locked=false;
+  const keys=['7','8','9','back','4','5','6','-','1','2','3','.'];
+  ix.innerHTML='<div class="ans"><span>'+fmt(o.label||'Answer =')+'</span><output class="ans-box empty" aria-live="polite">?</output></div><div class="pad">'+
+    keys.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k)+'</button>').join('')+
+    '<button class="key wide" data-k="0">0</button>'+(o.extra?'<button class="key wide sp" data-k="extra">'+esc(o.extra)+'</button>':'<button class="key wide" data-k="clear">Clear</button>')+'</div>';
+  const box=$('.ans-box',ix),show=()=>{box.textContent=val===''?'?':neg(val);box.classList.toggle('empty',val==='');};
+  const press=k=>{
+    if(locked)return;
+    if(k==='extra'){o.onExtra&&o.onExtra();return;}
+    if(k==='clear')val=''; else if(k==='back')val=val.slice(0,-1);
+    else if(k==='-')val=val[0]==='-'?val.slice(1):'-'+val;
+    else if(k==='.'){if(!val.includes('.'))val+=(val===''||val==='-'?'0.':'.');}
+    else if(val.replace(/\D/g,'').length<7)val+=k;
+    show();o.onChange&&o.onChange();
+  };
+  ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
+  itemKeys=e=>{
+    if(/^[0-9]$/.test(e.key))press(e.key); else if(e.key==='-')press('-'); else if(e.key==='.')press('.');
+    else if(e.key==='Backspace')press('back'); else return; e.preventDefault();
+  };
+  return {get:()=>val,num:()=>val===''||val==='-'||val==='.'?NaN:parseFloat(val),clear(){val='';show();},
+    lock(ok){locked=true;box.classList.add(ok?'is-right':'is-wrong');},
+    reset(){locked=false;val='';box.classList.remove('is-right','is-wrong');show();}};
+}
+function mountNum(q,ix,onChange){
+  const P=makePad(ix,{label:q.label||'Answer =',onChange});
+  return {kind:'q',canGo:()=>!Number.isNaN(P.num()),check:()=>Math.abs(P.num()-q.answer)<=(q.tol==null?0.01:q.tol),
+    lock(reveal,ok){P.lock(ok);},reset(){P.reset();onChange();}};
+}
+/* enter every critical number: type one, tap Add; tap a chip to remove it */
+function critWidget(ix,o){
+  let vals=[],none=false,locked=false; const pad=document.createElement('div'),list=document.createElement('div');
+  ix.appendChild(pad); ix.appendChild(list);
+  const P=makePad(pad,{label:o.label||'$x$ =',extra:'Add to list',onChange:()=>{upd();o.onChange&&o.onChange();},onExtra:add});
+  function add(){const v=P.num(); if(locked||Number.isNaN(v))return; if(!vals.some(w=>Math.abs(w-v)<1e-9))vals.push(v); none=false; P.clear(); draw(); o.onChange&&o.onChange();}
+  const upd=()=>{};
+  function draw(){
+    list.className='critlist';
+    list.innerHTML='<p class="tiny">'+(vals.length?'Your list (tap one to remove it):':'Your list is empty.')+'</p><div class="chips">'+
+      vals.slice().sort((a,b)=>a-b).map(v=>'<button class="chip" data-v="'+v+'"'+(locked?' disabled':'')+'>x = '+neg(+v.toFixed(4))+'</button>').join('')+'</div>'+
+      (o.allowNone?'<button class="btn small ghost nonebtn" aria-pressed="'+none+'"'+(locked?' disabled':'')+'>There are no critical numbers</button>':'');
+  }
+  list.addEventListener('click',e=>{
+    if(locked)return;
+    const c=e.target.closest('.chip'),n=e.target.closest('.nonebtn');
+    if(c){const v=+c.dataset.v;vals=vals.filter(w=>Math.abs(w-v)>1e-9);}
+    else if(n){none=!none;if(none){vals=[];P.clear();}}
+    else return; draw(); o.onChange&&o.onChange();
+  });
+  draw();
+  const all=()=>{const v=P.num();return Number.isNaN(v)||vals.some(w=>Math.abs(w-v)<1e-9)?vals.slice():vals.concat([v]);};
+  return {canGo:()=>none||all().length>0,
+    entered:()=>all(),
+    check:()=>{const a=all().sort((x,y)=>x-y),k=o.answers.slice().sort((x,y)=>x-y);
+      if(!k.length)return none&&!a.length; return !none&&a.length===k.length&&k.every((v,i)=>Math.abs(v-a[i])<=0.01);},
+    lock(ok){locked=true;const v=P.num();if(!Number.isNaN(v)&&!vals.some(w=>Math.abs(w-v)<1e-9))vals.push(v);P.clear();P.lock(ok);draw();},
+    reset(){locked=false;vals=[];none=false;P.reset();draw();}};
+}
+function mountCrit(q,ix,onChange){
+  const W=critWidget(ix,{answers:q.answers,allowNone:true,onChange});
+  return {kind:'q',canGo:W.canGo,check:W.check,lock:(r,ok)=>W.lock(ok),reset(){W.reset();onChange();}};
+}
+/* the "test every candidate" lesson widget: crit numbers, endpoints, table of values, tap the max, tap the min */
+function autoGraph(f){
+  const [a,b]=f.domain,F=fn(f.expr); let lo=Infinity,hi=-Infinity;
+  for(let k=0;k<=400;k++){const y=F(a+(b-a)*k/400);if(Number.isFinite(y)){lo=Math.min(lo,y);hi=Math.max(hi,y);}}
+  const px=Math.max((b-a)*0.12,0.3),py=Math.max((hi-lo)*0.15,0.5),dots=[[a,F(a)],[b,F(b)]];
+  (f.mark||[]).forEach(x=>dots.push([x,F(x)]));
+  return {window:[Math.floor(a-px),Math.ceil(b+px),Math.floor(lo-py),Math.ceil(hi+py)],pieces:[{expr:f.expr,from:a,to:b}],dots};
+}
+const trim=v=>{const t=+v.toFixed(3);return neg(String(t));};
+function mountExtrema(it,ix,onChange,host){
+  const F=fn(it.fn.expr),[a,b]=it.fn.domain; let phase='crit',done=false,cand=[],step=0;
+  ix.innerHTML='<div class="ext-given">'+(it.deriv?'<p class="txt">'+fmt(it.deriv)+'</p>':'')+'</div><div id="x-body"></div><div class="fb" id="x-fb" hidden></div>';
+  const body=$('#x-body',ix),fb=$('#x-fb',ix);
+  const say=(ok,msg)=>{fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+fmt(msg)+'</span>';};
+  const crit=()=>{
+    body.innerHTML='<p class="txt"><strong>Step 1.</strong> '+fmt(it.step1||'Find the critical numbers inside the interval and add them to your list.')+'</p><div id="cw"></div><button class="btn small" id="cchk">Check my list</button>';
+    const W=critWidget($('#cw',body),{answers:it.crit,allowNone:it.crit.length===0,onChange:()=>{$('#cchk',body).disabled=!W.canGo();}});
+    const btn=$('#cchk',body);btn.disabled=true;
+    btn.onclick=()=>{
+      if(W.check()){say(true,it.afterCrit||'Those are all of them. Now add the two endpoints.');W.lock(true);btn.remove();table();}
+      else say(false,it.hint||'Not quite. Set the derivative equal to 0, and also look for places where it does not exist.');
+    };
+  };
+  const table=()=>{
+    cand=[{x:a,tag:'endpoint'},...it.crit.filter(c=>c>a&&c<b).map(c=>({x:c,tag:'critical'})),{x:b,tag:'endpoint'}]
+      .sort((p,q)=>p.x-q.x).map(c=>Object.assign(c,{y:F(c.x)}));
+    phase='max'; draw();
+  };
+  const draw=()=>{
+    const mx=Math.max(...cand.map(c=>c.y)),mn=Math.min(...cand.map(c=>c.y));
+    const msg=phase==='max'?'**Steps 2 and 3.** Here is every candidate with its value $f(x)$. Tap the **largest** value.':phase==='min'?'Now tap the **smallest** value.':'';
+    let t=$('#tbl',body); const tb=document.createElement('div'); tb.id='tbl';
+    tb.innerHTML=(msg?'<p class="txt">'+fmt(msg)+'</p>':'')+'<div class="cand">'+cand.map((c,i)=>
+      '<button class="cand-r'+(c.pick?' is-'+c.pick:'')+'" data-i="'+i+'"'+(phase==='done'?' disabled':'')+'><span>x = '+trim(c.x)+'<em>'+c.tag+'</em></span><b>f(x) = '+trim(c.y)+'</b></button>').join('')+'</div>';
+    if(t)t.replaceWith(tb); else body.appendChild(tb);
+    tb.onclick=e=>{
+      const r=e.target.closest('.cand-r');if(!r||phase==='done')return; const c=cand[+r.dataset.i];
+      if(phase==='max'){
+        if(Math.abs(c.y-mx)<1e-9){cand.forEach(k=>{if(Math.abs(k.y-mx)<1e-9)k.pick='max';});phase='min';say(true,'Yes. The largest value is '+trim(mx)+', so the absolute maximum is '+trim(mx)+'.');draw();}
+        else say(false,'Not that one. Look for the largest $f(x)$ in the right-hand column.');
+      }else if(phase==='min'){
+        if(Math.abs(c.y-mn)<1e-9){cand.forEach(k=>{if(Math.abs(k.y-mn)<1e-9)k.pick='min';});phase='done';done=true;
+          const xm=cand.filter(k=>k.pick==='max').map(k=>trim(k.x)).join(' and '),xn=cand.filter(k=>k.pick==='min').map(k=>trim(k.x)).join(' and ');
+          say(true,'**Absolute maximum: '+trim(mx)+'** (at $x$ = '+xm+').\n**Absolute minimum: '+trim(mn)+'** (at $x$ = '+xn+').'+(it.after?'\n'+it.after:''));
+          const g=document.createElement('div');g.className='gwrap';g.innerHTML=plot(autoGraph(Object.assign({},it.fn,{mark:cand.map(k=>k.x)})),false).svg;body.appendChild(g);
+          draw();onChange();g.scrollIntoView({block:'nearest'});}
+        else say(false,'Not that one. Look for the smallest $f(x)$. Negative numbers count as smaller.');
+      }
+    };
+  };
+  crit();
+  return {kind:'pass',canGo:()=>done};
+}
 
 /* ---------- the map (home screen) ---------- */
 const MARK={review:'↺',extra:'★',boss:'♛',start:'GO'};
@@ -463,6 +631,25 @@ function game(){
 
 
 /* ---------- deck test ---------- */
+/* numeric helpers used only by the deck test */
+function numDeriv(F,x){const h=1e-5;return (F(x+h)-F(x-h))/(2*h);}
+function bf(expr,dom){const F=fn(expr),[a,b]=dom,N=40000;let mx=-Infinity,mn=Infinity,xmx=a,xmn=a;
+  for(let k=0;k<=N;k++){const x=a+(b-a)*k/N,y=F(x);if(!Number.isFinite(y))continue;if(y>mx){mx=y;xmx=x;}if(y<mn){mn=y;xmn=x;}}return {mx,mn,xmx,xmn};}
+/* finds where f' is 0 or does not exist, by scanning the derivative */
+function critScan(expr,dom){
+  const F=fn(expr),[a,b]=dom,N=Math.round((b-a)/0.005),d=[],out=[];
+  for(let k=0;k<=N;k++){const x=a+(b-a)*k/N;d.push({x,v:numDeriv(F,x),f:F(x)});}
+  const add=x=>{if(!out.some(v=>Math.abs(v-x)<0.04))out.push(Math.round(x*1000)/1000);};
+  for(let i=1;i<d.length-1;i++){
+    const p=d[i],q=d[i+1]; if(!Number.isFinite(p.f)||!Number.isFinite(q.f))continue;
+    if(!Number.isFinite(p.v)||!Number.isFinite(q.v)||Math.abs(p.v)>1e3){add(p.x);continue;}
+    const nb=Math.max(Math.abs(p.v-d[i-1].v),d[i+2]?Math.abs(d[i+2].v-q.v):0);
+    if(Math.abs(q.v-p.v)>40||Math.abs(q.v-p.v)>0.3+8*nb){add((p.x+q.x)/2);continue;}
+    if(p.v*q.v<0){add(p.x-p.v*(q.x-p.x)/(q.v-p.v));continue;}
+    if(Math.abs(p.v)<1e-3&&Math.abs(p.v)<=Math.abs(d[i-1].v)&&Math.abs(p.v)<=Math.abs(q.v))add(p.x);
+  }
+  return out.sort((x,y)=>x-y);
+}
 function validate(D){
   const out=[],add=(l,m)=>out.push({l,m}),seen=new Set(),gOK={},used=new Set();
   const showA=v=>typeof v==='string'?v:String(Math.round(v*1000)/1000);
@@ -483,18 +670,24 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const types=inLesson?['info','explore','graph','mc','tf','bank']:['graph','mc','tf','bank'];
+    const types=inLesson?['info','explore','graph','mc','tf','bank','num','crit','extrema']:['graph','mc','tf','bank','num','crit'];
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).split('$').length%2===0)errs.push('unmatched $ in '+k);
     const g=(D.graphs||{})[q.graph];
     if(q.graph){used.add(q.graph);if(!g)errs.push('graph "'+q.graph+'" does not exist');}
     if((q.type==='graph'||q.type==='explore')&&!q.graph)errs.push('needs a graph');
-    if(q.type!=='graph'&&q.type!=='explore'&&!q.text&&!q.title)errs.push('has no text');
+    if(q.type!=='graph'&&q.type!=='explore'&&q.type!=='extrema'&&!q.text&&!q.title)errs.push('has no text');
     if(q.type==='graph'){
-      if(!['value','limit'].includes(q.ask))errs.push('ask must be "value" or "limit"');
+      if(![ 'value','limit',...EXTASK].includes(q.ask))errs.push('ask must be "value", "limit", "absmax", "absmin", "argmax" or "argmin"');
+      else if(EXTASK.includes(q.ask)){
+        if(g&&gOK[q.graph]){const t=extTruth(g,q);
+          if(t==='MULTI')errs.push('the extreme value is reached at more than one x, so asking for the location is ambiguous');
+          else{const same=typeof t==='string'?q.answer===t:(typeof q.answer==='number'&&Math.abs(q.answer-t)<0.011);
+            if(!same)errs.push('answer key says '+showA(q.answer)+' but the graph gives '+showA(t));}}
+      }
       else if(typeof q.at!=='number')errs.push('"at" must be a number');
       else if(q.ask==='limit'&&!['left','right','both'].includes(q.side))errs.push('side must be "left", "right" or "both"');
-      else if(g&&gOK[q.graph]){const t=truth(g,q),same=typeof t==='string'?q.answer===t:(typeof q.answer==='number'&&Math.abs(q.answer-t)<1e-3);
+      else if(!EXTASK.includes(q.ask)&&g&&gOK[q.graph]){const t=truth(g,q),same=typeof t==='string'?q.answer===t:(typeof q.answer==='number'&&Math.abs(q.answer-t)<1e-3);
         if(!same)errs.push('answer key says '+showA(q.answer)+' but the graph gives '+showA(t));}
     }
     if(q.type==='explore'){
@@ -507,6 +700,31 @@ function validate(D){
         if(new Set(q.options).size!==q.options.length)errs.push('two options are identical'); }
     }
     if(q.type==='tf'&&typeof q.answer!=='boolean')errs.push('answer must be true or false');
+    const fnOK=f=>{try{if(!f||typeof f.expr!=='string'||!Array.isArray(f.domain)||!(f.domain[0]<f.domain[1]))throw Error('needs "expr" and "domain": [a, b]');
+      const F=compile(f.expr); if(!Number.isFinite(F((f.domain[0]+f.domain[1])/2)))throw Error('gives no value in the middle of the interval'); return true;}catch(e){errs.push('function: '+e.message);return false;}};
+    if(q.type==='num'){
+      if(typeof q.answer!=='number')errs.push('answer must be a number');
+      if(q.verify&&fnOK(q.verify)){const B=bf(q.verify.expr,q.verify.domain),want={max:B.mx,min:B.mn,argmax:B.xmx,argmin:B.xmn}[q.verify.ask];
+        if(want==null)errs.push('verify.ask must be max, min, argmax or argmin');
+        else if(Math.abs(want-q.answer)>Math.max(0.011,q.tol||0))errs.push('answer key says '+showA(q.answer)+' but the function gives '+showA(want)+' on that interval');}
+    }
+    if(q.type==='crit'){
+      if(!Array.isArray(q.answers)||q.answers.some(v=>typeof v!=='number'))errs.push('answers must be a list of numbers (empty if there are none)');
+      else if(q.verify&&fnOK({expr:q.verify.expr,domain:q.verify.range||[-5,5]})){
+        const found=critScan(q.verify.expr,q.verify.range||[-5,5]);
+        if(found.length!==q.answers.length||!q.answers.every(v=>found.some(w=>Math.abs(w-v)<0.03)))errs.push('answer key lists '+q.answers.join(', ')+' but scanning the function finds critical numbers at '+(found.map(v=>showA(v)).join(', ')||'none'));
+        if(q.verify.dexpr){const F=fn(q.verify.expr),D=compile(q.verify.dexpr);for(const x of [-1.3,0.7,2.2])if(Number.isFinite(F(x))&&Math.abs(numDeriv(F,x)-D(x))>1e-3)errs.push('the derivative formula does not match the function at x = '+x);}
+      }
+    }
+    if(q.type==='extrema'){
+      if(fnOK(q.fn)){
+        const [a,b]=q.fn.domain,cs=q.crit||[],B=bf(q.fn.expr,q.fn.domain),F=fn(q.fn.expr),list=[a,b,...cs.filter(c=>c>a&&c<b)];
+        const best=(w)=>list.reduce((m,x)=>w*(F(x)-m)>0?F(x):m,F(list[0]));
+        if(Math.abs(best(1)-B.mx)>1e-3||Math.abs(best(-1)-B.mn)>1e-3)errs.push('testing the listed points gives max '+showA(best(1))+' and min '+showA(best(-1))+', but the function really reaches '+showA(B.mx)+' and '+showA(B.mn)+' (a critical number may be missing)');
+        const found=critScan(q.fn.expr,[a+0.02,b-0.02]);
+        if(found.length!==cs.filter(c=>c>a&&c<b).length||!found.every(v=>cs.some(w=>Math.abs(w-v)<0.03)))errs.push('crit list does not match the critical numbers found by scanning ('+(found.map(v=>showA(v)).join(', ')||'none')+')');
+      }
+    }
     if(q.type==='bank'){
       const n=String(q.text||'').split('___').length-1;
       if(!Array.isArray(q.blanks)||!q.blanks.length)errs.push('needs blanks');

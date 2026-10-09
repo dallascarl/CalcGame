@@ -43,7 +43,7 @@
       "title": "Max and Mins",
       "x": 50,
       "y": 36,
-      "deck": null,
+      "deck": "maxmin",
       "requires": [
         "start"
       ],

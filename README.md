@@ -43,7 +43,15 @@ A deck has `id` (must match the file name), `title`, `graphs`, an optional `less
 
 Text markup: `$...$` is math, `lim[x->2^-]` draws a limit, `**bold**`, and `\n` starts a new line.
 
-Item types: `info`, `explore` (lesson only), `graph`, `mc`, `tf`, `bank`. See `decks/limits-intro.json` for an example of each.
+Item types: `info`, `explore` and `extrema` (lesson only), `graph`, `mc`, `tf`, `bank`, `num`, `crit`. See `decks/limits-intro.json` and `decks/maxmin.json` for examples.
+
+- `num`: the student types one number. Needs `answer`, an optional `label` for the box, and an optional `tol` (default 0.01).
+- `crit`: the student builds a list of x-values (used for critical points). Needs `answers`, a list of numbers; an empty list means "there are no critical numbers" and the student has a button for that.
+- `extrema`: the walk-through widget. The student finds the critical numbers, then the app lays out every candidate with its value and the student taps the largest and the smallest. Needs `fn` (`{"expr": ..., "domain": [a, b]}`) and `crit`, the list of critical numbers.
+
+Graph questions also take `ask: "absmax" | "absmin" | "argmax" | "argmin"`. The answer is a number, or `"NONE"` when no such point exists. Graphs can take `arrow: "L"`, `"R"` or `"LR"` on a piece to draw an arrowhead, `vlines` for dashed vertical lines, and `xstep`/`ystep` to set the tick spacing.
+
+**The deck test checks your answer keys against the real functions.** For a `num` question add `verify: {"expr": ..., "domain": [a, b], "ask": "max"|"min"|"argmax"|"argmin"}` and it recomputes the answer. For a `crit` question add `verify: {"expr": ..., "range": [a, b], "dexpr": "the derivative"}` and it scans for critical numbers and checks your derivative formula. `extrema` items are always checked this way.
 
 Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `to`. Write multiplication out (`2*x`, not `2x`). `holes` are open circles and `dots` are filled points.
 

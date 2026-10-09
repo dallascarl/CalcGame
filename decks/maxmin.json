@@ -1,0 +1,1687 @@
+{
+ "id": "maxmin",
+ "course": "Calculus 1",
+ "unit": "Unit 3",
+ "title": "Max and Mins",
+ "subtitle": "Finding the highest and lowest points",
+ "version": 1,
+ "graphs": {
+  "A1": {
+   "window": [
+    -3,
+    3,
+    -1,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "x^2+1",
+     "from": -2,
+     "to": 2
+    }
+   ],
+   "dots": [
+    [
+     -2,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ]
+  },
+  "Ea": {
+   "window": [
+    -3,
+    3,
+    -4,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "x^3",
+     "from": -1.58,
+     "to": 1.58,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "Eb": {
+   "window": [
+    -4,
+    4,
+    -1,
+    2
+   ],
+   "pieces": [
+    {
+     "expr": "1/(x^2+1)",
+     "from": -4,
+     "to": 4,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "Ec": {
+   "window": [
+    -6.5,
+    6.5,
+    -2,
+    2
+   ],
+   "pieces": [
+    {
+     "expr": "cos(x)",
+     "from": -6.3,
+     "to": 6.3,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "Ed": {
+   "window": [
+    -1,
+    5,
+    -4,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "2-x^2",
+     "from": 0,
+     "to": 2
+    },
+    {
+     "expr": "x-3",
+     "from": 2,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     2,
+     -2
+    ]
+   ],
+   "dots": [
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     4,
+     1
+    ]
+   ]
+  },
+  "Ee": {
+   "window": [
+    -1,
+    5,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "(x-2)^2",
+     "from": 1,
+     "to": 4
+    }
+   ],
+   "dots": [
+    [
+     1,
+     1
+    ],
+    [
+     4,
+     4
+    ]
+   ]
+  },
+  "Ef": {
+   "window": [
+    -1,
+    4,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x/(2-x)",
+     "from": 0,
+     "to": 1.98
+    }
+   ],
+   "dots": [
+    [
+     0,
+     0
+    ]
+   ],
+   "vlines": [
+    2
+   ]
+  },
+  "P1": {
+   "window": [
+    -2,
+    4,
+    -2,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "3-(x-1)^2",
+     "from": -1,
+     "to": 2.5
+    }
+   ],
+   "dots": [
+    [
+     -1,
+     -1
+    ],
+    [
+     2.5,
+     0.75
+    ]
+   ]
+  },
+  "P2": {
+   "window": [
+    -1,
+    4,
+    -1,
+    10
+   ],
+   "pieces": [
+    {
+     "expr": "x^2",
+     "from": 0,
+     "to": 3
+    }
+   ],
+   "holes": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     9
+    ]
+   ]
+  },
+  "H1": {
+   "window": [
+    -3,
+    3,
+    -3,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "(x^3-3*x)/2+0.5",
+     "from": -2.2,
+     "to": 2.2,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "Ca": {
+   "window": [
+    -2,
+    2,
+    -1,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "2-x^2",
+     "from": -1.5,
+     "to": 1.5
+    }
+   ]
+  },
+  "Cb": {
+   "window": [
+    -2,
+    2,
+    -1,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "2-abs(x)^(2/3)",
+     "from": -1.7,
+     "to": 1.7
+    }
+   ]
+  },
+  "Cc": {
+   "window": [
+    -2,
+    2,
+    -1,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "abs(x)+0.5",
+     "from": -1.5,
+     "to": 1.5
+    }
+   ]
+  },
+  "Cd": {
+   "window": [
+    -2,
+    2,
+    -2,
+    2
+   ],
+   "pieces": [
+    {
+     "expr": "x^3",
+     "from": -1.2,
+     "to": 1.2
+    }
+   ]
+  },
+  "Ce": {
+   "window": [
+    -2,
+    2,
+    -2,
+    2
+   ],
+   "pieces": [
+    {
+     "expr": "x^(1/3)",
+     "from": -1.7,
+     "to": 1.7
+    }
+   ]
+  },
+  "F1": {
+   "window": [
+    -2,
+    2,
+    -2,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "(x^2-1)^3",
+     "from": -1.5,
+     "to": 1.5
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "title": "Max and Mins",
+  "slides": [
+   {
+    "id": "s01",
+    "type": "info",
+    "title": "Highs and lows",
+    "text": "The **absolute maximum** of a function is its highest point. The **absolute minimum** is its lowest point.\n\nYou will also hear them called the **global maximum** and **global minimum**. Same thing, different name.\n\nHere is the graph of $f(x) = x^2 + 1$ on the interval $[-2, 2]$.",
+    "graph": "A1"
+   },
+   {
+    "id": "s02",
+    "type": "graph",
+    "text": "What is the height of the lowest point on this graph?",
+    "graph": "A1",
+    "ask": "absmin",
+    "answer": 1,
+    "hint": "Find the lowest point on the curve, then read how high it is on the $y$-axis.",
+    "explain": "The lowest point is $(0, 1)$, so the absolute minimum is 1."
+   },
+   {
+    "id": "s03",
+    "type": "graph",
+    "text": "What is the height of the highest point on this graph?",
+    "graph": "A1",
+    "ask": "absmax",
+    "answer": 5,
+    "hint": "The graph is highest at the ends. Read the height of an end point.",
+    "explain": "The graph is highest at both ends, $(-2, 5)$ and $(2, 5)$. The absolute maximum is 5."
+   },
+   {
+    "id": "s04",
+    "type": "info",
+    "title": "Is there always a highest and lowest point?",
+    "text": "No. Some functions have both, some have only one, and some have neither.\n\nFor each of the next graphs, decide: **is there a highest point? Is there a lowest point?** An arrow means the graph keeps going in that direction forever. An open circle means that point is not on the graph."
+   },
+   {
+    "id": "s05",
+    "type": "mc",
+    "text": "$f(x) = x^3$ on all real numbers. Which is true?",
+    "graph": "Ea",
+    "options": [
+     "Both an absolute max and an absolute min",
+     "An absolute max, but no absolute min",
+     "An absolute min, but no absolute max",
+     "Neither one"
+    ],
+    "answer": 3,
+    "hint": "Follow the arrows. Does the graph stop climbing on the right? Does it stop falling on the left?",
+    "explain": "The graph keeps climbing to the right and keeps falling to the left. There is no highest point and no lowest point."
+   },
+   {
+    "id": "s06",
+    "type": "mc",
+    "text": "$f(x) = 1/(x^2 + 1)$ on all real numbers. Which is true?",
+    "graph": "Eb",
+    "options": [
+     "Both an absolute max and an absolute min",
+     "An absolute max, but no absolute min",
+     "An absolute min, but no absolute max",
+     "Neither one"
+    ],
+    "answer": 1,
+    "hint": "Find the top of the hill. Then ask: does the graph ever reach a lowest height out on the sides?",
+    "explain": "The highest point is $(0, 1)$. Out on the sides the graph gets closer and closer to 0 but never gets there, so there is no lowest point."
+   },
+   {
+    "id": "s07",
+    "type": "mc",
+    "text": "This function is in two pieces and lives on $[0, 4]$. Which is true?",
+    "graph": "Ed",
+    "options": [
+     "Both an absolute max and an absolute min",
+     "An absolute max, but no absolute min",
+     "An absolute min, but no absolute max",
+     "Neither one"
+    ],
+    "answer": 1,
+    "hint": "Look at the open circle. Is there a lowest point on the left piece? What about the filled point just above it?",
+    "explain": "The highest point is $(0, 2)$. Near $x = 2$ the left piece heads down toward $-2$, but that point is open, so the graph never reaches it. The filled point at height $-1$ is higher, so something lower is always still available. There is no lowest point."
+   },
+   {
+    "id": "s08",
+    "type": "mc",
+    "text": "$f(x) = (x - 2)^2$ on the interval $[1, 4]$. Which is true?",
+    "graph": "Ee",
+    "options": [
+     "Both an absolute max and an absolute min",
+     "An absolute max, but no absolute min",
+     "An absolute min, but no absolute max",
+     "Neither one"
+    ],
+    "answer": 0,
+    "hint": "Both ends are filled in. Find the lowest point and the highest point.",
+    "explain": "The lowest point is $(2, 0)$ and the highest point is $(4, 4)$. Both exist."
+   },
+   {
+    "id": "s09",
+    "type": "mc",
+    "text": "$f(x) = x / (2 - x)$ on the interval $[0, 2)$. The dashed line is at $x = 2$. Which is true?",
+    "graph": "Ef",
+    "options": [
+     "Both an absolute max and an absolute min",
+     "An absolute max, but no absolute min",
+     "An absolute min, but no absolute max",
+     "Neither one"
+    ],
+    "answer": 2,
+    "hint": "What happens to the graph as it gets close to the dashed line? Where does it start?",
+    "explain": "The graph shoots upward near the dashed line, so there is no highest point. The lowest point is $(0, 0)$ where it starts."
+   },
+   {
+    "id": "s10",
+    "type": "info",
+    "title": "The max is a height",
+    "text": "**The absolute maximum is a $y$-value**, a height. It is not the $x$-value.\n\nFor $f(x) = (x - 2)^2$ on $[1, 4]$ the absolute maximum is **4**. We say it **occurs at** $x = 4$.\n\nSo be careful. If someone asks for the maximum, they want a height. If they ask where it occurs, they want an $x$-value.",
+    "graph": "Ee"
+   },
+   {
+    "id": "s11",
+    "type": "graph",
+    "text": "What is the absolute maximum of this function?",
+    "graph": "Ee",
+    "ask": "absmax",
+    "answer": 4,
+    "hint": "The maximum is a height. Read it off the $y$-axis.",
+    "explain": "The highest point is $(4, 4)$. The absolute maximum is 4."
+   },
+   {
+    "id": "s12",
+    "type": "graph",
+    "text": "At what $x$-value does the absolute minimum occur?",
+    "graph": "Ee",
+    "ask": "argmin",
+    "answer": 2,
+    "hint": "The lowest point is where the curve touches the bottom. Which $x$ is under it?",
+    "explain": "The lowest point is $(2, 0)$. The minimum occurs at $x = 2$."
+   },
+   {
+    "id": "s13",
+    "type": "graph",
+    "text": "What is the absolute minimum of this function?",
+    "graph": "Ee",
+    "ask": "absmin",
+    "answer": 0,
+    "hint": "The minimum is a height, not a location.",
+    "explain": "The lowest point is $(2, 0)$. The absolute minimum is 0."
+   },
+   {
+    "id": "s14",
+    "type": "info",
+    "title": "Your turn",
+    "text": "Here is a new graph. Find the highest and lowest points, if they exist. If a point does not exist, tap **None**.",
+    "graph": "P1"
+   },
+   {
+    "id": "s15",
+    "type": "graph",
+    "text": "What is the absolute maximum?",
+    "graph": "P1",
+    "ask": "absmax",
+    "answer": 3,
+    "hint": "Find the top of the hill and read its height.",
+    "explain": "The top of the hill is $(1, 3)$. The absolute maximum is 3."
+   },
+   {
+    "id": "s16",
+    "type": "graph",
+    "text": "What is the absolute minimum?",
+    "graph": "P1",
+    "ask": "absmin",
+    "answer": -1,
+    "hint": "Compare the two ends of the graph. Which end is lower?",
+    "explain": "The left end $(-1, -1)$ is lower than the right end $(2.5, 0.75)$. The absolute minimum is $-1$."
+   },
+   {
+    "id": "s17",
+    "type": "graph",
+    "text": "This is $f(x) = x^2$ on the **open** interval $(0, 3)$. Both ends are open circles. What is the absolute maximum?",
+    "graph": "P2",
+    "ask": "absmax",
+    "answer": "NONE",
+    "hint": "Is the highest point on the graph an open circle? Can you ever stand on an open circle?",
+    "explain": "The graph heads up toward the open circle at height 9, but never reaches it. There is always a higher point closer to $x = 3$. There is no absolute maximum."
+   },
+   {
+    "id": "s18",
+    "type": "info",
+    "title": "The Extreme Value Theorem",
+    "text": "**Extreme Value Theorem (EVT)**\n\nIf $f$ is **continuous** on a **closed interval** $[a, b]$, then $f$ has an absolute maximum and an absolute minimum on $[a, b]$.\n\nYou need **both** conditions:\n• continuous: no jumps, holes, or breaks\n• closed interval: both endpoints are included\n\nYou will use this idea in questions all through this chapter."
+   },
+   {
+    "id": "s19",
+    "type": "mc",
+    "text": "Which two things must be true for the Extreme Value Theorem to apply?",
+    "options": [
+     "$f$ is continuous and the interval is closed",
+     "$f$ is differentiable and the interval is open",
+     "$f'(x) = 0$ somewhere and $f$ is increasing",
+     "$f$ is continuous and the interval is open"
+    ],
+    "answer": 0,
+    "hint": "The theorem has a word for the function and a word for the interval.",
+    "explain": "$f$ must be continuous, and the interval must be closed."
+   },
+   {
+    "id": "s20",
+    "type": "mc",
+    "text": "Does the EVT guarantee a max and min for $f(x) = (x - 2)^2$ on $[1, 4]$?",
+    "graph": "Ee",
+    "options": [
+     "Yes: continuous on a closed interval",
+     "No: the interval is open",
+     "No: $f$ is not continuous"
+    ],
+    "answer": 0,
+    "hint": "Check each condition: continuous? closed?",
+    "explain": "A parabola is continuous everywhere, and $[1, 4]$ includes both endpoints. The theorem applies, and sure enough the graph has a highest and lowest point."
+   },
+   {
+    "id": "s21",
+    "type": "mc",
+    "text": "Does the EVT guarantee a max and min for $f(x) = x^2$ on the **open** interval $(0, 3)$?",
+    "graph": "P2",
+    "options": [
+     "Yes: continuous on a closed interval",
+     "No: the interval is open",
+     "No: $f$ is not continuous"
+    ],
+    "answer": 1,
+    "hint": "Look at the ends of the interval. Are they included?",
+    "explain": "The interval $(0, 3)$ leaves out the endpoints, so it is not closed. The theorem does not apply, and indeed the graph has no highest or lowest point."
+   },
+   {
+    "id": "s22",
+    "type": "mc",
+    "text": "Does the EVT guarantee a max and min for this function on $[0, 4]$?",
+    "graph": "Ed",
+    "options": [
+     "Yes: continuous on a closed interval",
+     "No: the interval is open",
+     "No: $f$ is not continuous"
+    ],
+    "answer": 2,
+    "hint": "Look for a break in the graph.",
+    "explain": "The graph jumps at $x = 2$, so it is not continuous. The theorem does not apply. (This one has a max but no min.)"
+   },
+   {
+    "id": "s23",
+    "type": "mc",
+    "text": "Does the EVT guarantee a max and min for $f(x) = 1/x$ on $[-1, 1]$?",
+    "options": [
+     "Yes: continuous on a closed interval",
+     "No: the interval is open",
+     "No: $f$ is not continuous"
+    ],
+    "answer": 2,
+    "hint": "What is $f(0)$?",
+    "explain": "$1/x$ is undefined at $x = 0$, which is inside the interval. So $f$ is not continuous on $[-1, 1]$ and the theorem does not apply."
+   },
+   {
+    "id": "s24",
+    "type": "info",
+    "title": "A guarantee, not a test",
+    "text": "When the conditions are met, the EVT **promises** that a max and min exist.\n\nWhen the conditions are **not** met, the theorem promises nothing. The function might still have a max or min, or it might not. You have to look."
+   },
+   {
+    "id": "s25",
+    "type": "tf",
+    "text": "If a function is not continuous on $[a, b]$, it cannot have an absolute maximum there.",
+    "answer": false,
+    "hint": "Does the theorem say what happens when its conditions fail?",
+    "explain": "The theorem only promises extremes when its conditions hold. When they fail, a function can still have a highest point. The piecewise graph earlier had a highest point, $(0, 2)$, even though it jumps."
+   },
+   {
+    "id": "s26",
+    "type": "info",
+    "title": "Local extreme values",
+    "text": "A **local maximum** is a point that is higher than every other point **near it**, like the top of a hill.\n\nA **local minimum** is a point that is lower than every other point near it, like the bottom of a valley.\n\nThis graph has a hilltop and a valley.",
+    "graph": "H1"
+   },
+   {
+    "id": "s27",
+    "type": "mc",
+    "text": "Which $x$-value is a **local maximum** of this graph?",
+    "graph": "H1",
+    "options": [
+     "$x = -1$",
+     "$x = 0$",
+     "$x = 1$",
+     "$x = 2$"
+    ],
+    "answer": 0,
+    "hint": "Look for the top of the hill.",
+    "explain": "The hilltop is at $x = -1$. The valley is at $x = 1$."
+   },
+   {
+    "id": "s28",
+    "type": "mc",
+    "text": "Is the local maximum at $x = -1$ also the absolute maximum?",
+    "graph": "H1",
+    "options": [
+     "Yes, it is the highest point on the graph",
+     "No, the graph keeps climbing to the right"
+    ],
+    "answer": 1,
+    "hint": "Follow the arrow on the right side.",
+    "explain": "The graph climbs forever to the right, so there is no absolute maximum. The hilltop is only a local maximum."
+   },
+   {
+    "id": "s29",
+    "type": "tf",
+    "text": "Every absolute maximum is also a local maximum.",
+    "answer": true,
+    "hint": "The highest point of all is higher than everything. Is it higher than the points near it?",
+    "explain": "The highest point overall is certainly higher than the points near it."
+   },
+   {
+    "id": "s30",
+    "type": "tf",
+    "text": "Every local maximum is also an absolute maximum.",
+    "answer": false,
+    "hint": "Think of the hill on the graph you just saw.",
+    "explain": "A local maximum only has to beat the points near it. The hilltop on the last graph is a local maximum but not an absolute maximum."
+   },
+   {
+    "id": "s31",
+    "type": "info",
+    "title": "Critical points",
+    "text": "A **critical point** is an $x$-value $c$ in the domain of $f$ where either\n\n• $f'(c) = 0$ (the tangent line is flat), or\n• $f'(c)$ **does not exist** (a sharp corner, a cusp, or a vertical tangent).\n\nLook at five graphs. In each one, something is happening at $x = 0$. Decide what."
+   },
+   {
+    "id": "s32",
+    "type": "mc",
+    "text": "What is happening at $x = 0$?",
+    "graph": "Ca",
+    "options": [
+     "A critical point, and a local maximum",
+     "A critical point, and a local minimum",
+     "A critical point, but **not** a local max or min",
+     "Not a critical point"
+    ],
+    "answer": 0,
+    "hint": "Draw the tangent line at the top of the hill. Is it flat?",
+    "explain": "The tangent line is flat there, so $f'(0) = 0$. It is a critical point, and it is the top of a hill."
+   },
+   {
+    "id": "s33",
+    "type": "mc",
+    "text": "What is happening at $x = 0$?",
+    "graph": "Cb",
+    "options": [
+     "A critical point, and a local maximum",
+     "A critical point, and a local minimum",
+     "A critical point, but **not** a local max or min",
+     "Not a critical point"
+    ],
+    "answer": 0,
+    "hint": "This hilltop is a sharp point. Can you draw a single tangent line there?",
+    "explain": "At a sharp point there is no single tangent line, so $f'(0)$ does not exist. That makes it a critical point, and it is the top of a hill."
+   },
+   {
+    "id": "s34",
+    "type": "mc",
+    "text": "What is happening at $x = 0$?",
+    "graph": "Cc",
+    "options": [
+     "A critical point, and a local maximum",
+     "A critical point, and a local minimum",
+     "A critical point, but **not** a local max or min",
+     "Not a critical point"
+    ],
+    "answer": 1,
+    "hint": "Another sharp point. Is it a hill or a valley?",
+    "explain": "A corner means $f'(0)$ does not exist, so it is a critical point. It is the bottom of a valley."
+   },
+   {
+    "id": "s35",
+    "type": "mc",
+    "text": "What is happening at $x = 0$?",
+    "graph": "Cd",
+    "options": [
+     "A critical point, and a local maximum",
+     "A critical point, and a local minimum",
+     "A critical point, but **not** a local max or min",
+     "Not a critical point"
+    ],
+    "answer": 2,
+    "hint": "The tangent line is flat. Does the graph turn around?",
+    "explain": "The tangent line is flat, so $f'(0) = 0$ and it is a critical point. But the graph keeps climbing straight through, so it is not a max or min."
+   },
+   {
+    "id": "s36",
+    "type": "mc",
+    "text": "What is happening at $x = 0$?",
+    "graph": "Ce",
+    "options": [
+     "A critical point, and a local maximum",
+     "A critical point, and a local minimum",
+     "A critical point, but **not** a local max or min",
+     "Not a critical point"
+    ],
+    "answer": 2,
+    "hint": "The tangent line is straight up and down. Does the graph turn around?",
+    "explain": "A vertical tangent means $f'(0)$ does not exist, so it is a critical point. But the graph keeps climbing, so it is not a max or min."
+   },
+   {
+    "id": "s37",
+    "type": "info",
+    "title": "Critical points are only suspects",
+    "text": "Notice what you just saw: a critical point **might** be a local max or min, and it might not.\n\nBut every local max and min has to be at a critical point. That is the next theorem."
+   },
+   {
+    "id": "s38",
+    "type": "info",
+    "title": "Fermat's Theorem",
+    "text": "**Fermat's Theorem**\n\nIf $f$ has a local maximum or minimum at $c$, **and** $f$ is differentiable at $c$, then $f'(c) = 0$.\n\nIn words: at a smooth hilltop or valley, the tangent line is flat.\n\nSo local maxes and mins can only hide at critical points. **Critical points are the places to look.**"
+   },
+   {
+    "id": "s39",
+    "type": "bank",
+    "title": "Say it in your own words",
+    "text": "If $f$ has a local ___ at $c$ and $f$ is ___ at $c$, then $f'(c)$ = ___.",
+    "blanks": [
+     "extremum",
+     "differentiable",
+     "0"
+    ],
+    "distractors": [
+     "continuous",
+     "1",
+     "undefined"
+    ],
+    "hint": "Think about what Fermat's Theorem needs about the function, and what it concludes about the slope.",
+    "explain": "If $f$ has a local extremum at $c$ and is differentiable there, then $f'(c) = 0$."
+   },
+   {
+    "id": "s40",
+    "type": "info",
+    "title": "It does NOT work in reverse",
+    "text": "Fermat's Theorem goes one way:\n\nlocal max or min and differentiable  $\\Rightarrow$  $f'(c) = 0$.\n\nIt does **not** say the other direction. Look at $f(x) = x^3$. Here $f'(0) = 0$, but $x = 0$ is **not** a max or min.\n\n**$f'(c) = 0$ does NOT mean there is a max or min at $c$.**",
+    "graph": "Cd"
+   },
+   {
+    "id": "s41",
+    "type": "tf",
+    "text": "If $f'(c) = 0$, then $f$ must have a local maximum or local minimum at $c$.",
+    "answer": false,
+    "hint": "Remember $f(x) = x^3$ at $x = 0$.",
+    "explain": "$f(x) = x^3$ has $f'(0) = 0$ but keeps climbing straight through. A flat tangent does not guarantee a max or min."
+   },
+   {
+    "id": "s42",
+    "type": "mc",
+    "text": "$f(x) = (x^2 - 1)^3$ has $f'(x) = 6x(x^2 - 1)^2$, which is 0 at $x = -1, 0, 1$. Which of these are local extrema?",
+    "graph": "F1",
+    "options": [
+     "All three",
+     "Only $x = 0$",
+     "Only $x = -1$ and $x = 1$",
+     "None of them"
+    ],
+    "answer": 1,
+    "hint": "Look at the graph near each of the three $x$-values. Does it turn around?",
+    "explain": "At $x = 0$ the graph bottoms out. At $x = \\pm 1$ the tangent is flat but the graph passes straight through, so those are critical points that are not extrema."
+   },
+   {
+    "id": "s43",
+    "type": "info",
+    "title": "Finding critical points",
+    "text": "To find the critical points of $f$:\n\n1. Find $f'(x)$.\n2. Solve $f'(x) = 0$.\n3. Find where $f'(x)$ **does not exist** but $f(x)$ does.\n\nEvery $x$ you find is a critical point. Enter the $x$-values with the keypad, tap **Add to list** after each one, then check. Tap a number in your list to remove it."
+   },
+   {
+    "id": "s44",
+    "type": "crit",
+    "text": "Find the critical points of $f(x) = x^3 - 3x^2 + 1$.\n\nIts derivative is $f'(x) = 3x^2 - 6x = 3x(x - 2)$.",
+    "answers": [
+     0,
+     2
+    ],
+    "hint": "Set $3x(x - 2) = 0$ and set each factor equal to 0.",
+    "explain": "$3x(x - 2) = 0$ at $x = 0$ and $x = 2$. The derivative exists everywhere, so those are all of them.",
+    "verify": {
+     "expr": "x^3-3*x^2+1",
+     "dexpr": "3*x^2-6*x",
+     "range": [
+      -3,
+      4
+     ]
+    }
+   },
+   {
+    "id": "s45",
+    "type": "crit",
+    "text": "Find the critical points of $f(x) = |x - 2|$.\n\nIts derivative is $-1$ when $x < 2$ and $1$ when $x > 2$.",
+    "answers": [
+     2
+    ],
+    "hint": "The derivative is never 0. Where does the graph have a sharp corner?",
+    "explain": "The derivative is never 0, but at the corner $x = 2$ the derivative does not exist. Since $f(2)$ exists, $x = 2$ is a critical point.",
+    "verify": {
+     "expr": "abs(x-2)",
+     "range": [
+      -3,
+      6
+     ]
+    }
+   },
+   {
+    "id": "s46",
+    "type": "crit",
+    "text": "Find the critical points of $f(x) = x^(3/5)(4 - x)$.\n\nIts derivative is $f'(x) = (12 - 8x) / (5x^(2/5))$.",
+    "answers": [
+     0,
+     1.5
+    ],
+    "hint": "Where is the top equal to 0? Where is the bottom equal to 0 (so $f'$ does not exist)?",
+    "explain": "The top is 0 when $12 - 8x = 0$, so $x = 1.5$. The bottom is 0 at $x = 0$, so $f'(0)$ does not exist, but $f(0)$ does. Both are critical points.",
+    "verify": {
+     "expr": "x^(3/5)*(4-x)",
+     "range": [
+      -3,
+      6
+     ]
+    }
+   },
+   {
+    "id": "s47",
+    "type": "crit",
+    "text": "Try it: find the critical points of $f(x) = x^3 + 6x^2 - 15x$.\n\nIts derivative is $f'(x) = 3x^2 + 12x - 15$.",
+    "answers": [
+     -5,
+     1
+    ],
+    "hint": "Factor out the 3 first: $3(x^2 + 4x - 5)$. Then factor again.",
+    "explain": "$3x^2 + 12x - 15 = 3(x + 5)(x - 1)$, which is 0 at $x = -5$ and $x = 1$.",
+    "verify": {
+     "expr": "x^3+6*x^2-15*x",
+     "dexpr": "3*x^2+12*x-15",
+     "range": [
+      -8,
+      4
+     ]
+    }
+   },
+   {
+    "id": "s48",
+    "type": "info",
+    "title": "Finding the absolute max and min",
+    "text": "Now we put it all together. Suppose $f$ is continuous on $[a, b]$. The EVT says an absolute max and min exist. Where are they?\n\nThe highest and lowest points are either at an **endpoint**, or at a local max or min inside. And local extremes can only be at critical points. So:\n\n**1.** List all the critical points in the interval.\n**2.** Add the endpoints.\n**3.** Plug every one into $f$. The **largest** value is the absolute max. The **smallest** value is the absolute min.\n\nThat's it. Try it."
+   },
+   {
+    "id": "s49",
+    "type": "extrema",
+    "title": "$f(x) = -x^2 + 3x - 2$ on $[1, 3]$",
+    "fn": {
+     "expr": "-x^2+3*x-2",
+     "domain": [
+      1,
+      3
+     ]
+    },
+    "deriv": "$f'(x) = -2x + 3$",
+    "crit": [
+     1.5
+    ],
+    "hint": "Set $-2x + 3 = 0$ and solve for $x$.",
+    "afterCrit": "Yes, only one critical point. Now add the two endpoints, $x = 1$ and $x = 3$."
+   },
+   {
+    "id": "s50",
+    "type": "extrema",
+    "title": "$f(x) = 3x^4 - 4x^3 - 12x^2 + 1$ on $[-2, 3]$",
+    "fn": {
+     "expr": "3*x^4-4*x^3-12*x^2+1",
+     "domain": [
+      -2,
+      3
+     ]
+    },
+    "deriv": "$f'(x) = 12x^3 - 12x^2 - 24x = 12x(x - 2)(x + 1)$",
+    "crit": [
+     -1,
+     0,
+     2
+    ],
+    "hint": "Set each factor of $12x(x - 2)(x + 1)$ equal to 0. All three answers are inside $[-2, 3]$.",
+    "afterCrit": "All three are inside the interval. Now add the endpoints."
+   },
+   {
+    "id": "s51",
+    "type": "extrema",
+    "title": "$f(x) = x^(3/5)(4 - x)$ on $[-1, 5]$",
+    "fn": {
+     "expr": "x^(3/5)*(4-x)",
+     "domain": [
+      -1,
+      5
+     ]
+    },
+    "deriv": "$f'(x) = (12 - 8x) / (5x^(2/5))$",
+    "crit": [
+     0,
+     1.5
+    ],
+    "hint": "One critical point comes from the top being 0, and one from the bottom being 0.",
+    "afterCrit": "Both are inside the interval. Notice $x = 0$ is a critical point even though it will turn out not to be a max or min. It is only a suspect."
+   },
+   {
+    "id": "s52",
+    "type": "extrema",
+    "title": "Try it: $f(x) = x^3 - 12x - 5$ on $[-4, 6]$",
+    "fn": {
+     "expr": "x^3-12*x-5",
+     "domain": [
+      -4,
+      6
+     ]
+    },
+    "deriv": "$f'(x) = 3x^2 - 12$",
+    "crit": [
+     -2,
+     2
+    ],
+    "hint": "Set $3x^2 - 12 = 0$. There are two solutions, and both are inside $[-4, 6]$.",
+    "afterCrit": "Both are inside the interval. Now add the endpoints."
+   },
+   {
+    "id": "s53",
+    "type": "info",
+    "title": "You have what you need",
+    "text": "**Remember:**\n\n• The absolute max and min are **heights** ($y$-values).\n• The EVT: continuous on a closed interval means a max and min exist.\n• Fermat: local max or min and differentiable means $f'(c) = 0$.\n• $f'(c) = 0$ does **not** mean max or min.\n• Critical points: $f' = 0$ or $f'$ does not exist. They are where to look.\n• Absolute extremes on $[a, b]$: test the critical points and the endpoints.\n\nNow try the drills."
+   }
+  ]
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory drill",
+   "questions": [
+    {
+     "id": "t01",
+     "type": "tf",
+     "text": "Global maximum and absolute maximum mean the same thing.",
+     "answer": true,
+     "explain": "They are two names for the highest point on the graph."
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "text": "The absolute maximum of a function is an $x$-value.",
+     "answer": false,
+     "explain": "The absolute maximum is a height, a $y$-value. The $x$-value is where it **occurs**."
+    },
+    {
+     "id": "t03",
+     "type": "mc",
+     "text": "Which pair of conditions does the Extreme Value Theorem require?",
+     "options": [
+      "$f$ is continuous on a closed interval",
+      "$f$ is differentiable on an open interval",
+      "$f'(x) = 0$ at some point of the interval",
+      "$f$ is increasing on the interval"
+     ],
+     "answer": 0,
+     "explain": "The EVT needs a continuous function on a closed interval $[a, b]$."
+    },
+    {
+     "id": "t04",
+     "type": "mc",
+     "text": "Which function is guaranteed by the EVT to have an absolute maximum and an absolute minimum?",
+     "options": [
+      "$f(x) = x^2$ on $(0, 3)$",
+      "$f(x) = 1/x$ on $[-1, 1]$",
+      "$f(x) = x^3$ on $[-2, 2]$",
+      "$f(x) = tan x$ on $[0, pi]$"
+     ],
+     "answer": 2,
+     "explain": "$x^3$ is continuous on the closed interval $[-2, 2]$. The first has an open interval, $1/x$ is undefined at 0, and $tan x$ is undefined at $pi/2$."
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "text": "The EVT applies to $f(x) = x^2$ on the open interval $(0, 3)$.",
+     "answer": false,
+     "explain": "The interval is open, not closed, so the theorem does not apply."
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "text": "If the conditions of the EVT are not met, the function cannot have an absolute maximum.",
+     "answer": false,
+     "explain": "The theorem only promises something when its conditions hold. Without them, a function may or may not have a maximum."
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "text": "A function that is continuous on $[a, b]$ must have both an absolute maximum and an absolute minimum on $[a, b]$.",
+     "answer": true,
+     "explain": "That is exactly the Extreme Value Theorem."
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "text": "A local maximum is always the highest point on the whole graph.",
+     "answer": false,
+     "explain": "A local maximum only has to be higher than the points near it."
+    },
+    {
+     "id": "t09",
+     "type": "tf",
+     "text": "The absolute maximum of a continuous function on $[a, b]$ can occur at an endpoint.",
+     "answer": true,
+     "explain": "The highest point can be at either end, as with $f(x) = x^2 + 1$ on $[-2, 2]$."
+    },
+    {
+     "id": "t10",
+     "type": "mc",
+     "text": "A **critical point** of $f$ is an $x$-value where...",
+     "options": [
+      "$f'(x) = 0$ or $f'(x)$ does not exist",
+      "$f(x) = 0$",
+      "$f'(x) = 0$ only",
+      "$f''(x) = 0$"
+     ],
+     "answer": 0,
+     "explain": "Critical points are where the derivative is 0 or does not exist."
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "text": "A critical point can occur where $f'(x)$ does not exist.",
+     "answer": true,
+     "explain": "Sharp corners, cusps, and vertical tangents are critical points as long as $f$ is defined there."
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "text": "If $f'(c) = 0$, then $f$ has a local maximum or local minimum at $c$.",
+     "answer": false,
+     "explain": "Fermat's Theorem does not work in reverse. $f(x) = x^3$ has $f'(0) = 0$ and no max or min."
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "text": "If $f$ has a local minimum at $c$ and $f$ is differentiable at $c$, then $f'(c) = 0$.",
+     "answer": true,
+     "explain": "That is Fermat's Theorem."
+    },
+    {
+     "id": "t14",
+     "type": "mc",
+     "text": "$f(x) = x^3$ has $f'(0) = 0$. What does this tell you?",
+     "options": [
+      "$x = 0$ is a critical point, but you cannot tell yet if it is a max or min",
+      "$x = 0$ is a local maximum",
+      "$x = 0$ is a local minimum",
+      "$x = 0$ is not a critical point"
+     ],
+     "answer": 0,
+     "explain": "A flat tangent makes it a critical point, but that is only a suspect. For $x^3$ the graph keeps climbing, so it is neither."
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "text": "$f(x) = |x|$ has a local minimum at $x = 0$, so Fermat's Theorem says $f'(0) = 0$.",
+     "answer": false,
+     "explain": "$|x|$ is not differentiable at 0, so Fermat's Theorem does not apply. The point $x = 0$ is critical because $f'(0)$ does not exist."
+    },
+    {
+     "id": "t16",
+     "type": "mc",
+     "text": "Critical points are the places where we should look for...",
+     "options": [
+      "local maxima and minima",
+      "$x$-intercepts",
+      "vertical asymptotes",
+      "jumps in the graph"
+     ],
+     "answer": 0,
+     "explain": "Local maxes and mins can only hide at critical points."
+    },
+    {
+     "id": "t17",
+     "type": "tf",
+     "text": "To find the absolute maximum on $[a, b]$, you only need to check the critical points. The endpoints do not matter.",
+     "answer": false,
+     "explain": "The highest point can be at an endpoint, so you must test the endpoints too."
+    },
+    {
+     "id": "t18",
+     "type": "bank",
+     "text": "To find the absolute extremes of a continuous function on $[a, b]$: list the ___ points, add the ___, and plug them all into $f$. The ___ value is the max and the ___ value is the min.",
+     "blanks": [
+      "critical",
+      "endpoints",
+      "largest",
+      "smallest"
+     ],
+     "distractors": [
+      "local",
+      "zeros"
+     ],
+     "explain": "Test every critical point and both endpoints. The largest value is the max and the smallest value is the min."
+    },
+    {
+     "id": "t19",
+     "type": "mc",
+     "graph": "Ec",
+     "text": "$f(x) = cos x$ on all real numbers. Which is true?",
+     "options": [
+      "Both an absolute max and an absolute min",
+      "An absolute max, but no absolute min",
+      "An absolute min, but no absolute max",
+      "Neither one"
+     ],
+     "answer": 0,
+     "explain": "The graph rises to 1 and falls to $-1$ over and over. The absolute maximum is 1 and the absolute minimum is $-1$."
+    },
+    {
+     "id": "t20",
+     "type": "mc",
+     "graph": "Ea",
+     "text": "$f(x) = x^3$ on all real numbers. Which is true?",
+     "options": [
+      "Both an absolute max and an absolute min",
+      "An absolute max, but no absolute min",
+      "An absolute min, but no absolute max",
+      "Neither one"
+     ],
+     "answer": 3,
+     "explain": "The graph climbs forever to the right and falls forever to the left."
+    },
+    {
+     "id": "t21",
+     "type": "mc",
+     "graph": "Eb",
+     "text": "$f(x) = 1/(x^2 + 1)$ on all real numbers. Which is true?",
+     "options": [
+      "Both an absolute max and an absolute min",
+      "An absolute max, but no absolute min",
+      "An absolute min, but no absolute max",
+      "Neither one"
+     ],
+     "answer": 1,
+     "explain": "The highest point is $(0, 1)$. The graph only gets closer to 0 on the sides, so there is no lowest point."
+    }
+   ]
+  },
+  "calc": {
+   "title": "Calculation drill",
+   "questions": [
+    {
+     "id": "c01",
+     "type": "graph",
+     "graph": "Eb",
+     "ask": "absmax",
+     "answer": 1,
+     "explain": "The top of the hill is $(0, 1)$. The maximum is a height, so the answer is 1."
+    },
+    {
+     "id": "c02",
+     "type": "graph",
+     "graph": "Ec",
+     "ask": "absmax",
+     "answer": 1,
+     "explain": "The graph peaks at height 1 many times. The absolute maximum is 1."
+    },
+    {
+     "id": "c03",
+     "type": "graph",
+     "graph": "Ec",
+     "ask": "absmin",
+     "answer": -1,
+     "explain": "The graph bottoms out at height $-1$ many times. The absolute minimum is $-1$."
+    },
+    {
+     "id": "c04",
+     "type": "graph",
+     "graph": "Ee",
+     "ask": "argmax",
+     "answer": 4,
+     "explain": "The highest point is $(4, 4)$. It occurs at $x = 4$."
+    },
+    {
+     "id": "c05",
+     "type": "graph",
+     "graph": "Ee",
+     "ask": "argmin",
+     "answer": 2,
+     "explain": "The lowest point is $(2, 0)$. It occurs at $x = 2$."
+    },
+    {
+     "id": "c06",
+     "type": "graph",
+     "graph": "P1",
+     "ask": "absmax",
+     "answer": 3,
+     "explain": "The top of the hill is $(1, 3)$. The absolute maximum is 3."
+    },
+    {
+     "id": "c07",
+     "type": "graph",
+     "graph": "P1",
+     "ask": "argmax",
+     "answer": 1,
+     "explain": "The top of the hill is $(1, 3)$. It occurs at $x = 1$."
+    },
+    {
+     "id": "c08",
+     "type": "graph",
+     "graph": "P1",
+     "ask": "absmin",
+     "answer": -1,
+     "explain": "The left end $(-1, -1)$ is lower than the right end. The absolute minimum is $-1$."
+    },
+    {
+     "id": "c09",
+     "type": "graph",
+     "graph": "P1",
+     "ask": "argmin",
+     "answer": -1,
+     "explain": "The lowest point is the left end $(-1, -1)$. It occurs at $x = -1$."
+    },
+    {
+     "id": "c10",
+     "type": "graph",
+     "graph": "P2",
+     "ask": "absmin",
+     "answer": "NONE",
+     "explain": "The graph heads toward the open circle at $(0, 0)$ but never reaches it. There is no absolute minimum."
+    },
+    {
+     "id": "c11",
+     "type": "graph",
+     "graph": "P2",
+     "ask": "absmax",
+     "answer": "NONE",
+     "explain": "The graph heads toward the open circle at height 9 but never reaches it. There is no absolute maximum."
+    },
+    {
+     "id": "c12",
+     "type": "graph",
+     "graph": "Ed",
+     "ask": "absmax",
+     "answer": 2,
+     "explain": "The highest point is the filled point $(0, 2)$. The absolute maximum is 2."
+    },
+    {
+     "id": "c13",
+     "type": "graph",
+     "graph": "Ed",
+     "ask": "argmax",
+     "answer": 0,
+     "explain": "The highest point is $(0, 2)$. It occurs at $x = 0$."
+    },
+    {
+     "id": "c14",
+     "type": "graph",
+     "graph": "Ed",
+     "ask": "absmin",
+     "answer": "NONE",
+     "explain": "The left piece heads down toward the open circle at height $-2$ but never reaches it, and the filled point is higher. There is no absolute minimum."
+    },
+    {
+     "id": "c15",
+     "type": "graph",
+     "graph": "Ef",
+     "ask": "absmin",
+     "answer": 0,
+     "explain": "The lowest point is $(0, 0)$ where the graph starts."
+    },
+    {
+     "id": "c16",
+     "type": "graph",
+     "graph": "Ef",
+     "ask": "absmax",
+     "answer": "NONE",
+     "explain": "The graph shoots upward near the dashed line, so there is no highest point."
+    },
+    {
+     "id": "c17",
+     "type": "graph",
+     "graph": "Ea",
+     "ask": "absmax",
+     "answer": "NONE",
+     "explain": "The graph climbs forever to the right, so there is no absolute maximum."
+    },
+    {
+     "id": "c18",
+     "type": "graph",
+     "graph": "H1",
+     "ask": "absmax",
+     "answer": "NONE",
+     "explain": "The graph keeps climbing to the right. The hilltop is only a local maximum, so there is no absolute maximum."
+    },
+    {
+     "id": "c19",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x^2 - 6x$.\n\nIts derivative is $f'(x) = 2x - 6$.",
+     "answers": [
+      3
+     ],
+     "explain": "$2x - 6 = 0$ gives $x = 3$.",
+     "verify": {
+      "expr": "x^2-6*x",
+      "dexpr": "2*x-6",
+      "range": [
+       -5,
+       8
+      ]
+     }
+    },
+    {
+     "id": "c20",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x^3 - 12x$.\n\nIts derivative is $f'(x) = 3x^2 - 12$.",
+     "answers": [
+      -2,
+      2
+     ],
+     "explain": "$3x^2 - 12 = 0$ gives $x^2 = 4$, so $x = -2$ and $x = 2$.",
+     "verify": {
+      "expr": "x^3-12*x",
+      "dexpr": "3*x^2-12",
+      "range": [
+       -5,
+       5
+      ]
+     }
+    },
+    {
+     "id": "c21",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x^4 - 2x^2$.\n\nIts derivative is $f'(x) = 4x^3 - 4x = 4x(x - 1)(x + 1)$.",
+     "answers": [
+      -1,
+      0,
+      1
+     ],
+     "explain": "$4x(x - 1)(x + 1) = 0$ at $x = -1, 0, 1$.",
+     "verify": {
+      "expr": "x^4-2*x^2",
+      "dexpr": "4*x^3-4*x",
+      "range": [
+       -3,
+       3
+      ]
+     }
+    },
+    {
+     "id": "c22",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = |x + 1|$.\n\nIts derivative is $-1$ when $x < -1$ and $1$ when $x > -1$.",
+     "answers": [
+      -1
+     ],
+     "explain": "The derivative is never 0, but it does not exist at the corner $x = -1$.",
+     "verify": {
+      "expr": "abs(x+1)",
+      "range": [
+       -4,
+       3
+      ]
+     }
+    },
+    {
+     "id": "c23",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x^3 + 3x$.\n\nIts derivative is $f'(x) = 3x^2 + 3$.",
+     "answers": [],
+     "explain": "$3x^2 + 3 = 0$ has no solutions, and the derivative exists everywhere. There are no critical points.",
+     "verify": {
+      "expr": "x^3+3*x",
+      "dexpr": "3*x^2+3",
+      "range": [
+       -4,
+       4
+      ]
+     }
+    },
+    {
+     "id": "c24",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x^(2/3)$.\n\nIts derivative is $f'(x) = 2 / (3x^(1/3))$.",
+     "answers": [
+      0
+     ],
+     "explain": "The derivative is never 0, but it does not exist at $x = 0$ while $f(0)$ does. So $x = 0$ is a critical point.",
+     "verify": {
+      "expr": "x^(2/3)",
+      "range": [
+       -3,
+       3
+      ]
+     }
+    },
+    {
+     "id": "c25",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x^3 - 6x^2 + 9x$.\n\nIts derivative is $f'(x) = 3x^2 - 12x + 9$.",
+     "answers": [
+      1,
+      3
+     ],
+     "explain": "$3x^2 - 12x + 9 = 3(x - 1)(x - 3)$, which is 0 at $x = 1$ and $x = 3$.",
+     "verify": {
+      "expr": "x^3-6*x^2+9*x",
+      "dexpr": "3*x^2-12*x+9",
+      "range": [
+       -2,
+       6
+      ]
+     }
+    },
+    {
+     "id": "c26",
+     "type": "crit",
+     "text": "Find the critical points of $f(x) = x / (1 + x^2)$.\n\nIts derivative is $f'(x) = (1 - x^2) / (1 + x^2)^2$.",
+     "answers": [
+      -1,
+      1
+     ],
+     "explain": "The bottom is never 0. The top $1 - x^2$ is 0 at $x = -1$ and $x = 1$.",
+     "verify": {
+      "expr": "x/(1+x^2)",
+      "dexpr": "(1-x^2)/(1+x^2)^2",
+      "range": [
+       -5,
+       5
+      ]
+     }
+    },
+    {
+     "id": "c27",
+     "type": "num",
+     "verify": {
+      "expr": "3*x^2-9*x",
+      "domain": [
+       -1,
+       2
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = 3x^2 - 9x$ on $[-1, 2]$.",
+     "label": "Absolute max =",
+     "answer": 12,
+     "explain": "$f'(x) = 6x - 9 = 0$ at $x = 1.5$. The critical point: $x = 1.5$. Test the endpoints too: $f(-1) = 12$; $f(1.5) = -6.75$; $f(2) = -6$. The largest is 12."
+    },
+    {
+     "id": "c28",
+     "type": "num",
+     "verify": {
+      "expr": "3*x^2-9*x",
+      "domain": [
+       -1,
+       2
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = 3x^2 - 9x$ on $[-1, 2]$.",
+     "label": "Absolute min =",
+     "answer": -6.75,
+     "explain": "$f'(x) = 6x - 9 = 0$ at $x = 1.5$. The critical point: $x = 1.5$. Test the endpoints too: $f(-1) = 12$; $f(1.5) = -6.75$; $f(2) = -6$. The smallest is -6.75."
+    },
+    {
+     "id": "c29",
+     "type": "num",
+     "verify": {
+      "expr": "x^2-4*x+3",
+      "domain": [
+       1,
+       4
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = x^2 - 4x + 3$ on $[1, 4]$.",
+     "label": "Absolute max =",
+     "answer": 3,
+     "explain": "$f'(x) = 2x - 4 = 0$ at $x = 2$. The critical point: $x = 2$. Test the endpoints too: $f(1) = 0$; $f(2) = -1$; $f(4) = 3$. The largest is 3."
+    },
+    {
+     "id": "c30",
+     "type": "num",
+     "verify": {
+      "expr": "x^2-4*x+3",
+      "domain": [
+       1,
+       4
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = x^2 - 4x + 3$ on $[1, 4]$.",
+     "label": "Absolute min =",
+     "answer": -1,
+     "explain": "$f'(x) = 2x - 4 = 0$ at $x = 2$. The critical point: $x = 2$. Test the endpoints too: $f(1) = 0$; $f(2) = -1$; $f(4) = 3$. The smallest is -1."
+    },
+    {
+     "id": "c31",
+     "type": "num",
+     "verify": {
+      "expr": "-x^2+3*x-2",
+      "domain": [
+       1,
+       3
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = -x^2 + 3x - 2$ on $[1, 3]$.",
+     "label": "Absolute max =",
+     "answer": 0.25,
+     "explain": "$f'(x) = -2x + 3 = 0$ at $x = 1.5$. The critical point: $x = 1.5$. Test the endpoints too: $f(1) = 0$; $f(1.5) = 0.25$; $f(3) = -2$. The largest is 0.25."
+    },
+    {
+     "id": "c32",
+     "type": "num",
+     "verify": {
+      "expr": "-x^2+3*x-2",
+      "domain": [
+       1,
+       3
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = -x^2 + 3x - 2$ on $[1, 3]$.",
+     "label": "Absolute min =",
+     "answer": -2,
+     "explain": "$f'(x) = -2x + 3 = 0$ at $x = 1.5$. The critical point: $x = 1.5$. Test the endpoints too: $f(1) = 0$; $f(1.5) = 0.25$; $f(3) = -2$. The smallest is -2."
+    },
+    {
+     "id": "c33",
+     "type": "num",
+     "verify": {
+      "expr": "3*x^4-4*x^3-12*x^2+1",
+      "domain": [
+       -2,
+       3
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = 3x^4 - 4x^3 - 12x^2 + 1$ on $[-2, 3]$.",
+     "label": "Absolute max =",
+     "answer": 33,
+     "explain": "$f'(x) = 12x(x - 2)(x + 1)$, which is 0 at $x = -1, 0, 2$. The critical points: $x = -1$ and $x = 0$ and $x = 2$. Test the endpoints too: $f(-2) = 33$; $f(-1) = -4$; $f(0) = 1$; $f(2) = -31$; $f(3) = 28$. The largest is 33."
+    },
+    {
+     "id": "c34",
+     "type": "num",
+     "verify": {
+      "expr": "3*x^4-4*x^3-12*x^2+1",
+      "domain": [
+       -2,
+       3
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = 3x^4 - 4x^3 - 12x^2 + 1$ on $[-2, 3]$.",
+     "label": "Absolute min =",
+     "answer": -31,
+     "explain": "$f'(x) = 12x(x - 2)(x + 1)$, which is 0 at $x = -1, 0, 2$. The critical points: $x = -1$ and $x = 0$ and $x = 2$. Test the endpoints too: $f(-2) = 33$; $f(-1) = -4$; $f(0) = 1$; $f(2) = -31$; $f(3) = 28$. The smallest is -31."
+    },
+    {
+     "id": "c35",
+     "type": "num",
+     "verify": {
+      "expr": "x^3-12*x-5",
+      "domain": [
+       -4,
+       6
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = x^3 - 12x - 5$ on $[-4, 6]$.",
+     "label": "Absolute max =",
+     "answer": 139,
+     "explain": "$f'(x) = 3x^2 - 12 = 0$ at $x = -2, 2$. The critical points: $x = -2$ and $x = 2$. Test the endpoints too: $f(-4) = -21$; $f(-2) = 11$; $f(2) = -21$; $f(6) = 139$. The largest is 139."
+    },
+    {
+     "id": "c36",
+     "type": "num",
+     "verify": {
+      "expr": "x^3-12*x-5",
+      "domain": [
+       -4,
+       6
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = x^3 - 12x - 5$ on $[-4, 6]$.",
+     "label": "Absolute min =",
+     "answer": -21,
+     "explain": "$f'(x) = 3x^2 - 12 = 0$ at $x = -2, 2$. The critical points: $x = -2$ and $x = 2$. Test the endpoints too: $f(-4) = -21$; $f(-2) = 11$; $f(2) = -21$; $f(6) = 139$. The smallest is -21."
+    },
+    {
+     "id": "c37",
+     "type": "num",
+     "verify": {
+      "expr": "x^3-3*x",
+      "domain": [
+       0,
+       2
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = x^3 - 3x$ on $[0, 2]$.",
+     "label": "Absolute max =",
+     "answer": 2,
+     "explain": "$f'(x) = 3x^2 - 3 = 0$ at $x = 1$ (and $x = -1$, which is outside the interval). The critical point: $x = 1$. Test the endpoints too: $f(0) = 0$; $f(1) = -2$; $f(2) = 2$. The largest is 2."
+    },
+    {
+     "id": "c38",
+     "type": "num",
+     "verify": {
+      "expr": "x^3-3*x",
+      "domain": [
+       0,
+       2
+      ],
+      "ask": "argmin"
+     },
+     "text": "At what $x$-value does the absolute **minimum** of $f(x) = x^3 - 3x$ on $[0, 2]$ occur?",
+     "label": "$x$ =",
+     "answer": 1,
+     "explain": "$f'(x) = 3x^2 - 3 = 0$ at $x = 1$ (and $x = -1$, which is outside the interval). The critical point: $x = 1$. Test the endpoints too: $f(0) = 0$; $f(1) = -2$; $f(2) = 2$. The smallest value is at $x = 1$."
+    },
+    {
+     "id": "c39",
+     "type": "num",
+     "verify": {
+      "expr": "x^4-8*x^2",
+      "domain": [
+       -1,
+       3
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = x^4 - 8x^2$ on $[-1, 3]$.",
+     "label": "Absolute min =",
+     "answer": -16,
+     "explain": "$f'(x) = 4x^3 - 16x = 4x(x - 2)(x + 2)$, which is 0 at $x = 0, 2$ inside the interval. The critical points: $x = 0$ and $x = 2$. Test the endpoints too: $f(-1) = -7$; $f(0) = 0$; $f(2) = -16$; $f(3) = 9$. The smallest is -16."
+    },
+    {
+     "id": "c40",
+     "type": "num",
+     "verify": {
+      "expr": "x^4-8*x^2",
+      "domain": [
+       -1,
+       3
+      ],
+      "ask": "argmax"
+     },
+     "text": "At what $x$-value does the absolute **maximum** of $f(x) = x^4 - 8x^2$ on $[-1, 3]$ occur?",
+     "label": "$x$ =",
+     "answer": 3,
+     "explain": "$f'(x) = 4x^3 - 16x = 4x(x - 2)(x + 2)$, which is 0 at $x = 0, 2$ inside the interval. The critical points: $x = 0$ and $x = 2$. Test the endpoints too: $f(-1) = -7$; $f(0) = 0$; $f(2) = -16$; $f(3) = 9$. The largest value is at $x = 3$."
+    }
+   ]
+  }
+ }
+}

@@ -47,7 +47,7 @@
       "requires": [
         "start"
       ],
-      "blurb": "Critical points, and the first and second derivative tests."
+      "blurb": "Highest and lowest points: absolute and local extremes, critical points, and how to find them."
     },
     {
       "id": "lhop",

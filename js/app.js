@@ -174,10 +174,26 @@ const ds=id=>S.decks[id]||(S.decks[id]={lessonAt:0,lessonDone:false,q:{},sets:{}
 const isMastered=q=>((ds(DECK.id).q[q.id]||{}).right||0)>=RULES.masterAt;
 const drillKinds=d=>Object.keys(d.drills||{});
 
-/* A stop is cleared when its lesson is finished and one set of each drill is done. */
+/* A deck has "lesson": {slides} or "lessons": [{id, title, slides}, ...] (several lessons at one stop). */
+const lessonsOf=d=>!d||d.error?[]:d.lessons||(d.lesson?[Object.assign({id:'main',title:'Lesson'},d.lesson)]:[]);
+const lessonById=(d,id)=>lessonsOf(d).find(l=>l.id===id);
+function lp(d,id){
+  const p=ds(d.id),L=lessonsOf(d);
+  if(!p.ls){ p.ls={}; /* carry over progress saved before a deck had several lessons */
+    if(p.lessonDone)L.forEach(l=>{p.ls[l.id]={at:0,done:true};});
+    else if(p.lessonAt&&L[0]&&p.lessonAt<L[0].slides.length)p.ls[L[0].id]={at:p.lessonAt,done:false}; }
+  return p.ls[id]||(p.ls[id]={at:0,done:false});
+}
+/* with several lessons the buttons say "Lesson 1", "Lesson 2"; the lesson's title shows underneath */
+const lname=(d,i)=>lessonsOf(d).length>1?'Lesson '+(i+1):'Lesson';
+const lessonsDone=d=>lessonsOf(d).every(l=>lp(d,l.id).done);
+/* A lesson after the first opens once the one before it is done. */
+const lessonOpen=(d,i)=>S.preview||i===0||lp(d,lessonsOf(d)[i-1].id).done;
+
+/* A stop is cleared when its lessons are finished and one set of each drill is done. */
 function deckCleared(d){
   if(!d||d.error)return false; const p=ds(d.id);
-  return (!d.lesson||p.lessonDone)&&drillKinds(d).every(k=>(p.sets[k]||0)>0);
+  return lessonsDone(d)&&drillKinds(d).every(k=>(p.sets[k]||0)>0);
 }
 function nodeCleared(n){return n.kind==='start'||(!!n.deck&&deckCleared(DECKS[n.deck]));}
 function nodeOpen(n){return S.preview||(n.requires||[]).every(id=>{const r=nodeById(id);return r&&nodeCleared(r);});}
@@ -220,6 +236,7 @@ function enterKey(btn){
 }
 function go(name){
   if(name.indexOf('drill:')===0)return drill(name.slice(6));
+  if(name.indexOf('lesson:')===0)return lesson(name.slice(7));
   ({home,lesson,game,test}[name]||home)();
 }
 
@@ -653,9 +670,11 @@ function home(){
     if(!open)return h+'<p class="note">Locked. Clear '+(n.requires||[]).map(nodeById).filter(r=>r&&!nodeCleared(r)).map(r=>r.title).join(' and ')+' first.</p>';
     if(!n.deck)return h+'<p class="note">Coming soon. This stop is still being built.</p>';
     if(!d||d.error)return h+'<p class="note bad">'+esc(d?d.error:'Deck not loaded')+'</p>';
-    const p=ds(d.id),ready=!d.lesson||p.lessonDone||S.preview; let a='';
-    if(d.lesson)a+=act('lesson','Lesson',p.lessonDone?'Done ✓':p.lessonAt>0?'Step '+(p.lessonAt+1)+' of '+d.lesson.slides.length:d.lesson.slides.length+' steps');
-    drillKinds(d).forEach(k=>{const m=masteryOf(k);a+=act('drill:'+k,d.drills[k].title,ready?m.n+' of '+m.of+' mastered'+((p.sets[k]||0)>0?' ✓':''):'After the lesson',!ready);});
+    const p=ds(d.id),L=lessonsOf(d),ready=lessonsDone(d)||S.preview; let a='';
+    L.forEach((l,i)=>{const st=lp(d,l.id),open=lessonOpen(d,i);
+      const pre=L.length>1&&l.title?l.title+' · ':'';
+      a+=act('lesson:'+l.id,lname(d,i),pre+(!open?'after '+lname(d,i-1):st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:l.slides.length+' steps'),!open);});
+    drillKinds(d).forEach(k=>{const m=masteryOf(k);a+=act('drill:'+k,d.drills[k].title,ready?m.n+' of '+m.of+' mastered'+((p.sets[k]||0)>0?' ✓':''):L.length>1?'After the lessons':'After the lesson',!ready);});
     return h+'<div class="acts">'+a+'</div>';
   };
   const select=id=>{
@@ -685,12 +704,13 @@ function home(){
 }
 
 /* ---------- lesson ---------- */
-function lesson(){
-  if(!DECK||!DECK.lesson)return home();
-  const slides=DECK.lesson.slides,p=ds(DECK.id); let i=p.lessonDone?0:Math.min(p.lessonAt,slides.length-1);
+function lesson(id){
+  const L=lessonsOf(DECK),li=L.findIndex(l=>l.id===id),k=li<0?0:li,LS=L[k];
+  if(!LS||!lessonOpen(DECK,k))return home();
+  const slides=LS.slides,p=lp(DECK,LS.id); let i=p.done?0:Math.min(p.at,slides.length-1);
   const show=()=>{
     const sl=slides[i],last=i===slides.length-1;
-    screen({top:bar('Lesson · step '+(i+1)+' of '+slides.length,100*i/slides.length,S.preview?'<button class="link" id="skip">Skip</button>':''),
+    screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,S.preview?'<button class="link" id="skip">Skip</button>':''),
       body:'<article class="item"></article><div class="fb" hidden></div>',
       foot:(i>0?'<button class="btn ghost" id="prev">Back</button>':'')+'<button class="btn" id="go">Continue</button>'});
     const goB=$('#go'),fb=$('.fb'); let phase='answer',C=null;
@@ -699,10 +719,11 @@ function lesson(){
       goB.disabled=phase==='answer'&&!C.canGo(); };
     C=mountItem(sl,$('.item'),upd); upd();
     const next=()=>{
-      if(last){ const before=deckCleared(DECK),first=!p.lessonDone; let won=false;
-        if(!S.preview){p.lessonDone=true;p.lessonAt=0;if(first)won=awardPlay();save();}
-        home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!':won?'Practice unlocked, and you earned a game play!':'Practice unlocked'); return; }
-      i++; if(!S.preview&&!p.lessonDone){p.lessonAt=i;save();} show();
+      if(last){ const before=deckCleared(DECK),first=!p.done; let won=false;
+        if(!S.preview){p.done=true;p.at=0;if(first)won=awardPlay();save();}
+        const nxt=L.slice(k+1).find(l=>!lp(DECK,l.id).done),play=won?' You earned a game play!':'';
+        home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!'+play:nxt?'Lesson done. Next: '+lname(DECK,L.indexOf(nxt))+', '+nxt.title+'.'+play:'Practice unlocked.'+play); return; }
+      i++; if(!S.preview&&!p.done){p.at=i;save();} show();
     };
     goB.onclick=()=>{
       if(C.kind==='pass'||phase==='right')return next();
@@ -721,7 +742,7 @@ function lesson(){
 /* ---------- drills ---------- */
 function drill(kind){
   if(!DECK||!DECK.drills||!DECK.drills[kind])return home();
-  const p=ds(DECK.id); if(DECK.lesson&&!p.lessonDone&&!S.preview)return home();
+  const p=ds(DECK.id); if(!lessonsDone(DECK)&&!S.preview)return home();
   const D=DECK.drills[kind],all=D.questions;
   const set=S.preview?all.slice():shuffle([...shuffle(all.filter(q=>!isMastered(q))),...shuffle(all.filter(isMastered))].slice(0,RULES.setSize));
   let i=0,score=0;
@@ -945,11 +966,15 @@ function validate(D){
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));
     if(!errs.length)add('pass',tag+' ('+q.type+')');
   };
-  const slides=(D.lesson||{}).slides||[];
   if(!D.id)add('fail','Deck has no id');
-  if(D.lesson&&!slides.length)add('fail','Lesson has no slides');
-  if(!D.lesson&&!Object.keys(D.drills||{}).length)add('fail','Deck has no lesson and no drills');
-  slides.forEach(q=>check(q,'Lesson',true));
+  if(D.lesson&&D.lessons)add('fail','Deck has both "lesson" and "lessons"; use one');
+  const L=lessonsOf(D),lids=new Set();
+  L.forEach((l,n)=>{const name=l.title||'Lesson '+(n+1);
+    if(!l.id)add('fail',name+' has no id'); else if(lids.has(l.id))add('fail','Lesson id "'+l.id+'" is used twice'); lids.add(l.id);
+    if(D.lessons&&!l.title)add('fail','Lesson "'+l.id+'" has no title');
+    if(!(l.slides||[]).length)add('fail',name+' has no slides');
+    (l.slides||[]).forEach(q=>check(q,L.length>1?name:'Lesson',true));});
+  if(!L.length&&!Object.keys(D.drills||{}).length)add('fail','Deck has no lesson and no drills');
   for(const kind of Object.keys(D.drills||{})){
     const dr=D.drills[kind],qs=dr.questions||[],name=dr.title||kind;
     if(!dr.title)add('fail','Drill "'+kind+'" has no title');
@@ -985,7 +1010,7 @@ function test(){
   const cnt=l=>res.filter(r=>r.l===l).length,f=cnt('fail'),w=cnt('warn'),p=cnt('pass');
   const li=l=>res.filter(r=>r.l===l).map(r=>'<li class="'+l+'"><b>'+(l==='fail'?'Error':l==='warn'?'Warning':'OK')+'</b>'+esc(r.m)+'</li>').join('');
   const allNodes=[].concat(...WORLDS.map(w=>w.nodes)),soon=allNodes.filter(n=>n.kind!=='start'&&!n.deck).length;
-  const rows=ids.map(id=>{const d=DECKS[id];return '<span>'+esc(id)+'</span><span>'+(d.lesson?d.lesson.slides.length+' steps, ':'')+drillKinds(d).reduce((s,k)=>s+d.drills[k].questions.length,0)+' questions</span>';}).join('');
+  const rows=ids.map(id=>{const d=DECKS[id];return '<span>'+esc(id)+'</span><span>'+(lessonsOf(d).length?lessonsOf(d).map(l=>l.slides.length).join(' + ')+' steps, ':'')+drillKinds(d).reduce((s,k)=>s+d.drills[k].questions.length,0)+' questions</span>';}).join('');
   screen({top:bar('Deck test',null),
     body:'<div class="test"><h2>Deck test</h2>'+
       '<p class="verdict'+(f?' bad':'')+'">'+(f?f+(f===1?' error':' errors')+' to fix before students see this':'Map and decks are ready: no errors')+(w?', '+w+(w===1?' warning':' warnings'):'')+'</p>'+

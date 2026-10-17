@@ -35,11 +35,13 @@ Each stop:
 - `from` (optional): draw the road from these stops instead, without changing what is required.
 - `label` (optional): a shorter name to show on the map.
 
-A stop is cleared when its lesson is finished and one set of each drill has been completed.
+A stop is cleared when its lessons are finished and one set of each drill has been completed.
 
 ### Deck files
 
 A deck has `id` (must match the file name), `title`, `graphs`, an optional `lesson`, and `drills`.
+
+For a stop with more than one lesson, use `lessons` instead of `lesson`: a list of `{"id", "title", "slides"}`. The stop shows them as Lesson 1, Lesson 2, … with each title underneath. Each lesson opens after the one before it, and the drills open after all of them. See `decks/maxmin.json`.
 
 Text markup: `$...$` is math, `lim[x->2^-]` draws a limit, `**bold**`, and `\n` starts a new line. Inside math, `x_0` or `x_(n-1)` is a subscript and `frac{top}{bottom}` is a stacked fraction.
 

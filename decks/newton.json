@@ -1,0 +1,1606 @@
+{
+ "id": "newton",
+ "course": "Calculus 1",
+ "unit": "Unit 3",
+ "title": "Newton's Method",
+ "subtitle": "Using tangent lines to home in on a root",
+ "version": 1,
+ "graphs": {
+  "R0": {
+   "window": [
+    -1,
+    5,
+    -8,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "2*x-6",
+     "from": -1,
+     "to": 5,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "R1": {
+   "window": [
+    -4,
+    5,
+    -8,
+    8
+   ],
+   "pieces": [
+    {
+     "expr": "x^2-x-6",
+     "from": -2.85,
+     "to": 3.85,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "Q5": {
+   "window": [
+    -1.6,
+    1.4,
+    -12,
+    14
+   ],
+   "autoTicks": true,
+   "xstep": 0.5,
+   "ystep": 4,
+   "pieces": [
+    {
+     "expr": "x^5+8*x^4+4*x^3-2*x-7",
+     "from": -1.6,
+     "to": 1.27,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "TAN": {
+   "window": [
+    0.6,
+    1.45,
+    -10,
+    36
+   ],
+   "autoTicks": true,
+   "xstep": 0.1,
+   "ystep": 10,
+   "pieces": [
+    {
+     "expr": "x^5+8*x^4+4*x^3-2*x-7",
+     "from": 0.6,
+     "to": 1.42,
+     "arrow": "R"
+    }
+   ],
+   "tangents": [
+    1.3
+   ],
+   "dots": [
+    [
+     1.3,
+     25.7497
+    ]
+   ],
+   "labels": [
+    [
+     1.3,
+     -6.5,
+     "x₀"
+    ],
+    [
+     1.0497,
+     -6.5,
+     "x₁"
+    ],
+    [
+     0.9013,
+     3.5,
+     "root"
+    ],
+    [
+     1.21,
+     25.7497,
+     "(x₀, f(x₀))"
+    ]
+   ]
+  },
+  "G1": {
+   "window": [
+    0,
+    3.2,
+    -3,
+    8
+   ],
+   "pieces": [
+    {
+     "expr": "x^2-2",
+     "from": 0,
+     "to": 3.15,
+     "arrow": "R"
+    }
+   ],
+   "tangents": [
+    2.5
+   ],
+   "dots": [
+    [
+     1.65,
+     0
+    ],
+    [
+     1.4142,
+     0
+    ],
+    [
+     0.5,
+     0
+    ]
+   ],
+   "labels": [
+    [
+     2.5,
+     -1.8,
+     "x₀"
+    ],
+    [
+     1.72,
+     0.25,
+     "A"
+    ],
+    [
+     1.32,
+     0.25,
+     "B"
+    ],
+    [
+     0.5,
+     0.25,
+     "C"
+    ]
+   ]
+  },
+  "G2": {
+   "window": [
+    -2.5,
+    2.5,
+    -4,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x^3-3*x+1",
+     "from": -2.2,
+     "to": 2.2,
+     "arrow": "LR"
+    }
+   ],
+   "tangents": [
+    1
+   ],
+   "dots": [
+    [
+     1,
+     -1
+    ]
+   ],
+   "labels": [
+    [
+     1,
+     -2.6,
+     "x₀ = 1"
+    ]
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "info",
+    "title": "Newton's Method",
+    "text": "Newton's method has one job: **finding roots**.\nA root of $f$ is an $x$-value where $f(x)$ = 0. On a graph, it is where the curve crosses the $x$-axis."
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "title": "Warm up",
+    "text": "Find the root of $f(x)$ = $2x - 6$.",
+    "graph": "R0",
+    "label": "$x$ =",
+    "answer": 3,
+    "hint": "Set $2x - 6$ = 0 and solve for $x$.",
+    "explain": "$2x - 6$ = 0 gives $x$ = 3, right where the line crosses the axis."
+   },
+   {
+    "id": "L3",
+    "type": "multi",
+    "title": "Two roots",
+    "text": "Find both roots of $f(x)$ = $x^2 - x - 6$.",
+    "graph": "R1",
+    "parts": [
+     {
+      "label": "Smaller root $x$ =",
+      "answer": -2
+     },
+     {
+      "label": "Larger root $x$ =",
+      "answer": 3
+     }
+    ],
+    "hint": "Factor: $x^2 - x - 6$ = $(x - 3)(x + 2)$.",
+    "explain": "$(x - 3)(x + 2)$ = 0, so $x$ = −2 or $x$ = 3."
+   },
+   {
+    "id": "L4",
+    "type": "info",
+    "title": "Now a hard one",
+    "text": "$f(x)$ = $x^5 + 8x^4 + 4x^3 - 2x - 7$\nThere is no formula for the roots of a fifth-degree polynomial (nothing like the quadratic formula), and this one will not factor. We can see a root on the graph, but we cannot solve for it. We need a way to **approximate** it.",
+    "graph": "Q5"
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "Between which two whole numbers is the positive root?",
+    "graph": "Q5",
+    "options": [
+     "0 and 1",
+     "1 and 2",
+     "−1 and 0",
+     "−2 and −1"
+    ],
+    "answer": 0,
+    "hint": "Find where the curve crosses the $x$-axis to the right of 0.",
+    "explain": "The curve crosses between 0 and 1. Check: $f(0)$ = −7 and $f(1)$ = 4."
+   },
+   {
+    "id": "L6",
+    "type": "info",
+    "title": "One idea: bisection",
+    "text": "$f(0)$ = −7 is negative and $f(1)$ = 4 is positive. Since $f$ is continuous, the graph has to cross the axis somewhere in between.\nSo: cut the interval in half, check the sign at the midpoint, and keep the half where the sign **changes**. Repeat."
+   },
+   {
+    "id": "L7",
+    "type": "bisect",
+    "title": "Bisection by hand",
+    "text": "Trap the root of $f(x)$ = $x^5 + 8x^4 + 4x^3 - 2x - 7$ between 0 and 1.",
+    "fn": "x^5+8*x^4+4*x^3-2*x-7",
+    "a": 0,
+    "b": 1,
+    "goal": 0.04,
+    "window": [
+     -0.2,
+     1.2,
+     -10,
+     8
+    ],
+    "autoTicks": true,
+    "after": "That took {n} steps, and all we know is that the root is in [{a}, {b}]. That is about 0.9, one decimal place. Each step only cuts the interval in half. There is a faster way."
+   },
+   {
+    "id": "L8",
+    "type": "info",
+    "title": "A better idea: follow the tangent",
+    "text": "Make a guess $x_0$. Close to that point, the curve looks a lot like its tangent line, and a line is easy to solve.\nSo slide down the tangent line to the $x$-axis. Where it crosses is the next guess, $x_1$. It lands much closer to the root.",
+    "graph": "TAN"
+   },
+   {
+    "id": "L9",
+    "type": "newton",
+    "title": "Try it",
+    "text": "Drag to pick $x_0$ and watch where the tangent hits the axis. Then tap **Next guess** to do it again from the new point. Use **Zoom +** to see how close you are. Keep going until the digits stop changing.",
+    "fn": "x^5+8*x^4+4*x^3-2*x-7",
+    "window": [
+     -0.4,
+     1.6,
+     -12,
+     40
+    ],
+    "range": [
+     0.1,
+     1.5
+    ],
+    "start": 1.4,
+    "autoTicks": true,
+    "after": "The root is about {x}. You found it in {n} steps. Bisection took 5 steps just to get one decimal place."
+   },
+   {
+    "id": "L10",
+    "type": "mc",
+    "text": "In Newton's method, where does the next guess $x_1$ come from?",
+    "options": [
+     "Where the tangent line at $x_0$ crosses the $x$-axis",
+     "Where the curve crosses the $x$-axis",
+     "The midpoint of an interval",
+     "The value $f(x_0)$"
+    ],
+    "answer": 0,
+    "hint": "Think about what you just did with the slider.",
+    "explain": "Draw the tangent line at $x_0$; it crosses the $x$-axis at $x_1$."
+   },
+   {
+    "id": "L11",
+    "type": "info",
+    "title": "Turn the picture into a formula",
+    "text": "The tangent line at $x_0$ passes through the point $(x_0, f(x_0))$ and has slope $f'(x_0)$.\nWe want the spot where this line hits the $x$-axis.",
+    "graph": "TAN"
+   },
+   {
+    "id": "L12",
+    "type": "bank",
+    "text": "Point-slope form of the tangent line:  y − ___ = ___ (x − x₀)",
+    "blanks": [
+     "f(x₀)",
+     "f′(x₀)"
+    ],
+    "distractors": [
+     "x₀",
+     "x₁",
+     "0"
+    ],
+    "hint": "Point-slope form is $y - y_1$ = $m(x - x_1)$. The point is $(x_0, f(x_0))$ and the slope is the derivative.",
+    "explain": "$y - f(x_0)$ = $f'(x_0)(x - x_0)$"
+   },
+   {
+    "id": "L13",
+    "type": "bank",
+    "text": "On the x-axis, y = ___. And the x-value where the line hits the axis is our new guess, ___.",
+    "blanks": [
+     "0",
+     "x₁"
+    ],
+    "distractors": [
+     "1",
+     "x₀",
+     "f(x₀)"
+    ],
+    "hint": "Every point on the $x$-axis has the same $y$-value.",
+    "explain": "Plug in $y$ = 0 and $x$ = $x_1$:  $0 - f(x_0)$ = $f'(x_0)(x_1 - x_0)$"
+   },
+   {
+    "id": "L14",
+    "type": "bank",
+    "text": "Start from  0 − f(x₀) = f′(x₀)(x₁ − x₀).  Divide both sides by ___ .",
+    "blanks": [
+     "f′(x₀)"
+    ],
+    "distractors": [
+     "f(x₀)",
+     "x₀",
+     "x₁"
+    ],
+    "hint": "We want $x_1 - x_0$ by itself. What is it multiplied by?",
+    "explain": "That gives $-frac{f(x_0)}{f'(x_0)}$ = $x_1 - x_0$."
+   },
+   {
+    "id": "L15",
+    "type": "mc",
+    "text": "Solve $-frac{f(x_0)}{f'(x_0)}$ = $x_1 - x_0$ for $x_1$.",
+    "options": [
+     "$x_1$ = $x_0 - frac{f(x_0)}{f'(x_0)}$",
+     "$x_1$ = $x_0 + frac{f(x_0)}{f'(x_0)}$",
+     "$x_1$ = $x_0 - frac{f'(x_0)}{f(x_0)}$",
+     "$x_1$ = $frac{f(x_0)}{f'(x_0)} - x_0$"
+    ],
+    "answer": 0,
+    "hint": "Add $x_0$ to both sides.",
+    "explain": "Add $x_0$ to both sides. The minus sign stays with the fraction."
+   },
+   {
+    "id": "L16",
+    "type": "info",
+    "title": "Newton's Method",
+    "text": "First step:  $x_1$ = $x_0 - frac{f(x_0)}{f'(x_0)}$\nThen do it again from $x_1$ to get $x_2$, and so on. In general:\n$x_n$ = $x_(n-1) - frac{f(x_(n-1))}{f'(x_(n-1))}$\nNew guess = old guess minus $f$ over $f'$, both at the old guess."
+   },
+   {
+    "id": "L17",
+    "type": "bank",
+    "text": "Fill in the formula:  xₙ = ___ − ___ ÷ ___",
+    "blanks": [
+     "xₙ₋₁",
+     "f(xₙ₋₁)",
+     "f′(xₙ₋₁)"
+    ],
+    "distractors": [
+     "xₙ",
+     "f(xₙ)",
+     "f′(xₙ)"
+    ],
+    "hint": "Everything on the right side is at the old guess, $x_(n-1)$. Value on top, derivative on the bottom.",
+    "explain": "$x_n$ = $x_(n-1) - frac{f(x_(n-1))}{f'(x_(n-1))}$"
+   },
+   {
+    "id": "L18",
+    "type": "mc",
+    "title": "Example",
+    "text": "Approximate a root of $f(x)$ = $x^3 - 3x + 1$ on [0, 2], starting at $x_0$ = 0. First we need the derivative. $f'(x)$ = ?",
+    "options": [
+     "$3x^2 - 3$",
+     "$3x^2 - 3x$",
+     "$x^2 - 3$",
+     "$3x^2 + 1$"
+    ],
+    "answer": 0,
+    "hint": "Power rule on each term; the constant 1 goes away.",
+    "explain": "$f'(x)$ = $3x^2 - 3$"
+   },
+   {
+    "id": "L19",
+    "type": "multi",
+    "title": "Step 1",
+    "text": "$f(x)$ = $x^3 - 3x + 1$,  $f'(x)$ = $3x^2 - 3$,  $x_0$ = 0. Fill in each box. Fractions are fine: type 1/3 with the a/b key.",
+    "parts": [
+     {
+      "label": "$f(x_0)$ =",
+      "answer": 1,
+      "calc": "f(x0)"
+     },
+     {
+      "label": "$f'(x_0)$ =",
+      "answer": -3,
+      "calc": "f'(x0)"
+     },
+     {
+      "label": "$x_1$ =",
+      "answer": 0.333333,
+      "calc": "x1"
+     }
+    ],
+    "verify": {
+     "expr": "x^3-3*x+1",
+     "x0": 0,
+     "dexpr": "3*x^2-3"
+    },
+    "hint": "$f(0)$ = 1 and $f'(0)$ = −3. Then $x_1$ = $0 - frac{1}{-3}$. Watch the two minus signs.",
+    "explain": "$x_1$ = $0 - frac{1}{-3}$ = 1/3"
+   },
+   {
+    "id": "L20",
+    "type": "multi",
+    "title": "Step 2",
+    "text": "Now repeat from $x_1$ = 1/3. Give decimals to at least 3 places (or exact fractions).",
+    "parts": [
+     {
+      "label": "$f(x_1)$ =",
+      "answer": 0.037037,
+      "calc": "f(x1)"
+     },
+     {
+      "label": "$f'(x_1)$ =",
+      "answer": -2.666667,
+      "calc": "f'(x1)"
+     },
+     {
+      "label": "$x_2$ =",
+      "answer": 0.347222,
+      "calc": "x2"
+     }
+    ],
+    "verify": {
+     "expr": "x^3-3*x+1",
+     "x0": 0,
+     "dexpr": "3*x^2-3"
+    },
+    "hint": "$f(1/3)$ = 1/27 − 1 + 1 = 1/27 ≈ 0.037. $f'(1/3)$ = 1/3 − 3 = −8/3.",
+    "explain": "$x_2$ = $frac{1}{3} - frac{1/27}{-8/3}$ ≈ 0.347222"
+   },
+   {
+    "id": "L21",
+    "type": "newton",
+    "title": "Let it run",
+    "text": "Here is the same function starting at $x_0$ = 0. Tap **Next guess** a few times and watch the table.",
+    "fn": "x^3-3*x+1",
+    "dfn": "3*x^2-3",
+    "window": [
+     -2.2,
+     2.2,
+     -3,
+     4
+    ],
+    "start": 0,
+    "pick": false,
+    "after": "Settled at {x} after {n} steps. Already $x_3$ matched the root to 6 decimal places."
+   },
+   {
+    "id": "L22",
+    "type": "multi",
+    "title": "Your turn",
+    "text": "$f(x)$ = $2x^3 - 2x + 1$, starting at $x_0$ = −1. You will need $f'(x)$ first.",
+    "parts": [
+     {
+      "label": "$f(x_0)$ =",
+      "answer": 1,
+      "calc": "f(x0)"
+     },
+     {
+      "label": "$f'(x_0)$ =",
+      "answer": 4,
+      "calc": "f'(x0)"
+     },
+     {
+      "label": "$x_1$ =",
+      "answer": -1.25,
+      "calc": "x1"
+     }
+    ],
+    "verify": {
+     "expr": "2*x^3-2*x+1",
+     "x0": -1,
+     "dexpr": "6*x^2-2"
+    },
+    "hint": "$f'(x)$ = $6x^2 - 2$. At $x$ = −1: $f$ = −2 + 2 + 1 = 1 and $f'$ = 6 − 2 = 4.",
+    "explain": "$x_1$ = $-1 - frac{1}{4}$ = −1.25"
+   },
+   {
+    "id": "L23",
+    "type": "multi",
+    "text": "Keep going from $x_1$ = −1.25. Use at least 4 decimal places.",
+    "parts": [
+     {
+      "label": "$f(x_1)$ =",
+      "answer": -0.40625,
+      "calc": "f(x1)"
+     },
+     {
+      "label": "$f'(x_1)$ =",
+      "answer": 7.375,
+      "calc": "f'(x1)"
+     },
+     {
+      "label": "$x_2$ =",
+      "answer": -1.194915,
+      "calc": "x2"
+     }
+    ],
+    "verify": {
+     "expr": "2*x^3-2*x+1",
+     "x0": -1,
+     "dexpr": "6*x^2-2"
+    },
+    "hint": "$(-1.25)^3$ = −1.953125.  $f(-1.25)$ = −3.90625 + 2.5 + 1.",
+    "explain": "$x_2$ = $-1.25 - frac{-0.40625}{7.375}$ ≈ −1.194915. The root is about −1.191488."
+   },
+   {
+    "id": "L24",
+    "type": "multi",
+    "title": "Try",
+    "text": "Approximating a root of $f(x)$ = $x^2 - 1$, starting at $x_0$ = 2. Find $x_1$ and $x_2$.",
+    "parts": [
+     {
+      "label": "$x_1$ =",
+      "answer": 1.25,
+      "calc": "x1"
+     },
+     {
+      "label": "$x_2$ =",
+      "answer": 1.025,
+      "calc": "x2"
+     }
+    ],
+    "verify": {
+     "expr": "x^2-1",
+     "x0": 2,
+     "dexpr": "2*x"
+    },
+    "hint": "$f'(x)$ = $2x$. $x_1$ = $2 - frac{3}{4}$.",
+    "explain": "$x_1$ = $2 - frac{3}{4}$ = 1.25, then $x_2$ = $1.25 - frac{0.5625}{2.5}$ = 1.025. The real root is 1."
+   },
+   {
+    "id": "L25",
+    "type": "info",
+    "title": "More than root finding",
+    "text": "Newton's method can also compute numbers like √2.\nThe trick: write down a function whose root **is** the number you want. Then find that root."
+   },
+   {
+    "id": "L26",
+    "type": "mc",
+    "text": "Which function has √2 as a root?",
+    "options": [
+     "$x^2 - 2$",
+     "$x - 2$",
+     "$x^2 + 2$",
+     "$2x^2$"
+    ],
+    "answer": 0,
+    "hint": "Plug in $x$ = √2 and see which one gives 0.",
+    "explain": "$(√2)^2 - 2$ = 0, so √2 is a root of $x^2 - 2$."
+   },
+   {
+    "id": "L27",
+    "type": "multi",
+    "text": "$f(x)$ = $x^2 - 2$, so $f'(x)$ = $2x$. Start at $x_0$ = 1.",
+    "parts": [
+     {
+      "label": "$x_1$ =",
+      "answer": 1.5,
+      "calc": "x1"
+     },
+     {
+      "label": "$x_2$ =",
+      "answer": 1.416667,
+      "calc": "x2"
+     }
+    ],
+    "verify": {
+     "expr": "x^2-2",
+     "x0": 1,
+     "dexpr": "2*x"
+    },
+    "hint": "$x_1$ = $1 - frac{-1}{2}$. Careful with the signs.",
+    "explain": "$x_1$ = 1.5 and $x_2$ = $1.5 - frac{0.25}{3}$ = 17/12 ≈ 1.416667"
+   },
+   {
+    "id": "L28",
+    "type": "newton",
+    "text": "Watch the guesses close in on √2.",
+    "fn": "x^2-2",
+    "dfn": "2*x",
+    "window": [
+     0,
+     3,
+     -3,
+     7
+    ],
+    "start": 1,
+    "pick": false,
+    "after": "√2 ≈ {x} after {n} steps. A calculator says √2 = 1.41421356… Just three steps gave five correct decimal places."
+   },
+   {
+    "id": "L29",
+    "type": "info",
+    "title": "Summary",
+    "text": "**Newton's method:** guess, slide down the tangent line to the $x$-axis, repeat.\n$x_n$ = $x_(n-1) - frac{f(x_(n-1))}{f'(x_(n-1))}$\nIt usually homes in on a root in just a few steps. Does it always work? You will find out in the theory drill."
+   }
+  ]
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory drill",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "Newton's method is a way to approximate…",
+     "options": [
+      "the roots (zeros) of a function",
+      "the maximum value of a function",
+      "the area under a curve",
+      "the slope of a tangent line"
+     ],
+     "answer": 0,
+     "explain": "It finds $x$-values where $f(x)$ = 0."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "Newton's method usually gives the exact root after one step.",
+     "answer": false,
+     "explain": "One step gives an approximation. Repeating the step makes it better and better."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "The tangent line at $x_0$ is drawn. Which labeled point is $x_1$?",
+     "options": [
+      "A",
+      "B",
+      "C"
+     ],
+     "answer": 0,
+     "explain": "$x_1$ is where the **tangent line** crosses the $x$-axis (A). B is the actual root, which $x_1$ only approximates.",
+     "graph": "G1"
+    },
+    {
+     "id": "T4",
+     "type": "bank",
+     "text": "To get x₁, draw the ___ line at x₀ and find where it crosses the ___.",
+     "blanks": [
+      "tangent",
+      "x-axis"
+     ],
+     "distractors": [
+      "secant",
+      "y-axis",
+      "normal"
+     ],
+     "explain": "Follow the tangent line at $x_0$ down to the $x$-axis."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "Which is Newton's formula?",
+     "options": [
+      "$x_n$ = $x_(n-1) - frac{f(x_(n-1))}{f'(x_(n-1))}$",
+      "$x_n$ = $x_(n-1) + frac{f(x_(n-1))}{f'(x_(n-1))}$",
+      "$x_n$ = $x_(n-1) - frac{f'(x_(n-1))}{f(x_(n-1))}$",
+      "$x_n$ = $x_(n-1) - f(x_(n-1))f'(x_(n-1))$"
+     ],
+     "answer": 0,
+     "explain": "Old guess minus $f$ over $f'$."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "We start Newton's method for $f(x)$ = $x^3 - 3x + 1$ at $x_0$ = 1. What goes wrong?",
+     "options": [
+      "The tangent line is flat, so it never crosses the $x$-axis",
+      "Nothing; it finds the root near 0.347",
+      "Nothing; it finds the root near 1.532",
+      "It gives $x_1$ = 1, which is a root"
+     ],
+     "answer": 0,
+     "explain": "$f'(1)$ = 3 − 3 = 0. The tangent is horizontal ($y$ = −1) and the formula would divide by zero.",
+     "graph": "G2"
+    },
+    {
+     "id": "T7",
+     "type": "tf",
+     "text": "If $f'(x_0)$ = 0, Newton's formula divides by zero, so it cannot produce $x_1$.",
+     "answer": true,
+     "explain": "The formula has $f'(x_0)$ in the denominator."
+    },
+    {
+     "id": "T8",
+     "type": "mc",
+     "text": "If $f'(x_0)$ = 0, what does the tangent line at $x_0$ look like?",
+     "options": [
+      "Horizontal, so it never meets the $x$-axis (unless $f(x_0)$ = 0)",
+      "Vertical",
+      "Exactly the same as the curve",
+      "A line through the origin"
+     ],
+     "answer": 0,
+     "explain": "Slope 0 means a horizontal line. Picture: a flat tangent at the bottom of a valley."
+    },
+    {
+     "id": "T9",
+     "type": "mc",
+     "text": "$f'(x_0)$ is very close to 0, but not 0. What usually happens to $x_1$?",
+     "options": [
+      "It lands very far from $x_0$",
+      "$x_1$ = $x_0$",
+      "It lands exactly on the root",
+      "$x_1$ = 0"
+     ],
+     "answer": 0,
+     "explain": "A nearly flat tangent crosses the axis far away. Dividing by a tiny $f'(x_0)$ makes a huge jump."
+    },
+    {
+     "id": "T10",
+     "type": "tf",
+     "text": "Newton's method always finds a root, no matter where you start.",
+     "answer": false,
+     "explain": "It can fail: a flat tangent, guesses that run away, or guesses that bounce back and forth forever."
+    },
+    {
+     "id": "T11",
+     "type": "tf",
+     "text": "For a smooth function, if $x_0$ is close enough to a root, the guesses usually close in on that root very quickly.",
+     "answer": true,
+     "explain": "Near the root the curve looks like its tangent line, so each step lands very close. (It needs $f'$ not to be 0 at the root.)"
+    },
+    {
+     "id": "T12",
+     "type": "mc",
+     "text": "For $f(x)$ = $x^3 - 2x + 2$ starting at $x_0$ = 0, Newton's method gives $x_1$ = 1 and then $x_2$ = 0. What happens if you keep going?",
+     "options": [
+      "The guesses bounce between 0 and 1 forever and never reach a root",
+      "The guesses close in on a root",
+      "It stops because $f'$ = 0",
+      "$x_3$ is the root"
+     ],
+     "answer": 0,
+     "explain": "$x_2$ is back where we started, so the pattern repeats: 0, 1, 0, 1, … This is a cycle."
+    },
+    {
+     "id": "T13",
+     "type": "mc",
+     "text": "To approximate √5 with Newton's method, use which function?",
+     "options": [
+      "$x^2 - 5$",
+      "$x - 5$",
+      "$x^2 + 5$",
+      "$sqrt(x) - 5$"
+     ],
+     "answer": 0,
+     "explain": "√5 is a root of $x^2 - 5$."
+    },
+    {
+     "id": "T14",
+     "type": "mc",
+     "text": "To approximate the cube root of 10, use which function?",
+     "options": [
+      "$x^3 - 10$",
+      "$x^3 + 10$",
+      "$3x - 10$",
+      "$x^2 - 10$"
+     ],
+     "answer": 0,
+     "explain": "The cube root of 10 is a root of $x^3 - 10$."
+    },
+    {
+     "id": "T15",
+     "type": "mc",
+     "text": "To solve $cos x$ = $x$, apply Newton's method to which function?",
+     "options": [
+      "$f(x)$ = $cos x - x$",
+      "$f(x)$ = $cos x$",
+      "$f(x)$ = $cos x + x$",
+      "$f(x)$ = $x cos x$"
+     ],
+     "answer": 0,
+     "explain": "Move everything to one side: $cos x - x$ = 0. Its root solves the equation."
+    },
+    {
+     "id": "T16",
+     "type": "tf",
+     "text": "If $f(x_0)$ = 0, then $x_1$ = $x_0$.",
+     "answer": true,
+     "explain": "The fraction is $0/f'(x_0)$ = 0. You are already at a root, so you stay there."
+    },
+    {
+     "id": "T17",
+     "type": "tf",
+     "text": "If $f(x_0)$ > 0 and $f'(x_0)$ > 0, then $x_1$ is to the left of $x_0$.",
+     "answer": true,
+     "explain": "$frac{f(x_0)}{f'(x_0)}$ is positive, and we subtract it, so we move left. The curve is above the axis and rising, so the root is behind us."
+    },
+    {
+     "id": "T18",
+     "type": "mc",
+     "text": "$f(x_0)$ < 0 and $f'(x_0)$ > 0. Where is $x_1$?",
+     "options": [
+      "To the right of $x_0$",
+      "To the left of $x_0$",
+      "At $x_0$",
+      "You can't tell"
+     ],
+     "answer": 0,
+     "explain": "The fraction is negative, and subtracting a negative moves right. Below the axis and rising: the root is ahead."
+    },
+    {
+     "id": "T19",
+     "type": "mc",
+     "text": "Why not just use a formula to find the roots of $x^5 + 8x^4 + 4x^3 - 2x - 7$?",
+     "options": [
+      "There is no general formula for roots of fifth-degree polynomials",
+      "The quadratic formula works for any polynomial",
+      "It has no roots",
+      "It is not continuous"
+     ],
+     "answer": 0,
+     "explain": "There are formulas for degrees 2, 3 and 4, but none for degree 5 and up. Approximation methods fill the gap."
+    },
+    {
+     "id": "T20",
+     "type": "tf",
+     "text": "Compared with bisection, Newton's method usually needs far fewer steps, but it needs the derivative.",
+     "answer": true,
+     "explain": "Bisection only needs signs; Newton uses the tangent line, which needs $f'$."
+    },
+    {
+     "id": "T21",
+     "type": "bank",
+     "text": "Bisection keeps the half of the interval where f changes ___.",
+     "blanks": [
+      "sign"
+     ],
+     "distractors": [
+      "slope",
+      "concavity",
+      "speed"
+     ],
+     "explain": "If $f$ is positive at one end and negative at the other, a continuous $f$ crosses 0 in between."
+    },
+    {
+     "id": "T22",
+     "type": "mc",
+     "text": "What does Newton's method need from $f$?",
+     "options": [
+      "$f$ is differentiable near the guesses",
+      "$f$ is a polynomial",
+      "$f$ is always positive",
+      "$f$ is increasing"
+     ],
+     "answer": 0,
+     "explain": "Each step uses $f'$, so $f$ needs a derivative there. It works on trig, exponential and other functions too."
+    }
+   ]
+  },
+  "calc": {
+   "title": "Calculation drill",
+   "questions": [
+    {
+     "id": "C1",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 3, $f(3)$ = 2 and $f'(3)$ = 4. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 2.5
+      }
+     ],
+     "explain": "$x_1$ = $3 - frac{2}{4}$ = 2.5"
+    },
+    {
+     "id": "C2",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 1, $f(1)$ = −3 and $f'(1)$ = 6. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.5
+      }
+     ],
+     "explain": "$x_1$ = $1 - frac{-3}{6}$ = 1.5"
+    },
+    {
+     "id": "C3",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 2, $f(2)$ = 5 and $f'(2)$ = −2. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 4.5
+      }
+     ],
+     "explain": "$x_1$ = $2 - frac{5}{-2}$ = 4.5"
+    },
+    {
+     "id": "C4",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = −1, $f(−1)$ = 4 and $f'(−1)$ = 8. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": -1.5
+      }
+     ],
+     "explain": "$x_1$ = $-1 - frac{4}{8}$ = -1.5"
+    },
+    {
+     "id": "C5",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 0, $f(0)$ = 1 and $f'(0)$ = −4. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 0.25
+      }
+     ],
+     "explain": "$x_1$ = $0 - frac{1}{-4}$ = 0.25"
+    },
+    {
+     "id": "C6",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 4, $f(4)$ = −2 and $f'(4)$ = 0.5. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 8
+      }
+     ],
+     "explain": "$x_1$ = $4 - frac{-2}{0.5}$ = 8"
+    },
+    {
+     "id": "C7",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 1.5, $f(1.5)$ = 0.25 and $f'(1.5)$ = 3. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.416667
+      }
+     ],
+     "explain": "$x_1$ = $1.5 - frac{0.25}{3}$ = 1.4167"
+    },
+    {
+     "id": "C8",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = −2, $f(−2)$ = −6 and $f'(−2)$ = 9. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": -1.333333
+      }
+     ],
+     "explain": "$x_1$ = $-2 - frac{-6}{9}$ = -1.3333"
+    },
+    {
+     "id": "C9",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 2, $f(2)$ = 3 and $f'(2)$ = 0. Find $x_1$.",
+     "fails": true,
+     "parts": [
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x_0)$ = 0, so the formula divides by zero: the tangent line is flat."
+    },
+    {
+     "id": "C10",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^2 - 5$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^2-5",
+      "x0": 2
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -1,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 4,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 2.25,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $2x$.  $x_1$ = $2 - frac{-1}{4}$ ≈ 2.25"
+    },
+    {
+     "id": "C11",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 - 10$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^3-10",
+      "x0": 2
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -2,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 12,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 2.166667,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $3x^2$.  $x_1$ = $2 - frac{-2}{12}$ ≈ 2.166667"
+    },
+    {
+     "id": "C12",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 + x - 1$, starting at $x_0$ = 1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^3+x-1",
+      "x0": 1
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 1,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 4,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 0.75,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $3x^2 + 1$.  $x_1$ = $1 - frac{1}{4}$ ≈ 0.75"
+    },
+    {
+     "id": "C13",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^2 - 3x + 1$, starting at $x_0$ = 3. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^2-3*x+1",
+      "x0": 3
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 1,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 3,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 2.666667,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $2x - 3$.  $x_1$ = $3 - frac{1}{3}$ ≈ 2.666667"
+    },
+    {
+     "id": "C14",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $cos x - x$, starting at $x_0$ = 1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "cos(x)-x",
+      "x0": 1
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -0.459698,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": -1.841471,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 0.750364,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $-sin x - 1$.  $x_1$ = $1 - frac{-0.4597}{-1.8415}$ ≈ 0.750364"
+    },
+    {
+     "id": "C15",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^7 + 4$, starting at $x_0$ = −1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^7+4",
+      "x0": -1
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 3,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 7,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": -1.428571,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $7x^6$.  $x_1$ = $-1 - frac{3}{7}$ ≈ -1.428571"
+    },
+    {
+     "id": "C16",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $frac{2}{x} - x^2 + 1$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "2/x-x^2+1",
+      "x0": 2
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -2,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": -4.5,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 1.555556,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $-frac{2}{x^2} - 2x$.  $x_1$ = $2 - frac{-2}{-4.5}$ ≈ 1.555556"
+    },
+    {
+     "id": "C17",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^4 - 2$, starting at $x_0$ = 1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^4-2",
+      "x0": 1
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -1,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 4,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 1.25,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $4x^3$.  $x_1$ = $1 - frac{-1}{4}$ ≈ 1.25"
+    },
+    {
+     "id": "C18",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $e^x - 3$, starting at $x_0$ = 1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "exp(x)-3",
+      "x0": 1
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -0.281718,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 2.718282,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 1.103638,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $e^x$.  $x_1$ = $1 - frac{-0.2817}{2.7183}$ ≈ 1.103638"
+    },
+    {
+     "id": "C19",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $sin x$, starting at $x_0$ = 3. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "sin(x)",
+      "x0": 3
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 0.14112,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": -0.989992,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 3.142547,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $cos x$.  $x_1$ = $3 - frac{0.1411}{-0.99}$ ≈ 3.142547"
+    },
+    {
+     "id": "C20",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $ln x - 1$, starting at $x_0$ = 3. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "ln(x)-1",
+      "x0": 3
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 0.098612,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0.333333,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 2.704163,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $frac{1}{x}$.  $x_1$ = $3 - frac{0.0986}{0.3333}$ ≈ 2.704163"
+    },
+    {
+     "id": "C21",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^2 - 4$, starting at $x_0$ = 0. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^2-4",
+      "x0": 0
+     },
+     "fails": true,
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -4
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x)$ = $2x$, and $f'(0)$ = 0. The tangent line is flat, so the formula divides by zero."
+    },
+    {
+     "id": "C22",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 - 3x + 1$, starting at $x_0$ = 1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^3-3*x+1",
+      "x0": 1
+     },
+     "fails": true,
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -1
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x)$ = $3x^2 - 3$, and $f'(1)$ = 0. The tangent line is flat, so the formula divides by zero."
+    },
+    {
+     "id": "C23",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 - 12x + 3$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^3-12*x+3",
+      "x0": 2
+     },
+     "fails": true,
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -13
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x)$ = $3x^2 - 12$, and $f'(2)$ = 0. The tangent line is flat, so the formula divides by zero."
+    },
+    {
+     "id": "C24",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $cos x$, starting at $x_0$ = 0. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "cos(x)",
+      "x0": 0
+     },
+     "fails": true,
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 1
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x)$ = $-sin x$, and $f'(0)$ = 0. The tangent line is flat, so the formula divides by zero."
+    },
+    {
+     "id": "C25",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 - 6x^2 + 5$, starting at $x_0$ = 4. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^3-6*x^2+5",
+      "x0": 4
+     },
+     "fails": true,
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -27
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x)$ = $3x^2 - 12x$, and $f'(4)$ = 0. The tangent line is flat, so the formula divides by zero."
+    },
+    {
+     "id": "C26",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^2 - 3$, starting at $x_0$ = 2. Find $x_1$ and $x_2$ (at least 3 decimal places). (This approximates √3.)",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.75,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 1.732143,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^2-3",
+      "x0": 2
+     },
+     "explain": "$x_1$ ≈ 1.75 and $x_2$ ≈ 1.732143"
+    },
+    {
+     "id": "C27",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 - 2x - 5$, starting at $x_0$ = 2. Find $x_1$ and $x_2$ (at least 3 decimal places). (Newton's own example.)",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 2.1,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 2.094568,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^3-2*x-5",
+      "x0": 2
+     },
+     "explain": "$x_1$ ≈ 2.1 and $x_2$ ≈ 2.094568"
+    },
+    {
+     "id": "C28",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^3 + 2x - 4$, starting at $x_0$ = 1. Find $x_1$ and $x_2$ (at least 3 decimal places).",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.2,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 1.179747,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^3+2*x-4",
+      "x0": 1
+     },
+     "explain": "$x_1$ ≈ 1.2 and $x_2$ ≈ 1.179747"
+    },
+    {
+     "id": "C29",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^2 - 7$, starting at $x_0$ = 3. Find $x_1$ and $x_2$ (at least 3 decimal places).",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 2.666667,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 2.645833,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^2-7",
+      "x0": 3
+     },
+     "explain": "$x_1$ ≈ 2.666667 and $x_2$ ≈ 2.645833"
+    },
+    {
+     "id": "C30",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $cos x - x$, starting at $x_0$ = 0.5. Find $x_1$ and $x_2$ (at least 3 decimal places).",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 0.755222,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 0.739142,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "cos(x)-x",
+      "x0": 0.5
+     },
+     "explain": "$x_1$ ≈ 0.755222 and $x_2$ ≈ 0.739142"
+    },
+    {
+     "id": "C31",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^5 - x - 1$, starting at $x_0$ = 1. Find $x_1$ and $x_2$ (at least 3 decimal places).",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.25,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 1.178459,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^5-x-1",
+      "x0": 1
+     },
+     "explain": "$x_1$ ≈ 1.25 and $x_2$ ≈ 1.178459"
+    }
+   ]
+  }
+ }
+}

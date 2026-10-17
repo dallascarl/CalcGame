@@ -31,7 +31,7 @@
       "label": "Newton's Method",
       "x": 16,
       "y": 36,
-      "deck": null,
+      "deck": "newton",
       "requires": [
         "start"
       ],

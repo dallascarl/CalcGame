@@ -14,11 +14,13 @@ function mpart(t){
   return esc(t).replace(/-&gt;/g,'→').replace(/&lt;=/g,'≤').replace(/&gt;=/g,'≥').replace(/!=/g,'≠')
     .replace(/\^([+-])(?![A-Za-z0-9.])/g,(_,c)=>'<sup>'+(c==='-'?'−':'+')+'</sup>')
     .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a:b)+'</sup>')
+    .replace(/_\(([^)]*)\)|_([A-Za-z0-9]+)/g,(_,a,b)=>'<sub>'+(a!=null?a:b)+'</sub>')
     .replace(/-/g,'−').replace(/\bpi\b/g,'π').replace(/\binfty\b/g,'∞').replace(/\bsqrt\b/g,'√')
     .replace(/[A-Za-z]+/g,w=>w.length===1?'<i>'+w+'</i>':w);
 }
 function math(m){
-  return '<span class="math">'+m.split(/(lim\[[^\]]*\])/).map(t=>{const k=/^lim\[(.*)\]$/.exec(t);
+  return '<span class="math">'+m.split(/(lim\[[^\]]*\]|frac\{[^{}]*\}\{[^{}]*\})/).map(t=>{const k=/^lim\[(.*)\]$/.exec(t),f=/^frac\{([^{}]*)\}\{([^{}]*)\}$/.exec(t);
+    if(f)return '<span class="frac"><span>'+mpart(f[1])+'</span><span>'+mpart(f[2])+'</span></span>';
     return k?'<span class="lim"><span>lim</span><span class="lim-s">'+mpart(k[1])+'</span></span>':mpart(t);}).join('')+'</span>';
 }
 function fmt(s){
@@ -100,13 +102,17 @@ function evalAt(g,x){
 }
 
 /* ---------- graph drawing ---------- */
+let plotN=0;
 function plot(g,marker){
   const [x0,x1,y0,y1]=g.window,m=14,W=320,u=(W-2*m)/(x1-x0);
   /* keep the picture a sensible shape: squares unless that would make it very tall or very flat */
   const nat=2*m+u*(y1-y0),H=Math.min(Math.max(nat,0.62*W),1.25*W),uy=(H-2*m)/(y1-y0);
-  const nice=n=>n<=9?1:n<=18?2:n<=45?5:n<=90?10:n<=180?20:50,tx=g.xstep||nice(x1-x0),ty=g.ystep||nice(y1-y0);
-  const xt=[],yt=[]; for(let x=Math.ceil(x0/tx)*tx;x<=x1+1e-9;x+=tx)if(Math.abs(x)>1e-9)xt.push(Math.round(x*100)/100);
-  for(let y=Math.ceil(y0/ty)*ty;y<=y1+1e-9;y+=ty)if(Math.abs(y)>1e-9)yt.push(Math.round(y*100)/100);
+  /* autoTicks: 1-2-5 spacing at any scale, for zoomed-in pictures */
+  const nice=g.autoTicks?n=>{const raw=n/6,p=Math.pow(10,Math.floor(Math.log10(raw))),f=raw/p;return (f<1.5?1:f<3.5?2:f<7.5?5:10)*p;}
+    :n=>n<=9?1:n<=18?2:n<=45?5:n<=90?10:n<=180?20:50,tx=g.xstep||nice(x1-x0),ty=g.ystep||nice(y1-y0);
+  const xt=[],yt=[],rt=v=>Math.round(v*1e6)/1e6;
+  for(let k=Math.ceil(x0/tx-1e-9);k*tx<=x1+1e-9;k++)if(k!==0)xt.push(rt(k*tx));
+  for(let k=Math.ceil(y0/ty-1e-9);k*ty<=y1+1e-9;k++)if(k!==0)yt.push(rt(k*ty));
   const sx=x=>m+(x-x0)*u,sy=y=>m+(y1-y)*uy,r=n=>Math.round(n*10)/10;
   const ax=Math.min(Math.max(0,x0),x1),ay=Math.min(Math.max(0,y0),y1);
   let s='<svg class="graph" viewBox="0 0 '+W+' '+r(H)+'" role="img" aria-label="Graph of the function f"><rect class="g-bg" x="'+m+'" y="'+m+'" width="'+(W-2*m)+'" height="'+r(H-2*m)+'"/>';
@@ -129,10 +135,21 @@ function plot(g,marker){
       s+='<polygon class="g-arrow" points="'+r(ex+ux*5)+','+r(ey+uy*5)+' '+r(ex-ux*5-uy*4.2)+','+r(ey-uy*5+ux*4.2)+' '+r(ex-ux*5+uy*4.2)+','+r(ey-uy*5-ux*4.2)+'"/>';
     }
   }
+  const clip='pc'+(++plotN);
+  s+='<clipPath id="'+clip+'"><rect x="'+m+'" y="'+m+'" width="'+(W-2*m)+'" height="'+r(H-2*m)+'"/></clipPath>';
+  /* tangents: x-values where the tangent to the first piece is drawn, with a dashed drop to the axis */
+  for(const t of g.tangents||[]){
+    let F; try{F=fn(g.pieces[0].expr);}catch(e){continue;}
+    const y=F(t),d=numDeriv(F,t); if(!Number.isFinite(y)||!Number.isFinite(d))continue;
+    s+='<g clip-path="url(#'+clip+')"><line class="g-tan" x1="'+r(sx(x0))+'" y1="'+r(sy(y+d*(x0-t)))+'" x2="'+r(sx(x1))+'" y2="'+r(sy(y+d*(x1-t)))+'"/>'+
+      '<line class="g-guide" x1="'+r(sx(t))+'" x2="'+r(sx(t))+'" y1="'+r(sy(ay))+'" y2="'+r(sy(y))+'"/></g>';
+  }
   for(const [x,y] of g.holes||[])s+='<circle class="g-hole" cx="'+r(sx(x))+'" cy="'+r(sy(y))+'" r="4.4"/>';
   for(const [x,y] of g.dots||[])s+='<circle class="g-dot" cx="'+r(sx(x))+'" cy="'+r(sy(y))+'" r="4.8"/>';
+  /* labels: [x, y, "text"]; text is placed just above the point */
+  for(const [x,y,t] of g.labels||[])s+='<text class="g-lab" text-anchor="middle" x="'+r(sx(x))+'" y="'+r(sy(y)-7)+'">'+esc(t)+'</text>';
   if(marker)s+='<path class="g-guide mk-g" d=""/><circle class="g-mk mk-d" cx="-20" cy="-20" r="5.5"/>';
-  return {svg:s+'</svg>',sx,sy,ax,ay};
+  return {svg:s+'</svg>',sx,sy,ax,ay,clip};
 }
 
 
@@ -215,7 +232,7 @@ function mountItem(it,host,onChange){
   if(it.show&&it.fn)h+='<div class="gwrap">'+plot(autoGraph(it.fn),false).svg+'</div>';
   if(it.graph&&DECK.graphs[it.graph])h+='<div class="gwrap">'+plot(DECK.graphs[it.graph],it.type==='explore').svg+'</div>';
   host.innerHTML=h+'<div class="ix"></div>';
-  const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema}[it.type];
+  const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -229,6 +246,7 @@ function answerLabel(q){
 function answerText(q){
   if(q.type==='graph')return typeof q.answer==='string'?(q.answer==='UND'?'undefined':q.answer==='NONE'?'none (there is no such point)':'DNE'):neg(q.answer);
   if(q.type==='num')return neg(q.answer);
+  if(q.type==='multi')return q.fails?(q.failText||'Newton’s method breaks down here'):q.parts.map(p=>p.label+' '+neg(+p.answer.toFixed(4))).join(', ');
   if(q.type==='crit')return q.answers.length?q.answers.map(neg).join(', '):'no critical numbers';
   if(q.type==='mc')return q.options[q.answer];
   if(q.type==='tf')return q.answer?'True':'False';
@@ -236,30 +254,22 @@ function answerText(q){
 }
 function mountGraphQ(q,ix,onChange){
   const ext=EXTASK.includes(q.ask),sp=ext?'NONE':q.ask==='value'?'UND':'DNE',spWord=ext?'None':q.ask==='value'?'Undefined':'DNE'; let val='',locked=false;
-  const keys=['7','8','9','back','4','5','6','-','1','2','3','.'];
-  ix.innerHTML='<div class="ans"><span>'+fmt(answerLabel(q))+'</span><output class="ans-box empty" aria-live="polite">?</output></div><div class="pad">'+
-    keys.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k)+'</button>').join('')+
-    '<button class="key wide" data-k="0">0</button><button class="key wide sp" data-k="'+sp+'" aria-pressed="false">'+spWord+'</button></div>';
+  ix.innerHTML='<div class="ans"><span>'+fmt(answerLabel(q))+'</span><output class="ans-box empty" aria-live="polite">?</output></div>'+
+    padHTML('<button class="key wide sp" data-k="'+sp+'" aria-pressed="false">'+spWord+'</button>');
   const box=$('.ans-box',ix),spB=$('.sp',ix);
   const show=()=>{box.textContent=val===sp?spWord:(val===''?'?':neg(val));box.classList.toggle('empty',val==='');spB.setAttribute('aria-pressed',val===sp);};
   const press=k=>{
     if(locked)return;
     if(k==='back')val=val===sp?'':val.slice(0,-1);
     else if(k===sp)val=val===sp?'':sp;
-    else{ if(val===sp)val='';
-      if(k==='-')val=val[0]==='-'?val.slice(1):'-'+val;
-      else if(k==='.'){if(!val.includes('.'))val+='.';}
-      else if(val.replace(/\D/g,'').length<6)val+=k; }
+    else{ if(val===sp)val=''; val=editVal(val,k,6); }
     show();onChange();
   };
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
-  itemKeys=e=>{
-    if(/^[0-9]$/.test(e.key))press(e.key); else if(e.key==='-')press('-'); else if(e.key==='.')press('.');
-    else if(e.key==='Backspace')press('back'); else return; e.preventDefault();
-  };
+  itemKeys=padKeys(press);
   return {kind:'q',
-    canGo:()=>val===sp||!Number.isNaN(parseFloat(val)),
-    check:()=>typeof q.answer==='string'?val===q.answer:(val!==sp&&Math.abs(parseFloat(val)-q.answer)<=(q.tol==null?0.01:q.tol)),
+    canGo:()=>val===sp||!Number.isNaN(parseVal(val)),
+    check:()=>typeof q.answer==='string'?val===q.answer:(val!==sp&&Math.abs(parseVal(val)-q.answer)<=(q.tol==null?0.01:q.tol)),
     lock(reveal,ok){locked=true;box.classList.add(ok?'is-right':'is-wrong');},
     reset(){locked=false;val='';box.classList.remove('is-right','is-wrong');show();onChange();}};
 }
@@ -316,28 +326,39 @@ function mountExplore(sl,ix,onChange,host){
 
 
 /* ---------- number pad shared by the typed-answer items ---------- */
+/* answers may be typed as decimals or fractions such as 7/4 or -1/3 */
+function parseVal(s){
+  s=String(s); if(!/\d/.test(s))return NaN;
+  if(s.includes('/')){const [a,b]=s.split('/'),n=parseFloat(a),d=parseFloat(b);return Number.isFinite(n)&&Number.isFinite(d)&&d!==0?n/d:NaN;}
+  return parseFloat(s);
+}
+function editVal(val,k,max){
+  if(k==='clear')return ''; if(k==='back')return val.slice(0,-1);
+  if(k==='-')return val[0]==='-'?val.slice(1):'-'+val;
+  const tail=val.split('/').pop();
+  if(k==='.')return tail.includes('.')?val:val+(tail===''||tail==='-'?'0.':'.');
+  if(k==='/')return val.includes('/')||!/\d$/.test(val)?val:val+'/';
+  return val.replace(/\D/g,'').length<(max||9)?val+k:val;
+}
+const PADKEYS=['7','8','9','back','4','5','6','-','1','2','3','.','0','/'];
+const padHTML=last=>'<div class="pad">'+PADKEYS.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':k==='/'?' aria-label="Fraction bar"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k==='/'?'a/b':k)+'</button>').join('')+last+'</div>';
+const padKeys=press=>e=>{
+  if(/^[0-9]$/.test(e.key))press(e.key); else if(e.key==='-'||e.key==='.'||e.key==='/')press(e.key);
+  else if(e.key==='Backspace')press('back'); else return false; e.preventDefault(); return true;
+};
 function makePad(ix,o){
   let val='',locked=false;
-  const keys=['7','8','9','back','4','5','6','-','1','2','3','.'];
-  ix.innerHTML='<div class="ans"><span>'+fmt(o.label||'Answer =')+'</span><output class="ans-box empty" aria-live="polite">?</output></div><div class="pad">'+
-    keys.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k)+'</button>').join('')+
-    '<button class="key wide" data-k="0">0</button>'+(o.extra?'<button class="key wide sp" data-k="extra">'+esc(o.extra)+'</button>':'<button class="key wide" data-k="clear">Clear</button>')+'</div>';
+  ix.innerHTML='<div class="ans"><span>'+fmt(o.label||'Answer =')+'</span><output class="ans-box empty" aria-live="polite">?</output></div>'+
+    padHTML(o.extra?'<button class="key wide sp" data-k="extra">'+esc(o.extra)+'</button>':'<button class="key wide" data-k="clear">Clear</button>');
   const box=$('.ans-box',ix),show=()=>{box.textContent=val===''?'?':neg(val);box.classList.toggle('empty',val==='');};
   const press=k=>{
     if(locked)return;
     if(k==='extra'){o.onExtra&&o.onExtra();return;}
-    if(k==='clear')val=''; else if(k==='back')val=val.slice(0,-1);
-    else if(k==='-')val=val[0]==='-'?val.slice(1):'-'+val;
-    else if(k==='.'){if(!val.includes('.'))val+=(val===''||val==='-'?'0.':'.');}
-    else if(val.replace(/\D/g,'').length<7)val+=k;
-    show();o.onChange&&o.onChange();
+    val=editVal(val,k); show();o.onChange&&o.onChange();
   };
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
-  itemKeys=e=>{
-    if(/^[0-9]$/.test(e.key))press(e.key); else if(e.key==='-')press('-'); else if(e.key==='.')press('.');
-    else if(e.key==='Backspace')press('back'); else return; e.preventDefault();
-  };
-  return {get:()=>val,num:()=>val===''||val==='-'||val==='.'?NaN:parseFloat(val),clear(){val='';show();},
+  itemKeys=padKeys(press);
+  return {get:()=>val,num:()=>parseVal(val),clear(){val='';show();},
     lock(ok){locked=true;box.classList.add(ok?'is-right':'is-wrong');},
     reset(){locked=false;val='';box.classList.remove('is-right','is-wrong');show();}};
 }
@@ -433,6 +454,160 @@ function mountExtrema(it,ix,onChange,host){
   return {kind:'pass',canGo:()=>done};
 }
 
+/* ---------- multi: several answer boxes sharing one pad (f(x0), f'(x0), x1 ...) ---------- */
+function mountMulti(q,ix,onChange){
+  const n=q.parts.length; let vals=Array(n).fill(''),cur=0,fail=false,locked=false,marks=null;
+  ix.innerHTML='<div class="multi"></div>'+(q.fail?'<button class="btn small ghost failbtn" aria-pressed="false">'+esc(q.failText||'Newton’s method breaks down here')+'</button>':'')+
+    padHTML('<button class="key wide" data-k="next">Next box ↓</button>');
+  const box=$('.multi',ix),fb=$('.failbtn',ix);
+  const okAt=i=>Math.abs(parseVal(vals[i])-q.parts[i].answer)<=(q.parts[i].tol!=null?q.parts[i].tol:q.tol!=null?q.tol:0.001);
+  const draw=()=>{
+    box.innerHTML=q.parts.map((p,i)=>'<button class="mrow'+(i===cur&&!locked&&!fail?' on':'')+(fail?' off':'')+'" data-p="'+i+'"'+(locked?' disabled':'')+'><span>'+fmt(p.label)+'</span><output class="ans-box'+(vals[i]===''?' empty':'')+
+      (marks?(marks[i]?' is-right':' is-wrong'):'')+'">'+(vals[i]===''?'?':neg(vals[i]))+'</output></button>').join('');
+    if(fb)fb.setAttribute('aria-pressed',fail);
+  };
+  const press=k=>{
+    if(locked)return;
+    if(k==='next')cur=(cur+1)%n; else{ if(fail){fail=false;} vals[cur]=editVal(vals[cur],k); }
+    draw();onChange();
+  };
+  ix.addEventListener('click',e=>{
+    if(locked)return;
+    const k=e.target.closest('.key'),r=e.target.closest('.mrow');
+    if(k)return press(k.dataset.k);
+    if(r){cur=+r.dataset.p;fail=false;draw();onChange();return;}
+    if(e.target.closest('.failbtn')){fail=!fail;draw();onChange();}
+  });
+  const keys=padKeys(press);
+  itemKeys=e=>{ if(e.key==='ArrowDown'||e.key==='Tab'&&!e.shiftKey){press('next');e.preventDefault();}
+    else if(e.key==='ArrowUp'||e.key==='Tab'){cur=(cur+n-1)%n;draw();e.preventDefault();} else keys(e); };
+  draw();
+  return {kind:'q',
+    canGo:()=>fail||vals.every(v=>!Number.isNaN(parseVal(v))),
+    check:()=>q.fails?fail:(!fail&&q.parts.every((_,i)=>okAt(i))),
+    lock(reveal,ok){locked=true; if(!fail)marks=q.parts.map((_,i)=>okAt(i));
+      if(fb){fb.disabled=true; if(fail)fb.classList.add(q.fails?'is-right':'is-wrong'); else if(reveal&&q.fails)fb.classList.add('is-right');}
+      draw();},
+    reset(){locked=false;marks=null;fail=false;cur=0;vals=Array(n).fill('');if(fb){fb.disabled=false;fb.classList.remove('is-right','is-wrong');}draw();onChange();}};
+}
+
+/* ---------- Newton explorer: drag x0, watch the tangent hit the axis, step to x1, x2, ... ---------- */
+const SUBD='₀₁₂₃₄₅₆₇₈₉',sub=k=>String(k).split('').map(d=>SUBD[+d]).join('');
+const fix=(v,d)=>neg(String(+v.toFixed(d==null?6:d)));
+/* a window around [a,b] tall enough for the curve there, always showing the x-axis */
+function viewOf(F,a,b){
+  let lo=0,hi=0; for(let k=0;k<=240;k++){const y=F(a+(b-a)*k/240);if(Number.isFinite(y)){lo=Math.min(lo,y);hi=Math.max(hi,y);}}
+  const py=(hi-lo)*0.12||1; return [a,b,lo-py,hi+py];
+}
+function mountNewton(it,ix,onChange,host){
+  const F=fn(it.fn),D=it.dfn?fn(it.dfn):(x=>numDeriv(F,x)),W0=it.window,[lo,hi]=it.range||[W0[0],W0[1]];
+  const tol=it.tol||0.0005,minSteps=it.minSteps||2,pick=it.pick!==false;
+  let xs=[it.start==null?(lo+hi)/2:it.start],phase=pick?'pick':'iter',zoom=1,done=false;
+  const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
+  const nextOf=x=>{const d=D(x);return Math.abs(d)<1e-9||!Number.isFinite(d)?null:x-F(x)/d;};
+  const view=()=>{if(zoom===1)return W0;const c=xs[xs.length-1],w=(W0[1]-W0[0])/zoom;return viewOf(F,c-w/2,c+w/2);};
+  const drawG=()=>{
+    const V=view(),P=plot({window:V,pieces:[{expr:it.fn,from:V[0],to:V[1]}],autoTicks:zoom>1||it.autoTicks,xstep:zoom===1?it.xstep:0,ystep:zoom===1?it.ystep:0},false);
+    const r=v=>Math.round(Math.max(-9999,Math.min(9999,v))*10)/10,X=x=>r(P.sx(x)),Y=y=>r(P.sy(y)),last=xs.length-1;
+    let o='<g clip-path="url(#'+P.clip+')">';
+    xs.forEach((x,k)=>{const y=F(x),cls=k<last?' old':'';
+      o+='<line class="n-v'+cls+'" x1="'+X(x)+'" x2="'+X(x)+'" y1="'+Y(0)+'" y2="'+Y(y)+'"/>';
+      if(k<last)o+='<line class="n-t old" x1="'+X(x)+'" y1="'+Y(y)+'" x2="'+X(xs[k+1])+'" y2="'+Y(0)+'"/>';
+      else{const d=D(x);o+='<line class="n-t" x1="'+X(V[0])+'" y1="'+Y(y+d*(V[0]-x))+'" x2="'+X(V[1])+'" y2="'+Y(y+d*(V[1]-x))+'"/>';}
+    });
+    xs.forEach((x,k)=>{o+='<circle class="n-x'+(k<last?' old':'')+'" cx="'+X(x)+'" cy="'+Y(0)+'" r="'+(k<last?3:4.5)+'"/>';});
+    const nx=nextOf(xs[last]),cur=xs[last];
+    o+='<circle class="n-p" cx="'+X(cur)+'" cy="'+Y(F(cur))+'" r="5"/>';
+    if(nx!=null)o+='<circle class="n-next" cx="'+X(nx)+'" cy="'+Y(0)+'" r="5.5"/>';
+    o+='</g>';
+    const lab=(x,t,dy)=>x>=V[0]&&x<=V[1]?'<text class="n-lab" text-anchor="middle" x="'+X(x)+'" y="'+(Y(0)+dy)+'">'+t+'</text>':'';
+    const below=F(cur)>0?-8:17; o+=lab(cur,'x'+sub(last),below);
+    if(nx!=null&&Math.abs(P.sx(nx)-P.sx(cur))>16)o+=lab(nx,'x'+sub(last+1),below);
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+  };
+  const say=(ok,msg)=>{const fb=$('#nfb',ix);fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+fmt(msg)+'</span>';};
+  const table=()=>'<div class="ntab"><span>n</span><span>'+fmt('$x_n$')+'</span><span>'+fmt('$f(x_n)$')+'</span>'+
+    xs.map((x,k)=>'<span>'+k+'</span><span>'+fix(x)+'</span><span>'+fix(F(x),6)+'</span>').join('')+'</div>';
+  const ui=()=>{
+    if(phase==='pick'){
+      ix.innerHTML='<label class="slide-l" for="nx0">'+fmt(it.pickText||'Drag to choose your first guess $x_0$')+'</label>'+
+        '<input type="range" id="nx0" min="'+lo+'" max="'+hi+'" step="'+((hi-lo)/400)+'" value="'+xs[0]+'"><div class="read" id="nrd"></div>'+
+        '<button class="btn small" id="nlock">Use this guess</button><div class="fb" id="nfb" hidden></div>';
+      const s=$('#nx0',ix),rd=()=>{const x=+s.value,d=D(x),nx=nextOf(x);xs=[x];
+        $('#nrd',ix).innerHTML='<span>'+fmt('$x_0$ =')+' <b>'+fix(x,2)+'</b></span><span>'+fmt("$f'(x_0)$ =")+' <b>'+fix(d,2)+'</b></span><span>'+(nx==null?'Tangent is flat':'Tangent hits the axis at '+fmt('$x_1$ =')+' <b>'+fix(nx,3)+'</b>')+'</span>';
+        drawG();};
+      s.addEventListener('input',rd);rd();
+      $('#nlock',ix).onclick=()=>{phase='iter';ui();};
+    }else{
+      ix.innerHTML='<div class="row nrow"><button class="btn small" id="nstep">Next guess '+fmt('$x_'+xs.length+'$')+'</button>'+
+        '<button class="btn small ghost" id="zin" aria-label="Zoom in">Zoom +</button><button class="btn small ghost" id="zout" aria-label="Zoom out"'+(zoom===1?' disabled':'')+'>Zoom −</button></div>'+
+        table()+'<div class="fb" id="nfb" hidden></div>'+(pick?'<button class="link" id="nre">Start over with a new '+fmt('$x_0$')+'</button>':'');
+      $('#nstep',ix).onclick=step;
+      $('#zin',ix).onclick=()=>{zoom=Math.min(zoom*4,4096);drawG();ui();};
+      $('#zout',ix).onclick=()=>{zoom=Math.max(zoom/4,1);drawG();ui();};
+      if($('#nre',ix))$('#nre',ix).onclick=()=>{xs=[xs[0]];phase='pick';zoom=1;ui();};
+      drawG();
+    }
+  };
+  const step=()=>{
+    const x=xs[xs.length-1],nx=nextOf(x);
+    if(nx==null){ui();return say(false,it.flat||"Here $f'(x)$ = 0, so the tangent line is flat. It never crosses the $x$-axis, and the formula would divide by zero. Start over with a different guess.");}
+    xs.push(nx); ui();
+    const n=xs.length-1;
+    if(!Number.isFinite(nx)||Math.abs(nx)>1e6)return say(false,'The guesses are running away. Start over with a guess closer to the root.');
+    if(Math.abs(nx-x)<tol&&n>=minSteps){
+      const first=!done; done=true;
+      say(true,(it.after||'Converged! The root is about {x}. That took {n} steps.').replace(/\{n\}/g,n).replace(/\{x\}/g,fix(nx,6)));
+      if(first)onChange();
+    }else if(nx<W0[0]||nx>W0[1])say(false,'That guess landed off the picture at $x$ = '+fix(nx,3)+'. Keep going, or start over closer to the root.');
+    else if(done)say(true,'The digits have stopped changing: the root is about '+fix(nx,6)+'.');
+  };
+  ui();
+  return {kind:'pass',canGo:()=>done||!!it.free};
+}
+
+/* ---------- bisection game: cut the interval in half, keep the half where the sign changes ---------- */
+function mountBisect(it,ix,onChange,host){
+  const F=fn(it.fn),goal=it.goal||0.05; let a=it.a,b=it.b,steps=0,done=false,rows=[];
+  const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
+  const sg=v=>v>0?'<b class="pos">positive</b>':v<0?'<b class="negv">negative</b>':'<b>zero</b>';
+  const drawG=()=>{
+    const w=b-a,V=steps===0&&it.window?it.window:viewOf(F,a-w*0.4,b+w*0.4),m=(a+b)/2;
+    const P=plot({window:V,pieces:[{expr:it.fn,from:V[0],to:V[1]}],autoTicks:steps>0||it.autoTicks,xstep:steps===0?it.xstep:0,ystep:steps===0?it.ystep:0},false);
+    const r=v=>Math.round(v*10)/10,X=x=>r(P.sx(x)),Y=y=>r(P.sy(Math.max(V[2],Math.min(V[3],y))));
+    let o='<rect class="b-band" x="'+X(a)+'" y="'+Y(V[3])+'" width="'+r(P.sx(b)-P.sx(a))+'" height="'+r(P.sy(V[2])-P.sy(V[3]))+'"/>';
+    o+='<line class="n-v" x1="'+X(m)+'" x2="'+X(m)+'" y1="'+Y(0)+'" y2="'+Y(F(m))+'"/>';
+    [[a,'a'],[b,'b'],[m,'m']].forEach(([x,t])=>{const y=F(x);
+      o+='<circle class="'+(t==='m'?'n-p':y>0?'b-pos':'b-neg')+'" cx="'+X(x)+'" cy="'+Y(y)+'" r="5"/><text class="n-lab" text-anchor="middle" x="'+X(x)+'" y="'+(Y(0)-8)+'">'+t+'</text>';});
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+  };
+  const say=(ok,msg)=>{const fb=$('#bfb',ix);fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+msg+'</span>';};
+  const ui=()=>{
+    const m=(a+b)/2,fa=F(a),fb=F(b),fm=F(m);
+    ix.innerHTML='<div class="bq"><p>Interval ['+fix(a,5)+', '+fix(b,5)+'], width '+fix(b-a,5)+'</p>'+
+      '<p>'+fmt('$f(a)$')+' = '+fix(fa,3)+' '+sg(fa)+' · '+fmt('$f(b)$')+' = '+fix(fb,3)+' '+sg(fb)+'</p>'+
+      '<p>Midpoint '+fmt('$m$')+' = '+fix(m,5)+', and '+fmt('$f(m)$')+' = '+fix(fm,3)+' '+sg(fm)+'</p></div>'+
+      (done?'':'<p class="txt">'+fmt(it.ask||'Which half must contain the root?')+'</p><div class="duo"><button class="btn small ghost" data-h="L">Left half ['+fix(a,4)+', '+fix(m,4)+']</button><button class="btn small ghost" data-h="R">Right half ['+fix(m,4)+', '+fix(b,4)+']</button></div>')+
+      '<div class="fb" id="bfb" hidden></div>'+
+      (rows.length?'<div class="ntab b3"><span>step</span><span>interval</span><span>width</span>'+rows.map((q,k)=>'<span>'+(k+1)+'</span><span>['+fix(q[0],5)+', '+fix(q[1],5)+']</span><span>'+fix(q[1]-q[0],5)+'</span>').join('')+'</div>':'')+
+      '<p class="tiny">Goal: an interval narrower than '+fix(goal,4)+'. Steps so far: '+steps+'.</p>';
+    drawG();
+  };
+  ix.addEventListener('click',e=>{
+    const h=e.target.closest('[data-h]'); if(!h||done)return;
+    const m=(a+b)/2,fa=F(a),fm=F(m),right=fa*fm<=0?'L':'R';
+    if(h.dataset.h!==right){
+      const side=h.dataset.h==='L'?['a','m',fa,fm]:['m','b',fm,F(b)];
+      return say(false,'Not that half. At '+side[0]+' and '+side[1]+' the function is '+sg(side[2])+' and '+sg(side[3])+'. With the same sign at both ends, the graph does not have to cross the axis in between. Look for the half where the sign <b>changes</b>.');
+    }
+    if(right==='L')b=m; else a=m; steps++; rows.push([a,b]);
+    if(b-a<=goal){done=true;ui();say(true,fmt((it.after||'Done in {n} steps. The root is in [{a}, {b}].').replace(/\{n\}/g,steps).replace(/\{a\}/g,fix(a,5)).replace(/\{b\}/g,fix(b,5))));onChange();}
+    else{ui();say(true,'Yes. The sign changes on that half, so the root is in ['+fix(a,5)+', '+fix(b,5)+']. Cut it again.');}
+  });
+  ui();
+  return {kind:'pass',canGo:()=>done};
+}
+
 /* ---------- the map (home screen) ---------- */
 const MARK={review:'↺',extra:'★',boss:'♛',start:'GO'};
 const KIND={main:'Level',review:'Review',extra:'Extra',boss:'Boss',start:'Start'};
@@ -524,8 +699,9 @@ function lesson(){
       goB.disabled=phase==='answer'&&!C.canGo(); };
     C=mountItem(sl,$('.item'),upd); upd();
     const next=()=>{
-      if(last){ const before=deckCleared(DECK); if(!S.preview){p.lessonDone=true;p.lessonAt=0;save();}
-        home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!':'Practice unlocked'); return; }
+      if(last){ const before=deckCleared(DECK),first=!p.lessonDone; let won=false;
+        if(!S.preview){p.lessonDone=true;p.lessonAt=0;if(first)won=awardPlay();save();}
+        home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!':won?'Practice unlocked, and you earned a game play!':'Practice unlocked'); return; }
       i++; if(!S.preview&&!p.lessonDone){p.lessonAt=i;save();} show();
     };
     goB.onclick=()=>{
@@ -670,7 +846,7 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const types=inLesson?['info','explore','graph','mc','tf','bank','num','crit','extrema']:['graph','mc','tf','bank','num','crit'];
+    const types=inLesson?['info','explore','graph','mc','tf','bank','num','crit','extrema','multi','newton','bisect']:['graph','mc','tf','bank','num','crit','multi'];
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).split('$').length%2===0)errs.push('unmatched $ in '+k);
     const g=(D.graphs||{})[q.graph];
@@ -725,6 +901,36 @@ function validate(D){
         if(found.length!==cs.filter(c=>c>a&&c<b).length||!found.every(v=>cs.some(w=>Math.abs(w-v)<0.03)))errs.push('crit list does not match the critical numbers found by scanning ('+(found.map(v=>showA(v)).join(', ')||'none')+')');
       }
     }
+    if(q.type==='multi'){
+      if(!Array.isArray(q.parts)||!q.parts.length)errs.push('needs a list of parts');
+      else{
+        q.parts.forEach((p,k)=>{if(!p.label)errs.push('part '+(k+1)+' has no label');else if(String(p.label).split('$').length%2===0)errs.push('unmatched $ in part '+(k+1));
+          if(!q.fails&&typeof p.answer!=='number')errs.push('part '+(k+1)+' answer must be a number');});
+        if(q.fails&&!q.fail)errs.push('"fails" is true but there is no "fail" button to press');
+        /* verify: {expr, x0, dexpr?}. Parts with calc "x1", "f(x0)", "f'(x0)" are recomputed by running Newton's method */
+        if(q.verify){ try{
+          const F=compile(q.verify.expr),Dx=q.verify.dexpr?compile(q.verify.dexpr):null,d=x=>Dx?Dx(x):numDeriv(F,x),xs=[q.verify.x0];
+          if(Dx)for(const x of [-1.3,0.7,2.2])if(Number.isFinite(F(x))&&Math.abs(numDeriv(F,x)-Dx(x))>1e-3)errs.push('dexpr does not match the derivative of expr at x = '+x);
+          for(let k=0;k<6;k++){const x=xs[k],dd=d(x);if(Math.abs(dd)<1e-7)break;xs.push(x-F(x)/dd);}
+          const broke=Math.abs(d(q.verify.x0))<1e-7;
+          if(q.fails&&!broke)errs.push("marked as failing, but f'(x0) is not 0");
+          if(!q.fails&&broke)errs.push("f'(x0) = 0 here, so Newton's method fails; set \"fails\": true");
+          if(!q.fails&&!broke)q.parts.forEach((p,k)=>{ if(!p.calc)return;
+            let m,v; if((m=/^x(\d)$/.exec(p.calc)))v=xs[+m[1]]; else if((m=/^f\(x(\d)\)$/.exec(p.calc)))v=F(xs[+m[1]]); else if((m=/^f'\(x(\d)\)$/.exec(p.calc)))v=d(xs[+m[1]]);
+            else return errs.push('part '+(k+1)+': calc must look like x1, f(x0) or f\'(x0)');
+            if(v==null||Math.abs(v-p.answer)>Math.max(0.0011,p.tol||q.tol||0))errs.push('part '+(k+1)+' answer key says '+showA(p.answer)+' but Newton\'s method gives '+showA(v));});
+        }catch(e){errs.push('verify: '+e.message);} }
+      }
+    }
+    if(q.type==='newton'||q.type==='bisect'){
+      try{const F=compile(q.fn),w=q.window;
+        if(!Array.isArray(w)||w.length!==4||!(w[0]<w[1])||!(w[2]<w[3]))throw Error('window must be [xmin, xmax, ymin, ymax]');
+        if(q.dfn){const Dx=compile(q.dfn);for(const x of [w[0]*0.7+w[1]*0.3,(w[0]+w[1])/2])if(Math.abs(numDeriv(F,x)-Dx(x))>1e-3)throw Error('dfn does not match the derivative of fn');}
+        if(q.type==='bisect'){if(!(F(q.a)*F(q.b)<0))throw Error('f(a) and f(b) must have opposite signs');}
+        else if(q.pick===false){let x=q.start,ok=false;for(let k=0;k<40&&Number.isFinite(x);k++){const nx=x-F(x)/numDeriv(F,x);if(Math.abs(nx-x)<(q.tol||0.0005)){ok=true;break;}x=nx;}
+          if(!ok)warns.push('starting at '+q.start+', Newton\'s method does not settle within 40 steps');}
+      }catch(e){errs.push(e.message);}
+    }
     if(q.type==='bank'){
       const n=String(q.text||'').split('___').length-1;
       if(!Array.isArray(q.blanks)||!q.blanks.length)errs.push('needs blanks');
@@ -733,7 +939,7 @@ function validate(D){
         if(new Set(chips).size!==chips.length)errs.push('the word bank repeats a word');
         if(!(q.distractors||[]).length)warns.push('word bank has no extra words'); }
     }
-    const isQ=['graph','mc','tf','bank'].includes(q.type);
+    const isQ=['graph','mc','tf','bank','multi'].includes(q.type);
     if(isQ&&inLesson&&!q.hint)warns.push('no hint for a wrong answer');
     if(isQ&&!inLesson&&!q.explain)warns.push('no explanation');
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));

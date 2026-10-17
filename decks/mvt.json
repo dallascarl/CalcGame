@@ -1,0 +1,1131 @@
+{
+ "id": "mvt",
+ "course": "Calculus 1",
+ "unit": "Unit 3",
+ "title": "Mean Value Theorem",
+ "subtitle": "Where a tangent matches the average slope",
+ "version": 1,
+ "graphs": {
+  "ABS": {
+   "window": [
+    -1.6,
+    1.6,
+    -1.4,
+    0.8
+   ],
+   "xstep": 0.5,
+   "ystep": 0.5,
+   "pieces": [
+    {
+     "expr": "abs(x)-1",
+     "from": -1,
+     "to": 1
+    }
+   ],
+   "dots": [
+    [
+     -1,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ]
+  },
+  "G12": {
+   "window": [
+    0,
+    2.5,
+    0,
+    4
+   ],
+   "xstep": 0.5,
+   "pieces": [
+    {
+     "expr": "1+1/x",
+     "from": 0.5,
+     "to": 2
+    }
+   ],
+   "dots": [
+    [
+     0.5,
+     3
+    ],
+    [
+     2,
+     1.5
+    ]
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "M1",
+    "type": "mvt",
+    "title": "Same height at both ends",
+    "text": "This curve starts and ends at the same height. The dashed line joins the two ends, and it is flat. Drag the point until its tangent line is **parallel** to the dashed line.",
+    "fn": "-(x-2)^2+3",
+    "a": 0.5,
+    "b": 3.5,
+    "cs": [
+     2
+    ],
+    "window": [
+     0,
+     4,
+     0,
+     4
+    ],
+    "secLabel": "Slope between the ends",
+    "start": 0.8,
+    "after": "Found it: at $c$ ≈ {c} the tangent line is flat, so $f'(c)$ = 0."
+   },
+   {
+    "id": "M2",
+    "type": "mc",
+    "text": "Could a smooth curve start and end at the same height, yet **never** have a flat tangent line in between?",
+    "options": [
+     "No. Somewhere it has to turn around, and there the tangent is flat.",
+     "Yes, if it keeps going up the whole time.",
+     "Yes, if it is a straight line."
+    ],
+    "answer": 0,
+    "hint": "To get back to the starting height, what does a curve that went up have to do?",
+    "explain": "If it goes up, it must come back down to end at the same height. Where it turns around, the tangent is flat. (A horizontal straight line is flat everywhere.)"
+   },
+   {
+    "id": "M3",
+    "type": "mvt",
+    "title": "More than one",
+    "text": "Same idea, wavier curve. There is more than one place where the tangent is flat. Find them all.",
+    "fn": "x^3-3*x",
+    "a": -1.732051,
+    "b": 1.732051,
+    "cs": [
+     -1,
+     1
+    ],
+    "window": [
+     -2.2,
+     2.2,
+     -3,
+     3
+    ],
+    "secLabel": "Slope between the ends",
+    "start": -1.6,
+    "found": "Flat at $c$ ≈ {c}. There is another one. Keep looking.",
+    "after": "Flat at $c$ ≈ {c}. You found both."
+   },
+   {
+    "id": "M4",
+    "type": "mc",
+    "text": "**Rolle's Theorem**\nIf $f$ is **continuous** on $[a, b]$, **differentiable** on $(a, b)$, and $f(a) = f(b)$, then there is at least one $c$ in $(a, b)$ where $f'(c) = 0$.\n\nHow many conditions must $f$ meet before the theorem promises anything?",
+    "options": [
+     "3",
+     "1",
+     "2",
+     "4"
+    ],
+    "answer": 0,
+    "hint": "Count the things after \"If\".",
+    "explain": "Continuous on $[a, b]$, differentiable on $(a, b)$, and equal heights at the ends."
+   },
+   {
+    "id": "M5",
+    "type": "mc",
+    "text": "$f(x) = |x| - 1$ on $[-1, 1]$. Both ends are at height 0, but there is **no** flat tangent anywhere. Which condition of Rolle's Theorem fails?",
+    "options": [
+     "Differentiable on $(-1, 1)$",
+     "Continuous on $[-1, 1]$",
+     "$f(-1) = f(1)$"
+    ],
+    "answer": 0,
+    "hint": "Look at the sharp point at $x = 0$.",
+    "explain": "The corner at $x = 0$ has no derivative. Rolle's Theorem only works for functions that are differentiable on $(a, b)$.",
+    "graph": "ABS"
+   },
+   {
+    "id": "M6",
+    "type": "multi",
+    "title": "Use Rolle's Theorem",
+    "text": "$f(x) = 2x^2 - 4x + 5$ on $[-1, 3]$. First check the heights at the ends, then find $c$ with $f'(c) = 0$.",
+    "parts": [
+     {
+      "label": "$f(-1)$ =",
+      "answer": 11
+     },
+     {
+      "label": "$f(3)$ =",
+      "answer": 11
+     },
+     {
+      "label": "$c$ =",
+      "answer": 1
+     }
+    ],
+    "hint": "$f'(x) = 4x - 4$. Set it equal to 0.",
+    "explain": "The ends match (both 11), the polynomial is smooth, and $4c - 4 = 0$ gives $c = 1$."
+   },
+   {
+    "id": "M7",
+    "type": "mc",
+    "text": "$g(x) = 1 + frac{1}{x}$ on $[frac{1}{2}, 2]$. Does Rolle's Theorem apply?",
+    "options": [
+     "No: $g(1/2) ≠ g(2)$",
+     "No: $g$ is not continuous on $[1/2, 2]$",
+     "Yes: all three conditions hold"
+    ],
+    "answer": 0,
+    "hint": "Compute $g(1/2)$ and $g(2)$.",
+    "explain": "$g(1/2) = 3$ but $g(2) = 1.5$. The heights don't match, so Rolle's Theorem says nothing. ($1/x$ is fine on this interval since 0 is not in it.)",
+    "graph": "G12"
+   },
+   {
+    "id": "M8",
+    "type": "crit",
+    "title": "Try",
+    "text": "$f(x) = x^3 - 4x$ on $[-2, 2]$. Find **every** $c$ that Rolle's Theorem promises. Use the calculator if you need it.",
+    "answers": [
+     -1.1547,
+     1.1547
+    ],
+    "var": "c",
+    "label": "$c$ =",
+    "noneText": "Rolle's Theorem doesn't apply",
+    "verify": {
+     "expr": "x^3-4*x",
+     "range": [
+      -1.99,
+      1.99
+     ]
+    },
+    "hint": "$f(-2) = f(2) = 0$. Solve $f'(c) = 3c^2 - 4 = 0$: $c = ±frac{2}{sqrt(3)}$.",
+    "explain": "$3c^2 = 4$ gives $c = ±2/√3 ≈ ±1.1547$. Both are inside $(-2, 2)$."
+   },
+   {
+    "id": "M9",
+    "type": "mvt",
+    "title": "Now tilt it",
+    "text": "This time the ends are at **different** heights. The dashed **secant line** joins them. Find every point where the tangent line is parallel to the secant line.",
+    "fn": "x^3-3*x",
+    "a": -2,
+    "b": 2.5,
+    "cs": [
+     -1.322876,
+     1.322876
+    ],
+    "window": [
+     -2.4,
+     2.8,
+     -4,
+     9
+    ],
+    "start": -1.9,
+    "ystep": 2,
+    "found": "Parallel at $c$ ≈ {c}. There is another one.",
+    "after": "Parallel at $c$ ≈ {c}. Both found: two places where the tangent matches the secant."
+   },
+   {
+    "id": "M10",
+    "type": "mc",
+    "text": "**Mean Value Theorem**\nIf $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there is at least one $c$ in $(a, b)$ where\n$f'(c) = frac{f(b) - f(a)}{b - a}$\n\nWhat does $frac{f(b) - f(a)}{b - a}$ measure?",
+    "options": [
+     "The slope of the secant line through the two ends",
+     "The slope of the tangent line at $a$",
+     "The average of $f(a)$ and $f(b)$",
+     "The area under $f$"
+    ],
+    "answer": 0,
+    "hint": "Rise over run between which two points?",
+    "explain": "Rise $f(b) - f(a)$ over run $b - a$: the slope of the secant line. The MVT says some tangent line has that same slope."
+   },
+   {
+    "id": "M11",
+    "type": "mc",
+    "text": "Compare the two theorems. Which condition from Rolle's Theorem does the Mean Value Theorem **drop**?",
+    "options": [
+     "$f(a) = f(b)$",
+     "Continuous on $[a, b]$",
+     "Differentiable on $(a, b)$",
+     "None; they are the same"
+    ],
+    "answer": 0,
+    "hint": "In the last picture, were the ends at the same height?",
+    "explain": "The MVT lets the ends sit at different heights. Rolle's Theorem is the special case where the secant line is flat."
+   },
+   {
+    "id": "M12",
+    "type": "multi",
+    "title": "Find the $c$",
+    "text": "$f(x) = sqrt(x)$ on $[0, 9]$. Find the secant slope, then the $c$ the MVT guarantees.",
+    "parts": [
+     {
+      "label": "Secant slope =",
+      "answer": 0.333333
+     },
+     {
+      "label": "$c$ =",
+      "answer": 2.25
+     }
+    ],
+    "hint": "Secant slope: $frac{sqrt(9) - sqrt(0)}{9 - 0}$. Then solve $frac{1}{2sqrt(c)} = frac{1}{3}$.",
+    "explain": "Slope = 3/9 = 1/3. $frac{1}{2sqrt(c)} = frac{1}{3}$ gives $sqrt(c) = 1.5$, so $c = 2.25$."
+   },
+   {
+    "id": "M13",
+    "type": "mvt",
+    "title": "Check it on the graph",
+    "text": "Drag the point to your answer and see if the tangent lines up with the secant.",
+    "fn": "sqrt(x)",
+    "a": 0,
+    "b": 9,
+    "cs": [
+     2.25
+    ],
+    "window": [
+     -0.5,
+     10,
+     -0.5,
+     4
+    ],
+    "start": 6.5,
+    "after": "Right at $c$ = 2.25 the tangent is parallel to the secant."
+   },
+   {
+    "id": "M14",
+    "type": "num",
+    "title": "A road trip",
+    "text": "You drive to Grandma's house, 60 miles away, and it takes exactly 1 hour. What was your **average** speed?",
+    "label": "mph =",
+    "answer": 60,
+    "hint": "Distance divided by time.",
+    "explain": "60 miles in 1 hour: 60 mph."
+   },
+   {
+    "id": "M15",
+    "type": "mc",
+    "text": "What does the Mean Value Theorem tell you about the trip?",
+    "options": [
+     "At some moment your speedometer read exactly 60 mph",
+     "You drove 60 mph the whole time",
+     "You never went faster than 60 mph",
+     "Nothing at all"
+    ],
+    "answer": 0,
+    "hint": "Average speed is the secant slope. Speedometer speed is the tangent slope.",
+    "explain": "Position is continuous and differentiable, so at some instant your instantaneous speed equaled your average speed. (Police use this: two speed cameras miles apart can prove you sped.)"
+   },
+   {
+    "id": "M16",
+    "type": "multi",
+    "title": "Drop a rock",
+    "text": "A rock is dropped from 100 ft. Its height is $s(t) = -16t^2 + 100$ feet after $t$ seconds.",
+    "parts": [
+     {
+      "label": "Seconds to hit the ground =",
+      "answer": 2.5
+     },
+     {
+      "label": "Average velocity (ft/s) =",
+      "answer": -40
+     }
+    ],
+    "hint": "It hits the ground when $s(t) = 0$: $16t^2 = 100$. Average velocity = $frac{s(2.5) - s(0)}{2.5 - 0}$.",
+    "explain": "$t^2 = 6.25$, so $t = 2.5$ s. Average velocity = $frac{0 - 100}{2.5}$ = −40 ft/s (negative: falling)."
+   },
+   {
+    "id": "M17",
+    "type": "mvt",
+    "title": "When is it going its average speed?",
+    "text": "Here is the rock's height. The dashed line has slope −40, its average velocity. Find the moment its velocity, $s'(c)$, matches.",
+    "fn": "-16*x^2+100",
+    "a": 0,
+    "b": 2.5,
+    "cs": [
+     1.25
+    ],
+    "window": [
+     -0.2,
+     2.8,
+     -10,
+     110
+    ],
+    "ystep": 20,
+    "secLabel": "Average velocity",
+    "start": 0.3,
+    "after": "At $t$ = {c} seconds the rock is falling at exactly 40 ft/s, its average speed. Check: $s'(t) = -32t$ = −40 gives $t$ = 1.25."
+   },
+   {
+    "id": "M18",
+    "type": "multi",
+    "title": "Try",
+    "text": "Find the $c$ from the MVT for $f(x) = 2x^2 - 3x + 1$ on $[0, 2]$.",
+    "parts": [
+     {
+      "label": "Secant slope =",
+      "answer": 1
+     },
+     {
+      "label": "$c$ =",
+      "answer": 1
+     }
+    ],
+    "hint": "$f(0) = 1$ and $f(2) = 3$. Then solve $f'(c) = 4c - 3$ = the slope.",
+    "explain": "Slope = (3 − 1)/2 = 1. $4c - 3 = 1$ gives $c = 1$."
+   },
+   {
+    "id": "M19",
+    "type": "mc",
+    "text": "Suppose $f'(x) = 0$ at **every** $x$ in an interval. Use the MVT on any two points $a$ and $b$ there. What must be true about $f$?",
+    "options": [
+     "$f$ is constant on the interval",
+     "$f(x) = 0$ everywhere",
+     "$f$ is a line that is not flat",
+     "Nothing can be said"
+    ],
+    "answer": 0,
+    "hint": "The MVT says $frac{f(b) - f(a)}{b - a}$ equals some $f'(c)$. What is every $f'(c)$?",
+    "explain": "Every secant slope equals some $f'(c) = 0$, so $f(b) = f(a)$ for any two points. $f$ is constant. (Constant, not necessarily 0.)"
+   },
+   {
+    "id": "M20",
+    "type": "mc",
+    "text": "Suppose $f'(x) = g'(x)$ for every $x$ in an interval. Which must be true?",
+    "options": [
+     "$f(x) = g(x) + C$ for some constant $C$",
+     "$f(x) = g(x)$",
+     "$f$ and $g$ are both constant",
+     "$f(x) = C g(x)$"
+    ],
+    "answer": 0,
+    "hint": "Apply the last result to $f - g$. What is its derivative?",
+    "explain": "$(f - g)' = 0$, so $f - g$ is constant. Same slopes everywhere means one graph is the other shifted up or down. This will matter a lot for antiderivatives."
+   },
+   {
+    "id": "M21",
+    "type": "bank",
+    "text": "If f′(x) > 0 for every x in (a, b), then f is ___ on [a, b]. If f′(x) < 0, then f is ___.",
+    "blanks": [
+     "increasing",
+     "decreasing"
+    ],
+    "distractors": [
+     "constant",
+     "concave up",
+     "zero"
+    ],
+    "hint": "Positive slope means going up.",
+    "explain": "Positive derivative: increasing. Negative derivative: decreasing. The MVT is what proves it."
+   },
+   {
+    "id": "M22",
+    "type": "match",
+    "title": "Theorem roundup",
+    "text": "You now know four big theorems. Match each one with what it promises.",
+    "pairs": [
+     [
+      "Extreme Value Theorem",
+      "$f$ has an absolute max and min on $[a, b]$"
+     ],
+     [
+      "Fermat's Theorem",
+      "a local max or min at $c$ (where $f'(c)$ exists) has $f'(c) = 0$"
+     ],
+     [
+      "Rolle's Theorem",
+      "some $c$ in $(a, b)$ has $f'(c) = 0$"
+     ],
+     [
+      "Mean Value Theorem",
+      "some $c$ in $(a, b)$ has $f'(c) = frac{f(b) - f(a)}{b - a}$"
+     ]
+    ],
+    "hint": "Rolle's and the MVT both promise a $c$; only one of them promises a flat tangent.",
+    "explain": "EVT: a max and min exist. Fermat: extremes have flat tangents. Rolle: a flat tangent. MVT: a tangent parallel to the secant."
+   },
+   {
+    "id": "M23",
+    "type": "pick",
+    "text": "What does the **Mean Value Theorem** require of $f$?",
+    "options": [
+     "Continuous on $[a, b]$",
+     "Differentiable on $(a, b)$",
+     "$f(a) = f(b)$",
+     "$f$ is a polynomial",
+     "$f'(x) > 0$"
+    ],
+    "answers": [
+     0,
+     1
+    ],
+    "hint": "Two conditions. Rolle's needs one more.",
+    "explain": "Continuous on the closed interval and differentiable on the open interval. That's all."
+   }
+  ]
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory drill",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each theorem with its **conclusion**.",
+     "pairs": [
+      [
+       "Extreme Value Theorem",
+       "$f$ has an absolute max and min on $[a, b]$"
+      ],
+      [
+       "Fermat's Theorem",
+       "a local max or min at $c$ (where $f'(c)$ exists) has $f'(c) = 0$"
+      ],
+      [
+       "Rolle's Theorem",
+       "some $c$ in $(a, b)$ has $f'(c) = 0$"
+      ],
+      [
+       "Mean Value Theorem",
+       "some $c$ in $(a, b)$ has $f'(c) = frac{f(b) - f(a)}{b - a}$"
+      ]
+     ],
+     "explain": "Each theorem's promise."
+    },
+    {
+     "id": "T2",
+     "type": "match",
+     "text": "Match each theorem with the **conditions** it needs.",
+     "pairs": [
+      [
+       "Extreme Value Theorem",
+       "$f$ continuous on a closed interval $[a, b]$"
+      ],
+      [
+       "Rolle's Theorem",
+       "continuous on $[a, b]$, differentiable on $(a, b)$, and $f(a) = f(b)$"
+      ],
+      [
+       "Mean Value Theorem",
+       "continuous on $[a, b]$ and differentiable on $(a, b)$"
+      ],
+      [
+       "Fermat's Theorem",
+       "a local max or min at $c$, and $f$ differentiable at $c$"
+      ]
+     ],
+     "explain": "Rolle's needs exactly the MVT's conditions plus equal heights at the ends."
+    },
+    {
+     "id": "T3",
+     "type": "match",
+     "text": "Match each picture-description with the theorem it shows.",
+     "pairs": [
+      [
+       "A flat tangent somewhere between two equal heights",
+       "Rolle's Theorem"
+      ],
+      [
+       "A tangent line parallel to the secant line",
+       "Mean Value Theorem"
+      ],
+      [
+       "A highest and lowest point on a closed interval",
+       "Extreme Value Theorem"
+      ],
+      [
+       "The tangent at a hilltop is flat",
+       "Fermat's Theorem"
+      ]
+     ],
+     "explain": "Rolle: flat tangent. MVT: tangent ∥ secant. EVT: the max and min exist. Fermat: extremes have $f' = 0$."
+    },
+    {
+     "id": "T4",
+     "type": "pick",
+     "text": "Which conditions does **Rolle's Theorem** require?",
+     "options": [
+      "$f$ continuous on $[a, b]$",
+      "$f$ differentiable on $(a, b)$",
+      "$f(a) = f(b)$",
+      "$f'(a) = 0$",
+      "$f$ is increasing"
+     ],
+     "answers": [
+      0,
+      1,
+      2
+     ],
+     "explain": "Continuous, differentiable, and equal heights at the ends."
+    },
+    {
+     "id": "T5",
+     "type": "pick",
+     "text": "Which conditions does the **Extreme Value Theorem** require?",
+     "options": [
+      "$f$ continuous",
+      "a closed interval $[a, b]$",
+      "$f$ differentiable",
+      "$f(a) = f(b)$"
+     ],
+     "answers": [
+      0,
+      1
+     ],
+     "explain": "Only continuity on a closed interval. No derivatives needed."
+    },
+    {
+     "id": "T6",
+     "type": "bank",
+     "text": "Rolle's Theorem: if f is continuous on [a, b], differentiable on (a, b), and f(a) = ___, then some c in (a, b) has f′(c) = ___.",
+     "blanks": [
+      "f(b)",
+      "0"
+     ],
+     "distractors": [
+      "f(0)",
+      "1",
+      "f′(b)"
+     ],
+     "explain": "Equal heights at the ends give a flat tangent somewhere in between."
+    },
+    {
+     "id": "T7",
+     "type": "tf",
+     "text": "Rolle's Theorem is the special case of the Mean Value Theorem where $f(a) = f(b)$.",
+     "answer": true,
+     "explain": "With equal heights the secant is flat, so \"parallel to the secant\" means flat."
+    },
+    {
+     "id": "T8",
+     "type": "tf",
+     "text": "The Mean Value Theorem says some tangent line is parallel to the secant line through $(a, f(a))$ and $(b, f(b))$.",
+     "answer": true,
+     "explain": "Equal slopes mean parallel lines."
+    },
+    {
+     "id": "T9",
+     "type": "tf",
+     "text": "The Mean Value Theorem tells you exactly where $c$ is.",
+     "answer": false,
+     "explain": "It only promises that some $c$ exists. You find it yourself by solving $f'(c)$ = the secant slope."
+    },
+    {
+     "id": "T10",
+     "type": "tf",
+     "text": "The Mean Value Theorem guarantees exactly one $c$.",
+     "answer": false,
+     "explain": "**At least** one. The wavy cubic in the lesson had two."
+    },
+    {
+     "id": "T11",
+     "type": "tf",
+     "text": "If $f$ is continuous on $[a, b]$ and $f(a) = f(b)$, there must be a $c$ with $f'(c) = 0$.",
+     "answer": false,
+     "explain": "It also needs to be differentiable. $|x| - 1$ on $[-1, 1]$ has equal ends and no flat tangent."
+    },
+    {
+     "id": "T12",
+     "type": "mc",
+     "text": "Does the MVT apply to $f(x) = |x|$ on $[-1, 2]$?",
+     "options": [
+      "No: $f$ is not differentiable at 0",
+      "No: $f$ is not continuous",
+      "Yes"
+     ],
+     "answer": 0,
+     "explain": "The corner at 0 has no derivative."
+    },
+    {
+     "id": "T13",
+     "type": "mc",
+     "text": "Does the MVT apply to $f(x) = 1/x$ on $[-1, 1]$?",
+     "options": [
+      "No: $f$ is not continuous on $[-1, 1]$",
+      "No: $f(-1) ≠ f(1)$",
+      "Yes"
+     ],
+     "answer": 0,
+     "explain": "$1/x$ is undefined at 0. (The MVT doesn't need equal ends.)"
+    },
+    {
+     "id": "T14",
+     "type": "mc",
+     "text": "Does the MVT apply to $f(x) = x^2$ on $[0, 3]$?",
+     "options": [
+      "Yes",
+      "No: $f(0) ≠ f(3)$",
+      "No: $f$ is not differentiable"
+     ],
+     "answer": 0,
+     "explain": "Polynomials are continuous and differentiable everywhere. Equal ends are not required."
+    },
+    {
+     "id": "T15",
+     "type": "mc",
+     "text": "Does Rolle's Theorem apply to $f(x) = x^(2/3)$ on $[-1, 1]$?",
+     "options": [
+      "No: $f$ is not differentiable at 0",
+      "No: $f(-1) ≠ f(1)$",
+      "Yes"
+     ],
+     "answer": 0,
+     "explain": "$f(-1) = f(1) = 1$, but the graph has a cusp at 0 where $f'$ does not exist."
+    },
+    {
+     "id": "T16",
+     "type": "mc",
+     "text": "Does the MVT apply to $tan x$ on $[0, pi]$?",
+     "options": [
+      "No: $tan x$ is not continuous at $pi/2$",
+      "Yes",
+      "No: $tan 0 ≠ tan pi$"
+     ],
+     "answer": 0,
+     "explain": "$tan x$ has a vertical asymptote at $pi/2$."
+    },
+    {
+     "id": "T17",
+     "type": "mc",
+     "text": "A car passes two speed cameras 3 miles apart, 2 minutes apart. What can the police conclude?",
+     "options": [
+      "At some instant the car was going exactly 90 mph",
+      "The car went 90 mph the whole time",
+      "The car never went over 90 mph",
+      "Nothing"
+     ],
+     "answer": 0,
+     "explain": "3 miles in 1/30 hour is 90 mph on average. By the MVT the speedometer read 90 at some instant."
+    },
+    {
+     "id": "T18",
+     "type": "tf",
+     "text": "If $f'(x) = 0$ for every $x$ in an interval, then $f$ is constant there.",
+     "answer": true,
+     "explain": "A corollary of the MVT."
+    },
+    {
+     "id": "T19",
+     "type": "tf",
+     "text": "If $f'(x) = g'(x)$ for every $x$, then $f(x) = g(x)$.",
+     "answer": false,
+     "explain": "Only $f = g + C$. For example $x^2$ and $x^2 + 5$."
+    },
+    {
+     "id": "T20",
+     "type": "mc",
+     "text": "Which theorem is used to prove the Mean Value Theorem?",
+     "options": [
+      "Rolle's Theorem",
+      "Fermat's Theorem alone",
+      "The Intermediate Value Theorem",
+      "None"
+     ],
+     "answer": 0,
+     "explain": "Tilt the picture: subtract the secant line from $f$ and apply Rolle's Theorem."
+    },
+    {
+     "id": "T21",
+     "type": "mc",
+     "text": "Rolle's Theorem is proved by combining which two theorems?",
+     "options": [
+      "The Extreme Value Theorem and Fermat's Theorem",
+      "The MVT and Fermat's Theorem",
+      "The IVT and the MVT",
+      "Newton's Method and the EVT"
+     ],
+     "answer": 0,
+     "explain": "The EVT gives a max or min inside the interval; Fermat says the tangent there is flat."
+    },
+    {
+     "id": "T22",
+     "type": "mc",
+     "text": "In the MVT, $c$ must be…",
+     "options": [
+      "strictly between $a$ and $b$",
+      "equal to $a$ or $b$",
+      "the midpoint of $[a, b]$",
+      "anywhere on the real line"
+     ],
+     "answer": 0,
+     "explain": "$c$ is in the open interval $(a, b)$."
+    }
+   ]
+  },
+  "calc": {
+   "title": "Calculation drill",
+   "questions": [
+    {
+     "id": "C1",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^2 - 4x + 3$ on $[1, 3]$.",
+     "answers": [
+      2
+     ],
+     "verify": {
+      "expr": "x^2-4*x+3-(0)*x",
+      "range": [
+       1.001,
+       2.999
+      ]
+     },
+     "explain": "$f(1) = f(3) = 0$. $2c - 4 = 0$ gives $c = 2$."
+    },
+    {
+     "id": "C2",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^2 - 6x$ on $[0, 6]$.",
+     "answers": [
+      3
+     ],
+     "verify": {
+      "expr": "x^2-6*x-(0)*x",
+      "range": [
+       0.001,
+       5.999
+      ]
+     },
+     "explain": "$f(0) = f(6) = 0$. $2c - 6 = 0$ gives $c = 3$."
+    },
+    {
+     "id": "C3",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = sin x$ on $[0, pi]$.",
+     "answers": [
+      1.5708
+     ],
+     "verify": {
+      "expr": "sin(x)-(0)*x",
+      "range": [
+       0.001,
+       3.1405926535897932
+      ]
+     },
+     "explain": "$sin 0 = sin pi = 0$. $cos c = 0$ gives $c = pi/2 ≈ 1.5708$."
+    },
+    {
+     "id": "C4",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^3 - x$ on $[−1, 1]$.",
+     "answers": [
+      -0.5774,
+      0.5774
+     ],
+     "verify": {
+      "expr": "x^3-x-(0)*x",
+      "range": [
+       -0.999,
+       0.999
+      ]
+     },
+     "explain": "$3c^2 - 1 = 0$ gives $c = ±1/√3 ≈ ±0.5774$."
+    },
+    {
+     "id": "C5",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^4 - 2x^2$ on $[−2, 2]$.",
+     "answers": [
+      -1,
+      0,
+      1
+     ],
+     "verify": {
+      "expr": "x^4-2*x^2-(0)*x",
+      "range": [
+       -1.999,
+       1.999
+      ]
+     },
+     "explain": "$f'(c) = 4c^3 - 4c = 4c(c - 1)(c + 1) = 0$: $c = -1, 0, 1$."
+    },
+    {
+     "id": "C6",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^2$ on $[−1, 2]$.",
+     "answers": [],
+     "explain": "$f(-1) = 1$ but $f(2) = 4$. The ends don't match, so Rolle's Theorem doesn't apply."
+    },
+    {
+     "id": "C7",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "answers": [],
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = |x - 1|$ on $[0, 2]$.",
+     "explain": "The ends match, but $|x - 1|$ has a corner at 1, so it is not differentiable on $(0, 2)$. The theorem doesn't apply (and indeed there's no flat tangent)."
+    },
+    {
+     "id": "C8",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^2$ on $[1, 3]$.",
+     "answers": [
+      2
+     ],
+     "verify": {
+      "expr": "x^2-(4)*x",
+      "range": [
+       1.001,
+       2.999
+      ]
+     },
+     "explain": "Secant slope = (9 − 1)/2 = 4. $2c = 4$ gives $c = 2$."
+    },
+    {
+     "id": "C9",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^3$ on $[0, 3]$.",
+     "answers": [
+      1.7321
+     ],
+     "verify": {
+      "expr": "x^3-(9)*x",
+      "range": [
+       0.001,
+       2.999
+      ]
+     },
+     "explain": "Secant slope = 27/3 = 9. $3c^2 = 9$ gives $c = √3 ≈ 1.7321$ (−√3 is outside)."
+    },
+    {
+     "id": "C10",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = sqrt(x)$ on $[1, 4]$.",
+     "answers": [
+      2.25
+     ],
+     "verify": {
+      "expr": "sqrt(x)-(0.3333333333)*x",
+      "range": [
+       1.001,
+       3.999
+      ]
+     },
+     "explain": "Secant slope = (2 − 1)/3 = 1/3. $frac{1}{2sqrt(c)} = frac{1}{3}$ gives $c = 2.25$."
+    },
+    {
+     "id": "C11",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = frac{1}{x}$ on $[1, 4]$.",
+     "answers": [
+      2
+     ],
+     "verify": {
+      "expr": "1/x-(-0.25)*x",
+      "range": [
+       1.001,
+       3.999
+      ]
+     },
+     "explain": "Secant slope = (1/4 − 1)/3 = −1/4. $-1/c^2 = -1/4$ gives $c = 2$."
+    },
+    {
+     "id": "C12",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^3 - 2x$ on $[0, 2]$.",
+     "answers": [
+      1.1547
+     ],
+     "verify": {
+      "expr": "x^3-2*x-(2)*x",
+      "range": [
+       0.001,
+       1.999
+      ]
+     },
+     "explain": "Secant slope = (4 − 0)/2 = 2. $3c^2 - 2 = 2$ gives $c = 2/√3 ≈ 1.1547$."
+    },
+    {
+     "id": "C13",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = e^x$ on $[0, 1]$.",
+     "answers": [
+      0.5413
+     ],
+     "verify": {
+      "expr": "exp(x)-(1.7182818285)*x",
+      "range": [
+       0.001,
+       0.999
+      ]
+     },
+     "explain": "Secant slope = $e - 1$. $e^c = e - 1$ gives $c = ln(e - 1) ≈ 0.5413$."
+    },
+    {
+     "id": "C14",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = ln x$ on $[1, e]$.",
+     "answers": [
+      1.7183
+     ],
+     "verify": {
+      "expr": "ln(x)-(0.5819767069)*x",
+      "range": [
+       1.001,
+       2.717281828459045
+      ]
+     },
+     "explain": "Secant slope = $frac{1 - 0}{e - 1}$. $1/c = 1/(e - 1)$ gives $c = e - 1 ≈ 1.7183$."
+    },
+    {
+     "id": "C15",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = 3x^2 + 2x$ on $[−1, 2]$.",
+     "answers": [
+      0.5
+     ],
+     "verify": {
+      "expr": "3*x^2+2*x-(5)*x",
+      "range": [
+       -0.999,
+       1.999
+      ]
+     },
+     "explain": "Secant slope = (16 − 1)/3 = 5. $6c + 2 = 5$ gives $c = 0.5$."
+    },
+    {
+     "id": "C16",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^3 - 3x$ on $[−2, 2.5]$.",
+     "answers": [
+      -1.3229,
+      1.3229
+     ],
+     "verify": {
+      "expr": "x^3-3*x-(2.25)*x",
+      "range": [
+       -1.999,
+       2.499
+      ]
+     },
+     "explain": "Secant slope = (8.125 − (−2))/4.5 = 2.25. $3c^2 - 3 = 2.25$ gives $c = ±1.3229$."
+    },
+    {
+     "id": "C17",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "answers": [],
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = frac{1}{x^2}$ on $[-1, 2]$.",
+     "explain": "$1/x^2$ is not continuous at $x = 0$, which is inside $[-1, 2]$. The theorem doesn't apply."
+    },
+    {
+     "id": "C18",
+     "type": "num",
+     "text": "Find the slope of the secant line for $f(x) = x^3$ on $[1, 3]$.",
+     "label": "Slope =",
+     "answer": 13,
+     "explain": "(27 − 1)/(3 − 1) = 13."
+    },
+    {
+     "id": "C19",
+     "type": "num",
+     "text": "$f(0) = 2$ and $f'(x) ≤ 3$ for every $x$. What is the **largest** $f(4)$ could be?",
+     "label": "$f(4)$ ≤",
+     "answer": 14,
+     "explain": "By the MVT, $frac{f(4) - f(0)}{4} = f'(c) ≤ 3$, so $f(4) ≤ 2 + 12 = 14$."
+    },
+    {
+     "id": "C20",
+     "type": "num",
+     "text": "$f(1) = 10$ and $f'(x) ≥ 2$ for every $x$. What is the **smallest** $f(5)$ could be?",
+     "label": "$f(5)$ ≥",
+     "answer": 18,
+     "explain": "$frac{f(5) - f(1)}{4} = f'(c) ≥ 2$, so $f(5) ≥ 10 + 8 = 18$."
+    },
+    {
+     "id": "C21",
+     "type": "multi",
+     "text": "A particle's position is $s(t) = t^2 + 3t$ meters. On $[0, 4]$:",
+     "parts": [
+      {
+       "label": "Average velocity =",
+       "answer": 7
+      },
+      {
+       "label": "Time $c$ when $s'(c)$ equals it =",
+       "answer": 2
+      }
+     ],
+     "explain": "Average = (28 − 0)/4 = 7. $2c + 3 = 7$ gives $c = 2$."
+    },
+    {
+     "id": "C22",
+     "type": "multi",
+     "text": "A ball is dropped from 64 ft: $s(t) = -16t^2 + 64$.",
+     "parts": [
+      {
+       "label": "Seconds to hit the ground =",
+       "answer": 2
+      },
+      {
+       "label": "Average velocity =",
+       "answer": -32
+      },
+      {
+       "label": "Time when velocity equals it =",
+       "answer": 1
+      }
+     ],
+     "explain": "$16t^2 = 64$ gives $t = 2$. Average = −64/2 = −32 ft/s. $-32c = -32$ gives $c = 1$."
+    },
+    {
+     "id": "C23",
+     "type": "num",
+     "text": "You drive 150 miles in 2.5 hours. By the MVT, at some moment your speedometer read exactly…",
+     "label": "mph =",
+     "answer": 60,
+     "explain": "150/2.5 = 60 mph."
+    }
+   ]
+  }
+ }
+}

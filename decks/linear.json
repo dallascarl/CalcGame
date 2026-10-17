@@ -1,0 +1,1082 @@
+{
+ "id": "linear",
+ "course": "Calculus 1",
+ "unit": "Unit 3",
+ "title": "Linearization and Differentials",
+ "subtitle": "Approximating a function with its tangent line",
+ "version": 1,
+ "graphs": {},
+ "lesson": {
+  "slides": [
+   {
+    "id": "N1",
+    "type": "linear",
+    "title": "Real functions are messy",
+    "text": "Here is a messy function, and its tangent line at the dot. Nobody wants to compute with the curve. Zoom in on the dot until you can't tell the two apart.",
+    "fn": "sin(2*x)+x^3/6-0.5*x+1",
+    "a": 1,
+    "window": [
+     -3,
+     3,
+     -2.5,
+     4.5
+    ],
+    "goal": "zoom",
+    "zoomGoal": 16,
+    "after": "Up close, the curve and its tangent line are basically the same. Lines are easy to work with. That's the whole idea."
+   },
+   {
+    "id": "N2",
+    "type": "mc",
+    "text": "So, close to the point, we can swap the messy function for…",
+    "options": [
+     "its tangent line",
+     "its derivative",
+     "zero",
+     "the $x$-axis"
+    ],
+    "answer": 0,
+    "hint": "What did the curve turn into when you zoomed in?",
+    "explain": "Near the point, the tangent line is an excellent stand-in. Stray far away and you can make a new tangent line closer to where you are."
+   },
+   {
+    "id": "N3",
+    "type": "mc",
+    "text": "The **linearization** of $f$ at $x = a$ is\n$L(x) = f(a) + f'(a)(x - a)$\nWhat is $L(x)$, really?",
+    "options": [
+     "The tangent line at $a$, written as a function",
+     "A brand-new kind of function",
+     "The derivative of $f$",
+     "The secant line from $a$ to $x$"
+    ],
+    "answer": 0,
+    "hint": "Compare it to point-slope form, $y - y_1 = m(x - x_1)$.",
+    "explain": "**Nothing new!** It is the tangent line in point-slope form, solved for $y$. \"Linearization\" is just a fancy name for it."
+   },
+   {
+    "id": "N4",
+    "type": "match",
+    "title": "Label the pieces",
+    "text": "$L(x) = f(a) + f'(a)(x - a)$\nMatch each piece with what it means.",
+    "pairs": [
+     [
+      "$a$",
+      "the $x$-value where the line touches the curve"
+     ],
+     [
+      "$f(a)$",
+      "the height of the curve at that point"
+     ],
+     [
+      "$f'(a)$",
+      "the slope of the tangent line"
+     ],
+     [
+      "$x$",
+      "the input you want to estimate at"
+     ],
+     [
+      "$L(x)$",
+      "the estimate: height of the tangent line at $x$"
+     ]
+    ],
+    "hint": "$f(a)$ is a $y$-value; $f'(a)$ is a slope.",
+    "explain": "Point $(a, f(a))$, slope $f'(a)$: that's a line. Plug in $x$ to get the estimate $L(x)$."
+   },
+   {
+    "id": "N5",
+    "type": "multi",
+    "text": "Find the linearization of $f(x) = frac{1}{x}$ at $a = 2$. Start with the two numbers you need.",
+    "parts": [
+     {
+      "label": "$f(2)$ =",
+      "answer": 0.5
+     },
+     {
+      "label": "$f'(2)$ =",
+      "answer": -0.25
+     }
+    ],
+    "hint": "$f'(x) = -frac{1}{x^2}$.",
+    "explain": "$f(2) = 1/2$ and $f'(2) = -1/4$.",
+    "title": "Example"
+   },
+   {
+    "id": "N6",
+    "type": "mc",
+    "text": "So the linearization of $1/x$ at $a = 2$ is…",
+    "options": [
+     "$L(x) = frac{1}{2} - frac{1}{4}(x - 2)$",
+     "$L(x) = frac{1}{2} + frac{1}{4}(x - 2)$",
+     "$L(x) = -frac{1}{4} + frac{1}{2}(x - 2)$",
+     "$L(x) = frac{1}{2} - frac{1}{4}x$"
+    ],
+    "answer": 0,
+    "hint": "$f(a) + f'(a)(x - a)$ with $f(a) = 1/2$, $f'(a) = -1/4$, $a = 2$.",
+    "explain": "Height 1/2 plus slope −1/4 times $(x - 2)$."
+   },
+   {
+    "id": "N7",
+    "type": "num",
+    "text": "Use it to estimate $frac{1}{2.1}$: find $L(2.1)$.",
+    "label": "$L(2.1)$ =",
+    "answer": 0.475,
+    "tol": 0.0005,
+    "hint": "$L(2.1) = 0.5 - 0.25(0.1)$.",
+    "explain": "$L(2.1) = 0.5 - 0.025 = 0.475$. No division by 2.1 needed!"
+   },
+   {
+    "id": "N8",
+    "type": "linear",
+    "title": "How close was it?",
+    "text": "The curve is $1/x$; the teal line is $L(x)$. Drag $x$ to 2.1 and compare the two heights.",
+    "fn": "1/x",
+    "a": 2,
+    "window": [
+     0.8,
+     4,
+     -0.3,
+     1.3
+    ],
+    "goal": "target",
+    "target": 2.1,
+    "range": [
+     1.2,
+     3.6
+    ],
+    "x0": 3.3,
+    "ttol": 0.02,
+    "xstep": 0.5,
+    "ystep": 0.5,
+    "pickText": "Drag $x$ to 2.1",
+    "after": "At $x$ = 2.1: $f$ = 0.47619 and $L$ = 0.475. Off by about 0.0012. Not bad for no calculator."
+   },
+   {
+    "id": "N9",
+    "type": "mc",
+    "text": "You want to approximate $sqrt(9.1)$ with a linearization. Which function and point?",
+    "options": [
+     "$f(x) = sqrt(x)$ at $a = 9$",
+     "$f(x) = sqrt(x)$ at $a = 9.1$",
+     "$f(x) = sqrt(x)$ at $a = 0$",
+     "$f(x) = x^2$ at $a = 3$"
+    ],
+    "answer": 0,
+    "hint": "Pick $a$ close to 9.1 where $f(a)$ is easy to compute.",
+    "explain": "√9 = 3 is easy, and 9 is close to 9.1. (At 9.1 you'd need the answer to get the answer.)"
+   },
+   {
+    "id": "N10",
+    "type": "multi",
+    "text": "Approximate $sqrt(9.1)$ using $f(x) = sqrt(x)$ at $a = 9$.",
+    "parts": [
+     {
+      "label": "$f(9)$ =",
+      "answer": 3
+     },
+     {
+      "label": "$f'(9)$ =",
+      "answer": 0.166667
+     },
+     {
+      "label": "$L(9.1)$ =",
+      "answer": 3.016667,
+      "tol": 0.0005
+     }
+    ],
+    "hint": "$f'(x) = frac{1}{2sqrt(x)}$, so $f'(9) = 1/6$. Then $L(9.1) = 3 + frac{1}{6}(0.1)$.",
+    "explain": "$L(9.1) = 3 + 0.1/6 ≈ 3.016667$. The real value is 3.016621."
+   },
+   {
+    "id": "N11",
+    "type": "mc",
+    "text": "Next: approximate $sin(62°)$, using $a = 60° = pi/3$. Before using the formula, the 2° step has to be converted to radians. Why?",
+    "options": [
+     "The rule $(sin x)' = cos x$ only works in radians",
+     "Calculators can't do degrees",
+     "It doesn't matter either way",
+     "Radians are always more accurate"
+    ],
+    "answer": 0,
+    "hint": "Where did $f'(a)$ come from?",
+    "explain": "The derivative $cos x$ assumes radians. So $x - a$ = 2° = $2pi/180$ = $pi/90$ ≈ 0.0349."
+   },
+   {
+    "id": "N12",
+    "type": "multi",
+    "text": "$f(x) = sin x$, $a = pi/3$: $f(a) = sqrt(3)/2 ≈ 0.866025$ and $f'(a) = cos(pi/3) = 1/2$. Use the calculator.",
+    "parts": [
+     {
+      "label": "$x - a$ (radians) =",
+      "answer": 0.034907,
+      "tol": 0.0005
+     },
+     {
+      "label": "$L$ ≈",
+      "answer": 0.883479,
+      "tol": 0.0005
+     }
+    ],
+    "hint": "$x - a = pi/90$. Then $L = 0.866025 + 0.5(pi/90)$.",
+    "explain": "$L ≈ 0.866025 + 0.017453 = 0.883479$. The real $sin 62°$ = 0.882948."
+   },
+   {
+    "id": "N13",
+    "type": "multi",
+    "text": "Try: approximate $3.1^3$ with a linearization at $a = 3$.",
+    "parts": [
+     {
+      "label": "$f(3)$ =",
+      "answer": 27
+     },
+     {
+      "label": "$f'(3)$ =",
+      "answer": 27
+     },
+     {
+      "label": "$L(3.1)$ =",
+      "answer": 29.7
+     }
+    ],
+    "hint": "$f(x) = x^3$, $f'(x) = 3x^2$.",
+    "explain": "$L(3.1) = 27 + 27(0.1) = 29.7$. The real value is 29.791.",
+    "title": "Try"
+   },
+   {
+    "id": "N14",
+    "type": "linear",
+    "title": "How far can you trust it?",
+    "text": "$f(x) = sqrt(x)$ with its linearization at $a = 9$. Drag $x$ away from 9 and watch the error (red). When it passes 0.05, make a new linearization where you are.",
+    "fn": "sqrt(x)",
+    "a": 9,
+    "window": [
+     0,
+     30,
+     -0.5,
+     6.5
+    ],
+    "goal": "far",
+    "err": 0.05,
+    "recenter": true,
+    "range": [
+     4,
+     29
+    ],
+    "x0": 9.5,
+    "xstep": 5,
+    "after": "New point, new tangent line, tiny error again. If you have to go far from your point, just make a new linearization closer to where you need it."
+   },
+   {
+    "id": "N15",
+    "type": "bank",
+    "title": "Differentials",
+    "text": "We know dy/dx = f′(x). Now treat dx and dy as two separate small numbers and multiply across:  dy = ___ · dx",
+    "blanks": [
+     "f′(x)"
+    ],
+    "distractors": [
+     "f(x)",
+     "x",
+     "Δx"
+    ],
+    "hint": "Multiply both sides of $frac{dy}{dx} = f'(x)$ by $dx$.",
+    "explain": "$dy = f'(x) dx$. That's the definition of the differential $dy$."
+   },
+   {
+    "id": "N16",
+    "type": "match",
+    "text": "Three quantities. Match each to its meaning.",
+    "pairs": [
+     [
+      "$dx$",
+      "a small change in $x$ that you choose (same as $Δx$)"
+     ],
+     [
+      "$Δy$",
+      "the real change in $f$: $f(x + dx) - f(x)$"
+     ],
+     [
+      "$dy$",
+      "the change along the tangent line: $f'(x) dx$"
+     ]
+    ],
+    "hint": "One of them uses the curve, one uses the tangent line.",
+    "explain": "$Δy$ follows the curve. $dy$ follows the tangent line. For small $dx$ they are almost equal."
+   },
+   {
+    "id": "N17",
+    "type": "diff",
+    "title": "See dy and Δy",
+    "text": "Start at the dot. Move right by $dx$, then go up two ways: to the tangent line and to the curve.",
+    "fn": "0.3*x^2",
+    "a": 1.5,
+    "window": [
+     -0.3,
+     5,
+     -0.4,
+     6
+    ],
+    "range": [
+     0.05,
+     3
+    ],
+    "start": 2.2,
+    "agree": 0.01,
+    "xstep": 1,
+    "ystep": 1,
+    "after": "For small $dx$, $dy$ is a great approximation of $Δy$, and $dy = f'(x) dx$ is just one multiplication."
+   },
+   {
+    "id": "N18",
+    "type": "multi",
+    "text": "$y = x^2 + 2x$ at $x = 3$ with $dx = 0.1$. Compute both.",
+    "parts": [
+     {
+      "label": "$dy$ =",
+      "answer": 0.8
+     },
+     {
+      "label": "$Δy$ =",
+      "answer": 0.81
+     }
+    ],
+    "hint": "$dy = f'(3) dx = (2·3 + 2)(0.1)$. $Δy = f(3.1) - f(3)$.",
+    "explain": "$dy = 8(0.1) = 0.8$ and $Δy = 15.81 - 15 = 0.81$. Very close, and $dy$ was easier."
+   },
+   {
+    "id": "N19",
+    "type": "multi",
+    "text": "A cube's side is measured as 5 cm, but the measurement could be off by 0.1 cm. Estimate how far off the volume $V = s^3$ could be.",
+    "parts": [
+     {
+      "label": "$V'(5)$ =",
+      "answer": 75
+     },
+     {
+      "label": "$dV$ =",
+      "answer": 7.5
+     }
+    ],
+    "hint": "$V' = 3s^2$, and $dV = V'(5) ds$ with $ds = 0.1$.",
+    "explain": "$dV = 75(0.1) = 7.5$ cm³. A small error in the side becomes a bigger error in the volume.",
+    "title": "Estimating error"
+   },
+   {
+    "id": "N20",
+    "type": "pick",
+    "title": "Wrap up",
+    "text": "Which of these are the linearization of $f$ at $a$?",
+    "options": [
+     "The tangent line to $f$ at $a$",
+     "$f(a) + f'(a)(x - a)$",
+     "$y - f(a) = f'(a)(x - a)$, solved for $y$",
+     "The secant line from $a$ to $x$",
+     "$f'(x)$"
+    ],
+    "answers": [
+     0,
+     1,
+     2
+    ],
+    "hint": "Three of them are the same line written different ways.",
+    "explain": "All three are the tangent line. A linearization is not something new!"
+   }
+  ]
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory drill",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "The linearization of $f$ at $a$ is the tangent line to $f$ at $a$.",
+     "answer": true,
+     "explain": "Same line, fancier name."
+    },
+    {
+     "id": "T2",
+     "type": "match",
+     "text": "Match each piece of $L(x) = f(a) + f'(a)(x - a)$ to its meaning.",
+     "pairs": [
+      [
+       "$f(a)$",
+       "height of the curve at the point"
+      ],
+      [
+       "$f'(a)$",
+       "slope of the tangent line"
+      ],
+      [
+       "$a$",
+       "$x$-value of the point of tangency"
+      ],
+      [
+       "$L(x)$",
+       "the approximate value of $f(x)$"
+      ]
+     ],
+     "explain": "Point, slope, line."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$L(a)$ equals…",
+     "options": [
+      "$f(a)$",
+      "$f'(a)$",
+      "0",
+      "$a$"
+     ],
+     "answer": 0,
+     "explain": "At $x = a$ the $(x - a)$ term is 0, so $L(a) = f(a)$. The line touches the curve there."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "The slope of $L(x)$ is…",
+     "options": [
+      "$f'(a)$, the same everywhere",
+      "$f'(x)$, changing with $x$",
+      "$f(a)$",
+      "1"
+     ],
+     "answer": 0,
+     "explain": "$L$ is a line with slope $f'(a)$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "Best choice of $a$ to approximate $sqrt(26)$:",
+     "options": [
+      "$a = 25$",
+      "$a = 26$",
+      "$a = 0$",
+      "$a = 36$"
+     ],
+     "answer": 0,
+     "explain": "25 is close to 26 and $sqrt(25)$ = 5 is easy."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "Best choice of $a$ to approximate the cube root of 7.9:",
+     "options": [
+      "$a = 8$",
+      "$a = 7.9$",
+      "$a = 1$",
+      "$a = 27$"
+     ],
+     "answer": 0,
+     "explain": "The cube root of 8 is 2, and 8 is close."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "Best function and point to approximate $ln(1.04)$:",
+     "options": [
+      "$f(x) = ln x$ at $a = 1$",
+      "$f(x) = ln x$ at $a = 0$",
+      "$f(x) = e^x$ at $a = 1$",
+      "$f(x) = ln x$ at $a = e$"
+     ],
+     "answer": 0,
+     "explain": "$ln 1 = 0$ and 1 is close to 1.04. ($ln 0$ doesn't exist.)"
+    },
+    {
+     "id": "T8",
+     "type": "mc",
+     "text": "Best function and point to approximate $e^(-0.03)$:",
+     "options": [
+      "$f(x) = e^x$ at $a = 0$",
+      "$f(x) = e^x$ at $a = 1$",
+      "$f(x) = ln x$ at $a = 1$",
+      "$f(x) = e^x$ at $a = -0.03$"
+     ],
+     "answer": 0,
+     "explain": "$e^0 = 1$, and 0 is close to −0.03."
+    },
+    {
+     "id": "T9",
+     "type": "tf",
+     "text": "A linear approximation usually gets less accurate the farther $x$ is from $a$.",
+     "answer": true,
+     "explain": "Near $a$ the curve hugs its tangent; far away they drift apart. Then make a new linearization."
+    },
+    {
+     "id": "T10",
+     "type": "mc",
+     "text": "$f$ is concave up near $a$. Then $L(x)$ near $a$ is…",
+     "options": [
+      "an underestimate (the tangent is below the curve)",
+      "an overestimate (the tangent is above the curve)",
+      "exactly right",
+      "impossible to tell"
+     ],
+     "answer": 0,
+     "explain": "A concave-up curve bends up away from its tangent line, so the line sits below it."
+    },
+    {
+     "id": "T11",
+     "type": "match",
+     "text": "Match each quantity to its meaning.",
+     "pairs": [
+      [
+       "$dx$",
+       "a change in $x$ you choose"
+      ],
+      [
+       "$dy$",
+       "change along the tangent line"
+      ],
+      [
+       "$Δy$",
+       "actual change in $f$"
+      ]
+     ],
+     "explain": "$dy = f'(x) dx$ follows the tangent; $Δy$ follows the curve."
+    },
+    {
+     "id": "T12",
+     "type": "mc",
+     "text": "If $y = x^3$, the differential $dy$ is…",
+     "options": [
+      "$3x^2 dx$",
+      "$3x^2$",
+      "$x^3 dx$",
+      "$(x + dx)^3 - x^3$"
+     ],
+     "answer": 0,
+     "explain": "$dy = f'(x) dx = 3x^2 dx$. (The last option is $Δy$.)"
+    },
+    {
+     "id": "T13",
+     "type": "mc",
+     "text": "If $y = sin x$, then $dy$ = …",
+     "options": [
+      "$cos x dx$",
+      "$cos x$",
+      "$-cos x dx$",
+      "$sin x dx$"
+     ],
+     "answer": 0,
+     "explain": "$dy = (sin x)' dx = cos x dx$."
+    },
+    {
+     "id": "T14",
+     "type": "tf",
+     "text": "$dy$ and $Δy$ are always exactly equal.",
+     "answer": false,
+     "explain": "$dy$ is an approximation of $Δy$. They agree well only for small $dx$ (and exactly only if $f$ is a line)."
+    },
+    {
+     "id": "T15",
+     "type": "tf",
+     "text": "$dx$ and $Δx$ mean the same thing.",
+     "answer": true,
+     "explain": "Both are the change in $x$ that you choose."
+    },
+    {
+     "id": "T16",
+     "type": "mc",
+     "text": "A measurement of $x$ is off by $dx$. The error in $f(x)$ is approximately…",
+     "options": [
+      "$dy = f'(x) dx$",
+      "$f(dx)$",
+      "$dx$",
+      "$f(x) dx$"
+     ],
+     "answer": 0,
+     "explain": "Error propagates like the differential: $dy = f'(x) dx$."
+    },
+    {
+     "id": "T17",
+     "type": "bank",
+     "text": "L(x) = f(a) + ___ (x − ___)",
+     "blanks": [
+      "f′(a)",
+      "a"
+     ],
+     "distractors": [
+      "f(x)",
+      "x",
+      "f′(x)"
+     ],
+     "explain": "$L(x) = f(a) + f'(a)(x - a)$"
+    },
+    {
+     "id": "T18",
+     "type": "mc",
+     "text": "Why use $dy$ instead of computing $Δy$?",
+     "options": [
+      "$dy$ is just one multiplication; $Δy$ needs $f$ at a new point",
+      "$dy$ is always exact",
+      "$Δy$ doesn't exist",
+      "$dy$ is always larger"
+     ],
+     "answer": 0,
+     "explain": "Same reason as linearization: lines are easy."
+    },
+    {
+     "id": "T19",
+     "type": "pick",
+     "text": "Which of these describe the linearization of $f$ at $a$?",
+     "options": [
+      "The tangent line at $a$",
+      "$f(a) + f'(a)(x - a)$",
+      "A good approximation of $f$ near $a$",
+      "A good approximation of $f$ everywhere",
+      "The secant line"
+     ],
+     "answers": [
+      0,
+      1,
+      2
+     ],
+     "explain": "It is the tangent line, and it is only trustworthy near $a$."
+    }
+   ]
+  },
+  "calc": {
+   "title": "Calculation drill",
+   "questions": [
+    {
+     "id": "C1",
+     "type": "multi",
+     "text": "Approximate $sqrt(4.1)$ with a linearization of $f(x) = sqrt(x)$ at $a = 4$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 2
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.25
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 2.025,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = frac{1}{2sqrt(x)}$. $L = 2 + (0.25)(0.1) ≈ 2.025$. (The real value is 2.024846.)"
+    },
+    {
+     "id": "C2",
+     "type": "multi",
+     "text": "Approximate $sqrt(26)$ with a linearization of $f(x) = sqrt(x)$ at $a = 25$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 5
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.1
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 5.1,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(25) = 1/10$. $L = 5 + (0.1)(1) ≈ 5.1$. (The real value is 5.09902.)"
+    },
+    {
+     "id": "C3",
+     "type": "multi",
+     "text": "Approximate the cube root of 8.1 with a linearization of $f(x) = x^(1/3)$ at $a = 8$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 2
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.083333
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 2.008333,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = frac{1}{3}x^(-2/3)$, so $f'(8) = 1/12$. $L = 2 + (0.0833)(0.1) ≈ 2.008333$. (The real value is 2.008299.)"
+    },
+    {
+     "id": "C4",
+     "type": "multi",
+     "text": "Approximate the cube root of 7.9 with a linearization of $f(x) = x^(1/3)$ at $a = 8$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 2
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.083333
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 1.991667,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(8) = 1/12$, and $x - a = -0.1$. $L = 2 + (0.0833)(-0.1) ≈ 1.991667$. (The real value is 1.991632.)"
+    },
+    {
+     "id": "C5",
+     "type": "multi",
+     "text": "Approximate $frac{1}{1.98}$ with a linearization of $f(x) = frac{1}{x}$ at $a = 2$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 0.5
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": -0.25
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 0.505,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = -1/x^2$. $L = 0.5 + (-0.25)(-0.02) ≈ 0.505$. (The real value is 0.505051.)"
+    },
+    {
+     "id": "C6",
+     "type": "multi",
+     "text": "Approximate $ln(1.05)$ with a linearization of $f(x) = ln x$ at $a = 1$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 0.05,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = 1/x$. $L = 0 + (1)(0.05) ≈ 0.05$. (The real value is 0.04879.)"
+    },
+    {
+     "id": "C7",
+     "type": "multi",
+     "text": "Approximate $e^(0.1)$ with a linearization of $f(x) = e^x$ at $a = 0$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 1.1,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = e^x$. $L = 1 + (1)(0.1) ≈ 1.1$. (The real value is 1.105171.)"
+    },
+    {
+     "id": "C8",
+     "type": "multi",
+     "text": "Approximate $cos(0.1)$ with a linearization of $f(x) = cos x$ at $a = 0$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 1,
+       "tol": 0.0001
+      }
+     ],
+     "explain": "$f'(0) = -sin 0 = 0$, a flat tangent. $L = 1 + (0)(0.1) ≈ 1$. (The real value is 0.995004.)"
+    },
+    {
+     "id": "C9",
+     "type": "multi",
+     "text": "Approximate $2.98^2$ with a linearization of $f(x) = x^2$ at $a = 3$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 9
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 6
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 8.88,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = 2x$. $L = 9 + (6)(-0.02) ≈ 8.88$. (The real value is 8.8804.)"
+    },
+    {
+     "id": "C10",
+     "type": "multi",
+     "text": "Approximate $4.1^3$ with a linearization of $f(x) = x^3$ at $a = 4$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 64
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 48
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 68.8,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = 3x^2$. $L = 64 + (48)(0.1) ≈ 68.8$. (The real value is 68.921.)"
+    },
+    {
+     "id": "C11",
+     "type": "multi",
+     "text": "Approximate $1.01^10$ with a linearization of $f(x) = x^10$ at $a = 1$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 10
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 1.1,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = 10x^9$. $L = 1 + (10)(0.01) ≈ 1.1$. (The real value is 1.104622.)"
+    },
+    {
+     "id": "C12",
+     "type": "multi",
+     "text": "Approximate $tan(0.05)$ with a linearization of $f(x) = tan x$ at $a = 0$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 0.05,
+       "tol": 0.0001
+      }
+     ],
+     "explain": "$f'(x) = sec^2 x$, which is 1 at 0. $L = 0 + (1)(0.05) ≈ 0.05$. (The real value is 0.050042.)"
+    },
+    {
+     "id": "C13",
+     "type": "multi",
+     "text": "Approximate $sqrt(15.8)$ with a linearization of $f(x) = sqrt(x)$ at $a = 16$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 4
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.125
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 3.975,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(16) = 1/8$. $L = 4 + (0.125)(-0.2) ≈ 3.975$. (The real value is 3.974921.)"
+    },
+    {
+     "id": "C14",
+     "type": "multi",
+     "text": "Write the linearization of $f(x) = x^3$ at $a = 2$ in the form $L(x) = mx + b$.",
+     "parts": [
+      {
+       "label": "slope $m$ =",
+       "answer": 12
+      },
+      {
+       "label": "intercept $b$ =",
+       "answer": -16
+      }
+     ],
+     "explain": "$L(x) = 8 + 12(x - 2) = 12x - 16$."
+    },
+    {
+     "id": "C15",
+     "type": "multi",
+     "text": "Write the linearization of $f(x) = sqrt(x)$ at $a = 9$ in the form $L(x) = mx + b$.",
+     "parts": [
+      {
+       "label": "slope $m$ =",
+       "answer": 0.166667
+      },
+      {
+       "label": "intercept $b$ =",
+       "answer": 1.5
+      }
+     ],
+     "explain": "$L(x) = 3 + frac{1}{6}(x - 9) = frac{x}{6} + 1.5$."
+    },
+    {
+     "id": "C16",
+     "type": "multi",
+     "text": "Write the linearization of $f(x) = sin x$ at $a = 0$ in the form $L(x) = mx + b$.",
+     "parts": [
+      {
+       "label": "slope $m$ =",
+       "answer": 1
+      },
+      {
+       "label": "intercept $b$ =",
+       "answer": 0
+      }
+     ],
+     "explain": "$L(x) = 0 + 1(x - 0) = x$. Near 0, $sin x ≈ x$."
+    },
+    {
+     "id": "C17",
+     "type": "multi",
+     "text": "Write the linearization of $f(x) = frac{1}{x}$ at $a = 2$ in the form $L(x) = mx + b$.",
+     "parts": [
+      {
+       "label": "slope $m$ =",
+       "answer": -0.25
+      },
+      {
+       "label": "intercept $b$ =",
+       "answer": 1
+      }
+     ],
+     "explain": "$L(x) = frac{1}{2} - frac{1}{4}(x - 2) = -frac{x}{4} + 1$."
+    },
+    {
+     "id": "C18",
+     "type": "multi",
+     "text": "$y = x^3$ at $x = 2$ with $dx = 0.05$. Find $dy$ and $Δy$ (at least 4 decimal places).",
+     "parts": [
+      {
+       "label": "$dy$ =",
+       "answer": 0.6,
+       "tol": 0.0002
+      },
+      {
+       "label": "$Δy$ =",
+       "answer": 0.615125,
+       "tol": 0.0002
+      }
+     ],
+     "explain": "$dy = 3(2)^2(0.05)$ = 0.6, and $Δy = f(2.05) - f(2)$ = 0.615125."
+    },
+    {
+     "id": "C19",
+     "type": "multi",
+     "text": "$y = sqrt(x)$ at $x = 4$ with $dx = 0.2$. Find $dy$ and $Δy$ (at least 4 decimal places).",
+     "parts": [
+      {
+       "label": "$dy$ =",
+       "answer": 0.05,
+       "tol": 0.0002
+      },
+      {
+       "label": "$Δy$ =",
+       "answer": 0.04939,
+       "tol": 0.0002
+      }
+     ],
+     "explain": "$dy = frac{1}{2sqrt(4)}(0.2)$ = 0.05, and $Δy = f(4.2) - f(4)$ = 0.04939."
+    },
+    {
+     "id": "C20",
+     "type": "multi",
+     "text": "$y = x^2$ at $x = 5$ with $dx = −0.1$. Find $dy$ and $Δy$ (at least 4 decimal places).",
+     "parts": [
+      {
+       "label": "$dy$ =",
+       "answer": -1,
+       "tol": 0.0002
+      },
+      {
+       "label": "$Δy$ =",
+       "answer": -0.99,
+       "tol": 0.0002
+      }
+     ],
+     "explain": "$dy = 2(5)(−0.1)$ = -1, and $Δy = f(4.9) - f(5)$ = -0.99."
+    },
+    {
+     "id": "C21",
+     "type": "num",
+     "text": "$y = frac{1}{x}$. Find the differential $dy$ when $x = 2$ and $dx = 0.1$.",
+     "label": "$dy$ =",
+     "answer": -0.025,
+     "tol": 0.0002,
+     "explain": "$dy = -frac{1}{x^2} dx = -frac{1}{4}(0.1) = -0.025$."
+    },
+    {
+     "id": "C22",
+     "type": "num",
+     "text": "A sphere's radius is measured as 10 cm, possibly off by 0.05 cm. Use differentials to estimate the possible error in its volume $V = frac{4}{3}pi r^3$.",
+     "label": "$dV$ ≈",
+     "answer": 62.8319,
+     "tol": 0.01,
+     "explain": "$dV = 4pi r^2 dr = 4pi(100)(0.05) ≈ 62.83$ cm³."
+    },
+    {
+     "id": "C23",
+     "type": "num",
+     "text": "A circle's radius is 3 cm, possibly off by 0.1 cm. Estimate the possible error in its area $A = pi r^2$.",
+     "label": "$dA$ ≈",
+     "answer": 1.885,
+     "tol": 0.01,
+     "explain": "$dA = 2pi r dr = 2pi(3)(0.1) ≈ 1.885$ cm²."
+    },
+    {
+     "id": "C24",
+     "type": "num",
+     "text": "A square's side is 10 m, possibly off by 0.2 m. Estimate the possible error in its area.",
+     "label": "$dA$ ≈",
+     "answer": 4,
+     "tol": 0.01,
+     "explain": "$dA = 2s ds = 2(10)(0.2) = 4$ m²."
+    },
+    {
+     "id": "C25",
+     "type": "num",
+     "text": "A cube's side is 5 cm ± 1 cm. Estimate the possible error in its volume.",
+     "label": "$dV$ ≈",
+     "answer": 75,
+     "tol": 0.01,
+     "explain": "$dV = 3s^2 ds = 3(25)(1) = 75$ cm³. (With an error this big, the real change is 91: $dy$ is best for small $dx$.)"
+    }
+   ]
+  }
+ }
+}

@@ -28,7 +28,9 @@ function fmt(s){
 }
 
 /* ---------- expression parser (no eval) ---------- */
-const FN={sin:Math.sin,cos:Math.cos,tan:Math.tan,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp,ln:Math.log,cbrt:Math.cbrt};
+const DEG=Math.PI/180;
+const FN={sin:Math.sin,cos:Math.cos,tan:Math.tan,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp,ln:Math.log,cbrt:Math.cbrt,
+  sind:x=>Math.sin(x*DEG),cosd:x=>Math.cos(x*DEG),tand:x=>Math.tan(x*DEG),arctan:Math.atan,arcsin:Math.asin};
 /* a^b, with real roots of negative numbers when b = p/q and q is odd (so x^(3/5) works for x < 0) */
 function rpow(a,b){
   if(a>=0||Number.isInteger(b))return Math.pow(a,b);
@@ -219,6 +221,7 @@ app.addEventListener('click',e=>{
 function screen(p){
   keyHook=null;itemKeys=null;
   app.innerHTML=(p.top||'')+'<main class="body">'+(p.body||'')+'</main>'+(p.foot?'<footer class="foot">'+p.foot+'</footer>':'');
+  if(CALC.open&&$('[data-calc]'))calcPanel();
 }
 const bar=(label,prog,right)=>'<header class="bar"><button class="x" data-go="home" aria-label="Back to the map">←</button><div class="bar-mid"><span class="bar-l">'+label+'</span>'+(prog!=null?'<div class="prog"><i style="width:'+prog+'%"></i></div>':'')+'</div>'+(right||'')+'</header>';
 const pips=()=>'<div class="streak" role="img" aria-label="Streak '+S.streak+' of '+RULES.streak+'">'+Array.from({length:RULES.streak},(_,k)=>'<i class="'+(k<S.streak?'on':'')+'"></i>').join('')+'</div>';
@@ -249,7 +252,8 @@ function mountItem(it,host,onChange){
   if(it.show&&it.fn)h+='<div class="gwrap">'+plot(autoGraph(it.fn),false).svg+'</div>';
   if(it.graph&&DECK.graphs[it.graph])h+='<div class="gwrap">'+plot(DECK.graphs[it.graph],it.type==='explore').svg+'</div>';
   host.innerHTML=h+'<div class="ix"></div>';
-  const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect}[it.type];
+  const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
+    match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -264,7 +268,9 @@ function answerText(q){
   if(q.type==='graph')return typeof q.answer==='string'?(q.answer==='UND'?'undefined':q.answer==='NONE'?'none (there is no such point)':'DNE'):neg(q.answer);
   if(q.type==='num')return neg(q.answer);
   if(q.type==='multi')return q.fails?(q.failText||'Newton’s method breaks down here'):q.parts.map(p=>p.label+' '+neg(+p.answer.toFixed(4))).join(', ');
-  if(q.type==='crit')return q.answers.length?q.answers.map(neg).join(', '):'no critical numbers';
+  if(q.type==='crit')return q.answers.length?q.answers.map(v=>neg(+v.toFixed(4))).join(', '):(q.noneText||'no critical numbers');
+  if(q.type==='pick')return q.answers.map(i=>q.options[i]).join('; ');
+  if(q.type==='match')return '\n'+q.pairs.map(p=>'• '+p[0]+' → '+p[1]).join('\n');
   if(q.type==='mc')return q.options[q.answer];
   if(q.type==='tf')return q.answer?'True':'False';
   return q.blanks.join(', ');
@@ -394,8 +400,8 @@ function critWidget(ix,o){
   function draw(){
     list.className='critlist';
     list.innerHTML='<p class="tiny">'+(vals.length?'Your list (tap one to remove it):':'Your list is empty.')+'</p><div class="chips">'+
-      vals.slice().sort((a,b)=>a-b).map(v=>'<button class="chip" data-v="'+v+'"'+(locked?' disabled':'')+'>x = '+neg(+v.toFixed(4))+'</button>').join('')+'</div>'+
-      (o.allowNone?'<button class="btn small ghost nonebtn" aria-pressed="'+none+'"'+(locked?' disabled':'')+'>There are no critical numbers</button>':'');
+      vals.slice().sort((a,b)=>a-b).map(v=>'<button class="chip" data-v="'+v+'"'+(locked?' disabled':'')+'>'+(o.v||'x')+' = '+neg(+v.toFixed(4))+'</button>').join('')+'</div>'+
+      (o.allowNone?'<button class="btn small ghost nonebtn" aria-pressed="'+none+'"'+(locked?' disabled':'')+'>'+esc(o.noneText||'There are no critical numbers')+'</button>':'');
   }
   list.addEventListener('click',e=>{
     if(locked)return;
@@ -414,7 +420,7 @@ function critWidget(ix,o){
     reset(){locked=false;vals=[];none=false;P.reset();draw();}};
 }
 function mountCrit(q,ix,onChange){
-  const W=critWidget(ix,{answers:q.answers,allowNone:true,onChange});
+  const W=critWidget(ix,{answers:q.answers,allowNone:true,noneText:q.noneText,label:q.label,v:q.var,onChange});
   return {kind:'q',canGo:W.canGo,check:W.check,lock:(r,ok)=>W.lock(ok),reset(){W.reset();onChange();}};
 }
 /* the "test every candidate" lesson widget: crit numbers, endpoints, table of values, tap the max, tap the min */
@@ -625,6 +631,200 @@ function mountBisect(it,ix,onChange,host){
   return {kind:'pass',canGo:()=>done};
 }
 
+/* ---------- match: tap a card on the left, then the card on the right it goes with ---------- */
+function mountMatch(q,ix,onChange){
+  const n=q.pairs.length,R=shuffle(q.pairs.map((_,i)=>i));
+  let pick=-1,link=Array(n).fill(-1),locked=false,marks=null;
+  const draw=()=>{
+    const left=q.pairs.map((p,i)=>'<button class="mt'+(pick===i?' on':'')+(link[i]>=0?' done c'+(i%6):'')+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-l="'+i+'"'+(locked?' disabled':'')+'><span class="tag">'+(i+1)+'</span><span>'+fmt(p[0])+'</span></button>').join('');
+    const right=R.map(j=>{const o=link.indexOf(j);return '<button class="mt'+(o>=0?' done c'+(o%6):'')+'" data-r="'+j+'"'+(locked?' disabled':'')+'>'+(o>=0?'<span class="tag">'+(o+1)+'</span>':'<span class="tag empty"></span>')+'<span>'+fmt(q.pairs[j][1])+'</span></button>';}).join('');
+    ix.innerHTML='<p class="tiny">'+esc(q.howto||'Tap a card on the left, then the card on the right that goes with it. Tap a matched card to undo.')+'</p><div class="match"><div class="mcol">'+left+'</div><div class="mcol">'+right+'</div></div>';
+  };
+  ix.addEventListener('click',e=>{
+    if(locked)return;
+    const l=e.target.closest('[data-l]'),r=e.target.closest('[data-r]');
+    if(l){const i=+l.dataset.l; if(link[i]>=0){link[i]=-1;pick=i;} else pick=pick===i?-1:i;}
+    else if(r){const j=+r.dataset.r,o=link.indexOf(j);
+      if(pick<0){if(o>=0){link[o]=-1;pick=o;}}
+      else{if(o>=0)link[o]=-1; link[pick]=j; pick=-1;} }
+    else return;
+    draw();onChange();
+  });
+  draw();
+  return {kind:'q',canGo:()=>link.every(v=>v>=0),check:()=>link.every((v,i)=>v===i),
+    lock(){locked=true;pick=-1;marks=link.map((v,i)=>v===i);draw();},
+    reset(){locked=false;marks=null;pick=-1;link=Array(n).fill(-1);draw();onChange();}};
+}
+
+/* ---------- pick: select all that apply ---------- */
+function mountPick(q,ix,onChange){
+  let sel=new Set(),locked=false;
+  ix.innerHTML='<p class="tiny">Select all that apply.</p><div class="opts">'+q.options.map((o,i)=>'<button class="opt chk" data-i="'+i+'" aria-pressed="false"><span class="box"></span><span>'+fmt(o)+'</span></button>').join('')+'</div>';
+  const all=()=>ix.querySelectorAll('.opt');
+  ix.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b||locked)return;const i=+b.dataset.i;sel.has(i)?sel.delete(i):sel.add(i);b.setAttribute('aria-pressed',sel.has(i));onChange();});
+  const want=new Set(q.answers);
+  return {kind:'q',canGo:()=>sel.size>0,check:()=>sel.size===want.size&&[...sel].every(i=>want.has(i)),
+    lock(reveal){locked=true;all().forEach((x,i)=>{x.disabled=true;
+      if(sel.has(i))x.classList.add(want.has(i)?'is-right':'is-wrong'); else if(want.has(i)&&reveal)x.classList.add('is-miss');});},
+    reset(){locked=false;sel=new Set();all().forEach(x=>{x.disabled=false;x.className='opt chk';x.setAttribute('aria-pressed','false');});onChange();}};
+}
+
+/* ---------- MVT explorer: slide c until the tangent is parallel to the secant ---------- */
+function mountMVT(it,ix,onChange,host){
+  const F=fn(it.fn),D=it.dfn?fn(it.dfn):(x=>numDeriv(F,x)),a=it.a,b=it.b,W=it.window,cs=it.cs||[],tol=it.tol||(b-a)/60;
+  const m=(F(b)-F(a))/(b-a),found=new Set(),v=it.v||'c';
+  const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
+  ix.innerHTML='<label class="slide-l" for="mc">'+fmt(it.pickText||'Drag to move the point $'+v+'$')+'</label><input type="range" id="mc" min="'+(a+(b-a)/800)+'" max="'+(b-(b-a)/800)+'" step="'+((b-a)/800)+'" value="'+(it.start==null?a+(b-a)*0.12:it.start)+'">'+
+    '<div class="read" id="mr"></div><div class="goals" id="mg"></div><div class="fb" id="mfb" hidden></div>';
+  const sl=$('#mc',ix);
+  const draw=()=>{
+    const c=+sl.value,d=D(c),hit=cs.findIndex(k=>Math.abs(k-c)<=tol),P=plot({window:W,pieces:[{expr:it.fn,from:a,to:b}],dots:[[a,F(a)],[b,F(b)]],xstep:it.xstep,ystep:it.ystep,autoTicks:it.autoTicks},false);
+    const r=v=>Math.round(Math.max(-9999,Math.min(9999,v))*10)/10,X=x=>r(P.sx(x)),Y=y=>r(P.sy(y)),cx=hit>=0?cs[hit]:c,cy=F(cx),dd=hit>=0?m:d;
+    let o='<g clip-path="url(#'+P.clip+')"><line class="g-sec" x1="'+X(W[0])+'" y1="'+Y(F(a)+m*(W[0]-a))+'" x2="'+X(W[1])+'" y2="'+Y(F(a)+m*(W[1]-a))+'"/>'+
+      '<line class="n-t'+(hit>=0?' par':'')+'" x1="'+X(W[0])+'" y1="'+Y(cy+dd*(W[0]-cx))+'" x2="'+X(W[1])+'" y2="'+Y(cy+dd*(W[1]-cx))+'"/>'+
+      '<line class="n-v" x1="'+X(cx)+'" x2="'+X(cx)+'" y1="'+Y(Math.max(W[2],Math.min(W[3],0)))+'" y2="'+Y(cy)+'"/></g>';
+    [...found].forEach(k=>{o+='<circle class="mv-f" cx="'+X(cs[k])+'" cy="'+Y(F(cs[k]))+'" r="5"/>';});
+    o+='<circle class="n-p'+(hit>=0?' par':'')+'" cx="'+X(cx)+'" cy="'+Y(cy)+'" r="5.5"/>';
+    o+='<text class="n-lab" text-anchor="middle" x="'+X(a)+'" y="'+(Y(Math.max(W[2],Math.min(W[3],0)))+15)+'">a</text><text class="n-lab" text-anchor="middle" x="'+X(b)+'" y="'+(Y(Math.max(W[2],Math.min(W[3],0)))+15)+'">b</text>';
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+    $('#mr',ix).innerHTML='<span>'+esc(it.secLabel||'Secant slope')+' <b class="sec">'+fix(m,3)+'</b></span><span>'+fmt('$f\'('+v+')$')+' <b>'+fix(dd,3)+'</b></span>';
+    if(hit>=0&&!found.has(hit)){found.add(hit);
+      const fb=$('#mfb',ix);fb.hidden=false;fb.className='fb good';
+      fb.innerHTML='<span>'+fmt((found.size===cs.length?(it.after||'Parallel at $'+v+'$ ≈ {c}. You found them all.'):(it.found||'Parallel at $'+v+'$ ≈ {c}. There is another one. Keep looking.')).replace(/\{c\}/g,fix(cs[hit],4)))+'</span>';
+      if(found.size===cs.length)onChange(); }
+    $('#mg',ix).innerHTML=cs.map((k,i)=>'<span class="goal'+(found.has(i)?' on':'')+'">'+(found.has(i)?esc(v)+' ≈ '+fix(k,3)+' ✓':'Find '+esc(v)+(cs.length>1?' #'+(i+1):''))+'</span>').join('');
+  };
+  sl.addEventListener('input',draw);draw();
+  return {kind:'pass',canGo:()=>found.size===cs.length};
+}
+
+/* ---------- linearization explorer: zoom until the curve is a line, or wander off and re-center ---------- */
+function mountLinear(it,ix,onChange,host){
+  const F=fn(it.fn),D=it.dfn?fn(it.dfn):(x=>numDeriv(F,x)),W0=it.window,mode=it.goal||'zoom';
+  let a=it.a,zoom=1,x=it.x0==null?it.a:it.x0,done=false,sawFar=false,moved=false;
+  const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
+  const L=t=>F(a)+D(a)*(t-a);
+  const view=()=>{if(zoom===1)return W0;const w=(W0[1]-W0[0])/zoom,h=(W0[3]-W0[2])/zoom,y=F(a);return [a-w/2,a+w/2,y-h/2,y+h/2];};
+  const say=(ok,msg)=>{const fb=$('#lfb',ix);fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+fmt(msg)+'</span>';};
+  const finish=msg=>{if(!done){done=true;say(true,msg);onChange();}};
+  const draw=()=>{
+    const V=view(),P=plot({window:V,pieces:[{expr:it.fn,from:V[0],to:V[1]}],autoTicks:true,xstep:zoom===1?it.xstep:0,ystep:zoom===1?it.ystep:0},false);
+    const r=v=>Math.round(Math.max(-9999,Math.min(9999,v))*10)/10,X=t=>r(P.sx(t)),Y=t=>r(P.sy(t));
+    let o='<g clip-path="url(#'+P.clip+')"><line class="g-lin" x1="'+X(V[0])+'" y1="'+Y(L(V[0]))+'" x2="'+X(V[1])+'" y2="'+Y(L(V[1]))+'"/>';
+    if(mode!=='zoom')o+='<line class="l-err" x1="'+X(x)+'" x2="'+X(x)+'" y1="'+Y(F(x))+'" y2="'+Y(L(x))+'"/><circle class="l-on" cx="'+X(x)+'" cy="'+Y(L(x))+'" r="4.5"/><circle class="n-p" cx="'+X(x)+'" cy="'+Y(F(x))+'" r="4.5"/>';
+    o+='</g><circle class="l-a" cx="'+X(a)+'" cy="'+Y(F(a))+'" r="5.5"/>';
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+    if(mode==='zoom'){$('#lz',ix).textContent='Zoom ×'+zoom; $('#zout',ix).disabled=zoom===1;}
+    else{const e=Math.abs(F(x)-L(x));
+      $('#lr',ix).innerHTML='<span>'+fmt('$x$')+' = <b>'+fix(x,3)+'</b></span><span>'+fmt('$f(x)$')+' = <b>'+fix(F(x),5)+'</b></span><span>'+fmt('$L(x)$')+' = <b class="lin">'+fix(L(x),5)+'</b></span><span>error = <b class="'+(it.err&&e>=it.err?'bad':'')+'">'+fix(e,5)+'</b></span>';}
+  };
+  if(mode==='zoom'){
+    ix.innerHTML='<div class="row nrow"><button class="btn small" id="zin">Zoom in +</button><button class="btn small ghost" id="zout">Zoom out −</button><span class="pts" id="lz"></span></div><div class="fb" id="lfb" hidden></div>';
+    $('#zin',ix).onclick=()=>{zoom=Math.min(zoom*4,1024);draw();if(zoom>=(it.zoomGoal||16))finish(it.after||'Zoomed in this far, the curve and its tangent line look the same.');};
+    $('#zout',ix).onclick=()=>{zoom=Math.max(zoom/4,1);draw();};
+  }else{
+    const [lo,hi]=it.range||[W0[0],W0[1]];
+    ix.innerHTML='<label class="slide-l" for="lx">'+fmt(it.pickText||'Drag to move $x$')+'</label><input type="range" id="lx" min="'+lo+'" max="'+hi+'" step="'+((hi-lo)/1000)+'" value="'+x+'"><div class="read lread" id="lr"></div>'+
+      (it.recenter?'<button class="btn small ghost" id="lre">'+fmt('New linearization at this $x$')+'</button>':'')+'<div class="fb" id="lfb" hidden></div>';
+    $('#lx',ix).addEventListener('input',e=>{x=+e.target.value;moved=true;
+      if(it.target!=null&&Math.abs(x-it.target)<=(it.ttol||(hi-lo)/200)){x=it.target;e.target.value=x;}
+      draw();
+      const er=Math.abs(F(x)-L(x));
+      if(mode==='target'&&x===it.target)finish(it.after||'');
+      if(mode==='far'&&it.err&&er>=it.err&&!sawFar){sawFar=true;say(false,it.farMsg||'Too far: the error is now bigger than '+it.err+'. Tap the **New linearization** button to fix it.');}
+    });
+    if($('#lre',ix))$('#lre',ix).onclick=()=>{if(!moved)return;a=x;draw();
+      if(mode==='far'&&sawFar)finish(it.after||'New tangent line, new point. Near here the error is tiny again.');};
+  }
+  draw();
+  return {kind:'pass',canGo:()=>done};
+}
+
+/* ---------- differentials: dx along, dy up to the tangent, Δy up to the curve ---------- */
+function mountDiff(it,ix,onChange,host){
+  const F=fn(it.fn),D=it.dfn?fn(it.dfn):(x=>numDeriv(F,x)),a=it.a,W=it.window,[lo,hi]=it.range||[0.05,(W[1]-a)*0.9];
+  let dx=it.start||hi*0.8,phase='id',swap=Math.random()<0.5,done=false;
+  const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
+  const say=(ok,msg)=>{const fb=$('#dfb',ix);fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+fmt(msg)+'</span>';};
+  const draw=()=>{
+    const P=plot({window:W,pieces:[{expr:it.fn,from:W[0],to:W[1]}],xstep:it.xstep,ystep:it.ystep,autoTicks:it.autoTicks},false);
+    const r=v=>Math.round(v*10)/10,X=t=>r(P.sx(t)),Y=t=>r(P.sy(t)),y0=F(a),d=D(a),x1=a+dx,dy=d*dx,Dy=F(x1)-y0;
+    const lab=(t,cls)=>phase==='id'?(cls==='dy'?(swap?'B':'A'):(swap?'A':'B')):(cls==='dy'?'dy':'Δy');
+    let o='<g clip-path="url(#'+P.clip+')"><line class="g-lin" x1="'+X(W[0])+'" y1="'+Y(y0+d*(W[0]-a))+'" x2="'+X(W[1])+'" y2="'+Y(y0+d*(W[1]-a))+'"/>'+
+      '<line class="d-dx" x1="'+X(a)+'" x2="'+X(x1)+'" y1="'+Y(y0)+'" y2="'+Y(y0)+'"/>'+
+      '<line class="d-dy'+(phase==='id'?' q':'')+'" x1="'+X(x1)+'" x2="'+X(x1)+'" y1="'+Y(y0)+'" y2="'+Y(y0+dy)+'"/>'+
+      '<line class="d-Dy'+(phase==='id'?' q':'')+'" x1="'+(X(x1)+7)+'" x2="'+(X(x1)+7)+'" y1="'+Y(y0)+'" y2="'+Y(y0+Dy)+'"/>'+
+      '<line class="n-v" x1="'+(X(x1)+7)+'" x2="'+X(x1)+'" y1="'+Y(y0+Dy)+'" y2="'+Y(y0+Dy)+'"/></g>'+
+      '<circle class="l-a" cx="'+X(a)+'" cy="'+Y(y0)+'" r="5"/><circle class="n-p" cx="'+X(x1)+'" cy="'+Y(F(x1))+'" r="4"/><circle class="l-on" cx="'+X(x1)+'" cy="'+Y(y0+dy)+'" r="4"/>'+
+      '<text class="d-lab" text-anchor="middle" x="'+r((X(a)+X(x1))/2)+'" y="'+(Y(y0)+15)+'">dx</text>'+
+      '<text class="d-lab'+(phase==='id'?'':' dy')+'" text-anchor="end" x="'+(X(x1)-5)+'" y="'+r(Y(y0+dy/2)+4)+'">'+lab(0,'dy')+'</text>'+
+      '<text class="d-lab'+(phase==='id'?'':' Dy')+'" text-anchor="start" x="'+(X(x1)+12)+'" y="'+r(Y(y0+Dy/2)+4)+'">'+lab(0,'Dy')+'</text>';
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+    $('#dr',ix).innerHTML='<span>dx = <b>'+fix(dx,3)+'</b></span>'+(phase==='id'?'':'<span>dy = <b class="lin">'+fix(dy,4)+'</b></span><span>Δy = <b class="dDy">'+fix(Dy,4)+'</b></span><span>gap = <b>'+fix(Math.abs(Dy-dy),4)+'</b></span>');
+  };
+  const ui=()=>{
+    ix.innerHTML='<label class="slide-l" for="ddx">'+fmt(phase==='id'?'Drag to choose $dx$':'Drag $dx$ toward 0')+'</label><input type="range" id="ddx" min="'+lo+'" max="'+hi+'" step="'+((hi-lo)/500)+'" value="'+dx+'">'+
+      '<div class="read lread" id="dr"></div>'+
+      (phase==='id'?'<p class="txt">'+fmt(it.ask||'Two vertical segments, A and B. One goes up to the **tangent line**, the other up to the **curve**. Which one is $dy$?')+'</p><div class="duo"><button class="btn small ghost" data-s="A">A is dy</button><button class="btn small ghost" data-s="B">B is dy</button></div>':
+       '<p class="txt">'+fmt(it.shrink||'Now make $dx$ small. Drag until $dy$ and $Δy$ are within {g} of each other.').replace('{g}',it.agree||0.01)+'</p>')+
+      '<div class="fb" id="dfb" hidden></div>';
+    $('#ddx',ix).addEventListener('input',e=>{dx=+e.target.value;draw();
+      if(phase==='shrink'&&!done&&Math.abs((F(a+dx)-F(a))-D(a)*dx)<=(it.agree||0.01)){done=true;say(true,it.after||'Close enough: for small $dx$, $dy$ is a great stand-in for $Δy$, and it is much easier to compute.');onChange();}});
+    ix.querySelectorAll('[data-s]').forEach(bt=>bt.onclick=()=>{
+      const right=(bt.dataset.s==='A')!==swap;
+      if(!right)return say(false,'Not that one. $dy$ = $f\'(x)dx$ is the rise along the **tangent line**. Find the segment that ends on the straight line.');
+      phase='shrink';ui();say(true,'Yes. $dy$ rises to the tangent line; $Δy$ rises to the curve, the real change in $f$.');});
+    draw();
+  };
+  ui();
+  return {kind:'pass',canGo:()=>done};
+}
+
+/* ---------- calculator: always one tap away in lessons and drills ---------- */
+const CALC={toks:[],ans:0,deg:false,open:false,out:''};
+const CKEYS=[['sin','sin('],['cos','cos('],['tan','tan('],['ln','ln('],['√','sqrt('],['^','^'],
+  ['7','7'],['8','8'],['9','9'],['(','('],[')',')'],['÷','/'],
+  ['4','4'],['5','5'],['6','6'],['π','pi'],['e','e'],['×','*'],
+  ['1','1'],['2','2'],['3','3'],['x²','^2'],['ANS','ans'],['−','-'],
+  ['0','0'],['.','.'],['⌫','back'],['AC','clear'],['=','eq'],['+','+']];
+function calcCode(){
+  let c='',prevVal=false;
+  for(const t of CALC.toks){
+    const isNum=/^[0-9.]$/.test(t),startsVal=isNum||/^(pi|e|ans|\(|[a-z]+\()$/.test(t);
+    if(startsVal&&prevVal&&!(isNum&&/[0-9.]$/.test(c)))c+='*';
+    if(t==='pi')c+='pi'; else if(t==='e')c+='(exp(1))'; else if(t==='ans')c+='('+CALC.ans+')';
+    else if(/^(sin|cos|tan)\($/.test(t)&&CALC.deg)c+=t.replace('(','d(');
+    else c+=t;
+    prevVal=isNum||t===')'||t==='pi'||t==='e'||t==='ans'||t==='^2';
+  }
+  return c.replace(/sqrt\(/g,'sqrt(');
+}
+function calcPanel(){
+  let el=$('#calc'); if(!el){el=document.createElement('div');el.id='calc';el.className='calc';app.appendChild(el);}
+  if(!CALC.open){el.hidden=true;return;} el.hidden=false;
+  const disp=CALC.toks.map(t=>({'pi':'π','sqrt(':'√(','*':'×','/':'÷','-':'−','^2':'²','ans':'ANS','e':'e'}[t]||t)).join('')||'0';
+  el.innerHTML='<div class="calc-h"><button class="calc-m" data-c="mode">'+(CALC.deg?'DEG':'RAD')+'</button><span class="kick">Calculator</span><button class="calc-x" data-c="close" aria-label="Close calculator">✕</button></div>'+
+    '<div class="calc-d"><div class="calc-e">'+esc(disp)+'</div><div class="calc-o">'+esc(CALC.out)+'</div></div>'+
+    '<div class="calc-k">'+CKEYS.map(([l,c])=>'<button data-c="'+esc(c)+'" class="'+(c==='eq'?'eq':/^[0-9.]$/.test(c)?'n':'')+'">'+l+'</button>').join('')+'</div>';
+}
+function calcPress(c){
+  if(c==='close'){CALC.open=false;return calcPanel();}
+  if(c==='mode'){CALC.deg=!CALC.deg;}
+  else if(c==='clear'){CALC.toks=[];CALC.out='';}
+  else if(c==='back')CALC.toks.pop();
+  else if(c==='eq'){
+    try{const v=compile(calcCode())(0); if(!Number.isFinite(v))throw Error('undefined');
+      CALC.ans=v;CALC.out='= '+neg(String(+v.toPrecision(10)));}catch(e){CALC.out='Can’t compute that';}
+  }else{ if(CALC.out&&CALC.out[0]==='='&&/^[-+*/^]|\^2$/.test(c))CALC.toks=['ans']; else if(CALC.out&&CALC.out[0]==='=')CALC.toks=[];
+    CALC.out=''; CALC.toks.push(c); }
+  calcPanel();
+}
+document.addEventListener('click',e=>{
+  if(e.target.closest('[data-calc]')){CALC.open=!CALC.open;calcPanel();return;}
+  const k=e.target.closest('#calc [data-c]'); if(k)calcPress(k.dataset.c);
+});
+const calcBtn=()=>DECK&&DECK.calculator===false?'':'<button class="calc-b" data-calc aria-label="Calculator">Calc</button>';
+
 /* ---------- the map (home screen) ---------- */
 const MARK={review:'↺',extra:'★',boss:'♛',start:'GO'};
 const KIND={main:'Level',review:'Review',extra:'Extra',boss:'Boss',start:'Start'};
@@ -710,7 +910,7 @@ function lesson(id){
   const slides=LS.slides,p=lp(DECK,LS.id); let i=p.done?0:Math.min(p.at,slides.length-1);
   const show=()=>{
     const sl=slides[i],last=i===slides.length-1;
-    screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,S.preview?'<button class="link" id="skip">Skip</button>':''),
+    screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,(S.preview?'<button class="link" id="skip">Skip</button>':'')+calcBtn()),
       body:'<article class="item"></article><div class="fb" hidden></div>',
       foot:(i>0?'<button class="btn ghost" id="prev">Back</button>':'')+'<button class="btn" id="go">Continue</button>'});
     const goB=$('#go'),fb=$('.fb'); let phase='answer',C=null;
@@ -761,7 +961,7 @@ function drill(kind){
   };
   const show=()=>{
     const q=set[i];
-    screen({top:bar(D.title+' · '+(i+1)+' of '+set.length,100*i/set.length,pips()),
+    screen({top:bar(D.title.replace(/ drill$/,'')+' · '+(i+1)+' of '+set.length,100*i/set.length,calcBtn()+pips()),
       body:'<article class="item"></article><div class="fb" hidden></div>',foot:'<button class="btn" id="go" disabled>Check</button>'});
     const goB=$('#go'),fb=$('.fb'); let done=false,C=null;
     C=mountItem(q,$('.item'),()=>{if(C&&!done)goB.disabled=!C.canGo();});
@@ -867,7 +1067,7 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const types=inLesson?['info','explore','graph','mc','tf','bank','num','crit','extrema','multi','newton','bisect']:['graph','mc','tf','bank','num','crit','multi'];
+    const types=inLesson?['info','explore','graph','mc','tf','bank','num','crit','extrema','multi','newton','bisect','match','pick','mvt','linear','diff']:['graph','mc','tf','bank','num','crit','multi','match','pick'];
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).split('$').length%2===0)errs.push('unmatched $ in '+k);
     const g=(D.graphs||{})[q.graph];
@@ -943,6 +1143,34 @@ function validate(D){
         }catch(e){errs.push('verify: '+e.message);} }
       }
     }
+    if(q.type==='match'){
+      if(!Array.isArray(q.pairs)||q.pairs.length<2)errs.push('needs at least 2 pairs');
+      else{const L=q.pairs.map(p=>p[0]),R=q.pairs.map(p=>p[1]);
+        if(q.pairs.some(p=>!Array.isArray(p)||p.length!==2||!p[0]||!p[1]))errs.push('each pair must be ["left", "right"]');
+        if(new Set(L).size!==L.length||new Set(R).size!==R.length)errs.push('two cards on the same side are identical');
+        if(q.pairs.length>6)warns.push(q.pairs.length+' pairs is a lot for a phone screen');}
+    }
+    if(q.type==='pick'){
+      if(!Array.isArray(q.options)||q.options.length<2)errs.push('needs at least 2 options');
+      else if(!Array.isArray(q.answers)||!q.answers.length||q.answers.some(i=>!Number.isInteger(i)||i<0||i>=q.options.length))errs.push('answers must list the positions of the correct options (0 is the first)');
+    }
+    if(q.type==='mvt'){
+      try{const F=compile(q.fn),Dx=q.dfn?compile(q.dfn):null,d=x=>Dx?Dx(x):numDeriv(F,x),m=(F(q.b)-F(q.a))/(q.b-q.a),cs=q.cs||[];
+        if(!(q.a<q.b))throw Error('needs a < b');
+        if(!cs.length)throw Error('needs cs, the list of c-values to find');
+        cs.forEach(c=>{if(!(c>q.a&&c<q.b))errs.push('c = '+c+' is not inside (a, b)');else if(Math.abs(d(c)-m)>1e-3)errs.push("f'("+c+") = "+showA(d(c))+' but the secant slope is '+showA(m));});
+        const N=4000,found=[];let p=d(q.a+(q.b-q.a)/N)-m;
+        for(let k=2;k<N;k++){const x=q.a+(q.b-q.a)*k/N,v=d(x)-m;if(p*v<=0&&!(p===0&&v===0))found.push(x);p=v;}
+        found.forEach(x=>{if(!cs.some(c=>Math.abs(c-x)<0.02))errs.push('there is another c near '+showA(x)+' that is not in cs');});
+      }catch(e){errs.push(e.message);}
+    }
+    if(q.type==='linear'||q.type==='diff'){
+      try{const F=compile(q.fn),w=q.window;if(!Array.isArray(w)||w.length!==4)throw Error('window must be [xmin, xmax, ymin, ymax]');
+        if(!Number.isFinite(F(q.a)))throw Error('f(a) is not defined');
+        if(q.type==='linear'&&q.goal==='target'&&typeof q.target!=='number')throw Error('goal "target" needs a target x');
+        if(q.type==='linear'&&q.goal==='far'&&!(q.err>0))throw Error('goal "far" needs err');}
+      catch(e){errs.push(e.message);}
+    }
     if(q.type==='newton'||q.type==='bisect'){
       try{const F=compile(q.fn),w=q.window;
         if(!Array.isArray(w)||w.length!==4||!(w[0]<w[1])||!(w[2]<w[3]))throw Error('window must be [xmin, xmax, ymin, ymax]');
@@ -960,7 +1188,7 @@ function validate(D){
         if(new Set(chips).size!==chips.length)errs.push('the word bank repeats a word');
         if(!(q.distractors||[]).length)warns.push('word bank has no extra words'); }
     }
-    const isQ=['graph','mc','tf','bank','multi'].includes(q.type);
+    const isQ=['graph','mc','tf','bank','multi','match','pick'].includes(q.type);
     if(isQ&&inLesson&&!q.hint)warns.push('no hint for a wrong answer');
     if(isQ&&!inLesson&&!q.explain)warns.push('no explanation');
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));

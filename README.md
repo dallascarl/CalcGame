@@ -104,6 +104,10 @@ The numbers are in the `RULES` line near the top of `js/app.js`: streak length, 
 
 See `supabase/SETUP.md`. Students sign up with a class code, a made-up username and a password, then pick a character. Progress syncs between devices; answers, finished lessons and drill sets, and cleared stops are logged for the instructor page, along with Feedback and "I don't understand" messages (which need at least 6 + 12 words). Cleared stops give a one-time completion code for Canvas. Open either page with `?mock=1` to try everything with a pretend server in your browser.
 
+## Updates and browser caching
+
+`index.html` and `instructor.html` load each script and stylesheet with `?v=<date>`. Change that number when you change a `.js` or `.css` file, or phones may keep the old copy for up to 10 minutes. (Deck and map JSON files are always fetched fresh.)
+
 ## Running it
 
 GitHub Pages serves the site from the `main` branch. Opening `index.html` straight from a folder will not work, because the browser blocks it from reading the JSON files. To test on your computer, run `python3 -m http.server` in this folder and open `http://localhost:8000`.

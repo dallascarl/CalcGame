@@ -1379,6 +1379,7 @@ async function boot(){
   const ids=[...new Set([].concat(...WORLDS.map(w=>w.nodes)).map(n=>n.deck).filter(Boolean))];
   await Promise.all(ids.map(async id=>{try{DECKS[id]=await getJSON('decks/'+id+'.json');}catch(e){DECKS[id]={error:e.message};}}));
   await ACCT.start();
+  if(!isInstructor()&&S.preview){S.preview=false;save();}
   MAP=WORLDS.find(w=>w.id===S.world)||MAP; S.world=MAP.id;
   home();
 }

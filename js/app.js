@@ -245,7 +245,10 @@ function enterKey(btn){
     else if(itemKeys)itemKeys(e);
   };
 }
+/* the deck test and preview mode are for the instructor (or when no server is set up, for local editing) */
+const isInstructor=()=>!BACK||BACK.kind==='mock'||!!(ACCT.profile&&ACCT.profile.is_instructor);
 function go(name){
+  if(name==='test'&&!isInstructor())name='home';
   if(name.indexOf('drill:')===0)return drill(name.slice(6));
   if(name.indexOf('lesson:')===0)return lesson(name.slice(7));
   ({home,lesson,game,test}[name]||home)();
@@ -872,7 +875,7 @@ function home(){
       '<div class="hud-b">'+pips()+'<span class="tiny">'+left+' more new '+(left===1?'answer':'answers')+' for a play</span><button class="mb" data-go="game">Match Board'+(S.plays?' · '+S.plays:'')+'</button></div></header>',
     body:(S.preview?'<p class="banner">Preview mode is on. Every stop is open and nothing is recorded.</p>':'')+
       '<div class="map" style="aspect-ratio:100/'+H+'">'+svg+tiles+'<div class="hero-ch" id="ch">'+avatarSVG(ACCT.avatar(),'av hero')+'</div></div>'+
-      '<p class="tiny"><button class="link" data-go="test">Instructor: deck test</button></p>',
+      (isInstructor()?'<p class="tiny"><button class="link" data-go="test">Instructor: deck test</button> · <a class="link" href="instructor.html">Instructor page</a></p>':''),
     foot:'<div class="stop" id="stop"></div>'});
   const ch=$('#ch');
   const place=n=>{ch.style.left=n.x+'%';ch.style.top=(100*n.y/H)+'%';};

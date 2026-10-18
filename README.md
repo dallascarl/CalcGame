@@ -11,6 +11,10 @@ A practice game for Calculus 1. Students walk a map, and each stop has a lesson 
 | `decks/*.json` | One file per stop: its graphs, lesson steps, and drill questions |
 | `js/app.js` | The game engine. Does not change when content changes |
 | `js/items.js` | More item types (formulas, intervals, multi-part problems, sketching, explorers) |
+| `js/config.js` | Server settings (Supabase URL and public key). Empty = no accounts |
+| `js/backend.js`, `js/account.js`, `js/avatars.js` | Accounts, syncing, feedback, leaderboard, codes, and the 21 characters |
+| `instructor.html`, `js/instructor.js` | The instructor page (desktop) |
+| `supabase/schema.sql`, `supabase/SETUP.md` | The database and how to turn accounts on |
 | `css/app.css` | The look |
 | `index.html` | The page that loads everything |
 
@@ -95,6 +99,10 @@ Every lesson and drill has a **Calc** button with a scientific calculator (RAD/D
 Finishing a lesson for the first time earns a game play (still subject to the daily cap).
 
 The numbers are in the `RULES` line near the top of `js/app.js`: streak length, questions per set, how many correct answers count as mastered, plays per day, and minigame scoring.
+
+## Accounts and the instructor page
+
+See `supabase/SETUP.md`. Students sign up with a class code, a made-up username and a password, then pick a character. Progress syncs between devices; answers, finished lessons and drill sets, and cleared stops are logged for the instructor page, along with Feedback and "I don't understand" messages (which need at least 6 + 12 words). Cleared stops give a one-time completion code for Canvas. Open either page with `?mock=1` to try everything with a pretend server in your browser.
 
 ## Running it
 

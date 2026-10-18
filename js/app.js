@@ -167,11 +167,11 @@ async function getJSON(path){
 const nodeById=id=>MAP.nodes.find(n=>n.id===id);
 
 /* ---------- saved progress (this browser only for now) ---------- */
-const KEY='calcgame.v1';
+let KEY='calcgame.v1';   /* signed-in students use 'calcgame.v1.<id>' (account.js) */
 const fresh=()=>({world:'',pos:{},decks:{},streak:0,plays:0,points:0,day:'',playsToday:0,setDay:{},game:null,preview:false});
 let S=fresh();
 try{const raw=localStorage.getItem(KEY); if(raw)S=Object.assign(fresh(),JSON.parse(raw));}catch(e){}
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} if(typeof ACCT!=='undefined')ACCT.saved();};
 const today=()=>{const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();};
 function rollDay(){if(S.day!==today()){S.day=today();S.playsToday=0;}}
 function awardPlay(){rollDay();if(S.playsToday>=RULES.dailyPlays)return false;S.plays++;S.playsToday++;return true;}
@@ -209,6 +209,7 @@ function nodeOpen(n){return S.preview||(n.requires||[]).every(id=>{const r=nodeB
 /* A correct answer builds the streak only on questions not yet mastered. */
 function record(q,ok){
   if(S.preview)return 'Preview mode: not recorded.';
+  ACCT.answer(q,ok);
   const all=ds(DECK.id).q,r=all[q.id]||(all[q.id]={right:0,wrong:0}),was=r.right>=RULES.masterAt; let note='';
   if(ok){r.right++;
     if(was)note='You have already mastered this one, so it does not add to your streak.';
@@ -226,7 +227,8 @@ app.addEventListener('click',e=>{
   const b=e.target.closest('[data-go]');if(b&&!b.disabled)go(b.dataset.go);});
 function screen(p){
   keyHook=null;itemKeys=null;stepEnter=null;
-  app.innerHTML=(p.top||'')+'<main class="body">'+(p.body||'')+'</main>'+(p.foot?'<footer class="foot">'+p.foot+'</footer>':'');
+  app.innerHTML=(p.top||'')+'<main class="body">'+(p.body||'')+'</main>'+(p.foot?'<footer class="foot">'+p.foot+'</footer>':'')+
+    (BACK?'<button class="fb-tab" data-feedback aria-label="Send feedback">Feedback</button>':'');
   if(CALC.open&&$('[data-calc]'))calcPanel();
 }
 const bar=(label,prog,right)=>'<header class="bar"><button class="x" data-go="home" aria-label="Back to the map">←</button><div class="bar-mid"><span class="bar-l">'+label+'</span>'+(prog!=null?'<div class="prog"><i style="width:'+prog+'%"></i></div>':'')+'</div>'+(right||'')+'</header>';
@@ -835,12 +837,13 @@ document.addEventListener('click',e=>{
   if(e.target.closest('[data-calc]')){CALC.open=!CALC.open;calcPanel();return;}
   const k=e.target.closest('#calc [data-c]'); if(k)calcPress(k.dataset.c);
 });
-const calcBtn=()=>DECK&&DECK.calculator===false?'':'<button class="calc-b" data-calc aria-label="Calculator">Calc</button>';
+const calcBtn=()=>(BACK?'<button class="calc-b stuck-b" data-stuck aria-label="I don’t understand">Stuck?</button>':'')+(DECK&&DECK.calculator===false?'':'<button class="calc-b" data-calc aria-label="Calculator">Calc</button>');
 
 /* ---------- the map (home screen) ---------- */
 const MARK={review:'↺',extra:'★',boss:'♛',start:'GO'};
 const KIND={main:'Level',review:'Review',extra:'Extra',boss:'Boss',start:'Start'};
-const HERO='<svg viewBox="0 0 30 34" aria-hidden="true"><ellipse cx="15" cy="31.5" rx="9" ry="2.2" style="fill:var(--ink);opacity:.25"/><rect x="5" y="9" width="20" height="21" rx="9" style="fill:var(--gold);stroke:var(--ink);stroke-width:2"/><path d="M4 13 Q15 -3 26 13 Z" style="fill:var(--curve);stroke:var(--ink);stroke-width:2;stroke-linejoin:round"/><circle cx="11" cy="19" r="2" style="fill:var(--ink)"/><circle cx="19" cy="19" r="2" style="fill:var(--ink)"/></svg>';
+/* (the map character is now the student's chosen avatar; see avatars.js) */
+const HERO_OLD='<svg viewBox="0 0 30 34" aria-hidden="true"><ellipse cx="15" cy="31.5" rx="9" ry="2.2" style="fill:var(--ink);opacity:.25"/><rect x="5" y="9" width="20" height="21" rx="9" style="fill:var(--gold);stroke:var(--ink);stroke-width:2"/><path d="M4 13 Q15 -3 26 13 Z" style="fill:var(--curve);stroke:var(--ink);stroke-width:2;stroke-linejoin:round"/><circle cx="11" cy="19" r="2" style="fill:var(--ink)"/><circle cx="19" cy="19" r="2" style="fill:var(--ink)"/></svg>';
 const edgesOf=n=>n.from||n.requires||[];
 const masteryOf=kind=>{const qs=DECK.drills[kind].questions;return {n:qs.filter(isMastered).length,of:qs.length};};
 function route(a,b){ // shortest way along the drawn roads
@@ -851,7 +854,7 @@ function route(a,b){ // shortest way along the drawn roads
 }
 let walking=false;
 function home(){
-  rollDay(); walking=false;
+  rollDay(); walking=false; CUR={where:'the '+MAP.title+' map'};
   const H=MAP.height,lvl={}; let num=0;
   MAP.nodes.forEach(n=>{if(n.kind==='main')lvl[n.id]=++num;});
   if(!nodeById(S.pos[MAP.id]))S.pos[MAP.id]=MAP.nodes[0].id;
@@ -861,14 +864,14 @@ function home(){
     svg+='<line class="road'+(side?' side':nodeCleared(m)?' open':'')+'" x1="'+m.x+'" y1="'+m.y+'" x2="'+n.x+'" y2="'+n.y+'"/>';}));
   svg+='</svg>';
   const tiles=MAP.nodes.map(n=>{const open=nodeOpen(n),done=nodeCleared(n)&&n.kind!=='start';
-    return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':'')+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+(done?', cleared':'')+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span><span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
+    return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':'')+ACCT.dueDot(MAP,n)+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+(done?', cleared':'')+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span><span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
   const left=RULES.streak-S.streak;
   screen({
-    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+' of '+WORLDS.length+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div></div>'+
+    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+' of '+WORLDS.length+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-r"><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div>'+(BACK?'<button class="me-b" data-me aria-label="Your account">'+avatarSVG(ACCT.avatar())+'</button>':'')+'</div></div>'+
       '<nav class="worlds" aria-label="Worlds">'+WORLDS.map(w=>'<button class="wt'+(w===MAP?' on':'')+'" data-world="'+w.id+'" aria-pressed="'+(w===MAP)+'"><b>'+w.world+'</b><span>'+esc(w.short||w.title)+'</span></button>').join('')+'</nav>'+
       '<div class="hud-b">'+pips()+'<span class="tiny">'+left+' more new '+(left===1?'answer':'answers')+' for a play</span><button class="mb" data-go="game">Match Board'+(S.plays?' · '+S.plays:'')+'</button></div></header>',
     body:(S.preview?'<p class="banner">Preview mode is on. Every stop is open and nothing is recorded.</p>':'')+
-      '<div class="map" style="aspect-ratio:100/'+H+'">'+svg+tiles+'<div class="hero-ch" id="ch">'+HERO+'</div></div>'+
+      '<div class="map" style="aspect-ratio:100/'+H+'">'+svg+tiles+'<div class="hero-ch" id="ch">'+avatarSVG(ACCT.avatar(),'av hero')+'</div></div>'+
       '<p class="tiny"><button class="link" data-go="test">Instructor: deck test</button></p>',
     foot:'<div class="stop" id="stop"></div>'});
   const ch=$('#ch');
@@ -878,6 +881,7 @@ function home(){
     const open=nodeOpen(n),d=n.deck?DECKS[n.deck]:null;
     let h='<div class="stop-h"><span class="badge k-'+n.kind+'">'+(n.kind==='main'?'Level '+lvl[n.id]:KIND[n.kind])+'</span><h2>'+esc(n.title)+'</h2>'+(nodeCleared(n)&&n.kind!=='start'?'<span class="clr">Cleared ✓</span>':'')+'</div>';
     if(n.blurb)h+='<p class="tiny">'+esc(n.blurb)+'</p>';
+    h+=ACCT.dueHTML(MAP,n);
     if(n.kind==='start')return h;
     if(!open)return h+'<p class="note">Locked. Clear '+(n.requires||[]).map(nodeById).filter(r=>r&&!nodeCleared(r)).map(r=>r.title).join(' and ')+' first.</p>';
     if(!n.deck)return h+'<p class="note">Coming soon. This stop is still being built.</p>';
@@ -891,7 +895,7 @@ function home(){
       a+=act('lesson:'+l.id,lname(d,i),pre+(!open?why:st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:l.slides.length+' steps'),!open);
       drillKinds(d).filter(k=>d.drills[k].after===l.id).forEach(dAct);});
     drillKinds(d).filter(k=>!d.drills[k].after||!L.some(l=>l.id===d.drills[k].after)).forEach(dAct);
-    return h+'<div class="acts">'+a+'</div>';
+    return h+'<div class="acts">'+a+'</div>'+ACCT.codeHTML(MAP,n);
   };
   const select=id=>{
     const n=nodeById(id),d=n.deck?DECKS[n.deck]:null; S.pos[MAP.id]=id; save(); DECK=d&&!d.error?d:null;
@@ -926,6 +930,7 @@ function lesson(id){
   const slides=LS.slides,p=lp(DECK,LS.id); let i=p.done?0:Math.min(p.at,slides.length-1); CTX='lesson';
   const show=()=>{
     const sl=slides[i],last=i===slides.length-1;
+    AREA='lesson:'+LS.id; CUR={deck:DECK.id,qid:sl.id,where:DECK.title+' · '+lname(DECK,k)+(L.length>1&&LS.title?' ('+LS.title+')':'')+', step '+(i+1),text:plain(sl.title||sl.text)};
     screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,(S.preview?'<button class="link" id="skip">Skip</button>':'')+calcBtn()),
       body:'<article class="item"></article><div class="fb" hidden></div>',
       foot:(i>0?'<button class="btn ghost" id="prev">Back</button>':'')+'<button class="btn" id="go">Continue</button>'});
@@ -936,7 +941,7 @@ function lesson(id){
     C=mountItem(sl,$('.item'),upd); upd();
     const next=()=>{
       if(last){ const before=deckCleared(DECK),first=!p.done; let won=false;
-        if(!S.preview){p.done=true;p.at=0;if(first)won=awardPlay();save();}
+        if(!S.preview){p.done=true;p.at=0;if(first)won=awardPlay();save();ACCT.done('lesson',LS.id);}
         const nxt=L.slice(k+1).find(l=>!lp(DECK,l.id).done),play=won?' You earned a game play!':'';
         home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!'+play:nxt?'Lesson done. Next: '+lname(DECK,L.indexOf(nxt))+', '+nxt.title+'.'+play:'Practice unlocked.'+play); return; }
       i++; if(!S.preview&&!p.done){p.at=i;save();} show();
@@ -944,7 +949,7 @@ function lesson(id){
     goB.onclick=()=>{
       if(C.kind==='pass'||phase==='right')return next();
       if(phase==='wrong'){phase='answer';fb.hidden=true;C.reset();return upd();}
-      const ok=C.check();
+      const ok=C.check(); if(!S.preview)ACCT.answer(sl,ok);
       if(ok){phase='right';C.lock(true,true);upd();feedback(fb,true,sl.explain||'');}
       else{phase='wrong';C.lock(false,false);upd();feedback(fb,false,sl.hint||'Look again and give it another try.');}
     };
@@ -983,7 +988,7 @@ function drill(kind){
   const finish=()=>{
     let msg='Preview mode: nothing was recorded.',cleared='';
     if(!S.preview){ rollDay(); const key=DECK.id+':'+kind,before=deckCleared(DECK);
-      p.sets[kind]=(p.sets[kind]||0)+1;
+      p.sets[kind]=(p.sets[kind]||0)+1; ACCT.done('drill',kind,score,set.length);
       if(!before&&deckCleared(DECK))cleared='<p class="verdict">Stop cleared! A new road is open on the map.</p>';
       if(S.setDay[key]===S.day)msg='You already collected today’s play for finishing this drill.';
       else{S.setDay[key]=S.day;msg=awardPlay()?'You earned a game play for finishing the set.':'You have reached today’s limit of '+RULES.dailyPlays+' plays. More tomorrow.';}
@@ -1000,6 +1005,7 @@ function drill(kind){
   };
   const show=()=>{
     const q=set[i]; CTX=exam?'exam':'drill';
+    AREA='drill:'+kind; CUR={deck:DECK.id,qid:q.id,where:DECK.title+' · '+D.title+', question '+(i+1),text:plain(q.title||q.text)};
     screen({top:bar(D.title.replace(/ drill$/,'')+' · '+(i+1)+' of '+set.length,100*i/set.length,calcBtn()+pips()),
       body:(exam&&q.topic?'<p class="eyebrow">'+esc(q.topic)+'</p>':'')+'<article class="item"></article><div class="fb" hidden></div>',foot:'<button class="btn" id="go" disabled>'+(exam?'Submit':'Check')+'</button>'});
     const goB=$('#go'),fb=$('.fb'); let done=false,C=null;
@@ -1044,8 +1050,9 @@ function game(){
       body:'<div class="g-head"><div><span class="kick">Misses left</span><div class="lives">'+Array.from({length:RULES.misses},(_,k)=>'<i class="'+(k<G.live?'on':'')+'"></i>').join('')+'</div></div><div class="r"><span class="kick">Pairs found</span><b>'+found+' of 8</b></div></div>'+
         '<div class="board'+(G.live>0?'':' idle')+'">'+G.cards.map((v,k)=>{const up=G.matched[k]||open.includes(k);
           return '<button class="card'+(up?' up':'')+(G.matched[k]?' ok':'')+'" data-k="'+k+'" aria-label="'+(up?NAMES[v]:'Hidden card '+(k+1))+'">'+(up?face(v):'?')+'</button>';}).join('')+'</div>'+
-        '<p class="tiny">'+msg+'</p>',
+        '<p class="tiny">'+msg+'</p><div id="lb"></div>',
       foot:G.live>0?'':'<button class="btn" id="use"'+(S.plays<1?' disabled':'')+'>'+(S.plays<1?'No plays yet':'Use a play ('+S.plays+' ready)')+'</button>'});
+    if(ACCT.lbPts!==S.points){ACCT.lbPts=S.points;ACCT.leaderboard($('#lb'));}else $('#lb').innerHTML=ACCT.lbCache||'';
     if($('#use'))$('#use').onclick=()=>{if(S.plays<1)return;S.plays--;S.game.live=RULES.misses;save();draw();};
     $('.board').onclick=e=>{const b=e.target.closest('.card');if(b)flip(+b.dataset.k);};
   };
@@ -1368,6 +1375,8 @@ async function boot(){
   catch(e){app.innerHTML='<main class="body"><p class="verdict bad">'+esc(e.message)+'</p><p class="tiny">If you opened index.html straight from a folder, it cannot read the map and deck files. Open the GitHub Pages address instead.</p></main>';return;}
   const ids=[...new Set([].concat(...WORLDS.map(w=>w.nodes)).map(n=>n.deck).filter(Boolean))];
   await Promise.all(ids.map(async id=>{try{DECKS[id]=await getJSON('decks/'+id+'.json');}catch(e){DECKS[id]={error:e.message};}}));
+  await ACCT.start();
+  MAP=WORLDS.find(w=>w.id===S.world)||MAP; S.world=MAP.id;
   home();
 }
 boot();

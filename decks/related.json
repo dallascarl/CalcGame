@@ -1,0 +1,1547 @@
+{
+ "id": "related",
+ "title": "Related Rates",
+ "graphs": {},
+ "lesson": {
+  "slides": [
+   {
+    "type": "rr",
+    "scene": "ripple",
+    "title": "Everything moves with time",
+    "text": "A stone hits a pond. The ripple’s radius grows steadily at 2 cm/s. Drag time forward until the radius is 10 cm, and watch both rates in the table.",
+    "r0": 1,
+    "rate": 2,
+    "T": 6,
+    "rmax": 13,
+    "unitT": "s",
+    "goal": {
+     "var": "r",
+     "at": 10
+    },
+    "after": "At $r$ = 10, the radius still grows at 2 cm/s, but the area is growing at about 126 cm²/s, and that number kept climbing.",
+    "id": "L1"
+   },
+   {
+    "type": "mc",
+    "text": "Which rate stayed the same the whole time?",
+    "options": [
+     "$frac{dA}{dt}$",
+     "$frac{dr}{dt}$",
+     "Both"
+    ],
+    "answer": 1,
+    "explain": "The radius grows at a steady 2 cm/s.",
+    "hint": "Drag again and watch the rate column.",
+    "id": "L2"
+   },
+   {
+    "type": "mc",
+    "text": "Why does $frac{dA}{dt}$ keep growing, even though $frac{dr}{dt}$ stays at 2?",
+    "options": [
+     "Because time speeds up",
+     "Because $A = pi r^2$, so $frac{dA}{dt} = 2pi r frac{dr}{dt}$ gets bigger as $r$ gets bigger",
+     "Because the area is a constant"
+    ],
+    "answer": 1,
+    "explain": "A bigger circle gains more area for each extra centimeter of radius.",
+    "hint": "Differentiate $A = pi r^2$ with respect to $t$.",
+    "id": "L3"
+   },
+   {
+    "type": "bank",
+    "text": "In a related rates problem, every variable is a function of ___. So differentiating $r^2$ uses the ___ rule: $frac{d}{dt}(r^2)$ = $2r$ · ___ .",
+    "blanks": [
+     "t",
+     "chain",
+     "r'"
+    ],
+    "distractors": [
+     "x",
+     "product",
+     "2",
+     "A"
+    ],
+    "explain": "That is the only new idea: $frac{d}{dt}(r^2) = 2r r'$, where $r' = frac{dr}{dt}$. Everything else is the derivative rules you know.",
+    "hint": "$r$ depends on time.",
+    "id": "L4"
+   },
+   {
+    "type": "expr",
+    "text": "Differentiate $A = pi r^2$ with respect to $t$. (Use the $r'$ key for $frac{dr}{dt}$.)",
+    "answer": "2*pi*r*r'",
+    "vars": [
+     "r",
+     "r'"
+    ],
+    "label": "$A'$ =",
+    "keys": [
+     "pi"
+    ],
+    "explain": "$A' = 2pi r r'$.",
+    "hint": "Power rule, then tack on $r'$ for the chain rule.",
+    "id": "L5"
+   },
+   {
+    "type": "expr",
+    "text": "A ladder satisfies $x^2 + y^2 = 169$. Both $x$ and $y$ change with time. Differentiate the left side.",
+    "answer": "2*x*x'+2*y*y'",
+    "vars": [
+     "x",
+     "y",
+     "x'",
+     "y'"
+    ],
+    "label": "Left side →",
+    "explain": "$2x x' + 2y y'$, and the right side, a constant, becomes 0.",
+    "hint": "Each square gets its own chain-rule factor.",
+    "id": "L6"
+   },
+   {
+    "type": "rr",
+    "scene": "ladder",
+    "title": "Watch the ladder",
+    "text": "The bottom of a 13-ft ladder is pulled away from the wall at a steady 2 ft/s. Drag time forward until the bottom is 5 ft from the wall.",
+    "L": 13,
+    "x0": 1,
+    "rate": 2,
+    "T": 5.9,
+    "unitT": "s",
+    "goal": {
+     "var": "x",
+     "at": 5
+    },
+    "after": "At $x$ = 5: $y$ = 12, $frac{dx}{dt}$ = 2 and $frac{dy}{dt}$ ≈ −0.833. Drag further and the top speeds up as it nears the floor.",
+    "id": "L7"
+   },
+   {
+    "type": "steps",
+    "text": "Now compute that −0.833 by hand. A 13-ft ladder; the bottom moves away at 2 ft/s. How fast is the top moving when the bottom is 5 ft from the wall?",
+    "steps": [
+     {
+      "type": "mc",
+      "text": "Which equation links $x$ and $y$?",
+      "options": [
+       "$x + y = 13$",
+       "$x^2 + y^2 = 169$"
+      ],
+      "answer": 1,
+      "explain": "Pythagoras.",
+      "hint": "Right triangle."
+     },
+     {
+      "type": "expr",
+      "text": "Differentiate the left side with respect to $t$.",
+      "answer": "2*x*x'+2*y*y'",
+      "vars": [
+       "x",
+       "y",
+       "x'",
+       "y'"
+      ],
+      "label": "Left side →",
+      "explain": "$2x x' + 2y y' = 0$.",
+      "hint": "Chain rule on each square."
+     },
+     {
+      "type": "num",
+      "text": "When $x$ = 5, $y$ = ?",
+      "answer": 12,
+      "label": "$y$ =",
+      "explain": "12.",
+      "hint": "$sqrt(169 - 25)$"
+     },
+     {
+      "type": "num",
+      "text": "Plug in $x$ = 5, $x'$ = 2, $y$ = 12. Solve for $y'$.",
+      "answer": -0.833333,
+      "label": "$y'$ ≈",
+      "tol": 0.002,
+      "explain": "$y' = -frac{5}{6}$ ≈ −0.833 ft/s, matching the table.",
+      "hint": "$20 + 24y' = 0$"
+     }
+    ],
+    "title": "Do it by hand",
+    "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"70\" y1=\"10\" x2=\"70\" y2=\"150\"/><line class=\"f-line\" x1=\"70\" y1=\"150\" x2=\"300\" y2=\"150\"/><line class=\"f-acc\" x1=\"170\" y1=\"150\" x2=\"70\" y2=\"40\"/><text x=\"120\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"58\" y=\"100\" text-anchor=\"end\">y</text><text x=\"132\" y=\"88\" text-anchor=\"middle\" class=\"f-s\">13 ft</text><path class=\"f-thin\" d=\"M180 140 h40 m-6 -5 l6 5 l-6 5\"/></svg>",
+    "id": "L8"
+   },
+   {
+    "type": "mc",
+    "text": "When do you plug in the numbers like $x$ = 5?",
+    "options": [
+     "Before differentiating",
+     "It does not matter",
+     "After differentiating"
+    ],
+    "answer": 2,
+    "explain": "Plug in too early and $x$ becomes a constant, so its derivative is 0 and the rate disappears. Differentiate first, then substitute.",
+    "hint": "What would happen to $x^2$ if $x$ were the constant 5?",
+    "id": "L9"
+   },
+   {
+    "type": "order",
+    "text": "Put the related rates strategy in order.",
+    "items": [
+     "Draw a picture and name the variables",
+     "Write down what is given and what is asked (as rates)",
+     "Find an equation linking the variables",
+     "Differentiate both sides with respect to $t$",
+     "Plug in the numbers and solve for the unknown rate"
+    ],
+    "explain": "This is the strategy from the slides.",
+    "hint": "Numbers go in last.",
+    "id": "L10"
+   },
+   {
+    "type": "rr",
+    "scene": "balloon",
+    "title": "A filling balloon",
+    "text": "Air goes into a balloon at a steady 100 cm³/s. Drag until the radius is 5 cm. Watch $frac{dr}{dt}$.",
+    "V0": 30,
+    "rate": 100,
+    "T": 12,
+    "rmax": 7,
+    "unitT": "s",
+    "goal": {
+     "var": "r",
+     "at": 5
+    },
+    "after": "At $r$ = 5, $frac{dr}{dt}$ ≈ 0.318 cm/s. The bigger the balloon, the slower the radius grows.",
+    "id": "L11"
+   },
+   {
+    "type": "num",
+    "text": "Check it: from $V' = 4pi r^2 r'$ with $V'$ = 100 and $r$ = 5, find $r'$.",
+    "answer": 0.31831,
+    "label": "$r'$ ≈",
+    "tol": 0.002,
+    "explain": "$r' = frac{100}{100pi} = frac{1}{pi}$ ≈ 0.318 cm/s.",
+    "hint": "$100 = 4pi(25)r'$",
+    "id": "L12"
+   },
+   {
+    "type": "expr",
+    "text": "Now two things change at once. Differentiate $V = pi r^2 h$ with respect to $t$.",
+    "answer": "pi*(2*r*r'*h+r^2*h')",
+    "vars": [
+     "r",
+     "h",
+     "r'",
+     "h'"
+    ],
+    "label": "$V'$ =",
+    "keys": [
+     "pi"
+    ],
+    "explain": "$V' = pi(2r r' h + r^2 h')$.",
+    "hint": "Product rule: $(r^2)'h + r^2 h'$.",
+    "id": "L13"
+   },
+   {
+    "type": "num",
+    "text": "A cylinder has $r$ = 3 and $h$ = 5, with $r'$ = 1 and $h'$ = −2. Find $V'$.",
+    "answer": 37.699112,
+    "label": "$V'$ ≈",
+    "tol": 0.02,
+    "explain": "$pi(30 - 18) = 12pi$ ≈ 37.7. Shrinking height, but the growing radius wins.",
+    "hint": "$pi(2·3·1·5 + 9·(-2))$",
+    "id": "L14"
+   }
+  ]
+ },
+ "drills": {
+  "diff": {
+   "title": "Differentiate in t drill",
+   "questions": [
+    {
+     "type": "expr",
+     "text": "$A = pi r^2$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "2*pi*r*r'",
+     "vars": [
+      "r",
+      "r'"
+     ],
+     "label": "$A'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$A' = 2pi r r'$. The chain rule puts an $r'$ on the end.",
+     "id": "D1"
+    },
+    {
+     "type": "expr",
+     "text": "$C = 2pi r$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "2*pi*r'",
+     "vars": [
+      "r",
+      "r'"
+     ],
+     "label": "$C'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$C' = 2pi r'$.",
+     "id": "D2"
+    },
+    {
+     "type": "expr",
+     "text": "$V = s^3$ (a cube). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "3*s'*s^2",
+     "vars": [
+      "s",
+      "s'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = 3s^2 s'$.",
+     "id": "D3"
+    },
+    {
+     "type": "expr",
+     "text": "$S = 6s^2$ (surface area of a cube). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "12*s*s'",
+     "vars": [
+      "s",
+      "s'"
+     ],
+     "label": "$S'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$S' = 12s s'$.",
+     "id": "D4"
+    },
+    {
+     "type": "expr",
+     "text": "$V = frac{4}{3}pi r^3$ (a sphere). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "4*pi*r'*r^2",
+     "vars": [
+      "r",
+      "r'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = 4pi r^2 r'$.",
+     "id": "D5"
+    },
+    {
+     "type": "expr",
+     "text": "$S = 4pi r^2$ (surface of a sphere). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "8*pi*r*r'",
+     "vars": [
+      "r",
+      "r'"
+     ],
+     "label": "$S'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$S' = 8pi r r'$.",
+     "id": "D6"
+    },
+    {
+     "type": "expr",
+     "text": "$y = x^3$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "3*x'*x^2",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "$y'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$y' = 3x^2 x'$.",
+     "id": "D7"
+    },
+    {
+     "type": "expr",
+     "text": "$y = sqrt x$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "x'/(2*sqrt(x))",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "$y'$ =",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "$y' = frac{x'}{2sqrt x}$.",
+     "id": "D8"
+    },
+    {
+     "type": "expr",
+     "text": "$y = frac{1}{x}$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "-x'/x^2",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "$y'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$y' = -frac{x'}{x^2}$.",
+     "id": "D9"
+    },
+    {
+     "type": "expr",
+     "text": "$y = x^2 + 3x$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "x'*(3+2*x)",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "$y'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$y' = (2x + 3)x'$.",
+     "id": "D10"
+    },
+    {
+     "type": "expr",
+     "text": "$S = pi D^2$ (surface of a sphere, written with the diameter $D$). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "2*pi*D*D'",
+     "vars": [
+      "D",
+      "D'"
+     ],
+     "label": "$S'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$S' = 2pi D D'$.",
+     "id": "D11"
+    },
+    {
+     "type": "expr",
+     "text": "A cone whose radius is always half its height has $V = frac{pi}{12}h^3$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "pi*h'*h^2/4",
+     "vars": [
+      "h",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = frac{pi}{4}h^2 h'$.",
+     "id": "D12"
+    },
+    {
+     "type": "expr",
+     "text": "A cylinder with fixed radius 3 has $V = 9pi h$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "9*pi*h'",
+     "vars": [
+      "h",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = 9pi h'$. The radius is constant, so only $h$ changes.",
+     "id": "D13"
+    },
+    {
+     "type": "expr",
+     "text": "$A = xy$, where $x$ and $y$ both change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "x*y'+x'*y",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "$A'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Product rule: $A' = x'y + xy'$.",
+     "id": "D14"
+    },
+    {
+     "type": "expr",
+     "text": "$A = frac{1}{2}bh$. Both $b$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "b*h'/2+b'*h/2",
+     "vars": [
+      "b",
+      "h",
+      "b'",
+      "h'"
+     ],
+     "label": "$A'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$A' = frac{1}{2}(b'h + bh')$.",
+     "id": "D15"
+    },
+    {
+     "type": "expr",
+     "text": "$P = 2l + 2w$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "2*l'+2*w'",
+     "vars": [
+      "l",
+      "w",
+      "l'",
+      "w'"
+     ],
+     "label": "$P'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$P' = 2l' + 2w'$.",
+     "id": "D16"
+    },
+    {
+     "type": "expr",
+     "text": "$V = pi r^2 h$ (a cylinder). Both $r$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "pi*r*(h'*r+2*h*r')",
+     "vars": [
+      "r",
+      "h",
+      "r'",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Product rule: $V' = pi(2r r' h + r^2 h')$.",
+     "id": "D17"
+    },
+    {
+     "type": "expr",
+     "text": "$V = frac{1}{3}pi r^2 h$ (a cone). Both $r$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "pi*r*(h'*r+2*h*r')/3",
+     "vars": [
+      "r",
+      "h",
+      "r'",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$.",
+     "id": "D18"
+    },
+    {
+     "type": "expr",
+     "text": "$V = lwh$ (a box). All three change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "h*l*w'+h*l'*w+h'*l*w",
+     "vars": [
+      "l",
+      "w",
+      "h",
+      "l'",
+      "w'",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Three-term product rule: $V' = l'wh + lw'h + lwh'$.",
+     "id": "D19"
+    },
+    {
+     "type": "expr",
+     "text": "$D = sqrt(x^2 + y^2)$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "(x*x'+y*y')/sqrt(x^2+y^2)",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "$D'$ =",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "$D' = frac{x x' + y y'}{sqrt(x^2 + y^2)}$.",
+     "id": "D20"
+    },
+    {
+     "type": "expr",
+     "text": "$P = frac{20x}{E} - H$ (the Profit slide). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "20*(x'*E-x*E')/E^2-H'",
+     "vars": [
+      "x",
+      "E",
+      "H",
+      "x'",
+      "E'",
+      "H'"
+     ],
+     "label": "$P'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Quotient rule on the first term: $P' = frac{20(x'E - xE')}{E^2} - H'$.",
+     "id": "D21"
+    },
+    {
+     "type": "expr",
+     "text": "$x^2 + y^2 = 169$. Differentiate both sides. The left side becomes:",
+     "answer": "2*x*x'+2*y*y'",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "Left side →",
+     "explain": "$2x x' + 2y y'$, and the right side becomes 0 (169 is a constant).",
+     "id": "D22"
+    },
+    {
+     "type": "expr",
+     "text": "$x^2 + y^2 = z^2$. Differentiate the **right side**:",
+     "answer": "2*z*z'",
+     "vars": [
+      "z",
+      "z'"
+     ],
+     "label": "Right side →",
+     "explain": "$2z z'$.",
+     "id": "D23"
+    },
+    {
+     "type": "expr",
+     "text": "$tan θ = frac{x}{100}$. Differentiate the **left side**:",
+     "answer": "sec(θ)^2*θ'",
+     "vars": [
+      "θ",
+      "θ'"
+     ],
+     "label": "Left side →",
+     "keys": [
+      "sec(",
+      "tan(",
+      "^"
+     ],
+     "explain": "$sec^2 θ · θ'$. The chain rule still applies to angles.",
+     "id": "D24"
+    },
+    {
+     "type": "expr",
+     "text": "$tan θ = frac{100}{x}$. Differentiate the **right side**:",
+     "answer": "-100*x'/x^2",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "Right side →",
+     "explain": "$-frac{100x'}{x^2}$.",
+     "id": "D25"
+    },
+    {
+     "type": "expr",
+     "text": "$sin θ = frac{y}{10}$. Differentiate the **left side**:",
+     "answer": "θ'*cos(θ)",
+     "vars": [
+      "θ",
+      "θ'"
+     ],
+     "label": "Left side →",
+     "keys": [
+      "cos(",
+      "sin("
+     ],
+     "explain": "$cos θ · θ'$.",
+     "id": "D26"
+    },
+    {
+     "type": "expr",
+     "text": "$PV = 12$ (pressure times volume is constant). Differentiate the left side:",
+     "answer": "P*V'+P'*V",
+     "vars": [
+      "P",
+      "V",
+      "P'",
+      "V'"
+     ],
+     "label": "Left side →",
+     "explain": "Product rule: $P'V + PV'$.",
+     "id": "D27"
+    },
+    {
+     "type": "expr",
+     "text": "From $2x x' + 2y y' = 0$, solve for $y'$.",
+     "answer": "-x*x'/y",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "$y'$ =",
+     "explain": "$y' = -frac{x x'}{y}$.",
+     "id": "D28"
+    },
+    {
+     "type": "expr",
+     "text": "From $2z z' = 2x x' + 2y y'$, solve for $z'$.",
+     "answer": "(x*x'+y*y')/z",
+     "vars": [
+      "x",
+      "y",
+      "z",
+      "x'",
+      "y'",
+      "z'"
+     ],
+     "label": "$z'$ =",
+     "explain": "$z' = frac{x x' + y y'}{z}$.",
+     "id": "D29"
+    },
+    {
+     "type": "expr",
+     "text": "From $V' = 4pi r^2 r'$, solve for $r'$.",
+     "answer": "V'/(4*pi*r^2)",
+     "vars": [
+      "V",
+      "r",
+      "V'",
+      "r'"
+     ],
+     "label": "$r'$ =",
+     "explain": "$r' = frac{V'}{4pi r^2}$.",
+     "keys": [
+      "pi"
+     ],
+     "id": "D30"
+    },
+    {
+     "type": "expr",
+     "text": "From $P'V + PV' = 0$, solve for $V'$.",
+     "answer": "-P'*V/P",
+     "vars": [
+      "P",
+      "V",
+      "P'",
+      "V'"
+     ],
+     "label": "$V'$ =",
+     "explain": "$V' = -frac{P'V}{P}$.",
+     "id": "D31"
+    }
+   ]
+  },
+  "problems": {
+   "title": "Full problems drill",
+   "setSize": 4,
+   "questions": [
+    {
+     "type": "steps",
+     "text": "The edge of a cube grows at 10 cm/s. How fast is the volume increasing when the edge is 30 cm?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "What rate are you asked to find?",
+       "options": [
+        "$frac{ds}{dt}$",
+        "$V$",
+        "$frac{dV}{dt}$"
+       ],
+       "answer": 2,
+       "explain": "You know $frac{ds}{dt}$ = 10 and want $frac{dV}{dt}$."
+      },
+      {
+       "type": "mc",
+       "text": "Which equation links the variables?",
+       "options": [
+        "$V = s^3$",
+        "$V = 3s^2$",
+        "$V = 6s^2$"
+       ],
+       "answer": 0,
+       "explain": "Volume of a cube."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate with respect to $t$.",
+       "answer": "3s^2*s'",
+       "vars": [
+        "s",
+        "s'"
+       ],
+       "label": "$V'$ =",
+       "explain": "$V' = 3s^2 s'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $s$ = 30 and $s'$ = 10.",
+       "answer": 27000,
+       "label": "$V'$ =",
+       "explain": "$3(900)(10)$ = 27,000 cm³/s."
+      }
+     ],
+     "title": "Growing cube",
+     "id": "P1"
+    },
+    {
+     "type": "steps",
+     "text": "A stone dropped in a pond makes a circular ripple whose radius grows at 3 cm/s. How fast is the area inside the ripple growing when the radius is 8 cm?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "What rate are you asked to find?",
+       "options": [
+        "$frac{dr}{dt}$",
+        "$A$ when $r$ = 8",
+        "$frac{dA}{dt}$"
+       ],
+       "answer": 2,
+       "explain": "The question asks how fast that quantity is changing."
+      },
+      {
+       "type": "expr",
+       "text": "$A = pi r^2$. Differentiate with respect to $t$.",
+       "answer": "2*pi*r*r'",
+       "vars": [
+        "r",
+        "r'"
+       ],
+       "label": "$A'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$A' = 2pi r r'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $r$ = 8 and $r'$ = 3.",
+       "answer": 150.796447,
+       "label": "$A'$ ≈",
+       "tol": 0.05,
+       "explain": "$2pi(8)(3) = 48pi$ ≈ 150.8 cm²/s."
+      }
+     ],
+     "title": "Ripple",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><circle class=\"f-line\" cx=\"160\" cy=\"85\" r=\"62\"/><line class=\"f-acc\" x1=\"160\" y1=\"85\" x2=\"222\" y2=\"85\"/><text x=\"191\" y=\"78\" text-anchor=\"middle\">r</text></svg>",
+     "id": "P2"
+    },
+    {
+     "type": "steps",
+     "text": "A spherical balloon is filling at 2 cm³/s. How fast is the **radius** increasing when the balloon is 10 cm across?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "What rate are you asked to find?",
+       "options": [
+        "$frac{dV}{dt}$",
+        "$frac{dD}{dt}$",
+        "$frac{dr}{dt}$"
+       ],
+       "answer": 2,
+       "explain": "The volume rate is given; the radius rate is asked."
+      },
+      {
+       "type": "num",
+       "text": "\"10 cm across\" is the diameter. What is $r$?",
+       "answer": 5,
+       "label": "$r$ =",
+       "explain": "Radius is half the diameter: 5 cm. A classic trap."
+      },
+      {
+       "type": "expr",
+       "text": "$V = frac{4}{3}pi r^3$. Differentiate with respect to $t$.",
+       "answer": "4*pi*r^2*r'",
+       "vars": [
+        "r",
+        "r'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = 4pi r^2 r'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $V'$ = 2 and $r$ = 5, and solve for $r'$.",
+       "answer": 0.006366,
+       "label": "$r'$ ≈",
+       "tol": 0.0001,
+       "explain": "$2 = 4pi(25)r'$, so $r' = frac{1}{50pi}$ ≈ 0.00637 cm/s."
+      }
+     ],
+     "title": "Filling a balloon",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><circle class=\"f-line\" cx=\"160\" cy=\"85\" r=\"62\"/><line class=\"f-acc\" x1=\"160\" y1=\"85\" x2=\"222\" y2=\"85\"/><text x=\"191\" y=\"78\" text-anchor=\"middle\">r</text></svg>",
+     "id": "P3"
+    },
+    {
+     "type": "steps",
+     "text": "Air is pumped into a spherical balloon at 100 cm³/s. How fast is the radius increasing when $r$ = 5 cm? How fast is the **surface area** increasing at that instant?",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "$V = frac{4}{3}pi r^3$. Differentiate with respect to $t$.",
+       "answer": "4*pi*r^2*r'",
+       "vars": [
+        "r",
+        "r'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = 4pi r^2 r'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $r'$ when $V'$ = 100 and $r$ = 5.",
+       "answer": 0.31831,
+       "label": "$r'$ ≈",
+       "tol": 0.001,
+       "explain": "$100 = 100pi r'$, so $r' = frac{1}{pi}$ ≈ 0.318 cm/s."
+      },
+      {
+       "type": "expr",
+       "text": "Now $S = 4pi r^2$. Differentiate with respect to $t$.",
+       "answer": "8*pi*r*r'",
+       "vars": [
+        "r",
+        "r'"
+       ],
+       "label": "$S'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$S' = 8pi r r'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $r$ = 5 and the $r'$ you just found.",
+       "answer": 40,
+       "label": "$S'$ =",
+       "explain": "$8pi(5)(frac{1}{pi})$ = 40 cm²/s. Part 2 needed the answer to part 1."
+      }
+     ],
+     "title": "Two questions, one balloon",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><circle class=\"f-fill\" cx=\"160\" cy=\"85\" r=\"62\"/><line class=\"f-acc\" x1=\"160\" y1=\"85\" x2=\"222\" y2=\"85\"/><text x=\"191\" y=\"78\" text-anchor=\"middle\">r</text></svg>",
+     "id": "P4"
+    },
+    {
+     "type": "steps",
+     "text": "A 13-ft ladder leans against a wall. The bottom is pulled away from the wall at 2 ft/s. How fast is the top sliding down when the bottom is 5 ft from the wall?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "What rate are you asked to find?",
+       "options": [
+        "$frac{dx}{dt}$",
+        "$y$",
+        "$frac{dy}{dt}$"
+       ],
+       "answer": 2,
+       "explain": "$x$ is the bottom (rate given), $y$ is the top (rate asked)."
+      },
+      {
+       "type": "mc",
+       "text": "Which equation links $x$ and $y$?",
+       "options": [
+        "$x + y = 13$",
+        "$xy = 13$",
+        "$x^2 + y^2 = 169$"
+       ],
+       "answer": 2,
+       "explain": "Pythagoras: the ladder is the hypotenuse."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate the left side with respect to $t$.",
+       "answer": "2*x*x'+2*y*y'",
+       "vars": [
+        "x",
+        "y",
+        "x'",
+        "y'"
+       ],
+       "label": "Left side →",
+       "explain": "$2x x' + 2y y'$ = 0."
+      },
+      {
+       "type": "num",
+       "text": "When $x$ = 5, what is $y$?",
+       "answer": 12,
+       "label": "$y$ =",
+       "explain": "$sqrt(169 - 25)$ = 12."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $x$ = 5, $x'$ = 2, $y$ = 12 and solve for $y'$.",
+       "answer": -0.833333,
+       "label": "$y'$ ≈",
+       "tol": 0.002,
+       "explain": "$2(5)(2) + 2(12)y' = 0$, so $y' = -frac{20}{24} = -frac{5}{6}$ ft/s. Negative: the top is sliding **down**."
+      }
+     ],
+     "title": "Sliding ladder",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"70\" y1=\"10\" x2=\"70\" y2=\"150\"/><line class=\"f-line\" x1=\"70\" y1=\"150\" x2=\"300\" y2=\"150\"/><line class=\"f-acc\" x1=\"170\" y1=\"150\" x2=\"70\" y2=\"40\"/><text x=\"120\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"58\" y=\"100\" text-anchor=\"end\">y</text><text x=\"132\" y=\"88\" text-anchor=\"middle\" class=\"f-s\">13 ft</text><path class=\"f-thin\" d=\"M180 140 h40 m-6 -5 l6 5 l-6 5\"/></svg>",
+     "id": "P5"
+    },
+    {
+     "type": "steps",
+     "text": "Water drains from a cylindrical tank of radius 3 m at 2 m³/min. How fast is the water level dropping?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Does the radius change as the water drains?",
+       "options": [
+        "No, it stays 3",
+        "Yes, it grows",
+        "Yes, it shrinks"
+       ],
+       "answer": 0,
+       "explain": "The tank is a cylinder: the water always has radius 3."
+      },
+      {
+       "type": "mc",
+       "text": "What is $V'$?",
+       "options": [
+        "2",
+        "0",
+        "−2"
+       ],
+       "answer": 2,
+       "explain": "The volume is **decreasing**, so the rate is negative."
+      },
+      {
+       "type": "expr",
+       "text": "$V = pi(3)^2 h = 9pi h$. Differentiate with respect to $t$.",
+       "answer": "9*pi*h'",
+       "vars": [
+        "h",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = 9pi h'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $h'$.",
+       "answer": -0.070736,
+       "label": "$h'$ ≈",
+       "tol": 0.0005,
+       "explain": "$h' = frac{-2}{9pi}$ ≈ −0.0707 m/min."
+      }
+     ],
+     "title": "Draining a tank",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><ellipse class=\"f-line\" cx=\"160\" cy=\"25\" rx=\"70\" ry=\"14\"/><path class=\"f-line\" d=\"M90 25 V145 A70 14 0 0 0 230 145 V25\"/><path class=\"f-water\" d=\"M90 80 V145 A70 14 0 0 0 230 145 V80 A70 14 0 0 1 90 80\"/><ellipse class=\"f-thin\" cx=\"160\" cy=\"80\" rx=\"70\" ry=\"14\"/><line class=\"f-acc\" x1=\"160\" y1=\"25\" x2=\"230\" y2=\"25\"/><text x=\"196\" y=\"18\" text-anchor=\"middle\" class=\"f-s\">3 m</text><line class=\"f-thin\" x1=\"250\" y1=\"80\" x2=\"250\" y2=\"145\"/><text x=\"262\" y=\"116\" text-anchor=\"middle\">h</text></svg>",
+     "id": "P6"
+    },
+    {
+     "type": "steps",
+     "text": "Car A heads east from an intersection at 40 mi/h, and car B heads north from it at 30 mi/h. How fast is the distance between them increasing 2 hours later?",
+     "steps": [
+      {
+       "type": "num",
+       "text": "After 2 hours, how far east is car A?",
+       "answer": 80,
+       "label": "$x$ =",
+       "explain": "40 · 2 = 80 mi."
+      },
+      {
+       "type": "num",
+       "text": "How far north is car B?",
+       "answer": 60,
+       "label": "$y$ =",
+       "explain": "30 · 2 = 60 mi."
+      },
+      {
+       "type": "num",
+       "text": "How far apart are they?",
+       "answer": 100,
+       "label": "$z$ =",
+       "explain": "$sqrt(80^2 + 60^2)$ = 100 mi."
+      },
+      {
+       "type": "expr",
+       "text": "From $z^2 = x^2 + y^2$, solve for $z'$ after differentiating.",
+       "answer": "(x*x'+y*y')/z",
+       "vars": [
+        "x",
+        "y",
+        "z",
+        "x'",
+        "y'",
+        "z'"
+       ],
+       "label": "$z'$ =",
+       "explain": "$2z z' = 2x x' + 2y y'$, so $z' = frac{x x' + y y'}{z}$."
+      },
+      {
+       "type": "num",
+       "text": "Plug everything in.",
+       "answer": 50,
+       "label": "$z'$ =",
+       "explain": "$frac{80(40) + 60(30)}{100}$ = 50 mi/h."
+      }
+     ],
+     "title": "Two cars",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"270\" y2=\"150\"/><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"60\" y2=\"20\"/><line class=\"f-acc\" x1=\"60\" y1=\"30\" x2=\"250\" y2=\"150\"/><circle class=\"f-dot\" cx=\"250\" cy=\"150\" r=\"5\"/><circle class=\"f-dot\" cx=\"60\" cy=\"30\" r=\"5\"/><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"48\" y=\"92\" text-anchor=\"end\">y</text><text x=\"165\" y=\"84\" text-anchor=\"middle\">z</text><text x=\"255\" y=\"136\" text-anchor=\"start\" class=\"f-s\">A</text><text x=\"70\" y=\"24\" text-anchor=\"start\" class=\"f-s\">B</text></svg>",
+     "id": "P7"
+    },
+    {
+     "type": "steps",
+     "text": "Two cars leave the same point. One travels north at 30 mi/h and the other east at 20 mi/h. How fast are they separating when the northbound car is 15 mi away and the eastbound car is 10 mi away?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which rates are given?",
+       "options": [
+        "$y$ = 30 and $x$ = 20",
+        "$z'$ = 50",
+        "$y'$ = 30 and $x'$ = 20"
+       ],
+       "answer": 2,
+       "explain": "Speeds are rates of change."
+      },
+      {
+       "type": "num",
+       "text": "Distance between them right now:",
+       "answer": 18.027756,
+       "label": "$z$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(15^2 + 10^2) = sqrt 325$ ≈ 18.03 mi."
+      },
+      {
+       "type": "num",
+       "text": "Find $z' = frac{x x' + y y'}{z}$.",
+       "answer": 36.055513,
+       "label": "$z'$ ≈",
+       "tol": 0.02,
+       "explain": "$frac{10(20) + 15(30)}{18.03}$ ≈ 36.06 mi/h."
+      }
+     ],
+     "title": "Cars traveling",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"270\" y2=\"150\"/><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"60\" y2=\"20\"/><line class=\"f-acc\" x1=\"60\" y1=\"30\" x2=\"250\" y2=\"150\"/><circle class=\"f-dot\" cx=\"250\" cy=\"150\" r=\"5\"/><circle class=\"f-dot\" cx=\"60\" cy=\"30\" r=\"5\"/><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"48\" y=\"92\" text-anchor=\"end\">y</text><text x=\"165\" y=\"84\" text-anchor=\"middle\">z</text></svg>",
+     "id": "P8"
+    },
+    {
+     "type": "steps",
+     "text": "A kite flies 100 ft above the ground and moves horizontally away from the person flying it at 8 ft/s. How fast is the angle of elevation θ changing when 200 ft of string is out?",
+     "steps": [
+      {
+       "type": "num",
+       "text": "How far away (horizontally) is the kite when the string is 200 ft?",
+       "answer": 173.205081,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(200^2 - 100^2)$ ≈ 173.2 ft."
+      },
+      {
+       "type": "mc",
+       "text": "Which equation links θ and $x$?",
+       "options": [
+        "$sin θ = frac{x}{100}$",
+        "$tan θ = frac{100}{x}$",
+        "$tan θ = frac{x}{100}$"
+       ],
+       "answer": 1,
+       "explain": "Opposite over adjacent."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate $tan θ = frac{100}{x}$. Solve for $θ'$.",
+       "answer": "-100*x'/(x^2*sec(θ)^2)",
+       "vars": [
+        "x",
+        "θ",
+        "x'",
+        "θ'"
+       ],
+       "label": "$θ'$ =",
+       "keys": [
+        "sec(",
+        "cos(",
+        "^"
+       ],
+       "explain": "$sec^2 θ · θ' = -frac{100x'}{x^2}$, so $θ' = -frac{100x'}{x^2 sec^2 θ}$."
+      },
+      {
+       "type": "num",
+       "text": "Here $sec θ = frac{200}{x}$, so $x^2 sec^2 θ$ = 40,000. Find $θ'$.",
+       "answer": -0.02,
+       "label": "$θ'$ =",
+       "tol": 0.0005,
+       "explain": "$θ' = -frac{100(8)}{40000}$ = −0.02 rad/s. The angle is shrinking."
+      }
+     ],
+     "title": "Rising kite",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><line class=\"f-acc\" x1=\"50\" y1=\"150\" x2=\"260\" y2=\"30\"/><path class=\"f-fill\" d=\"M260 18 l12 12 l-12 14 l-12 -14 Z\"/><line class=\"f-dash\" x1=\"260\" y1=\"30\" x2=\"260\" y2=\"150\"/><text x=\"272\" y=\"96\" text-anchor=\"start\" class=\"f-s\">100 ft</text><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"150\" y=\"82\" text-anchor=\"middle\">string</text><text x=\"80\" y=\"144\" text-anchor=\"middle\">θ</text></svg>",
+     "id": "P9"
+    },
+    {
+     "type": "steps",
+     "text": "A baseball diamond is a 90-ft square. A batter runs from home to first at 24 ft/s. How fast is the batter’s distance from **second base** changing when the batter is halfway to first?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Let $x$ be the distance from home. Which equation gives the distance $s$ to second base?",
+       "options": [
+        "$s^2 = (90 - x)^2 + 90^2$",
+        "$s^2 = x^2 + 90^2$",
+        "$s = 90 - x$"
+       ],
+       "answer": 0,
+       "explain": "The right angle is at first base."
+      },
+      {
+       "type": "num",
+       "text": "Halfway: $x$ = 45. Find $s$.",
+       "answer": 100.623059,
+       "label": "$s$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(45^2 + 90^2)$ ≈ 100.62 ft."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate and solve for $s'$.",
+       "answer": "-(90-x)*x'/s",
+       "vars": [
+        "x",
+        "s",
+        "x'",
+        "s'"
+       ],
+       "label": "$s'$ =",
+       "explain": "$2s s' = -2(90 - x)x'$, so $s' = -frac{(90 - x)x'}{s}$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in.",
+       "answer": -10.733126,
+       "label": "$s'$ ≈",
+       "tol": 0.01,
+       "explain": "$-frac{45(24)}{100.62}$ ≈ −10.73 ft/s: getting closer to second."
+      }
+     ],
+     "title": "Rounding first base",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M60 150 L250 150 L250 20\"/><path class=\"f-dash\" d=\"M60 150 L60 20 L250 20\"/><line class=\"f-acc\" x1=\"155\" y1=\"150\" x2=\"250\" y2=\"20\"/><text x=\"60\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">home</text><text x=\"262\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">first</text><text x=\"262\" y=\"16\" text-anchor=\"middle\" class=\"f-s\">second</text><text x=\"205\" y=\"166\" text-anchor=\"middle\">90 − x</text><text x=\"268\" y=\"90\" text-anchor=\"start\" class=\"f-s\">90</text><text x=\"185\" y=\"80\" text-anchor=\"middle\">s</text><circle class=\"f-dot\" cx=\"155\" cy=\"150\" r=\"5\"/><text x=\"110\" y=\"166\" text-anchor=\"middle\">x</text></svg>",
+     "id": "P10"
+    },
+    {
+     "type": "steps",
+     "text": "A plane flies horizontally at 1 km altitude and 1000 km/h. How fast is its distance from you growing when it is 2 km away horizontally?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which equation links $x$ and $s$?",
+       "options": [
+        "$s = x + 1$",
+        "$s^2 = x^2 - 1$",
+        "$s^2 = x^2 + 1$"
+       ],
+       "answer": 2,
+       "explain": "The altitude 1 km is constant."
+      },
+      {
+       "type": "num",
+       "text": "When $x$ = 2, $s$ = ?",
+       "answer": 2.236068,
+       "label": "$s$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt 5$ ≈ 2.236 km."
+      },
+      {
+       "type": "num",
+       "text": "$s' = frac{x x'}{s}$. Plug in.",
+       "answer": 894.427191,
+       "label": "$s'$ ≈",
+       "tol": 0.5,
+       "explain": "$frac{2(1000)}{sqrt 5}$ ≈ 894.4 km/h."
+      }
+     ],
+     "title": "Plane overhead",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"155\" x2=\"300\" y2=\"155\"/><line class=\"f-dash\" x1=\"70\" y1=\"30\" x2=\"230\" y2=\"30\"/><line class=\"f-dash\" x1=\"70\" y1=\"30\" x2=\"70\" y2=\"155\"/><line class=\"f-acc\" x1=\"70\" y1=\"155\" x2=\"230\" y2=\"30\"/><path class=\"f-fill\" d=\"M222 24 h22 l6 6 l-6 6 h-22 Z\"/><circle class=\"f-dot\" cx=\"70\" cy=\"155\" r=\"5\"/><text x=\"150\" y=\"24\" text-anchor=\"middle\">x</text><text x=\"58\" y=\"96\" text-anchor=\"end\" class=\"f-s\">1 km</text><text x=\"162\" y=\"104\" text-anchor=\"middle\">s</text><text x=\"70\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">you</text></svg>",
+     "id": "P11"
+    },
+    {
+     "type": "steps",
+     "text": "A rocket rises vertically. A camera is 5000 ft from the launch pad. When the rocket is 1000 ft up, its velocity is 600 ft/s. How fast must the camera’s angle change to stay on the rocket?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which equation links θ and $h$?",
+       "options": [
+        "$tan θ = frac{h}{5000}$",
+        "$tan θ = frac{5000}{h}$",
+        "$sin θ = frac{h}{5000}$"
+       ],
+       "answer": 0,
+       "explain": "Opposite over adjacent."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate the left side, $tan θ$.",
+       "answer": "sec(θ)^2*θ'",
+       "vars": [
+        "θ",
+        "θ'"
+       ],
+       "label": "Left side →",
+       "keys": [
+        "sec(",
+        "tan(",
+        "^"
+       ],
+       "explain": "$sec^2 θ · θ'$."
+      },
+      {
+       "type": "num",
+       "text": "When $h$ = 1000, $sec^2 θ = 1 + tan^2 θ$ = ?",
+       "answer": 1.04,
+       "label": "$sec^2 θ$ =",
+       "explain": "$1 + (0.2)^2$ = 1.04."
+      },
+      {
+       "type": "num",
+       "text": "$θ' = frac{h'}{5000 sec^2 θ}$. Plug in.",
+       "answer": 0.115385,
+       "label": "$θ'$ ≈",
+       "tol": 0.0005,
+       "explain": "$frac{600}{5200}$ ≈ 0.1154 rad/s."
+      }
+     ],
+     "title": "Rocket launch",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"155\" x2=\"300\" y2=\"155\"/><line class=\"f-line\" x1=\"260\" y1=\"155\" x2=\"260\" y2=\"35\"/><path class=\"f-fill\" d=\"M252 40 l8 -20 l8 20 Z\"/><line class=\"f-acc\" x1=\"50\" y1=\"155\" x2=\"260\" y2=\"40\"/><circle class=\"f-dot\" cx=\"50\" cy=\"155\" r=\"5\"/><text x=\"155\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">5000 ft</text><text x=\"270\" y=\"100\" text-anchor=\"start\">h</text><text x=\"90\" y=\"148\" text-anchor=\"middle\">θ</text><text x=\"50\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">camera</text></svg>",
+     "id": "P12"
+    },
+    {
+     "type": "steps",
+     "text": "Water drains from a cone-shaped funnel at 0.3 ft³/s. The funnel is 20 ft tall with top radius 10 ft. How fast is the water level changing when the water is 12 ft deep?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "By similar triangles, the water’s radius $r$ and depth $h$ satisfy:",
+       "options": [
+        "$r = 2h$",
+        "$r = h - 10$",
+        "$r = frac{h}{2}$"
+       ],
+       "answer": 2,
+       "explain": "$frac{r}{h} = frac{10}{20}$."
+      },
+      {
+       "type": "expr",
+       "text": "Substitute into $V = frac{1}{3}pi r^2 h$. $V$ in terms of $h$ only:",
+       "answer": "pi*h^3/12",
+       "vars": [
+        "h"
+       ],
+       "label": "$V$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$frac{1}{3}pi(frac{h}{2})^2 h = frac{pi h^3}{12}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate with respect to $t$.",
+       "answer": "pi*h^2*h'/4",
+       "vars": [
+        "h",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = frac{pi}{4}h^2 h'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $h'$ when $V'$ = −0.3 and $h$ = 12.",
+       "answer": -0.002653,
+       "label": "$h'$ ≈",
+       "tol": 0.0001,
+       "explain": "$h' = frac{4(-0.3)}{pi(144)}$ ≈ −0.00265 ft/s."
+      }
+     ],
+     "title": "Draining funnel",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M90 15 L160 155 L230 15 Z\"/><path class=\"f-water\" d=\"M118 71 L160 155 L202 71 Z\"/><line class=\"f-dash\" x1=\"118\" y1=\"71\" x2=\"202\" y2=\"71\"/><text x=\"170\" y=\"66\" text-anchor=\"middle\">r</text><line class=\"f-thin\" x1=\"250\" y1=\"71\" x2=\"250\" y2=\"155\"/><text x=\"262\" y=\"118\" text-anchor=\"middle\">h</text><text x=\"160\" y=\"12\" text-anchor=\"middle\" class=\"f-s\">10 ft across the top radius</text><line class=\"f-dash\" x1=\"60\" y1=\"15\" x2=\"60\" y2=\"155\"/><text x=\"48\" y=\"90\" text-anchor=\"end\" class=\"f-s\">20 ft</text></svg>",
+     "id": "P13"
+    },
+    {
+     "type": "steps",
+     "text": "A snowball melts so its surface area decreases at 1 cm²/min. How fast is the diameter decreasing when the diameter is 10 cm?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Surface area in terms of the diameter $D$:",
+       "options": [
+        "$S = 4pi D^2$",
+        "$S = pi D^2$",
+        "$S = frac{4}{3}pi D^3$"
+       ],
+       "answer": 1,
+       "explain": "$4pi r^2$ with $r = frac{D}{2}$ gives $pi D^2$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate with respect to $t$.",
+       "answer": "2*pi*D*D'",
+       "vars": [
+        "D",
+        "D'"
+       ],
+       "label": "$S'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$S' = 2pi D D'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $D'$ when $S'$ = −1 and $D$ = 10.",
+       "answer": -0.015915,
+       "label": "$D'$ ≈",
+       "tol": 0.0001,
+       "explain": "$D' = frac{-1}{20pi}$ ≈ −0.0159 cm/min."
+      }
+     ],
+     "title": "Melting snowball",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><circle class=\"f-fill\" cx=\"160\" cy=\"85\" r=\"62\"/><line class=\"f-acc\" x1=\"160\" y1=\"85\" x2=\"222\" y2=\"85\"/><text x=\"191\" y=\"78\" text-anchor=\"middle\">D/2</text></svg>",
+     "id": "P14"
+    },
+    {
+     "type": "steps",
+     "text": "Sand is poured into a conical pile. The radius grows at 2 ft/min while the height grows at 1 ft/min. How fast is the volume growing when $r$ = 6 ft and $h$ = 4 ft?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "How many variables are changing?",
+       "options": [
+        "Two: $r$ and $h$",
+        "One: $r$",
+        "One: $V$"
+       ],
+       "answer": 0,
+       "explain": "Both $r$ and $h$ change, so expect the product rule."
+      },
+      {
+       "type": "expr",
+       "text": "$V = frac{1}{3}pi r^2 h$. Differentiate with respect to $t$.",
+       "answer": "pi/3*(2*r*r'*h+r^2*h')",
+       "vars": [
+        "r",
+        "h",
+        "r'",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $r$ = 6, $r'$ = 2, $h$ = 4, $h'$ = 1.",
+       "answer": 138.230077,
+       "label": "$V'$ ≈",
+       "tol": 0.05,
+       "explain": "$frac{pi}{3}(96 + 36) = 44pi$ ≈ 138.2 ft³/min."
+      }
+     ],
+     "title": "Sand pile",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><path class=\"f-fill\" d=\"M70 150 L160 60 L250 150 Z\"/><line class=\"f-dash\" x1=\"160\" y1=\"60\" x2=\"160\" y2=\"150\"/><line class=\"f-acc\" x1=\"160\" y1=\"146\" x2=\"250\" y2=\"146\"/><text x=\"170\" y=\"110\" text-anchor=\"start\">h</text><text x=\"205\" y=\"140\" text-anchor=\"middle\">r</text></svg>",
+     "id": "P15"
+    },
+    {
+     "type": "steps",
+     "text": "A rectangular prism is being stretched: its height grows at 1 cm/min while its width and depth each shrink at 2 cm/min. How fast is the volume changing when $(w, d, h)$ = (10, 10, 20)?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Rates:",
+       "options": [
+        "$w' = d' = -2$, $h' = -1$",
+        "$w' = d' = -2$, $h' = 1$",
+        "$w' = d' = 2$, $h' = 1$"
+       ],
+       "answer": 1,
+       "explain": "Shrinking means negative."
+      },
+      {
+       "type": "expr",
+       "text": "$V = wdh$. Differentiate with respect to $t$.",
+       "answer": "w'*d*h+w*d'*h+w*d*h'",
+       "vars": [
+        "w",
+        "d",
+        "h",
+        "w'",
+        "d'",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "explain": "$V' = w'dh + wd'h + wdh'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in.",
+       "answer": -700,
+       "label": "$V'$ =",
+       "explain": "$-2(10)(20) + 10(-2)(20) + 10(10)(1)$ = −700 cm³/min."
+      }
+     ],
+     "title": "Stretching a box",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-fill\" d=\"M110 50 h80 v100 h-80 Z\"/><path class=\"f-fill\" d=\"M190 50 l40 -25 v100 l-40 25 Z\"/><path class=\"f-fill\" d=\"M110 50 l40 -25 h80 l-40 25 Z\"/><text x=\"150\" y=\"166\" text-anchor=\"middle\">w</text><text x=\"222\" y=\"152\" text-anchor=\"middle\">d</text><text x=\"98\" y=\"104\" text-anchor=\"end\">h</text></svg>",
+     "id": "P16"
+    },
+    {
+     "type": "steps",
+     "text": "A 6-ft person walks away from a 15-ft lamppost at 5 ft/s. How fast is the length of their shadow growing?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "With $x$ = distance from the post and $s$ = shadow length, similar triangles give:",
+       "options": [
+        "$frac{15}{x} = frac{6}{s}$",
+        "$frac{15}{x + s} = frac{6}{s}$",
+        "$15s = 6x$"
+       ],
+       "answer": 1,
+       "explain": "The big triangle (post) and small triangle (person) share the tip of the shadow."
+      },
+      {
+       "type": "expr",
+       "text": "Solve for $s$ in terms of $x$.",
+       "answer": "2*x/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$s$ =",
+       "explain": "$15s = 6x + 6s$, so $9s = 6x$ and $s = frac{2}{3}x$."
+      },
+      {
+       "type": "num",
+       "text": "So $s' = frac{2}{3}x'$. Find $s'$.",
+       "answer": 3.333333,
+       "label": "$s'$ ≈",
+       "tol": 0.002,
+       "explain": "$frac{2}{3}(5)$ ≈ 3.33 ft/s, no matter where the person is."
+      }
+     ],
+     "title": "Lengthening shadow",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" x1=\"40\" y1=\"150\" x2=\"40\" y2=\"20\"/><circle class=\"f-dot\" cx=\"40\" cy=\"20\" r=\"6\"/><line class=\"f-line\" x1=\"170\" y1=\"150\" x2=\"170\" y2=\"98\"/><line class=\"f-dash\" x1=\"40\" y1=\"20\" x2=\"290\" y2=\"150\"/><line class=\"f-acc\" x1=\"170\" y1=\"150\" x2=\"290\" y2=\"150\"/><text x=\"28\" y=\"90\" text-anchor=\"end\" class=\"f-s\">15 ft</text><text x=\"182\" y=\"126\" text-anchor=\"start\" class=\"f-s\">6 ft</text><text x=\"105\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"230\" y=\"166\" text-anchor=\"middle\">s</text></svg>",
+     "id": "P17"
+    }
+   ]
+  }
+ }
+}

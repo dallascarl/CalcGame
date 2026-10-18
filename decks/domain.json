@@ -1,0 +1,481 @@
+{
+ "id": "domain",
+ "title": "Domain",
+ "lessonOptional": true,
+ "graphs": {},
+ "lesson": {
+  "slides": [
+   {
+    "type": "pick",
+    "text": "Which of these can make a function **undefined**? Select all that apply.",
+    "options": [
+     "A negative exponent like $x^2$ with $x < 0$",
+     "A cube root of a negative number",
+     "A square root of a negative number",
+     "A logarithm of 0 or a negative number",
+     "Dividing by 0"
+    ],
+    "answers": [
+     2,
+     3,
+     4
+    ],
+    "explain": "The three rules: denominators ≠ 0; inside an even root ≥ 0; inside a log > 0. Polynomials, sin, cos and cube roots are defined everywhere.",
+    "hint": "$∛(-8) = -2$ is fine.",
+    "id": "L1"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $frac{1}{x - 3}$:",
+    "answer": "(-inf,3)U(3,inf)",
+    "label": "Domain:",
+    "explain": "Everything except 3.",
+    "hint": "Throw out the $x$ that makes the bottom 0. Type it as $(-∞, 3) ∪ (3, ∞)$.",
+    "id": "L2"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $sqrt(x - 2)$:",
+    "answer": "[2,inf)",
+    "label": "Domain:",
+    "explain": "$x ≥ 2$: $[2, ∞)$. The bracket is square because $sqrt 0$ is fine.",
+    "hint": "Need $x - 2 ≥ 0$.",
+    "id": "L3"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $ln(x + 1)$:",
+    "answer": "(-1,inf)",
+    "label": "Domain:",
+    "explain": "$x > -1$. Round bracket: $ln 0$ is undefined.",
+    "hint": "Need $x + 1 > 0$ (strictly).",
+    "id": "L4"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $sqrt(4 - x^2)$:",
+    "answer": "[-2,2]",
+    "label": "Domain:",
+    "explain": "$-2 ≤ x ≤ 2$.",
+    "hint": "$4 - x^2 ≥ 0$ means $x^2 ≤ 4$.",
+    "id": "L5"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $frac{x}{x^2 - 4}$:",
+    "answer": "(-inf,-2)U(-2,2)U(2,inf)",
+    "label": "Domain:",
+    "explain": "Exclude ±2.",
+    "hint": "$x^2 - 4 = 0$ at two places.",
+    "id": "L6"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $frac{sqrt x}{x - 5}$ (two rules at once):",
+    "answer": "[0,5)U(5,inf)",
+    "label": "Domain:",
+    "explain": "Start at 0, skip 5.",
+    "hint": "Need $x ≥ 0$ **and** $x ≠ 5$.",
+    "id": "L7"
+   },
+   {
+    "type": "interval",
+    "text": "Domain of $x^3 - 7x + sin x$:",
+    "answer": "(-inf,inf)",
+    "label": "Domain:",
+    "explain": "All real numbers: $(-∞, ∞)$.",
+    "hint": "Anything wrong with polynomials or sine?",
+    "id": "L8"
+   }
+  ]
+ },
+ "drills": {
+  "find": {
+   "title": "Find the domain drill",
+   "questions": [
+    {
+     "type": "interval",
+     "text": "Find the domain of $x^3 - 2x + 1$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "No restrictions: Domain: (−∞,∞).",
+     "id": "D1"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{1}{x - 3}$.",
+     "answer": "(-inf,3)U(3,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,3) ∪ (3,∞).",
+     "id": "D2"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{x + 1}{x^2 - 9}$.",
+     "answer": "(-inf,-3)U(-3,3)U(3,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,-3) ∪ (-3,3) ∪ (3,∞).",
+     "id": "D3"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{1}{x^2 + 1}$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,∞).",
+     "id": "D4"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{x}{x^2 - 5x + 6}$.",
+     "answer": "(-inf,2)U(2,3)U(3,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,2) ∪ (2,3) ∪ (3,∞).",
+     "id": "D5"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{3}{x(x + 4)}$.",
+     "answer": "(-inf,-4)U(-4,0)U(0,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,-4) ∪ (-4,0) ∪ (0,∞).",
+     "id": "D6"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(x - 2)$.",
+     "answer": "[2,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: [2,∞).",
+     "id": "D7"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(5 - x)$.",
+     "answer": "(-inf,5]",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: (−∞,5].",
+     "id": "D8"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(2x + 6)$.",
+     "answer": "[-3,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: [-3,∞).",
+     "id": "D9"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(x^2 - 9)$.",
+     "answer": "(-inf,-3]U[3,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: (−∞,-3] ∪ [3,∞).",
+     "id": "D10"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(16 - x^2)$.",
+     "answer": "[-4,4]",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: [-4,4].",
+     "id": "D11"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $∛(x - 1)$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "No restrictions: Domain: (−∞,∞).",
+     "id": "D12"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $ln(x - 4)$.",
+     "answer": "(4,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the log > 0. Domain: (4,∞).",
+     "id": "D13"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $ln(3 - x)$.",
+     "answer": "(-inf,3)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the log > 0. Domain: (−∞,3).",
+     "id": "D14"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $ln(x^2)$.",
+     "answer": "(-inf,0)U(0,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the log > 0. Domain: (−∞,0) ∪ (0,∞).",
+     "id": "D15"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $ln(x^2 + 1)$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the log > 0. Domain: (−∞,∞).",
+     "id": "D16"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $ln(x^2 - 1)$.",
+     "answer": "(-inf,-1)U(1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the log > 0. Domain: (−∞,-1) ∪ (1,∞).",
+     "id": "D17"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{sqrt x}{x - 5}$.",
+     "answer": "[0,5)U(5,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0, inside the even root ≥ 0. Domain: [0,5) ∪ (5,∞).",
+     "id": "D18"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{1}{sqrt(x - 1)}$.",
+     "answer": "(1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0, inside the even root ≥ 0. Domain: (1,∞).",
+     "id": "D19"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{ln x}{x - 2}$.",
+     "answer": "(0,2)U(2,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0, inside the log > 0. Domain: (0,2) ∪ (2,∞).",
+     "id": "D20"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{sqrt(x + 3)}{x^2 - 4}$.",
+     "answer": "[-3,-2)U(-2,2)U(2,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0, inside the even root ≥ 0. Domain: [-3,-2) ∪ (-2,2) ∪ (2,∞).",
+     "id": "D21"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(x - 1) + sqrt(5 - x)$.",
+     "answer": "[1,5]",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: [1,5].",
+     "id": "D22"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{1}{ln x}$.",
+     "answer": "(0,1)U(1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0, inside the log > 0. Domain: (0,1) ∪ (1,∞).",
+     "id": "D23"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sin x$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "No restrictions: Domain: (−∞,∞).",
+     "id": "D24"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{cos x}{x + 1}$.",
+     "answer": "(-inf,-1)U(-1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,-1) ∪ (-1,∞).",
+     "id": "D25"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{e^x}{x^2 - x}$.",
+     "answer": "(-inf,0)U(0,1)U(1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,0) ∪ (0,1) ∪ (1,∞).",
+     "id": "D26"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt((x - 1)(x + 2))$.",
+     "answer": "(-inf,-2]U[1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: (−∞,-2] ∪ [1,∞).",
+     "id": "D27"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{1}{x^2 - 6x + 9}$.",
+     "answer": "(-inf,3)U(3,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,3) ∪ (3,∞).",
+     "id": "D28"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt x ln x$.",
+     "answer": "(0,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0, inside the log > 0. Domain: (0,∞).",
+     "id": "D29"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{ln(x + 2)}{sqrt(4 - x)}$.",
+     "answer": "(-2,4)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0, inside the even root ≥ 0, inside the log > 0. Domain: (-2,4).",
+     "id": "D30"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $x^(1/4)$.",
+     "answer": "[0,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: [0,∞).",
+     "id": "D31"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{1}{x^3 - x}$.",
+     "answer": "(-inf,-1)U(-1,0)U(0,1)U(1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,-1) ∪ (-1,0) ∪ (0,1) ∪ (1,∞).",
+     "id": "D32"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $sqrt(x^2 + 4)$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: inside the even root ≥ 0. Domain: (−∞,∞).",
+     "id": "D33"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{x + 1}{(x - 1)^2}$.",
+     "answer": "(-inf,1)U(1,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,1) ∪ (1,∞).",
+     "id": "D34"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $e^x + x^2$.",
+     "answer": "(-inf,inf)",
+     "label": "Domain:",
+     "explain": "No restrictions: Domain: (−∞,∞).",
+     "id": "D35"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $frac{2}{e^x - 1}$.",
+     "answer": "(-inf,0)U(0,inf)",
+     "label": "Domain:",
+     "explain": "Rules used: denominator ≠ 0. Domain: (−∞,0) ∪ (0,∞).",
+     "id": "D36"
+    }
+   ]
+  },
+  "rules": {
+   "title": "Domain rules drill",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "Which function has domain $(-∞, ∞)$?",
+     "options": [
+      "$frac{x}{x^2 - 4}$",
+      "$sqrt(x - 4)$",
+      "$frac{x}{x^2 + 4}$",
+      "$ln x$"
+     ],
+     "answer": 2,
+     "explain": "$x^2 + 4$ is never 0.",
+     "id": "R1"
+    },
+    {
+     "type": "mc",
+     "text": "Why is the domain of $ln x$ written $(0, ∞)$ and not $[0, ∞)$?",
+     "options": [
+      "Logs are only defined for integers",
+      "$ln 0 = 0$",
+      "$ln 0$ is undefined"
+     ],
+     "answer": 2,
+     "explain": "The inside of a log must be strictly positive.",
+     "id": "R2"
+    },
+    {
+     "type": "mc",
+     "text": "Why is the domain of $sqrt x$ written $[0, ∞)$ with a square bracket?",
+     "options": [
+      "$sqrt 0 = 0$ is defined",
+      "Square brackets mean infinity",
+      "Square roots of negatives are fine"
+     ],
+     "answer": 0,
+     "explain": "Zero is allowed inside a square root.",
+     "id": "R3"
+    },
+    {
+     "type": "tf",
+     "text": "$∛x$ is defined for every real number $x$.",
+     "answer": true,
+     "explain": "Cube roots of negatives are fine: $∛(-8) = -2$.",
+     "id": "R4"
+    },
+    {
+     "type": "tf",
+     "text": "The domain of $frac{x^2 - 9}{x - 3}$ is all real numbers, because it simplifies to $x + 3$.",
+     "answer": false,
+     "explain": "The original formula still divides by 0 at $x$ = 3. The graph has a hole there.",
+     "id": "R5"
+    },
+    {
+     "type": "tf",
+     "text": "∞ can never get a square bracket.",
+     "answer": true,
+     "explain": "∞ is not a number you can reach or include.",
+     "id": "R6"
+    },
+    {
+     "type": "pick",
+     "text": "Which numbers are **not** in the domain of $frac{sqrt(x + 1)}{x(x - 2)}$?",
+     "options": [
+      "−2",
+      "0",
+      "2",
+      "1",
+      "−1"
+     ],
+     "answers": [
+      0,
+      1,
+      2
+     ],
+     "explain": "Need $x ≥ -1$ (so −2 is out), $x ≠ 0$, $x ≠ 2$. −1 and 1 are fine.",
+     "id": "R7"
+    },
+    {
+     "type": "mc",
+     "text": "The domain of $sqrt(x^2 - 1)$ is…",
+     "options": [
+      "$[-1, 1]$",
+      "$(-∞, -1] ∪ [1, ∞)$",
+      "$(-∞, ∞)$",
+      "$[1, ∞)$"
+     ],
+     "answer": 1,
+     "explain": "Need $x^2 ≥ 1$: far from 0 on either side.",
+     "id": "R8"
+    }
+   ]
+  }
+ }
+}

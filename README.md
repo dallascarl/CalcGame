@@ -10,6 +10,7 @@ A practice game for Calculus 1. Students walk a map, and each stop has a lesson 
 | `maps/*.json` | One map per world: every stop, where it sits, what it requires, and which deck it opens |
 | `decks/*.json` | One file per stop: its graphs, lesson steps, and drill questions |
 | `js/app.js` | The game engine. Does not change when content changes |
+| `js/items.js` | More item types (formulas, intervals, multi-part problems, sketching, explorers) |
 | `css/app.css` | The look |
 | `index.html` | The page that loads everything |
 
@@ -43,11 +44,11 @@ A deck has `id` (must match the file name), `title`, `graphs`, an optional `less
 
 For a stop with more than one lesson, use `lessons` instead of `lesson`: a list of `{"id", "title", "slides"}`. The stop shows them as Lesson 1, Lesson 2, … with each title underneath. Each lesson opens after the one before it, and the drills open after all of them. See `decks/maxmin.json`.
 
-Text markup: `$...$` is math, `lim[x->2^-]` draws a limit, `**bold**`, and `\n` starts a new line. Inside math, `x_0` or `x_(n-1)` is a subscript and `frac{top}{bottom}` is a stacked fraction.
+Text markup: `$...$` is math, `\\$` is a plain dollar sign (money), `lim[x->2^-]` draws a limit, `**bold**`, and `\n` starts a new line. Inside math, `x_0` or `x_(n-1)` is a subscript and `frac{top}{bottom}` is a stacked fraction.
 
 Students can type answers as decimals or as fractions (the `a/b` key), so `7/4` and `1.75` are both accepted.
 
-Item types: `info`, `explore`, `extrema`, `newton`, `bisect`, `mvt`, `linear` and `diff` (lesson only), `graph`, `mc`, `tf`, `bank`, `num`, `crit`, `multi`, `match`, `pick`. See the files in `decks/` for examples.
+Item types: `info`, `explore`, `extrema`, `newton`, `bisect`, `mvt`, `linear`, `diff`, `optim`, `rr`, `curvex` and `ratio` (lesson only), `graph`, `mc`, `tf`, `bank`, `num`, `crit`, `multi`, `match`, `pick`, `expr`, `interval`, `order`, `steps`, `sketch`. See the files in `decks/` for examples.
 
 - `num`: the student types one number. Needs `answer`, an optional `label` for the box, and an optional `tol` (default 0.01).
 - `crit`: the student builds a list of x-values (used for critical points). Needs `answers`, a list of numbers; an empty list means "there are no critical numbers" and the student has a button for that.
@@ -67,6 +68,23 @@ Graph questions also take `ask: "absmax" | "absmin" | "argmax" | "argmin"`. The 
 **The deck test checks your answer keys against the real functions.** For a `num` question add `verify: {"expr": ..., "domain": [a, b], "ask": "max"|"min"|"argmax"|"argmin"}` and it recomputes the answer. For a `crit` question add `verify: {"expr": ..., "range": [a, b], "dexpr": "the derivative"}` and it scans for critical numbers and checks your derivative formula. `extrema` items are always checked this way. For a Newton `multi` question add `verify: {"expr": ..., "x0": ...}` and give each part a `calc` such as `"x1"`, `"x2"`, `"f(x0)"` or `"f'(x1)"`; the test runs Newton's method and compares, and also checks that `fails` is set exactly when $f'(x_0)$ = 0.
 
 Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `to`. Write multiplication out (`2*x`, not `2x`). `holes` are open circles and `dots` are filled points. `tangents` is a list of x-values where the tangent line is drawn, and `labels` is a list of `[x, y, "text"]`.
+
+### Stop options (added for World 3)
+
+- `"lessonOptional": true` on a deck: the drills open right away and the lesson is marked Optional (used by the review side quests). The stop is cleared when one set of each drill is done.
+- A drill with `"after": "<lesson id>"` opens as soon as that lesson is done (instead of after all lessons), and is listed right under it.
+- A lesson with `"needs": ["<drill kind>"]` stays locked until one set of those drills is done. L'Hôpital uses this: Lesson 3 (the other five forms) opens after the 0/0 and ∞/∞ drill.
+- `"setSize": n` on a drill sets how many questions are in a set (default 8). Long multi-part drills use 2 to 4.
+- `"exam": true` on a drill runs it as a practice test: no feedback until the end, then a score, a time, a score for each `topic`, and a review of every miss. Give questions a `"topic"` to get the breakdown (any drill shows it).
+
+### More item types (js/items.js)
+
+- `expr`: the student types a formula on a math keypad. `answer` (one string, or a list of acceptable ones) is checked by plugging random numbers into both, so any equivalent form is right. `vars` lists the variable keys (e.g. `["r", "h", "r'", "h'"]`; a prime means d/dt). `keys` adds keys such as `"pi"`, `"sqrt("`, `"sin("`, `"ln("`, `"e^("`, `"sec("`. `show` is how the answer is displayed after a miss. The deck test checks that the answer can be typed with the keys given.
+- `interval`: interval notation with ( [ ] ) , ∞ ∪ keys. `answer` like `"(-inf,2)U(2,inf)"` (or a list of acceptable answers); `"none"` with a `noneText` button for "never". Endpoints may be decimals (within 0.01) or fractions.
+- `order`: tap `items` into the right order (write them in the correct order; the app shuffles).
+- `steps`: a word problem done one part at a time. `text` (and an optional `figure`, an inline SVG) stays at the top; `steps` is a list of ordinary items (mc, num, expr, interval, crit, sketch, …). In lessons a wrong part gets its `hint` and a second try, then the answer; in drills a wrong part shows the answer and the problem continues. The question counts as right only if every part was right the first time.
+- `sketch`: the graph-sketching experience. `fn`, `window`, and `data` with `points` (`[x, y, "label"]`), `crit`, `infl`, `va`, `ha`, optional `slant`, and `lines` (the data shown to the student). Phases: place the points and asymptotes on the grid, mark each region ↗/↘ and ∪/∩ on a sign chart, then draw with a finger or mouse. The drawing is graded on key points, coverage, rising/falling, concavity and asymptote behavior, and the real graph is shown afterward. `"phases": ["draw"]` with `"prefill": true` skips straight to drawing with the data already placed.
+- Explorers (lessons only): `optim` (drag $x$ and watch a scene and the quantity being optimized; `scene` type `rect` or `box`), `rr` (related-rates scenes `ladder`, `ripple`, `balloon`, `cone` with a time slider and live rates), `curvex` (slide along a curve; the tangent shows rising/falling, or the curve is colored by concavity), `ratio` (tap closer and closer to a limit and watch the two parts of an indeterminate form fight; `op` is `/`, `*`, `-` or `^`).
 
 ## Calculator
 

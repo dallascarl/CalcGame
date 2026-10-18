@@ -1,0 +1,2555 @@
+{
+ "id": "opt",
+ "title": "Optimization",
+ "graphs": {},
+ "lesson": {
+  "slides": [
+   {
+    "type": "optim",
+    "title": "Feel it first",
+    "text": "1200 ft of fence makes a pen along a river (no fence on the river side). Drag $x$, the width, and watch the pen and its area. Find the biggest pen.",
+    "fn": "x*(1200-2*x)",
+    "range": [
+     0,
+     600
+    ],
+    "window": [
+     0,
+     600,
+     0,
+     200000
+    ],
+    "xstep": 100,
+    "ystep": 50000,
+    "best": 300,
+    "goal": "max",
+    "start": 60,
+    "scene": {
+     "type": "rect",
+     "w": "1200-2*x",
+     "h": "x",
+     "wl": "length",
+     "hl": "width",
+     "wall": "top",
+     "wallLabel": "river"
+    },
+    "readout": [
+     {
+      "label": "Area",
+      "expr": "x*(1200-2*x)",
+      "unit": "ft²"
+     }
+    ],
+    "after": "The biggest pen is 300 ft wide and 600 ft long: 180,000 ft². Now let’s find that with calculus.",
+    "id": "L1"
+   },
+   {
+    "type": "mc",
+    "text": "Step 1, the most important step. In this problem, **what is being optimized?**",
+    "options": [
+     "The river",
+     "The area of the pen",
+     "The 1200 ft of fence",
+     "The width $x$"
+    ],
+    "answer": 1,
+    "explain": "The area. The 1200 ft is fixed: that is a **constraint**. Mixing these up is the classic mistake.",
+    "hint": "Which number did you try to make as big as possible?",
+    "id": "L2"
+   },
+   {
+    "type": "mc",
+    "text": "Is it a max or a min?",
+    "options": [
+     "Max: we want the largest area",
+     "Min: we want the least fence"
+    ],
+    "answer": 0,
+    "explain": "Largest area: maximize.",
+    "hint": "Read the question again.",
+    "id": "L3"
+   },
+   {
+    "type": "mc",
+    "text": "Let $y$ be the side parallel to the river. What is the constraint?",
+    "options": [
+     "$xy = 1200$",
+     "$2x + y = 1200$",
+     "$2x + 2y = 1200$"
+    ],
+    "answer": 1,
+    "explain": "Two widths and one length use all 1200 ft.",
+    "hint": "Only three sides need fence.",
+    "id": "L4"
+   },
+   {
+    "type": "expr",
+    "text": "Use the constraint to write the area as a function of $x$ alone.",
+    "answer": "x*(1200-2*x)",
+    "vars": [
+     "x"
+    ],
+    "label": "$A(x)$ =",
+    "show": "$x(1200 - 2x)$",
+    "explain": "$A(x) = x(1200 - 2x) = 1200x - 2x^2$.",
+    "hint": "$y = 1200 - 2x$ and $A = xy$.",
+    "id": "L5"
+   },
+   {
+    "type": "interval",
+    "text": "What values of $x$ make sense?",
+    "answer": "[0,600]",
+    "label": "$x$ in",
+    "explain": "$x ≥ 0$ and $y = 1200 - 2x ≥ 0$, so $0 ≤ x ≤ 600$.",
+    "hint": "Neither side can be negative.",
+    "id": "L6"
+   },
+   {
+    "type": "expr",
+    "text": "Find $A'(x)$.",
+    "answer": "1200-4*x",
+    "vars": [
+     "x"
+    ],
+    "label": "$A'(x)$ =",
+    "explain": "$A'(x) = 1200 - 4x$.",
+    "hint": "Expand first: $1200x - 2x^2$.",
+    "id": "L7"
+   },
+   {
+    "type": "num",
+    "text": "Set it equal to 0. The critical point is:",
+    "answer": 300,
+    "label": "$x$ =",
+    "explain": "$x$ = 300.",
+    "hint": "$1200 - 4x = 0$",
+    "id": "L8"
+   },
+   {
+    "type": "mc",
+    "text": "How do we know $x$ = 300 is the maximum?",
+    "options": [
+     "Because it is the only number we found",
+     "$A''(x) = -4 < 0$, so it is a max (and the endpoints give area 0)",
+     "Because $A(300)$ is positive"
+    ],
+    "answer": 1,
+    "explain": "Concave down at the critical point means a max. The endpoints $x$ = 0 and $x$ = 600 give zero area.",
+    "hint": "Second derivative test, or compare with the endpoints.",
+    "id": "L9"
+   },
+   {
+    "type": "num",
+    "text": "Answer the question: what is the largest area?",
+    "answer": 180000,
+    "label": "$A$ =",
+    "explain": "300 ft by 600 ft: 180,000 ft².",
+    "hint": "$A(300)$",
+    "id": "L10"
+   },
+   {
+    "type": "order",
+    "text": "That was the whole method. Put it in order.",
+    "items": [
+     "Draw a diagram and name the variables",
+     "Decide what to optimize (max or min)",
+     "Write the constraint equation",
+     "Use the constraint to get one variable",
+     "Find the critical points",
+     "Check it is really a max or min, then answer the question"
+    ],
+    "explain": "Every optimization problem follows these steps.",
+    "hint": "Same order you just followed.",
+    "id": "L11"
+   },
+   {
+    "type": "optim",
+    "title": "One more to feel",
+    "text": "Cut equal squares of side $x$ from the corners of a 12-inch sheet and fold up the sides. Drag $x$ to find the box with the largest volume.",
+    "fn": "x*(12-2*x)^2",
+    "range": [
+     0,
+     6
+    ],
+    "window": [
+     0,
+     6,
+     0,
+     140
+    ],
+    "xstep": 1,
+    "ystep": 20,
+    "best": 2,
+    "goal": "max",
+    "start": 0.4,
+    "scene": {
+     "type": "box",
+     "side": 12
+    },
+    "readout": [
+     {
+      "label": "Volume",
+      "expr": "x*(12-2*x)^2",
+      "unit": "in³"
+     }
+    ],
+    "after": "Cut 2-inch squares: the box is 8 by 8 by 2, holding 128 in³. Too small a cut makes a flat tray; too big a cut makes a skinny tower.",
+    "id": "L12"
+   },
+   {
+    "type": "mc",
+    "text": "In the box problem, what is being optimized?",
+    "options": [
+     "The volume of the box",
+     "The area of the sheet",
+     "The size of the cut"
+    ],
+    "answer": 0,
+    "explain": "The volume. The 12-inch sheet is the constraint.",
+    "hint": "What did the slider make biggest?",
+    "id": "L13"
+   }
+  ]
+ },
+ "drills": {
+  "setup": {
+   "title": "Set it up drill",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA farmer has 1200 ft of fence to make a rectangular pen along a straight river. No fence is needed along the river. What dimensions give the largest area?",
+     "options": [
+      "The length of the river (minimize)",
+      "The area of the pen (maximize)",
+      "The length of fence (maximize)",
+      "The width $x$ (maximize)"
+     ],
+     "answer": 1,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-acc\" style=\"stroke:var(--teal)\" d=\"M20 30 Q40 20 60 30 T100 30 T140 30 T180 30 T220 30 T260 30 T300 30\"/><text x=\"300\" y=\"18\" text-anchor=\"end\" class=\"f-s\">river</text><path class=\"f-line\" d=\"M80 36 V140 H240 V36\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
+     "id": "S1"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA farmer has 1200 ft of fence to make a rectangular pen along a straight river. No fence is needed along the river. What dimensions give the largest area?",
+     "answer": "x*(1200-2*x)",
+     "vars": [
+      "x"
+     ],
+     "label": "$A(x)$ =",
+     "show": "$x(1200-2x)$",
+     "explain": "$y = 1200 - 2x$, so $A = xy = x(1200 - 2x)$.",
+     "id": "S2"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA farmer has 1200 ft of fence to make a rectangular pen along a straight river. No fence is needed along the river. What dimensions give the largest area?",
+     "options": [
+      "$2x + 2y = 1200$",
+      "$xy = 1200$",
+      "$2x + y = 1200$"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S3"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA gardener uses a wall as one side of a rectangular enclosure and has 120 m of fencing for the other three sides. Find the largest possible area.",
+     "options": [
+      "The wall length (maximize)",
+      "The fencing used (minimize)",
+      "The area enclosed (maximize)",
+      "The perimeter (maximize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" style=\"stroke-width:6\" x1=\"60\" y1=\"30\" x2=\"260\" y2=\"30\"/><text x=\"160\" y=\"22\" text-anchor=\"middle\" class=\"f-s\">wall</text><path class=\"f-line\" d=\"M80 33 V140 H240 V33\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
+     "id": "S4"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA gardener uses a wall as one side of a rectangular enclosure and has 120 m of fencing for the other three sides. Find the largest possible area.",
+     "answer": "x*(120-2*x)",
+     "vars": [
+      "x"
+     ],
+     "label": "$A(x)$ =",
+     "show": "$x(120-2x)$",
+     "explain": "$y = 120 - 2x$, so $A = x(120 - 2x)$.",
+     "id": "S5"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA gardener uses a wall as one side of a rectangular enclosure and has 120 m of fencing for the other three sides. Find the largest possible area.",
+     "options": [
+      "$2x + y = 120$",
+      "$2x + 2y = 120$",
+      "$x + y = 120$"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S6"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nFind two positive numbers whose product is 192 such that the first number plus **three times** the second is as small as possible.",
+     "options": [
+      "The number $y$ (minimize)",
+      "The product $xy$ (maximize)",
+      "The sum $x + 3y$ (minimize)",
+      "The product $xy$ (minimize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S7"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nFind two positive numbers whose product is 192 such that the first number plus **three times** the second is as small as possible.",
+     "answer": "x+576/x",
+     "vars": [
+      "x"
+     ],
+     "label": "$S(x)$ =",
+     "show": "$x + frac{576}{x}$",
+     "explain": "$y = frac{192}{x}$, so $S = x + 3 · frac{192}{x} = x + frac{576}{x}$.",
+     "id": "S8"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nFind two positive numbers whose product is 192 such that the first number plus **three times** the second is as small as possible.",
+     "options": [
+      "$x + 3y = 192$",
+      "$x + y = 192$",
+      "$xy = 192$"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S9"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nAn open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.",
+     "options": [
+      "The cost of the metal (minimize)",
+      "The surface area (minimize)",
+      "The volume (maximize)",
+      "The height (minimize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><ellipse class=\"f-line\" cx=\"160\" cy=\"30\" rx=\"60\" ry=\"13\" style=\"stroke-dasharray:5 4\"/><path class=\"f-fill\" d=\"M100 30 V140 A60 13 0 0 0 220 140 V30\"/><line class=\"f-acc\" x1=\"160\" y1=\"140\" x2=\"220\" y2=\"140\"/><text x=\"190\" y=\"134\" text-anchor=\"middle\">r</text><text x=\"232\" y=\"90\" text-anchor=\"start\">h</text><text x=\"160\" y=\"20\" text-anchor=\"middle\" class=\"f-s\">open top</text></svg>",
+     "id": "S10"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nAn open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.",
+     "answer": "3*pi*r^2/20+12*pi/(5*r)",
+     "vars": [
+      "r"
+     ],
+     "label": "$C(r)$ =",
+     "show": "$0.15pi r^2 + frac{2.4pi}{r}$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$h = frac{24}{r^2}$. Cost = $0.15pi r^2$ (bottom) + $0.05 · 2pi r h = frac{2.4pi}{r}$ (side). Different prices mean different coefficients.",
+     "id": "S11"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nAn open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.",
+     "options": [
+      "$2pi r h = 24pi$",
+      "$pi r^2 h = 24pi$",
+      "$pi r^2 + 2pi r h = 24pi$"
+     ],
+     "answer": 1,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S12"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA poster must have a 72 in² photo with 4-inch borders at the top and bottom and 2-inch borders on each side. What overall dimensions use the least paper?",
+     "options": [
+      "The total area of the poster (minimize)",
+      "The width of the borders (minimize)",
+      "The perimeter of the photo (minimize)",
+      "The area of the photo (maximize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 190\" role=\"img\"><rect class=\"f-line\" x=\"100\" y=\"10\" width=\"120\" height=\"155\"/><rect class=\"f-fill\" x=\"120\" y=\"40\" width=\"80\" height=\"95\"/><text x=\"160\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">72 in²</text><text x=\"160\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"160\" y=\"153\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"110\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"210\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"160\" y=\"182\" text-anchor=\"middle\">x</text><text x=\"92\" y=\"92\" text-anchor=\"end\">y</text></svg>",
+     "id": "S13"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA poster must have a 72 in² photo with 4-inch borders at the top and bottom and 2-inch borders on each side. What overall dimensions use the least paper?",
+     "answer": "(4+x)*(8+72/x)",
+     "vars": [
+      "x"
+     ],
+     "label": "$A(x)$ =",
+     "show": "$(x + 4)(frac{72}{x} + 8)$",
+     "explain": "Photo $x$ by $y$ with $y = frac{72}{x}$. Poster is $(x + 4)$ by $(y + 8)$.",
+     "id": "S14"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA poster must have a 72 in² photo with 4-inch borders at the top and bottom and 2-inch borders on each side. What overall dimensions use the least paper?",
+     "options": [
+      "$xy = 72$ (the photo)",
+      "$x + y = 72$",
+      "$(x + 4)(y + 8) = 72$"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S15"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nYou are in a rowboat 2 mi from the nearest point on a straight shore. A house is 6 mi down the shore from that point. You row at 3 mi/h and walk at 5 mi/h. Where should you land to reach the house as fast as possible?",
+     "options": [
+      "The total distance (minimize)",
+      "The walking speed (maximize)",
+      "The rowing distance (minimize)",
+      "The total travel time (minimize)"
+     ],
+     "answer": 3,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">boat</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "S16"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nYou are in a rowboat 2 mi from the nearest point on a straight shore. A house is 6 mi down the shore from that point. You row at 3 mi/h and walk at 5 mi/h. Where should you land to reach the house as fast as possible?",
+     "answer": "6/5-x/5+sqrt(4+x^2)/3",
+     "vars": [
+      "x"
+     ],
+     "label": "$T(x)$ =",
+     "show": "$frac{sqrt(4 + x^2)}{3} + frac{6 - x}{5}$",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "Row $sqrt(4 + x^2)$ at 3 mi/h, then walk $6 - x$ at 5 mi/h.",
+     "id": "S17"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nYou are in a rowboat 2 mi from the nearest point on a straight shore. A house is 6 mi down the shore from that point. You row at 3 mi/h and walk at 5 mi/h. Where should you land to reach the house as fast as possible?",
+     "options": [
+      "time = distance ÷ rate for each leg",
+      "$x + y = 6$ miles total",
+      "rowing time = walking time"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S18"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA box with a square bottom and no top must hold 1000 cm³. What dimensions use the least material?",
+     "options": [
+      "The surface area (minimize)",
+      "The height (minimize)",
+      "The base edge (minimize)",
+      "The volume (maximize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-fill\" d=\"M90 60 h120 v80 h-120 Z\"/><path class=\"f-fill\" d=\"M210 60 l40 -30 v80 l-40 30 Z\"/><path class=\"f-line\" d=\"M90 60 l40 -30 h120\"/><text x=\"150\" y=\"158\" text-anchor=\"middle\">x</text><text x=\"240\" y=\"140\" text-anchor=\"middle\">x</text><text x=\"78\" y=\"104\" text-anchor=\"end\">h</text></svg>",
+     "id": "S19"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA box with a square bottom and no top must hold 1000 cm³. What dimensions use the least material?",
+     "answer": "x^2+4000/x",
+     "vars": [
+      "x"
+     ],
+     "label": "$S(x)$ =",
+     "show": "$x^2 + frac{4000}{x}$",
+     "explain": "Bottom $x^2$ plus four sides $4xh$, with $h = frac{1000}{x^2}$.",
+     "id": "S20"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA box with a square bottom and no top must hold 1000 cm³. What dimensions use the least material?",
+     "options": [
+      "$x^2 + 4xh = 1000$",
+      "$x^2 h = 1000$",
+      "$4x + h = 1000$"
+     ],
+     "answer": 1,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S21"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nAn island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
+     "options": [
+      "The swimming distance (minimize)",
+      "The running distance (maximize)",
+      "The distance to the island (minimize)",
+      "The total time (minimize)"
+     ],
+     "answer": 3,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">island</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "S22"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nAn island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
+     "answer": "3/4-x/8+sqrt(4+x^2)/3",
+     "vars": [
+      "x"
+     ],
+     "label": "$T(x)$ =",
+     "show": "$frac{6 - x}{8} + frac{sqrt(4 + x^2)}{3}$",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "Run $6 - x$ at 8 mi/h; swim $sqrt(4 + x^2)$ at 3 mi/h.",
+     "id": "S23"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nAn island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
+     "options": [
+      "run time = swim time",
+      "run + swim = 8 mi",
+      "time = distance ÷ rate for each leg"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S24"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA 4-ft wire is cut into two pieces. One piece is bent into a square and the other into a circle. Where should you cut it to make the total enclosed area as small as possible? Let $x$ be the piece used for the square.",
+     "options": [
+      "The total area of the square and circle (minimize)",
+      "The perimeter of the circle (maximize)",
+      "The length of wire (minimize)",
+      "The area of the square alone (minimize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S25"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA 4-ft wire is cut into two pieces. One piece is bent into a square and the other into a circle. Where should you cut it to make the total enclosed area as small as possible? Let $x$ be the piece used for the square.",
+     "answer": "x^2/16+(4-x)^2/(4*pi)",
+     "vars": [
+      "x"
+     ],
+     "label": "$A(x)$ =",
+     "show": "$(frac{x}{4})^2 + frac{(4 - x)^2}{4pi}$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Square side $frac{x}{4}$. Circle circumference $4 - x$, so $r = frac{4 - x}{2pi}$ and its area is $frac{(4 - x)^2}{4pi}$.",
+     "id": "S26"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA 4-ft wire is cut into two pieces. One piece is bent into a square and the other into a circle. Where should you cut it to make the total enclosed area as small as possible? Let $x$ be the piece used for the square.",
+     "options": [
+      "$x^2 + pi r^2 = 4$",
+      "square piece + circle piece = 4",
+      "square area = circle area"
+     ],
+     "answer": 1,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S27"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?",
+     "options": [
+      "The number of cars rented (maximize)",
+      "The daily profit (maximize)",
+      "The price (maximize)",
+      "The cleaning cost (minimize)"
+     ],
+     "answer": 1,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S28"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?",
+     "answer": "-500+(-10+p)*(1000-5*p)",
+     "vars": [
+      "p"
+     ],
+     "label": "$P(p)$ =",
+     "show": "$(p - 10)(1000 - 5p) - 500$",
+     "explain": "Each car earns $p - 10$ after cleaning; there are $n$ cars; subtract \\$500.",
+     "id": "S29"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?",
+     "options": [
+      "$np = 1000$",
+      "$p + n = 1000$",
+      "$n = 1000 - 5p$"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S30"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA window is a rectangle with a semicircle on top. The outer frame (the perimeter) is 20 ft. Let $r$ be the radius of the semicircle. What $r$ lets in the most light (largest area)?",
+     "options": [
+      "The radius (maximize)",
+      "The perimeter (maximize)",
+      "The area of the window (maximize)",
+      "The height of the rectangle (maximize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><path class=\"f-fill\" d=\"M120 150 V80 A40 40 0 0 1 200 80 V150 Z\"/><line class=\"f-dash\" x1=\"120\" y1=\"80\" x2=\"200\" y2=\"80\"/><line class=\"f-acc\" x1=\"160\" y1=\"80\" x2=\"200\" y2=\"80\"/><text x=\"180\" y=\"74\" text-anchor=\"middle\">r</text><text x=\"110\" y=\"118\" text-anchor=\"end\">h</text><text x=\"160\" y=\"166\" text-anchor=\"middle\">2r</text></svg>",
+     "id": "S31"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA window is a rectangle with a semicircle on top. The outer frame (the perimeter) is 20 ft. Let $r$ be the radius of the semicircle. What $r$ lets in the most light (largest area)?",
+     "answer": "-2*r^2+20*r-pi*r^2/2",
+     "vars": [
+      "r"
+     ],
+     "label": "$A(r)$ =",
+     "show": "$20r - 2r^2 - frac{pi r^2}{2}$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$h = frac{20 - 2r - pi r}{2}$. Area = $2rh + frac{1}{2}pi r^2$, which simplifies to $20r - 2r^2 - frac{pi r^2}{2}$.",
+     "id": "S32"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA window is a rectangle with a semicircle on top. The outer frame (the perimeter) is 20 ft. Let $r$ be the radius of the semicircle. What $r$ lets in the most light (largest area)?",
+     "options": [
+      "$2r + 2h + 2pi r = 20$",
+      "$2r + 2h + pi r = 20$",
+      "$2rh + frac{pi r^2}{2} = 20$"
+     ],
+     "answer": 1,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S33"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA page must have 400 in² of paper, with 2-inch margins at top and bottom and half-inch margins on the left and right. What width maximizes the printed area?",
+     "options": [
+      "The paper area (minimize)",
+      "The printed area (maximize)",
+      "The margins (minimize)",
+      "The page width (maximize)"
+     ],
+     "answer": 1,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S34"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nA page must have 400 in² of paper, with 2-inch margins at top and bottom and half-inch margins on the left and right. What width maximizes the printed area?",
+     "answer": "(-1+w)*(-4+400/w)",
+     "vars": [
+      "w"
+     ],
+     "label": "$P(w)$ =",
+     "show": "$(w - 1)(frac{400}{w} - 4)$",
+     "explain": "Printed width $w - 1$, printed height $h - 4$ with $h = frac{400}{w}$.",
+     "id": "S35"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nA page must have 400 in² of paper, with 2-inch margins at top and bottom and half-inch margins on the left and right. What width maximizes the printed area?",
+     "options": [
+      "$wh = 400$ (the paper)",
+      "$w + h = 400$",
+      "$(w - 1)(h - 4) = 400$"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S36"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nAn isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
+     "options": [
+      "The area of the triangle (maximize)",
+      "The perimeter of the triangle (minimize)",
+      "The base (maximize)",
+      "The radius (maximize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S37"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nAn isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
+     "answer": "sqrt(25-x^2)*(5+x)",
+     "vars": [
+      "x"
+     ],
+     "label": "$A(x)$ =",
+     "show": "$sqrt(25 - x^2)(5 + x)$",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "Half-base $sqrt(25 - x^2)$, height $5 + x$. Area = half-base × height.",
+     "id": "S38"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nAn isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
+     "options": [
+      "base + height = 10",
+      "half-base$^2$ + $x^2$ = 25",
+      "base · height = 25"
+     ],
+     "answer": 1,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S39"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nFind the point on the curve $y = sqrt x$ closest to the point (3, 0).",
+     "options": [
+      "The $y$-value (maximize)",
+      "The distance to (3, 0) (minimize)",
+      "The slope of the curve (minimize)",
+      "The $x$-value (minimize)"
+     ],
+     "answer": 1,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S40"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nFind the point on the curve $y = sqrt x$ closest to the point (3, 0).",
+     "answer": "x+(-3+x)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$d^2(x)$ =",
+     "show": "$(x - 3)^2 + x$",
+     "explain": "$d^2 = (x - 3)^2 + y^2 = (x - 3)^2 + x$.",
+     "id": "S41"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nFind the point on the curve $y = sqrt x$ closest to the point (3, 0).",
+     "options": [
+      "$x + y = 3$",
+      "$x^2 + y^2 = 9$",
+      "$y = sqrt x$"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S42"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nYou may have one slice of pizza (a sector of a circle), but its perimeter (two radii plus the crust) must be 32 inches. What radius gives the most pizza?",
+     "options": [
+      "The perimeter (maximize)",
+      "The angle (maximize)",
+      "The area of the slice (maximize)",
+      "The crust length (maximize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S43"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nYou may have one slice of pizza (a sector of a circle), but its perimeter (two radii plus the crust) must be 32 inches. What radius gives the most pizza?",
+     "answer": "-r^2+16*r",
+     "vars": [
+      "r"
+     ],
+     "label": "$A(r)$ =",
+     "show": "$16r - r^2$",
+     "explain": "$A = frac{1}{2}r^2 θ$ with $rθ = 32 - 2r$, so $A = frac{1}{2}r(32 - 2r) = 16r - r^2$.",
+     "id": "S44"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nYou may have one slice of pizza (a sector of a circle), but its perimeter (two radii plus the crust) must be 32 inches. What radius gives the most pizza?",
+     "options": [
+      "$2r + rθ = 32$",
+      "$frac{1}{2}r^2 θ = 32$",
+      "$2pi r = 32$"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S45"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nAt what positive $x$ does the curve $y = 1 + 40x^3 - 3x^5$ have the largest slope?",
+     "options": [
+      "The slope $y'$ (maximize)",
+      "The curvature (minimize)",
+      "The value $x$ (maximize)",
+      "The height $y$ (maximize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S46"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nAt what positive $x$ does the curve $y = 1 + 40x^3 - 3x^5$ have the largest slope?",
+     "answer": "-15*x^4+120*x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$m(x) = y'$ =",
+     "show": "$120x^2 - 15x^4$",
+     "explain": "The quantity to optimize is the slope itself: $m = y' = 120x^2 - 15x^4$.",
+     "id": "S47"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nAn 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.",
+     "options": [
+      "The fence height (minimize)",
+      "The distance $x$ (minimize)",
+      "The length of the ladder (minimize)",
+      "The height reached on the building (maximize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" style=\"stroke-width:5\" x1=\"260\" y1=\"150\" x2=\"260\" y2=\"10\"/><line class=\"f-line\" style=\"stroke-width:4\" x1=\"190\" y1=\"150\" x2=\"190\" y2=\"96\"/><line class=\"f-acc\" x1=\"70\" y1=\"150\" x2=\"260\" y2=\"20\"/><text x=\"225\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">4 ft</text><text x=\"180\" y=\"126\" text-anchor=\"end\" class=\"f-s\">8 ft</text><text x=\"254\" y=\"8\" text-anchor=\"end\" class=\"f-s\">building</text><text x=\"130\" y=\"166\" text-anchor=\"middle\">x</text></svg>",
+     "id": "S48"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nAn 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.",
+     "answer": "sqrt(64+x^2)*(4+x)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "$L(x)$ =",
+     "show": "$frac{(x + 4)sqrt(x^2 + 64)}{x}$",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "The ladder rises 8 ft over a run of $x$, so over the full run $x + 4$ its length is $(x + 4) · frac{sqrt(x^2 + 64)}{x}$.",
+     "id": "S49"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nAn 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.",
+     "options": [
+      "$x + 4 = 8$",
+      "$x^2 + 8^2 = 4^2$",
+      "the ladder touches the top of the fence (similar triangles)"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S50"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nIf $x + y = 10$ and $x > 0$, find the maximum value of $y - frac{1}{x}$.",
+     "options": [
+      "$x + y$ (maximize)",
+      "$y - frac{1}{x}$ (maximize)",
+      "$frac{1}{x}$ (minimize)",
+      "$y$ (maximize)"
+     ],
+     "answer": 1,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S51"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nIf $x + y = 10$ and $x > 0$, find the maximum value of $y - frac{1}{x}$.",
+     "answer": "10-x-1/x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x)$ =",
+     "show": "$10 - x - frac{1}{x}$",
+     "explain": "$y = 10 - x$.",
+     "id": "S52"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nIf $x + y = 10$ and $x > 0$, find the maximum value of $y - frac{1}{x}$.",
+     "options": [
+      "$x + y = 10$",
+      "$y - frac{1}{x} = 10$",
+      "$xy = 10$"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S53"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nIf $x + y = 10$ with $x, y > 0$, find the minimum value of $frac{1}{y} + frac{4}{x}$.",
+     "options": [
+      "$xy$ (maximize)",
+      "$x$ (minimize)",
+      "$frac{1}{y} + frac{4}{x}$ (minimize)",
+      "$x + y$ (minimize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "S54"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nIf $x + y = 10$ with $x, y > 0$, find the minimum value of $frac{1}{y} + frac{4}{x}$.",
+     "answer": "1/(10-x)+4/x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x)$ =",
+     "show": "$frac{1}{10 - x} + frac{4}{x}$",
+     "explain": "$y = 10 - x$.",
+     "id": "S55"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nIf $x + y = 10$ with $x, y > 0$, find the minimum value of $frac{1}{y} + frac{4}{x}$.",
+     "options": [
+      "$x + y = 10$",
+      "$frac{1}{y} + frac{4}{x} = 10$",
+      "$y = 4x$"
+     ],
+     "answer": 0,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S56"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nSquares of side $x$ are cut from the corners of a 12-inch square sheet, and the sides are folded up into an open box. What $x$ gives the largest volume?",
+     "options": [
+      "The volume of the box (maximize)",
+      "The area of the sheet (maximize)",
+      "The surface area (minimize)",
+      "The cut size (minimize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><rect class=\"f-fill\" x=\"90\" y=\"15\" width=\"140\" height=\"140\"/><rect x=\"90\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"90\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect class=\"f-dash\" x=\"120\" y=\"45\" width=\"80\" height=\"80\"/><text x=\"105\" y=\"62\" text-anchor=\"middle\" class=\"f-s\">x</text><text x=\"160\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">12 in</text></svg>",
+     "id": "S57"
+    },
+    {
+     "type": "expr",
+     "text": "**Write it as a function of one variable.**\nSquares of side $x$ are cut from the corners of a 12-inch square sheet, and the sides are folded up into an open box. What $x$ gives the largest volume?",
+     "answer": "x*(12-2*x)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$V(x)$ =",
+     "show": "$x(12 - 2x)^2$",
+     "explain": "The base is $(12 - 2x)$ square and the height is $x$.",
+     "id": "S58"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nSquares of side $x$ are cut from the corners of a 12-inch square sheet, and the sides are folded up into an open box. What $x$ gives the largest volume?",
+     "options": [
+      "base edge = $12 - x$",
+      "$x + 12 = 24$",
+      "base edge = $12 - 2x$"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "S59"
+    },
+    {
+     "type": "mc",
+     "text": "A student is asked to maximize the area of a rectangle with perimeter 40 and writes $A = 40$. What went wrong?",
+     "options": [
+      "They set the quantity to optimize equal to the constraint value",
+      "Nothing",
+      "They forgot units"
+     ],
+     "answer": 0,
+     "explain": "The perimeter is 40 (constraint). The area is the thing to maximize, and it is a function, not a number.",
+     "id": "S60"
+    },
+    {
+     "type": "tf",
+     "text": "In an optimization problem, the quantity being optimized is always an area or a volume.",
+     "answer": false,
+     "explain": "It can be a cost, a time, a distance, a profit, even a slope.",
+     "id": "S61"
+    },
+    {
+     "type": "tf",
+     "text": "After finding a critical point, you should check that it really gives a max (or min).",
+     "answer": true,
+     "explain": "Use the first or second derivative test, or compare with the endpoints. Skipping this loses points on the exam.",
+     "id": "S62"
+    },
+    {
+     "type": "order",
+     "text": "Put the optimization steps in order.",
+     "items": [
+      "Draw a diagram and name the variables",
+      "Decide what to optimize (max or min)",
+      "Write the constraint equation",
+      "Use the constraint to get one variable",
+      "Find the critical points",
+      "Check it is really a max or min, then answer the question"
+     ],
+     "explain": "The steps from the class slides.",
+     "id": "S63"
+    }
+   ]
+  },
+  "solve": {
+   "title": "Solve it drill",
+   "setSize": 4,
+   "questions": [
+    {
+     "type": "steps",
+     "text": "A farmer has 1200 ft of fence to make a rectangular pen along a straight river. No fence is needed along the river. What dimensions give the largest area?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The width $x$ (maximize)",
+        "The area of the pen (maximize)",
+        "The length of fence (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$2x + 2y = 1200$",
+        "$xy = 1200$",
+        "$2x + y = 1200$"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x*(1200-2*x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$x(1200-2x)$",
+       "explain": "$y = 1200 - 2x$, so $A = xy = x(1200 - 2x)$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "1200-4*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$A′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 300,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the largest area?",
+       "answer": 180000,
+       "label": "$A$ =",
+       "tol": 180.0,
+       "explain": "$A(300) = 300 · 600$ = 180,000 ft² (300 ft by 600 ft)."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-acc\" style=\"stroke:var(--teal)\" d=\"M20 30 Q40 20 60 30 T100 30 T140 30 T180 30 T220 30 T260 30 T300 30\"/><text x=\"300\" y=\"18\" text-anchor=\"end\" class=\"f-s\">river</text><path class=\"f-line\" d=\"M80 36 V140 H240 V36\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
+     "id": "P1"
+    },
+    {
+     "type": "steps",
+     "text": "A gardener uses a wall as one side of a rectangular enclosure and has 120 m of fencing for the other three sides. Find the largest possible area.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The wall length (maximize)",
+        "The fencing used (minimize)",
+        "The area enclosed (maximize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x + y = 120$",
+        "$2x + 2y = 120$",
+        "$2x + y = 120$"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x*(120-2*x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$x(120-2x)$",
+       "explain": "$y = 120 - 2x$, so $A = x(120 - 2x)$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "120-4*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$A′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 30,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest area:",
+       "answer": 1800,
+       "label": "$A$ =",
+       "tol": 1.8,
+       "explain": "30 m by 60 m gives 1800 m². Only three sides need fence."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" style=\"stroke-width:6\" x1=\"60\" y1=\"30\" x2=\"260\" y2=\"30\"/><text x=\"160\" y=\"22\" text-anchor=\"middle\" class=\"f-s\">wall</text><path class=\"f-line\" d=\"M80 33 V140 H240 V33\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
+     "id": "P2"
+    },
+    {
+     "type": "steps",
+     "text": "Find two positive numbers whose product is 192 such that the first number plus **three times** the second is as small as possible.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The product $xy$ (maximize)",
+        "The product $xy$ (minimize)",
+        "The sum $x + 3y$ (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$xy = 192$",
+        "$x + y = 192$",
+        "$x + 3y = 192$"
+       ],
+       "answer": 0,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x+576/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$S(x)$ =",
+       "show": "$x + frac{576}{x}$",
+       "explain": "$y = frac{192}{x}$, so $S = x + 3 · frac{192}{x} = x + frac{576}{x}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "1-576/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$S′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 24,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the smallest possible value of $x + 3y$?",
+       "answer": 48,
+       "label": "Minimum =",
+       "tol": 0.048,
+       "explain": "$x$ = 24 and $y$ = 8, so $24 + 24$ = 48."
+      }
+     ],
+     "id": "P3"
+    },
+    {
+     "type": "steps",
+     "text": "An open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The surface area (minimize)",
+        "The volume (maximize)",
+        "The cost of the metal (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$pi r^2 + 2pi r h = 24pi$",
+        "$pi r^2 h = 24pi$",
+        "$2pi r h = 24pi$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $r$ alone.",
+       "answer": "3*pi*r^2/20+12*pi/(5*r)",
+       "vars": [
+        "r"
+       ],
+       "label": "$C(r)$ =",
+       "show": "$0.15pi r^2 + frac{2.4pi}{r}$",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$h = frac{24}{r^2}$. Cost = $0.15pi r^2$ (bottom) + $0.05 · 2pi r h = frac{2.4pi}{r}$ (side). Different prices mean different coefficients."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "3*pi*(-8+r^3)/(10*r^2)",
+       "vars": [
+        "r"
+       ],
+       "label": "$C′(r)$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2,
+       "label": "$r$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the minimum cost (in dollars)?",
+       "answer": 5.654867,
+       "label": "Cost ≈",
+       "tol": 0.01,
+       "explain": "$r$ = 2, $h$ = 6: $0.15pi(4) + 0.05(2pi)(2)(6) = 1.8pi$ ≈ \\$5.65."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><ellipse class=\"f-line\" cx=\"160\" cy=\"30\" rx=\"60\" ry=\"13\" style=\"stroke-dasharray:5 4\"/><path class=\"f-fill\" d=\"M100 30 V140 A60 13 0 0 0 220 140 V30\"/><line class=\"f-acc\" x1=\"160\" y1=\"140\" x2=\"220\" y2=\"140\"/><text x=\"190\" y=\"134\" text-anchor=\"middle\">r</text><text x=\"232\" y=\"90\" text-anchor=\"start\">h</text><text x=\"160\" y=\"20\" text-anchor=\"middle\" class=\"f-s\">open top</text></svg>",
+     "id": "P4"
+    },
+    {
+     "type": "steps",
+     "text": "A poster must have a 72 in² photo with 4-inch borders at the top and bottom and 2-inch borders on each side. What overall dimensions use the least paper?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The total area of the poster (minimize)",
+        "The width of the borders (minimize)",
+        "The area of the photo (maximize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$(x + 4)(y + 8) = 72$",
+        "$xy = 72$ (the photo)",
+        "$x + y = 72$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "(4+x)*(8+72/x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$(x + 4)(frac{72}{x} + 8)$",
+       "explain": "Photo $x$ by $y$ with $y = frac{72}{x}$. Poster is $(x + 4)$ by $(y + 8)$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "8-288/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$A′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 6,
+       "label": "Photo width $x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the smallest total area?",
+       "answer": 200,
+       "label": "Area =",
+       "tol": 0.2,
+       "explain": "Photo 6 by 12, poster 10 by 20 = 200 in². The 72 is the constraint, not what we minimize."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 190\" role=\"img\"><rect class=\"f-line\" x=\"100\" y=\"10\" width=\"120\" height=\"155\"/><rect class=\"f-fill\" x=\"120\" y=\"40\" width=\"80\" height=\"95\"/><text x=\"160\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">72 in²</text><text x=\"160\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"160\" y=\"153\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"110\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"210\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"160\" y=\"182\" text-anchor=\"middle\">x</text><text x=\"92\" y=\"92\" text-anchor=\"end\">y</text></svg>",
+     "id": "P5"
+    },
+    {
+     "type": "steps",
+     "text": "You are in a rowboat 2 mi from the nearest point on a straight shore. A house is 6 mi down the shore from that point. You row at 3 mi/h and walk at 5 mi/h. Where should you land to reach the house as fast as possible?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The total travel time (minimize)",
+        "The total distance (minimize)",
+        "The rowing distance (minimize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "rowing time = walking time",
+        "time = distance ÷ rate for each leg",
+        "$x + y = 6$ miles total"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "6/5-x/5+sqrt(4+x^2)/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$T(x)$ =",
+       "show": "$frac{sqrt(4 + x^2)}{3} + frac{6 - x}{5}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Row $sqrt(4 + x^2)$ at 3 mi/h, then walk $6 - x$ at 5 mi/h."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 1.5,
+       "label": "Land at $x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the least time (hours)?",
+       "answer": 1.733333,
+       "label": "$T$ ≈",
+       "tol": 0.01,
+       "explain": "$T(1.5) = frac{2.5}{3} + frac{4.5}{5}$ ≈ 1.733 h (about 1 h 44 min). Shortest distance is not fastest!"
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">boat</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "P6"
+    },
+    {
+     "type": "steps",
+     "text": "A box with a square bottom and no top must hold 1000 cm³. What dimensions use the least material?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The height (minimize)",
+        "The volume (maximize)",
+        "The surface area (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x^2 + 4xh = 1000$",
+        "$x^2 h = 1000$",
+        "$4x + h = 1000$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x^2+4000/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$S(x)$ =",
+       "show": "$x^2 + frac{4000}{x}$",
+       "explain": "Bottom $x^2$ plus four sides $4xh$, with $h = frac{1000}{x^2}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "-4000/x^2+2*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$S′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 12.59921,
+       "label": "Base edge $x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Smallest surface area?",
+       "answer": 476.220316,
+       "label": "$S$ ≈",
+       "tol": 0.47622031559045985,
+       "explain": "$x = ∛2000$ ≈ 12.6 cm, $h$ ≈ 6.3 cm, $S$ ≈ 476.2 cm²."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-fill\" d=\"M90 60 h120 v80 h-120 Z\"/><path class=\"f-fill\" d=\"M210 60 l40 -30 v80 l-40 30 Z\"/><path class=\"f-line\" d=\"M90 60 l40 -30 h120\"/><text x=\"150\" y=\"158\" text-anchor=\"middle\">x</text><text x=\"240\" y=\"140\" text-anchor=\"middle\">x</text><text x=\"78\" y=\"104\" text-anchor=\"end\">h</text></svg>",
+     "id": "P7"
+    },
+    {
+     "type": "steps",
+     "text": "An island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The swimming distance (minimize)",
+        "The total time (minimize)",
+        "The running distance (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "run + swim = 8 mi",
+        "time = distance ÷ rate for each leg",
+        "run time = swim time"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "3/4-x/8+sqrt(4+x^2)/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$T(x)$ =",
+       "show": "$frac{6 - x}{8} + frac{sqrt(4 + x^2)}{3}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Run $6 - x$ at 8 mi/h; swim $sqrt(4 + x^2)$ at 3 mi/h."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 0.80904,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "How far should they run (miles)?",
+       "answer": 5.19096,
+       "label": "Run ≈",
+       "tol": 0.01,
+       "explain": "Run $6 - 0.809$ ≈ 5.19 mi, then swim."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">island</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "P8"
+    },
+    {
+     "type": "steps",
+     "text": "A 4-ft wire is cut into two pieces. One piece is bent into a square and the other into a circle. Where should you cut it to make the total enclosed area as small as possible? Let $x$ be the piece used for the square.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The length of wire (minimize)",
+        "The total area of the square and circle (minimize)",
+        "The area of the square alone (minimize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "square piece + circle piece = 4",
+        "square area = circle area",
+        "$x^2 + pi r^2 = 4$"
+       ],
+       "answer": 0,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x^2/16+(4-x)^2/(4*pi)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$(frac{x}{4})^2 + frac{(4 - x)^2}{4pi}$",
+       "keys": [
+        "pi"
+       ],
+       "explain": "Square side $frac{x}{4}$. Circle circumference $4 - x$, so $r = frac{4 - x}{2pi}$ and its area is $frac{(4 - x)^2}{4pi}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "(-16+4*x+pi*x)/(8*pi)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A′(x)$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2.240397,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the smallest total area (ft²)?",
+       "answer": 0.560099,
+       "label": "$A$ ≈",
+       "tol": 0.01,
+       "explain": "At $x$ ≈ 2.24 ft, the total area is about 0.560 ft²."
+      }
+     ],
+     "id": "P9"
+    },
+    {
+     "type": "steps",
+     "text": "A car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The number of cars rented (maximize)",
+        "The daily profit (maximize)",
+        "The price (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$np = 1000$",
+        "$n = 1000 - 5p$",
+        "$p + n = 1000$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $p$ alone.",
+       "answer": "-500+(-10+p)*(1000-5*p)",
+       "vars": [
+        "p"
+       ],
+       "label": "$P(p)$ =",
+       "show": "$(p - 10)(1000 - 5p) - 500$",
+       "explain": "Each car earns $p - 10$ after cleaning; there are $n$ cars; subtract \\$500."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "1050-10*p",
+       "vars": [
+        "p"
+       ],
+       "label": "$P′(p)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 105,
+       "label": "$p$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the maximum daily profit?",
+       "answer": 44625,
+       "label": "Profit =",
+       "tol": 44.625,
+       "explain": "$95 · 475 - 500$ = \\$44,625."
+      }
+     ],
+     "id": "P10"
+    },
+    {
+     "type": "steps",
+     "text": "A window is a rectangle with a semicircle on top. The outer frame (the perimeter) is 20 ft. Let $r$ be the radius of the semicircle. What $r$ lets in the most light (largest area)?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The perimeter (maximize)",
+        "The radius (maximize)",
+        "The area of the window (maximize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$2r + 2h + 2pi r = 20$",
+        "$2r + 2h + pi r = 20$",
+        "$2rh + frac{pi r^2}{2} = 20$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $r$ alone.",
+       "answer": "-2*r^2+20*r-pi*r^2/2",
+       "vars": [
+        "r"
+       ],
+       "label": "$A(r)$ =",
+       "show": "$20r - 2r^2 - frac{pi r^2}{2}$",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$h = frac{20 - 2r - pi r}{2}$. Area = $2rh + frac{1}{2}pi r^2$, which simplifies to $20r - 2r^2 - frac{pi r^2}{2}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "20-4*r-pi*r",
+       "vars": [
+        "r"
+       ],
+       "label": "$A′(r)$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2.800496,
+       "label": "$r$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest area (ft²)?",
+       "answer": 28.004958,
+       "label": "$A$ ≈",
+       "tol": 0.028004957675577872,
+       "explain": "At $r = frac{20}{4 + pi}$ ≈ 2.80 ft, $A$ ≈ 28.0 ft²."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><path class=\"f-fill\" d=\"M120 150 V80 A40 40 0 0 1 200 80 V150 Z\"/><line class=\"f-dash\" x1=\"120\" y1=\"80\" x2=\"200\" y2=\"80\"/><line class=\"f-acc\" x1=\"160\" y1=\"80\" x2=\"200\" y2=\"80\"/><text x=\"180\" y=\"74\" text-anchor=\"middle\">r</text><text x=\"110\" y=\"118\" text-anchor=\"end\">h</text><text x=\"160\" y=\"166\" text-anchor=\"middle\">2r</text></svg>",
+     "id": "P11"
+    },
+    {
+     "type": "steps",
+     "text": "A page must have 400 in² of paper, with 2-inch margins at top and bottom and half-inch margins on the left and right. What width maximizes the printed area?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The paper area (minimize)",
+        "The margins (minimize)",
+        "The printed area (maximize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$w + h = 400$",
+        "$(w - 1)(h - 4) = 400$",
+        "$wh = 400$ (the paper)"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $w$ alone.",
+       "answer": "(-1+w)*(-4+400/w)",
+       "vars": [
+        "w"
+       ],
+       "label": "$P(w)$ =",
+       "show": "$(w - 1)(frac{400}{w} - 4)$",
+       "explain": "Printed width $w - 1$, printed height $h - 4$ with $h = frac{400}{w}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "-4+400/w^2",
+       "vars": [
+        "w"
+       ],
+       "label": "$P′(w)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 10,
+       "label": "$w$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest printed area?",
+       "answer": 324,
+       "label": "Printed =",
+       "tol": 0.324,
+       "explain": "A 10 by 40 page prints a 9 by 36 area: 324 in²."
+      }
+     ],
+     "id": "P12"
+    },
+    {
+     "type": "steps",
+     "text": "An isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The area of the triangle (maximize)",
+        "The perimeter of the triangle (minimize)",
+        "The radius (maximize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "base · height = 25",
+        "half-base$^2$ + $x^2$ = 25",
+        "base + height = 10"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "sqrt(25-x^2)*(5+x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$sqrt(25 - x^2)(5 + x)$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Half-base $sqrt(25 - x^2)$, height $5 + x$. Area = half-base × height."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2.5,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest area?",
+       "answer": 32.475953,
+       "label": "$A$ ≈",
+       "tol": 0.03247595264191645,
+       "explain": "Height 7.5 and base $2sqrt(18.75)$: the triangle is equilateral, area ≈ 32.48."
+      }
+     ],
+     "id": "P13"
+    },
+    {
+     "type": "steps",
+     "text": "Find the point on the curve $y = sqrt x$ closest to the point (3, 0).",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The $y$-value (maximize)",
+        "The slope of the curve (minimize)",
+        "The distance to (3, 0) (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x^2 + y^2 = 9$",
+        "$y = sqrt x$",
+        "$x + y = 3$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x+(-3+x)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$d^2(x)$ =",
+       "show": "$(x - 3)^2 + x$",
+       "explain": "$d^2 = (x - 3)^2 + y^2 = (x - 3)^2 + x$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "-5+2*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$d^2′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2.5,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the smallest distance?",
+       "answer": 1.658312,
+       "label": "$d$ ≈",
+       "tol": 0.01,
+       "explain": "At $x$ = 2.5, $d = sqrt(0.25 + 2.5)$ ≈ 1.658. Minimizing $d^2$ is easier and gives the same point."
+      }
+     ],
+     "id": "P14"
+    },
+    {
+     "type": "steps",
+     "text": "You may have one slice of pizza (a sector of a circle), but its perimeter (two radii plus the crust) must be 32 inches. What radius gives the most pizza?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The perimeter (maximize)",
+        "The area of the slice (maximize)",
+        "The crust length (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$2pi r = 32$",
+        "$frac{1}{2}r^2 θ = 32$",
+        "$2r + rθ = 32$"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $r$ alone.",
+       "answer": "-r^2+16*r",
+       "vars": [
+        "r"
+       ],
+       "label": "$A(r)$ =",
+       "show": "$16r - r^2$",
+       "explain": "$A = frac{1}{2}r^2 θ$ with $rθ = 32 - 2r$, so $A = frac{1}{2}r(32 - 2r) = 16r - r^2$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "16-2*r",
+       "vars": [
+        "r"
+       ],
+       "label": "$A′(r)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 8,
+       "label": "$r$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What pizza diameter is best?",
+       "answer": 16,
+       "label": "Diameter =",
+       "tol": 0.016,
+       "explain": "$r$ = 8, so the pizza should be 16 inches across (slice area 64 in²)."
+      }
+     ],
+     "id": "P15"
+    },
+    {
+     "type": "steps",
+     "text": "At what positive $x$ does the curve $y = 1 + 40x^3 - 3x^5$ have the largest slope?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The value $x$ (maximize)",
+        "The height $y$ (maximize)",
+        "The slope $y'$ (maximize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "-15*x^4+120*x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$m(x) = y'$ =",
+       "show": "$120x^2 - 15x^4$",
+       "explain": "The quantity to optimize is the slope itself: $m = y' = 120x^2 - 15x^4$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "60*x*(4-x^2)",
+       "vars": [
+        "x"
+       ],
+       "label": "$m′(x) = y'$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the largest slope?",
+       "answer": 240,
+       "label": "Slope =",
+       "tol": 0.24,
+       "explain": "$m(2) = 480 - 240$ = 240. Here we optimize the derivative, so we differentiate it again."
+      }
+     ],
+     "id": "P16"
+    },
+    {
+     "type": "steps",
+     "text": "An 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The fence height (minimize)",
+        "The height reached on the building (maximize)",
+        "The length of the ladder (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x^2 + 8^2 = 4^2$",
+        "$x + 4 = 8$",
+        "the ladder touches the top of the fence (similar triangles)"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "sqrt(64+x^2)*(4+x)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$L(x)$ =",
+       "show": "$frac{(x + 4)sqrt(x^2 + 64)}{x}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "The ladder rises 8 ft over a run of $x$, so over the full run $x + 4$ its length is $(x + 4) · frac{sqrt(x^2 + 64)}{x}$."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 6.349604,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Shortest ladder (ft)?",
+       "answer": 16.647753,
+       "label": "$L$ ≈",
+       "tol": 0.01664775273976585,
+       "explain": "At $x = ∛256$ ≈ 6.35 ft, $L$ ≈ 16.65 ft."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" style=\"stroke-width:5\" x1=\"260\" y1=\"150\" x2=\"260\" y2=\"10\"/><line class=\"f-line\" style=\"stroke-width:4\" x1=\"190\" y1=\"150\" x2=\"190\" y2=\"96\"/><line class=\"f-acc\" x1=\"70\" y1=\"150\" x2=\"260\" y2=\"20\"/><text x=\"225\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">4 ft</text><text x=\"180\" y=\"126\" text-anchor=\"end\" class=\"f-s\">8 ft</text><text x=\"254\" y=\"8\" text-anchor=\"end\" class=\"f-s\">building</text><text x=\"130\" y=\"166\" text-anchor=\"middle\">x</text></svg>",
+     "id": "P17"
+    },
+    {
+     "type": "steps",
+     "text": "If $x + y = 10$ and $x > 0$, find the maximum value of $y - frac{1}{x}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "$y - frac{1}{x}$ (maximize)",
+        "$y$ (maximize)",
+        "$x + y$ (maximize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x + y = 10$",
+        "$xy = 10$",
+        "$y - frac{1}{x} = 10$"
+       ],
+       "answer": 0,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "10-x-1/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f(x)$ =",
+       "show": "$10 - x - frac{1}{x}$",
+       "explain": "$y = 10 - x$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "-1+x^(-2)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 1,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Maximum value?",
+       "answer": 8,
+       "label": "Max =",
+       "tol": 0.01,
+       "explain": "$f(1) = 10 - 1 - 1$ = 8."
+      }
+     ],
+     "id": "P18"
+    },
+    {
+     "type": "steps",
+     "text": "If $x + y = 10$ with $x, y > 0$, find the minimum value of $frac{1}{y} + frac{4}{x}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "$x + y$ (minimize)",
+        "$xy$ (maximize)",
+        "$frac{1}{y} + frac{4}{x}$ (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$frac{1}{y} + frac{4}{x} = 10$",
+        "$y = 4x$",
+        "$x + y = 10$"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "1/(10-x)+4/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f(x)$ =",
+       "show": "$frac{1}{10 - x} + frac{4}{x}$",
+       "explain": "$y = 10 - x$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "(-10+x)^(-2)-4/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 6.666667,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Minimum value?",
+       "answer": 0.9,
+       "label": "Min =",
+       "tol": 0.01,
+       "explain": "$x = frac{20}{3}$, $y = frac{10}{3}$: $frac{3}{10} + frac{12}{20}$ = 0.9."
+      }
+     ],
+     "id": "P19"
+    },
+    {
+     "type": "steps",
+     "text": "Squares of side $x$ are cut from the corners of a 12-inch square sheet, and the sides are folded up into an open box. What $x$ gives the largest volume?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The area of the sheet (maximize)",
+        "The volume of the box (maximize)",
+        "The cut size (minimize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "base edge = $12 - 2x$",
+        "base edge = $12 - x$",
+        "$x + 12 = 24$"
+       ],
+       "answer": 0,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x*(12-2*x)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$V(x)$ =",
+       "show": "$x(12 - 2x)^2$",
+       "explain": "The base is $(12 - 2x)$ square and the height is $x$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "12*(-6+x)*(-2+x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$V′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest volume?",
+       "answer": 128,
+       "label": "$V$ =",
+       "tol": 0.128,
+       "explain": "$2 · 8^2$ = 128 in³."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><rect class=\"f-fill\" x=\"90\" y=\"15\" width=\"140\" height=\"140\"/><rect x=\"90\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"90\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect class=\"f-dash\" x=\"120\" y=\"45\" width=\"80\" height=\"80\"/><text x=\"105\" y=\"62\" text-anchor=\"middle\" class=\"f-s\">x</text><text x=\"160\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">12 in</text></svg>",
+     "id": "P20"
+    }
+   ]
+  }
+ }
+}

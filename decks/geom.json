@@ -1,0 +1,748 @@
+{
+ "id": "geom",
+ "title": "Standard Geometry",
+ "lessonOptional": true,
+ "graphs": {},
+ "lesson": {
+  "slides": [
+   {
+    "type": "match",
+    "text": "Match each shape with its **area**.",
+    "pairs": [
+     [
+      "Circle (radius $r$)",
+      "$pi r^2$"
+     ],
+     [
+      "Triangle",
+      "$frac{1}{2}bh$"
+     ],
+     [
+      "Rectangle",
+      "$lw$"
+     ],
+     [
+      "Trapezoid",
+      "$frac{1}{2}(a + b)h$"
+     ],
+     [
+      "Square (side $s$)",
+      "$s^2$"
+     ]
+    ],
+    "explain": "These come up in every optimization problem.",
+    "hint": "Triangles are half of a rectangle.",
+    "id": "L1"
+   },
+   {
+    "type": "match",
+    "text": "Match each solid with its **volume**.",
+    "pairs": [
+     [
+      "Sphere",
+      "$frac{4}{3}pi r^3$"
+     ],
+     [
+      "Cylinder",
+      "$pi r^2 h$"
+     ],
+     [
+      "Cone",
+      "$frac{1}{3}pi r^2 h$"
+     ],
+     [
+      "Box",
+      "$lwh$"
+     ],
+     [
+      "Cube",
+      "$s^3$"
+     ]
+    ],
+    "explain": "Volume = (area of base) × height for cylinders and boxes; cones and pyramids get the $frac{1}{3}$.",
+    "hint": "A cone is one third of a cylinder.",
+    "id": "L2"
+   },
+   {
+    "type": "match",
+    "text": "Match each with its **surface area** or length.",
+    "pairs": [
+     [
+      "Circumference of a circle",
+      "$2pi r$"
+     ],
+     [
+      "Surface of a sphere",
+      "$4pi r^2$"
+     ],
+     [
+      "Curved side of a cylinder",
+      "$2pi r h$"
+     ],
+     [
+      "Surface of a cube",
+      "$6s^2$"
+     ],
+     [
+      "Open box, square base $x$, height $h$",
+      "$x^2 + 4xh$"
+     ]
+    ],
+    "explain": "Surface areas are sums of the areas of the faces.",
+    "hint": "Unroll the side of a cylinder: it is a rectangle $2pi r$ wide.",
+    "id": "L3"
+   },
+   {
+    "type": "bank",
+    "text": "**Pythagorean Theorem.** In a right triangle with legs $a$ and $b$ and hypotenuse $c$: ___ .",
+    "blanks": [
+     "a² + b² = c²"
+    ],
+    "distractors": [
+     "a + b = c",
+     "a² − b² = c²",
+     "c² = 2ab"
+    ],
+    "explain": "Every ladder, kite and two-car problem uses this.",
+    "hint": "The hypotenuse is the longest side, across from the right angle.",
+    "id": "L4"
+   },
+   {
+    "type": "num",
+    "text": "A right triangle has legs 5 and 12. How long is the hypotenuse?",
+    "answer": 13,
+    "label": "$c$ =",
+    "explain": "$sqrt(169)$ = 13.",
+    "hint": "$sqrt(25 + 144)$",
+    "id": "L5"
+   },
+   {
+    "type": "mc",
+    "text": "A cone and a cylinder have the same radius and height. The cone’s volume is what fraction of the cylinder’s?",
+    "options": [
+     "$frac{1}{3}$",
+     "The same",
+     "$frac{2}{3}$",
+     "$frac{1}{2}$"
+    ],
+    "answer": 0,
+    "explain": "One third.",
+    "hint": "Compare $frac{1}{3}pi r^2 h$ and $pi r^2 h$.",
+    "id": "L6"
+   },
+   {
+    "type": "num",
+    "text": "**Similar triangles.** A cone is 20 ft tall with top radius 10 ft. Water in it is 12 ft deep. What is the radius of the water’s surface?",
+    "answer": 6,
+    "label": "$r$ =",
+    "explain": "The ratio radius : height is 10 : 20, so $r = frac{12}{2}$ = 6.",
+    "hint": "$frac{r}{12} = frac{10}{20}$",
+    "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M90 15 L160 155 L230 15 Z\"/><path class=\"f-water\" d=\"M118 71 L160 155 L202 71 Z\"/><line class=\"f-dash\" x1=\"118\" y1=\"71\" x2=\"202\" y2=\"71\"/><text x=\"170\" y=\"66\" text-anchor=\"middle\">r</text><line class=\"f-thin\" x1=\"250\" y1=\"71\" x2=\"250\" y2=\"155\"/><text x=\"262\" y=\"118\" text-anchor=\"middle\">h</text><text x=\"160\" y=\"12\" text-anchor=\"middle\" class=\"f-s\">10 ft across the top radius</text><line class=\"f-dash\" x1=\"60\" y1=\"15\" x2=\"60\" y2=\"155\"/><text x=\"48\" y=\"90\" text-anchor=\"end\" class=\"f-s\">20 ft</text></svg>",
+    "id": "L7"
+   },
+   {
+    "type": "expr",
+    "text": "Write the area of a circle in terms of its **diameter** $D$.",
+    "answer": "pi*D^2/4",
+    "vars": [
+     "D"
+    ],
+    "label": "$A$ =",
+    "keys": [
+     "pi"
+    ],
+    "explain": "$pi(frac{D}{2})^2 = frac{pi D^2}{4}$.",
+    "hint": "$r = frac{D}{2}$",
+    "id": "L8"
+   },
+   {
+    "type": "tf",
+    "text": "The circumference of a circle is $pi r^2$.",
+    "answer": false,
+    "explain": "Circumference $2pi r$; area $pi r^2$.",
+    "hint": "One is a length, one is an area.",
+    "id": "L9"
+   },
+   {
+    "type": "num",
+    "text": "Volume of a sphere of radius 3 (decimal is fine):",
+    "answer": 113.097336,
+    "label": "$V$ ≈",
+    "tol": 0.05,
+    "explain": "$36pi$ ≈ 113.1.",
+    "hint": "$frac{4}{3}pi(27)$",
+    "id": "L10"
+   }
+  ]
+ },
+ "drills": {
+  "formulas": {
+   "title": "Formulas drill",
+   "questions": [
+    {
+     "type": "expr",
+     "text": "Area of a circle of radius $r$:",
+     "answer": "pi*r^2",
+     "vars": [
+      "r"
+     ],
+     "label": "=",
+     "show": "$pir^2$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $pir^2$.",
+     "id": "F1"
+    },
+    {
+     "type": "expr",
+     "text": "Circumference of a circle of radius $r$:",
+     "answer": "2*pi*r",
+     "vars": [
+      "r"
+     ],
+     "label": "=",
+     "show": "$2pir$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $2pir$.",
+     "id": "F2"
+    },
+    {
+     "type": "expr",
+     "text": "Area of a triangle with base $b$ and height $h$:",
+     "answer": "b*h/2",
+     "vars": [
+      "b",
+      "h"
+     ],
+     "label": "=",
+     "show": "$bh/2$",
+     "explain": "Standard formula: $bh/2$.",
+     "id": "F3"
+    },
+    {
+     "type": "expr",
+     "text": "Volume of a sphere of radius $r$:",
+     "answer": "4/3*pi*r^3",
+     "vars": [
+      "r"
+     ],
+     "label": "=",
+     "show": "$4/3pir^3$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $4/3pir^3$.",
+     "id": "F4"
+    },
+    {
+     "type": "expr",
+     "text": "Surface area of a sphere of radius $r$:",
+     "answer": "4*pi*r^2",
+     "vars": [
+      "r"
+     ],
+     "label": "=",
+     "show": "$4pir^2$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $4pir^2$.",
+     "id": "F5"
+    },
+    {
+     "type": "expr",
+     "text": "Volume of a cylinder with radius $r$ and height $h$:",
+     "answer": "pi*r^2*h",
+     "vars": [
+      "r",
+      "h"
+     ],
+     "label": "=",
+     "show": "$pir^2h$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $pir^2h$.",
+     "id": "F6"
+    },
+    {
+     "type": "expr",
+     "text": "Volume of a cone with radius $r$ and height $h$:",
+     "answer": "pi*r^2*h/3",
+     "vars": [
+      "r",
+      "h"
+     ],
+     "label": "=",
+     "show": "$pir^2h/3$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $pir^2h/3$.",
+     "id": "F7"
+    },
+    {
+     "type": "expr",
+     "text": "Area of the curved side of a cylinder (radius $r$, height $h$):",
+     "answer": "2*pi*r*h",
+     "vars": [
+      "r",
+      "h"
+     ],
+     "label": "=",
+     "show": "$2pirh$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $2pirh$.",
+     "id": "F8"
+    },
+    {
+     "type": "expr",
+     "text": "Total surface area of a closed cylinder (radius $r$, height $h$):",
+     "answer": "2*pi*r^2+2*pi*r*h",
+     "vars": [
+      "r",
+      "h"
+     ],
+     "label": "=",
+     "show": "$2pir^2+2pirh$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $2pir^2+2pirh$.",
+     "id": "F9"
+    },
+    {
+     "type": "expr",
+     "text": "Volume of a cube with side $s$:",
+     "answer": "s^3",
+     "vars": [
+      "s"
+     ],
+     "label": "=",
+     "show": "$s^3$",
+     "explain": "Standard formula: $s^3$.",
+     "id": "F10"
+    },
+    {
+     "type": "expr",
+     "text": "Surface area of a cube with side $s$:",
+     "answer": "6*s^2",
+     "vars": [
+      "s"
+     ],
+     "label": "=",
+     "show": "$6s^2$",
+     "explain": "Standard formula: $6s^2$.",
+     "id": "F11"
+    },
+    {
+     "type": "expr",
+     "text": "Volume of a box with a square base of side $x$ and height $h$:",
+     "answer": "x^2*h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "=",
+     "show": "$x^2h$",
+     "explain": "Standard formula: $x^2h$.",
+     "id": "F12"
+    },
+    {
+     "type": "expr",
+     "text": "Surface area of an open-top box with square base $x$ and height $h$:",
+     "answer": "x^2+4*x*h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "=",
+     "show": "$x^2+4xh$",
+     "explain": "Standard formula: $x^2+4xh$.",
+     "id": "F13"
+    },
+    {
+     "type": "expr",
+     "text": "Hypotenuse $c$ of a right triangle with legs $a$ and $b$:",
+     "answer": "sqrt(a^2+b^2)",
+     "vars": [
+      "a",
+      "b"
+     ],
+     "label": "=",
+     "show": "$sqrt(a^2+b^2)$",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "Standard formula: $sqrt(a^2+b^2)$.",
+     "id": "F14"
+    },
+    {
+     "type": "expr",
+     "text": "Perimeter of a rectangle $l$ by $w$:",
+     "answer": "2*l+2*w",
+     "vars": [
+      "l",
+      "w"
+     ],
+     "label": "=",
+     "show": "$2l+2w$",
+     "explain": "Standard formula: $2l+2w$.",
+     "id": "F15"
+    },
+    {
+     "type": "expr",
+     "text": "Area of a semicircle of radius $r$:",
+     "answer": "pi*r^2/2",
+     "vars": [
+      "r"
+     ],
+     "label": "=",
+     "show": "$pir^2/2$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $pir^2/2$.",
+     "id": "F16"
+    },
+    {
+     "type": "expr",
+     "text": "Perimeter of a semicircular region (curved part plus the diameter), radius $r$:",
+     "answer": "pi*r+2*r",
+     "vars": [
+      "r"
+     ],
+     "label": "=",
+     "show": "$pir+2r$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $pir+2r$.",
+     "id": "F17"
+    },
+    {
+     "type": "expr",
+     "text": "Area of an equilateral triangle with side $s$:",
+     "answer": "sqrt(3)/4*s^2",
+     "vars": [
+      "s"
+     ],
+     "label": "=",
+     "show": "$sqrt(3)/4s^2$",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "Standard formula: $sqrt(3)/4s^2$.",
+     "id": "F18"
+    },
+    {
+     "type": "expr",
+     "text": "Area of a circle in terms of its circumference $C$:",
+     "answer": "C^2/(4*pi)",
+     "vars": [
+      "C"
+     ],
+     "label": "=",
+     "show": "$C^2/(4pi)$",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Standard formula: $C^2/(4pi)$.",
+     "id": "F19"
+    },
+    {
+     "type": "expr",
+     "text": "Area of a sector with radius $r$ and angle $θ$ (radians):",
+     "answer": "r^2*θ/2",
+     "vars": [
+      "r",
+      "θ"
+     ],
+     "label": "=",
+     "show": "$r^2θ/2$",
+     "explain": "Standard formula: $r^2θ/2$.",
+     "id": "F20"
+    },
+    {
+     "type": "mc",
+     "text": "Which is the volume of a cone?",
+     "options": [
+      "$frac{4}{3}pi r^3$",
+      "$pi r^2 h$",
+      "$frac{1}{3}pi r^2 h$",
+      "$2pi r h$"
+     ],
+     "answer": 2,
+     "explain": "One third of the cylinder.",
+     "id": "F21"
+    },
+    {
+     "type": "mc",
+     "text": "Which formula gives the **surface area** of a sphere?",
+     "options": [
+      "$4pi r^2$",
+      "$frac{4}{3}pi r^3$",
+      "$pi r^2$",
+      "$2pi r$"
+     ],
+     "answer": 0,
+     "explain": "$4pi r^2$: four times the area of its great circle.",
+     "id": "F22"
+    },
+    {
+     "type": "tf",
+     "text": "Doubling the radius of a sphere doubles its volume.",
+     "answer": false,
+     "explain": "Volume grows like $r^3$: doubling $r$ multiplies the volume by 8.",
+     "id": "F23"
+    },
+    {
+     "type": "tf",
+     "text": "Doubling the radius of a circle multiplies its area by 4.",
+     "answer": true,
+     "explain": "$pi(2r)^2 = 4pi r^2$.",
+     "id": "F24"
+    },
+    {
+     "type": "mc",
+     "text": "Two triangles are similar. One has sides 3, 4, 5. The other has shortest side 6. Its longest side is…",
+     "options": [
+      "7",
+      "12",
+      "10",
+      "8"
+     ],
+     "answer": 2,
+     "explain": "Everything doubles.",
+     "id": "F25"
+    }
+   ]
+  },
+  "use": {
+   "title": "Use them drill",
+   "questions": [
+    {
+     "type": "num",
+     "text": "Area of a circle with radius 5 (decimal is fine):",
+     "answer": 78.539816,
+     "label": "=",
+     "tol": 0.07853981633974483,
+     "explain": "$pi(5^2) = 25pi$ ≈ 78.54.",
+     "id": "U1"
+    },
+    {
+     "type": "num",
+     "text": "Circumference of a circle with radius 7 (decimal is fine):",
+     "answer": 43.982297,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$2pi(7)$ ≈ 43.98.",
+     "id": "U2"
+    },
+    {
+     "type": "num",
+     "text": "Area of a triangle with base 10 and height 6:",
+     "answer": 30,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$frac{1}{2}(10)(6)$.",
+     "id": "U3"
+    },
+    {
+     "type": "num",
+     "text": "Volume of a sphere with radius 6 (decimal is fine):",
+     "answer": 904.778684,
+     "label": "=",
+     "tol": 0.9047786842338604,
+     "explain": "$frac{4}{3}pi(216)$ ≈ 904.78.",
+     "id": "U4"
+    },
+    {
+     "type": "num",
+     "text": "Surface area of a sphere with radius 4 (decimal is fine):",
+     "answer": 201.06193,
+     "label": "=",
+     "tol": 0.20106192982974677,
+     "explain": "$4pi(16)$ ≈ 201.06.",
+     "id": "U5"
+    },
+    {
+     "type": "num",
+     "text": "Volume of a cylinder with radius 3 and height 10 (decimal is fine):",
+     "answer": 282.743339,
+     "label": "=",
+     "tol": 0.2827433388230814,
+     "explain": "$pi(9)(10)$ ≈ 282.74.",
+     "id": "U6"
+    },
+    {
+     "type": "num",
+     "text": "Volume of a cone with radius 3 and height 10 (decimal is fine):",
+     "answer": 94.24778,
+     "label": "=",
+     "tol": 0.0942477796076938,
+     "explain": "$frac{1}{3}pi(9)(10)$ ≈ 94.25.",
+     "id": "U7"
+    },
+    {
+     "type": "num",
+     "text": "Curved surface of a cylinder with radius 2 and height 5 (decimal is fine):",
+     "answer": 62.831853,
+     "label": "=",
+     "tol": 0.06283185307179587,
+     "explain": "$2pi(2)(5)$ ≈ 62.83.",
+     "id": "U8"
+    },
+    {
+     "type": "num",
+     "text": "Volume of a box 4 by 5 by 6:",
+     "answer": 120,
+     "label": "=",
+     "tol": 0.12,
+     "explain": "$4·5·6$.",
+     "id": "U9"
+    },
+    {
+     "type": "num",
+     "text": "Surface area of a cube with side 3:",
+     "answer": 54,
+     "label": "=",
+     "tol": 0.054,
+     "explain": "$6(9)$.",
+     "id": "U10"
+    },
+    {
+     "type": "num",
+     "text": "Hypotenuse of a right triangle with legs 8 and 15:",
+     "answer": 17,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$sqrt(64 + 225)$.",
+     "id": "U11"
+    },
+    {
+     "type": "num",
+     "text": "Leg of a right triangle with hypotenuse 13 and other leg 5:",
+     "answer": 12,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$sqrt(169 - 25)$.",
+     "id": "U12"
+    },
+    {
+     "type": "num",
+     "text": "Height of a 10-ft ladder whose foot is 6 ft from the wall:",
+     "answer": 8,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$sqrt(100 - 36)$.",
+     "id": "U13"
+    },
+    {
+     "type": "num",
+     "text": "Radius of a circle with area $49pi$:",
+     "answer": 7,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$r^2 = 49$.",
+     "id": "U14"
+    },
+    {
+     "type": "num",
+     "text": "Radius of a sphere with volume $36pi$:",
+     "answer": 3,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$frac{4}{3}r^3 = 36$, so $r^3 = 27$.",
+     "id": "U15"
+    },
+    {
+     "type": "num",
+     "text": "Height of a cylinder with radius 2 and volume $20pi$:",
+     "answer": 5,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$4pi h = 20pi$.",
+     "id": "U16"
+    },
+    {
+     "type": "num",
+     "text": "Distance between (1, 2) and (4, 6):",
+     "answer": 5,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$sqrt(9 + 16)$.",
+     "id": "U17"
+    },
+    {
+     "type": "num",
+     "text": "Area of a trapezoid with parallel sides 4 and 10 and height 3:",
+     "answer": 21,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$frac{1}{2}(14)(3)$.",
+     "id": "U18"
+    },
+    {
+     "type": "num",
+     "text": "Diagonal of a 6 by 8 rectangle:",
+     "answer": 10,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "Pythagoras.",
+     "id": "U19"
+    },
+    {
+     "type": "num",
+     "text": "A cone has height 9 and top radius 3. Water 6 deep has what surface radius?:",
+     "answer": 2,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$frac{r}{6} = frac{3}{9}$.",
+     "id": "U20"
+    },
+    {
+     "type": "num",
+     "text": "A 6-ft person stands 10 ft from a 15-ft lamppost. How long is their shadow?:",
+     "answer": 6.666667,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$frac{15}{10 + s} = frac{6}{s}$ gives $s = frac{20}{3}$.",
+     "id": "U21"
+    },
+    {
+     "type": "num",
+     "text": "Volume of an open box made by cutting 2-in squares from a 10-in square sheet:",
+     "answer": 72,
+     "label": "=",
+     "tol": 0.07200000000000001,
+     "explain": "Base 6 by 6, height 2.",
+     "id": "U22"
+    },
+    {
+     "type": "num",
+     "text": "Area of a semicircle with radius 4 (decimal is fine):",
+     "answer": 25.132741,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$frac{1}{2}pi(16)$ ≈ 25.13.",
+     "id": "U23"
+    },
+    {
+     "type": "num",
+     "text": "Perimeter of a 7 by 3 rectangle:",
+     "answer": 20,
+     "label": "=",
+     "tol": 0.05,
+     "explain": "$2(7) + 2(3)$.",
+     "id": "U24"
+    }
+   ]
+  }
+ }
+}

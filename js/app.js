@@ -15,7 +15,7 @@ function mpart(t){
     .replace(/\^([+-])(?![A-Za-z0-9.])/g,(_,c)=>'<sup>'+(c==='-'?'−':'+')+'</sup>')
     .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a:b)+'</sup>')
     .replace(/_\(([^)]*)\)|_([A-Za-z0-9]+)/g,(_,a,b)=>'<sub>'+(a!=null?a:b)+'</sub>')
-    .replace(/-/g,'−').replace(/\bpi\b/g,'π').replace(/\binfty\b/g,'∞').replace(/\bsqrt\b/g,'√')
+    .replace(/-/g,'−').replace(/(?<![A-Za-z])pi(?![A-Za-z])/g,'π').replace(/\binfty\b/g,'∞').replace(/(?<![A-Za-z])sqrt(?![A-Za-z])/g,'√')
     .replace(/[A-Za-z]+/g,w=>w.length===1?'<i>'+w+'</i>':w);
 }
 function math(m){
@@ -23,8 +23,11 @@ function math(m){
     if(f)return '<span class="frac"><span>'+mpart(f[1])+'</span><span>'+mpart(f[2])+'</span></span>';
     return k?'<span class="lim"><span>lim</span><span class="lim-s">'+mpart(k[1])+'</span></span>':mpart(t);}).join('')+'</span>';
 }
+/* \$ in text is a literal dollar sign (money), not the start of math. **bold** may wrap math. */
 function fmt(s){
-  return String(s).split('$').map((t,i)=>i%2?math(t):esc(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>')).join('');
+  let on=false;
+  const out=String(s).replace(/\\\$/g,'\u0003').split('$').map((t,i)=>i%2?math(t):esc(t).split('**').map((u,k)=>(k?((on=!on)?'<strong>':'</strong>'):'')+u).join('').replace(/\n/g,'<br>')).join('');
+  return (on?out+'</strong>':out).replace(/\u0003/g,'$');
 }
 
 /* ---------- expression parser (no eval) ---------- */
@@ -190,12 +193,15 @@ function lp(d,id){
 const lname=(d,i)=>lessonsOf(d).length>1?'Lesson '+(i+1):'Lesson';
 const lessonsDone=d=>lessonsOf(d).every(l=>lp(d,l.id).done);
 /* A lesson after the first opens once the one before it is done. */
-const lessonOpen=(d,i)=>S.preview||i===0||lp(d,lessonsOf(d)[i-1].id).done;
+const lessonOpen=(d,i)=>{const L=lessonsOf(d);return S.preview||((i===0||lp(d,L[i-1].id).done)&&(L[i].needs||[]).every(k=>(ds(d.id).sets[k]||0)>0));};
+/* "lessonOptional": drills open right away. A drill with "after": lesson id opens once that lesson is done. */
+const lessonsReq=d=>!!d.lessonOptional||lessonsDone(d);
+const drillOpen=(d,k)=>{const a=d.drills[k].after;return S.preview||!!d.lessonOptional||(a?lp(d,a).done:lessonsDone(d));};
 
 /* A stop is cleared when its lessons are finished and one set of each drill is done. */
 function deckCleared(d){
   if(!d||d.error)return false; const p=ds(d.id);
-  return lessonsDone(d)&&drillKinds(d).every(k=>(p.sets[k]||0)>0);
+  return lessonsReq(d)&&drillKinds(d).every(k=>(p.sets[k]||0)>0);
 }
 function nodeCleared(n){return n.kind==='start'||(!!n.deck&&deckCleared(DECKS[n.deck]));}
 function nodeOpen(n){return S.preview||(n.requires||[]).every(id=>{const r=nodeById(id);return r&&nodeCleared(r);});}
@@ -219,7 +225,7 @@ app.addEventListener('click',e=>{
   if(w){const m=WORLDS.find(x=>x.id===w.dataset.world);if(m&&m!==MAP&&!walking){MAP=m;S.world=m.id;save();home();window.scrollTo(0,0);}return;}
   const b=e.target.closest('[data-go]');if(b&&!b.disabled)go(b.dataset.go);});
 function screen(p){
-  keyHook=null;itemKeys=null;
+  keyHook=null;itemKeys=null;stepEnter=null;
   app.innerHTML=(p.top||'')+'<main class="body">'+(p.body||'')+'</main>'+(p.foot?'<footer class="foot">'+p.foot+'</footer>':'');
   if(CALC.open&&$('[data-calc]'))calcPanel();
 }
@@ -233,7 +239,7 @@ function feedback(el,ok,msg,note){
 }
 function enterKey(btn){
   keyHook=e=>{
-    if(e.key==='Enter'){if(!e.target.closest('button')&&!btn.disabled){btn.click();e.preventDefault();}}
+    if(e.key==='Enter'){if(!e.target.closest('button')){if(!btn.disabled)btn.click();else if(stepEnter)stepEnter();e.preventDefault();}}
     else if(itemKeys)itemKeys(e);
   };
 }
@@ -249,11 +255,13 @@ function mountItem(it,host,onChange){
   if(it.title)h+='<h2>'+fmt(it.title)+'</h2>';
   const text=it.text||(it.type==='graph'?'Use the graph of $f$.':'');
   if(text&&it.type!=='bank')h+='<p class="txt">'+fmt(text)+'</p>';
+  if(it.figure)h+='<div class="gwrap fig">'+it.figure+'</div>';
   if(it.show&&it.fn)h+='<div class="gwrap">'+plot(autoGraph(it.fn),false).svg+'</div>';
   if(it.graph&&DECK.graphs[it.graph])h+='<div class="gwrap">'+plot(DECK.graphs[it.graph],it.type==='explore').svg+'</div>';
   host.innerHTML=h+'<div class="ix"></div>';
   const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
-    match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff}[it.type];
+    match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff,
+    expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -273,6 +281,10 @@ function answerText(q){
   if(q.type==='match')return '\n'+q.pairs.map(p=>'• '+p[0]+' → '+p[1]).join('\n');
   if(q.type==='mc')return q.options[q.answer];
   if(q.type==='tf')return q.answer?'True':'False';
+  if(q.type==='expr')return q.show||'$'+String([].concat(q.answer)[0]).replace(/\*/g,'·')+'$';
+  if(q.type==='interval')return q.answer==='none'?(q.noneText||'none'):'$'+pint([].concat(q.answer)[0]).replace(/&lt;/g,'<')+'$';
+  if(q.type==='order')return '\n'+q.items.map((t,i)=>(i+1)+'. '+t).join('\n');
+  if(q.type==='steps'||q.type==='sketch'||!q.blanks)return '';
   return q.blanks.join(', ');
 }
 function mountGraphQ(q,ix,onChange){
@@ -870,11 +882,15 @@ function home(){
     if(!open)return h+'<p class="note">Locked. Clear '+(n.requires||[]).map(nodeById).filter(r=>r&&!nodeCleared(r)).map(r=>r.title).join(' and ')+' first.</p>';
     if(!n.deck)return h+'<p class="note">Coming soon. This stop is still being built.</p>';
     if(!d||d.error)return h+'<p class="note bad">'+esc(d?d.error:'Deck not loaded')+'</p>';
-    const p=ds(d.id),L=lessonsOf(d),ready=lessonsDone(d)||S.preview; let a='';
+    const p=ds(d.id),L=lessonsOf(d); let a='';
+    const dAct=k=>{const m=masteryOf(k),dr=d.drills[k],ready=drillOpen(d,k),al=dr.after?L.findIndex(l=>l.id===dr.after):-1;
+      a+=act('drill:'+k,dr.title,ready?m.n+' of '+m.of+' mastered'+((p.sets[k]||0)>0?' ✓':''):al>=0?'After '+lname(d,al):L.length>1?'After the lessons':'After the lesson',!ready);};
     L.forEach((l,i)=>{const st=lp(d,l.id),open=lessonOpen(d,i);
-      const pre=L.length>1&&l.title?l.title+' · ':'';
-      a+=act('lesson:'+l.id,lname(d,i),pre+(!open?'after '+lname(d,i-1):st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:l.slides.length+' steps'),!open);});
-    drillKinds(d).forEach(k=>{const m=masteryOf(k);a+=act('drill:'+k,d.drills[k].title,ready?m.n+' of '+m.of+' mastered'+((p.sets[k]||0)>0?' ✓':''):L.length>1?'After the lessons':'After the lesson',!ready);});
+      const pre=(d.lessonOptional?'Optional · ':'')+(L.length>1&&l.title?l.title+' · ':'');
+      const why=i>0&&!lp(d,L[i-1].id).done?'after '+lname(d,i-1):'after '+(l.needs||[]).map(k=>d.drills[k]?d.drills[k].title:k).join(' and ');
+      a+=act('lesson:'+l.id,lname(d,i),pre+(!open?why:st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:l.slides.length+' steps'),!open);
+      drillKinds(d).filter(k=>d.drills[k].after===l.id).forEach(dAct);});
+    drillKinds(d).filter(k=>!d.drills[k].after||!L.some(l=>l.id===d.drills[k].after)).forEach(dAct);
     return h+'<div class="acts">'+a+'</div>';
   };
   const select=id=>{
@@ -907,7 +923,7 @@ function home(){
 function lesson(id){
   const L=lessonsOf(DECK),li=L.findIndex(l=>l.id===id),k=li<0?0:li,LS=L[k];
   if(!LS||!lessonOpen(DECK,k))return home();
-  const slides=LS.slides,p=lp(DECK,LS.id); let i=p.done?0:Math.min(p.at,slides.length-1);
+  const slides=LS.slides,p=lp(DECK,LS.id); let i=p.done?0:Math.min(p.at,slides.length-1); CTX='lesson';
   const show=()=>{
     const sl=slides[i],last=i===slides.length-1;
     screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,(S.preview?'<button class="link" id="skip">Skip</button>':'')+calcBtn()),
@@ -940,12 +956,30 @@ function lesson(id){
 }
 
 /* ---------- drills ---------- */
+/* A drill can set "setSize" (questions per set). With "exam": true it runs like a test:
+   no feedback until the end, then a score by topic and a review of every miss.
+   Questions may carry a "topic"; the results screen then shows how each topic went. */
+function pickSet(D,all){
+  const n=Math.min(D.setSize||RULES.setSize,all.length);
+  if(!D.exam)return shuffle([...shuffle(all.filter(q=>!isMastered(q))),...shuffle(all.filter(isMastered))].slice(0,n));
+  const by={};all.forEach(q=>{(by[q.topic||'']=by[q.topic||'']||[]).push(q);});
+  const pools=shuffle(Object.values(by).map(l=>shuffle([...shuffle(l.filter(q=>!isMastered(q))),...shuffle(l.filter(isMastered))])));
+  const out=[];for(let k=0;out.length<n;k++){const p=pools[k%pools.length];if(p.length)out.push(p.shift());if(pools.every(p=>!p.length))break;}
+  return shuffle(out);
+}
+function topicTable(res){
+  const T={};res.forEach(r=>{const t=r.q.topic;if(!t)return;(T[t]=T[t]||{n:0,ok:0}).n++;if(r.ok)T[t].ok++;});
+  const ks=Object.keys(T); if(!ks.length)return '';
+  return '<div class="topics">'+ks.sort((a,b)=>T[a].ok/T[a].n-T[b].ok/T[b].n).map(k=>{const t=T[k],f=t.ok/t.n;
+    return '<div class="tp'+(f<0.6?' weak':'')+'"><span>'+esc(k)+'</span><b>'+t.ok+'/'+t.n+'</b><span class="meter"><i style="width:'+(100*f)+'%"></i></span></div>';}).join('')+'</div>'+
+    (ks.some(k=>T[k].ok/T[k].n<0.6)?'<p class="tiny">Red topics are the ones to revisit before the test. Go back to that stop on the map and run its drills.</p>':'');
+}
 function drill(kind){
   if(!DECK||!DECK.drills||!DECK.drills[kind])return home();
-  const p=ds(DECK.id); if(!lessonsDone(DECK)&&!S.preview)return home();
-  const D=DECK.drills[kind],all=D.questions;
-  const set=S.preview?all.slice():shuffle([...shuffle(all.filter(q=>!isMastered(q))),...shuffle(all.filter(isMastered))].slice(0,RULES.setSize));
-  let i=0,score=0;
+  const p=ds(DECK.id); if(!drillOpen(DECK,kind))return home();
+  const D=DECK.drills[kind],all=D.questions,exam=!!D.exam;
+  const set=S.preview&&!exam?all.slice():pickSet(D,all);
+  let i=0,score=0; const res=[],t0=Date.now();
   const finish=()=>{
     let msg='Preview mode: nothing was recorded.',cleared='';
     if(!S.preview){ rollDay(); const key=DECK.id+':'+kind,before=deckCleared(DECK);
@@ -954,24 +988,32 @@ function drill(kind){
       if(S.setDay[key]===S.day)msg='You already collected today’s play for finishing this drill.';
       else{S.setDay[key]=S.day;msg=awardPlay()?'You earned a game play for finishing the set.':'You have reached today’s limit of '+RULES.dailyPlays+' plays. More tomorrow.';}
       save(); }
-    const m=masteryOf(kind);
+    const m=masteryOf(kind),sec=Math.round((Date.now()-t0)/1000),pct=Math.round(100*score/set.length);
+    const miss=res.filter(r=>!r.ok);
+    const review=exam&&miss.length?'<h3 class="rv-h">Review your misses</h3><ol class="review">'+miss.map(r=>{const a=answerText(r.q);
+      return '<li><p>'+fmt(r.q.text||r.q.title||'')+'</p>'+(a?'<p><strong>Answer:</strong> '+fmt(a)+'</p>':'')+(r.q.explain?'<p class="tiny">'+fmt(r.q.explain)+'</p>':'')+'</li>';}).join('')+'</ol>':'';
     screen({top:bar(D.title,100),
-      body:'<div class="done"><p class="eyebrow">Set complete</p><p class="big">'+score+'<small> of '+set.length+'</small></p>'+cleared+'<p class="txt">'+msg+'</p><p class="tiny">Mastered '+m.n+' of '+m.of+' questions in this drill</p><span class="meter"><i style="width:'+(100*m.n/m.of)+'%"></i></span></div>',
+      body:'<div class="done"><p class="eyebrow">'+(exam?'Practice test complete':'Set complete')+'</p><p class="big">'+score+'<small> of '+set.length+'</small></p>'+
+        (exam?'<p class="txt">'+pct+'% · '+Math.floor(sec/60)+' min '+(sec%60)+' s'+(pct>=90?' · Test ready!':pct>=75?' · Close. Shore up the red topics.':' · Keep practicing the red topics.')+'</p>':'')+
+        cleared+topicTable(res)+'<p class="txt">'+msg+'</p><p class="tiny">Mastered '+m.n+' of '+m.of+' questions in this drill</p><span class="meter"><i style="width:'+(100*m.n/m.of)+'%"></i></span>'+review+'</div>',
       foot:'<button class="btn ghost" data-go="home">Map</button>'+(S.plays>0?'<button class="btn" data-go="game">Play Match Board</button>':'<button class="btn" data-go="drill:'+kind+'">Another set</button>')});
   };
   const show=()=>{
-    const q=set[i];
+    const q=set[i]; CTX=exam?'exam':'drill';
     screen({top:bar(D.title.replace(/ drill$/,'')+' · '+(i+1)+' of '+set.length,100*i/set.length,calcBtn()+pips()),
-      body:'<article class="item"></article><div class="fb" hidden></div>',foot:'<button class="btn" id="go" disabled>Check</button>'});
+      body:(exam&&q.topic?'<p class="eyebrow">'+esc(q.topic)+'</p>':'')+'<article class="item"></article><div class="fb" hidden></div>',foot:'<button class="btn" id="go" disabled>'+(exam?'Submit':'Check')+'</button>'});
     const goB=$('#go'),fb=$('.fb'); let done=false,C=null;
     C=mountItem(q,$('.item'),()=>{if(C&&!done)goB.disabled=!C.canGo();});
     goB.onclick=()=>{
       if(done){i++;return i<set.length?show():finish();}
-      const ok=C.check(); done=true; C.lock(true,ok); if(ok)score++;
+      const ok=C.check(); done=true; if(ok)score++; res.push({q,ok});
       const note=record(q,ok);
+      if(exam){i++;return i<set.length?show():finish();}
+      C.lock(true,ok);
       goB.textContent=i===set.length-1?'See results':'Next'; goB.disabled=false;
       $('.streak').outerHTML=pips();
-      feedback(fb,ok,(ok?'':'Answer: '+answerText(q)+'\n')+(q.explain||''),note);
+      const a=ok?'':answerText(q),extra=C.summary?C.summary():'';
+      feedback(fb,ok,(a?'Answer: '+a+'\n':'')+(extra?extra+'\n':'')+(q.explain||''),note);
     };
     enterKey(goB);
   };
@@ -1067,9 +1109,11 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const types=inLesson?['info','explore','graph','mc','tf','bank','num','crit','extrema','multi','newton','bisect','match','pick','mvt','linear','diff']:['graph','mc','tf','bank','num','crit','multi','match','pick'];
+    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch'];
+    const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio',...QT]:QT;
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
-    for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).split('$').length%2===0)errs.push('unmatched $ in '+k);
+    for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').length%2===0)errs.push('unmatched $ in '+k);
+    for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').filter((t,i)=>i%2===0).join('').split('**').length%2===0)errs.push('a ** bold marker is not closed in '+k);
     const g=(D.graphs||{})[q.graph];
     if(q.graph){used.add(q.graph);if(!g)errs.push('graph "'+q.graph+'" does not exist');}
     if((q.type==='graph'||q.type==='explore')&&!q.graph)errs.push('needs a graph');
@@ -1188,8 +1232,65 @@ function validate(D){
         if(new Set(chips).size!==chips.length)errs.push('the word bank repeats a word');
         if(!(q.distractors||[]).length)warns.push('word bank has no extra words'); }
     }
-    const isQ=['graph','mc','tf','bank','multi','match','pick'].includes(q.type);
-    if(isQ&&inLesson&&!q.hint)warns.push('no hint for a wrong answer');
+    if(q.type==='expr'){
+      const vs=q.vars||['x'],ans=[].concat(q.answer);
+      if(!q.answer)errs.push('needs an answer');
+      ans.forEach(a=>{try{xcompile(a,vs);}catch(e){errs.push('answer "'+a+'": '+e.message+(vs.length?' (vars are '+vs.join(', ')+')':''));}});
+      if(q.show&&String(q.show).split('$').length%2===0)errs.push('unmatched $ in show');
+      /* can the student type it? every function and constant needs a key */
+      const ks=(q.keys||[]).join(' ');
+      ans.forEach(a=>{try{xtokens(a,vs).forEach(t=>{
+        if(t.t==='f'&&!ks.includes(t.v+'('))errs.push('answer uses '+t.v+'( but there is no "'+t.v+'(" key');});
+        if(/(^|[^a-z])pi/.test(a)&&!ks.includes('pi'))errs.push('answer uses pi but there is no "pi" key');
+        if(/(^|[^a-z])e(?![a-z])/.test(a.replace(/sec|exp/g,''))&&!/(^| )e(\^\()?( |$)/.test(ks))errs.push('answer uses e but there is no "e" key');
+      }catch(e){}});
+      if(q.verify){try{const A=xcompile(ans[0],vs),B=xcompile(q.verify,vs);let bad=0;for(let k=0;k<8;k++){const env={};vs.forEach(v=>{env[v]=0.4+2*Math.random();});const a=A(env),b=B(env);if(Number.isFinite(b)&&Math.abs(a-b)>1e-6*Math.max(1,Math.abs(b)))bad++;}
+        if(bad)errs.push('answer does not match verify');}catch(e){errs.push('verify: '+e.message);}}
+    }
+    if(q.type==='interval'){
+      if(q.answer==='none'){if(!q.noneText)errs.push('answer is "none" but there is no noneText button');}
+      else [].concat(q.answer).forEach(a=>{try{parseIntervals(a);}catch(e){errs.push('answer "'+a+'": '+e.message);}});
+    }
+    if(q.type==='order'){
+      if(!Array.isArray(q.items)||q.items.length<2)errs.push('needs at least 2 items');
+      else if(new Set(q.items).size!==q.items.length)errs.push('two items are identical');
+    }
+    if(q.type==='steps'){
+      if(!Array.isArray(q.steps)||!q.steps.length)errs.push('needs a list of steps');
+      else q.steps.forEach((st,k)=>{if(!st.id)st.id=(q.id||'step')+'.'+(k+1);check(st,tag+' part '+(k+1)+' ·',inLesson);});
+    }
+    if(q.type==='sketch'){
+      try{const F=compile(q.fn),w=q.window,D=q.data||{};
+        if(!Array.isArray(w)||w.length!==4||!(w[0]<w[1])||!(w[2]<w[3]))throw Error('window must be [xmin, xmax, ymin, ymax]');
+        (D.points||[]).forEach(pt=>{const y=F(pt[0]);if(!Number.isFinite(y)||Math.abs(y-pt[1])>0.011+0.002*Math.abs(y))errs.push('point ('+pt[0]+', '+pt[1]+') is not on the graph (f = '+showA(y)+')');
+          if(pt[0]<w[0]||pt[0]>w[1]||pt[1]<w[2]||pt[1]>w[3])warns.push('point ('+pt[0]+', '+pt[1]+') is outside the window');});
+        (D.crit||[]).forEach(c=>{const d=numDeriv(F,c);if(Number.isFinite(d)&&Math.abs(d)>1e-3&&Number.isFinite(F(c)))errs.push('crit '+c+": f' = "+showA(d)+', not 0');});
+        (D.infl||[]).forEach(c=>{const h=0.02,a=(F(c-h-1e-3)-2*F(c-h)+F(c-h+1e-3)),b=(F(c+h-1e-3)-2*F(c+h)+F(c+h+1e-3));if(!(a*b<0))errs.push('infl '+c+": f'' does not change sign there");});
+        (D.va||[]).forEach(v=>{const y=Math.abs(F(v+1e-6));if(Number.isFinite(y)&&y<1e3)errs.push('va '+v+' is not a vertical asymptote');});
+        (D.lines||[]).forEach(l=>{if(String(l).split('$').length%2===0)errs.push('unmatched $ in data line "'+l+'"');});
+      }catch(e){errs.push(e.message);}
+    }
+    if(q.type==='optim'){
+      try{if(!q.range||!(q.range[0]<q.range[1]))throw Error('needs range [a, b]');const B=bf(q.fn,q.range),want=(q.goal||'max')==='max'?B.xmx:B.xmn;
+        if(typeof q.best!=='number')throw Error('needs best, the x that wins');
+        if(Math.abs(want-q.best)>Math.max(0.011,(q.range[1]-q.range[0])/2000))errs.push('best is '+q.best+' but the function is '+(q.goal||'max')+'imized at '+showA(want));
+        if(q.scene&&q.scene.w){compile(q.scene.w.replace(/x/g,'x'));}
+      }catch(e){errs.push(e.message);}
+    }
+    if(q.type==='rr'){
+      if(!RR[q.scene])errs.push('scene must be one of '+Object.keys(RR).join(', '));
+      else if(q.goal){const S=RR[q.scene](q);let hit=false,pv=null;for(let k=0;k<=2000;k++){const v=S.at(q.T*k/2000)[q.goal.var]-q.goal.at;if(pv!=null&&pv*v<=0)hit=true;pv=v;}
+        if(!hit)errs.push(q.goal.var+' never reaches '+q.goal.at+' for t in [0, '+q.T+']');}
+    }
+    if(q.type==='curvex'){try{compile(q.fn);}catch(e){errs.push(e.message);}}
+    if(q.type==='ratio'){
+      try{const f=compile(q.f),g=compile(q.g),op=q.op||'/',k=(q.goal||5)+1,x=q.inf?(q.start||10)*Math.pow(10,k):q.a+(q.dir||1)*(q.start||1)*Math.pow(10,-k);
+        const v=op==='/'?f(x)/g(x):op==='*'?f(x)*g(x):op==='-'?f(x)-g(x):Math.pow(f(x),g(x));
+        if(typeof q.value==='number'&&!(Math.abs(v-q.value)<=0.01*Math.max(1,Math.abs(q.value))))errs.push('value says '+q.value+' but the last row gives '+showA(v));}
+      catch(e){errs.push(e.message);}
+    }
+    const isQ=['graph','mc','tf','bank','multi','match','pick','expr','interval','order'].includes(q.type);
+    if(isQ&&inLesson&&!q.hint&&!/ part \d+ ·$/.test(where))warns.push('no hint for a wrong answer');
     if(isQ&&!inLesson&&!q.explain)warns.push('no explanation');
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));
     if(!errs.length)add('pass',tag+' ('+q.type+')');

@@ -56,11 +56,11 @@
       "label": "L'Hopital's Rule",
       "x": 84,
       "y": 36,
-      "deck": null,
+      "deck": "lhop",
       "requires": [
         "start"
       ],
-      "blurb": "Using derivatives to evaluate 0/0 and infinity/infinity limits."
+      "blurb": "Indeterminate forms, then using derivatives to beat 0/0 and ∞/∞, then the other five forms."
     },
     {
       "id": "related",
@@ -68,11 +68,11 @@
       "title": "Related Rates",
       "x": 16,
       "y": 64,
-      "deck": null,
+      "deck": "related",
       "requires": [
         "start"
       ],
-      "blurb": "How the rates of change of connected quantities are linked."
+      "blurb": "Every variable is a function of time: differentiate, then plug in."
     },
     {
       "id": "opt",
@@ -80,11 +80,11 @@
       "title": "Optimization",
       "x": 50,
       "y": 64,
-      "deck": null,
+      "deck": "opt",
       "requires": [
         "max"
       ],
-      "blurb": "Finding the best value in a real situation."
+      "blurb": "Find the best value in a real situation. Step one: what is being optimized?"
     },
     {
       "id": "lin",
@@ -105,7 +105,7 @@
       "title": "Standard Geometry",
       "x": 50,
       "y": 92,
-      "deck": null,
+      "deck": "geom",
       "requires": [
         "max"
       ],
@@ -132,11 +132,11 @@
       "title": "Curve Sketching",
       "x": 16,
       "y": 126,
-      "deck": null,
+      "deck": "curve",
       "requires": [
         "max"
       ],
-      "blurb": "Putting the pieces together to sketch a function."
+      "blurb": "First derivative: up or down. Second derivative: how it bends. Then draw it."
     },
     {
       "id": "domain",
@@ -144,7 +144,7 @@
       "title": "Domain",
       "x": 16,
       "y": 164,
-      "deck": null,
+      "deck": "domain",
       "requires": [
         "max"
       ],
@@ -159,7 +159,7 @@
       "title": "Intercepts",
       "x": 50,
       "y": 164,
-      "deck": null,
+      "deck": "intercepts",
       "requires": [
         "max"
       ],
@@ -174,7 +174,7 @@
       "title": "Asymptotes",
       "x": 84,
       "y": 164,
-      "deck": null,
+      "deck": "asym",
       "requires": [
         "max"
       ],
@@ -189,7 +189,7 @@
       "title": "Long Division",
       "x": 84,
       "y": 200,
-      "deck": null,
+      "deck": "longdiv",
       "requires": [
         "max"
       ],
@@ -204,7 +204,7 @@
       "title": "Chapter Review",
       "x": 50,
       "y": 240,
-      "deck": null,
+      "deck": "review3",
       "requires": [
         "curve",
         "opt",
@@ -218,7 +218,7 @@
         "curve",
         "mvt"
       ],
-      "blurb": "Questions from every stop in this world."
+      "blurb": "A game plan, mixed practice from every stop, and a practice test scored by topic."
     }
   ],
   "short": "Applications"

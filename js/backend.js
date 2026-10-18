@@ -32,7 +32,7 @@ function supabaseBackend(){
     kind:'supabase',
     async init(){
       if(!window.supabase)await loadScript(SB_LIB);
-      sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,storageKey:'calcgame.auth'}});
+      sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,storageKey:window.CALCGAME_AUTH_KEY||'calcgame.auth'}});
       const {data}=await sb.auth.getSession(); uid=data.session?data.session.user.id:null; return uid;
     },
     userId:()=>uid,
@@ -98,7 +98,7 @@ function supabaseBackend(){
 
 /* ---------------- local mock (?mock=1): a pretend server inside this browser ---------------- */
 function mockBackend(){
-  const DBK='calcgame.mockdb',SK='calcgame.mocksession';
+  const DBK='calcgame.mockdb',SK=window.CALCGAME_AUTH_KEY?'calcgame.mocksession.inst':'calcgame.mocksession';
   const load=()=>{try{return JSON.parse(localStorage.getItem(DBK))||null;}catch(e){return null;}};
   let db=load()||{users:[],classes:[{id:'c1',name:'Calc 1 (demo)',code:'DEMO1',created_at:new Date().toISOString()}],saves:{},answers:[],completions:[],messages:[],due:[],codes:[],seq:1};
   const persist=()=>{try{localStorage.setItem(DBK,JSON.stringify(db));}catch(e){}};

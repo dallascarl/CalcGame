@@ -43,11 +43,13 @@ ACCT.enter=async function(fromGuest){
   const guestS=S;
   KEY='calcgame.v1.'+p.id;
   let cloud=null;try{cloud=await BACK.loadSave();}catch(e){}
-  if(cloud&&cloud.data){S=Object.assign(fresh(),cloud.data);}
-  else{let local=null;try{local=JSON.parse(localStorage.getItem(KEY));}catch(e){}
-    S=Object.assign(fresh(),local||(fromGuest?guestS:{}));}
+  /* use whichever copy is newer: the phone's own copy can be ahead if the app closed before it synced */
+  let local=null;try{local=JSON.parse(localStorage.getItem(KEY));}catch(e){}
+  const cd=cloud&&cloud.data,newer=local&&(!cd||(local.savedAt||0)>(cd.savedAt||0));
+  if(cd&&!newer){S=Object.assign(fresh(),cd);}
+  else S=Object.assign(fresh(),local||(fromGuest?guestS:{}));
   S.preview=false; ACCT.lastPoints=-1; try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
-  if(!cloud)ACCT.push(true);
+  if(!cd||newer)ACCT.push(true);
   try{localStorage.removeItem('calcgame.guest');}catch(e){}
   ACCT.refresh();
   return true;

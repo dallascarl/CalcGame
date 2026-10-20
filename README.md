@@ -40,24 +40,28 @@ Each stop:
 - `from` (optional): draw the road from these stops instead, without changing what is required.
 - `label` (optional): a shorter name to show on the map.
 
-A stop is cleared when its lessons are finished and one set of each drill has been completed.
+A stop is cleared when every drill at it is **passed** (see Game rules). Lessons are recommended but never lock anything.
 
 ### Deck files
 
 A deck has `id` (must match the file name), `title`, `graphs`, an optional `lesson`, and `drills`.
 
-For a stop with more than one lesson, use `lessons` instead of `lesson`: a list of `{"id", "title", "slides"}`. The stop shows them as Lesson 1, Lesson 2, … with each title underneath. Each lesson opens after the one before it, and the drills open after all of them. See `decks/maxmin.json`.
+For a stop with more than one lesson, use `lessons` instead of `lesson`: a list of `{"id", "title", "slides"}`. The stop shows them as Lesson 1, Lesson 2, … with each title underneath. Everything is open from the start; the stop panel suggests an order ("best after Lesson 1"). See `decks/maxmin.json`.
 
-Text markup: `$...$` is math, `\\$` is a plain dollar sign (money), `lim[x->2^-]` draws a limit, `**bold**`, and `\n` starts a new line. Inside math, `x_0` or `x_(n-1)` is a subscript and `frac{top}{bottom}` is a stacked fraction.
+Text markup: `$...$` is math, `\\$` is a plain dollar sign (money), `lim[x->2^-]` draws a limit, `**bold**`, and `\n` starts a new line. Inside math, `x_0` or `x_(n-1)` is a subscript and `frac{top}{bottom}` is a stacked fraction. In a word bank (`bank`), `frac{___}{___}` in the plain text puts blanks in a stacked fraction.
 
-Students can type answers as decimals or as fractions (the `a/b` key), so `7/4` and `1.75` are both accepted.
+Students can type answers as decimals or as fractions (the fraction key), so `7/4` and `1.75` are both accepted. A fraction is drawn stacked while it is typed.
 
-Item types: `info`, `explore`, `extrema`, `newton`, `bisect`, `mvt`, `linear`, `diff`, `optim`, `rr`, `curvex` and `ratio` (lesson only), `graph`, `mc`, `tf`, `bank`, `num`, `crit`, `multi`, `match`, `pick`, `expr`, `interval`, `order`, `steps`, `sketch`. See the files in `decks/` for examples.
+**Multiple choice is shuffled.** Write the right answer anywhere (first is fine). Students see the choices in random order, except: `"fixed": true` keeps the order; single-letter choices (A, B, C) and the "Both / max only / min only / Neither" family keep their order; choices like "Does not exist", "None of these", "Neither" stay last; and lists of plain numbers are shown smallest first.
+
+Item types: `info`, `explore`, `extrema`, `newton`, `bisect`, `mvt`, `linear`, `diff`, `optim`, `rr`, `curvex` and `ratio` (lesson only), `graph`, `mc`, `tf`, `bank`, `num`, `crit`, `multi`, `match`, `pick`, `expr`, `interval`, `order`, `steps`, `sketch`, `tap`. See the files in `decks/` for examples.
+
+- `tap`: the student taps a spot on a graph (for example, roughly where the root is). Needs `graph`, `answers` (the x-values that count) and `tol` (how close, default 0.15); optional `howto`. The deck test checks that the graph crosses the x-axis at each answer; set `"root": false` when the spot is not a root (e.g. where a tangent line crosses).
 
 - `num`: the student types one number. Needs `answer`, an optional `label` for the box, and an optional `tol` (default 0.01).
 - `crit`: the student builds a list of x-values (used for critical points). Needs `answers`, a list of numbers; an empty list means "there are no critical numbers" and the student has a button for that.
-- `multi`: several answer boxes sharing one number pad, e.g. $f(x_0)$, $f'(x_0)$ and $x_1$. Needs `parts`, a list of `{"label", "answer", "tol"}` (tol defaults to 0.001). `"fail": true` adds a "Newton's method breaks down here" button; set `"fails": true` when that button is the right answer (then the part answers are not needed).
-- `newton`: the tangent-line explorer. The student drags to choose $x_0$, sees where the tangent hits the axis, then steps to $x_1, x_2, …$ with zoom. Needs `fn` and `window`; optional `dfn` (derivative), `range` for the slider, `start`, `pick: false` to start at `start` with no slider, `tol` (default 0.0005: done when a step moves less than this), and `after`, where `{x}` is the root and `{n}` the number of steps.
+- `multi`: several answer boxes sharing one number pad, e.g. $f(x_0)$, $f'(x_0)$ and $x_1$. With a Newton `verify`, a picture of the curve and the tangent lines appears after the answer is checked (`"picture": false` turns it off). Needs `parts`, a list of `{"label", "answer", "tol"}` (tol defaults to 0.001). `"fail": true` adds a "Newton's method breaks down here" button; set `"fails": true` when that button is the right answer (then the part answers are not needed).
+- `newton`: the tangent-line explorer. The student drags to choose $x_0$, sees where the tangent hits the axis, then steps to $x_1, x_2, …$ with zoom. The table shows $x_n$, $f(x_n)$ and $f'(x_n)$. Needs `fn` and `window`; optional `dfn` (derivative), `range` for the slider, `start`, `pick: false` to start at `start` with no slider, `tol` (default 0.0005: done when a step moves less than this), and `after`, where `{x}` is the root and `{n}` the number of steps. `"slow": true` does it one piece at a time: choose $x_0$ (no tangent shown yet), tap **Draw the tangent line**, then tap where it crosses the axis (the first `tapSteps` steps, default 2; after that a button slides down for them).
 - `bisect`: the bisection game. Needs `fn`, `a`, `b` (opposite signs) and `goal` (stop when the interval is narrower than this); optional `window` and `after` (`{n}`, `{a}`, `{b}`).
 - `match`: tap-to-match cards. `pairs` is a list of `["left", "right"]`; the right column is shuffled. Keep it to 6 pairs or fewer.
 - `pick`: select all that apply. `options` and `answers` (a list of positions, 0 is the first).
@@ -71,13 +75,14 @@ Graph questions also take `ask: "absmax" | "absmin" | "argmax" | "argmin"`. The 
 
 **The deck test checks your answer keys against the real functions.** For a `num` question add `verify: {"expr": ..., "domain": [a, b], "ask": "max"|"min"|"argmax"|"argmin"}` and it recomputes the answer. For a `crit` question add `verify: {"expr": ..., "range": [a, b], "dexpr": "the derivative"}` and it scans for critical numbers and checks your derivative formula. `extrema` items are always checked this way. For a Newton `multi` question add `verify: {"expr": ..., "x0": ...}` and give each part a `calc` such as `"x1"`, `"x2"`, `"f(x0)"` or `"f'(x1)"`; the test runs Newton's method and compares, and also checks that `fails` is set exactly when $f'(x_0)$ = 0.
 
-Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `to`. Write multiplication out (`2*x`, not `2x`). `holes` are open circles and `dots` are filled points. `tangents` is a list of x-values where the tangent line is drawn, and `labels` is a list of `[x, y, "text"]`.
+Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `to`. Write multiplication out (`2*x`, not `2x`). `holes` are open circles and `dots` are filled points. `tangents` is a list of x-values where the tangent line is drawn, and `labels` is a list of `[x, y, "text"]` (add `"big"` as a fourth entry for a large, bold label).
 
 ### Stop options (added for World 3)
 
-- `"lessonOptional": true` on a deck: the drills open right away and the lesson is marked Optional (used by the review side quests). The stop is cleared when one set of each drill is done.
-- A drill with `"after": "<lesson id>"` opens as soon as that lesson is done (instead of after all lessons), and is listed right under it.
-- A lesson with `"needs": ["<drill kind>"]` stays locked until one set of those drills is done. L'Hôpital uses this: Lesson 3 (the other five forms) opens after the 0/0 and ∞/∞ drill.
+- `"lessonOptional": true` on a deck: the lesson is marked Optional (used by the review side quests).
+- A drill with `"after": "<lesson id>"` is listed right under that lesson.
+- A lesson with `"needs": ["<drill kind>"]` shows "best after …" until those drills are passed. (Nothing locks; L'Hôpital uses this to suggest doing the 0/0 and ∞/∞ drill before Lesson 3.)
+- `"stages"` on a drill runs it in parts, in order: a list of `{"id", "title", "oneOf"}`, and each question gets `"stage": "<id>"`. Three right in a row skips the rest of that part. `oneOf` (question ids) puts one of them among the first three of that part, e.g. a "Newton's method breaks down" case. Finishing all the parts passes the drill. See the Calculation drill in `decks/newton.json`.
 - `"setSize": n` on a drill sets how many questions are in a set (default 8). Long multi-part drills use 2 to 4.
 - `"exam": true` on a drill runs it as a practice test: no feedback until the end, then a score, a time, a score for each `topic`, and a review of every miss. Give questions a `"topic"` to get the breakdown (any drill shows it).
 
@@ -92,13 +97,20 @@ Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `
 
 ## Calculator
 
-Every lesson and drill has a **Calc** button with a scientific calculator (RAD/DEG). To hide it for a deck, add `"calculator": false` to the deck.
+Every lesson and drill has a **Calc** button with a scientific calculator (RAD/DEG). After =, its **Use ↓** button puts the result in the answer box. To hide it for a deck, add `"calculator": false` to the deck.
 
 ## Game rules
 
-Finishing a lesson for the first time earns a game play (still subject to the daily cap).
+- **Nothing at a stop is locked.** Students can open any lesson or drill. Lessons and drill sets remember where the student is, so leaving by accident picks up at the same step or question. ‹ and › move back and forward (in a drill, › on an unanswered question skips it to the end; it breaks the in-a-row count).
+- **Passing a drill** (this is what clears a stop): 3 right in a row in a set (the set can end right there), or 80% on a finished set. Staged drills and practice tests pass when finished.
+- **Mastering a drill** (★): 8 of the last 10 answers in that drill right.
+- Finishing a lesson earns a game play the first time every step in it has been done (skipping ahead is allowed but does not earn the play).
 
-The numbers are in the `RULES` line near the top of `js/app.js`: streak length, questions per set, how many correct answers count as mastered, plays per day, and minigame scoring.
+The numbers are in the `RULES` line near the top of `js/app.js`: streak length, questions per set, the pass and mastery rules (`passRun`, `passPct`, `masterWin`, `masterPct`), plays per day, and minigame scoring.
+
+## Answer key (instructor)
+
+Tap a stop on the map, then **Answer key** under its buttons: every lesson step and drill question with its answer, graphs included, the right choice marked ✓. Wider on a computer (two columns).
 
 ## Accounts and the instructor page
 

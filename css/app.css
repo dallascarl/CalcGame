@@ -503,3 +503,56 @@ body{margin:0}
 .ctx{font-size:14px;padding:8px 10px;border-left:3px solid var(--rule);color:var(--muted)}
 .chips.fbk .chip{font-size:13px;padding:6px 11px}
 .chips.fbk .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* ---------- 2026-10-19 fixes ---------- */
+/* the stop panel never covers the map: it scrolls inside a capped height */
+.foot .stop{max-height:min(42vh,340px);overflow-y:auto;overscroll-behavior:contain}
+/* ‹ › arrows on either side of the main button in lessons and drills */
+.btn.arrow{flex:0 0 46px;padding:0;font-size:26px;line-height:1;display:grid;place-items:center}
+.btn.arrow:disabled{background:var(--card);opacity:.4}
+.slot{display:flex;flex-direction:column;gap:14px}
+/* typed fractions: stacked while they are typed, with an empty box for the missing part */
+.ans-box .frac,.xbox .frac{font-size:.78em;line-height:1.05}
+.ans-box{height:auto;min-height:46px}
+.ph{font-style:normal;color:var(--muted);font-size:.9em}
+.key .kf{font-size:11px;line-height:1;margin:0}
+.key .kf>span{padding:0 2px}
+.bank-t .frac.bf{font-size:1em;line-height:1.6;vertical-align:middle;margin-inline:4px}
+.bank-t .frac.bf>span{padding:2px 2px}
+.bank-t .frac.bf .blank{min-width:72px;margin:0}
+/* big graph labels, e.g. x₀ */
+.g-lab.big{font-size:21px;font-weight:700;stroke-width:4px}
+/* tap the graph */
+.tapg svg{cursor:crosshair}
+.tap-mk{fill:var(--gold);stroke:var(--ink);stroke-width:1.5}
+.tap-mk.ok{fill:var(--good)} .tap-mk.bad{fill:var(--bad)}
+.tap-true{fill:none;stroke:var(--good);stroke-width:2.6}
+/* Newton table with f'(x_n) */
+.ntab.n4{grid-template-columns:auto 1fr 1fr 1fr;font-size:13.5px}
+.ntab.n4>span{padding:5px 7px}
+.ntab.n4>span:nth-child(4){border-top:0;font:700 12px var(--body);color:var(--muted);background:var(--paper)}
+.npic{display:flex;flex-direction:column;gap:4px;margin-top:4px}
+/* calculator: put the answer in the answer box */
+.calc-use{margin-left:8px;border:1.5px solid var(--teal);background:var(--card);color:var(--teal);border-radius:8px;padding:2px 8px;font:700 13px var(--body);vertical-align:middle}
+/* instructor answer key */
+.ak{display:flex;flex-direction:column;gap:12px}
+.ak-nav{display:flex;flex-wrap:wrap;gap:6px}
+.ak-nav a{font-size:13px;padding:4px 10px;border:1.5px solid var(--rule);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--card)}
+.ak details{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:10px 12px}
+.ak summary{cursor:pointer;font:700 16px var(--display)}
+.ak-q{border-top:1px solid var(--grid);padding:10px 0;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.ak-h{display:flex;gap:8px;align-items:baseline}
+.ak-h b{font:800 15px var(--display);min-width:22px}
+.ak-h span{font-size:12px;color:var(--muted)}
+.ak-g{max-width:260px}
+.ak-g svg{width:100%;height:auto}
+.ak-o{margin:0;padding-left:22px;font-size:14.5px}
+.ak-o li.ok{color:var(--good);font-weight:700}
+.ak-a{font-size:14.5px}
+.ak-steps{margin:0;padding-left:16px}
+.ak-steps .ak-q{border-top:0;padding:4px 0}
+.n-t.dash{stroke-dasharray:7 4}
+.nrow .btn.ghost{flex:0 0 auto}
+#app.wide{max-width:64rem}
+@media (min-width:760px){ #app.wide .ak details{columns:2;column-gap:28px} #app.wide .ak-q{break-inside:avoid} #app.wide .ak summary{column-span:all} }
+.pad .kf{font-size:12px}

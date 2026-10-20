@@ -2,7 +2,11 @@
    Nothing in this file needs to change when you add or edit a stop. */
 
 /* Game rules, all in one place so they are easy to tune. */
-const RULES={streak:5,setSize:8,masterAt:2,dailyPlays:5,misses:3,pairPts:10,clearPts:50,walkSpeed:55};
+const RULES={streak:5,setSize:8,masterAt:2,dailyPlays:5,misses:3,pairPts:10,clearPts:50,walkSpeed:55,
+  /* passing a drill (what clears a stop): passRun right in a row, or a finished set at passPct or better */
+  passRun:3,passPct:0.8,
+  /* drill mastery (the star): masterPct or better on the last masterWin answers in that drill */
+  masterWin:10,masterPct:0.8};
 
 /* ---------- small helpers ---------- */
 const $=(s,r=document)=>r.querySelector(s);
@@ -151,8 +155,8 @@ function plot(g,marker){
   }
   for(const [x,y] of g.holes||[])s+='<circle class="g-hole" cx="'+r(sx(x))+'" cy="'+r(sy(y))+'" r="4.4"/>';
   for(const [x,y] of g.dots||[])s+='<circle class="g-dot" cx="'+r(sx(x))+'" cy="'+r(sy(y))+'" r="4.8"/>';
-  /* labels: [x, y, "text"]; text is placed just above the point */
-  for(const [x,y,t] of g.labels||[])s+='<text class="g-lab" text-anchor="middle" x="'+r(sx(x))+'" y="'+r(sy(y)-7)+'">'+esc(t)+'</text>';
+  /* labels: [x, y, "text"] or [x, y, "text", "big"]; text is placed just above the point */
+  for(const [x,y,t,st] of g.labels||[])s+='<text class="g-lab'+(st==='big'?' big':'')+'" text-anchor="middle" x="'+r(sx(x))+'" y="'+r(sy(y)-7)+'">'+esc(t)+'</text>';
   if(marker)s+='<path class="g-guide mk-g" d=""/><circle class="g-mk mk-d" cx="-20" cy="-20" r="5.5"/>';
   return {svg:s+'</svg>',sx,sy,ax,ay,clip};
 }
@@ -171,11 +175,12 @@ let KEY='calcgame.v1';   /* signed-in students use 'calcgame.v1.<id>' (account.j
 const fresh=()=>({world:'',pos:{},decks:{},streak:0,plays:0,points:0,day:'',playsToday:0,setDay:{},game:null,preview:false});
 let S=fresh();
 try{const raw=localStorage.getItem(KEY); if(raw)S=Object.assign(fresh(),JSON.parse(raw));}catch(e){}
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} if(typeof ACCT!=='undefined')ACCT.saved();};
+const save=()=>{S.savedAt=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} if(typeof ACCT!=='undefined')ACCT.saved();};
 const today=()=>{const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();};
 function rollDay(){if(S.day!==today()){S.day=today();S.playsToday=0;}}
 function awardPlay(){rollDay();if(S.playsToday>=RULES.dailyPlays)return false;S.plays++;S.playsToday++;return true;}
-const ds=id=>S.decks[id]||(S.decks[id]={lessonAt:0,lessonDone:false,q:{},sets:{}});
+/* progress for one deck. v2 = saved under the pass/mastery rules (older saves count a finished set as a pass) */
+const ds=id=>S.decks[id]||(S.decks[id]={lessonAt:0,lessonDone:false,q:{},sets:{},pass:{},hist:{},run:{},v2:true});
 const isMastered=q=>((ds(DECK.id).q[q.id]||{}).right||0)>=RULES.masterAt;
 const drillKinds=d=>Object.keys(d.drills||{});
 
@@ -187,30 +192,38 @@ function lp(d,id){
   if(!p.ls){ p.ls={}; /* carry over progress saved before a deck had several lessons */
     if(p.lessonDone)L.forEach(l=>{p.ls[l.id]={at:0,done:true};});
     else if(p.lessonAt&&L[0]&&p.lessonAt<L[0].slides.length)p.ls[L[0].id]={at:p.lessonAt,done:false}; }
-  return p.ls[id]||(p.ls[id]={at:0,done:false});
+  const o=p.ls[id]||(p.ls[id]={at:0,done:false}); if(!o.ok)o.ok=[]; return o;
 }
 /* with several lessons the buttons say "Lesson 1", "Lesson 2"; the lesson's title shows underneath */
 const lname=(d,i)=>lessonsOf(d).length>1?'Lesson '+(i+1):'Lesson';
 const lessonsDone=d=>lessonsOf(d).every(l=>lp(d,l.id).done);
-/* A lesson after the first opens once the one before it is done. */
-const lessonOpen=(d,i)=>{const L=lessonsOf(d);return S.preview||((i===0||lp(d,L[i-1].id).done)&&(L[i].needs||[]).every(k=>(ds(d.id).sets[k]||0)>0));};
-/* "lessonOptional": drills open right away. A drill with "after": lesson id opens once that lesson is done. */
-const lessonsReq=d=>!!d.lessonOptional||lessonsDone(d);
-const drillOpen=(d,k)=>{const a=d.drills[k].after;return S.preview||!!d.lessonOptional||(a?lp(d,a).done:lessonsDone(d));};
+/* Nothing at a stop is locked: lessons and drills all open right away.
+   The old "needs" and "after" settings now only suggest an order (shown on the stop panel). */
+const lessonOpen=()=>true;
+const drillOpen=()=>true;
+const lessonsReq=d=>true;
 
-/* A stop is cleared when its lessons are finished and one set of each drill is done. */
+/* Passing a drill: passRun right in a row, a finished set at passPct or better, or finishing a staged drill / practice test.
+   Mastering a drill: masterPct or better on the last masterWin answers (or on all of them when the drill is shorter). */
+function drillPassed(d,k){const p=ds(d.id);return !!(p.pass||{})[k]||(!p.v2&&(p.sets[k]||0)>0);}
+function drillMastery(d,k){
+  const h=((ds(d.id).hist||{})[k])||[],w=Math.min(RULES.masterWin,d.drills[k].questions.length),r=h.slice(-w),ok=r.filter(Boolean).length;
+  return {n:r.length,ok,w,mastered:r.length>=w&&ok>=Math.ceil(RULES.masterPct*w-1e-9)};
+}
+/* A stop is cleared when every drill is passed. (Lessons are recommended, not required.) */
 function deckCleared(d){
-  if(!d||d.error)return false; const p=ds(d.id);
-  return lessonsReq(d)&&drillKinds(d).every(k=>(p.sets[k]||0)>0);
+  if(!d||d.error)return false;
+  return drillKinds(d).length?drillKinds(d).every(k=>drillPassed(d,k)):lessonsDone(d);
 }
 function nodeCleared(n){return n.kind==='start'||(!!n.deck&&deckCleared(DECKS[n.deck]));}
 function nodeOpen(n){return S.preview||(n.requires||[]).every(id=>{const r=nodeById(id);return r&&nodeCleared(r);});}
 
-/* A correct answer builds the streak only on questions not yet mastered. */
-function record(q,ok){
+/* A correct answer builds the streak only on questions not yet mastered. kind = the drill, for the mastery history. */
+function record(q,ok,kind){
   if(S.preview)return 'Preview mode: not recorded.';
   ACCT.answer(q,ok);
-  const all=ds(DECK.id).q,r=all[q.id]||(all[q.id]={right:0,wrong:0}),was=r.right>=RULES.masterAt; let note='';
+  const p=ds(DECK.id),all=p.q,r=all[q.id]||(all[q.id]={right:0,wrong:0}),was=r.right>=RULES.masterAt; let note='';
+  if(kind){p.hist=p.hist||{};const h=p.hist[kind]||(p.hist[kind]=[]);h.push(ok?1:0);if(h.length>RULES.masterWin)h.splice(0,h.length-RULES.masterWin);}
   if(ok){r.right++;
     if(was)note='You have already mastered this one, so it does not add to your streak.';
     else{S.streak++; if(S.streak>=RULES.streak){S.streak=0; note=awardPlay()?'Streak complete. You earned a game play!':'Streak complete, but you have reached today’s limit of '+RULES.dailyPlays+' plays.';}}
@@ -219,14 +232,15 @@ function record(q,ok){
 }
 
 /* ---------- screen plumbing ---------- */
-let keyHook=null,itemKeys=null;
+let keyHook=null,itemKeys=null,SINK=null;  /* SINK: where the calculator's “Use” button puts its answer */
 document.addEventListener('keydown',e=>{if(keyHook)keyHook(e);});
 app.addEventListener('click',e=>{
   const w=e.target.closest('[data-world]');
   if(w){const m=WORLDS.find(x=>x.id===w.dataset.world);if(m&&m!==MAP&&!walking){MAP=m;S.world=m.id;save();home();window.scrollTo(0,0);}return;}
   const b=e.target.closest('[data-go]');if(b&&!b.disabled)go(b.dataset.go);});
 function screen(p){
-  keyHook=null;itemKeys=null;stepEnter=null;
+  app.classList.toggle('wide',!!p.wide);
+  keyHook=null;itemKeys=null;stepEnter=null;SINK=null;
   app.innerHTML=(p.top||'')+'<main class="body">'+(p.body||'')+'</main>'+(p.foot?'<footer class="foot">'+p.foot+'</footer>':'')+
     (BACK?'<button class="fb-tab" data-feedback aria-label="Send feedback">Feedback</button>':'');
   if(CALC.open&&$('[data-calc]'))calcPanel();
@@ -248,10 +262,10 @@ function enterKey(btn){
 /* the deck test and preview mode are for the instructor (or when no server is set up, for local editing) */
 const isInstructor=()=>!BACK||BACK.kind==='mock'||!!(ACCT.profile&&ACCT.profile.is_instructor);
 function go(name){
-  if(name==='test'&&!isInstructor())name='home';
+  if((name==='test'||name==='key')&&!isInstructor())name='home';
   if(name.indexOf('drill:')===0)return drill(name.slice(6));
   if(name.indexOf('lesson:')===0)return lesson(name.slice(7));
-  ({home,lesson,game,test}[name]||home)();
+  ({home,lesson,game,test,key}[name]||home)();
 }
 
 /* ---------- item players: one per item type ---------- */
@@ -262,11 +276,11 @@ function mountItem(it,host,onChange){
   if(text&&it.type!=='bank')h+='<p class="txt">'+fmt(text)+'</p>';
   if(it.figure)h+='<div class="gwrap fig">'+it.figure+'</div>';
   if(it.show&&it.fn)h+='<div class="gwrap">'+plot(autoGraph(it.fn),false).svg+'</div>';
-  if(it.graph&&DECK.graphs[it.graph])h+='<div class="gwrap">'+plot(DECK.graphs[it.graph],it.type==='explore').svg+'</div>';
+  if(it.graph&&DECK.graphs[it.graph]&&it.type!=='tap')h+='<div class="gwrap">'+plot(DECK.graphs[it.graph],it.type==='explore').svg+'</div>';
   host.innerHTML=h+'<div class="ix"></div>';
   const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
     match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff,
-    expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio}[it.type];
+    tap:mountTap,expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -297,7 +311,7 @@ function mountGraphQ(q,ix,onChange){
   ix.innerHTML='<div class="ans"><span>'+fmt(answerLabel(q))+'</span><output class="ans-box empty" aria-live="polite">?</output></div>'+
     padHTML('<button class="key wide sp" data-k="'+sp+'" aria-pressed="false">'+spWord+'</button>');
   const box=$('.ans-box',ix),spB=$('.sp',ix);
-  const show=()=>{box.textContent=val===sp?spWord:(val===''?'?':neg(val));box.classList.toggle('empty',val==='');spB.setAttribute('aria-pressed',val===sp);};
+  const show=()=>{box.innerHTML=val===sp?spWord:valHTML(val);box.classList.toggle('empty',val==='');spB.setAttribute('aria-pressed',val===sp);};
   const press=k=>{
     if(locked)return;
     if(k==='back')val=val===sp?'':val.slice(0,-1);
@@ -307,26 +321,42 @@ function mountGraphQ(q,ix,onChange){
   };
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
   itemKeys=padKeys(press);
+  SINK=v=>{if(locked)return;val=v;show();onChange();};
   return {kind:'q',
     canGo:()=>val===sp||!Number.isNaN(parseVal(val)),
     check:()=>typeof q.answer==='string'?val===q.answer:(val!==sp&&Math.abs(parseVal(val)-q.answer)<=(q.tol==null?0.01:q.tol)),
     lock(reveal,ok){locked=true;box.classList.add(ok?'is-right':'is-wrong');},
     reset(){locked=false;val='';box.classList.remove('is-right','is-wrong');show();onChange();}};
 }
+/* The order students see the choices in. The deck lists the right answer anywhere (often first), so choices are shuffled,
+   except: "fixed": true, single-letter labels (A, B, C), and the "Both / max only / min only / Neither" family keep their order;
+   choices like "Does not exist", "None of these", "Neither" stay last; lists of plain numbers are sorted. */
+const LASTOPT=/^(it )?does not exist|^dne$|^none( of|$)|^neither|^all (of|three)|impossible to tell|^you can.t tell|^both$/i;
+function optOrder(it){
+  const o=it.options,ix=o.map((_,i)=>i);
+  if(it.type!=='mc'||it.fixed||o.every(t=>/^[A-Z]$/.test(t))||(o.some(t=>/^both/i.test(t))&&o.some(t=>/^neither/i.test(t))))return ix;
+  const tail=ix.filter(i=>LASTOPT.test(String(o[i]).replace(/\$/g,'').trim())),body=ix.filter(i=>!tail.includes(i));
+  const num=t=>{const v=String(t).replace(/\$/g,'').replace(/−/g,'-').trim();return /^-?\d+(\.\d+)?$/.test(v)?+v:NaN;};
+  if(body.length>1&&body.every(i=>!Number.isNaN(num(o[i]))))body.sort((a,b)=>num(o[a])-num(o[b])); else shuffle(body);
+  return body.concat(tail);
+}
 function mountMC(it,ix,onChange){
-  const opts=it.type==='tf'?['True','False']:it.options,right=it.type==='tf'?(it.answer?0:1):it.answer; let sel=-1,locked=false;
-  ix.innerHTML='<div class="opts '+it.type+'">'+opts.map((o,i)=>'<button class="opt" data-i="'+i+'" aria-pressed="false">'+fmt(o)+'</button>').join('')+'</div>';
+  const opts=it.type==='tf'?['True','False']:it.options,right=it.type==='tf'?(it.answer?0:1):it.answer,order=it.type==='tf'?[0,1]:optOrder(it); let sel=-1,locked=false;
+  ix.innerHTML='<div class="opts '+it.type+'">'+order.map(i=>'<button class="opt" data-i="'+i+'" aria-pressed="false">'+fmt(opts[i])+'</button>').join('')+'</div>';
   const all=()=>ix.querySelectorAll('.opt');
-  ix.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b||locked)return;sel=+b.dataset.i;all().forEach((x,i)=>x.setAttribute('aria-pressed',i===sel));onChange();});
+  ix.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b||locked)return;sel=+b.dataset.i;all().forEach(x=>x.setAttribute('aria-pressed',+x.dataset.i===sel));onChange();});
   return {kind:'q',canGo:()=>sel>=0,check:()=>sel===right,
-    lock(reveal){locked=true;all().forEach((x,i)=>{x.disabled=true;if(i===sel)x.classList.add(sel===right?'is-right':'is-wrong');else if(reveal&&i===right)x.classList.add('is-right');});},
+    lock(reveal){locked=true;all().forEach(x=>{const i=+x.dataset.i;x.disabled=true;if(i===sel)x.classList.add(sel===right?'is-right':'is-wrong');else if(reveal&&i===right)x.classList.add('is-right');});},
     reset(){locked=false;sel=-1;all().forEach(x=>{x.disabled=false;x.className='opt';x.setAttribute('aria-pressed','false');});onChange();}};
 }
 function mountBank(it,ix,onChange){
-  const parts=it.text.split('___'),n=it.blanks.length,chips=shuffle([...it.blanks,...(it.distractors||[])]);
+  /* blanks may sit inside a stacked fraction written as frac{top}{bottom} in the plain text, e.g. frac{___}{___} */
+  const n=it.blanks.length,chips=shuffle([...it.blanks,...(it.distractors||[])]);
+  const tmpl=fmt(String(it.text).replace(/___/g,'\u0005').split('$').map((t,i)=>i%2?t:t.replace(/frac\{([^{}]*)\}\{([^{}]*)\}/g,'\u0006$1\u0007$2\u0008')).join('$'))
+    .replace(/\u0006/g,'<span class="frac bf"><span>').replace(/\u0007/g,'</span><span>').replace(/\u0008/g,'</span></span>');
   let fill=Array(n).fill(null),locked=false,marks=null;
-  const draw=()=>{
-    ix.innerHTML='<p class="txt bank-t">'+parts.map((p,i)=>fmt(p)+(i<n?'<button class="blank'+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-b="'+i+'" aria-label="Blank '+(i+1)+'">'+(fill[i]!=null?esc(chips[fill[i]]):'&nbsp;')+'</button>':'')).join('')+
+  const draw=()=>{ let b=0;
+    ix.innerHTML='<p class="txt bank-t">'+tmpl.replace(/\u0005/g,()=>{const i=b++;return '<button class="blank'+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-b="'+i+'" aria-label="Blank '+(i+1)+'">'+(fill[i]!=null?esc(chips[fill[i]]):'&nbsp;')+'</button>';})+
       '</p><div class="chips">'+chips.map((c,i)=>'<button class="chip" data-c="'+i+'"'+(fill.includes(i)||locked?' disabled':'')+'>'+esc(c)+'</button>').join('')+'</div>';
   };
   ix.addEventListener('click',e=>{
@@ -365,6 +395,27 @@ function mountExplore(sl,ix,onChange,host){
 }
 
 
+/* ---------- tap: tap a spot on the graph (e.g. roughly where the root is) ---------- */
+/* "answers": the x-values that count, "tol": how close a tap must be (default 0.15). */
+function mountTap(q,ix,onChange,host){
+  const g=DECK.graphs[q.graph],[x0,x1]=g.window,tol=q.tol||0.15,P=plot(g,false); let x=null,locked=false,reveal=false,okNow=false;
+  const gw=document.createElement('div');gw.className='gwrap tapg';host.insertBefore(gw,ix);
+  const r=v=>Math.round(v*10)/10;
+  const draw=()=>{ let o='';
+    if(reveal)q.answers.forEach(a=>{o+='<circle class="tap-true" cx="'+r(P.sx(a))+'" cy="'+r(P.sy(P.ay))+'" r="7"/>';});
+    if(x!=null)o+='<line class="g-guide" x1="'+r(P.sx(x))+'" x2="'+r(P.sx(x))+'" y1="14" y2="'+r(P.sy(g.window[2]))+'"/><circle class="tap-mk'+(locked?(okNow?' ok':' bad'):'')+'" cx="'+r(P.sx(x))+'" cy="'+r(P.sy(P.ay))+'" r="6"/>';
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>'); };
+  ix.innerHTML='<p class="tiny">'+fmt(q.howto||'Tap the graph where you think it is.')+'</p><p class="txt" id="tread" aria-live="polite"></p>';
+  gw.addEventListener('click',e=>{ if(locked)return;
+    const sv=gw.querySelector('svg'),b=sv.getBoundingClientRect(),px=(e.clientX-b.left)*320/b.width,v=x0+(px-14)*(x1-x0)/(320-28);
+    if(v<x0||v>x1)return; x=v; $('#tread',ix).innerHTML='You picked '+fmt('$x$')+' ≈ <b>'+fix(x,2)+'</b>'; draw(); onChange(); });
+  draw();
+  const good=()=>x!=null&&q.answers.some(a=>Math.abs(a-x)<=tol);
+  return {kind:'q',canGo:()=>x!=null,check:good,
+    lock(rv,ok){locked=true;okNow=good();reveal=!!(rv||ok);draw();},
+    reset(){locked=false;reveal=false;x=null;$('#tread',ix).textContent='';draw();onChange();}};
+}
+
 /* ---------- number pad shared by the typed-answer items ---------- */
 /* answers may be typed as decimals or fractions such as 7/4 or -1/3 */
 function parseVal(s){
@@ -380,8 +431,13 @@ function editVal(val,k,max){
   if(k==='/')return val.includes('/')||!/\d$/.test(val)?val:val+'/';
   return val.replace(/\D/g,'').length<(max||9)?val+k:val;
 }
+/* a typed answer as it shows in its box: 7/4 is drawn as a stacked fraction while it is being typed */
+const valHTML=v=>{if(v==='')return '?';const t=neg(v);if(!v.includes('/'))return esc(t);const [a,b]=t.split('/');
+  return '<span class="frac pf"><span>'+esc(a)+'</span><span>'+(b===''?'<i class="ph">□</i>':esc(b))+'</span></span>';};
+/* the calculator's answer, ready to drop into an answer box */
+const useStr=v=>Math.abs(v)>=1e-4||v===0?String(+v.toFixed(6)):String(+v.toPrecision(6));
 const PADKEYS=['7','8','9','back','4','5','6','-','1','2','3','.','0','/'];
-const padHTML=last=>'<div class="pad">'+PADKEYS.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':k==='/'?' aria-label="Fraction bar"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k==='/'?'a/b':k)+'</button>').join('')+last+'</div>';
+const padHTML=last=>'<div class="pad">'+PADKEYS.map(k=>'<button class="key" data-k="'+k+'"'+(k==='back'?' aria-label="Delete"':k==='-'?' aria-label="Negative sign"':k==='/'?' aria-label="Fraction bar"':'')+'>'+(k==='back'?'⌫':k==='-'?'−':k==='/'?'<span class="frac kf"><span>▢</span><span>▢</span></span>':k)+'</button>').join('')+last+'</div>';
 const padKeys=press=>e=>{
   if(/^[0-9]$/.test(e.key))press(e.key); else if(e.key==='-'||e.key==='.'||e.key==='/')press(e.key);
   else if(e.key==='Backspace')press('back'); else return false; e.preventDefault(); return true;
@@ -390,7 +446,7 @@ function makePad(ix,o){
   let val='',locked=false;
   ix.innerHTML='<div class="ans"><span>'+fmt(o.label||'Answer =')+'</span><output class="ans-box empty" aria-live="polite">?</output></div>'+
     padHTML(o.extra?'<button class="key wide sp" data-k="extra">'+esc(o.extra)+'</button>':'<button class="key wide" data-k="clear">Clear</button>');
-  const box=$('.ans-box',ix),show=()=>{box.textContent=val===''?'?':neg(val);box.classList.toggle('empty',val==='');};
+  const box=$('.ans-box',ix),show=()=>{box.innerHTML=valHTML(val);box.classList.toggle('empty',val==='');};
   const press=k=>{
     if(locked)return;
     if(k==='extra'){o.onExtra&&o.onExtra();return;}
@@ -398,6 +454,7 @@ function makePad(ix,o){
   };
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
   itemKeys=padKeys(press);
+  SINK=v=>{if(locked)return;val=v;show();o.onChange&&o.onChange();};
   return {get:()=>val,num:()=>parseVal(val),clear(){val='';show();},
     lock(ok){locked=true;box.classList.add(ok?'is-right':'is-wrong');},
     reset(){locked=false;val='';box.classList.remove('is-right','is-wrong');show();}};
@@ -503,7 +560,7 @@ function mountMulti(q,ix,onChange){
   const okAt=i=>Math.abs(parseVal(vals[i])-q.parts[i].answer)<=(q.parts[i].tol!=null?q.parts[i].tol:q.tol!=null?q.tol:0.001);
   const draw=()=>{
     box.innerHTML=q.parts.map((p,i)=>'<button class="mrow'+(i===cur&&!locked&&!fail?' on':'')+(fail?' off':'')+'" data-p="'+i+'"'+(locked?' disabled':'')+'><span>'+fmt(p.label)+'</span><output class="ans-box'+(vals[i]===''?' empty':'')+
-      (marks?(marks[i]?' is-right':' is-wrong'):'')+'">'+(vals[i]===''?'?':neg(vals[i]))+'</output></button>').join('');
+      (marks?(marks[i]?' is-right':' is-wrong'):'')+'">'+valHTML(vals[i])+'</output></button>').join('');
     if(fb)fb.setAttribute('aria-pressed',fail);
   };
   const press=k=>{
@@ -521,14 +578,29 @@ function mountMulti(q,ix,onChange){
   const keys=padKeys(press);
   itemKeys=e=>{ if(e.key==='ArrowDown'||e.key==='Tab'&&!e.shiftKey){press('next');e.preventDefault();}
     else if(e.key==='ArrowUp'||e.key==='Tab'){cur=(cur+n-1)%n;draw();e.preventDefault();} else keys(e); };
+  SINK=v=>{if(locked)return;fail=false;vals[cur]=v;draw();onChange();};
   draw();
   return {kind:'q',
     canGo:()=>fail||vals.every(v=>!Number.isNaN(parseVal(v))),
     check:()=>q.fails?fail:(!fail&&q.parts.every((_,i)=>okAt(i))),
     lock(reveal,ok){locked=true; if(!fail)marks=q.parts.map((_,i)=>okAt(i));
       if(fb){fb.disabled=true; if(fail)fb.classList.add(q.fails?'is-right':'is-wrong'); else if(reveal&&q.fails)fb.classList.add('is-right');}
-      draw();},
+      draw(); if(q.verify&&q.picture!==false&&!ix.querySelector('.npic'))ix.insertAdjacentHTML('beforeend',newtonPic(q));},
     reset(){locked=false;marks=null;fail=false;cur=0;vals=Array(n).fill('');if(fb){fb.disabled=false;fb.classList.remove('is-right','is-wrong');}draw();onChange();}};
+}
+
+/* after a Newton calculation: the curve, each tangent line, and where it meets the axis */
+function newtonPic(q){
+  try{
+    const V=q.verify,F=fn(V.expr),d=x=>numDeriv(F,x),k=Math.max(1,...q.parts.map(p=>{const m=/(\d)\)?$/.exec(p.calc||'');return m?+m[1]:0;}));
+    const xs=[V.x0]; if(!q.fails)for(let j=0;j<k;j++){const x=xs[j],dd=d(x);if(Math.abs(dd)<1e-9)break;xs.push(x-F(x)/dd);}
+    const a=Math.min(...xs),b=Math.max(...xs),pad=Math.max(0.6,(b-a)*0.7),W=viewOf(F,a-pad,b+pad);
+    const SB='₀₁₂₃',g={window:W,pieces:[{expr:V.expr,from:W[0],to:W[1]}],autoTicks:true,tangents:xs.slice(0,q.fails?1:xs.length-1),
+      dots:xs.map(x=>[x,F(x)]).filter(p=>p[1]>=W[2]&&p[1]<=W[3]),labels:xs.map((x,j)=>[x,0,'x'+SB[j]]).filter((l,j)=>j===0||Math.abs(xs[j]-xs[j-1])>(W[1]-W[0])*0.07)};
+    const cap=q.fails?'The tangent line at $x_0$ is flat, so it never reaches the $x$-axis.':
+      'Each dashed tangent line meets the $x$-axis at the next guess'+(xs.length>2?': $x_1$, then $x_2$.':', $x_1$.');
+    return '<div class="npic"><div class="gwrap">'+plot(g,false).svg+'</div><p class="tiny">'+fmt(cap)+'</p></div>';
+  }catch(e){return '';}
 }
 
 /* ---------- Newton explorer: drag x0, watch the tangent hit the axis, step to x1, x2, ... ---------- */
@@ -541,65 +613,100 @@ function viewOf(F,a,b){
 }
 function mountNewton(it,ix,onChange,host){
   const F=fn(it.fn),D=it.dfn?fn(it.dfn):(x=>numDeriv(F,x)),W0=it.window,[lo,hi]=it.range||[W0[0],W0[1]];
-  const tol=it.tol||0.0005,minSteps=it.minSteps||2,pick=it.pick!==false;
-  let xs=[it.start==null?(lo+hi)/2:it.start],phase=pick?'pick':'iter',zoom=1,done=false;
+  const tol=it.tol||0.0005,minSteps=it.minSteps||2,pick=it.pick!==false,slow=!!it.slow,tapSteps=it.tapSteps==null?2:it.tapSteps;
+  /* slow: one piece at a time. stage 'pick' (choose x0) → 'tan' (draw the tangent) → 'cross' (find where it meets the axis) → 'tan' ... */
+  let xs=[it.start==null?(lo+hi)/2:it.start],phase=pick?'pick':'iter',stage=pick?'pick':'tan',zoom=1,done=false,taps=0,tapX=null;
   const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
   const nextOf=x=>{const d=D(x);return Math.abs(d)<1e-9||!Number.isFinite(d)?null:x-F(x)/d;};
   const view=()=>{if(zoom===1)return W0;const c=xs[xs.length-1],w=(W0[1]-W0[0])/zoom;return viewOf(F,c-w/2,c+w/2);};
+  let P=null,V=null;
   const drawG=()=>{
-    const V=view(),P=plot({window:V,pieces:[{expr:it.fn,from:V[0],to:V[1]}],autoTicks:zoom>1||it.autoTicks,xstep:zoom===1?it.xstep:0,ystep:zoom===1?it.ystep:0},false);
+    V=view();P=plot({window:V,pieces:[{expr:it.fn,from:V[0],to:V[1]}],autoTicks:zoom>1||it.autoTicks,xstep:zoom===1?it.xstep:0,ystep:zoom===1?it.ystep:0},false);
     const r=v=>Math.round(Math.max(-9999,Math.min(9999,v))*10)/10,X=x=>r(P.sx(x)),Y=y=>r(P.sy(y)),last=xs.length-1;
+    const showTan=slow?stage==='cross':phase!=='pick'||!slow, showNext=!slow;
     let o='<g clip-path="url(#'+P.clip+')">';
     xs.forEach((x,k)=>{const y=F(x),cls=k<last?' old':'';
       o+='<line class="n-v'+cls+'" x1="'+X(x)+'" x2="'+X(x)+'" y1="'+Y(0)+'" y2="'+Y(y)+'"/>';
       if(k<last)o+='<line class="n-t old" x1="'+X(x)+'" y1="'+Y(y)+'" x2="'+X(xs[k+1])+'" y2="'+Y(0)+'"/>';
-      else{const d=D(x);o+='<line class="n-t" x1="'+X(V[0])+'" y1="'+Y(y+d*(V[0]-x))+'" x2="'+X(V[1])+'" y2="'+Y(y+d*(V[1]-x))+'"/>';}
+      else if(showTan){const d=D(x);o+='<line class="n-t'+(slow?' dash':'')+'" x1="'+X(V[0])+'" y1="'+Y(y+d*(V[0]-x))+'" x2="'+X(V[1])+'" y2="'+Y(y+d*(V[1]-x))+'"/>';}
     });
     xs.forEach((x,k)=>{o+='<circle class="n-x'+(k<last?' old':'')+'" cx="'+X(x)+'" cy="'+Y(0)+'" r="'+(k<last?3:4.5)+'"/>';});
     const nx=nextOf(xs[last]),cur=xs[last];
     o+='<circle class="n-p" cx="'+X(cur)+'" cy="'+Y(F(cur))+'" r="5"/>';
-    if(nx!=null)o+='<circle class="n-next" cx="'+X(nx)+'" cy="'+Y(0)+'" r="5.5"/>';
+    if(nx!=null&&showNext)o+='<circle class="n-next" cx="'+X(nx)+'" cy="'+Y(0)+'" r="5.5"/>';
+    if(tapX!=null)o+='<circle class="tap-mk bad" cx="'+X(tapX)+'" cy="'+Y(0)+'" r="6"/>';
     o+='</g>';
     const lab=(x,t,dy)=>x>=V[0]&&x<=V[1]?'<text class="n-lab" text-anchor="middle" x="'+X(x)+'" y="'+(Y(0)+dy)+'">'+t+'</text>':'';
     const below=F(cur)>0?-8:17; o+=lab(cur,'x'+sub(last),below);
-    if(nx!=null&&Math.abs(P.sx(nx)-P.sx(cur))>16)o+=lab(nx,'x'+sub(last+1),below);
+    if(nx!=null&&showNext&&Math.abs(P.sx(nx)-P.sx(cur))>16)o+=lab(nx,'x'+sub(last+1),below);
     gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+    gw.classList.toggle('tapg',slow&&stage==='cross'&&canTap());
   };
-  const say=(ok,msg)=>{const fb=$('#nfb',ix);fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+fmt(msg)+'</span>';};
-  const table=()=>'<div class="ntab"><span>n</span><span>'+fmt('$x_n$')+'</span><span>'+fmt('$f(x_n)$')+'</span>'+
-    xs.map((x,k)=>'<span>'+k+'</span><span>'+fix(x)+'</span><span>'+fix(F(x),6)+'</span>').join('')+'</div>';
+  const say=(ok,msg)=>{const fb=$('#nfb',ix);if(!fb)return;fb.hidden=false;fb.className='fb '+(ok?'good':'bad');fb.innerHTML='<span>'+fmt(msg)+'</span>';};
+  const table=()=>'<div class="ntab n4"><span>n</span><span>'+fmt('$x_n$')+'</span><span>'+fmt('$f(x_n)$')+'</span><span>'+fmt("$f'(x_n)$")+'</span>'+
+    xs.map((x,k)=>'<span>'+k+'</span><span>'+fix(x)+'</span><span>'+fix(F(x),6)+'</span><span>'+fix(D(x),6)+'</span>').join('')+'</div>';
+  const canTap=()=>{const nx=nextOf(xs[xs.length-1]);return taps<tapSteps&&nx!=null&&V&&nx>=V[0]&&nx<=V[1];};
+  const zoomBtns=()=>'<button class="btn small ghost" id="zin" aria-label="Zoom in">Zoom +</button><button class="btn small ghost" id="zout" aria-label="Zoom out"'+(zoom===1?' disabled':'')+'>Zoom −</button>';
+  const wireZoom=()=>{$('#zin',ix).onclick=()=>{zoom=Math.min(zoom*4,4096);tapX=null;drawG();ui();};$('#zout',ix).onclick=()=>{zoom=Math.max(zoom/4,1);tapX=null;drawG();ui();};
+    if($('#nre',ix))$('#nre',ix).onclick=()=>{xs=[xs[0]];phase='pick';stage='pick';zoom=1;taps=0;tapX=null;ui();};};
+  const restart=()=>pick?'<button class="link" id="nre">Start over with a new '+fmt('$x_0$')+'</button>':'';
   const ui=()=>{
     if(phase==='pick'){
       ix.innerHTML='<label class="slide-l" for="nx0">'+fmt(it.pickText||'Drag to choose your first guess $x_0$')+'</label>'+
         '<input type="range" id="nx0" min="'+lo+'" max="'+hi+'" step="'+((hi-lo)/400)+'" value="'+xs[0]+'"><div class="read" id="nrd"></div>'+
         '<button class="btn small" id="nlock">Use this guess</button><div class="fb" id="nfb" hidden></div>';
       const s=$('#nx0',ix),rd=()=>{const x=+s.value,d=D(x),nx=nextOf(x);xs=[x];
-        $('#nrd',ix).innerHTML='<span>'+fmt('$x_0$ =')+' <b>'+fix(x,2)+'</b></span><span>'+fmt("$f'(x_0)$ =")+' <b>'+fix(d,2)+'</b></span><span>'+(nx==null?'Tangent is flat':'Tangent hits the axis at '+fmt('$x_1$ =')+' <b>'+fix(nx,3)+'</b>')+'</span>';
+        $('#nrd',ix).innerHTML='<span>'+fmt('$x_0$ =')+' <b>'+fix(x,2)+'</b></span>'+(slow?'<span>'+fmt('$f(x_0)$ =')+' <b>'+fix(F(x),2)+'</b></span>':
+          '<span>'+fmt("$f'(x_0)$ =")+' <b>'+fix(d,2)+'</b></span><span>'+(nx==null?'Tangent is flat':'Tangent hits the axis at '+fmt('$x_1$ =')+' <b>'+fix(nx,3)+'</b>')+'</span>');
         drawG();};
       s.addEventListener('input',rd);rd();
-      $('#nlock',ix).onclick=()=>{phase='iter';ui();};
-    }else{
-      ix.innerHTML='<div class="row nrow"><button class="btn small" id="nstep">Next guess '+fmt('$x_'+xs.length+'$')+'</button>'+
-        '<button class="btn small ghost" id="zin" aria-label="Zoom in">Zoom +</button><button class="btn small ghost" id="zout" aria-label="Zoom out"'+(zoom===1?' disabled':'')+'>Zoom −</button></div>'+
-        table()+'<div class="fb" id="nfb" hidden></div>'+(pick?'<button class="link" id="nre">Start over with a new '+fmt('$x_0$')+'</button>':'');
-      $('#nstep',ix).onclick=step;
-      $('#zin',ix).onclick=()=>{zoom=Math.min(zoom*4,4096);drawG();ui();};
-      $('#zout',ix).onclick=()=>{zoom=Math.max(zoom/4,1);drawG();ui();};
-      if($('#nre',ix))$('#nre',ix).onclick=()=>{xs=[xs[0]];phase='pick';zoom=1;ui();};
-      drawG();
+      $('#nlock',ix).onclick=()=>{phase='iter';stage='tan';ui();};
+      return;
     }
+    const n=xs.length-1;
+    if(!slow){
+      ix.innerHTML='<div class="row nrow"><button class="btn small" id="nstep">Next guess '+fmt('$x_'+xs.length+'$')+'</button>'+zoomBtns()+'</div>'+
+        '<div class="fb" id="nfb" hidden></div>'+table()+restart();
+      $('#nstep',ix).onclick=step; wireZoom(); drawG(); return;
+    }
+    if(done){
+      ix.innerHTML='<div class="row nrow">'+zoomBtns()+'</div><div class="fb" id="nfb" hidden></div>'+table()+restart();
+      wireZoom(); drawG(); return;
+    }
+    if(stage==='tan'){
+      ix.innerHTML='<p class="txt"><strong>Step '+(n+1)+'.</strong> '+fmt('Draw the tangent line at the point $(x_'+n+', f(x_'+n+'))$.')+'</p>'+
+        '<div class="row nrow"><button class="btn small" id="ntan">Draw the tangent line</button>'+zoomBtns()+'</div><div class="fb" id="nfb" hidden></div>'+table()+restart();
+      $('#ntan',ix).onclick=()=>{
+        if(nextOf(xs[n])==null){drawG();return say(false,it.flat||"Here $f'(x)$ = 0, so the tangent line is flat. It never crosses the $x$-axis, and the formula would divide by zero. Start over with a different guess.");}
+        stage='cross';tapX=null;drawG();ui();};
+      wireZoom(); drawG(); return;
+    }
+    /* stage 'cross' */
+    drawG(); const tap=canTap();
+    ix.innerHTML='<p class="txt">'+(tap?fmt('Where does the dashed tangent line cross the $x$-axis? **Tap that spot** on the graph. That will be $x_'+(n+1)+'$.'):
+        fmt('Slide down the tangent line to the $x$-axis to get $x_'+(n+1)+'$.'))+'</p>'+
+      '<div class="row nrow">'+(tap?'':'<button class="btn small" id="nslide">Slide down to the axis</button>')+zoomBtns()+'</div><div class="fb" id="nfb" hidden></div>'+table()+restart();
+    if($('#nslide',ix))$('#nslide',ix).onclick=step;
+    wireZoom(); drawG();
   };
-  const step=()=>{
+  gw.addEventListener('click',e=>{
+    if(!slow||stage!=='cross'||phase==='pick'||done||!canTap())return;
+    const sv=gw.querySelector('svg'),b=sv.getBoundingClientRect(),px=(e.clientX-b.left)*320/b.width,v=V[0]+(px-14)*(V[1]-V[0])/(320-28),nx=nextOf(xs[xs.length-1]);
+    if(Math.abs(P.sx(v)-P.sx(nx))<=16){taps++;tapX=null;step(true);}
+    else{tapX=v;drawG();say(false,'Not quite. Follow the dashed tangent line until it meets the $x$-axis, and tap right there.');}
+  });
+  const step=(tapped)=>{
     const x=xs[xs.length-1],nx=nextOf(x);
     if(nx==null){ui();return say(false,it.flat||"Here $f'(x)$ = 0, so the tangent line is flat. It never crosses the $x$-axis, and the formula would divide by zero. Start over with a different guess.");}
-    xs.push(nx); ui();
+    xs.push(nx); stage='tan';
     const n=xs.length-1;
+    const conv=Math.abs(nx-x)<tol&&n>=minSteps;
+    if(conv)done=true;
+    ui();
     if(!Number.isFinite(nx)||Math.abs(nx)>1e6)return say(false,'The guesses are running away. Start over with a guess closer to the root.');
-    if(Math.abs(nx-x)<tol&&n>=minSteps){
-      const first=!done; done=true;
-      say(true,(it.after||'Converged! The root is about {x}. That took {n} steps.').replace(/\{n\}/g,n).replace(/\{x\}/g,fix(nx,6)));
-      if(first)onChange();
-    }else if(nx<W0[0]||nx>W0[1])say(false,'That guess landed off the picture at $x$ = '+fix(nx,3)+'. Keep going, or start over closer to the root.');
+    if(conv){ say(true,(it.after||'Converged! The root is about {x}. That took {n} steps.').replace(/\{n\}/g,n).replace(/\{x\}/g,fix(nx,6))); onChange(); }
+    else if(nx<W0[0]||nx>W0[1])say(false,'That guess landed off the picture at $x$ = '+fix(nx,3)+'. Keep going, or start over closer to the root.');
+    else if(slow)say(true,(tapped===true?'Yes! ':'')+'The tangent line meets the axis at $x_'+n+'$ = '+fix(nx,4)+'. That is the new guess.'+(n===1?' Now repeat: draw the tangent line there.':''));
     else if(done)say(true,'The digits have stopped changing: the root is about '+fix(nx,6)+'.');
   };
   ui();
@@ -821,11 +928,12 @@ function calcPanel(){
   if(!CALC.open){el.hidden=true;return;} el.hidden=false;
   const disp=CALC.toks.map(t=>({'pi':'π','sqrt(':'√(','*':'×','/':'÷','-':'−','^2':'²','ans':'ANS','e':'e'}[t]||t)).join('')||'0';
   el.innerHTML='<div class="calc-h"><button class="calc-m" data-c="mode">'+(CALC.deg?'DEG':'RAD')+'</button><span class="kick">Calculator</span><button class="calc-x" data-c="close" aria-label="Close calculator">✕</button></div>'+
-    '<div class="calc-d"><div class="calc-e">'+esc(disp)+'</div><div class="calc-o">'+esc(CALC.out)+'</div></div>'+
+    '<div class="calc-d"><div class="calc-e">'+esc(disp)+'</div><div class="calc-o">'+esc(CALC.out)+(CALC.out[0]==='='?'<button class="calc-use" data-c="use" aria-label="Put this number in the answer box">Use ↓</button>':'')+'</div></div>'+
     '<div class="calc-k">'+CKEYS.map(([l,c])=>'<button data-c="'+esc(c)+'" class="'+(c==='eq'?'eq':/^[0-9.]$/.test(c)?'n':'')+'">'+l+'</button>').join('')+'</div>';
 }
 function calcPress(c){
   if(c==='close'){CALC.open=false;return calcPanel();}
+  if(c==='use'){if(SINK){SINK(useStr(CALC.ans));toast('Put '+neg(useStr(CALC.ans))+' in the answer box');}else toast('There is no number box on this screen');return;}
   if(c==='mode'){CALC.deg=!CALC.deg;}
   else if(c==='clear'){CALC.toks=[];CALC.out='';}
   else if(c==='back')CALC.toks.pop();
@@ -848,7 +956,6 @@ const KIND={main:'Level',review:'Review',extra:'Extra',boss:'Boss',start:'Start'
 /* (the map character is now the student's chosen avatar; see avatars.js) */
 const HERO_OLD='<svg viewBox="0 0 30 34" aria-hidden="true"><ellipse cx="15" cy="31.5" rx="9" ry="2.2" style="fill:var(--ink);opacity:.25"/><rect x="5" y="9" width="20" height="21" rx="9" style="fill:var(--gold);stroke:var(--ink);stroke-width:2"/><path d="M4 13 Q15 -3 26 13 Z" style="fill:var(--curve);stroke:var(--ink);stroke-width:2;stroke-linejoin:round"/><circle cx="11" cy="19" r="2" style="fill:var(--ink)"/><circle cx="19" cy="19" r="2" style="fill:var(--ink)"/></svg>';
 const edgesOf=n=>n.from||n.requires||[];
-const masteryOf=kind=>{const qs=DECK.drills[kind].questions;return {n:qs.filter(isMastered).length,of:qs.length};};
 function route(a,b){ // shortest way along the drawn roads
   const adj={}; MAP.nodes.forEach(n=>edgesOf(n).forEach(m=>{(adj[n.id]=adj[n.id]||[]).push(m);(adj[m]=adj[m]||[]).push(n.id);}));
   const prev={},q=[a]; prev[a]=null;
@@ -890,15 +997,16 @@ function home(){
     if(!n.deck)return h+'<p class="note">Coming soon. This stop is still being built.</p>';
     if(!d||d.error)return h+'<p class="note bad">'+esc(d?d.error:'Deck not loaded')+'</p>';
     const p=ds(d.id),L=lessonsOf(d); let a='';
-    const dAct=k=>{const m=masteryOf(k),dr=d.drills[k],ready=drillOpen(d,k),al=dr.after?L.findIndex(l=>l.id===dr.after):-1;
-      a+=act('drill:'+k,dr.title,ready?m.n+' of '+m.of+' mastered'+((p.sets[k]||0)>0?' ✓':''):al>=0?'After '+lname(d,al):L.length>1?'After the lessons':'After the lesson',!ready);};
-    L.forEach((l,i)=>{const st=lp(d,l.id),open=lessonOpen(d,i);
+    const dAct=k=>{const dr=d.drills[k],M=drillMastery(d,k),ps=drillPassed(d,k),run=(p.run||{})[k];
+      const st=M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):run&&!run.over?'In progress · question '+(run.i+1):dr.exam?'Finish it to pass':dr.stages?'3 in a row skips ahead':RULES.passRun+' in a row to pass';
+      a+=act('drill:'+k,dr.title,st);};
+    L.forEach((l,i)=>{const st=lp(d,l.id);
       const pre=(d.lessonOptional?'Optional · ':'')+(L.length>1&&l.title?l.title+' · ':'');
-      const why=i>0&&!lp(d,L[i-1].id).done?'after '+lname(d,i-1):'after '+(l.needs||[]).map(k=>d.drills[k]?d.drills[k].title:k).join(' and ');
-      a+=act('lesson:'+l.id,lname(d,i),pre+(!open?why:st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:l.slides.length+' steps'),!open);
+      const sug=!st.done&&!st.at&&(i>0&&!lp(d,L[i-1].id).done?'best after '+lname(d,i-1):(l.needs||[]).some(k=>d.drills[k]&&!drillPassed(d,k))?'best after '+(l.needs||[]).map(k=>d.drills[k]?d.drills[k].title:k).join(' and '):'');
+      a+=act('lesson:'+l.id,lname(d,i),pre+(st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:sug||l.slides.length+' steps'));
       drillKinds(d).filter(k=>d.drills[k].after===l.id).forEach(dAct);});
     drillKinds(d).filter(k=>!d.drills[k].after||!L.some(l=>l.id===d.drills[k].after)).forEach(dAct);
-    return h+'<div class="acts">'+a+'</div>'+ACCT.codeHTML(MAP,n);
+    return h+'<div class="acts">'+a+'</div>'+(isInstructor()?'<p class="tiny"><button class="link" data-go="key">Answer key: every question at a glance</button></p>':'')+ACCT.codeHTML(MAP,n);
   };
   const select=id=>{
     const n=nodeById(id),d=n.deck?DECKS[n.deck]:null; S.pos[MAP.id]=id; save(); DECK=d&&!d.error?d:null;
@@ -927,37 +1035,49 @@ function home(){
 }
 
 /* ---------- lesson ---------- */
+/* The lesson remembers where the student is (also after leaving by accident). ‹ and › move freely:
+   nothing is locked, but a lesson earns its game play only once every step has been done. */
+const arrows=(prevOff,nextOff,nextLabel)=>[
+  '<button class="btn ghost arrow" id="prev" aria-label="Previous"'+(prevOff?' disabled':'')+'>‹</button>',
+  '<button class="btn ghost arrow" id="nextb" aria-label="'+(nextLabel||'Next')+'"'+(nextOff?' disabled':'')+'>›</button>'];
 function lesson(id){
   const L=lessonsOf(DECK),li=L.findIndex(l=>l.id===id),k=li<0?0:li,LS=L[k];
-  if(!LS||!lessonOpen(DECK,k))return home();
-  const slides=LS.slides,p=lp(DECK,LS.id); let i=p.done?0:Math.min(p.at,slides.length-1); CTX='lesson';
+  if(!LS)return home();
+  const slides=LS.slides,p=lp(DECK,LS.id); let i=Math.max(0,Math.min(p.at||0,slides.length-1)); CTX='lesson';
+  const mark=sl=>{if(!S.preview&&!p.ok.includes(sl.id)){p.ok.push(sl.id);save();}};
   const show=()=>{
-    const sl=slides[i],last=i===slides.length-1;
+    const sl=slides[i],last=i===slides.length-1; p.at=i; save();
     AREA='lesson:'+LS.id; CUR={deck:DECK.id,qid:sl.id,where:DECK.title+' · '+lname(DECK,k)+(L.length>1&&LS.title?' ('+LS.title+')':'')+', step '+(i+1),text:plain(sl.title||sl.text)};
-    screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,(S.preview?'<button class="link" id="skip">Skip</button>':'')+calcBtn()),
+    const [pv,nx]=arrows(i===0,last,'Skip to the next step');
+    screen({top:bar(lname(DECK,k)+' · step '+(i+1)+' of '+slides.length,100*i/slides.length,calcBtn()),
       body:'<article class="item"></article><div class="fb" hidden></div>',
-      foot:(i>0?'<button class="btn ghost" id="prev">Back</button>':'')+'<button class="btn" id="go">Continue</button>'});
+      foot:pv+'<button class="btn" id="go">Continue</button>'+nx});
     const goB=$('#go'),fb=$('.fb'); let phase='answer',C=null;
     const upd=()=>{ if(!C)return;
       goB.textContent=C.kind==='pass'||phase==='right'?(last?'Finish lesson':'Continue'):phase==='wrong'?'Try again':'Check';
       goB.disabled=phase==='answer'&&!C.canGo(); };
     C=mountItem(sl,$('.item'),upd); upd();
     const next=()=>{
-      if(last){ const before=deckCleared(DECK),first=!p.done; let won=false;
-        if(!S.preview){p.done=true;p.at=0;if(first)won=awardPlay();save();ACCT.done('lesson',LS.id);}
+      if(last){ const before=deckCleared(DECK),miss=slides.filter(s=>!p.ok.includes(s.id)).length; let won=false;
+        p.at=0;
+        if(!S.preview){p.done=true;if(!miss&&!p.played){p.played=true;won=awardPlay();}ACCT.done('lesson',LS.id);}
+        save();
         const nxt=L.slice(k+1).find(l=>!lp(DECK,l.id).done),play=won?' You earned a game play!':'';
-        home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!'+play:nxt?'Lesson done. Next: '+lname(DECK,L.indexOf(nxt))+', '+nxt.title+'.'+play:'Practice unlocked.'+play); return; }
-      i++; if(!S.preview&&!p.done){p.at=i;save();} show();
+        home(); toast(S.preview?'End of lesson (preview)':!before&&deckCleared(DECK)?'Stop cleared!'+play:
+          miss?'Lesson done. You skipped '+miss+(miss===1?' step':' steps')+'; finish '+(miss===1?'it':'them')+' for a game play.':
+          nxt?'Lesson done. Next: '+lname(DECK,L.indexOf(nxt))+', '+nxt.title+'.'+play:'Lesson done. On to the drills!'+play); return; }
+      i++; show();
     };
     goB.onclick=()=>{
-      if(C.kind==='pass'||phase==='right')return next();
+      if(C.kind==='pass'){mark(sl);return next();}
+      if(phase==='right')return next();
       if(phase==='wrong'){phase='answer';fb.hidden=true;C.reset();return upd();}
       const ok=C.check(); if(!S.preview)ACCT.answer(sl,ok);
-      if(ok){phase='right';C.lock(true,true);upd();feedback(fb,true,sl.explain||'');}
+      if(ok){phase='right';mark(sl);C.lock(true,true);upd();feedback(fb,true,sl.explain||'');}
       else{phase='wrong';C.lock(false,false);upd();feedback(fb,false,sl.hint||'Look again and give it another try.');}
     };
-    if($('#prev'))$('#prev').onclick=()=>{i--;show();};
-    if($('#skip'))$('#skip').onclick=next;
+    $('#prev').onclick=()=>{if(i>0){i--;show();}};
+    $('#nextb').onclick=()=>{if(!last){i++;show();}};
     enterKey(goB);
   };
   show();
@@ -966,7 +1086,10 @@ function lesson(id){
 /* ---------- drills ---------- */
 /* A drill can set "setSize" (questions per set). With "exam": true it runs like a test:
    no feedback until the end, then a score by topic and a review of every miss.
-   Questions may carry a "topic"; the results screen then shows how each topic went. */
+   Questions may carry a "topic"; the results screen then shows how each topic went.
+   "stages": [{"id", "title", "oneOf": [question ids]}] runs the drill in parts (questions carry "stage"):
+   passRun right in a row skips the rest of that part. oneOf: one of these lands in the first passRun questions.
+   A set in progress is saved, so leaving by accident picks up where the student left off. */
 function pickSet(D,all){
   const n=Math.min(D.setSize||RULES.setSize,all.length);
   if(!D.exam)return shuffle([...shuffle(all.filter(q=>!isMastered(q))),...shuffle(all.filter(isMastered))].slice(0,n));
@@ -974,6 +1097,17 @@ function pickSet(D,all){
   const pools=shuffle(Object.values(by).map(l=>shuffle([...shuffle(l.filter(q=>!isMastered(q))),...shuffle(l.filter(isMastered))])));
   const out=[];for(let k=0;out.length<n;k++){const p=pools[k%pools.length];if(p.length)out.push(p.shift());if(pools.every(p=>!p.length))break;}
   return shuffle(out);
+}
+function pickStaged(D,all){
+  const out=[];
+  D.stages.forEach(st=>{
+    const qs=all.filter(q=>q.stage===st.id),l=[...shuffle(qs.filter(q=>!isMastered(q))),...shuffle(qs.filter(isMastered))];
+    const pool=(st.oneOf||[]).map(id=>l.find(q=>q.id===id)).filter(Boolean);
+    if(pool.length){const f=pool[Math.floor(Math.random()*pool.length)],pos=Math.floor(Math.random()*Math.min(RULES.passRun,l.length));
+      l.splice(l.indexOf(f),1);l.splice(pos,0,f);}
+    out.push(...(st.max?l.slice(0,st.max):l));
+  });
+  return out;
 }
 function topicTable(res){
   const T={};res.forEach(r=>{const t=r.q.topic;if(!t)return;(T[t]=T[t]||{n:0,ok:0}).n++;if(r.ok)T[t].ok++;});
@@ -984,49 +1118,139 @@ function topicTable(res){
 }
 function drill(kind){
   if(!DECK||!DECK.drills||!DECK.drills[kind])return home();
-  const p=ds(DECK.id); if(!drillOpen(DECK,kind))return home();
-  const D=DECK.drills[kind],all=D.questions,exam=!!D.exam;
-  const set=S.preview&&!exam?all.slice():pickSet(D,all);
-  let i=0,score=0; const res=[],t0=Date.now();
+  const p=ds(DECK.id); p.run=p.run||{}; p.pass=p.pass||{};
+  const D=DECK.drills[kind],all=D.questions,exam=!!D.exam,staged=!!(D.stages&&D.stages.length),byId={},rk=kind+(S.preview?'#preview':'');
+  all.forEach(q=>{byId[q.id]=q;});
+  const stageIx=q=>staged?Math.max(0,D.stages.findIndex(s=>s.id===q.stage)):0;
+  let R=p.run[rk];
+  if(!R||R.over||!R.ids.length||!R.ids.every(id=>byId[id])){
+    R=p.run[rk]={ids:(staged?pickStaged(D,all):pickSet(D,all)).map(q=>q.id),i:0,ans:{},score:0,run:0,passed:false,t0:Date.now()};
+    save();
+  }
+  const VIEW={}; let at=R.i,justPassed=false;
+  const answered=()=>R.ids.slice(0,R.i).map(id=>({q:byId[id],ok:!!R.ans[id]}));
   const finish=()=>{
-    let msg='Preview mode: nothing was recorded.',cleared='';
+    R.over=true; const res=answered(),n=res.length,score=res.filter(r=>r.ok).length;
+    let msg='Preview mode: nothing was recorded.',cleared='',passNow=false;
     if(!S.preview){ rollDay(); const key=DECK.id+':'+kind,before=deckCleared(DECK);
-      p.sets[kind]=(p.sets[kind]||0)+1; ACCT.done('drill',kind,score,set.length);
+      passNow=exam||staged||R.passed||(n>0&&score/n>=RULES.passPct-1e-9);
+      if(passNow)p.pass[kind]=true;
+      p.sets[kind]=(p.sets[kind]||0)+1; ACCT.done('drill',kind,score,n);
       if(!before&&deckCleared(DECK))cleared='<p class="verdict">Stop cleared! A new road is open on the map.</p>';
       if(S.setDay[key]===S.day)msg='You already collected today’s play for finishing this drill.';
       else{S.setDay[key]=S.day;msg=awardPlay()?'You earned a game play for finishing the set.':'You have reached today’s limit of '+RULES.dailyPlays+' plays. More tomorrow.';}
-      save(); }
-    const m=masteryOf(kind),sec=Math.round((Date.now()-t0)/1000),pct=Math.round(100*score/set.length);
-    const miss=res.filter(r=>!r.ok);
+    }
+    save();
+    const M=drillMastery(DECK,kind),sec=Math.round((Date.now()-R.t0)/1000),pct=n?Math.round(100*score/n):0;
+    const miss=res.filter(r=>!r.ok),ps=drillPassed(DECK,kind);
     const review=exam&&miss.length?'<h3 class="rv-h">Review your misses</h3><ol class="review">'+miss.map(r=>{const a=answerText(r.q);
       return '<li><p>'+fmt(r.q.text||r.q.title||'')+'</p>'+(a?'<p><strong>Answer:</strong> '+fmt(a)+'</p>':'')+(r.q.explain?'<p class="tiny">'+fmt(r.q.explain)+'</p>':'')+'</li>';}).join('')+'</ol>':'';
+    const passLine=S.preview?'':ps?'<p class="verdict">'+(M.mastered?'Mastered ★':'Passed ✓')+'</p>':'<p class="txt">Not passed yet. Get '+RULES.passRun+' right in a row, or '+Math.round(100*RULES.passPct)+'% on a set.</p>';
     screen({top:bar(D.title,100),
-      body:'<div class="done"><p class="eyebrow">'+(exam?'Practice test complete':'Set complete')+'</p><p class="big">'+score+'<small> of '+set.length+'</small></p>'+
+      body:'<div class="done"><p class="eyebrow">'+(exam?'Practice test complete':'Set complete')+'</p><p class="big">'+score+'<small> of '+n+'</small></p>'+
         (exam?'<p class="txt">'+pct+'% · '+Math.floor(sec/60)+' min '+(sec%60)+' s'+(pct>=90?' · Test ready!':pct>=75?' · Close. Shore up the red topics.':' · Keep practicing the red topics.')+'</p>':'')+
-        cleared+topicTable(res)+'<p class="txt">'+msg+'</p><p class="tiny">Mastered '+m.n+' of '+m.of+' questions in this drill</p><span class="meter"><i style="width:'+(100*m.n/m.of)+'%"></i></span>'+review+'</div>',
+        passLine+cleared+topicTable(res)+'<p class="txt">'+msg+'</p>'+
+        '<p class="tiny">Mastery: '+M.ok+' of the last '+M.n+' right (★ at '+Math.ceil(RULES.masterPct*M.w-1e-9)+' of '+M.w+')</p><span class="meter"><i style="width:'+(M.w?100*Math.min(1,M.ok/Math.ceil(RULES.masterPct*M.w-1e-9)):0)+'%"></i></span>'+review+'</div>',
       foot:'<button class="btn ghost" data-go="home">Map</button>'+(S.plays>0?'<button class="btn" data-go="game">Play Match Board</button>':'<button class="btn" data-go="drill:'+kind+'">Another set</button>')});
   };
   const show=()=>{
-    const q=set[i]; CTX=exam?'exam':'drill';
-    AREA='drill:'+kind; CUR={deck:DECK.id,qid:q.id,where:DECK.title+' · '+D.title+', question '+(i+1),text:plain(q.title||q.text)};
-    screen({top:bar(D.title.replace(/ drill$/,'')+' · '+(i+1)+' of '+set.length,100*i/set.length,calcBtn()+pips()),
-      body:(exam&&q.topic?'<p class="eyebrow">'+esc(q.topic)+'</p>':'')+'<article class="item"></article><div class="fb" hidden></div>',foot:'<button class="btn" id="go" disabled>'+(exam?'Submit':'Check')+'</button>'});
-    const goB=$('#go'),fb=$('.fb'); let done=false,C=null;
-    C=mountItem(q,$('.item'),()=>{if(C&&!done)goB.disabled=!C.canGo();});
+    if(at>=R.ids.length)return finish();
+    const q=byId[R.ids[at]],live=at===R.i; CTX=exam?'exam':'drill';
+    AREA='drill:'+kind; CUR={deck:DECK.id,qid:q.id,where:DECK.title+' · '+D.title+', question '+(at+1),text:plain(q.title||q.text)};
+    const st=staged?D.stages[stageIx(q)]:null,canSkip=live&&R.ids.slice(R.i+1).some(id=>stageIx(byId[id])===stageIx(q));
+    const [pv,nx]=arrows(at===0||exam,live&&!canSkip,live?'Skip this question for now':'Next');
+    screen({top:bar(D.title.replace(/ drill$/,'')+' · '+(at+1)+' of '+R.ids.length,100*at/R.ids.length,calcBtn()+pips()),
+      body:(st?'<p class="eyebrow">Part '+(stageIx(q)+1)+' of '+D.stages.length+': '+esc(st.title)+'</p>':'')+(exam&&q.topic?'<p class="eyebrow">'+esc(q.topic)+'</p>':'')+'<div class="slot"></div>',
+      foot:pv+'<button class="btn" id="go" disabled>'+(exam?'Submit':'Check')+'</button>'+nx});
+    const slot=$('.slot'),goB=$('#go');
+    let v=VIEW[q.id];
+    if(v){slot.append(v.art,v.fb);itemKeys=v.keys;SINK=v.sink;stepEnter=v.step;}
+    else{
+      const art=document.createElement('article'),fb=document.createElement('div');art.className='item';fb.className='fb';fb.hidden=true;slot.append(art,fb);
+      v=VIEW[q.id]={art,fb,C:null,done:!live};
+      v.C=mountItem(q,art,()=>{if(v.C&&!v.done&&at===R.i)$('#go').disabled=!v.C.canGo();});
+      v.keys=itemKeys;v.sink=SINK;v.step=stepEnter;
+      if(!live){const ok=!!R.ans[q.id],a=answerText(q);try{v.C.lock(true,ok);}catch(e){}
+        feedback(fb,ok,(ok?'You got this one right.':'You missed this one.')+(a?'\nAnswer: '+a:'')+(q.explain?'\n'+q.explain:''));}
+    }
+    if(v.done){goB.textContent=justPassed&&at===R.i-1?'Finish ✓':at===R.ids.length-1?'See results':'Next';goB.disabled=false;}
+    else goB.disabled=!v.C.canGo();
     goB.onclick=()=>{
-      if(done){i++;return i<set.length?show():finish();}
-      const ok=C.check(); done=true; if(ok)score++; res.push({q,ok});
-      const note=record(q,ok);
-      if(exam){i++;return i<set.length?show():finish();}
-      C.lock(true,ok);
-      goB.textContent=i===set.length-1?'See results':'Next'; goB.disabled=false;
+      if(v.done){ if(justPassed&&at===R.i-1)return finish(); at++; return show(); }
+      const ok=v.C.check(); v.done=true; R.ans[q.id]=ok; if(ok)R.score++;
+      R.i++; const note=record(q,ok,kind);
+      if(R.lastStage!==stageIx(q)){R.lastStage=stageIx(q);R.run=0;}
+      R.run=ok?R.run+1:0;
+      if(exam){save();at=R.i;return show();}
+      v.C.lock(true,ok);
+      let pass='';
+      if(R.run>=RULES.passRun){
+        if(staged){const s=stageIx(q),rest=R.ids.slice(R.i).filter(id=>stageIx(byId[id])===s).length;
+          if(rest){R.ids=R.ids.slice(0,R.i).concat(R.ids.slice(R.i).filter(id=>stageIx(byId[id])!==s));
+            const nx2=R.ids[R.i]?D.stages[stageIx(byId[R.ids[R.i]])]:null;
+            pass=RULES.passRun+' in a row! That skips the rest of this part.'+(nx2?' Next up: '+nx2.title+'.':'');}
+          R.run=0;}
+        else if(!R.passed){R.passed=true;justPassed=true;if(!S.preview){p.pass[kind]=true;}
+          pass=RULES.passRun+' in a row: you passed this drill! Tap Finish, or keep practicing.';}
+      }
+      save();
+      goB.textContent=justPassed?'Finish ✓':R.i>=R.ids.length?'See results':'Next'; goB.disabled=false;
+      if(justPassed&&R.i<R.ids.length&&!$('#keep')){const kb=document.createElement('button');kb.className='link';kb.id='keep';kb.textContent='Keep practicing';
+        kb.onclick=()=>{justPassed=false;at=R.i;show();};v.fb.after(kb);}
+      $('#nextb').disabled=false;
       $('.streak').outerHTML=pips();
-      const a=ok?'':answerText(q),extra=C.summary?C.summary():'';
-      feedback(fb,ok,(a?'Answer: '+a+'\n':'')+(extra?extra+'\n':'')+(q.explain||''),note);
+      const a=ok?'':answerText(q),extra=v.C.summary?v.C.summary():'';
+      feedback(v.fb,ok,(pass?'**'+pass+'**\n':'')+(a?'Answer: '+a+'\n':'')+(extra?extra+'\n':'')+(q.explain||''),note);
+    };
+    $('#prev').onclick=()=>{if(at>0&&!exam){at--;show();}};
+    $('#nextb').onclick=()=>{
+      if(v.done||at<R.i){if(justPassed&&at===R.i-1){justPassed=false;}at++;return show();}
+      /* skip: move this question to the end of its part; it breaks the in-a-row count */
+      const s=stageIx(q),ids=R.ids,rest=ids.slice(R.i+1);let end=R.i;
+      rest.forEach((id,j)=>{if(stageIx(byId[id])===s)end=R.i+1+j;});
+      if(end===R.i)return; ids.splice(R.i,1);ids.splice(end,0,q.id);R.run=0;delete VIEW[q.id];save();show();
     };
     enterKey(goB);
   };
   show();
+}
+
+/* ---------- answer key (instructor only): every lesson step and drill question with its answer ---------- */
+function keyItem(q,n,stages){
+  const kind={info:'info',explore:'explorer',extrema:'walk-through',newton:'Newton explorer',bisect:'bisection game',mvt:'MVT explorer',linear:'linearization explorer',diff:'differentials explorer',
+    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph'}[q.type]||q.type;
+  let h='<div class="ak-q"><div class="ak-h"><b>'+esc(n)+'</b><span>'+esc(q.id||'')+' · '+esc(kind)+(q.stage?' · '+esc(((stages||[]).find(s=>s.id===q.stage)||{title:q.stage}).title):'')+(q.topic?' · '+esc(q.topic):'')+'</span></div>';
+  if(q.title)h+='<p><strong>'+fmt(q.title)+'</strong></p>';
+  if(q.type==='bank')h+='<p>'+fmt(String(q.text).split('___').map((t,i,a)=>i<a.length-1?t+'【'+q.blanks[i]+'】':t).join(''))+'</p>';
+  else if(q.text)h+='<p>'+fmt(q.text)+'</p>';
+  const g=q.graph&&DECK.graphs[q.graph];
+  if(g)h+='<div class="ak-g">'+plot(g,false).svg+'</div>';
+  if(q.figure)h+='<div class="ak-g fig">'+q.figure+'</div>';
+  if(q.type==='mc')h+='<ol class="ak-o">'+q.options.map((o,i)=>'<li'+(i===q.answer?' class="ok"':'')+'>'+fmt(o)+(i===q.answer?' ✓':'')+'</li>').join('')+'</ol>';
+  else if(q.type==='pick')h+='<ol class="ak-o">'+q.options.map((o,i)=>{const r=q.answers.includes(i);return '<li'+(r?' class="ok"':'')+'>'+fmt(o)+(r?' ✓':'')+'</li>';}).join('')+'</ol>';
+  else if(q.type==='bank')h+='<p class="ak-a"><strong>Blanks:</strong> '+q.blanks.map(esc).join(' · ')+(q.distractors&&q.distractors.length?' <span class="tiny">(extra words: '+q.distractors.map(esc).join(', ')+')</span>':'')+'</p>';
+  else if(q.type==='tap')h+='<p class="ak-a"><strong>Answer:</strong> '+fmt('a tap within '+(q.tol||0.15)+' of $x$ = '+q.answers.map(v=>+v.toFixed(4)).join(' or '))+'</p>';
+  else if(q.type==='steps')h+='<ol class="ak-steps">'+q.steps.map((st,k)=>'<li>'+keyItem(st,'Part '+(k+1))+'</li>').join('')+'</ol>';
+  else if(q.type==='sketch')h+='<p class="ak-a"><strong>Data given:</strong> '+((q.data||{}).lines||[]).map(fmt).join(' · ')+'</p><div class="ak-g">'+plot({window:q.window,pieces:[{expr:q.fn,from:q.window[0],to:q.window[1]}]},false).svg+'</div>';
+  else if(q.type==='newton')h+='<p class="ak-a tiny">$f(x)$ = '+fmt('$'+q.fn+'$')+(q.pick===false?', starts at '+q.start:', student picks $x_0$')+(q.slow?', one piece at a time':'')+'</p>';
+  else{const a=answerText(q);if(a)h+='<p class="ak-a"><strong>Answer:</strong> '+fmt(a)+'</p>';}
+  if(q.explain)h+='<p class="tiny">'+fmt(q.explain)+'</p>';
+  return h+'</div>';
+}
+function key(){
+  if(!DECK||!isInstructor())return home();
+  const L=lessonsOf(DECK),secs=[];
+  L.forEach((l,i)=>secs.push({id:'l'+i,name:lname(DECK,i)+(l.title&&L.length>1?': '+l.title:''),note:l.slides.length+' steps',items:l.slides}));
+  drillKinds(DECK).forEach(k=>{const D=DECK.drills[k];
+    secs.push({id:'d'+k,name:D.title,stages:D.stages,note:D.questions.length+' questions'+(D.stages?' in '+D.stages.length+' parts ('+D.stages.map(s=>s.title).join(', ')+')':D.exam?', practice test of '+(D.setSize||RULES.setSize):', sets of '+Math.min(D.setSize||RULES.setSize,D.questions.length)),
+      items:D.stages?D.stages.flatMap(s=>D.questions.filter(q=>q.stage===s.id)).concat(D.questions.filter(q=>!D.stages.some(s=>s.id===q.stage))):D.questions});});
+  screen({wide:true,top:bar('Answer key · '+DECK.title,null),
+    body:'<div class="ak"><p class="tiny">Every lesson step and drill question at this stop, with its answer. The ✓ marks the right choice (students see the choices shuffled).</p>'+
+      '<nav class="ak-nav">'+secs.map(s=>'<a href="#ak-'+esc(s.id)+'">'+esc(s.name)+'</a>').join('')+'</nav>'+
+      secs.map(s=>'<details open id="ak-'+esc(s.id)+'"><summary><b>'+esc(s.name)+'</b> <span class="tiny">'+esc(s.note)+'</span></summary>'+
+        s.items.map((q,i)=>keyItem(q,String(i+1),s.stages)).join('')+'</details>').join('')+'</div>',
+    foot:'<button class="btn ghost" data-go="home">Map</button>'});
+  $('.ak-nav').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();const t=document.getElementById(a.getAttribute('href').slice(1));if(t)t.scrollIntoView({block:'start'});};
 }
 
 /* ---------- Match Board minigame: the board is saved between plays ---------- */
@@ -1119,7 +1343,7 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch'];
+    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap'];
     const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio',...QT]:QT;
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').length%2===0)errs.push('unmatched $ in '+k);
@@ -1127,6 +1351,12 @@ function validate(D){
     const g=(D.graphs||{})[q.graph];
     if(q.graph){used.add(q.graph);if(!g)errs.push('graph "'+q.graph+'" does not exist');}
     if((q.type==='graph'||q.type==='explore')&&!q.graph)errs.push('needs a graph');
+    if(q.type==='tap'){
+      if(!q.graph)errs.push('needs a graph');
+      if(!Array.isArray(q.answers)||!q.answers.length||q.answers.some(v=>typeof v!=='number'))errs.push('answers must be a list of x-values');
+      else if(g&&gOK[q.graph]){q.answers.forEach(a=>{if(a<g.window[0]||a>g.window[1])errs.push('answer '+a+' is outside the graph window');
+        else if(q.root!==false){const v=evalAt(g,a-0.002),w=evalAt(g,a+0.002);if(!(v!=null&&w!=null&&v*w<=0))errs.push('the graph does not cross the x-axis at '+a+' (set "root": false if that is intended)');}});}
+    }
     if(q.type!=='graph'&&q.type!=='explore'&&q.type!=='extrema'&&!q.text&&!q.title)errs.push('has no text');
     if(q.type==='graph'){
       if(![ 'value','limit',...EXTASK].includes(q.ask))errs.push('ask must be "value", "limit", "absmax", "absmin", "argmax" or "argmin"');
@@ -1299,7 +1529,7 @@ function validate(D){
         if(typeof q.value==='number'&&!(Math.abs(v-q.value)<=0.01*Math.max(1,Math.abs(q.value))))errs.push('value says '+q.value+' but the last row gives '+showA(v));}
       catch(e){errs.push(e.message);}
     }
-    const isQ=['graph','mc','tf','bank','multi','match','pick','expr','interval','order'].includes(q.type);
+    const isQ=['graph','mc','tf','bank','multi','match','pick','expr','interval','order','tap'].includes(q.type);
     if(isQ&&inLesson&&!q.hint&&!/ part \d+ ·$/.test(where))warns.push('no hint for a wrong answer');
     if(isQ&&!inLesson&&!q.explain)warns.push('no explanation');
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));
@@ -1320,6 +1550,11 @@ function validate(D){
     if(!qs.length)add('fail',name+' has no questions');
     else if(qs.length<RULES.setSize)add('warn',name+' has '+qs.length+' questions, fewer than one set of '+RULES.setSize);
     qs.forEach(q=>check(q,name,false));
+    if(dr.stages){const sid=new Set(dr.stages.map(st=>st.id));
+      dr.stages.forEach(st=>{if(!st.id||!st.title)add('fail',name+': each stage needs an id and a title');
+        if(!qs.some(q=>q.stage===st.id))add('fail',name+': stage "'+st.id+'" has no questions');
+        (st.oneOf||[]).forEach(id=>{const q=qs.find(x=>x.id===id);if(!q||q.stage!==st.id)add('fail',name+': oneOf lists '+id+', which is not a question in stage "'+st.id+'"');});});
+      qs.forEach(q=>{if(!sid.has(q.stage))add('fail',name+' '+q.id+': "stage" must be one of '+[...sid].join(', '));});}
   }
   Object.keys(D.graphs||{}).forEach(n=>{if(!used.has(n))add('warn','Graph '+n+' is never used');});
   return out;
@@ -1358,7 +1593,7 @@ function test(){
       '<p class="tiny">Every graph question is solved from its own graph and compared with the answer key.</p>'+
       '<h3>What is built</h3><div class="kv"><span>Worlds</span><span>'+WORLDS.length+'</span><span>Stops on the maps</span><span>'+allNodes.filter(n=>n.kind!=='start').length+'</span><span>Stops still to build</span><span>'+soon+'</span>'+rows+'</div>'+
       '<h3>Preview</h3><label class="switch" for="pv"><input type="checkbox" id="pv"'+(S.preview?' checked':'')+'> Preview mode</label>'+
-      '<p class="tiny">Opens every stop on the map, adds Skip to lessons, runs every drill question in deck order, and records nothing.</p>'+
+      '<p class="tiny">Opens every stop on the map and records nothing. To see every question with its answer, tap a stop and choose Answer key.</p>'+
       '<h3>Testing tools</h3><div class="row"><button class="btn small ghost" id="addplay">Add a game play</button><button class="btn small ghost" id="reset">Reset my progress</button></div></div>'});
   $('#pv').onchange=e=>{S.preview=e.target.checked;save();};
   $('#addplay').onclick=()=>{S.plays++;save();toast('Play added. You have '+S.plays+'.');};

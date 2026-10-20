@@ -80,11 +80,49 @@ function pexp(s){
   t=t.replace(/\^\(([^()]*)\)/g,'<sup>$1</sup>').replace(/\^(−?[0-9.]+|\u0001.\u0002'?|π)/g,'<sup>$1</sup>');
   return t.replace(/\u0001(.)\u0002/g,'<i>$1</i>');
 }
-const KLAB={back:'⌫','*':'×','/':'÷','-':'−','^2':'x²','^':'xⁿ','sqrt(':'√','cbrt(':'∛',pi:'π',clear:'Clear',inf:'∞',U:'∪','(':'(',')':')',
+/* Draw typed tokens with real fractions: "/" takes the operand just before it as the top and the next operand as the bottom
+   (exactly how the answer is read, so 1/2x shows ½·x). An unfinished bottom shows an empty box. */
+function texprHTML(toks){
+  let i=0; const n=toks.length,BOX='<i class="ph">□</i>';
+  const bare=h=>/^\(.*\)$/.test(h)?h.slice(1,-1):h,fr=(a,b)=>'<span class="frac"><span>'+bare(a)+'</span><span>'+bare(b)+'</span></span>';
+  const isOpen=t=>t==='('||/\($/.test(t);
+  function group(strip){ /* from an opening token to its matching ) */
+    const t=toks[i++],name=t==='('?'':t==='e^('?'e^':t.slice(0,-1); const inner=seq(true); let closed=false;
+    if(toks[i]===')'){i++;closed=true;}
+    if(t==='e^(')return 'e<sup>'+(inner||BOX)+'</sup>';
+    const nm=name==='sqrt'?'√':name==='cbrt'?'∛':name;
+    return (strip&&!name?inner:esc(nm)+'('+inner+(closed?')':''));
+  }
+  function operand(inSup){
+    if(i>=n)return null; const t=toks[i]; let h;
+    if(t==='-'){i++;const o=operand(inSup);return '−'+(o==null?'':o);}
+    if(/^[0-9.]$/.test(t)){h='';while(i<n&&/^[0-9.]$/.test(toks[i]))h+=toks[i++];}
+    else if(isOpen(t))h=group(inSup);
+    else if(['+','*','/','^',')','^2'].includes(t))return null;
+    else{h=pexp(t);i++;}
+    for(;;){ if(toks[i]==='^2'){i++;h+='<sup>2</sup>';}
+      else if(toks[i]==='^'){i++;const e=operand(true);h+='<sup>'+(e==null?BOX:e)+'</sup>';}
+      else break; }
+    return h;
+  }
+  function seq(inParen){
+    const out=[];
+    while(i<n){
+      const t=toks[i];
+      if(t===')'){ if(inParen)break; out.push({h:')',op:true});i++;continue; }
+      if(t==='/'){i++;const prev=out.length&&!out[out.length-1].op?out.pop().h:BOX,d=operand(false);out.push({h:fr(prev,d==null?BOX:d),op:false});continue;}
+      if(t==='+'||t==='*'||(t==='-'&&out.length&&!out[out.length-1].op)){out.push({h:t==='+'?' + ':t==='*'?'·':' − ',op:true});i++;continue;}
+      const o=operand(false); if(o==null){out.push({h:esc(t),op:true});i++;} else out.push({h:o,op:false});
+    }
+    return out.map(x=>x.h).join('');
+  }
+  return seq(false);
+}
+const KLAB={back:'⌫','*':'×','/':'<span class="frac kf"><span>▢</span><span>▢</span></span>','-':'−','^2':'x²','^':'xⁿ','sqrt(':'√','cbrt(':'∛',pi:'π',clear:'Clear',inf:'∞',U:'∪','(':'(',')':')',
   'sin(':'sin','cos(':'cos','tan(':'tan','ln(':'ln','e^(':'eˣ','sec(':'sec','e':'e'};
 const keyLab=k=>KLAB[k]!=null?KLAB[k]:/'$/.test(k)?esc(k.slice(0,-1))+'′':esc(k);
 /* a row of keys */
-const keyRow=(ks,cls)=>ks.map(k=>k==null?'<span></span>':'<button class="key'+(cls||'')+(k==='clear'?' wide':'')+'" data-k="'+esc(k)+'"'+(k==='back'?' aria-label="Delete"':'')+'>'+keyLab(k)+'</button>').join('');
+const keyRow=(ks,cls)=>ks.map(k=>k==null?'<span></span>':'<button class="key'+(cls||'')+(k==='clear'?' wide':'')+'" data-k="'+esc(k)+'"'+(k==='back'?' aria-label="Delete"':k==='/'?' aria-label="Fraction (divide)"':'')+'>'+keyLab(k)+'</button>').join('');
 
 function mountExpr(q,ix,onChange){
   const vars=q.vars||['x'],answers=[].concat(q.answer); let toks=[],locked=false;
@@ -94,7 +132,7 @@ function mountExpr(q,ix,onChange){
     '<div class="pad pad6">'+keyRow(['7','8','9','(',')','back','4','5','6','*','/','^','1','2','3','+','-','^2','0','.','clear'])+'</div>';
   const box=$('.xbox',ix),err=$('.xerr',ix),str=()=>closeParens(toks.join(''));
   const ok=()=>{try{xcompile(str(),vars);return true;}catch(e){return false;}};
-  const show=()=>{box.innerHTML=toks.length?'<span>'+pexp(toks.join(''))+'</span>':'?';box.classList.toggle('empty',!toks.length);
+  const show=()=>{box.innerHTML=toks.length?'<span>'+texprHTML(toks)+'</span>':'?';box.classList.toggle('empty',!toks.length);
     let m='';if(toks.length)try{xcompile(str(),vars);}catch(e){m=e.message;} err.hidden=!m||!toks.length; err.textContent=m?'Not finished yet: '+m+'.':'';};
   const press=k=>{ if(locked)return;
     if(k==='back')toks.pop(); else if(k==='clear')toks=[]; else toks.push(k);
@@ -102,6 +140,7 @@ function mountExpr(q,ix,onChange){
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
   itemKeys=e=>{ if(e.key==='Backspace'){press('back');e.preventDefault();return true;}
     if(e.key.length===1&&/[0-9a-zA-Z.+\-*/^()'π]/.test(e.key)){press(e.key);e.preventDefault();return true;} return false; };
+  SINK=v=>{if(locked)return;String(v).split('').forEach(c=>toks.push(c));show();onChange();};
   show();
   return {kind:'q',canGo:()=>toks.length>0&&ok(),
     check:()=>answers.some(a=>xequiv(str(),a,vars,q.ranges)),

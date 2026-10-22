@@ -11,6 +11,8 @@ A practice game for Calculus 1. Students walk a map, and each stop has a lesson 
 | `decks/*.json` | One file per stop: its graphs, lesson steps, and drill questions |
 | `js/app.js` | The game engine. Does not change when content changes |
 | `js/items.js` | More item types (formulas, intervals, multi-part problems, sketching, explorers) |
+| `js/items2.js` | Item types added for Worlds 1, 2 and 4 (secant, derivative tracer, Riemann sums, limit answers) |
+| `tools/gen/` | The scripts that generated the World 1, 2 and 4 decks, and the answer checker |
 | `js/config.js` | Server settings (Supabase URL and public key). Empty = no accounts |
 | `js/backend.js`, `js/account.js`, `js/avatars.js` | Accounts, syncing, feedback, leaderboard, codes, and the 21 characters |
 | `instructor.html`, `js/instructor.js` | The instructor page (desktop) |
@@ -95,6 +97,41 @@ Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `
 - `sketch`: the graph-sketching experience. `fn`, `window`, and `data` with `points` (`[x, y, "label"]`), `crit`, `infl`, `va`, `ha`, optional `slant`, and `lines` (the data shown to the student). Phases: place the points and asymptotes on the grid, mark each region ↗/↘ and ∪/∩ on a sign chart, then draw with a finger or mouse. The drawing is graded on key points, coverage, rising/falling, concavity and asymptote behavior, and the real graph is shown afterward. `"phases": ["draw"]` with `"prefill": true` skips straight to drawing with the data already placed.
 - Explorers (lessons only): `optim` (drag $x$ and watch a scene and the quantity being optimized; `scene` type `rect` or `box`), `rr` (related-rates scenes `ladder`, `ripple`, `balloon`, `cone` with a time slider and live rates), `curvex` (slide along a curve; the tangent shows rising/falling, or the curve is colored by concavity), `ratio` (tap closer and closer to a limit and watch the two parts of an indeterminate form fight; `op` is `/`, `*`, `-` or `^`).
 
+## The stop format (Worlds 1, 2 and 4)
+
+Every stop has three parts:
+
+1. **A short lesson** (4 to 6 steps) on the one new idea, and every step asks the student to do something.
+2. **Theory** (`"mode": "all"`): a handful of questions, and every one is required. A miss comes back at the end of the set until it is answered right. Finishing the set passes it.
+3. **Practice** (`"mode": "pool"`): a big pool (about 60 problems). Each set is 12 problems drawn at random (`"setSize"` changes it). Passing takes 80% on a finished set; anything less means a fresh set from the pool. Problems the student has not seen yet come first.
+
+Each practice problem has a `"level"`:
+
+- `1`: **Warm-up**, one small piece (find the inside function, one derivative, one value).
+- `2`: **Build it**, a few pieces (fill in the missing factor, simplify one step).
+- `3`: **Full problem**, usually a multi-part `steps` problem.
+
+A set takes problems from every level in proportion to the pool, and shows them in level order, so each set builds up from pieces to whole problems. To rename the levels for a drill, add `"levels": ["Warm-up", "Build it", "Full problem"]`.
+
+In a multi-part `steps` problem, each finished part shrinks to one line of work (its `"work"` text, or its label and answer), so the whole solution so far stays on the screen. A missed part shows the right line, marked ✗, and the problem continues from the right answer. The problem grades itself when the last part is done.
+
+World 3 still uses the older drill rules (3 in a row or 80%), since students are in it now. Any drill without a `"mode"` keeps those rules.
+
+### New item types
+
+- `expr` also takes `"post"` (text after the answer box, for "fill in the missing piece" questions like $f'(x) = 10(3x^2 + 1)^9·($ ▢ $)$) and `"upToC": true` (any antiderivative counts: the answer may differ from the key by a constant).
+- `lim`: a limit answer. The pad has ∞, −∞ and DNE buttons. `"answer"` is a number, `"inf"`, `"-inf"` or `"DNE"`.
+- `secant` (lesson): slide the second point toward the first and watch the secant slope settle on f′(a). `fn`, `a`, `h` (start gap, negative to start on the left), `goal`, `left` (offer both sides), `window`, `after`.
+- `dtrace` (lesson): slide along a curve; each slope visited drops a dot on a second graph, so the graph of f′ appears. `fn`, `window`, `dwindow` (`[ymin, ymax]` for f′), `after`.
+- `riemann` (lesson): rectangles under a curve with an n slider and left/right/mid buttons. `fn`, `a`, `b`, `window`, `exact`, `rules`, `goal` (n to reach), `after`.
+- Word-bank chips (`bank`) can now hold math: `"$h'(g(x))$"`.
+
+Math markup also has `int[a,b]` (a ∫ with limits), a plain `int` (∫), `sum[k=1,n]` (Σ with limits), `theta` (θ) and `Delta` (Δ). Exponents may contain parentheses: `e^(sin(x))`.
+
+### Where the World 1, 2 and 4 decks came from
+
+`tools/gen/` holds the scripts that wrote them (`world1.py`, `world2.py`, `world4.py`). Every formula answer was checked against a computer algebra system (sympy) and again with the app's own answer checker (`node tools/gen/verify.js`). **Edit the deck JSON files directly from now on.** Running a script again overwrites its decks and would undo hand edits.
+
 ## Calculator
 
 Every lesson and drill has a **Calc** button with a scientific calculator (RAD/DEG). After =, its **Use ↓** button puts the result in the answer box. To hide it for a deck, add `"calculator": false` to the deck.
@@ -102,7 +139,7 @@ Every lesson and drill has a **Calc** button with a scientific calculator (RAD/D
 ## Game rules
 
 - **Nothing at a stop is locked.** Students can open any lesson or drill. Lessons and drill sets remember where the student is, so leaving by accident picks up at the same step or question. ‹ and › move back and forward (in a drill, › on an unanswered question skips it to the end; it breaks the in-a-row count).
-- **Passing a drill** (this is what clears a stop): 3 right in a row in a set (the set can end right there), or 80% on a finished set. Staged drills and practice tests pass when finished.
+- **Passing a drill** (this is what clears a stop): a theory drill (`"mode": "all"`) passes when every question has been answered right; a practice pool (`"mode": "pool"`) passes with 80% on a finished set of 12. Older drills with no mode: 3 right in a row in a set, or 80% on a finished set. Staged drills and practice tests pass when finished.
 - **Mastering a drill** (★): 8 of the last 10 answers in that drill right.
 - Finishing a lesson earns a game play the first time every step in it has been done (skipping ahead is allowed but does not earn the play).
 

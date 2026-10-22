@@ -1,0 +1,2101 @@
+{
+ "id": "d-invtrig",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Derivatives of Inverse Trig Functions",
+ "subtitle": "arcsin, arccos and arctan, from implicit differentiation.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each function to its derivative.",
+     "pairs": [
+      [
+       "$arcsin(x)$",
+       "$frac{1}{sqrt(1 - x^2)}$"
+      ],
+      [
+       "$arccos(x)$",
+       "$-frac{1}{sqrt(1 - x^2)}$"
+      ],
+      [
+       "$arctan(x)$",
+       "$frac{1}{1 + x^2}$"
+      ]
+     ],
+     "explain": "arccos is arcsin with a minus sign."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$sin^(-1)(x)$ means $frac{1}{sin(x)}$.",
+     "answer": false,
+     "explain": "$sin^(-1)(x)$ is the inverse function $arcsin(x)$. $frac{1}{sin(x)}$ is $csc(x)$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "Where does the formula $frac{d}{dx} arcsin(x) = frac{1}{sqrt(1 - x^2)}$ come from?",
+     "options": [
+      "Implicit differentiation of $sin(y) = x$",
+      "The quotient rule",
+      "The power rule",
+      "The limit definition with $h = 0$"
+     ],
+     "answer": 0,
+     "explain": "Write $sin(y) = x$, differentiate, and use a triangle to write $cos(y)$ in terms of $x$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "$frac{d}{dx} arctan(g(x)) =$",
+     "options": [
+      "$frac{g'(x)}{1 + g(x)^2}$",
+      "$frac{1}{1 + g'(x)^2}$",
+      "$frac{1}{1 + g(x)^2}$",
+      "$arctan(g'(x))$"
+     ],
+     "answer": 0,
+     "explain": "Chain rule."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "What is $cos(arctan(x))$? (Draw a triangle with opposite $x$ and adjacent 1.)",
+     "options": [
+      "$frac{1}{sqrt(1 + x^2)}$",
+      "$sqrt(1 + x^2)$",
+      "$frac{x}{sqrt(1 + x^2)}$",
+      "$sqrt(1 - x^2)$"
+     ],
+     "answer": 0,
+     "explain": "The hypotenuse is $sqrt(1 + x^2)$, and cosine is adjacent over hypotenuse."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "$frac{d}{dx} sec^(-1)(x) =$",
+     "options": [
+      "$frac{1}{|x| sqrt(x^2 - 1)}$",
+      "$sec(x)tan(x)$",
+      "$frac{1}{1 + x^2}$",
+      "$-frac{1}{sqrt(1 - x^2)}$"
+     ],
+     "answer": 0,
+     "explain": "The less common ones: $sec^(-1)$ gives $frac{1}{|x|sqrt(x^2 - 1)}$, and $csc^(-1)$ and $cot^(-1)$ are the negatives of $sec^(-1)$ and $tan^(-1)$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "B1",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 3arcsin(x)$.",
+     "answer": "3/sqrt(1 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{3}{sqrt(1 - x^2)}$",
+     "level": 1,
+     "explain": "$frac{3}{sqrt(1 - x^2)}$"
+    },
+    {
+     "id": "B2",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(x) + x^2$.",
+     "answer": "1/(1 + x^2) + 2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$1/(1 + x^2) + 2x$",
+     "level": 1,
+     "explain": "$1/(1 + x^2) + 2x$"
+    },
+    {
+     "id": "B3",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arccos(x)$.",
+     "answer": "-1/sqrt(1 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$-frac{1}{sqrt(1 - x^2)}$",
+     "level": 1,
+     "explain": "$-frac{1}{sqrt(1 - x^2)}$"
+    },
+    {
+     "id": "B4",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 5arctan(x)$.",
+     "answer": "5/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{5}{1 + x^2}$",
+     "level": 1,
+     "explain": "$frac{5}{1 + x^2}$"
+    },
+    {
+     "id": "B5",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arcsin(x) + arccos(x)$.",
+     "answer": "0",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$0$",
+     "level": 1,
+     "explain": "$0$"
+    },
+    {
+     "id": "B6",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x - arctan(x)$.",
+     "answer": "1 - 1/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$1 - 1/(1 + x^2)$",
+     "level": 1,
+     "explain": "$1 - 1/(1 + x^2)$"
+    },
+    {
+     "id": "B7",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2arccos(x)$.",
+     "answer": "-2/sqrt(1 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$-frac{2}{sqrt(1 - x^2)}$",
+     "level": 1,
+     "explain": "$-frac{2}{sqrt(1 - x^2)}$"
+    },
+    {
+     "id": "B8",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(x) - 4x$.",
+     "answer": "1/(1 + x^2) - 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$1/(1 + x^2) - 4$",
+     "level": 1,
+     "explain": "$1/(1 + x^2) - 4$"
+    },
+    {
+     "id": "B9",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arcsin(x) + x^3$.",
+     "answer": "1/sqrt(1 - x^2) + 3x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$1/sqrt(1 - x^2) + 3x^2$",
+     "level": 1,
+     "explain": "$1/sqrt(1 - x^2) + 3x^2$"
+    },
+    {
+     "id": "B10",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = -arcsin(x)$.",
+     "answer": "-1/sqrt(1 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$-frac{1}{sqrt(1 - x^2)}$",
+     "level": 1,
+     "explain": "$-frac{1}{sqrt(1 - x^2)}$"
+    },
+    {
+     "id": "T11",
+     "type": "mc",
+     "text": "Use a right triangle to simplify $sin(arccos(x))$.",
+     "options": [
+      "$sqrt(1 - x^2)$",
+      "$x$",
+      "$frac{1}{x}$",
+      "$sqrt(1 + x^2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$sin(arccos(x)) = sqrt(1 - x^2)$"
+    },
+    {
+     "id": "T12",
+     "type": "mc",
+     "text": "Use a right triangle to simplify $cos(arcsin(x))$.",
+     "options": [
+      "$sqrt(1 - x^2)$",
+      "$x$",
+      "$frac{1}{sqrt(1 - x^2)}$",
+      "$1 - x$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$cos(arcsin(x)) = sqrt(1 - x^2)$"
+    },
+    {
+     "id": "T13",
+     "type": "mc",
+     "text": "Use a right triangle to simplify $sec(arctan(x))$.",
+     "options": [
+      "$sqrt(1 + x^2)$",
+      "$frac{1}{sqrt(1 + x^2)}$",
+      "$sqrt(1 - x^2)$",
+      "$1 + x$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$sec(arctan(x)) = sqrt(1 + x^2)$"
+    },
+    {
+     "id": "T14",
+     "type": "mc",
+     "text": "Use a right triangle to simplify $cos(arctan(x))$.",
+     "options": [
+      "$frac{1}{sqrt(1 + x^2)}$",
+      "$sqrt(1 + x^2)$",
+      "$frac{x}{sqrt(1 + x^2)}$",
+      "$x$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$cos(arctan(x)) = frac{1}{sqrt(1 + x^2)}$"
+    },
+    {
+     "id": "T15",
+     "type": "mc",
+     "text": "Use a right triangle to simplify $tan(arcsin(x))$.",
+     "options": [
+      "$frac{x}{sqrt(1 - x^2)}$",
+      "$sqrt(1 - x^2)$",
+      "$frac{1}{x}$",
+      "$x sqrt(1 - x^2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$tan(arcsin(x)) = frac{x}{sqrt(1 - x^2)}$"
+    },
+    {
+     "id": "T16",
+     "type": "mc",
+     "text": "Use a right triangle to simplify $sin(arctan(x))$.",
+     "options": [
+      "$frac{x}{sqrt(1 + x^2)}$",
+      "$frac{1}{sqrt(1 + x^2)}$",
+      "$x$",
+      "$sqrt(1 + x^2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$sin(arctan(x)) = frac{x}{sqrt(1 + x^2)}$"
+    },
+    {
+     "id": "F17",
+     "type": "expr",
+     "text": "$f(x) = arctan(x^2)$. Fill in the derivative of the inside.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (x^2)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The inside is $x^2$, and its derivative is $2x$."
+    },
+    {
+     "id": "F18",
+     "type": "expr",
+     "text": "$f(x) = arctan(3x)$. Fill in the derivative of the inside.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (3x)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$3$",
+     "level": 2,
+     "explain": "The inside is $3x$, and its derivative is $3$."
+    },
+    {
+     "id": "F19",
+     "type": "expr",
+     "text": "$f(x) = arcsin(2x)$. Fill in the derivative of the inside.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / sqrt(1 - (2x)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$2$",
+     "level": 2,
+     "explain": "The inside is $2x$, and its derivative is $2$."
+    },
+    {
+     "id": "F20",
+     "type": "expr",
+     "text": "$f(x) = arctan(e^x)$. Fill in the derivative of the inside.",
+     "answer": "e^x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (e^x)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$e^x$",
+     "level": 2,
+     "explain": "The inside is $e^x$, and its derivative is $e^x$."
+    },
+    {
+     "id": "F21",
+     "type": "expr",
+     "text": "$f(x) = arcsin(x^2)$. Fill in the derivative of the inside.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / sqrt(1 - (x^2)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The inside is $x^2$, and its derivative is $2x$."
+    },
+    {
+     "id": "F22",
+     "type": "expr",
+     "text": "$f(x) = arctan(sqrt(x))$. Fill in the derivative of the inside.",
+     "answer": "1/(2sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (sqrt(x))^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{1}{2sqrt(x)}$",
+     "level": 2,
+     "explain": "The inside is $sqrt(x)$, and its derivative is $frac{1}{2sqrt(x)}$."
+    },
+    {
+     "id": "F23",
+     "type": "expr",
+     "text": "$f(x) = arccos(3x)$. Fill in the derivative of the inside.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = -($",
+     "post": "$) / sqrt(1 - (3x)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$3$",
+     "level": 2,
+     "explain": "The inside is $3x$, and its derivative is $3$."
+    },
+    {
+     "id": "F24",
+     "type": "expr",
+     "text": "$f(x) = arctan(x^3)$. Fill in the derivative of the inside.",
+     "answer": "3x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (x^3)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$3x^2$",
+     "level": 2,
+     "explain": "The inside is $x^3$, and its derivative is $3x^2$."
+    },
+    {
+     "id": "F25",
+     "type": "expr",
+     "text": "$f(x) = arcsin(x/2)$. Fill in the derivative of the inside.",
+     "answer": "1/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / sqrt(1 - (x/2)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{1}{2}$",
+     "level": 2,
+     "explain": "The inside is $x/2$, and its derivative is $frac{1}{2}$."
+    },
+    {
+     "id": "F26",
+     "type": "expr",
+     "text": "$f(x) = arctan(ln(x))$. Fill in the derivative of the inside.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (ln(x))^2)$",
+     "ranges": {
+      "x": [
+       0.6,
+       1.5
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 2,
+     "explain": "The inside is $ln(x)$, and its derivative is $frac{1}{x}$."
+    },
+    {
+     "id": "F27",
+     "type": "expr",
+     "text": "$f(x) = arcsin(sqrt(x))$. Fill in the derivative of the inside.",
+     "answer": "1/(2sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / sqrt(1 - (sqrt(x))^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{1}{2sqrt(x)}$",
+     "level": 2,
+     "explain": "The inside is $sqrt(x)$, and its derivative is $frac{1}{2sqrt(x)}$."
+    },
+    {
+     "id": "F28",
+     "type": "expr",
+     "text": "$f(x) = arctan(5x + 1)$. Fill in the derivative of the inside.",
+     "answer": "5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (5x + 1)^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$5$",
+     "level": 2,
+     "explain": "The inside is $5x + 1$, and its derivative is $5$."
+    },
+    {
+     "id": "W29",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(x^2)$.",
+     "steps": [
+      {
+       "id": "W29.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + x^4)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + x^4}$",
+       "work": "outside: $frac{1}{1 + x^4}$"
+      },
+      {
+       "id": "W29.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$2x$",
+       "work": "inside: $2x$"
+      },
+      {
+       "id": "W29.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(2x)(1/(1 + x^4))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(2x)(1/(1 + x^4))$",
+       "work": "$f'(x) = (2x)(1/(1 + x^4))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2x)(1/(1 + x^4))$"
+    },
+    {
+     "id": "W30",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(3x)$.",
+     "steps": [
+      {
+       "id": "W30.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + 9x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + 9x^2}$",
+       "work": "outside: $frac{1}{1 + 9x^2}$"
+      },
+      {
+       "id": "W30.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3$",
+       "work": "inside: $3$"
+      },
+      {
+       "id": "W30.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "3(1/(1 + 9x^2))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3(1/(1 + 9x^2))$",
+       "work": "$f'(x) = 3(1/(1 + 9x^2))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 3(1/(1 + 9x^2))$"
+    },
+    {
+     "id": "W31",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arcsin(2x)$.",
+     "steps": [
+      {
+       "id": "W31.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/sqrt(1 - 4x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{sqrt(1 - 4x^2)}$",
+       "work": "outside: $frac{1}{sqrt(1 - 4x^2)}$"
+      },
+      {
+       "id": "W31.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$2$",
+       "work": "inside: $2$"
+      },
+      {
+       "id": "W31.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "2(1/sqrt(1 - 4x^2))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$2(1/sqrt(1 - 4x^2))$",
+       "work": "$f'(x) = 2(1/sqrt(1 - 4x^2))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 2(1/sqrt(1 - 4x^2))$"
+    },
+    {
+     "id": "W32",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(e^x)$.",
+     "steps": [
+      {
+       "id": "W32.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + e^(2x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + e^(2x)}$",
+       "work": "outside: $frac{1}{1 + e^(2x)}$"
+      },
+      {
+       "id": "W32.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "e^x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$e^x$",
+       "work": "inside: $e^x$"
+      },
+      {
+       "id": "W32.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(e^x)(1/(1 + e^(2x)))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(e^x)(1/(1 + e^(2x)))$",
+       "work": "$f'(x) = (e^x)(1/(1 + e^(2x)))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (e^x)(1/(1 + e^(2x)))$"
+    },
+    {
+     "id": "W33",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arcsin(x^2)$.",
+     "steps": [
+      {
+       "id": "W33.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/sqrt(1 - x^4)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{sqrt(1 - x^4)}$",
+       "work": "outside: $frac{1}{sqrt(1 - x^4)}$"
+      },
+      {
+       "id": "W33.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$2x$",
+       "work": "inside: $2x$"
+      },
+      {
+       "id": "W33.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(2x)(1/sqrt(1 - x^4))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(2x)(1/sqrt(1 - x^4))$",
+       "work": "$f'(x) = (2x)(1/sqrt(1 - x^4))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2x)(1/sqrt(1 - x^4))$"
+    },
+    {
+     "id": "W34",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(sqrt(x))$.",
+     "steps": [
+      {
+       "id": "W34.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + x}$",
+       "work": "outside: $frac{1}{1 + x}$"
+      },
+      {
+       "id": "W34.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "1/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{2sqrt(x)}$",
+       "work": "inside: $frac{1}{2sqrt(x)}$"
+      },
+      {
+       "id": "W34.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(1/(2sqrt(x)))(1/(1 + x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(1/(2sqrt(x)))(1/(1 + x))$",
+       "work": "$f'(x) = (1/(2sqrt(x)))(1/(1 + x))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (1/(2sqrt(x)))(1/(1 + x))$"
+    },
+    {
+     "id": "W35",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arccos(3x)$.",
+     "steps": [
+      {
+       "id": "W35.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "-1/sqrt(1 - 9x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$-frac{1}{sqrt(1 - 9x^2)}$",
+       "work": "outside: $-frac{1}{sqrt(1 - 9x^2)}$"
+      },
+      {
+       "id": "W35.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3$",
+       "work": "inside: $3$"
+      },
+      {
+       "id": "W35.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "3(-1/sqrt(1 - 9x^2))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3(-1/sqrt(1 - 9x^2))$",
+       "work": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$"
+    },
+    {
+     "id": "W36",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(x^3)$.",
+     "steps": [
+      {
+       "id": "W36.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + x^6)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + x^6}$",
+       "work": "outside: $frac{1}{1 + x^6}$"
+      },
+      {
+       "id": "W36.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3x^2$",
+       "work": "inside: $3x^2$"
+      },
+      {
+       "id": "W36.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(3x^2)(1/(1 + x^6))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(3x^2)(1/(1 + x^6))$",
+       "work": "$f'(x) = (3x^2)(1/(1 + x^6))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (3x^2)(1/(1 + x^6))$"
+    },
+    {
+     "id": "W37",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arcsin(x/2)$.",
+     "steps": [
+      {
+       "id": "W37.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/sqrt(1 - x^2/4)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{sqrt(1 - x^2/4)}$",
+       "work": "outside: $frac{1}{sqrt(1 - x^2/4)}$"
+      },
+      {
+       "id": "W37.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "1/2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{2}$",
+       "work": "inside: $frac{1}{2}$"
+      },
+      {
+       "id": "W37.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(1/sqrt(1 - x^2/4))/2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1/sqrt(1 - x^2/4)}{2}$",
+       "work": "$f'(x) = (1/sqrt(1 - x^2/4))/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (1/sqrt(1 - x^2/4))/2$"
+    },
+    {
+     "id": "C38",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = xarcsin(x)$.",
+     "answer": "arcsin(x) + x/sqrt(1 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$arcsin(x) + x/sqrt(1 - x^2)$",
+     "level": 3,
+     "explain": "$arcsin(x) + x/sqrt(1 - x^2)$"
+    },
+    {
+     "id": "C39",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^2arctan(x)$.",
+     "answer": "2xarctan(x) + x^2/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$2xarctan(x) + x^2/(1 + x^2)$",
+     "level": 3,
+     "explain": "$2xarctan(x) + x^2/(1 + x^2)$"
+    },
+    {
+     "id": "C40",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(x)/x$.",
+     "answer": "(x/(1 + x^2) - arctan(x))/x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{x/(1 + x^2) - arctan(x)}{x^2}$",
+     "level": 3,
+     "explain": "$(x/(1 + x^2) - arctan(x))/x^2$"
+    },
+    {
+     "id": "C41",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = e^xarctan(x)$.",
+     "answer": "e^xarctan(x) + e^x/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$e^xarctan(x) + e^x/(1 + x^2)$",
+     "level": 3,
+     "explain": "$e^xarctan(x) + e^x/(1 + x^2)$"
+    },
+    {
+     "id": "C42",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arcsin(x)^2$.",
+     "answer": "2arcsin(x)/sqrt(1 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{2arcsin(x)}{sqrt(1 - x^2)}$",
+     "level": 3,
+     "explain": "$2arcsin(x)/sqrt(1 - x^2)$"
+    },
+    {
+     "id": "C43",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2^(arctan(x))$.",
+     "answer": "2^(arctan(x))ln(2)/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{2^(arctan(x))ln(2)}{1 + x^2}$",
+     "level": 3,
+     "explain": "$2^(arctan(x))ln(2)/(1 + x^2)$"
+    },
+    {
+     "id": "G44",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(x^2)$.",
+     "answer": "2x/(1 + x^4)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{2x}{1 + x^4}$",
+     "level": 2,
+     "explain": "$frac{2x}{1 + x^4}$"
+    },
+    {
+     "id": "G45",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arcsin(3x)$.",
+     "answer": "3/sqrt(1 - 9x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{3}{sqrt(1 - 9x^2)}$",
+     "level": 3,
+     "explain": "$frac{3}{sqrt(1 - 9x^2)}$"
+    },
+    {
+     "id": "G46",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(1/x)$.",
+     "answer": "-1/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$-frac{1}{1 + x^2}$",
+     "level": 2,
+     "explain": "$-frac{1}{1 + x^2}$"
+    },
+    {
+     "id": "G47",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arccos(x^2)$.",
+     "answer": "-2x/sqrt(1 - x^4)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$-frac{2x}{sqrt(1 - x^4)}$",
+     "level": 3,
+     "explain": "$-frac{2x}{sqrt(1 - x^4)}$"
+    },
+    {
+     "id": "G48",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(2x^3)$.",
+     "answer": "6x^2/(1 + 4x^6)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{6x^2}{1 + 4x^6}$",
+     "level": 2,
+     "explain": "$frac{6x^2}{1 + 4x^6}$"
+    },
+    {
+     "id": "G49",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(e^(2x))$.",
+     "answer": "2e^(2x)/(1 + e^(4x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{2e^(2x)}{1 + e^(4x)}$",
+     "level": 3,
+     "explain": "$frac{2e^(2x)}{1 + e^(4x)}$"
+    },
+    {
+     "id": "G50",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arcsin(sqrt(x))$.",
+     "answer": "1/(2sqrt(x)sqrt(1 - x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{1}{2sqrt(x)sqrt(1 - x)}$",
+     "level": 2,
+     "explain": "$frac{1}{2sqrt(x)sqrt(1 - x)}$"
+    },
+    {
+     "id": "G51",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(x/3)$.",
+     "answer": "3/(9 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{3}{9 + x^2}$",
+     "level": 3,
+     "explain": "$frac{3}{9 + x^2}$"
+    },
+    {
+     "id": "G52",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arcsin(5x)$.",
+     "answer": "5/sqrt(1 - 25x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{5}{sqrt(1 - 25x^2)}$",
+     "level": 2,
+     "explain": "$frac{5}{sqrt(1 - 25x^2)}$"
+    },
+    {
+     "id": "G53",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = arctan(sin(x))$.",
+     "answer": "cos(x)/(1 + sin(x)^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.18
+      ]
+     },
+     "show": "$frac{cos(x)}{1 + sin(x)^2}$",
+     "level": 3,
+     "explain": "$frac{cos(x)}{1 + sin(x)^2}$"
+    },
+    {
+     "id": "S54",
+     "type": "num",
+     "text": "Find the slope of $y = arctan(x)$ at $x = 1$. (A decimal is fine.)",
+     "answer": 0.5,
+     "label": "slope =",
+     "tol": 0.002,
+     "level": 3,
+     "explain": "The slope is $0.5$."
+    },
+    {
+     "id": "S55",
+     "type": "num",
+     "text": "Find the slope of $y = arcsin(x)$ at $x = 0$. (A decimal is fine.)",
+     "answer": 1,
+     "label": "slope =",
+     "tol": 0.002,
+     "level": 3,
+     "explain": "The slope is $1$."
+    },
+    {
+     "id": "S56",
+     "type": "num",
+     "text": "Find the slope of $y = arctan(2x)$ at $x = 0$. (A decimal is fine.)",
+     "answer": 2,
+     "label": "slope =",
+     "tol": 0.002,
+     "level": 3,
+     "explain": "The slope is $2$."
+    },
+    {
+     "id": "S57",
+     "type": "num",
+     "text": "Find the slope of $y = arcsin(x)$ at $x = 0.5$. (A decimal is fine.)",
+     "answer": 1.154701,
+     "label": "slope =",
+     "tol": 0.002,
+     "level": 3,
+     "explain": "The slope is $1.154701$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "$y = arcsin(x)$ (also written $sin^(-1)(x)$) means $sin(y) = x$. Differentiate implicitly: $cos(y)·y' = 1$, so $y' = frac{1}{cos(y)}$. A right triangle with opposite side $x$ and hypotenuse 1 shows $cos(y) = sqrt(1 - x^2)$. So $frac{d}{dx} arcsin(x) =$",
+    "options": [
+     "$frac{1}{sqrt(1 - x^2)}$",
+     "$frac{1}{cos(x)}$",
+     "$-frac{1}{sqrt(1 - x^2)}$",
+     "$sqrt(1 - x^2)$"
+    ],
+    "answer": 0,
+    "hint": "Put $sqrt(1 - x^2)$ in for $cos(y)$.",
+    "explain": "$frac{d}{dx} arcsin(x) = frac{1}{sqrt(1 - x^2)}$"
+   },
+   {
+    "id": "L2",
+    "type": "match",
+    "text": "The same trick gives the others. Match each function to its derivative.",
+    "pairs": [
+     [
+      "$arcsin(x)$",
+      "$frac{1}{sqrt(1 - x^2)}$"
+     ],
+     [
+      "$arccos(x)$",
+      "$-frac{1}{sqrt(1 - x^2)}$"
+     ],
+     [
+      "$arctan(x)$",
+      "$frac{1}{1 + x^2}$"
+     ]
+    ],
+    "hint": "arccos is the same as arcsin with a minus sign.",
+    "explain": "These three are the ones to memorize."
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "Chain rule as always: $frac{d}{dx} arctan(g) = frac{g'}{1 + g^2}$. Find the derivative of $f(x) = arctan(x^2)$.",
+    "answer": "2x/(1 + x^4)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sqrt(",
+     "arcsin(",
+     "arctan(",
+     "arccos("
+    ],
+    "label": "$f'(x)$ =",
+    "show": "$frac{2x}{1 + x^4}$",
+    "hint": "$g = x^2$, so $g' = 2x$ and $g^2 = x^4$.",
+    "explain": "$frac{2x}{1 + x^4}$"
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Triangles also simplify things like $sin(arccos(x))$. Let $theta = arccos(x)$: adjacent side $x$, hypotenuse 1. Then the opposite side is $sqrt(1 - x^2)$, so $sin(arccos(x)) =$",
+    "options": [
+     "$sqrt(1 - x^2)$",
+     "$x$",
+     "$frac{1}{x}$",
+     "$sqrt(1 + x^2)$"
+    ],
+    "answer": 0,
+    "hint": "Sine is opposite over hypotenuse.",
+    "explain": "$sin(arccos(x)) = sqrt(1 - x^2)$"
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "Old rules still apply. Use the product rule on $f(x) = x arctan(x)$.",
+    "answer": "arctan(x) + x/(1 + x^2)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sqrt(",
+     "arcsin(",
+     "arctan(",
+     "arccos("
+    ],
+    "label": "$f'(x)$ =",
+    "show": "$arctan(x) + x/(1 + x^2)$",
+    "hint": "$1·arctan(x) + x·frac{1}{1 + x^2}$",
+    "explain": "$arctan(x) + frac{x}{1 + x^2}$"
+   }
+  ]
+ }
+}

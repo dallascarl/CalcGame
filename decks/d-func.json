@@ -1,0 +1,1844 @@
+{
+ "id": "d-func",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Derivative as a Function",
+ "subtitle": "Every point gets a slope, so the slopes make a new function.",
+ "version": 2,
+ "graphs": {
+  "cubic": {
+   "window": [
+    -2.4,
+    2.4,
+    -3.2,
+    3.2
+   ],
+   "pieces": [
+    {
+     "expr": "x^3-3*x",
+     "from": -2.4,
+     "to": 2.4
+    }
+   ]
+  },
+  "hill": {
+   "window": [
+    -1,
+    4,
+    -2,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "4-(x-1)^2",
+     "from": -1,
+     "to": 4
+    }
+   ]
+  },
+  "wave": {
+   "window": [
+    -3,
+    3,
+    -2.5,
+    2.5
+   ],
+   "pieces": [
+    {
+     "expr": "2*sin(pi*x/2)",
+     "from": -3,
+     "to": 3
+    }
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "If $f$ is differentiable at $a$, then $f$ is continuous at $a$.",
+     "answer": true,
+     "explain": "Differentiable implies continuous."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "If $f$ is continuous at $a$, then $f$ is differentiable at $a$.",
+     "answer": false,
+     "explain": "$|x|$ is continuous at 0 but has a corner there, so it is not differentiable. The converse is not true."
+    },
+    {
+     "id": "T3",
+     "type": "pick",
+     "text": "At which of these does the derivative **fail** to exist? Select all.",
+     "options": [
+      "a sharp corner",
+      "a cusp",
+      "a vertical tangent line",
+      "a jump",
+      "a smooth hilltop",
+      "a point where $f(x) = 0$"
+     ],
+     "answers": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "explain": "Corners, cusps, vertical tangents and breaks have no single slope. A smooth hilltop has slope 0, and $f(x) = 0$ says nothing about the slope."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "On an interval where $f$ is **increasing**, $f'$ is",
+     "options": [
+      "positive",
+      "negative",
+      "zero",
+      "increasing"
+     ],
+     "answer": 0,
+     "explain": "Rising graph, positive slopes."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "On an interval where $f$ is **decreasing**, the graph of $f'$ is",
+     "options": [
+      "below the $x$-axis",
+      "above the $x$-axis",
+      "on the $x$-axis",
+      "decreasing"
+     ],
+     "answer": 0,
+     "explain": "Falling graph, negative slopes."
+    },
+    {
+     "id": "T6",
+     "type": "match",
+     "text": "Match each derivative of position $s(t)$ to its name.",
+     "pairs": [
+      [
+       "$s'(t)$",
+       "velocity"
+      ],
+      [
+       "$s''(t)$",
+       "acceleration"
+      ],
+      [
+       "$s'''(t)$",
+       "jerk"
+      ]
+     ],
+     "explain": "Each is the rate of change of the one before."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "$frac{d^2 y}{dx^2}$ means",
+     "options": [
+      "the second derivative of $y$",
+      "the derivative squared",
+      "$y$ times 2",
+      "the derivative of $x^2$"
+     ],
+     "answer": 0,
+     "explain": "$frac{d^2y}{dx^2} = y''$: the derivative of the derivative."
+    },
+    {
+     "id": "T8",
+     "type": "mc",
+     "text": "In $f'(x) = lim[h->0] frac{f(x+h) - f(x)}{h}$, the answer is a function of",
+     "options": [
+      "$x$",
+      "$h$",
+      "both $x$ and $h$",
+      "neither"
+     ],
+     "answer": 0,
+     "explain": "$h$ goes away in the limit. What is left depends on $x$: a slope for every $x$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "G1",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-2)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G2",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-1)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "G3",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(0)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 1,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is falling there, so the slope is negative."
+    },
+    {
+     "id": "G4",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(1)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "G5",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(2)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G6",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-1.5)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G7",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(1.5)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "cubic",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G8",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-0.5)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "hill",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G9",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(0)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "hill",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G10",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(1)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "hill",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "G11",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(2)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 1,
+     "graph": "hill",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is falling there, so the slope is negative."
+    },
+    {
+     "id": "G12",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(3)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 1,
+     "graph": "hill",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is falling there, so the slope is negative."
+    },
+    {
+     "id": "G13",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-3)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "G14",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-2)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 1,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is falling there, so the slope is negative."
+    },
+    {
+     "id": "G15",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(-1)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "G16",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(0)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 0,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is rising there, so the slope is positive."
+    },
+    {
+     "id": "G17",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(1)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "G18",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(2)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 1,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The graph is falling there, so the slope is negative."
+    },
+    {
+     "id": "G19",
+     "type": "mc",
+     "text": "Use the graph of $f$. Is $f'(3)$ positive, negative, or zero?",
+     "options": [
+      "positive",
+      "negative",
+      "zero"
+     ],
+     "answer": 2,
+     "graph": "wave",
+     "fixed": true,
+     "level": 1,
+     "explain": "The tangent line is flat there, so the slope is 0."
+    },
+    {
+     "id": "A20",
+     "type": "expr",
+     "text": "For $f(x) = x^2$, find $f(x + h)$. Multiply it out.",
+     "answer": "h^2 + 2hx + x^2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$h^2 + 2hx + x^2$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $h^2 + 2hx + x^2$."
+    },
+    {
+     "id": "A21",
+     "type": "expr",
+     "text": "For $f(x) = x^2 - 2x + 3$, find $f(x + h)$. Multiply it out.",
+     "answer": "h^2 + 2hx - 2h + x^2 - 2x + 3",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$h^2 + 2hx - 2h + x^2 - 2x + 3$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $h^2 + 2hx - 2h + x^2 - 2x + 3$."
+    },
+    {
+     "id": "A22",
+     "type": "expr",
+     "text": "For $f(x) = -x^2 + 2x$, find $f(x + h)$. Multiply it out.",
+     "answer": "-h^2 - 2hx + 2h - x^2 + 2x",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$-h^2 - 2hx + 2h - x^2 + 2x$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $-h^2 - 2hx + 2h - x^2 + 2x$."
+    },
+    {
+     "id": "A23",
+     "type": "expr",
+     "text": "For $f(x) = -2x^2 + 5$, find $f(x + h)$. Multiply it out.",
+     "answer": "-2h^2 - 4hx - 2x^2 + 5",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$-2h^2 - 4hx - 2x^2 + 5$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $-2h^2 - 4hx - 2x^2 + 5$."
+    },
+    {
+     "id": "A24",
+     "type": "expr",
+     "text": "For $f(x) = 4x^2 - 3$, find $f(x + h)$. Multiply it out.",
+     "answer": "4h^2 + 8hx + 4x^2 - 3",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$4h^2 + 8hx + 4x^2 - 3$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $4h^2 + 8hx + 4x^2 - 3$."
+    },
+    {
+     "id": "A25",
+     "type": "expr",
+     "text": "For $f(x) = x^2 + x$, find $f(x + h)$. Multiply it out.",
+     "answer": "h^2 + 2hx + h + x^2 + x",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$h^2 + 2hx + h + x^2 + x$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $h^2 + 2hx + h + x^2 + x$."
+    },
+    {
+     "id": "A26",
+     "type": "expr",
+     "text": "For $f(x) = 3x^2 - 4x + 1$, find $f(x + h)$. Multiply it out.",
+     "answer": "3h^2 + 6hx - 4h + 3x^2 - 4x + 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $3h^2 + 6hx - 4h + 3x^2 - 4x + 1$."
+    },
+    {
+     "id": "A27",
+     "type": "expr",
+     "text": "For $f(x) = 2x^2 - x$, find $f(x + h)$. Multiply it out.",
+     "answer": "2h^2 + 4hx - h + 2x^2 - x",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$2h^2 + 4hx - h + 2x^2 - x$",
+     "level": 1,
+     "explain": "Replace every $x$ with $(x + h)$: $2h^2 + 4hx - h + 2x^2 - x$."
+    },
+    {
+     "id": "Q28",
+     "type": "expr",
+     "text": "For $f(x) = x^2 + x$, $f(x + h) - f(x) = h^2 + 2hx + h$. Divide by $h$.",
+     "answer": "h + 2x + 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$h + 2x + 1$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $h + 2x + 1$."
+    },
+    {
+     "id": "Q29",
+     "type": "expr",
+     "text": "For $f(x) = -x^2 + 2x$, $f(x + h) - f(x) = -h^2 - 2hx + 2h$. Divide by $h$.",
+     "answer": "-h - 2x + 2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$-h - 2x + 2$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $-h - 2x + 2$."
+    },
+    {
+     "id": "Q30",
+     "type": "expr",
+     "text": "For $f(x) = -2x + 7$, $f(x + h) - f(x) = -2h$. Divide by $h$.",
+     "answer": "-2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$-2$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $-2$."
+    },
+    {
+     "id": "Q31",
+     "type": "expr",
+     "text": "For $f(x) = 2x^2 + 1$, $f(x + h) - f(x) = 2h^2 + 4hx$. Divide by $h$.",
+     "answer": "2h + 4x",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$2h + 4x$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $2h + 4x$."
+    },
+    {
+     "id": "Q32",
+     "type": "expr",
+     "text": "For $f(x) = 2x^2 - x$, $f(x + h) - f(x) = 2h^2 + 4hx - h$. Divide by $h$.",
+     "answer": "2h + 4x - 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$2h + 4x - 1$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $2h + 4x - 1$."
+    },
+    {
+     "id": "Q33",
+     "type": "expr",
+     "text": "For $f(x) = 4x^2 - 3$, $f(x + h) - f(x) = 4h^2 + 8hx$. Divide by $h$.",
+     "answer": "4h + 8x",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$4h + 8x$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $4h + 8x$."
+    },
+    {
+     "id": "Q34",
+     "type": "expr",
+     "text": "For $f(x) = x^2 - 2x + 3$, $f(x + h) - f(x) = h^2 + 2hx - 2h$. Divide by $h$.",
+     "answer": "h + 2x - 2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$h + 2x - 2$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $h + 2x - 2$."
+    },
+    {
+     "id": "Q35",
+     "type": "expr",
+     "text": "For $f(x) = x^2 + 3x - 2$, $f(x + h) - f(x) = h^2 + 2hx + 3h$. Divide by $h$.",
+     "answer": "h + 2x + 3",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$h + 2x + 3$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $h + 2x + 3$."
+    },
+    {
+     "id": "Q36",
+     "type": "expr",
+     "text": "For $f(x) = x^2 - x + 1$, $f(x + h) - f(x) = h^2 + 2hx - h$. Divide by $h$.",
+     "answer": "h + 2x - 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$h + 2x - 1$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $h + 2x - 1$."
+    },
+    {
+     "id": "Q37",
+     "type": "expr",
+     "text": "For $f(x) = 3x^2 - 4x + 1$, $f(x + h) - f(x) = 3h^2 + 6hx - 4h$. Divide by $h$.",
+     "answer": "3h + 6x - 4",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$3h + 6x - 4$",
+     "level": 2,
+     "explain": "Divide each term by $h$: $3h + 6x - 4$."
+    },
+    {
+     "id": "H38",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $h + 3x$. Let $h -> 0$.",
+     "answer": "3x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$3x$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $3x$."
+    },
+    {
+     "id": "H39",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $-h + 6x - 5$. Let $h -> 0$.",
+     "answer": "6x - 5",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x - 5$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $6x - 5$."
+    },
+    {
+     "id": "H40",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $3h - 2x + 2$. Let $h -> 0$.",
+     "answer": "2 - 2x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2 - 2x$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $2 - 2x$."
+    },
+    {
+     "id": "H41",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $-h + 4x + 2$. Let $h -> 0$.",
+     "answer": "4x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$4x + 2$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $4x + 2$."
+    },
+    {
+     "id": "H42",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $3h + 2x + 2$. Let $h -> 0$.",
+     "answer": "2x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2x + 2$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $2x + 2$."
+    },
+    {
+     "id": "H43",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $h + 6x - 1$. Let $h -> 0$.",
+     "answer": "6x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x - 1$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $6x - 1$."
+    },
+    {
+     "id": "H44",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $2h - 2x + 2$. Let $h -> 0$.",
+     "answer": "2 - 2x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2 - 2x$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $2 - 2x$."
+    },
+    {
+     "id": "H45",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $h + 2x - 5$. Let $h -> 0$.",
+     "answer": "2x - 5",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2x - 5$",
+     "level": 2,
+     "explain": "Every term with an $h$ goes to 0: $2x - 5$."
+    },
+    {
+     "id": "V46",
+     "type": "mc",
+     "text": "$s(t)$ is position and $v(t)$ is velocity. What does $s'(3) = 5$ say?",
+     "options": [
+      "At $t = 3$, the velocity is 5.",
+      "At $t = 3$, the position is 5.",
+      "At $t = 3$, the acceleration is 5.",
+      "At $t = 5$, the velocity is 3."
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$s'$ is velocity, $s''$ (or $v'$) is acceleration."
+    },
+    {
+     "id": "V47",
+     "type": "mc",
+     "text": "$s(t)$ is position and $v(t)$ is velocity. What does $s''(2) = -4$ say?",
+     "options": [
+      "At $t = 2$, the acceleration is −4.",
+      "At $t = 2$, the velocity is −4.",
+      "At $t = 2$, the position is −4.",
+      "At $t = -4$, the acceleration is 2."
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$s'$ is velocity, $s''$ (or $v'$) is acceleration."
+    },
+    {
+     "id": "V48",
+     "type": "mc",
+     "text": "$s(t)$ is position and $v(t)$ is velocity. What does $v'(1) = 9$ say?",
+     "options": [
+      "At $t = 1$, the acceleration is 9.",
+      "At $t = 1$, the velocity is 9.",
+      "At $t = 1$, the position is 9.",
+      "At $t = 9$, the velocity is 1."
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$s'$ is velocity, $s''$ (or $v'$) is acceleration."
+    },
+    {
+     "id": "V49",
+     "type": "mc",
+     "text": "$s(t)$ is position and $v(t)$ is velocity. What does $s'(4) = 0$ say?",
+     "options": [
+      "At $t = 4$, the object is momentarily stopped.",
+      "At $t = 4$, the object is at the starting line.",
+      "At $t = 4$, the acceleration is 0.",
+      "At $t = 4$, the object is speeding up."
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$s'$ is velocity, $s''$ (or $v'$) is acceleration."
+    },
+    {
+     "id": "W50",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 2x^2 + 1$.",
+     "steps": [
+      {
+       "id": "W50.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "2h^2 + 4hx + 2x^2 + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$2h^2 + 4hx + 2x^2 + 1$",
+       "work": "$f(x + h) = 2h^2 + 4hx + 2x^2 + 1$"
+      },
+      {
+       "id": "W50.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "2h^2 + 4hx",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$2h^2 + 4hx$",
+       "work": "$f(x+h) - f(x) = 2h^2 + 4hx$"
+      },
+      {
+       "id": "W50.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2h + 4x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$2h + 4x$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 2h + 4x$"
+      },
+      {
+       "id": "W50.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$4x$",
+       "work": "$f'(x) = 4x$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 4x$"
+    },
+    {
+     "id": "W51",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = -x^2 + 2x$.",
+     "steps": [
+      {
+       "id": "W51.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "-h^2 - 2hx + 2h - x^2 + 2x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$-h^2 - 2hx + 2h - x^2 + 2x$",
+       "work": "$f(x + h) = -h^2 - 2hx + 2h - x^2 + 2x$"
+      },
+      {
+       "id": "W51.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "-h^2 - 2hx + 2h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$-h^2 - 2hx + 2h$",
+       "work": "$f(x+h) - f(x) = -h^2 - 2hx + 2h$"
+      },
+      {
+       "id": "W51.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-h - 2x + 2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$-h - 2x + 2$",
+       "work": "$frac{f(x+h) - f(x)}{h} = -h - 2x + 2$"
+      },
+      {
+       "id": "W51.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "2 - 2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$2 - 2x$",
+       "work": "$f'(x) = 2 - 2x$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 2 - 2x$"
+    },
+    {
+     "id": "W52",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 3x + 1$.",
+     "steps": [
+      {
+       "id": "W52.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "3h + 3x + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$3h + 3x + 1$",
+       "work": "$f(x + h) = 3h + 3x + 1$"
+      },
+      {
+       "id": "W52.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "3h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$3h$",
+       "work": "$f(x+h) - f(x) = 3h$"
+      },
+      {
+       "id": "W52.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$3$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 3$"
+      },
+      {
+       "id": "W52.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$3$",
+       "work": "$f'(x) = 3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 3$"
+    },
+    {
+     "id": "W53",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = x^2$.",
+     "steps": [
+      {
+       "id": "W53.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "h^2 + 2hx + x^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$h^2 + 2hx + x^2$",
+       "work": "$f(x + h) = h^2 + 2hx + x^2$"
+      },
+      {
+       "id": "W53.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "h^2 + 2hx",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$h^2 + 2hx$",
+       "work": "$f(x+h) - f(x) = h^2 + 2hx$"
+      },
+      {
+       "id": "W53.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "h + 2x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$h + 2x$",
+       "work": "$frac{f(x+h) - f(x)}{h} = h + 2x$"
+      },
+      {
+       "id": "W53.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$2x$",
+       "work": "$f'(x) = 2x$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 2x$"
+    },
+    {
+     "id": "W54",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 3x^2 - 4x + 1$.",
+     "steps": [
+      {
+       "id": "W54.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "3h^2 + 6hx - 4h + 3x^2 - 4x + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+       "work": "$f(x + h) = 3h^2 + 6hx - 4h + 3x^2 - 4x + 1$"
+      },
+      {
+       "id": "W54.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "3h^2 + 6hx - 4h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$3h^2 + 6hx - 4h$",
+       "work": "$f(x+h) - f(x) = 3h^2 + 6hx - 4h$"
+      },
+      {
+       "id": "W54.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "3h + 6x - 4",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$3h + 6x - 4$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 3h + 6x - 4$"
+      },
+      {
+       "id": "W54.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "6x - 4",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6x - 4$",
+       "work": "$f'(x) = 6x - 4$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 6x - 4$"
+    },
+    {
+     "id": "W55",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = x^2 + 3x - 2$.",
+     "steps": [
+      {
+       "id": "W55.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "h^2 + 2hx + 3h + x^2 + 3x - 2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$h^2 + 2hx + 3h + x^2 + 3x - 2$",
+       "work": "$f(x + h) = h^2 + 2hx + 3h + x^2 + 3x - 2$"
+      },
+      {
+       "id": "W55.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "h^2 + 2hx + 3h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$h^2 + 2hx + 3h$",
+       "work": "$f(x+h) - f(x) = h^2 + 2hx + 3h$"
+      },
+      {
+       "id": "W55.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "h + 2x + 3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$h + 2x + 3$",
+       "work": "$frac{f(x+h) - f(x)}{h} = h + 2x + 3$"
+      },
+      {
+       "id": "W55.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "2x + 3",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$2x + 3$",
+       "work": "$f'(x) = 2x + 3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 2x + 3$"
+    },
+    {
+     "id": "W56",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 4x^2 - 3$.",
+     "steps": [
+      {
+       "id": "W56.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "4h^2 + 8hx + 4x^2 - 3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$4h^2 + 8hx + 4x^2 - 3$",
+       "work": "$f(x + h) = 4h^2 + 8hx + 4x^2 - 3$"
+      },
+      {
+       "id": "W56.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "4h^2 + 8hx",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$4h^2 + 8hx$",
+       "work": "$f(x+h) - f(x) = 4h^2 + 8hx$"
+      },
+      {
+       "id": "W56.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "4h + 8x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$4h + 8x$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 4h + 8x$"
+      },
+      {
+       "id": "W56.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "8x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$8x$",
+       "work": "$f'(x) = 8x$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 8x$"
+    },
+    {
+     "id": "W57",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 2x^2 + 1$.",
+     "steps": [
+      {
+       "id": "W57.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "2h^2 + 4hx + 2x^2 + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$2h^2 + 4hx + 2x^2 + 1$",
+       "work": "$f(x + h) = 2h^2 + 4hx + 2x^2 + 1$"
+      },
+      {
+       "id": "W57.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "2h^2 + 4hx",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$2h^2 + 4hx$",
+       "work": "$f(x+h) - f(x) = 2h^2 + 4hx$"
+      },
+      {
+       "id": "W57.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2h + 4x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$2h + 4x$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 2h + 4x$"
+      },
+      {
+       "id": "W57.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$4x$",
+       "work": "$f'(x) = 4x$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 4x$"
+    },
+    {
+     "id": "W58",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = -x^2 + 2x$.",
+     "steps": [
+      {
+       "id": "W58.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "-h^2 - 2hx + 2h - x^2 + 2x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$-h^2 - 2hx + 2h - x^2 + 2x$",
+       "work": "$f(x + h) = -h^2 - 2hx + 2h - x^2 + 2x$"
+      },
+      {
+       "id": "W58.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "-h^2 - 2hx + 2h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$-h^2 - 2hx + 2h$",
+       "work": "$f(x+h) - f(x) = -h^2 - 2hx + 2h$"
+      },
+      {
+       "id": "W58.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-h - 2x + 2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$-h - 2x + 2$",
+       "work": "$frac{f(x+h) - f(x)}{h} = -h - 2x + 2$"
+      },
+      {
+       "id": "W58.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "2 - 2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$2 - 2x$",
+       "work": "$f'(x) = 2 - 2x$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 2 - 2x$"
+    },
+    {
+     "id": "W59",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 3x + 1$.",
+     "steps": [
+      {
+       "id": "W59.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "3h + 3x + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$3h + 3x + 1$",
+       "work": "$f(x + h) = 3h + 3x + 1$"
+      },
+      {
+       "id": "W59.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "3h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$3h$",
+       "work": "$f(x+h) - f(x) = 3h$"
+      },
+      {
+       "id": "W59.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$3$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 3$"
+      },
+      {
+       "id": "W59.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$3$",
+       "work": "$f'(x) = 3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 3$"
+    },
+    {
+     "id": "R60",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = frac{1}{x}$.",
+     "steps": [
+      {
+       "id": "R60.1",
+       "type": "mc",
+       "text": "$frac{1}{x + h} - frac{1}{x}$ over a common denominator is",
+       "options": [
+        "$frac{-1h}{x(x + h)}$",
+        "$frac{1h}{x(x + h)}$",
+        "$frac{-1}{h}$",
+        "$0$"
+       ],
+       "answer": 0,
+       "work": "$f(x+h) - f(x) = frac{-1h}{x(x + h)}$"
+      },
+      {
+       "id": "R60.2",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-1/(x(x + h))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$-frac{1}{x(x + h)}$",
+       "work": "$frac{f(x+h) - f(x)}{h} = frac{-1}{x(x + h)}$"
+      },
+      {
+       "id": "R60.3",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "-1/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-frac{1}{x^2}$",
+       "work": "$f'(x) = -frac{1}{x^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = -frac{1}{x^2}$"
+    },
+    {
+     "id": "R61",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = frac{2}{x}$.",
+     "steps": [
+      {
+       "id": "R61.1",
+       "type": "mc",
+       "text": "$frac{2}{x + h} - frac{2}{x}$ over a common denominator is",
+       "options": [
+        "$frac{-2h}{x(x + h)}$",
+        "$frac{2h}{x(x + h)}$",
+        "$frac{-2}{h}$",
+        "$0$"
+       ],
+       "answer": 0,
+       "work": "$f(x+h) - f(x) = frac{-2h}{x(x + h)}$"
+      },
+      {
+       "id": "R61.2",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-2/(x(x + h))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$-frac{2}{x(x + h)}$",
+       "work": "$frac{f(x+h) - f(x)}{h} = frac{-2}{x(x + h)}$"
+      },
+      {
+       "id": "R61.3",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "-2/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-frac{2}{x^2}$",
+       "work": "$f'(x) = -frac{2}{x^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = -frac{2}{x^2}$"
+    },
+    {
+     "id": "R62",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = frac{3}{x}$.",
+     "steps": [
+      {
+       "id": "R62.1",
+       "type": "mc",
+       "text": "$frac{3}{x + h} - frac{3}{x}$ over a common denominator is",
+       "options": [
+        "$frac{-3h}{x(x + h)}$",
+        "$frac{3h}{x(x + h)}$",
+        "$frac{-3}{h}$",
+        "$0$"
+       ],
+       "answer": 0,
+       "work": "$f(x+h) - f(x) = frac{-3h}{x(x + h)}$"
+      },
+      {
+       "id": "R62.2",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-3/(x(x + h))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$-frac{3}{x(x + h)}$",
+       "work": "$frac{f(x+h) - f(x)}{h} = frac{-3}{x(x + h)}$"
+      },
+      {
+       "id": "R62.3",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "-3/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-frac{3}{x^2}$",
+       "work": "$f'(x) = -frac{3}{x^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = -frac{3}{x^2}$"
+    },
+    {
+     "id": "R63",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = sqrt(x)$.",
+     "steps": [
+      {
+       "id": "R63.1",
+       "type": "mc",
+       "text": "Multiply top and bottom of $frac{sqrt(x+h) - sqrt(x)}{h}$ by the **conjugate** $sqrt(x+h) + sqrt(x)$. The top becomes",
+       "options": [
+        "$h$",
+        "$x + h - x^2$",
+        "$2sqrt(x)$",
+        "$h^2$"
+       ],
+       "answer": 0,
+       "work": "$(sqrt(x+h) - sqrt(x))(sqrt(x+h) + sqrt(x)) = h$"
+      },
+      {
+       "id": "R63.2",
+       "type": "mc",
+       "text": "Cancel the $h$. The quotient is now",
+       "options": [
+        "$frac{1}{sqrt(x+h) + sqrt(x)}$",
+        "$sqrt(x+h) + sqrt(x)$",
+        "$frac{h}{sqrt(x)}$",
+        "$1$"
+       ],
+       "answer": 0,
+       "work": "$frac{1}{sqrt(x+h) + sqrt(x)}$"
+      },
+      {
+       "id": "R63.3",
+       "type": "expr",
+       "text": "Let $h -> 0$ (and remember the 1 in front).",
+       "answer": "1/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$frac{1}{2sqrt(x)}$",
+       "work": "$f'(x) = frac{1}{2sqrt(x)}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{1}{2sqrt(x)}$"
+    },
+    {
+     "id": "R64",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 3sqrt(x)$.",
+     "steps": [
+      {
+       "id": "R64.1",
+       "type": "mc",
+       "text": "Multiply top and bottom of $frac{sqrt(x+h) - sqrt(x)}{h}$ by the **conjugate** $sqrt(x+h) + sqrt(x)$. The top becomes",
+       "options": [
+        "$h$",
+        "$x + h - x^2$",
+        "$2sqrt(x)$",
+        "$h^2$"
+       ],
+       "answer": 0,
+       "work": "$(sqrt(x+h) - sqrt(x))(sqrt(x+h) + sqrt(x)) = h$"
+      },
+      {
+       "id": "R64.2",
+       "type": "mc",
+       "text": "Cancel the $h$. The quotient is now",
+       "options": [
+        "$frac{1}{sqrt(x+h) + sqrt(x)}$",
+        "$sqrt(x+h) + sqrt(x)$",
+        "$frac{h}{sqrt(x)}$",
+        "$1$"
+       ],
+       "answer": 0,
+       "work": "$frac{1}{sqrt(x+h) + sqrt(x)}$"
+      },
+      {
+       "id": "R64.3",
+       "type": "expr",
+       "text": "Let $h -> 0$ (and remember the 3 in front).",
+       "answer": "3/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$frac{3}{2sqrt(x)}$",
+       "work": "$f'(x) = frac{3}{2sqrt(x)}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{3}{2sqrt(x)}$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "dtrace",
+    "title": "A slope at every point",
+    "text": "Every point on $f$ has a slope. Slide along $f(x) = x^3 - 3x$. Each slope you visit drops a dot on the lower graph.",
+    "fn": "x^3-3*x",
+    "window": [
+     -2.2,
+     2.2,
+     -3.2,
+     3.2
+    ],
+    "dwindow": [
+     -4,
+     12
+    ],
+    "dstep": 2,
+    "after": "Those dots are the graph of $f'$. It crosses 0 exactly where $f$ is flat ($x = -1$ and $x = 1$), it is above the axis where $f$ rises, and below where $f$ falls."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "Where the graph of $f$ has a **flat** (horizontal) tangent line, the graph of $f'$…",
+    "options": [
+     "is on the $x$-axis ($f' = 0$)",
+     "has a flat tangent too",
+     "is undefined",
+     "is at its highest point"
+    ],
+    "answer": 0,
+    "hint": "A flat line has slope 0.",
+    "explain": "A horizontal tangent has slope 0, so $f' = 0$ there."
+   },
+   {
+    "id": "L3",
+    "type": "steps",
+    "text": "The same definition works at **every** $x$: $f'(x) = lim[h->0] frac{f(x+h) - f(x)}{h}$. Find $f'(x)$ for $f(x) = x^2 - x$.",
+    "steps": [
+     {
+      "id": "L3.1",
+      "type": "expr",
+      "text": "Replace $x$ with $x + h$ and multiply out.",
+      "answer": "x^2 + 2xh + h^2 - x - h",
+      "vars": [
+       "x",
+       "h"
+      ],
+      "label": "$f(x + h)$ =",
+      "show": "$x^2 + 2xh + h^2 - x - h$",
+      "hint": "$(x + h)^2 - (x + h)$, and $(x + h)^2 = x^2 + 2xh + h^2$.",
+      "work": "$f(x + h) = x^2 + 2xh + h^2 - x - h$"
+     },
+     {
+      "id": "L3.2",
+      "type": "expr",
+      "text": "Subtract $f(x) = x^2 - x$.",
+      "answer": "2xh + h^2 - h",
+      "vars": [
+       "x",
+       "h"
+      ],
+      "label": "$f(x+h) - f(x)$ =",
+      "show": "$2xh + h^2 - h$",
+      "hint": "The $x^2$ and the $-x$ cancel.",
+      "work": "$f(x+h) - f(x) = 2xh + h^2 - h$"
+     },
+     {
+      "id": "L3.3",
+      "type": "expr",
+      "text": "Divide by $h$, then let $h -> 0$.",
+      "answer": "2x - 1",
+      "vars": [
+       "x"
+      ],
+      "label": "$f'(x)$ =",
+      "show": "$2x - 1$",
+      "hint": "Dividing by $h$ gives $2x + h - 1$.",
+      "work": "$f'(x) = 2x - 1$"
+     }
+    ]
+   },
+   {
+    "id": "L4",
+    "type": "pick",
+    "text": "People write the derivative of $y = f(x)$ many ways. Select **all** that mean the derivative.",
+    "options": [
+     "$f'(x)$",
+     "$y'$",
+     "$frac{dy}{dx}$",
+     "$frac{d}{dx} f(x)$",
+     "$frac{dx}{dy}$",
+     "$f(x)^2$"
+    ],
+    "answers": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "hint": "Four of them are standard names for the derivative.",
+    "explain": "$f'(x)$, $y'$, $frac{dy}{dx}$ and $frac{d}{dx} f(x)$ all mean the same thing."
+   },
+   {
+    "id": "L5",
+    "type": "match",
+    "text": "Take the derivative of the derivative to get the **second derivative**. If $s(t)$ is position, match each one.",
+    "pairs": [
+     [
+      "$s(t)$",
+      "position"
+     ],
+     [
+      "$s'(t)$",
+      "velocity"
+     ],
+     [
+      "$s''(t)$",
+      "acceleration"
+     ],
+     [
+      "$s'''(t)$",
+      "jerk"
+     ]
+    ],
+    "hint": "Velocity is how fast position changes; acceleration is how fast velocity changes.",
+    "explain": "Each derivative tells how fast the one before it is changing."
+   }
+  ]
+ }
+}

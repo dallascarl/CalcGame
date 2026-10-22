@@ -1,0 +1,3268 @@
+{
+ "id": "review2",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Chapter Review: Derivatives",
+ "subtitle": "Mixed practice from every stop, and a practice test.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "tool": {
+   "title": "Which rule?",
+   "mode": "pool",
+   "setSize": 12,
+   "questions": [
+    {
+     "id": "W1",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $(x^2 + 1)(3x - 5)$?",
+     "options": [
+      "Product rule",
+      "Quotient rule",
+      "Logarithmic differentiation",
+      "Implicit differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Product rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W2",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $frac{sin(x)}{x^2 + 1}$?",
+     "options": [
+      "Quotient rule",
+      "Implicit differentiation",
+      "Power rule (term by term)",
+      "Chain rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Quotient rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W3",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $(3x^2 + 1)^10$?",
+     "options": [
+      "Chain rule",
+      "Implicit differentiation",
+      "Product rule",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W4",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^x$?",
+     "options": [
+      "Logarithmic differentiation",
+      "Implicit differentiation",
+      "Chain rule",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Logarithmic differentiation."
+    },
+    {
+     "id": "W5",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^2 + y^2 = 25$?",
+     "options": [
+      "Implicit differentiation",
+      "Quotient rule",
+      "Product rule",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Implicit differentiation."
+    },
+    {
+     "id": "W6",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^3 sin(x)$?",
+     "options": [
+      "Product rule",
+      "Logarithmic differentiation",
+      "Power rule (term by term)",
+      "Quotient rule"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Product rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W7",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $sin(x^2)$?",
+     "options": [
+      "Chain rule",
+      "Power rule (term by term)",
+      "Product rule",
+      "Implicit differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W8",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $frac{e^x}{x}$?",
+     "options": [
+      "Quotient rule",
+      "Implicit differentiation",
+      "Chain rule",
+      "Product rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Quotient rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W9",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^5 - 3x^2 + 7$?",
+     "options": [
+      "Power rule (term by term)",
+      "Implicit differentiation",
+      "Quotient rule",
+      "Logarithmic differentiation"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Power rule (term by term)."
+    },
+    {
+     "id": "W10",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $(sin(x))^x$?",
+     "options": [
+      "Logarithmic differentiation",
+      "Quotient rule",
+      "Product rule",
+      "Implicit differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Logarithmic differentiation."
+    },
+    {
+     "id": "W11",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $xy + y^3 = 4$?",
+     "options": [
+      "Implicit differentiation",
+      "Product rule",
+      "Chain rule",
+      "Quotient rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Implicit differentiation."
+    },
+    {
+     "id": "W12",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $e^(x^2)$?",
+     "options": [
+      "Chain rule",
+      "Logarithmic differentiation",
+      "Product rule",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W13",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x e^x$?",
+     "options": [
+      "Product rule",
+      "Implicit differentiation",
+      "Chain rule",
+      "Logarithmic differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Product rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W14",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $sqrt(1 - x^2)$?",
+     "options": [
+      "Chain rule",
+      "Implicit differentiation",
+      "Power rule (term by term)",
+      "Product rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W15",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $frac{3}{x^4}$?",
+     "options": [
+      "Power rule (term by term)",
+      "Logarithmic differentiation",
+      "Product rule",
+      "Chain rule"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Power rule (term by term)."
+    },
+    {
+     "id": "W16",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $ln(x^2 + 1)$?",
+     "options": [
+      "Chain rule",
+      "Power rule (term by term)",
+      "Quotient rule",
+      "Product rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W17",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^(sin(x))$?",
+     "options": [
+      "Logarithmic differentiation",
+      "Quotient rule",
+      "Product rule",
+      "Implicit differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Logarithmic differentiation."
+    },
+    {
+     "id": "W18",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $frac{x^2}{e^x + 1}$?",
+     "options": [
+      "Quotient rule",
+      "Product rule",
+      "Logarithmic differentiation",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Quotient rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W19",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $sin(y) = x^2$?",
+     "options": [
+      "Implicit differentiation",
+      "Chain rule",
+      "Quotient rule",
+      "Logarithmic differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Implicit differentiation."
+    },
+    {
+     "id": "W20",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $arctan(3x)$?",
+     "options": [
+      "Chain rule",
+      "Quotient rule",
+      "Product rule",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W21",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^2 arctan(x)$?",
+     "options": [
+      "Product rule",
+      "Logarithmic differentiation",
+      "Chain rule",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Product rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W22",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $4x^3 + 2sqrt(x)$?",
+     "options": [
+      "Power rule (term by term)",
+      "Implicit differentiation",
+      "Quotient rule",
+      "Logarithmic differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Power rule (term by term)."
+    },
+    {
+     "id": "W23",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $tan(x)ln(x)$?",
+     "options": [
+      "Product rule",
+      "Chain rule",
+      "Implicit differentiation",
+      "Logarithmic differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Product rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W24",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $frac{ln(x)}{x}$?",
+     "options": [
+      "Quotient rule",
+      "Chain rule",
+      "Logarithmic differentiation",
+      "Power rule (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Quotient rule. (After that, you may need other rules inside it.)"
+    },
+    {
+     "id": "W25",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $(x^2 + 1)^x$?",
+     "options": [
+      "Logarithmic differentiation",
+      "Implicit differentiation",
+      "Quotient rule",
+      "Chain rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Logarithmic differentiation."
+    },
+    {
+     "id": "W26",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $cos(e^x)$?",
+     "options": [
+      "Chain rule",
+      "Power rule (term by term)",
+      "Implicit differentiation",
+      "Logarithmic differentiation"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Chain rule."
+    },
+    {
+     "id": "W27",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $x^3 + y^3 = 3xy$?",
+     "options": [
+      "Implicit differentiation",
+      "Product rule",
+      "Quotient rule",
+      "Chain rule"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which rule?",
+     "explain": "Implicit differentiation."
+    },
+    {
+     "id": "W28",
+     "type": "mc",
+     "text": "What is the **first** tool you need to differentiate $7x - frac{1}{x}$?",
+     "options": [
+      "Power rule (term by term)",
+      "Logarithmic differentiation",
+      "Chain rule",
+      "Product rule"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which rule?",
+     "explain": "Power rule (term by term)."
+    }
+   ]
+  },
+  "exam": {
+   "title": "Practice test",
+   "exam": true,
+   "setSize": 20,
+   "questions": [
+    {
+     "id": "DEFG62",
+     "type": "steps",
+     "text": "Find the tangent line to $f(x) = -2x^2 + 5$ at $x = -1$.",
+     "steps": [
+      {
+       "id": "DEFG62.1",
+       "type": "num",
+       "text": "",
+       "answer": 3,
+       "label": "$f(-1)$ =",
+       "work": "$f(-1) = 3$"
+      },
+      {
+       "id": "DEFG62.2",
+       "type": "expr",
+       "text": "Simplify the difference quotient.",
+       "answer": "-2h + 4",
+       "vars": [
+        "h"
+       ],
+       "label": "$frac{f(-1+h) - f(-1)}{h}$ =",
+       "show": "$-2h + 4$",
+       "work": "$frac{f(-1+h) - f(-1)}{h} = -2h + 4$"
+      },
+      {
+       "id": "DEFG62.3",
+       "type": "num",
+       "text": "",
+       "answer": 4,
+       "label": "$f'(-1)$ =",
+       "work": "$f'(-1) = 4$"
+      },
+      {
+       "id": "DEFG62.4",
+       "type": "expr",
+       "answer": "4(x + 1) + 3",
+       "vars": [
+        "x"
+       ],
+       "label": "$y$ =",
+       "show": "$4(x + 1) + 3$",
+       "work": "$y = 4(x + 1) + 3$"
+      }
+     ],
+     "explain": "$y = 4(x + 1) + 3$",
+     "topic": "Definition"
+    },
+    {
+     "id": "DEFW56",
+     "type": "steps",
+     "text": "Use the definition to find $f'(-2)$ for $f(x) = 4x^2 - 3$.",
+     "steps": [
+      {
+       "id": "DEFW56.1",
+       "type": "expr",
+       "answer": "4h^2 - 16h + 13",
+       "vars": [
+        "h"
+       ],
+       "label": "$f(-2 + h)$ =",
+       "show": "$4h^2 - 16h + 13$",
+       "work": "$f(-2 + h) = 4h^2 - 16h + 13$"
+      },
+      {
+       "id": "DEFW56.2",
+       "type": "expr",
+       "text": "Subtract $f(-2) = 13$.",
+       "answer": "4h^2 - 16h",
+       "vars": [
+        "h"
+       ],
+       "label": "$f(-2+h) - f(-2)$ =",
+       "show": "$4h^2 - 16h$",
+       "work": "$f(-2+h) - f(-2) = 4h^2 - 16h$"
+      },
+      {
+       "id": "DEFW56.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "4h - 16",
+       "vars": [
+        "h"
+       ],
+       "label": "quotient =",
+       "show": "$4h - 16$",
+       "work": "$frac{f(-2+h) - f(-2)}{h} = 4h - 16$"
+      },
+      {
+       "id": "DEFW56.4",
+       "type": "num",
+       "text": "Let $h -> 0$.",
+       "answer": -16,
+       "label": "$f'(-2)$ =",
+       "work": "$f'(-2) = -16$"
+      }
+     ],
+     "explain": "$f'(-2) = -16$.",
+     "topic": "Definition"
+    },
+    {
+     "id": "DEFH37",
+     "type": "num",
+     "text": "The difference quotient for $f$ at $x = 3$ simplifies to $h + 6$. What is $f'(3)$?",
+     "answer": 6,
+     "label": "$f'(3)$ =",
+     "explain": "Let $h -> 0$: $h + 6 -> 6$.",
+     "topic": "Definition"
+    },
+    {
+     "id": "DEFH38",
+     "type": "num",
+     "text": "The difference quotient for $f$ at $x = 3$ simplifies to $4h + 7$. What is $f'(3)$?",
+     "answer": 7,
+     "label": "$f'(3)$ =",
+     "explain": "Let $h -> 0$: $4h + 7 -> 7$.",
+     "topic": "Definition"
+    },
+    {
+     "id": "DEFH33",
+     "type": "num",
+     "text": "The difference quotient for $f$ at $x = 3$ simplifies to $3h + 4$. What is $f'(3)$?",
+     "answer": 4,
+     "label": "$f'(3)$ =",
+     "explain": "Let $h -> 0$: $3h + 4 -> 4$.",
+     "topic": "Definition"
+    },
+    {
+     "id": "DEFR69",
+     "type": "steps",
+     "text": "Use the definition to find $f'(3)$ for $f(x) = frac{4}{x}$.",
+     "steps": [
+      {
+       "id": "DEFR69.1",
+       "type": "expr",
+       "text": "Combine $frac{4}{3 + h} - frac{4}{3}$ over a common denominator, then divide by $h$.",
+       "answer": "-4/(3(3 + h))",
+       "vars": [
+        "h"
+       ],
+       "label": "$frac{f(3+h) - f(3)}{h}$ =",
+       "show": "$-frac{4}{3(3 + h)}$",
+       "work": "$frac{f(3+h) - f(3)}{h} = -frac{4}{3(3 + h)}$"
+      },
+      {
+       "id": "DEFR69.2",
+       "type": "num",
+       "text": "Let $h -> 0$.",
+       "answer": -0.444444,
+       "label": "$f'(3)$ =",
+       "work": "$f'(3) = -4/9$"
+      }
+     ],
+     "explain": "$f'(3) = -frac{4}{9}$",
+     "topic": "Definition"
+    },
+    {
+     "id": "DEFH34",
+     "type": "num",
+     "text": "The difference quotient for $f$ at $x = 3$ simplifies to $-h + 6$. What is $f'(3)$?",
+     "answer": 6,
+     "label": "$f'(3)$ =",
+     "explain": "Let $h -> 0$: $-h + 6 -> 6$.",
+     "topic": "Definition"
+    },
+    {
+     "id": "FUNW56",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 4x^2 - 3$.",
+     "steps": [
+      {
+       "id": "FUNW56.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "4h^2 + 8hx + 4x^2 - 3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$4h^2 + 8hx + 4x^2 - 3$",
+       "work": "$f(x + h) = 4h^2 + 8hx + 4x^2 - 3$"
+      },
+      {
+       "id": "FUNW56.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "4h^2 + 8hx",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$4h^2 + 8hx$",
+       "work": "$f(x+h) - f(x) = 4h^2 + 8hx$"
+      },
+      {
+       "id": "FUNW56.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "4h + 8x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$4h + 8x$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 4h + 8x$"
+      },
+      {
+       "id": "FUNW56.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "8x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$8x$",
+       "work": "$f'(x) = 8x$"
+      }
+     ],
+     "explain": "$f'(x) = 8x$",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "FUNR63",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = sqrt(x)$.",
+     "steps": [
+      {
+       "id": "FUNR63.1",
+       "type": "mc",
+       "text": "Multiply top and bottom of $frac{sqrt(x+h) - sqrt(x)}{h}$ by the **conjugate** $sqrt(x+h) + sqrt(x)$. The top becomes",
+       "options": [
+        "$h$",
+        "$x + h - x^2$",
+        "$2sqrt(x)$",
+        "$h^2$"
+       ],
+       "answer": 0,
+       "work": "$(sqrt(x+h) - sqrt(x))(sqrt(x+h) + sqrt(x)) = h$"
+      },
+      {
+       "id": "FUNR63.2",
+       "type": "mc",
+       "text": "Cancel the $h$. The quotient is now",
+       "options": [
+        "$frac{1}{sqrt(x+h) + sqrt(x)}$",
+        "$sqrt(x+h) + sqrt(x)$",
+        "$frac{h}{sqrt(x)}$",
+        "$1$"
+       ],
+       "answer": 0,
+       "work": "$frac{1}{sqrt(x+h) + sqrt(x)}$"
+      },
+      {
+       "id": "FUNR63.3",
+       "type": "expr",
+       "text": "Let $h -> 0$ (and remember the 1 in front).",
+       "answer": "1/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$frac{1}{2sqrt(x)}$",
+       "work": "$f'(x) = frac{1}{2sqrt(x)}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{1}{2sqrt(x)}$",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "FUNQ28",
+     "type": "expr",
+     "text": "For $f(x) = x^2 + x$, $f(x + h) - f(x) = h^2 + 2hx + h$. Divide by $h$.",
+     "answer": "h + 2x + 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$frac{f(x+h) - f(x)}{h}$ =",
+     "show": "$h + 2x + 1$",
+     "explain": "Divide each term by $h$: $h + 2x + 1$.",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "FUNW57",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 2x^2 + 1$.",
+     "steps": [
+      {
+       "id": "FUNW57.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "2h^2 + 4hx + 2x^2 + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$2h^2 + 4hx + 2x^2 + 1$",
+       "work": "$f(x + h) = 2h^2 + 4hx + 2x^2 + 1$"
+      },
+      {
+       "id": "FUNW57.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "2h^2 + 4hx",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$2h^2 + 4hx$",
+       "work": "$f(x+h) - f(x) = 2h^2 + 4hx$"
+      },
+      {
+       "id": "FUNW57.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2h + 4x",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$2h + 4x$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 2h + 4x$"
+      },
+      {
+       "id": "FUNW57.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$4x$",
+       "work": "$f'(x) = 4x$"
+      }
+     ],
+     "explain": "$f'(x) = 4x$",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "FUNH40",
+     "type": "expr",
+     "text": "The difference quotient simplifies to $3h - 2x + 2$. Let $h -> 0$.",
+     "answer": "2 - 2x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2 - 2x$",
+     "explain": "Every term with an $h$ goes to 0: $2 - 2x$.",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "FUNR61",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = frac{2}{x}$.",
+     "steps": [
+      {
+       "id": "FUNR61.1",
+       "type": "mc",
+       "text": "$frac{2}{x + h} - frac{2}{x}$ over a common denominator is",
+       "options": [
+        "$frac{-2h}{x(x + h)}$",
+        "$frac{2h}{x(x + h)}$",
+        "$frac{-2}{h}$",
+        "$0$"
+       ],
+       "answer": 0,
+       "work": "$f(x+h) - f(x) = frac{-2h}{x(x + h)}$"
+      },
+      {
+       "id": "FUNR61.2",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-2/(x(x + h))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$-frac{2}{x(x + h)}$",
+       "work": "$frac{f(x+h) - f(x)}{h} = frac{-2}{x(x + h)}$"
+      },
+      {
+       "id": "FUNR61.3",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "-2/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-frac{2}{x^2}$",
+       "work": "$f'(x) = -frac{2}{x^2}$"
+      }
+     ],
+     "explain": "$f'(x) = -frac{2}{x^2}$",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "FUNW54",
+     "type": "steps",
+     "text": "Use the definition to find $f'(x)$ for $f(x) = 3x^2 - 4x + 1$.",
+     "steps": [
+      {
+       "id": "FUNW54.1",
+       "type": "expr",
+       "text": "Replace $x$ with $x + h$ and multiply out.",
+       "answer": "3h^2 + 6hx - 4h + 3x^2 - 4x + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+       "work": "$f(x + h) = 3h^2 + 6hx - 4h + 3x^2 - 4x + 1$"
+      },
+      {
+       "id": "FUNW54.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. Everything without an $h$ cancels.",
+       "answer": "3h^2 + 6hx - 4h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x+h) - f(x)$ =",
+       "show": "$3h^2 + 6hx - 4h$",
+       "work": "$f(x+h) - f(x) = 3h^2 + 6hx - 4h$"
+      },
+      {
+       "id": "FUNW54.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "3h + 6x - 4",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x+h) - f(x)}{h}$ =",
+       "show": "$3h + 6x - 4$",
+       "work": "$frac{f(x+h) - f(x)}{h} = 3h + 6x - 4$"
+      },
+      {
+       "id": "FUNW54.4",
+       "type": "expr",
+       "text": "Let $h -> 0$.",
+       "answer": "6x - 4",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6x - 4$",
+       "work": "$f'(x) = 6x - 4$"
+      }
+     ],
+     "explain": "$f'(x) = 6x - 4$",
+     "topic": "Derivative function"
+    },
+    {
+     "id": "RULV59",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{2x + 5}{x^2 + 1}$.",
+     "steps": [
+      {
+       "id": "RULV59.1",
+       "type": "expr",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$2$",
+       "work": "$g' = 2$"
+      },
+      {
+       "id": "RULV59.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$2x$",
+       "work": "$k' = 2x$"
+      },
+      {
+       "id": "RULV59.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x^2 + 1)(2) - (2x + 5)(2x))/(x^2 + 1)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+       "work": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "RULU42",
+     "type": "expr",
+     "text": "$f(x) = frac{x - 2}{x + 3}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x + 3)·($",
+     "post": "$) - (x - 2)(1)] / (x + 3)^2$",
+     "show": "$1$",
+     "explain": "The missing piece is the derivative of the top: $1$.",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "RULY28",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^3 - 2x^2 + 6x + 9$.",
+     "answer": "6x^2 - 4x + 6",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x^2 - 4x + 6$",
+     "explain": "Term by term: $6x^2 - 4x + 6$.",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "RULV58",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x^2 + 1}{x}$.",
+     "steps": [
+      {
+       "id": "RULV58.1",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "RULV58.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "RULV58.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x)(2x) - (x^2 + 1)(1))/(x)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+       "work": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "RULF32",
+     "type": "expr",
+     "text": "$f(x) = (x^2 - 3)(2x + 5)$. Fill in the missing piece of the product rule.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (x^2 - 3)·($",
+     "post": "$) + (2x)(2x + 5)$",
+     "show": "$2$",
+     "explain": "The missing piece is $k' = 2$, the derivative of $2x + 5$.",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "RULW54",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (x - 3)(2x^2 + 1)$.",
+     "steps": [
+      {
+       "id": "RULW54.1",
+       "type": "expr",
+       "text": "$g = x - 3$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "RULW54.2",
+       "type": "expr",
+       "text": "$k = 2x^2 + 1$",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$4x$",
+       "work": "$k' = 4x$"
+      },
+      {
+       "id": "RULW54.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(x - 3)(4x) + (1)(2x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(x - 3)(4x) + (1)(2x^2 + 1)$",
+       "work": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$"
+      }
+     ],
+     "explain": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "RULF36",
+     "type": "expr",
+     "text": "$f(x) = (x^3 + 1)(2x + 3)$. Fill in the missing piece of the product rule.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (x^3 + 1)·($",
+     "post": "$) + (3x^2)(2x + 3)$",
+     "show": "$2$",
+     "explain": "The missing piece is $k' = 2$, the derivative of $2x + 3$.",
+     "topic": "Derivative rules"
+    },
+    {
+     "id": "TRIC36",
+     "type": "mc",
+     "text": "What is $frac{d^101}{dx^101} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "The derivatives repeat every 4. 101 = 100 + 1, so take 1 more step from $sin(x)$.",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "TRIC30",
+     "type": "mc",
+     "text": "What is $frac{d^3}{dx^3} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 3,
+     "fixed": true,
+     "explain": "The derivatives repeat every 4. 3 = 0 + 3, so take 3 more steps from $sin(x)$.",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "TRIF27",
+     "type": "expr",
+     "text": "$f(x) = 4x·sin(x)$. Fill in the missing piece of the product rule.",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = 4x·($",
+     "post": "$) + (4)·sin(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$cos(x)$",
+     "explain": "The derivative of $sin(x)$ is $cos(x)$.",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "TRIQ41",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{sin(x)}{1 + cos(x)}$.",
+     "steps": [
+      {
+       "id": "TRIQ41.1",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$g' = cos(x)$"
+      },
+      {
+       "id": "TRIQ41.2",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "TRIQ41.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((1 + cos(x))(cos(x)) - (sin(x))(-sin(x)))/(1 + cos(x))^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
+       "work": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "TRIF22",
+     "type": "expr",
+     "text": "$f(x) = x^2·sin(x)$. Fill in the missing piece of the product rule.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x^2·(cos(x)) + ($",
+     "post": "$)·sin(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$2x$",
+     "explain": "The derivative of $x^2$ is $2x$.",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "TRIQ40",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x}{cos(x)}$.",
+     "steps": [
+      {
+       "id": "TRIQ40.1",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "TRIQ40.2",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "TRIQ40.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((cos(x))(1) - (x)(-sin(x)))/(cos(x))^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
+       "work": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "TRIW44",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x^2·sin(x)$.",
+     "steps": [
+      {
+       "id": "TRIW44.1",
+       "type": "expr",
+       "text": "$g = x^2$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "TRIW44.2",
+       "type": "expr",
+       "text": "$k = sin(x)$",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$k' = cos(x)$"
+      },
+      {
+       "id": "TRIW44.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x^2(cos(x)) + (2x)sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x^2(cos(x)) + (2x)sin(x)$",
+       "work": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$"
+      }
+     ],
+     "explain": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$",
+     "topic": "Trig derivatives"
+    },
+    {
+     "id": "CHAC82",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cos(x^3)$.",
+     "answer": "-3x^2sin(x^3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$-3x^2sin(x^3)$",
+     "explain": "$-3x^2sin(x^3)$",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "CHAG61",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sin(sqrt(x))$.",
+     "answer": "cos(sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(frac{1}{2sqrt(x)})$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$cos(sqrt(x))$",
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $cos(sqrt(x))$.",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "CHAG59",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = tan(3x)$.",
+     "answer": "sec(3x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(3)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sec(3x)^2$",
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $sec(3x)^2$.",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "CHAW69",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = cos^5(x)$.",
+     "steps": [
+      {
+       "id": "CHAW69.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "inside: $g(x) = cos(x)$"
+      },
+      {
+       "id": "CHAW69.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^5$.",
+       "answer": "5u^4",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$5u^4$",
+       "work": "$h'(u) = 5u^4$"
+      },
+      {
+       "id": "CHAW69.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$g'(x) = -sin(x)$"
+      },
+      {
+       "id": "CHAW69.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(5cos(x)^4)(-sin(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(5cos(x)^4)(-sin(x))$",
+       "work": "$f'(x) = (5cos(x)^4)(-sin(x))$"
+      }
+     ],
+     "explain": "$f'(x) = (5cos(x)^4)(-sin(x))$",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "CHAP42",
+     "type": "expr",
+     "text": "$f(x) = sqrt(x^2 - x + 1)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = x^2 - x + 1$ back in.",
+     "answer": "1/(2sqrt(x^2 - x + 1))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$frac{1}{2sqrt(x^2 - x + 1)}$",
+     "explain": "Replace $u$ with $x^2 - x + 1$ and leave it alone: $frac{1}{2sqrt(x^2 - x + 1)}$.",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "CHAF51",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = (x + sin(x))^3$.",
+     "answer": "cos(x) + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = 3(x + sin(x))^2·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$cos(x) + 1$",
+     "explain": "The missing factor is the derivative of the inside, $x + sin(x)$: that's $cos(x) + 1$.",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "CHAC77",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = tan(3x)$.",
+     "answer": "3sec(3x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$3sec(3x)^2$",
+     "explain": "$3sec(3x)^2$",
+     "topic": "Chain rule"
+    },
+    {
+     "id": "IMPW49",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 - y^2 = 3$ and the slope at $(2, 1)$.",
+     "steps": [
+      {
+       "id": "IMPW49.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x - 2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x - 2yy'$",
+       "work": "left: $2x - 2yy'$"
+      },
+      {
+       "id": "IMPW49.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "x/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{x}{y}$",
+       "work": "$y' = frac{x}{y}$"
+      },
+      {
+       "id": "IMPW49.3",
+       "type": "num",
+       "text": "Slope at $(2, 1)$.",
+       "answer": 2,
+       "label": "slope =",
+       "work": "slope $= 2$"
+      }
+     ],
+     "explain": "$y' = frac{x}{y}$",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "IMPW43",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 + y^2 = 25$ and the slope at $(3, 4)$.",
+     "steps": [
+      {
+       "id": "IMPW43.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x + 2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x + 2yy'$",
+       "work": "left: $2x + 2yy'$"
+      },
+      {
+       "id": "IMPW43.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-x/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{x}{y}$",
+       "work": "$y' = -frac{x}{y}$"
+      },
+      {
+       "id": "IMPW43.3",
+       "type": "num",
+       "text": "Slope at $(3, 4)$.",
+       "answer": -0.75,
+       "label": "slope =",
+       "work": "slope $= -3/4$"
+      }
+     ],
+     "explain": "$y' = -frac{x}{y}$",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "IMPS26",
+     "type": "expr",
+     "text": "Solve for $y'$: $3x^2 + 3y^2y' = 0$",
+     "answer": "-x^2/y^2",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{x^2}{y^2}$",
+     "explain": "$y' = -frac{x^2}{y^2}$",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "IMPW44",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 + y^2 = 13$ and the slope at $(2, 3)$.",
+     "steps": [
+      {
+       "id": "IMPW44.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x + 2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x + 2yy'$",
+       "work": "left: $2x + 2yy'$"
+      },
+      {
+       "id": "IMPW44.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-x/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{x}{y}$",
+       "work": "$y' = -frac{x}{y}$"
+      },
+      {
+       "id": "IMPW44.3",
+       "type": "num",
+       "text": "Slope at $(2, 3)$.",
+       "answer": -0.666667,
+       "label": "slope =",
+       "work": "slope $= -2/3$"
+      }
+     ],
+     "explain": "$y' = -frac{x}{y}$",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "IMPV37",
+     "type": "num",
+     "text": "$y' = -frac{y}{x}$. Find the slope at the point $(2, 3)$.",
+     "answer": -1.5,
+     "label": "slope =",
+     "explain": "Plug in $x = 2$ and $y = 3$: $-3/2$.",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "IMPV35",
+     "type": "num",
+     "text": "$y' = -frac{x}{y}$. Find the slope at the point $(3, 4)$.",
+     "answer": -0.75,
+     "label": "slope =",
+     "explain": "Plug in $x = 3$ and $y = 4$: $-3/4$.",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "IMPS30",
+     "type": "expr",
+     "text": "Solve for $y'$: $2x - 2yy' = 0$",
+     "answer": "x/y",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x}{y}$",
+     "explain": "$y' = frac{x}{y}$",
+     "topic": "Implicit differentiation"
+    },
+    {
+     "id": "EXPF32",
+     "type": "expr",
+     "text": "$f(x) = e^(tan(x))$. Finish the derivative.",
+     "answer": "sec(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "e^(",
+      "ln(",
+      "sin(",
+      "cos(",
+      "sqrt(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = e^(tan(x))·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$sec(x)^2$",
+     "explain": "Multiply by the derivative of the exponent: $sec(x)^2$.",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "EXPP36",
+     "type": "expr",
+     "text": "Use the product rule on $f(x) = e^xcos(x)$. Fill in the missing piece.",
+     "answer": "e^x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "e^(",
+      "ln(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x) = e^x(-sin(x)) + ($",
+     "post": "$)cos(x)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$e^x$",
+     "explain": "The missing piece is $e^x$.",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "EXPC50",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = e^(x^2 + 1)$.",
+     "answer": "2xe^(x^2 + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "e^(",
+      "ln(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.1,
+       0.9
+      ]
+     },
+     "show": "$2xe^(x^2 + 1)$",
+     "explain": "$2xe^(x^2 + 1)$",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "EXPQ45",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{3^x}{3^x + 1}$.",
+     "steps": [
+      {
+       "id": "EXPQ45.1",
+       "type": "expr",
+       "answer": "3^xln(3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3^xln(3)$",
+       "work": "$g' = 3^xln(3)$"
+      },
+      {
+       "id": "EXPQ45.2",
+       "type": "expr",
+       "answer": "3^xln(3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3^xln(3)$",
+       "work": "$k' = 3^xln(3)$"
+      },
+      {
+       "id": "EXPQ45.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((3^x + 1)(3^xln(3)) - (3^x)(3^xln(3)))/(3^x + 1)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
+       "work": "$f'(x) = frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "EXPT56",
+     "type": "steps",
+     "text": "Find the tangent line to $y = xe^x$ at $x = 0$.",
+     "steps": [
+      {
+       "id": "EXPT56.1",
+       "type": "num",
+       "text": "",
+       "answer": 0,
+       "label": "$f(0)$ =",
+       "work": "$f(0) = 0$"
+      },
+      {
+       "id": "EXPT56.2",
+       "type": "num",
+       "text": "",
+       "answer": 1,
+       "label": "$f'(0)$ =",
+       "work": "$f'(0) = 1$"
+      },
+      {
+       "id": "EXPT56.3",
+       "type": "expr",
+       "text": "$y = f'(a)(x - a) + f(a)$",
+       "answer": "x + 0",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$y$ =",
+       "show": "$x + 0$",
+       "work": "$y = x + 0$"
+      }
+     ],
+     "explain": "$y = x + 0$",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "EXPQ44",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{e^x}{x}$.",
+     "steps": [
+      {
+       "id": "EXPQ44.1",
+       "type": "expr",
+       "answer": "e^x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$e^x$",
+       "work": "$g' = e^x$"
+      },
+      {
+       "id": "EXPQ44.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "EXPQ44.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((x)(e^x) - (e^x)(1))/(x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "e^(",
+        "ln(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{(x)(e^x) - (e^x)(1)}{(x)^2}$",
+       "work": "$f'(x) = frac{(x)(e^x) - (e^x)(1)}{(x)^2}$"
+      }
+     ],
+     "explain": "$f'(x) = frac{(x)(e^x) - (e^x)(1)}{(x)^2}$",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "EXPF27",
+     "type": "expr",
+     "text": "$f(x) = e^(x^3 - x)$. Finish the derivative.",
+     "answer": "3x^2 - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "e^(",
+      "ln(",
+      "sin(",
+      "cos(",
+      "sqrt(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = e^(x^3 - x)·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3x^2 - 1$",
+     "explain": "Multiply by the derivative of the exponent: $3x^2 - 1$.",
+     "topic": "Exponentials"
+    },
+    {
+     "id": "LOGF24",
+     "type": "expr",
+     "text": "$f(x) = ln(x^3 + 2x + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "3x^2 + 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x^3 + 2x + 1)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3x^2 + 2$",
+     "explain": "The derivative of the inside: $3x^2 + 2$.",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGC52",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^2ln(x)$.",
+     "answer": "2xln(x) + x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.6
+      ]
+     },
+     "show": "$2xln(x) + x$",
+     "explain": "$2xln(x) + x$",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGI37",
+     "type": "num",
+     "text": "$f(x) = x + ln(x)$. Find $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
+     "answer": 1,
+     "label": "$f^(-1)(1)$ =",
+     "explain": "$f(1) = 1$, so $f^(-1)(1) = 1$.",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGF27",
+     "type": "expr",
+     "text": "$f(x) = ln(x^4 - x)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "4x^3 - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x^4 - x)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$4x^3 - 1$",
+     "explain": "The derivative of the inside: $4x^3 - 1$.",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGF29",
+     "type": "expr",
+     "text": "$f(x) = ln(x + sqrt(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "1 + 1/(2sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x + sqrt(x))$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$1 + 1/(2sqrt(x))$",
+     "explain": "The derivative of the inside: $1 + 1/(2sqrt(x))$.",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGI36",
+     "type": "num",
+     "text": "$f(x) = x^3 + 2x - 1$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$.",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGF22",
+     "type": "expr",
+     "text": "$f(x) = ln(sin(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (sin(x))$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$cos(x)$",
+     "explain": "The derivative of the inside: $cos(x)$.",
+     "topic": "Logs and inverses"
+    },
+    {
+     "id": "LOGC38",
+     "type": "expr",
+     "text": "$y = (sin(x))^x$ and $frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$. Multiply by $y$.",
+     "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.4
+      ]
+     },
+     "show": "$(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+     "explain": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "LOGW42",
+     "type": "steps",
+     "text": "Use logarithmic differentiation on $y = x^(sqrt(x))$.",
+     "steps": [
+      {
+       "id": "LOGW42.1",
+       "type": "expr",
+       "text": "Take $ln$ of both sides.",
+       "answer": "sqrt(x)ln(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$ln(y)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.4
+        ]
+       },
+       "show": "$sqrt(x)ln(x)$",
+       "work": "$ln(y) = sqrt(x)ln(x)$"
+      },
+      {
+       "id": "LOGW42.2",
+       "type": "expr",
+       "text": "Differentiate the right side.",
+       "answer": "ln(x)/(2sqrt(x)) + sqrt(x)/x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$frac{y'}{y}$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.4
+        ]
+       },
+       "show": "$ln(x)/(2sqrt(x)) + sqrt(x)/x$",
+       "work": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$"
+      },
+      {
+       "id": "LOGW42.3",
+       "type": "expr",
+       "text": "Multiply by $y$.",
+       "answer": "x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.4
+        ]
+       },
+       "show": "$x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
+       "work": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$"
+      }
+     ],
+     "explain": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "LOGB24",
+     "type": "expr",
+     "text": "$ln(y) = xln(sin(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "answer": "ln(sin(x)) + xcos(x)/sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$frac{y'}{y}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.4
+      ]
+     },
+     "show": "$ln(sin(x)) + xcos(x)/sin(x)$",
+     "explain": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "LOGW45",
+     "type": "steps",
+     "text": "Use logarithmic differentiation on $y = (cos(x))^x$.",
+     "steps": [
+      {
+       "id": "LOGW45.1",
+       "type": "expr",
+       "text": "Take $ln$ of both sides.",
+       "answer": "xln(cos(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$ln(y)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$xln(cos(x))$",
+       "work": "$ln(y) = xln(cos(x))$"
+      },
+      {
+       "id": "LOGW45.2",
+       "type": "expr",
+       "text": "Differentiate the right side.",
+       "answer": "ln(cos(x)) - xsin(x)/cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$frac{y'}{y}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$ln(cos(x)) - xsin(x)/cos(x)$",
+       "work": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$"
+      },
+      {
+       "id": "LOGW45.3",
+       "type": "expr",
+       "text": "Multiply by $y$.",
+       "answer": "(cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$(cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
+       "work": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$"
+      }
+     ],
+     "explain": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "LOGW44",
+     "type": "steps",
+     "text": "Use logarithmic differentiation on $y = (sin(x))^x$.",
+     "steps": [
+      {
+       "id": "LOGW44.1",
+       "type": "expr",
+       "text": "Take $ln$ of both sides.",
+       "answer": "xln(sin(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$ln(y)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.4
+        ]
+       },
+       "show": "$xln(sin(x))$",
+       "work": "$ln(y) = xln(sin(x))$"
+      },
+      {
+       "id": "LOGW44.2",
+       "type": "expr",
+       "text": "Differentiate the right side.",
+       "answer": "ln(sin(x)) + xcos(x)/sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$frac{y'}{y}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.4
+        ]
+       },
+       "show": "$ln(sin(x)) + xcos(x)/sin(x)$",
+       "work": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$"
+      },
+      {
+       "id": "LOGW44.3",
+       "type": "expr",
+       "text": "Multiply by $y$.",
+       "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.4
+        ]
+       },
+       "show": "$(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+       "work": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$"
+      }
+     ],
+     "explain": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "LOGB22",
+     "type": "expr",
+     "text": "$ln(y) = sqrt(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "answer": "ln(x)/(2sqrt(x)) + sqrt(x)/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$frac{y'}{y}$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.4
+      ]
+     },
+     "show": "$ln(x)/(2sqrt(x)) + sqrt(x)/x$",
+     "explain": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "LOGW48",
+     "type": "steps",
+     "text": "Use logarithmic differentiation on $y = (ln(x))^x$.",
+     "steps": [
+      {
+       "id": "LOGW48.1",
+       "type": "expr",
+       "text": "Take $ln$ of both sides.",
+       "answer": "xln(ln(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$ln(y)$ =",
+       "ranges": {
+        "x": [
+         1.3,
+         2.8
+        ]
+       },
+       "show": "$xln(ln(x))$",
+       "work": "$ln(y) = xln(ln(x))$"
+      },
+      {
+       "id": "LOGW48.2",
+       "type": "expr",
+       "text": "Differentiate the right side.",
+       "answer": "ln(ln(x)) + 1/ln(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$frac{y'}{y}$ =",
+       "ranges": {
+        "x": [
+         1.3,
+         2.8
+        ]
+       },
+       "show": "$ln(ln(x)) + 1/ln(x)$",
+       "work": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$"
+      },
+      {
+       "id": "LOGW48.3",
+       "type": "expr",
+       "text": "Multiply by $y$.",
+       "answer": "(ln(x))^x(ln(ln(x)) + 1/ln(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos(",
+        "sqrt("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         1.3,
+         2.8
+        ]
+       },
+       "show": "$(ln(x))^x(ln(ln(x)) + 1/ln(x))$",
+       "work": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$"
+      }
+     ],
+     "explain": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$",
+     "topic": "Log. differentiation"
+    },
+    {
+     "id": "INVW32",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(e^x)$.",
+     "steps": [
+      {
+       "id": "INVW32.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + e^(2x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + e^(2x)}$",
+       "work": "outside: $frac{1}{1 + e^(2x)}$"
+      },
+      {
+       "id": "INVW32.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "e^x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$e^x$",
+       "work": "inside: $e^x$"
+      },
+      {
+       "id": "INVW32.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(e^x)(1/(1 + e^(2x)))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(e^x)(1/(1 + e^(2x)))$",
+       "work": "$f'(x) = (e^x)(1/(1 + e^(2x)))$"
+      }
+     ],
+     "explain": "$f'(x) = (e^x)(1/(1 + e^(2x)))$",
+     "topic": "Inverse trig"
+    },
+    {
+     "id": "INVW36",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(x^3)$.",
+     "steps": [
+      {
+       "id": "INVW36.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + x^6)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + x^6}$",
+       "work": "outside: $frac{1}{1 + x^6}$"
+      },
+      {
+       "id": "INVW36.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3x^2$",
+       "work": "inside: $3x^2$"
+      },
+      {
+       "id": "INVW36.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "(3x^2)(1/(1 + x^6))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$(3x^2)(1/(1 + x^6))$",
+       "work": "$f'(x) = (3x^2)(1/(1 + x^6))$"
+      }
+     ],
+     "explain": "$f'(x) = (3x^2)(1/(1 + x^6))$",
+     "topic": "Inverse trig"
+    },
+    {
+     "id": "INVS57",
+     "type": "num",
+     "text": "Find the slope of $y = arcsin(x)$ at $x = 0.5$. (A decimal is fine.)",
+     "answer": 1.154701,
+     "label": "slope =",
+     "tol": 0.002,
+     "explain": "The slope is $1.154701$.",
+     "topic": "Inverse trig"
+    },
+    {
+     "id": "INVC41",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = e^xarctan(x)$.",
+     "answer": "e^xarctan(x) + e^x/(1 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$e^xarctan(x) + e^x/(1 + x^2)$",
+     "explain": "$e^xarctan(x) + e^x/(1 + x^2)$",
+     "topic": "Inverse trig"
+    },
+    {
+     "id": "INVW35",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arccos(3x)$.",
+     "steps": [
+      {
+       "id": "INVW35.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "-1/sqrt(1 - 9x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$-frac{1}{sqrt(1 - 9x^2)}$",
+       "work": "outside: $-frac{1}{sqrt(1 - 9x^2)}$"
+      },
+      {
+       "id": "INVW35.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3$",
+       "work": "inside: $3$"
+      },
+      {
+       "id": "INVW35.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "3(-1/sqrt(1 - 9x^2))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3(-1/sqrt(1 - 9x^2))$",
+       "work": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$"
+      }
+     ],
+     "explain": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$",
+     "topic": "Inverse trig"
+    },
+    {
+     "id": "INVW30",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = arctan(3x)$.",
+     "steps": [
+      {
+       "id": "INVW30.1",
+       "type": "expr",
+       "text": "Derivative of the outside, with the inside left alone.",
+       "answer": "1/(1 + 9x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "outside part =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$frac{1}{1 + 9x^2}$",
+       "work": "outside: $frac{1}{1 + 9x^2}$"
+      },
+      {
+       "id": "INVW30.2",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3$",
+       "work": "inside: $3$"
+      },
+      {
+       "id": "INVW30.3",
+       "type": "expr",
+       "text": "Multiply.",
+       "answer": "3(1/(1 + 9x^2))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "arcsin(",
+        "arctan(",
+        "arccos(",
+        "e^("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.05,
+         0.45
+        ]
+       },
+       "show": "$3(1/(1 + 9x^2))$",
+       "work": "$f'(x) = 3(1/(1 + 9x^2))$"
+      }
+     ],
+     "explain": "$f'(x) = 3(1/(1 + 9x^2))$",
+     "topic": "Inverse trig"
+    },
+    {
+     "id": "INVF22",
+     "type": "expr",
+     "text": "$f(x) = arctan(sqrt(x))$. Fill in the derivative of the inside.",
+     "answer": "1/(2sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "arcsin(",
+      "arctan(",
+      "arccos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + (sqrt(x))^2)$",
+     "ranges": {
+      "x": [
+       0.05,
+       0.45
+      ]
+     },
+     "show": "$frac{1}{2sqrt(x)}$",
+     "explain": "The inside is $sqrt(x)$, and its derivative is $frac{1}{2sqrt(x)}$.",
+     "topic": "Inverse trig"
+    }
+   ]
+  }
+ }
+}

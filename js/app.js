@@ -5,6 +5,8 @@
 const RULES={streak:5,setSize:8,masterAt:2,dailyPlays:5,misses:3,pairPts:10,clearPts:50,walkSpeed:55,
   /* passing a drill (what clears a stop): passRun right in a row, or a finished set at passPct or better */
   passRun:3,passPct:0.8,
+  /* questions in a set drawn from a big pool ("mode": "pool"); a drill can set its own "setSize" */
+  poolSet:12,
   /* drill mastery (the star): masterPct or better on the last masterWin answers in that drill */
   masterWin:10,masterPct:0.8};
 
@@ -14,10 +16,16 @@ const app=$('#app');
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const neg=s=>String(s).replace(/-/g,'−');
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+/* an exponent in ( ) that holds more ( ): e^(sin(x)) or (x+1)^(sqrt(x)). t starts just after the "^(". */
+function supBal(t){
+  let d=1,j=0; for(;j<t.length;j++){if(t[j]==='(')d++;else if(t[j]===')'){d--;if(!d)break;}}
+  return j<t.length?'<sup>'+t.slice(0,j).replace(/\^\(([^()]*)\)/g,'<sup>$1</sup>').replace(/\^([+-]?[A-Za-z0-9.]+)/g,'<sup>$1</sup>')+'</sup>'+t.slice(j+1):'^('+t;
+}
 function mpart(t){
   return esc(t).replace(/-&gt;/g,'→').replace(/&lt;=/g,'≤').replace(/&gt;=/g,'≥').replace(/!=/g,'≠')
     .replace(/\^([+-])(?![A-Za-z0-9.])/g,(_,c)=>'<sup>'+(c==='-'?'−':'+')+'</sup>')
-    .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a:b)+'</sup>')
+    .replace(/\^\((?=[^)]*\()/g,'\u0004').split('\u0004').reduce((acc,t,k)=>k?acc+supBal(t):t,'')
+    .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a.replace(/\^([+-]?[A-Za-z0-9.]+)/g,'<sup>$1</sup>'):b)+'</sup>')
     .replace(/_\(([^)]*)\)|_([A-Za-z0-9]+)/g,(_,a,b)=>'<sub>'+(a!=null?a:b)+'</sub>')
     .replace(/-/g,'−').replace(/(?<![A-Za-z])pi(?![A-Za-z])/g,'π').replace(/\binfty\b/g,'∞').replace(/(?<![A-Za-z])sqrt(?![A-Za-z])/g,'√')
     .replace(/[A-Za-z]+/g,w=>w.length===1?'<i>'+w+'</i>':w);
@@ -37,7 +45,8 @@ function fmt(s){
 /* ---------- expression parser (no eval) ---------- */
 const DEG=Math.PI/180;
 const FN={sin:Math.sin,cos:Math.cos,tan:Math.tan,sqrt:Math.sqrt,abs:Math.abs,exp:Math.exp,ln:Math.log,cbrt:Math.cbrt,
-  sind:x=>Math.sin(x*DEG),cosd:x=>Math.cos(x*DEG),tand:x=>Math.tan(x*DEG),arctan:Math.atan,arcsin:Math.asin};
+  sind:x=>Math.sin(x*DEG),cosd:x=>Math.cos(x*DEG),tand:x=>Math.tan(x*DEG),arctan:Math.atan,arcsin:Math.asin,arccos:Math.acos,
+  sec:x=>1/Math.cos(x),csc:x=>1/Math.sin(x),cot:x=>1/Math.tan(x),sinh:Math.sinh,cosh:Math.cosh,tanh:Math.tanh};
 /* a^b, with real roots of negative numbers when b = p/q and q is odd (so x^(3/5) works for x < 0) */
 function rpow(a,b){
   if(a>=0||Number.isInteger(b))return Math.pow(a,b);
@@ -280,7 +289,8 @@ function mountItem(it,host,onChange){
   host.innerHTML=h+'<div class="ix"></div>';
   const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
     match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff,
-    tap:mountTap,expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio}[it.type];
+    tap:mountTap,expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio,
+    secant:mountSecant,dtrace:mountDtrace}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -998,7 +1008,10 @@ function home(){
     if(!d||d.error)return h+'<p class="note bad">'+esc(d?d.error:'Deck not loaded')+'</p>';
     const p=ds(d.id),L=lessonsOf(d); let a='';
     const dAct=k=>{const dr=d.drills[k],M=drillMastery(d,k),ps=drillPassed(d,k),run=(p.run||{})[k];
-      const st=M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):run&&!run.over?'In progress · question '+(run.i+1):dr.exam?'Finish it to pass':dr.stages?'3 in a row skips ahead':RULES.passRun+' in a row to pass';
+      const live=run&&run.v===3&&!run.over,qn=dr.questions.length,ss=Math.min(dr.setSize||RULES.poolSet,qn);
+      const st=dr.mode==='all'?(ps?'Done ✓':live?'In progress · '+(run.ids.length-run.i)+' left':'All '+qn+' required')
+        :dr.mode==='pool'?(M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):live?'In progress · '+run.i+' of '+run.ids.length+' done':ss+' at random from '+qn+' · '+Math.round(100*RULES.passPct)+'% to pass')
+        :M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):live?'In progress · question '+(run.i+1):dr.exam?'Finish it to pass':dr.stages?'3 in a row skips ahead':RULES.passRun+' in a row to pass';
       a+=act('drill:'+k,dr.title,st);};
     L.forEach((l,i)=>{const st=lp(d,l.id);
       const pre=(d.lessonOptional?'Optional · ':'')+(L.length>1&&l.title?l.title+' · ':'');
@@ -1116,24 +1129,51 @@ function topicTable(res){
     return '<div class="tp'+(f<0.6?' weak':'')+'"><span>'+esc(k)+'</span><b>'+t.ok+'/'+t.n+'</b><span class="meter"><i style="width:'+(100*f)+'%"></i></span></div>';}).join('')+'</div>'+
     (ks.some(k=>T[k].ok/T[k].n<0.6)?'<p class="tiny">Red topics are the ones to revisit before the test. Go back to that stop on the map and run its drills.</p>':'');
 }
+/* "mode": "pool" draws setSize questions (default RULES.poolSet) from a big pool, spread over the "level" of each
+   question (1 = one small piece, 2 = a few pieces, 3 = a whole problem) and shown in level order, so a set builds up.
+   Questions the student has not seen yet come first. Passing = passPct on a finished set; a miss means a fresh set. */
+function pickPool(D,all,seen){
+  const n=Math.min(D.setSize||RULES.poolSet,all.length),by={};
+  all.forEach(q=>{const l=q.level||1;(by[l]=by[l]||[]).push(q);});
+  const lv=Object.keys(by).map(Number).sort((a,b)=>a-b);
+  /* each level gets its share of the set (largest remainder), at least one when there is room */
+  const quota={};let used=0;
+  const rem=lv.map(l=>{const e=n*by[l].length/all.length;quota[l]=Math.floor(e);used+=quota[l];return {l,f:e-quota[l]};}).sort((a,b)=>b.f-a.f);
+  for(const r of rem){if(used>=n)break;quota[r.l]++;used++;}
+  if(n>=lv.length)lv.forEach(l=>{if(!quota[l]){const big=lv.reduce((a,b)=>quota[b]>quota[a]?b:a);quota[big]--;quota[l]=1;}});
+  const out=[];
+  lv.forEach(l=>{const fresh=shuffle(by[l].filter(q=>!seen.has(q.id))),old=shuffle(by[l].filter(q=>seen.has(q.id)));
+    out.push(...[...fresh,...old].slice(0,quota[l]));});
+  return out;
+}
+const LEVELS=['Warm-up','Build it','Full problem'];
+const levelName=(D,l)=>((D.levels||LEVELS)[(l||1)-1])||('Level '+l);
+const poolNeed=n=>Math.ceil(RULES.passPct*n-1e-9);
 function drill(kind){
   if(!DECK||!DECK.drills||!DECK.drills[kind])return home();
-  const p=ds(DECK.id); p.run=p.run||{}; p.pass=p.pass||{};
+  const p=ds(DECK.id); p.run=p.run||{}; p.pass=p.pass||{}; p.seen=p.seen||{};
   const D=DECK.drills[kind],all=D.questions,exam=!!D.exam,staged=!!(D.stages&&D.stages.length),byId={},rk=kind+(S.preview?'#preview':'');
+  const mode=D.mode==='all'||D.mode==='pool'?D.mode:'set';   /* set = the original rules (3 in a row or 80%) */
   all.forEach(q=>{byId[q.id]=q;});
   const stageIx=q=>staged?Math.max(0,D.stages.findIndex(s=>s.id===q.stage)):0;
+  const seen=new Set(p.seen[kind]||[]);
   let R=p.run[rk];
-  if(!R||R.over||!R.ids.length||!R.ids.every(id=>byId[id])){
-    R=p.run[rk]={ids:(staged?pickStaged(D,all):pickSet(D,all)).map(q=>q.id),i:0,ans:{},score:0,run:0,passed:false,t0:Date.now()};
+  if(!R||R.v!==3||R.over||!R.ids.length||!R.ids.every(id=>byId[id])){
+    const qs=mode==='all'?(D.ordered?[...all]:shuffle([...all])):mode==='pool'?pickPool(D,all,seen):staged?pickStaged(D,all):pickSet(D,all);
+    R=p.run[rk]={v:3,ids:qs.map(q=>q.id),i:0,ok:[],score:0,run:0,passed:false,t0:Date.now(),n:qs.length};
     save();
   }
   const VIEW={}; let at=R.i,justPassed=false;
-  const answered=()=>R.ids.slice(0,R.i).map(id=>({q:byId[id],ok:!!R.ans[id]}));
+  const answered=()=>R.ids.slice(0,R.i).map((id,k)=>({q:byId[id],ok:!!R.ok[k]}));
+  /* in an "all" drill a miss comes back at the end, so count each question once: right on the first try or not */
+  const firstTry=()=>{const f={};answered().forEach(r=>{if(!(r.q.id in f))f[r.q.id]=r.ok;});return f;};
   const finish=()=>{
-    R.over=true; const res=answered(),n=res.length,score=res.filter(r=>r.ok).length;
+    R.over=true; const res=answered(); let n=res.length,score=res.filter(r=>r.ok).length;
+    if(mode==='all'){const f=firstTry();n=Object.keys(f).length;score=Object.values(f).filter(Boolean).length;}
+    const allDone=mode!=='all'||R.ids.slice(R.i).length===0;
     let msg='Preview mode: nothing was recorded.',cleared='',passNow=false;
     if(!S.preview){ rollDay(); const key=DECK.id+':'+kind,before=deckCleared(DECK);
-      passNow=exam||staged||R.passed||(n>0&&score/n>=RULES.passPct-1e-9);
+      passNow=mode==='all'?allDone:mode==='pool'?(n>=R.n&&score>=poolNeed(R.n)):exam||staged||R.passed||(n>0&&score/n>=RULES.passPct-1e-9);
       if(passNow)p.pass[kind]=true;
       p.sets[kind]=(p.sets[kind]||0)+1; ACCT.done('drill',kind,score,n);
       if(!before&&deckCleared(DECK))cleared='<p class="verdict">Stop cleared! A new road is open on the map.</p>';
@@ -1143,15 +1183,30 @@ function drill(kind){
     save();
     const M=drillMastery(DECK,kind),sec=Math.round((Date.now()-R.t0)/1000),pct=n?Math.round(100*score/n):0;
     const miss=res.filter(r=>!r.ok),ps=drillPassed(DECK,kind);
-    const review=exam&&miss.length?'<h3 class="rv-h">Review your misses</h3><ol class="review">'+miss.map(r=>{const a=answerText(r.q);
+    const review=(exam||mode==='pool')&&miss.length?'<h3 class="rv-h">Review your misses</h3><ol class="review">'+miss.map(r=>{const a=answerText(r.q);
       return '<li><p>'+fmt(r.q.text||r.q.title||'')+'</p>'+(a?'<p><strong>Answer:</strong> '+fmt(a)+'</p>':'')+(r.q.explain?'<p class="tiny">'+fmt(r.q.explain)+'</p>':'')+'</li>';}).join('')+'</ol>':'';
-    const passLine=S.preview?'':ps?'<p class="verdict">'+(M.mastered?'Mastered ★':'Passed ✓')+'</p>':'<p class="txt">Not passed yet. Get '+RULES.passRun+' right in a row, or '+Math.round(100*RULES.passPct)+'% on a set.</p>';
+    let passLine;
+    if(S.preview)passLine='';
+    else if(mode==='pool')passLine=passNow?'<p class="verdict">Passed ✓ '+score+' of '+R.n+' is at least '+Math.round(100*RULES.passPct)+'%.</p>'
+      :ps?'<p class="txt">This set: '+pct+'%. You already passed this drill, so this was extra practice.</p>'
+      :'<p class="txt"><strong>Not passed yet.</strong> You need '+poolNeed(R.n)+' of '+R.n+' ('+Math.round(100*RULES.passPct)+'%). A new set pulls different problems from the pool of '+all.length+'.</p>';
+    else if(mode==='all')passLine=allDone?'<p class="verdict">Done ✓ Every question answered.</p>':'<p class="txt">Some questions are still waiting. Open this drill again to finish them.</p>';
+    else passLine=ps?'<p class="verdict">'+(M.mastered?'Mastered ★':'Passed ✓')+'</p>':'<p class="txt">Not passed yet. Get '+RULES.passRun+' right in a row, or '+Math.round(100*RULES.passPct)+'% on a set.</p>';
+    const head=mode==='all'?'<p class="big">'+score+'<small> of '+n+' on the first try</small></p>':'<p class="big">'+score+'<small> of '+n+'</small></p>';
     screen({top:bar(D.title,100),
-      body:'<div class="done"><p class="eyebrow">'+(exam?'Practice test complete':'Set complete')+'</p><p class="big">'+score+'<small> of '+n+'</small></p>'+
+      body:'<div class="done"><p class="eyebrow">'+(exam?'Practice test complete':'Set complete')+'</p>'+head+
         (exam?'<p class="txt">'+pct+'% · '+Math.floor(sec/60)+' min '+(sec%60)+' s'+(pct>=90?' · Test ready!':pct>=75?' · Close. Shore up the red topics.':' · Keep practicing the red topics.')+'</p>':'')+
         passLine+cleared+topicTable(res)+'<p class="txt">'+msg+'</p>'+
-        '<p class="tiny">Mastery: '+M.ok+' of the last '+M.n+' right (★ at '+Math.ceil(RULES.masterPct*M.w-1e-9)+' of '+M.w+')</p><span class="meter"><i style="width:'+(M.w?100*Math.min(1,M.ok/Math.ceil(RULES.masterPct*M.w-1e-9)):0)+'%"></i></span>'+review+'</div>',
-      foot:'<button class="btn ghost" data-go="home">Map</button>'+(S.plays>0?'<button class="btn" data-go="game">Play Match Board</button>':'<button class="btn" data-go="drill:'+kind+'">Another set</button>')});
+        (mode==='all'?'':'<p class="tiny">Mastery: '+M.ok+' of the last '+M.n+' right (★ at '+Math.ceil(RULES.masterPct*M.w-1e-9)+' of '+M.w+')</p><span class="meter"><i style="width:'+(M.w?100*Math.min(1,M.ok/Math.ceil(RULES.masterPct*M.w-1e-9)):0)+'%"></i></span>')+review+'</div>',
+      foot:'<button class="btn ghost" data-go="home">Map</button>'+(S.plays>0&&(passNow||mode!=='pool')?'<button class="btn" data-go="game">Play Match Board</button>':'<button class="btn" data-go="drill:'+kind+'">'+(mode==='pool'?'New set':'Another set')+'</button>')});
+  };
+  /* the line above each question: which part of the set this is, and (pool) how the set is going */
+  const status=q=>{
+    if(mode==='pool'){const res=answered(),ok=res.filter(r=>r.ok).length,bad=res.length-ok,need=poolNeed(R.n),room=R.n-need;
+      return '<div class="pstat"><span class="lvl l'+(q.level||1)+'">'+esc(levelName(D,q.level))+'</span><span>Pass: '+need+' of '+R.n+'</span><span class="ok">✓ '+ok+'</span><span class="no">✗ '+bad+'</span></div>'+
+        (bad>room?'<p class="note small">This set can’t reach '+Math.round(100*RULES.passPct)+'% now. Finish it for practice, or <button class="link" id="fresh">start a fresh set</button>.</p>':'');}
+    if(mode==='all'){const left=R.ids.length-R.i;return '<div class="pstat"><span>Every question is required</span><span>'+left+' left</span></div>';}
+    return '';
   };
   const show=()=>{
     if(at>=R.ids.length)return finish();
@@ -1160,31 +1215,38 @@ function drill(kind){
     const st=staged?D.stages[stageIx(q)]:null,canSkip=live&&R.ids.slice(R.i+1).some(id=>stageIx(byId[id])===stageIx(q));
     const [pv,nx]=arrows(at===0||exam,live&&!canSkip,live?'Skip this question for now':'Next');
     screen({top:bar(D.title.replace(/ drill$/,'')+' · '+(at+1)+' of '+R.ids.length,100*at/R.ids.length,calcBtn()+pips()),
-      body:(st?'<p class="eyebrow">Part '+(stageIx(q)+1)+' of '+D.stages.length+': '+esc(st.title)+'</p>':'')+(exam&&q.topic?'<p class="eyebrow">'+esc(q.topic)+'</p>':'')+'<div class="slot"></div>',
+      body:(st?'<p class="eyebrow">Part '+(stageIx(q)+1)+' of '+D.stages.length+': '+esc(st.title)+'</p>':'')+(exam&&q.topic?'<p class="eyebrow">'+esc(q.topic)+'</p>':'')+
+        (live?status(q):'')+'<div class="slot"></div>',
       foot:pv+'<button class="btn" id="go" disabled>'+(exam?'Submit':'Check')+'</button>'+nx});
+    if($('#fresh'))$('#fresh').onclick=()=>{R.over=true;save();drill(kind);};
     const slot=$('.slot'),goB=$('#go');
-    let v=VIEW[q.id];
+    let v=VIEW[at];
     if(v){slot.append(v.art,v.fb);itemKeys=v.keys;SINK=v.sink;stepEnter=v.step;}
     else{
       const art=document.createElement('article'),fb=document.createElement('div');art.className='item';fb.className='fb';fb.hidden=true;slot.append(art,fb);
-      v=VIEW[q.id]={art,fb,C:null,done:!live};
-      v.C=mountItem(q,art,()=>{if(v.C&&!v.done&&at===R.i)$('#go').disabled=!v.C.canGo();});
+      const pos=at; v=VIEW[at]={art,fb,C:null,done:!live};
+      v.C=mountItem(q,art,()=>{if(v.C&&!v.done&&at===R.i&&pos===at){const g=$('#go');g.disabled=!v.C.canGo();
+        /* a multi-step problem grades itself when its last part is done */
+        if(v.C.auto&&v.C.canGo())setTimeout(()=>{if(!v.done&&$('#go')===g)g.click();},250);}});
       v.keys=itemKeys;v.sink=SINK;v.step=stepEnter;
-      if(!live){const ok=!!R.ans[q.id],a=answerText(q);try{v.C.lock(true,ok);}catch(e){}
+      if(!live){const ok=!!R.ok[at],a=answerText(q);try{v.C.lock(true,ok);}catch(e){}
         feedback(fb,ok,(ok?'You got this one right.':'You missed this one.')+(a?'\nAnswer: '+a:'')+(q.explain?'\n'+q.explain:''));}
     }
     if(v.done){goB.textContent=justPassed&&at===R.i-1?'Finish ✓':at===R.ids.length-1?'See results':'Next';goB.disabled=false;}
     else goB.disabled=!v.C.canGo();
     goB.onclick=()=>{
       if(v.done){ if(justPassed&&at===R.i-1)return finish(); at++; return show(); }
-      const ok=v.C.check(); v.done=true; R.ans[q.id]=ok; if(ok)R.score++;
+      const ok=v.C.check(); v.done=true; R.ok[R.i]=ok; if(ok)R.score++;
       R.i++; const note=record(q,ok,kind);
+      if(mode==='pool'){seen.add(q.id);if(seen.size>=all.length)seen.clear();p.seen[kind]=[...seen];}
+      let again='';
+      if(mode==='all'&&!ok){R.ids.push(q.id);again='You will see this one again at the end.';}
       if(R.lastStage!==stageIx(q)){R.lastStage=stageIx(q);R.run=0;}
       R.run=ok?R.run+1:0;
       if(exam){save();at=R.i;return show();}
       v.C.lock(true,ok);
       let pass='';
-      if(R.run>=RULES.passRun){
+      if(mode==='set'&&R.run>=RULES.passRun){
         if(staged){const s=stageIx(q),rest=R.ids.slice(R.i).filter(id=>stageIx(byId[id])===s).length;
           if(rest){R.ids=R.ids.slice(0,R.i).concat(R.ids.slice(R.i).filter(id=>stageIx(byId[id])!==s));
             const nx2=R.ids[R.i]?D.stages[stageIx(byId[R.ids[R.i]])]:null;
@@ -1199,8 +1261,9 @@ function drill(kind){
         kb.onclick=()=>{justPassed=false;at=R.i;show();};v.fb.after(kb);}
       $('#nextb').disabled=false;
       $('.streak').outerHTML=pips();
+      const ps=$('.pstat');if(ps&&mode==='pool'){const t=document.createElement('div');t.innerHTML=status(q);ps.replaceWith(...t.childNodes);if($('#fresh'))$('#fresh').onclick=()=>{R.over=true;save();drill(kind);};}
       const a=ok?'':answerText(q),extra=v.C.summary?v.C.summary():'';
-      feedback(v.fb,ok,(pass?'**'+pass+'**\n':'')+(a?'Answer: '+a+'\n':'')+(extra?extra+'\n':'')+(q.explain||''),note);
+      feedback(v.fb,ok,(pass?'**'+pass+'**\n':'')+(a?'Answer: '+a+'\n':'')+(extra?extra+'\n':'')+(q.explain||''),[note,again].filter(Boolean).join(' '));
     };
     $('#prev').onclick=()=>{if(at>0&&!exam){at--;show();}};
     $('#nextb').onclick=()=>{
@@ -1208,7 +1271,7 @@ function drill(kind){
       /* skip: move this question to the end of its part; it breaks the in-a-row count */
       const s=stageIx(q),ids=R.ids,rest=ids.slice(R.i+1);let end=R.i;
       rest.forEach((id,j)=>{if(stageIx(byId[id])===s)end=R.i+1+j;});
-      if(end===R.i)return; ids.splice(R.i,1);ids.splice(end,0,q.id);R.run=0;delete VIEW[q.id];save();show();
+      if(end===R.i)return; ids.splice(R.i,1);ids.splice(end,0,q.id);R.run=0;delete VIEW[at];save();show();
     };
     enterKey(goB);
   };
@@ -1218,8 +1281,8 @@ function drill(kind){
 /* ---------- answer key (instructor only): every lesson step and drill question with its answer ---------- */
 function keyItem(q,n,stages){
   const kind={info:'info',explore:'explorer',extrema:'walk-through',newton:'Newton explorer',bisect:'bisection game',mvt:'MVT explorer',linear:'linearization explorer',diff:'differentials explorer',
-    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph'}[q.type]||q.type;
-  let h='<div class="ak-q"><div class="ak-h"><b>'+esc(n)+'</b><span>'+esc(q.id||'')+' · '+esc(kind)+(q.stage?' · '+esc(((stages||[]).find(s=>s.id===q.stage)||{title:q.stage}).title):'')+(q.topic?' · '+esc(q.topic):'')+'</span></div>';
+    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph',secant:'secant explorer',dtrace:'derivative tracer'}[q.type]||q.type;
+  let h='<div class="ak-q"><div class="ak-h"><b>'+esc(n)+'</b><span>'+esc(q.id||'')+' · '+esc(kind)+(q.stage?' · '+esc(((stages||[]).find(s=>s.id===q.stage)||{title:q.stage}).title):'')+(q.topic?' · '+esc(q.topic):'')+(q.level?' · level '+q.level:'')+'</span></div>';
   if(q.title)h+='<p><strong>'+fmt(q.title)+'</strong></p>';
   if(q.type==='bank')h+='<p>'+fmt(String(q.text).split('___').map((t,i,a)=>i<a.length-1?t+'【'+q.blanks[i]+'】':t).join(''))+'</p>';
   else if(q.text)h+='<p>'+fmt(q.text)+'</p>';
@@ -1242,8 +1305,8 @@ function key(){
   const L=lessonsOf(DECK),secs=[];
   L.forEach((l,i)=>secs.push({id:'l'+i,name:lname(DECK,i)+(l.title&&L.length>1?': '+l.title:''),note:l.slides.length+' steps',items:l.slides}));
   drillKinds(DECK).forEach(k=>{const D=DECK.drills[k];
-    secs.push({id:'d'+k,name:D.title,stages:D.stages,note:D.questions.length+' questions'+(D.stages?' in '+D.stages.length+' parts ('+D.stages.map(s=>s.title).join(', ')+')':D.exam?', practice test of '+(D.setSize||RULES.setSize):', sets of '+Math.min(D.setSize||RULES.setSize,D.questions.length)),
-      items:D.stages?D.stages.flatMap(s=>D.questions.filter(q=>q.stage===s.id)).concat(D.questions.filter(q=>!D.stages.some(s=>s.id===q.stage))):D.questions});});
+    secs.push({id:'d'+k,name:D.title,stages:D.stages,note:D.questions.length+' questions'+(D.mode==='all'?', all required':D.mode==='pool'?', a pool: sets of '+Math.min(D.setSize||RULES.poolSet,D.questions.length)+' at random, '+Math.round(100*RULES.passPct)+'% to pass':D.stages?' in '+D.stages.length+' parts ('+D.stages.map(s=>s.title).join(', ')+')':D.exam?', practice test of '+(D.setSize||RULES.setSize):', sets of '+Math.min(D.setSize||RULES.setSize,D.questions.length)),
+      items:D.mode==='pool'?[...D.questions].sort((a,b)=>(a.level||1)-(b.level||1)):D.stages?D.stages.flatMap(s=>D.questions.filter(q=>q.stage===s.id)).concat(D.questions.filter(q=>!D.stages.some(s=>s.id===q.stage))):D.questions});});
   screen({wide:true,top:bar('Answer key · '+DECK.title,null),
     body:'<div class="ak"><p class="tiny">Every lesson step and drill question at this stop, with its answer. The ✓ marks the right choice (students see the choices shuffled).</p>'+
       '<nav class="ak-nav">'+secs.map(s=>'<a href="#ak-'+esc(s.id)+'">'+esc(s.name)+'</a>').join('')+'</nav>'+
@@ -1344,7 +1407,7 @@ function validate(D){
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
     const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap'];
-    const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio',...QT]:QT;
+    const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio','secant','dtrace',...QT]:QT;
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').length%2===0)errs.push('unmatched $ in '+k);
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').filter((t,i)=>i%2===0).join('').split('**').length%2===0)errs.push('a ** bold marker is not closed in '+k);
@@ -1357,7 +1420,8 @@ function validate(D){
       else if(g&&gOK[q.graph]){q.answers.forEach(a=>{if(a<g.window[0]||a>g.window[1])errs.push('answer '+a+' is outside the graph window');
         else if(q.root!==false){const v=evalAt(g,a-0.002),w=evalAt(g,a+0.002);if(!(v!=null&&w!=null&&v*w<=0))errs.push('the graph does not cross the x-axis at '+a+' (set "root": false if that is intended)');}});}
     }
-    if(q.type!=='graph'&&q.type!=='explore'&&q.type!=='extrema'&&!q.text&&!q.title)errs.push('has no text');
+    const inPart=/ part \d+ ·$/.test(where);
+    if(q.type!=='graph'&&q.type!=='explore'&&q.type!=='extrema'&&!q.text&&!q.title&&!(inPart&&q.label))errs.push('has no text');
     if(q.type==='graph'){
       if(![ 'value','limit',...EXTASK].includes(q.ask))errs.push('ask must be "value", "limit", "absmax", "absmin", "argmax" or "argmin"');
       else if(EXTASK.includes(q.ask)){
@@ -1531,7 +1595,7 @@ function validate(D){
     }
     const isQ=['graph','mc','tf','bank','multi','match','pick','expr','interval','order','tap'].includes(q.type);
     if(isQ&&inLesson&&!q.hint&&!/ part \d+ ·$/.test(where))warns.push('no hint for a wrong answer');
-    if(isQ&&!inLesson&&!q.explain)warns.push('no explanation');
+    if(isQ&&!inLesson&&!q.explain&&!inPart)warns.push('no explanation');
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));
     if(!errs.length)add('pass',tag+' ('+q.type+')');
   };
@@ -1548,7 +1612,10 @@ function validate(D){
     const dr=D.drills[kind],qs=dr.questions||[],name=dr.title||kind;
     if(!dr.title)add('fail','Drill "'+kind+'" has no title');
     if(!qs.length)add('fail',name+' has no questions');
-    else if(qs.length<RULES.setSize)add('warn',name+' has '+qs.length+' questions, fewer than one set of '+RULES.setSize);
+    else if(dr.mode&&!['all','pool'].includes(dr.mode))add('fail',name+': "mode" must be "all" or "pool"');
+    else if(dr.mode==='pool'&&qs.length<2*(dr.setSize||RULES.poolSet))add('warn',name+' is a pool of only '+qs.length+'; aim for about 60 so a retry gets new problems');
+    else if(!dr.mode&&qs.length<RULES.setSize)add('warn',name+' has '+qs.length+' questions, fewer than one set of '+RULES.setSize);
+    if(dr.mode==='pool')qs.forEach(q=>{if(q.level!=null&&![1,2,3].includes(q.level))add('fail',name+' '+q.id+': "level" must be 1, 2 or 3');});
     qs.forEach(q=>check(q,name,false));
     if(dr.stages){const sid=new Set(dr.stages.map(st=>st.id));
       dr.stages.forEach(st=>{if(!st.id||!st.title)add('fail',name+': each stage needs an id and a title');

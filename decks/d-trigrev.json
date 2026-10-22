@@ -1,0 +1,777 @@
+{
+ "id": "d-trigrev",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Trigonometry Review",
+ "subtitle": "Review: unit circle values and identities.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "V1",
+     "type": "expr",
+     "text": "Find the exact value of $sin(0)$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(0)$ =",
+     "show": "$0$",
+     "level": 1,
+     "explain": "$sin(0) = 0$"
+    },
+    {
+     "id": "V2",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{6})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{6})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 1,
+     "explain": "$sin(frac{pi}{6}) = frac{1}{2}$"
+    },
+    {
+     "id": "V3",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{4})$.",
+     "answer": "sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{4})$ =",
+     "show": "$frac{sqrt(2)}{2}$",
+     "level": 1,
+     "explain": "$sin(frac{pi}{4}) = frac{sqrt(2)}{2}$"
+    },
+    {
+     "id": "V4",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{3})$.",
+     "answer": "sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{3})$ =",
+     "show": "$frac{sqrt(3)}{2}$",
+     "level": 1,
+     "explain": "$sin(frac{pi}{3}) = frac{sqrt(3)}{2}$"
+    },
+    {
+     "id": "V5",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{2})$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{2})$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "$sin(frac{pi}{2}) = 1$"
+    },
+    {
+     "id": "V6",
+     "type": "expr",
+     "text": "Find the exact value of $sin(pi)$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(pi)$ =",
+     "show": "$0$",
+     "level": 1,
+     "explain": "$sin(pi) = 0$"
+    },
+    {
+     "id": "V7",
+     "type": "expr",
+     "text": "Find the exact value of $cos(0)$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(0)$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "$cos(0) = 1$"
+    },
+    {
+     "id": "V8",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{6})$.",
+     "answer": "sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{6})$ =",
+     "show": "$frac{sqrt(3)}{2}$",
+     "level": 1,
+     "explain": "$cos(frac{pi}{6}) = frac{sqrt(3)}{2}$"
+    },
+    {
+     "id": "V9",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{4})$.",
+     "answer": "sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{4})$ =",
+     "show": "$frac{sqrt(2)}{2}$",
+     "level": 1,
+     "explain": "$cos(frac{pi}{4}) = frac{sqrt(2)}{2}$"
+    },
+    {
+     "id": "V10",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{3})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{3})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 1,
+     "explain": "$cos(frac{pi}{3}) = frac{1}{2}$"
+    },
+    {
+     "id": "V11",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{2})$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{2})$ =",
+     "show": "$0$",
+     "level": 1,
+     "explain": "$cos(frac{pi}{2}) = 0$"
+    },
+    {
+     "id": "V12",
+     "type": "expr",
+     "text": "Find the exact value of $cos(pi)$.",
+     "answer": "-1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(pi)$ =",
+     "show": "$-1$",
+     "level": 1,
+     "explain": "$cos(pi) = -1$"
+    },
+    {
+     "id": "V13",
+     "type": "expr",
+     "text": "Find the exact value of $tan(0)$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$tan(0)$ =",
+     "show": "$0$",
+     "level": 1,
+     "explain": "$tan(0) = 0$"
+    },
+    {
+     "id": "V14",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{pi}{4})$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$tan(frac{pi}{4})$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "$tan(frac{pi}{4}) = 1$"
+    },
+    {
+     "id": "V15",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{pi}{3})$.",
+     "answer": "sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$tan(frac{pi}{3})$ =",
+     "show": "$sqrt(3)$",
+     "level": 1,
+     "explain": "$tan(frac{pi}{3}) = sqrt(3)$"
+    },
+    {
+     "id": "V16",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{pi}{6})$.",
+     "answer": "sqrt(3)/3",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$tan(frac{pi}{6})$ =",
+     "show": "$frac{sqrt(3)}{3}$",
+     "level": 1,
+     "explain": "$tan(frac{pi}{6}) = frac{sqrt(3)}{3}$"
+    },
+    {
+     "id": "V17",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{3pi}{2})$.",
+     "answer": "-1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{3pi}{2})$ =",
+     "show": "$-1$",
+     "level": 2,
+     "explain": "$sin(frac{3pi}{2}) = -1$"
+    },
+    {
+     "id": "V18",
+     "type": "expr",
+     "text": "Find the exact value of $cos(2pi)$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(2pi)$ =",
+     "show": "$1$",
+     "level": 2,
+     "explain": "$cos(2pi) = 1$"
+    },
+    {
+     "id": "V19",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{5pi}{6})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{5pi}{6})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 2,
+     "explain": "$sin(frac{5pi}{6}) = frac{1}{2}$"
+    },
+    {
+     "id": "V20",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{2pi}{3})$.",
+     "answer": "-1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{2pi}{3})$ =",
+     "show": "$-frac{1}{2}$",
+     "level": 2,
+     "explain": "$cos(frac{2pi}{3}) = -frac{1}{2}$"
+    },
+    {
+     "id": "V21",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{7pi}{6})$.",
+     "answer": "-1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{7pi}{6})$ =",
+     "show": "$-frac{1}{2}$",
+     "level": 2,
+     "explain": "$sin(frac{7pi}{6}) = -frac{1}{2}$"
+    },
+    {
+     "id": "V22",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{3pi}{4})$.",
+     "answer": "-sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{3pi}{4})$ =",
+     "show": "$-frac{sqrt(2)}{2}$",
+     "level": 2,
+     "explain": "$cos(frac{3pi}{4}) = -frac{sqrt(2)}{2}$"
+    },
+    {
+     "id": "R23",
+     "type": "expr",
+     "text": "Write $30°$ in radians.",
+     "answer": "pi/6",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{pi}{6}$",
+     "level": 1,
+     "explain": "$30° = 30·frac{pi}{180} = frac{pi}{6}$"
+    },
+    {
+     "id": "R24",
+     "type": "expr",
+     "text": "Write $45°$ in radians.",
+     "answer": "pi/4",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{pi}{4}$",
+     "level": 1,
+     "explain": "$45° = 45·frac{pi}{180} = frac{pi}{4}$"
+    },
+    {
+     "id": "R25",
+     "type": "expr",
+     "text": "Write $60°$ in radians.",
+     "answer": "pi/3",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{pi}{3}$",
+     "level": 1,
+     "explain": "$60° = 60·frac{pi}{180} = frac{pi}{3}$"
+    },
+    {
+     "id": "R26",
+     "type": "expr",
+     "text": "Write $90°$ in radians.",
+     "answer": "pi/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{pi}{2}$",
+     "level": 1,
+     "explain": "$90° = 90·frac{pi}{180} = frac{pi}{2}$"
+    },
+    {
+     "id": "R27",
+     "type": "expr",
+     "text": "Write $120°$ in radians.",
+     "answer": "2pi/3",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{2pi}{3}$",
+     "level": 1,
+     "explain": "$120° = 120·frac{pi}{180} = frac{2pi}{3}$"
+    },
+    {
+     "id": "R28",
+     "type": "expr",
+     "text": "Write $135°$ in radians.",
+     "answer": "3pi/4",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{3pi}{4}$",
+     "level": 1,
+     "explain": "$135° = 135·frac{pi}{180} = frac{3pi}{4}$"
+    },
+    {
+     "id": "R29",
+     "type": "expr",
+     "text": "Write $180°$ in radians.",
+     "answer": "pi",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$pi$",
+     "level": 1,
+     "explain": "$180° = 180·frac{pi}{180} = pi$"
+    },
+    {
+     "id": "R30",
+     "type": "expr",
+     "text": "Write $270°$ in radians.",
+     "answer": "3pi/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{3pi}{2}$",
+     "level": 1,
+     "explain": "$270° = 270·frac{pi}{180} = frac{3pi}{2}$"
+    },
+    {
+     "id": "R31",
+     "type": "expr",
+     "text": "Write $360°$ in radians.",
+     "answer": "2pi",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$2pi$",
+     "level": 1,
+     "explain": "$360° = 360·frac{pi}{180} = 2pi$"
+    },
+    {
+     "id": "R32",
+     "type": "expr",
+     "text": "Write $150°$ in radians.",
+     "answer": "5pi/6",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "radians =",
+     "show": "$frac{5pi}{6}$",
+     "level": 1,
+     "explain": "$150° = 150·frac{pi}{180} = frac{5pi}{6}$"
+    },
+    {
+     "id": "I33",
+     "type": "mc",
+     "text": "Which is equal to $sin^2(x) + cos^2(x)$?",
+     "options": [
+      "$1$",
+      "$0$",
+      "$2$",
+      "$tan^2(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin^2(x) + cos^2(x)$ $=$ $1$"
+    },
+    {
+     "id": "I34",
+     "type": "mc",
+     "text": "Which is equal to $tan(x)$?",
+     "options": [
+      "$frac{sin(x)}{cos(x)}$",
+      "$frac{cos(x)}{sin(x)}$",
+      "$sin(x)cos(x)$",
+      "$frac{1}{cos(x)}$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$tan(x)$ $=$ $frac{sin(x)}{cos(x)}$"
+    },
+    {
+     "id": "I35",
+     "type": "mc",
+     "text": "Which is equal to $sec(x)$?",
+     "options": [
+      "$frac{1}{cos(x)}$",
+      "$frac{1}{sin(x)}$",
+      "$frac{sin(x)}{cos(x)}$",
+      "$cos(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sec(x)$ $=$ $frac{1}{cos(x)}$"
+    },
+    {
+     "id": "I36",
+     "type": "mc",
+     "text": "Which is equal to $csc(x)$?",
+     "options": [
+      "$frac{1}{sin(x)}$",
+      "$frac{1}{cos(x)}$",
+      "$frac{cos(x)}{sin(x)}$",
+      "$sin(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$csc(x)$ $=$ $frac{1}{sin(x)}$"
+    },
+    {
+     "id": "I37",
+     "type": "mc",
+     "text": "Which is equal to $cot(x)$?",
+     "options": [
+      "$frac{cos(x)}{sin(x)}$",
+      "$frac{sin(x)}{cos(x)}$",
+      "$frac{1}{cos(x)}$",
+      "$cos(x)sin(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$cot(x)$ $=$ $frac{cos(x)}{sin(x)}$"
+    },
+    {
+     "id": "I38",
+     "type": "mc",
+     "text": "Which is equal to $1 + tan^2(x)$?",
+     "options": [
+      "$sec^2(x)$",
+      "$csc^2(x)$",
+      "$1$",
+      "$cot^2(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$1 + tan^2(x)$ $=$ $sec^2(x)$"
+    },
+    {
+     "id": "I39",
+     "type": "mc",
+     "text": "Which is equal to $sin(2x)$?",
+     "options": [
+      "$2sin(x)cos(x)$",
+      "$2sin(x)$",
+      "$sin^2(x)$",
+      "$sin(x)cos(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin(2x)$ $=$ $2sin(x)cos(x)$"
+    },
+    {
+     "id": "I40",
+     "type": "mc",
+     "text": "Which is equal to $cos^2(x) - sin^2(x)$?",
+     "options": [
+      "$cos(2x)$",
+      "$1$",
+      "$sin(2x)$",
+      "$0$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$cos^2(x) - sin^2(x)$ $=$ $cos(2x)$"
+    },
+    {
+     "id": "I41",
+     "type": "mc",
+     "text": "Which is equal to $sin(-x)$?",
+     "options": [
+      "$-sin(x)$",
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin(-x)$ $=$ $-sin(x)$"
+    },
+    {
+     "id": "I42",
+     "type": "mc",
+     "text": "Which is equal to $cos(-x)$?",
+     "options": [
+      "$cos(x)$",
+      "$-cos(x)$",
+      "$sin(x)$",
+      "$-sin(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$cos(-x)$ $=$ $cos(x)$"
+    },
+    {
+     "id": "S43",
+     "type": "mc",
+     "text": "Solve $sin(t) = frac{1}{2}$ for $0 <= t <= 2pi$.",
+     "options": [
+      "$frac{pi}{6}$ and $frac{5pi}{6}$",
+      "$frac{pi}{3}$ and $frac{2pi}{3}$",
+      "$frac{pi}{6}$ only",
+      "$frac{pi}{6}$ and $frac{7pi}{6}$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "$frac{pi}{6}$ and $frac{5pi}{6}$"
+    },
+    {
+     "id": "S44",
+     "type": "mc",
+     "text": "Solve $cos(t) = frac{1}{2}$ for $0 <= t <= 2pi$.",
+     "options": [
+      "$frac{pi}{3}$ and $frac{5pi}{3}$",
+      "$frac{pi}{6}$ and $frac{11pi}{6}$",
+      "$frac{pi}{3}$ and $frac{2pi}{3}$",
+      "$frac{pi}{3}$ only"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "$frac{pi}{3}$ and $frac{5pi}{3}$"
+    },
+    {
+     "id": "S45",
+     "type": "mc",
+     "text": "Solve $sin(t) = 0$ for $0 <= t <= 2pi$.",
+     "options": [
+      "$0$, $pi$ and $2pi$",
+      "$frac{pi}{2}$ and $frac{3pi}{2}$",
+      "$0$ only",
+      "$pi$ only"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "$0$, $pi$ and $2pi$"
+    },
+    {
+     "id": "S46",
+     "type": "mc",
+     "text": "Solve $cos(t) = 0$ for $0 <= t <= 2pi$.",
+     "options": [
+      "$frac{pi}{2}$ and $frac{3pi}{2}$",
+      "$0$ and $pi$",
+      "$frac{pi}{2}$ only",
+      "$pi$ and $2pi$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "$frac{pi}{2}$ and $frac{3pi}{2}$"
+    },
+    {
+     "id": "S47",
+     "type": "mc",
+     "text": "Solve $tan(t) = 1$ for $0 <= t <= 2pi$.",
+     "options": [
+      "$frac{pi}{4}$ and $frac{5pi}{4}$",
+      "$frac{pi}{4}$ and $frac{3pi}{4}$",
+      "$frac{pi}{4}$ only",
+      "$frac{pi}{2}$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "$frac{pi}{4}$ and $frac{5pi}{4}$"
+    },
+    {
+     "id": "S48",
+     "type": "mc",
+     "text": "Solve $sin(t) = -1$ for $0 <= t <= 2pi$.",
+     "options": [
+      "$frac{3pi}{2}$",
+      "$frac{pi}{2}$",
+      "$pi$",
+      "$0$ and $pi$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "$frac{3pi}{2}$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "On the unit circle, the point at angle $theta$ is $(cos(theta), sin(theta))$. At $theta = frac{pi}{2}$ (straight up), what is $sin(frac{pi}{2})$?",
+    "options": [
+     "1",
+     "0",
+     "−1",
+     "$frac{1}{2}$"
+    ],
+    "answer": 0,
+    "hint": "Straight up is the point $(0, 1)$.",
+    "explain": "$(cos, sin) = (0, 1)$, so $sin(frac{pi}{2}) = 1$."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "The special angles: $sin(frac{pi}{6}) = frac{1}{2}$, $sin(frac{pi}{4}) = frac{sqrt(2)}{2}$, $sin(frac{pi}{3}) = frac{sqrt(3)}{2}$. Cosine runs the same list backwards. What is $cos(frac{pi}{3})$?",
+    "options": [
+     "$frac{1}{2}$",
+     "$frac{sqrt(3)}{2}$",
+     "$frac{sqrt(2)}{2}$",
+     "1"
+    ],
+    "answer": 0,
+    "hint": "$frac{pi}{3}$ is the last in the list, so cosine takes the first value.",
+    "explain": "$cos(frac{pi}{3}) = frac{1}{2}$"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "The most important identity: $sin^2(theta) + cos^2(theta) =$",
+    "options": [
+     "1",
+     "0",
+     "$tan^2(theta)$",
+     "2"
+    ],
+    "answer": 0,
+    "hint": "The point is on a circle of radius 1.",
+    "explain": "Pythagoras on the unit circle."
+   },
+   {
+    "id": "L4",
+    "type": "num",
+    "text": "Radians: $pi$ radians = 180°. How many degrees is $frac{pi}{4}$?",
+    "answer": 45,
+    "label": "degrees =",
+    "hint": "$frac{180}{4}$",
+    "explain": "45°"
+   }
+  ]
+ },
+ "lessonOptional": true
+}

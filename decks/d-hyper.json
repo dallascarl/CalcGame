@@ -1,0 +1,454 @@
+{
+ "id": "d-hyper",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Hyperbolic Trig",
+ "subtitle": "Optional: sinh, cosh and their derivatives.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each function to its derivative.",
+     "pairs": [
+      [
+       "$sinh(x)$",
+       "$cosh(x)$"
+      ],
+      [
+       "$cosh(x)$",
+       "$sinh(x)$"
+      ],
+      [
+       "$tanh(x)$",
+       "$sech^2(x)$"
+      ]
+     ],
+     "explain": "No minus sign on the derivative of cosh."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$frac{d}{dx} cosh(x) = -sinh(x)$",
+     "answer": false,
+     "explain": "Unlike cosine, there is no minus sign: $frac{d}{dx} cosh(x) = sinh(x)$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$sinh(x) =$",
+     "options": [
+      "$frac{e^x - e^(-x)}{2}$",
+      "$frac{e^x + e^(-x)}{2}$",
+      "$e^x - e^(-x)$",
+      "$frac{e^x}{2}$"
+     ],
+     "answer": 0,
+     "explain": "And cosh has the plus sign."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "D1",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sinh(3x)$.",
+     "answer": "3cosh(3x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$3cosh(3x)$",
+     "level": 2,
+     "explain": "$3cosh(3x)$"
+    },
+    {
+     "id": "D2",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cosh(x^2)$.",
+     "answer": "2xsinh(x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2xsinh(x^2)$",
+     "level": 2,
+     "explain": "$2xsinh(x^2)$"
+    },
+    {
+     "id": "D3",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 5sinh(x)$.",
+     "answer": "5cosh(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$5cosh(x)$",
+     "level": 2,
+     "explain": "$5cosh(x)$"
+    },
+    {
+     "id": "D4",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cosh(2x)$.",
+     "answer": "2sinh(2x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2sinh(2x)$",
+     "level": 2,
+     "explain": "$2sinh(2x)$"
+    },
+    {
+     "id": "D5",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = xsinh(x)$.",
+     "answer": "sinh(x) + xcosh(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$sinh(x) + xcosh(x)$",
+     "level": 2,
+     "explain": "$sinh(x) + xcosh(x)$"
+    },
+    {
+     "id": "D6",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sinh(x)cosh(x)$.",
+     "answer": "cosh(x)^2 + sinh(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$cosh(x)^2 + sinh(x)^2$",
+     "level": 2,
+     "explain": "$cosh(x)^2 + sinh(x)^2$"
+    },
+    {
+     "id": "D7",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cosh(x)^2$.",
+     "answer": "2cosh(x)sinh(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2cosh(x)sinh(x)$",
+     "level": 2,
+     "explain": "$2cosh(x)sinh(x)$"
+    },
+    {
+     "id": "D8",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sinh(e^x)$.",
+     "answer": "e^xcosh(e^x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$e^xcosh(e^x)$",
+     "level": 2,
+     "explain": "$e^xcosh(e^x)$"
+    },
+    {
+     "id": "D9",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = tanh(x)$.",
+     "answer": "1/cosh(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{cosh(x)^2}$",
+     "level": 2,
+     "explain": "$frac{1}{cosh(x)^2}$"
+    },
+    {
+     "id": "D10",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(cosh(x))$.",
+     "answer": "sinh(x)/cosh(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{sinh(x)}{cosh(x)}$",
+     "level": 2,
+     "explain": "$frac{sinh(x)}{cosh(x)}$"
+    },
+    {
+     "id": "D11",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sinh(x) + cosh(x)$.",
+     "answer": "cosh(x) + sinh(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$cosh(x) + sinh(x)$",
+     "level": 2,
+     "explain": "$cosh(x) + sinh(x)$"
+    },
+    {
+     "id": "D12",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = e^xcosh(x)$.",
+     "answer": "e^xcosh(x) + e^xsinh(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$e^xcosh(x) + e^xsinh(x)$",
+     "level": 2,
+     "explain": "$e^xcosh(x) + e^xsinh(x)$"
+    },
+    {
+     "id": "D13",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cosh(4x + 1)$.",
+     "answer": "4sinh(4x + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$4sinh(4x + 1)$",
+     "level": 2,
+     "explain": "$4sinh(4x + 1)$"
+    },
+    {
+     "id": "D14",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sinh(sqrt(x))$.",
+     "answer": "cosh(sqrt(x))/(2sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sinh(",
+      "cosh(",
+      "tanh(",
+      "e^(",
+      "ln(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{cosh(sqrt(x))}{2sqrt(x)}$",
+     "level": 2,
+     "explain": "$frac{cosh(sqrt(x))}{2sqrt(x)}$"
+    },
+    {
+     "id": "V15",
+     "type": "num",
+     "text": "Find $sinh(0)$.",
+     "answer": 0,
+     "label": "$sinh(0)$ =",
+     "level": 1,
+     "explain": "Use the definition with $e^x$: $0$."
+    },
+    {
+     "id": "V16",
+     "type": "num",
+     "text": "Find $cosh(0)$.",
+     "answer": 1,
+     "label": "$cosh(0)$ =",
+     "level": 1,
+     "explain": "Use the definition with $e^x$: $1$."
+    },
+    {
+     "id": "V17",
+     "type": "num",
+     "text": "Find $tanh(0)$.",
+     "answer": 0,
+     "label": "$tanh(0)$ =",
+     "level": 1,
+     "explain": "Use the definition with $e^x$: $0$."
+    },
+    {
+     "id": "V18",
+     "type": "num",
+     "text": "Find $cosh(ln(2))$.",
+     "answer": 1.25,
+     "label": "$cosh(ln(2))$ =",
+     "level": 1,
+     "explain": "Use the definition with $e^x$: $5/4$."
+    },
+    {
+     "id": "V19",
+     "type": "num",
+     "text": "Find $sinh(ln(3))$.",
+     "answer": 1.333333,
+     "label": "$sinh(ln(3))$ =",
+     "level": 1,
+     "explain": "Use the definition with $e^x$: $4/3$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "The **hyperbolic** functions are built from $e^x$: $sinh(x) = frac{e^x - e^(-x)}{2}$ and $cosh(x) = frac{e^x + e^(-x)}{2}$. What is $cosh(0)$?",
+    "options": [
+     "1",
+     "0",
+     "$e$",
+     "2"
+    ],
+    "answer": 0,
+    "hint": "$e^0 = 1$.",
+    "explain": "$frac{1 + 1}{2} = 1$. A hanging chain makes the shape of $cosh$!"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "Differentiate $sinh(x) = frac{e^x - e^(-x)}{2}$ term by term. What do you get?",
+    "answer": "cosh(x)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sinh(",
+     "cosh(",
+     "tanh(",
+     "e^("
+    ],
+    "label": "$frac{d}{dx} sinh(x)$ =",
+    "show": "$cosh(x)$",
+    "hint": "$frac{e^x + e^(-x)}{2}$. Which function is that?",
+    "explain": "$frac{d}{dx} sinh(x) = cosh(x)$, and $frac{d}{dx} cosh(x) = sinh(x)$ with no minus sign!"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Like $sin^2 + cos^2 = 1$, there is an identity: $cosh^2(x) - sinh^2(x) =$",
+    "options": [
+     "1",
+     "0",
+     "−1",
+     "$e^(2x)$"
+    ],
+    "answer": 0,
+    "hint": "Try $x = 0$.",
+    "explain": "$cosh^2(x) - sinh^2(x) = 1$. That is why they are called hyperbolic."
+   }
+  ]
+ }
+}

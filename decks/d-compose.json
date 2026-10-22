@@ -1,0 +1,1063 @@
+{
+ "id": "d-compose",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Compositions of Functions",
+ "subtitle": "Review: building and taking apart f(g(x)).",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "E1",
+     "type": "steps",
+     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Find $f(g(2))$.",
+     "steps": [
+      {
+       "id": "E1.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 5,
+       "label": "$g(2)$ =",
+       "work": "$g(2) = 5$"
+      },
+      {
+       "id": "E1.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 25,
+       "label": "$f(g(2))$ =",
+       "work": "$f(g(2)) = f(5) = 25$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(2)) = 25$"
+    },
+    {
+     "id": "V2",
+     "type": "num",
+     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Find $g(f(3))$.",
+     "answer": 12,
+     "label": "$g(f(3))$ =",
+     "level": 1,
+     "explain": "$f(3) = 9$, then $g$ of that is $12$."
+    },
+    {
+     "id": "E3",
+     "type": "steps",
+     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Find $f(g(1))$.",
+     "steps": [
+      {
+       "id": "E3.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 1,
+       "label": "$g(1)$ =",
+       "work": "$g(1) = 1$"
+      },
+      {
+       "id": "E3.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 3,
+       "label": "$f(g(1))$ =",
+       "work": "$f(g(1)) = f(1) = 3$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(1)) = 3$"
+    },
+    {
+     "id": "V4",
+     "type": "num",
+     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Find $g(f(2))$.",
+     "answer": 25,
+     "label": "$g(f(2))$ =",
+     "level": 1,
+     "explain": "$f(2) = 5$, then $g$ of that is $25$."
+    },
+    {
+     "id": "E5",
+     "type": "steps",
+     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Find $f(g(2))$.",
+     "steps": [
+      {
+       "id": "E5.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 9,
+       "label": "$g(2)$ =",
+       "work": "$g(2) = 9$"
+      },
+      {
+       "id": "E5.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 3,
+       "label": "$f(g(2))$ =",
+       "work": "$f(g(2)) = f(9) = 3$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(2)) = 3$"
+    },
+    {
+     "id": "V6",
+     "type": "num",
+     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Find $g(f(3))$.",
+     "answer": 8.732051,
+     "label": "$g(f(3))$ =",
+     "level": 1,
+     "explain": "$f(3) = 1.732051$, then $g$ of that is $8.732051$."
+    },
+    {
+     "id": "E7",
+     "type": "steps",
+     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Find $f(g(3))$.",
+     "steps": [
+      {
+       "id": "E7.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 11,
+       "label": "$g(3)$ =",
+       "work": "$g(3) = 11$"
+      },
+      {
+       "id": "E7.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 29,
+       "label": "$f(g(3))$ =",
+       "work": "$f(g(3)) = f(11) = 29$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(3)) = 29$"
+    },
+    {
+     "id": "V8",
+     "type": "num",
+     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Find $g(f(4))$.",
+     "answer": 21,
+     "label": "$g(f(4))$ =",
+     "level": 1,
+     "explain": "$f(4) = 8$, then $g$ of that is $21$."
+    },
+    {
+     "id": "E9",
+     "type": "steps",
+     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Find $f(g(4))$.",
+     "steps": [
+      {
+       "id": "E9.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 2,
+       "label": "$g(4)$ =",
+       "work": "$g(4) = 2$"
+      },
+      {
+       "id": "E9.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 5,
+       "label": "$f(g(4))$ =",
+       "work": "$f(g(4)) = f(2) = 5$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(4)) = 5$"
+    },
+    {
+     "id": "V10",
+     "type": "num",
+     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Find $g(f(5))$.",
+     "answer": 24,
+     "label": "$g(f(5))$ =",
+     "level": 1,
+     "explain": "$f(5) = 26$, then $g$ of that is $24$."
+    },
+    {
+     "id": "E11",
+     "type": "steps",
+     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Find $f(g(1))$.",
+     "steps": [
+      {
+       "id": "E11.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 2,
+       "label": "$g(1)$ =",
+       "work": "$g(1) = 2$"
+      },
+      {
+       "id": "E11.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 0.5,
+       "label": "$f(g(1))$ =",
+       "work": "$f(g(1)) = f(2) = 0.5$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(1)) = 0.5$"
+    },
+    {
+     "id": "V12",
+     "type": "num",
+     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Find $g(f(2))$.",
+     "answer": 1.5,
+     "label": "$g(f(2))$ =",
+     "level": 1,
+     "explain": "$f(2) = 0.5$, then $g$ of that is $1.5$."
+    },
+    {
+     "id": "E13",
+     "type": "steps",
+     "text": "$f(x) = x^3$ and $g(x) = 2x$. Find $f(g(1))$.",
+     "steps": [
+      {
+       "id": "E13.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 2,
+       "label": "$g(1)$ =",
+       "work": "$g(1) = 2$"
+      },
+      {
+       "id": "E13.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 8,
+       "label": "$f(g(1))$ =",
+       "work": "$f(g(1)) = f(2) = 8$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(1)) = 8$"
+    },
+    {
+     "id": "V14",
+     "type": "num",
+     "text": "$f(x) = x^3$ and $g(x) = 2x$. Find $g(f(2))$.",
+     "answer": 16,
+     "label": "$g(f(2))$ =",
+     "level": 1,
+     "explain": "$f(2) = 8$, then $g$ of that is $16$."
+    },
+    {
+     "id": "E15",
+     "type": "steps",
+     "text": "$f(x) = 5 - x$ and $g(x) = x^2 + 2$. Find $f(g(0))$.",
+     "steps": [
+      {
+       "id": "E15.1",
+       "type": "num",
+       "text": "Inside first.",
+       "answer": 2,
+       "label": "$g(0)$ =",
+       "work": "$g(0) = 2$"
+      },
+      {
+       "id": "E15.2",
+       "type": "num",
+       "text": "Now put that into $f$.",
+       "answer": 3,
+       "label": "$f(g(0))$ =",
+       "work": "$f(g(0)) = f(2) = 3$"
+      }
+     ],
+     "level": 1,
+     "explain": "$f(g(0)) = 3$"
+    },
+    {
+     "id": "V16",
+     "type": "num",
+     "text": "$f(x) = 5 - x$ and $g(x) = x^2 + 2$. Find $g(f(1))$.",
+     "answer": 18,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "$f(1) = 4$, then $g$ of that is $18$."
+    },
+    {
+     "id": "T17",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $f(g(1))$.",
+     "answer": 1,
+     "label": "$f(g(1))$ =",
+     "level": 1,
+     "explain": "$g(1) = 2$, and $f(2) = 1$."
+    },
+    {
+     "id": "T18",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $g(f(1))$.",
+     "answer": 1,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "$f(1) = 3$, and $g(3) = 1$."
+    },
+    {
+     "id": "T19",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $f(g(2))$.",
+     "answer": 2,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "$g(2) = 4$, and $f(4) = 2$."
+    },
+    {
+     "id": "T20",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $g(f(2))$.",
+     "answer": 2,
+     "label": "$g(f(2))$ =",
+     "level": 1,
+     "explain": "$f(2) = 1$, and $g(1) = 2$."
+    },
+    {
+     "id": "T21",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $f(g(3))$.",
+     "answer": 3,
+     "label": "$f(g(3))$ =",
+     "level": 1,
+     "explain": "$g(3) = 1$, and $f(1) = 3$."
+    },
+    {
+     "id": "T22",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $g(f(3))$.",
+     "answer": 3,
+     "label": "$g(f(3))$ =",
+     "level": 1,
+     "explain": "$f(3) = 4$, and $g(4) = 3$."
+    },
+    {
+     "id": "T23",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $f(g(4))$.",
+     "answer": 4,
+     "label": "$f(g(4))$ =",
+     "level": 1,
+     "explain": "$g(4) = 3$, and $f(3) = 4$."
+    },
+    {
+     "id": "T24",
+     "type": "num",
+     "text": "Use the table. $x$: 1, 2, 3, 4 · $f(x)$: 3, 1, 4, 2 · $g(x)$: 2, 4, 1, 3. Find $g(f(4))$.",
+     "answer": 4,
+     "label": "$g(f(4))$ =",
+     "level": 1,
+     "explain": "$f(4) = 2$, and $g(2) = 4$."
+    },
+    {
+     "id": "B25",
+     "type": "expr",
+     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Write $f(g(x))$.",
+     "answer": "(x + 3)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$(x + 3)^2$",
+     "level": 2,
+     "explain": "$(x + 3)^2$"
+    },
+    {
+     "id": "B26",
+     "type": "expr",
+     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Write $f(g(x))$.",
+     "answer": "2(x^2) + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$2(x^2) + 1$",
+     "level": 2,
+     "explain": "$2(x^2) + 1$"
+    },
+    {
+     "id": "B27",
+     "type": "expr",
+     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Write $f(g(x))$.",
+     "answer": "sqrt(x + 7)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$sqrt(x + 7)$",
+     "level": 2,
+     "explain": "$sqrt(x + 7)$"
+    },
+    {
+     "id": "B28",
+     "type": "expr",
+     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Write $f(g(x))$.",
+     "answer": "3(2x + 5) - 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$3(2x + 5) - 4$",
+     "level": 2,
+     "explain": "$3(2x + 5) - 4$"
+    },
+    {
+     "id": "B29",
+     "type": "expr",
+     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Write $f(g(x))$.",
+     "answer": "(x - 2)^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$(x - 2)^2 + 1$",
+     "level": 2,
+     "explain": "$(x - 2)^2 + 1$"
+    },
+    {
+     "id": "B30",
+     "type": "expr",
+     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Write $f(g(x))$.",
+     "answer": "1/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$frac{1}{x + 1}$",
+     "level": 2,
+     "explain": "$frac{1}{x + 1}$"
+    },
+    {
+     "id": "B31",
+     "type": "expr",
+     "text": "$f(x) = x^3$ and $g(x) = 2x$. Write $f(g(x))$.",
+     "answer": "(2x)^3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$(2x)^3$",
+     "level": 2,
+     "explain": "$(2x)^3$"
+    },
+    {
+     "id": "B32",
+     "type": "expr",
+     "text": "$f(x) = 5 - x$ and $g(x) = x^2 + 2$. Write $f(g(x))$.",
+     "answer": "5 - (x^2 + 2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f(g(x))$ =",
+     "show": "$5 - (x^2 + 2)$",
+     "level": 2,
+     "explain": "$5 - (x^2 + 2)$"
+    },
+    {
+     "id": "C33",
+     "type": "expr",
+     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Write $g(f(x))$.",
+     "answer": "(x^2) + 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(f(x))$ =",
+     "show": "$(x^2) + 3$",
+     "level": 2,
+     "explain": "$(x^2) + 3$"
+    },
+    {
+     "id": "C34",
+     "type": "expr",
+     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Write $g(f(x))$.",
+     "answer": "(2x + 1)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(f(x))$ =",
+     "show": "$(2x + 1)^2$",
+     "level": 2,
+     "explain": "$(2x + 1)^2$"
+    },
+    {
+     "id": "C35",
+     "type": "expr",
+     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Write $g(f(x))$.",
+     "answer": "sqrt(x) + 7",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(f(x))$ =",
+     "show": "$sqrt(x) + 7$",
+     "level": 2,
+     "explain": "$sqrt(x) + 7$"
+    },
+    {
+     "id": "C36",
+     "type": "expr",
+     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Write $g(f(x))$.",
+     "answer": "2(3x - 4) + 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(f(x))$ =",
+     "show": "$2(3x - 4) + 5$",
+     "level": 2,
+     "explain": "$2(3x - 4) + 5$"
+    },
+    {
+     "id": "C37",
+     "type": "expr",
+     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Write $g(f(x))$.",
+     "answer": "(x^2 + 1) - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(f(x))$ =",
+     "show": "$(x^2 + 1) - 2$",
+     "level": 2,
+     "explain": "$(x^2 + 1) - 2$"
+    },
+    {
+     "id": "C38",
+     "type": "expr",
+     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Write $g(f(x))$.",
+     "answer": "(1/x) + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(f(x))$ =",
+     "show": "$(1/x) + 1$",
+     "level": 2,
+     "explain": "$(1/x) + 1$"
+    },
+    {
+     "id": "I39",
+     "type": "expr",
+     "text": "$h(x) = (3x^2 + 1)^10 = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "3x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3x^2 + 1$",
+     "level": 3,
+     "explain": "Inside: $3x^2 + 1$. Outside: $x^10$."
+    },
+    {
+     "id": "I40",
+     "type": "expr",
+     "text": "$h(x) = sin(x^2) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2$",
+     "level": 3,
+     "explain": "Inside: $x^2$. Outside: $sin(x)$."
+    },
+    {
+     "id": "I41",
+     "type": "expr",
+     "text": "$h(x) = sqrt(1 - x^2) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "1 - x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$1 - x^2$",
+     "level": 3,
+     "explain": "Inside: $1 - x^2$. Outside: $sqrt(x)$."
+    },
+    {
+     "id": "I42",
+     "type": "expr",
+     "text": "$h(x) = tan^2(x) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "tan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt(",
+      "tan("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$tan(x)$",
+     "level": 3,
+     "explain": "Inside: $tan(x)$. Outside: $x^2$."
+    },
+    {
+     "id": "I43",
+     "type": "expr",
+     "text": "$h(x) = tan(x^2 - 2x + 5) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "x^2 - 2x + 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2 - 2x + 5$",
+     "level": 3,
+     "explain": "Inside: $x^2 - 2x + 5$. Outside: $tan(x)$."
+    },
+    {
+     "id": "I44",
+     "type": "expr",
+     "text": "$h(x) = sec(4x^5 + 5) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "4x^5 + 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$4x^5 + 5$",
+     "level": 3,
+     "explain": "Inside: $4x^5 + 5$. Outside: $sec(x)$."
+    },
+    {
+     "id": "I45",
+     "type": "expr",
+     "text": "$h(x) = (x + sin(x))^3 = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "x + sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x + sin(x)$",
+     "level": 3,
+     "explain": "Inside: $x + sin(x)$. Outside: $x^3$."
+    },
+    {
+     "id": "I46",
+     "type": "expr",
+     "text": "$h(x) = frac{1}{(3x - 1)^3} = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "3x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3x - 1$",
+     "level": 3,
+     "explain": "Inside: $3x - 1$. Outside: $frac{1}{x^3}$."
+    },
+    {
+     "id": "I47",
+     "type": "expr",
+     "text": "$h(x) = cos(5x) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "5x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$5x$",
+     "level": 3,
+     "explain": "Inside: $5x$. Outside: $cos(x)$."
+    },
+    {
+     "id": "I48",
+     "type": "expr",
+     "text": "$h(x) = sqrt(x^2 - x + 1) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "x^2 - x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2 - x + 1$",
+     "level": 3,
+     "explain": "Inside: $x^2 - x + 1$. Outside: $sqrt(x)$."
+    },
+    {
+     "id": "I49",
+     "type": "expr",
+     "text": "$h(x) = (2x^3 - x)^4 = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "2x^3 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$2x^3 - x$",
+     "level": 3,
+     "explain": "Inside: $2x^3 - x$. Outside: $x^4$."
+    },
+    {
+     "id": "I50",
+     "type": "expr",
+     "text": "$h(x) = sin(frac{1}{x}) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 3,
+     "explain": "Inside: $frac{1}{x}$. Outside: $sin(x)$."
+    },
+    {
+     "id": "I51",
+     "type": "expr",
+     "text": "$h(x) = cos^5(x) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 3,
+     "explain": "Inside: $cos(x)$. Outside: $x^5$."
+    },
+    {
+     "id": "I52",
+     "type": "expr",
+     "text": "$h(x) = cos(x^3) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "x^3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^3$",
+     "level": 3,
+     "explain": "Inside: $x^3$. Outside: $cos(x)$."
+    },
+    {
+     "id": "I53",
+     "type": "expr",
+     "text": "$h(x) = tan(3x) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "3x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3x$",
+     "level": 3,
+     "explain": "Inside: $3x$. Outside: $tan(x)$."
+    },
+    {
+     "id": "I54",
+     "type": "expr",
+     "text": "$h(x) = (x^2 + 4)^(-2) = f(g(x))$. What is the inside function $g(x)$?",
+     "answer": "x^2 + 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2 + 4$",
+     "level": 3,
+     "explain": "Inside: $x^2 + 4$. Outside: $x^(-2)$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "$f(g(x))$ means: work out $g(x)$ first, then put that answer into $f$. If $g(2) = 5$ and $f(5) = 11$, what is $f(g(2))$?",
+    "options": [
+     "11",
+     "5",
+     "2",
+     "16"
+    ],
+    "answer": 0,
+    "hint": "Inside first: $g(2) = 5$. Then $f(5)$.",
+    "explain": "$f(g(2)) = f(5) = 11$"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "As a formula: $f(x) = x^2$ and $g(x) = x + 3$. Then $f(g(x)) = f(x + 3)$. Write it out.",
+    "answer": "(x + 3)^2",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sin(",
+     "cos(",
+     "sqrt("
+    ],
+    "label": "$f(g(x))$ =",
+    "show": "$(x + 3)^2$",
+    "hint": "Put $(x + 3)$ wherever $f$ has an $x$.",
+    "explain": "$(x + 3)^2$"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Order matters! With the same $f$ and $g$, $g(f(x)) =$",
+    "options": [
+     "$x^2 + 3$",
+     "$(x + 3)^2$",
+     "$x^2 + 6x + 9$",
+     "$3x^2$"
+    ],
+    "answer": 0,
+    "hint": "Now $f$ goes inside $g$.",
+    "explain": "$g(x^2) = x^2 + 3$, which is different from $f(g(x))$."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Going backwards: $h(x) = sqrt(x^2 + 1)$ is $f(g(x))$ with",
+    "options": [
+     "$g(x) = x^2 + 1$ and $f(x) = sqrt(x)$",
+     "$g(x) = sqrt(x)$ and $f(x) = x^2 + 1$",
+     "$g(x) = x^2$ and $f(x) = sqrt(x)$",
+     "$g(x) = x$ and $f(x) = sqrt(x^2 + 1)$"
+    ],
+    "answer": 0,
+    "hint": "What do you compute first? That is the inside.",
+    "explain": "Inside: $x^2 + 1$. Outside: the square root."
+   }
+  ]
+ },
+ "lessonOptional": true
+}

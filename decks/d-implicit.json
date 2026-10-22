@@ -1,0 +1,2584 @@
+{
+ "id": "d-implicit",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Implicit Differentiation",
+ "subtitle": "Finding dy/dx when y is not solved for.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "Why does $frac{d}{dx}(y^2)$ give $2y·y'$ and not just $2y$?",
+     "options": [
+      "$y$ depends on $x$, so the chain rule applies",
+      "It is a typo; $2y$ is right",
+      "Because of the product rule",
+      "Because $y$ is a constant"
+     ],
+     "answer": 0,
+     "explain": "We treat $y$ as $y(x)$. The derivative of the inside, $y$, is $y'$."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$frac{d}{dx}(y^3) = 3y^2$",
+     "answer": false,
+     "explain": "$3y^2·y'$. Never forget the $y'$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$frac{d}{dx}(sin(y)) =$",
+     "options": [
+      "$cos(y)·y'$",
+      "$cos(y)$",
+      "$-cos(y)y'$",
+      "$sin(y')$"
+     ],
+     "answer": 0,
+     "explain": "Chain rule with $y$ inside."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "$frac{d}{dx}(x^2 y) =$",
+     "options": [
+      "$2xy + x^2 y'$",
+      "$2xy'$",
+      "$2xy$",
+      "$x^2 y'$"
+     ],
+     "answer": 0,
+     "explain": "Product rule: $(x^2)'y + x^2(y)'$."
+    },
+    {
+     "id": "T5",
+     "type": "order",
+     "text": "Put the steps of implicit differentiation in order.",
+     "items": [
+      "Take $frac{d}{dx}$ of both sides",
+      "Move every $y'$ term to one side",
+      "Factor out $y'$",
+      "Divide to solve for $y'$"
+     ],
+     "explain": "Differentiate, collect, factor, divide."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "To find the slope of the tangent line at $(a, b)$ from a formula for $y'$ in terms of $x$ and $y$, you",
+     "options": [
+      "plug in $x = a$ and $y = b$",
+      "plug in only $x = a$",
+      "set $y' = 0$",
+      "solve the original equation for $y$ first"
+     ],
+     "answer": 0,
+     "explain": "$y'$ usually depends on both $x$ and $y$, so use both coordinates."
+    },
+    {
+     "id": "T7",
+     "type": "tf",
+     "text": "The derivative of a constant on the right side, like $x^2 + y^2 = 25$, is 0.",
+     "answer": true,
+     "explain": "25 never changes, so its derivative is 0."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "B1",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^2)$.",
+     "answer": "2yy'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$2yy'$",
+     "level": 1,
+     "explain": "$2yy'$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B2",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^3)$.",
+     "answer": "3y^2y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3y^2y'$",
+     "level": 1,
+     "explain": "$3y^2y'$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B3",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^4)$.",
+     "answer": "4y^3y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$4y^3y'$",
+     "level": 1,
+     "explain": "$4y^3y'$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B4",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(3y^2)$.",
+     "answer": "6yy'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$6yy'$",
+     "level": 1,
+     "explain": "$6yy'$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B5",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^5)$.",
+     "answer": "5y^4y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$5y^4y'$",
+     "level": 1,
+     "explain": "$5y^4y'$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B6",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(sin(y))$.",
+     "answer": "cos(y)y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$cos(y)y'$",
+     "level": 1,
+     "explain": "$y'cos(y)$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B7",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(cos(y))$.",
+     "answer": "-sin(y)y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-sin(y)y'$",
+     "level": 1,
+     "explain": "$-y'sin(y)$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B8",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(tan(y))$.",
+     "answer": "sec(y)^2y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "sec("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$sec(y)^2y'$",
+     "level": 1,
+     "explain": "$y'(tan(y)^2 + 1)$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B9",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(sqrt(y))$.",
+     "answer": "y'/(2sqrt(y))",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{y'}{2sqrt(y)}$",
+     "level": 1,
+     "explain": "$y'/(2sqrt(y))$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B10",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(xy)$.",
+     "answer": "xy' + y",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$xy' + y$",
+     "level": 1,
+     "explain": "$xy' + y$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B11",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(x^2y)$.",
+     "answer": "x^2y' + 2xy",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2y' + 2xy$",
+     "level": 1,
+     "explain": "$x^2y' + 2xy$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B12",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(xy^2)$.",
+     "answer": "2xyy' + y^2",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$2xyy' + y^2$",
+     "level": 1,
+     "explain": "$2xyy' + y^2$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B13",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(1/y)$.",
+     "answer": "-y'/y^2",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{y'}{y^2}$",
+     "level": 1,
+     "explain": "$-y'/y^2$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B14",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(2y^3 + x)$.",
+     "answer": "6y^2y' + 1",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$6y^2y' + 1$",
+     "level": 1,
+     "explain": "$6y^2y' + 1$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B15",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(x^3 + y^3)$.",
+     "answer": "3x^2 + 3y^2y'",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3x^2 + 3y^2y'$",
+     "level": 1,
+     "explain": "$3x^2 + 3y^2y'$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "B16",
+     "type": "expr",
+     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(xsin(y))$.",
+     "answer": "xy'cos(y) + sin(y)",
+     "vars": [
+      "x",
+      "y",
+      "y'"
+     ],
+     "keys": [
+      "y'",
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$xy'cos(y) + sin(y)$",
+     "level": 1,
+     "explain": "$xy'cos(y) + sin(y)$. Every derivative of something with $y$ gets a $y'$."
+    },
+    {
+     "id": "P17",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} x^(2/3)$.",
+     "answer": "(2/3)x^(-1/3)",
+     "vars": [
+      "x"
+     ],
+     "label": "derivative =",
+     "show": "$(2/3)x^(-1/3)$",
+     "level": 1,
+     "explain": "$(2/3)x^(-1/3)$"
+    },
+    {
+     "id": "P18",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} x^(1/3)$.",
+     "answer": "(1/3)x^(-2/3)",
+     "vars": [
+      "x"
+     ],
+     "label": "derivative =",
+     "show": "$(1/3)x^(-2/3)$",
+     "level": 1,
+     "explain": "$(1/3)x^(-2/3)$"
+    },
+    {
+     "id": "P19",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} x^(3/4)$.",
+     "answer": "(3/4)x^(-1/4)",
+     "vars": [
+      "x"
+     ],
+     "label": "derivative =",
+     "show": "$(3/4)x^(-1/4)$",
+     "level": 1,
+     "explain": "$(3/4)x^(-1/4)$"
+    },
+    {
+     "id": "P20",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} x^(5/2)$.",
+     "answer": "(5/2)x^(3/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "derivative =",
+     "show": "$(5/2)x^(3/2)$",
+     "level": 1,
+     "explain": "$(5/2)x^(3/2)$"
+    },
+    {
+     "id": "P21",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} x^(-1/3)$.",
+     "answer": "(-1/3)x^(-4/3)",
+     "vars": [
+      "x"
+     ],
+     "label": "derivative =",
+     "show": "$(-1/3)x^(-4/3)$",
+     "level": 1,
+     "explain": "$(-1/3)x^(-4/3)$"
+    },
+    {
+     "id": "P22",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} x^(4/3)$.",
+     "answer": "(4/3)x^(1/3)",
+     "vars": [
+      "x"
+     ],
+     "label": "derivative =",
+     "show": "$(4/3)x^(1/3)$",
+     "level": 1,
+     "explain": "$(4/3)x^(1/3)$"
+    },
+    {
+     "id": "S23",
+     "type": "expr",
+     "text": "Solve for $y'$: $2x + 2yy' = 0$",
+     "answer": "-x/y",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{x}{y}$",
+     "level": 2,
+     "explain": "$y' = -frac{x}{y}$"
+    },
+    {
+     "id": "S24",
+     "type": "expr",
+     "text": "Solve for $y'$: $2x + 6yy' = 0$",
+     "answer": "-x/(3y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{x}{3y}$",
+     "level": 2,
+     "explain": "$y' = -frac{x}{3y}$"
+    },
+    {
+     "id": "S25",
+     "type": "expr",
+     "text": "Solve for $y'$: $y + xy' = 0$",
+     "answer": "-y/x",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{y}{x}$",
+     "level": 2,
+     "explain": "$y' = -frac{y}{x}$"
+    },
+    {
+     "id": "S26",
+     "type": "expr",
+     "text": "Solve for $y'$: $3x^2 + 3y^2y' = 0$",
+     "answer": "-x^2/y^2",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{x^2}{y^2}$",
+     "level": 2,
+     "explain": "$y' = -frac{x^2}{y^2}$"
+    },
+    {
+     "id": "S27",
+     "type": "expr",
+     "text": "Solve for $y'$: $2xy + x^2y' = 0$",
+     "answer": "-2y/x",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{2y}{x}$",
+     "level": 2,
+     "explain": "$y' = -frac{2y}{x}$"
+    },
+    {
+     "id": "S28",
+     "type": "expr",
+     "text": "Solve for $y'$: $1 + 2yy' = 4$",
+     "answer": "3/(2y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{3}{2y}$",
+     "level": 2,
+     "explain": "$y' = frac{3}{2y}$"
+    },
+    {
+     "id": "S29",
+     "type": "expr",
+     "text": "Solve for $y'$: $y' + 2xy' = y$",
+     "answer": "y/(1 + 2x)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{y}{1 + 2x}$",
+     "level": 2,
+     "explain": "$y' = frac{y}{1 + 2x}$"
+    },
+    {
+     "id": "S30",
+     "type": "expr",
+     "text": "Solve for $y'$: $2x - 2yy' = 0$",
+     "answer": "x/y",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x}{y}$",
+     "level": 2,
+     "explain": "$y' = frac{x}{y}$"
+    },
+    {
+     "id": "S31",
+     "type": "expr",
+     "text": "Solve for $y'$: $4x + 2yy' = 0$",
+     "answer": "-2x/y",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{2x}{y}$",
+     "level": 2,
+     "explain": "$y' = -frac{2x}{y}$"
+    },
+    {
+     "id": "S32",
+     "type": "expr",
+     "text": "Solve for $y'$: $cos(y)y' = 2x$",
+     "answer": "2x/cos(y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2x}{cos(y)}$",
+     "level": 2,
+     "explain": "$y' = frac{2x}{cos(y)}$"
+    },
+    {
+     "id": "S33",
+     "type": "expr",
+     "text": "Solve for $y'$: $3y^2y' + y' = 1$",
+     "answer": "1/(3y^2 + 1)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{1}{3y^2 + 1}$",
+     "level": 2,
+     "explain": "$y' = frac{1}{3y^2 + 1}$"
+    },
+    {
+     "id": "S34",
+     "type": "expr",
+     "text": "Solve for $y'$: $y' + xy' = 5 - y$",
+     "answer": "(5 - y)/(1 + x)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{5 - y}{1 + x}$",
+     "level": 2,
+     "explain": "$y' = frac{5 - y}{1 + x}$"
+    },
+    {
+     "id": "V35",
+     "type": "num",
+     "text": "$y' = -frac{x}{y}$. Find the slope at the point $(3, 4)$.",
+     "answer": -0.75,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 3$ and $y = 4$: $-3/4$."
+    },
+    {
+     "id": "V36",
+     "type": "num",
+     "text": "$y' = -frac{x}{y}$. Find the slope at the point $(-5, 12)$.",
+     "answer": 0.416667,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = -5$ and $y = 12$: $5/12$."
+    },
+    {
+     "id": "V37",
+     "type": "num",
+     "text": "$y' = -frac{y}{x}$. Find the slope at the point $(2, 3)$.",
+     "answer": -1.5,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 2$ and $y = 3$: $-3/2$."
+    },
+    {
+     "id": "V38",
+     "type": "num",
+     "text": "$y' = -frac{x^2}{y^2}$. Find the slope at the point $(1, 2)$.",
+     "answer": -0.25,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 1$ and $y = 2$: $-1/4$."
+    },
+    {
+     "id": "V39",
+     "type": "num",
+     "text": "$y' = -frac{2y}{x}$. Find the slope at the point $(2, 1)$.",
+     "answer": -1,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 2$ and $y = 1$: $-1$."
+    },
+    {
+     "id": "V40",
+     "type": "num",
+     "text": "$y' = frac{x}{y}$. Find the slope at the point $(2, 1)$.",
+     "answer": 2,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 2$ and $y = 1$: $2$."
+    },
+    {
+     "id": "V41",
+     "type": "num",
+     "text": "$y' = -frac{2x}{y}$. Find the slope at the point $(1, 2)$.",
+     "answer": -1,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 1$ and $y = 2$: $-1$."
+    },
+    {
+     "id": "V42",
+     "type": "num",
+     "text": "$y' = frac{3}{2y}$. Find the slope at the point $(1, 3)$.",
+     "answer": 0.5,
+     "label": "slope =",
+     "level": 2,
+     "explain": "Plug in $x = 1$ and $y = 3$: $1/2$."
+    },
+    {
+     "id": "W43",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 + y^2 = 25$ and the slope at $(3, 4)$.",
+     "steps": [
+      {
+       "id": "W43.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x + 2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x + 2yy'$",
+       "work": "left: $2x + 2yy'$"
+      },
+      {
+       "id": "W43.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-x/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{x}{y}$",
+       "work": "$y' = -frac{x}{y}$"
+      },
+      {
+       "id": "W43.3",
+       "type": "num",
+       "text": "Slope at $(3, 4)$.",
+       "answer": -0.75,
+       "label": "slope =",
+       "work": "slope $= -3/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{x}{y}$"
+    },
+    {
+     "id": "W44",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 + y^2 = 13$ and the slope at $(2, 3)$.",
+     "steps": [
+      {
+       "id": "W44.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x + 2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x + 2yy'$",
+       "work": "left: $2x + 2yy'$"
+      },
+      {
+       "id": "W44.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-x/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{x}{y}$",
+       "work": "$y' = -frac{x}{y}$"
+      },
+      {
+       "id": "W44.3",
+       "type": "num",
+       "text": "Slope at $(2, 3)$.",
+       "answer": -0.666667,
+       "label": "slope =",
+       "work": "slope $= -2/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{x}{y}$"
+    },
+    {
+     "id": "W45",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $xy = 6$ and the slope at $(2, 3)$.",
+     "steps": [
+      {
+       "id": "W45.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "xy' + y",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$xy' + y$",
+       "work": "left: $xy' + y$"
+      },
+      {
+       "id": "W45.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-y/x",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{y}{x}$",
+       "work": "$y' = -frac{y}{x}$"
+      },
+      {
+       "id": "W45.3",
+       "type": "num",
+       "text": "Slope at $(2, 3)$.",
+       "answer": -1.5,
+       "label": "slope =",
+       "work": "slope $= -3/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{y}{x}$"
+    },
+    {
+     "id": "W46",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2y = 4$ and the slope at $(2, 1)$.",
+     "steps": [
+      {
+       "id": "W46.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "x^2y' + 2xy",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$x^2y' + 2xy$",
+       "work": "left: $x^2y' + 2xy$"
+      },
+      {
+       "id": "W46.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-2y/x",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{2y}{x}$",
+       "work": "$y' = -frac{2y}{x}$"
+      },
+      {
+       "id": "W46.3",
+       "type": "num",
+       "text": "Slope at $(2, 1)$.",
+       "answer": -1,
+       "label": "slope =",
+       "work": "slope $= -1$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{2y}{x}$"
+    },
+    {
+     "id": "W47",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 + xy + y^2 = 7$ and the slope at $(1, 2)$.",
+     "steps": [
+      {
+       "id": "W47.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "xy' + 2x + 2yy' + y",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$xy' + 2x + 2yy' + y$",
+       "work": "left: $xy' + 2x + 2yy' + y$"
+      },
+      {
+       "id": "W47.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "(-2x - y)/(x + 2y)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{-2x - y}{x + 2y}$",
+       "work": "$y' = frac{-2x - y}{x + 2y}$"
+      },
+      {
+       "id": "W47.3",
+       "type": "num",
+       "text": "Slope at $(1, 2)$.",
+       "answer": -0.8,
+       "label": "slope =",
+       "work": "slope $= -4/5$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{-2x - y}{x + 2y}$"
+    },
+    {
+     "id": "W48",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $y^3 + x = 2$ and the slope at $(1, 1)$.",
+     "steps": [
+      {
+       "id": "W48.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "3y^2y' + 1",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$3y^2y' + 1$",
+       "work": "left: $3y^2y' + 1$"
+      },
+      {
+       "id": "W48.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-1/(3y^2)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{1}{3y^2}$",
+       "work": "$y' = -frac{1}{3y^2}$"
+      },
+      {
+       "id": "W48.3",
+       "type": "num",
+       "text": "Slope at $(1, 1)$.",
+       "answer": -0.333333,
+       "label": "slope =",
+       "work": "slope $= -1/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{1}{3y^2}$"
+    },
+    {
+     "id": "W49",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 - y^2 = 3$ and the slope at $(2, 1)$.",
+     "steps": [
+      {
+       "id": "W49.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x - 2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x - 2yy'$",
+       "work": "left: $2x - 2yy'$"
+      },
+      {
+       "id": "W49.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "x/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{x}{y}$",
+       "work": "$y' = frac{x}{y}$"
+      },
+      {
+       "id": "W49.3",
+       "type": "num",
+       "text": "Slope at $(2, 1)$.",
+       "answer": 2,
+       "label": "slope =",
+       "work": "slope $= 2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{x}{y}$"
+    },
+    {
+     "id": "W50",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $2x^2 + 3y^2 = 14$ and the slope at $(1, 2)$.",
+     "steps": [
+      {
+       "id": "W50.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "4x + 6yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$4x + 6yy'$",
+       "work": "left: $4x + 6yy'$"
+      },
+      {
+       "id": "W50.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-2x/(3y)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{2x}{3y}$",
+       "work": "$y' = -frac{2x}{3y}$"
+      },
+      {
+       "id": "W50.3",
+       "type": "num",
+       "text": "Slope at $(1, 2)$.",
+       "answer": -0.333333,
+       "label": "slope =",
+       "work": "slope $= -1/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{2x}{3y}$"
+    },
+    {
+     "id": "W51",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $y^2 = 4x$ and the slope at $(1, 2)$.",
+     "steps": [
+      {
+       "id": "W51.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2yy'$",
+       "work": "left: $2yy'$"
+      },
+      {
+       "id": "W51.2",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the right side.",
+       "answer": "4",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "right =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$4$",
+       "work": "right: $4$"
+      },
+      {
+       "id": "W51.3",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "2/y",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{2}{y}$",
+       "work": "$y' = frac{2}{y}$"
+      },
+      {
+       "id": "W51.4",
+       "type": "num",
+       "text": "Slope at $(1, 2)$.",
+       "answer": 1,
+       "label": "slope =",
+       "work": "slope $= 1$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{2}{y}$"
+    },
+    {
+     "id": "W52",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $xy^3 = 8$ and the slope at $(1, 2)$.",
+     "steps": [
+      {
+       "id": "W52.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "3xy^2y' + y^3",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$3xy^2y' + y^3$",
+       "work": "left: $3xy^2y' + y^3$"
+      },
+      {
+       "id": "W52.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-y/(3x)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{y}{3x}$",
+       "work": "$y' = -frac{y}{3x}$"
+      },
+      {
+       "id": "W52.3",
+       "type": "num",
+       "text": "Slope at $(1, 2)$.",
+       "answer": -0.666667,
+       "label": "slope =",
+       "work": "slope $= -2/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{y}{3x}$"
+    },
+    {
+     "id": "W53",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^3 + y^3 = 3xy$ and the slope at $(3/2, 3/2)$.",
+     "steps": [
+      {
+       "id": "W53.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "3x^2 + 3y^2y'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$3x^2 + 3y^2y'$",
+       "work": "left: $3x^2 + 3y^2y'$"
+      },
+      {
+       "id": "W53.2",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the right side.",
+       "answer": "3xy' + 3y",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "right =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$3xy' + 3y$",
+       "work": "right: $3xy' + 3y$"
+      },
+      {
+       "id": "W53.3",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "(y - x^2)/(y^2 - x)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{y - x^2}{y^2 - x}$",
+       "work": "$y' = frac{y - x^2}{y^2 - x}$"
+      },
+      {
+       "id": "W53.4",
+       "type": "num",
+       "text": "Slope at $(3/2, 3/2)$.",
+       "answer": -1,
+       "label": "slope =",
+       "work": "slope $= -1$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{y - x^2}{y^2 - x}$"
+    },
+    {
+     "id": "W54",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $xy^2 + cos(x) = y$.",
+     "steps": [
+      {
+       "id": "W54.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2xyy' + y^2 - sin(x)",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2xyy' + y^2 - sin(x)$",
+       "work": "left: $2xyy' + y^2 - sin(x)$"
+      },
+      {
+       "id": "W54.2",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the right side.",
+       "answer": "y'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "right =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$y'$",
+       "work": "right: $y'$"
+      },
+      {
+       "id": "W54.3",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "(sin(x) - y^2)/(2xy - 1)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{sin(x) - y^2}{2xy - 1}$",
+       "work": "$y' = frac{sin(x) - y^2}{2xy - 1}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{sin(x) - y^2}{2xy - 1}$"
+    },
+    {
+     "id": "W55",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $4x^5 + tan(y) = y^2 + 5x$.",
+     "steps": [
+      {
+       "id": "W55.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "20x^4 + sec(y)^2y'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$20x^4 + sec(y)^2y'$",
+       "work": "left: $20x^4 + sec(y)^2y'$"
+      },
+      {
+       "id": "W55.2",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the right side.",
+       "answer": "2yy' + 5",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "right =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2yy' + 5$",
+       "work": "right: $2yy' + 5$"
+      },
+      {
+       "id": "W55.3",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "(20x^4 - 5)/(2y - sec(y)^2)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{20x^4 - 5}{2y - sec(y)^2}$",
+       "work": "$y' = frac{20x^4 - 5}{2y - sec(y)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{20x^4 - 5}{2y - sec(y)^2}$"
+    },
+    {
+     "id": "W56",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $sin(y) + x^2 = y$.",
+     "steps": [
+      {
+       "id": "W56.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x + cos(y)y'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x + cos(y)y'$",
+       "work": "left: $2x + cos(y)y'$"
+      },
+      {
+       "id": "W56.2",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the right side.",
+       "answer": "y'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "right =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$y'$",
+       "work": "right: $y'$"
+      },
+      {
+       "id": "W56.3",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "2x/(1 - cos(y))",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{2x}{1 - cos(y)}$",
+       "work": "$y' = frac{2x}{1 - cos(y)}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = frac{2x}{1 - cos(y)}$"
+    },
+    {
+     "id": "W57",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $x^2 + 4y^2 = 8$ and the slope at $(2, 1)$.",
+     "steps": [
+      {
+       "id": "W57.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "2x + 8yy'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2x + 8yy'$",
+       "work": "left: $2x + 8yy'$"
+      },
+      {
+       "id": "W57.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-x/(4y)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{x}{4y}$",
+       "work": "$y' = -frac{x}{4y}$"
+      },
+      {
+       "id": "W57.3",
+       "type": "num",
+       "text": "Slope at $(2, 1)$.",
+       "answer": -0.5,
+       "label": "slope =",
+       "work": "slope $= -1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{x}{4y}$"
+    },
+    {
+     "id": "W58",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $xy + y = 6$ and the slope at $(1, 3)$.",
+     "steps": [
+      {
+       "id": "W58.1",
+       "type": "expr",
+       "text": "Take $frac{d}{dx}$ of the left side.",
+       "answer": "xy' + y + y'",
+       "vars": [
+        "x",
+        "y",
+        "y'"
+       ],
+       "keys": [
+        "y'",
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "left =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$xy' + y + y'$",
+       "work": "left: $xy' + y + y'$"
+      },
+      {
+       "id": "W58.2",
+       "type": "expr",
+       "text": "Solve for $y'$.",
+       "answer": "-y/(x + 1)",
+       "vars": [
+        "x",
+        "y"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ],
+        "y": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{y}{x + 1}$",
+       "work": "$y' = -frac{y}{x + 1}$"
+      },
+      {
+       "id": "W58.3",
+       "type": "num",
+       "text": "Slope at $(1, 3)$.",
+       "answer": -1.5,
+       "label": "slope =",
+       "work": "slope $= -3/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y' = -frac{y}{x + 1}$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "$x^2 + y^2 = 1$ is a circle, not a function. We can still find slopes: take $frac{d}{dx}$ of **both sides**, treating $y$ as a function of $x$. Then $frac{d}{dx}(y^2) =$",
+    "options": [
+     "$2y·y'$",
+     "$2y$",
+     "$2x$",
+     "$(y')^2$"
+    ],
+    "answer": 0,
+    "hint": "$y^2$ is (something)$^2$, and the something depends on $x$. That's the chain rule.",
+    "explain": "Chain rule: $2y$ times the derivative of the inside, $y'$. Every time you differentiate a $y$, a $y'$ appears."
+   },
+   {
+    "id": "L2",
+    "type": "steps",
+    "text": "Find the slope of the circle $x^2 + y^2 = 25$ at the point $(3, 4)$.",
+    "steps": [
+     {
+      "id": "L2.1",
+      "type": "expr",
+      "text": "Take $frac{d}{dx}$ of the left side.",
+      "answer": "2x + 2yy'",
+      "vars": [
+       "x",
+       "y",
+       "y'"
+      ],
+      "keys": [
+       "y'"
+      ],
+      "label": "$frac{d}{dx}(x^2 + y^2)$ =",
+      "show": "$2x + 2yy'$",
+      "hint": "$x^2 -> 2x$ and $y^2 -> 2y·y'$.",
+      "work": "$2x + 2yy' = 0$"
+     },
+     {
+      "id": "L2.2",
+      "type": "expr",
+      "text": "The right side, 25, has derivative 0. Solve $2x + 2yy' = 0$ for $y'$.",
+      "answer": "-x/y",
+      "vars": [
+       "x",
+       "y"
+      ],
+      "label": "$y'$ =",
+      "show": "$-frac{x}{y}$",
+      "hint": "Move $2x$ over, then divide by $2y$.",
+      "work": "$y' = -frac{x}{y}$"
+     },
+     {
+      "id": "L2.3",
+      "type": "num",
+      "text": "Plug in the point $(3, 4)$.",
+      "answer": -0.75,
+      "label": "slope =",
+      "hint": "$-frac{3}{4}$",
+      "work": "slope $= -frac{3}{4}$"
+     }
+    ]
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "Products with $y$ need the product rule. Find $frac{d}{dx}(xy)$.",
+    "answer": "y + xy'",
+    "vars": [
+     "x",
+     "y",
+     "y'"
+    ],
+    "keys": [
+     "y'"
+    ],
+    "label": "$frac{d}{dx}(xy)$ =",
+    "show": "$y + xy'$",
+    "hint": "$(x)'·y + x·(y)'$",
+    "explain": "$1·y + x·y'$"
+   },
+   {
+    "id": "L4",
+    "type": "steps",
+    "text": "Find $frac{dy}{dx}$ for $x^3 sin(y) + y = 4x + 3$.",
+    "steps": [
+     {
+      "id": "L4.1",
+      "type": "expr",
+      "text": "Left side: product rule on $x^3 sin(y)$, plus the derivative of $y$.",
+      "answer": "3x^2sin(y) + x^3cos(y)y' + y'",
+      "vars": [
+       "x",
+       "y",
+       "y'"
+      ],
+      "keys": [
+       "y'",
+       "sin(",
+       "cos(",
+       "tan("
+      ],
+      "label": "left =",
+      "show": "$3x^2sin(y) + x^3cos(y)y' + y'$",
+      "hint": "$3x^2 sin(y) + x^3·cos(y)y' + y'$",
+      "work": "$3x^2 sin(y) + x^3 cos(y)y' + y' = 4$"
+     },
+     {
+      "id": "L4.2",
+      "type": "mc",
+      "text": "Get the $y'$ terms together and factor out $y'$:",
+      "options": [
+       "$y'(x^3 cos(y) + 1) = 4 - 3x^2 sin(y)$",
+       "$y'(x^3 cos(y)) = 4$",
+       "$y' = 4 - 3x^2 sin(y)$",
+       "$y'(1 - x^3) = 4$"
+      ],
+      "answer": 0,
+      "hint": "Move the term without $y'$ to the right side.",
+      "work": "$y'(x^3 cos(y) + 1) = 4 - 3x^2 sin(y)$"
+     },
+     {
+      "id": "L4.3",
+      "type": "expr",
+      "text": "Divide.",
+      "answer": "(4 - 3x^2sin(y))/(x^3cos(y) + 1)",
+      "vars": [
+       "x",
+       "y"
+      ],
+      "keys": [
+       "sin(",
+       "cos("
+      ],
+      "label": "$y'$ =",
+      "ranges": {
+       "x": [
+        0.2,
+        0.8
+       ],
+       "y": [
+        0.2,
+        0.8
+       ]
+      },
+      "show": "$frac{4 - 3x^2sin(y)}{x^3cos(y) + 1}$",
+      "hint": "Put ( ) around the top and around the bottom.",
+      "work": "$y' = frac{4 - 3x^2 sin(y)}{x^3 cos(y) + 1}$"
+     }
+    ]
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "Implicit differentiation also proves the power rule for fractional powers. What is $frac{d}{dx} x^(2/3)$?",
+    "options": [
+     "$frac{2}{3}x^(-1/3)$",
+     "$frac{2}{3}x^(1/3)$",
+     "$frac{3}{2}x^(1/2)$",
+     "$x^(-1/3)$"
+    ],
+    "answer": 0,
+    "hint": "Same power rule: bring down $frac{2}{3}$ and subtract 1.",
+    "explain": "$frac{2}{3} - 1 = -frac{1}{3}$"
+   }
+  ]
+ }
+}

@@ -1,0 +1,657 @@
+{
+ "id": "d-invfun",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Inverse Functions",
+ "subtitle": "Review: what an inverse function is and how to find one.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "F1",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = 2x + 3$.",
+     "answer": "(x - 3)/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$frac{x - 3}{2}$",
+     "level": 1,
+     "explain": "Swap $x$ and $y$ in $y = 2x + 3$ and solve: $f^(-1)(x) = frac{x - 3}{2}$."
+    },
+    {
+     "id": "F2",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = 5x - 1$.",
+     "answer": "(x + 1)/5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$frac{x + 1}{5}$",
+     "level": 1,
+     "explain": "Swap $x$ and $y$ in $y = 5x - 1$ and solve: $f^(-1)(x) = frac{x + 1}{5}$."
+    },
+    {
+     "id": "F3",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = x/4 + 2$.",
+     "answer": "4(x - 2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$4(x - 2)$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = x/4 + 2$ and solve: $f^(-1)(x) = 4(x - 2)$."
+    },
+    {
+     "id": "F4",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = x^3$.",
+     "answer": "x^(1/3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$x^(1/3)$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = x^3$ and solve: $f^(-1)(x) = x^(1/3)$."
+    },
+    {
+     "id": "F5",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = x^3 + 1$.",
+     "answer": "(x - 1)^(1/3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$(x - 1)^(1/3)$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = x^3 + 1$ and solve: $f^(-1)(x) = (x - 1)^(1/3)$."
+    },
+    {
+     "id": "F6",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = sqrt(x - 2)$.",
+     "answer": "x^2 + 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$x^2 + 2$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = sqrt(x - 2)$ and solve: $f^(-1)(x) = x^2 + 2$."
+    },
+    {
+     "id": "F7",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = e^x$.",
+     "answer": "ln(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$ln(x)$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = e^x$ and solve: $f^(-1)(x) = ln(x)$."
+    },
+    {
+     "id": "F8",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = ln(x)$.",
+     "answer": "e^x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$e^x$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = ln(x)$ and solve: $f^(-1)(x) = e^x$."
+    },
+    {
+     "id": "F9",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = frac{1}{x}$.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = frac{1}{x}$ and solve: $f^(-1)(x) = frac{1}{x}$."
+    },
+    {
+     "id": "F10",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = 3 - x$.",
+     "answer": "3 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$3 - x$",
+     "level": 1,
+     "explain": "Swap $x$ and $y$ in $y = 3 - x$ and solve: $f^(-1)(x) = 3 - x$."
+    },
+    {
+     "id": "F11",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = e^(2x)$.",
+     "answer": "ln(x)/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$frac{ln(x)}{2}$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = e^(2x)$ and solve: $f^(-1)(x) = frac{ln(x)}{2}$."
+    },
+    {
+     "id": "F12",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = frac{2}{x - 1}$.",
+     "answer": "2/x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$2/x + 1$",
+     "level": 2,
+     "explain": "Swap $x$ and $y$ in $y = frac{2}{x - 1}$ and solve: $f^(-1)(x) = 2/x + 1$."
+    },
+    {
+     "id": "F13",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = 7x$.",
+     "answer": "x/7",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$frac{x}{7}$",
+     "level": 1,
+     "explain": "Swap $x$ and $y$ in $y = 7x$ and solve: $f^(-1)(x) = frac{x}{7}$."
+    },
+    {
+     "id": "F14",
+     "type": "expr",
+     "text": "Find $f^(-1)(x)$ for $f(x) = frac{x + 5}{3}$.",
+     "answer": "3x - 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       2.2,
+       3.4
+      ]
+     },
+     "show": "$3x - 5$",
+     "level": 1,
+     "explain": "Swap $x$ and $y$ in $y = frac{x + 5}{3}$ and solve: $f^(-1)(x) = 3x - 5$."
+    },
+    {
+     "id": "P15",
+     "type": "num",
+     "text": "$f(2) = 7$. What is $f^(-1)(7)$?",
+     "answer": 2,
+     "label": "$f^(-1)(7)$ =",
+     "level": 1,
+     "explain": "The inverse sends $7$ back to $2$."
+    },
+    {
+     "id": "G16",
+     "type": "mc",
+     "text": "The point $(2, 7)$ is on the graph of $f$. Which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(7, 2)$",
+      "$(2, 7)$",
+      "$(-7, -2)$",
+      "$(2, -7)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "P17",
+     "type": "num",
+     "text": "$f(0) = 4$. What is $f^(-1)(4)$?",
+     "answer": 0,
+     "label": "$f^(-1)(4)$ =",
+     "level": 1,
+     "explain": "The inverse sends $4$ back to $0$."
+    },
+    {
+     "id": "G18",
+     "type": "mc",
+     "text": "The point $(0, 4)$ is on the graph of $f$. Which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(4, 0)$",
+      "$(0, 4)$",
+      "$(-4, 0)$",
+      "$(0, -4)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "P19",
+     "type": "num",
+     "text": "$f(-1) = 3$. What is $f^(-1)(3)$?",
+     "answer": -1,
+     "label": "$f^(-1)(3)$ =",
+     "level": 1,
+     "explain": "The inverse sends $3$ back to $-1$."
+    },
+    {
+     "id": "G20",
+     "type": "mc",
+     "text": "The point $(-1, 3)$ is on the graph of $f$. Which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(3, -1)$",
+      "$(-1, 3)$",
+      "$(-3, 1)$",
+      "$(-1, -3)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "P21",
+     "type": "num",
+     "text": "$f(5) = 1$. What is $f^(-1)(1)$?",
+     "answer": 5,
+     "label": "$f^(-1)(1)$ =",
+     "level": 1,
+     "explain": "The inverse sends $1$ back to $5$."
+    },
+    {
+     "id": "G22",
+     "type": "mc",
+     "text": "The point $(5, 1)$ is on the graph of $f$. Which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(1, 5)$",
+      "$(5, 1)$",
+      "$(-1, -5)$",
+      "$(5, -1)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "P23",
+     "type": "num",
+     "text": "$f(3) = -2$. What is $f^(-1)(-2)$?",
+     "answer": 3,
+     "label": "$f^(-1)(-2)$ =",
+     "level": 1,
+     "explain": "The inverse sends $-2$ back to $3$."
+    },
+    {
+     "id": "G24",
+     "type": "mc",
+     "text": "The point $(3, -2)$ is on the graph of $f$. Which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(-2, 3)$",
+      "$(3, -2)$",
+      "$(2, -3)$",
+      "$(3, 2)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "P25",
+     "type": "num",
+     "text": "$f(10) = 0$. What is $f^(-1)(0)$?",
+     "answer": 10,
+     "label": "$f^(-1)(0)$ =",
+     "level": 1,
+     "explain": "The inverse sends $0$ back to $10$."
+    },
+    {
+     "id": "G26",
+     "type": "mc",
+     "text": "The point $(10, 0)$ is on the graph of $f$. Which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(0, 10)$",
+      "$(10, 0)$",
+      "$(0, -10)$",
+      "$(-10, 0)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "V27",
+     "type": "num",
+     "text": "$f(x) = x^3 + x$. Find $f^(-1)(2)$ by guessing a whole number.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "level": 3,
+     "explain": "$f(1) = 2$"
+    },
+    {
+     "id": "V28",
+     "type": "num",
+     "text": "$f(x) = 2x + 1$. Find $f^(-1)(9)$ by guessing a whole number.",
+     "answer": 4,
+     "label": "$f^(-1)(9)$ =",
+     "level": 3,
+     "explain": "$f(4) = 9$"
+    },
+    {
+     "id": "V29",
+     "type": "num",
+     "text": "$f(x) = x^5 + 2$. Find $f^(-1)(3)$ by guessing a whole number.",
+     "answer": 1,
+     "label": "$f^(-1)(3)$ =",
+     "level": 3,
+     "explain": "$f(1) = 3$"
+    },
+    {
+     "id": "V30",
+     "type": "num",
+     "text": "$f(x) = e^x + x$. Find $f^(-1)(1)$ by guessing a whole number.",
+     "answer": 0,
+     "label": "$f^(-1)(1)$ =",
+     "level": 3,
+     "explain": "$f(0) = 1$"
+    },
+    {
+     "id": "V31",
+     "type": "num",
+     "text": "$f(x) = x^3 + 2x$. Find $f^(-1)(3)$ by guessing a whole number.",
+     "answer": 1,
+     "label": "$f^(-1)(3)$ =",
+     "level": 3,
+     "explain": "$f(1) = 3$"
+    },
+    {
+     "id": "T32",
+     "type": "mc",
+     "text": "Which function has an inverse function on all real numbers?",
+     "options": [
+      "$f(x) = x^3$",
+      "$f(x) = x^2$",
+      "$f(x) = |x|$",
+      "$f(x) = cos(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$f(x) = x^3$"
+    },
+    {
+     "id": "T33",
+     "type": "mc",
+     "text": "$f(f^(-1)(x))$ is always",
+     "options": [
+      "$x$",
+      "$1$",
+      "$f(x)^2$",
+      "$0$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$x$"
+    },
+    {
+     "id": "T34",
+     "type": "mc",
+     "text": "A function has an inverse function when it passes the",
+     "options": [
+      "horizontal line test",
+      "vertical line test",
+      "slope test",
+      "zero test"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "horizontal line test"
+    },
+    {
+     "id": "T35",
+     "type": "mc",
+     "text": "The domain of $f^(-1)$ is",
+     "options": [
+      "the range of $f$",
+      "the domain of $f$",
+      "all real numbers",
+      "the $x$-intercepts of $f$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "the range of $f$"
+    },
+    {
+     "id": "T36",
+     "type": "mc",
+     "text": "Is $f^(-1)(x)$ the same as $frac{1}{f(x)}$?",
+     "options": [
+      "No",
+      "Yes",
+      "Only for lines",
+      "Only when $x > 0$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "No"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "An inverse function undoes $f$: if $f(2) = 7$, then $f^(-1)(7) =$",
+    "options": [
+     "2",
+     "7",
+     "$frac{1}{7}$",
+     "−2"
+    ],
+    "answer": 0,
+    "hint": "$f$ sends 2 to 7. The inverse sends 7 back.",
+    "explain": "$f^(-1)(7) = 2$"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "To find a formula: write $y = f(x)$, swap $x$ and $y$, and solve for $y$. Find $f^(-1)(x)$ for $f(x) = 2x + 3$.",
+    "answer": "(x - 3)/2",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sqrt(",
+     "ln(",
+     "e^("
+    ],
+    "label": "$f^(-1)(x)$ =",
+    "show": "$frac{x - 3}{2}$",
+    "hint": "Swap: $x = 2y + 3$. Then solve for $y$.",
+    "explain": "$frac{x - 3}{2}$"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "The graph of $f^(-1)$ is the graph of $f$ reflected over",
+    "options": [
+     "the line $y = x$",
+     "the $x$-axis",
+     "the $y$-axis",
+     "the origin"
+    ],
+    "answer": 0,
+    "hint": "Swapping $x$ and $y$ swaps the axes.",
+    "explain": "Every point $(a, b)$ on $f$ becomes $(b, a)$ on $f^(-1)$."
+   }
+  ]
+ },
+ "lessonOptional": true
+}

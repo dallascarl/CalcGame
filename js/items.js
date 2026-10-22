@@ -19,7 +19,8 @@ const nice=v=>v===-Infinity?'−∞':v===Infinity?'∞':neg(String(+(+v).toFixed
 
 /* ---------- expressions in several variables, with implied multiplication (2rh, 3x(x+1)) ---------- */
 const XFN={sin:Math.sin,cos:Math.cos,tan:Math.tan,sec:x=>1/Math.cos(x),csc:x=>1/Math.sin(x),cot:x=>1/Math.tan(x),
-  sqrt:Math.sqrt,cbrt:Math.cbrt,ln:Math.log,log:Math.log,exp:Math.exp,abs:Math.abs,arctan:Math.atan,arcsin:Math.asin,arccos:Math.acos};
+  sqrt:Math.sqrt,cbrt:Math.cbrt,ln:Math.log,log:Math.log,exp:Math.exp,abs:Math.abs,arctan:Math.atan,arcsin:Math.asin,arccos:Math.acos,
+  sinh:Math.sinh,cosh:Math.cosh,tanh:Math.tanh};
 function xtokens(src,vars){
   const s=String(src).replace(/\s+/g,'').replace(/π/g,'pi').replace(/[−–]/g,'-').replace(/[×·]/g,'*').replace(/÷/g,'/')
     .replace(/√/g,'sqrt').replace(/′/g,"'");
@@ -73,7 +74,7 @@ function xequiv(a,b,vars,ranges){
   return good>=4;
 }
 /* typed formula shown nicely: √, π, ·, superscripts, italic letters */
-const FNAMES=/^(sin|cos|tan|sec|csc|cot|ln|log|exp|abs|arctan|arcsin|arccos|sqrt|cbrt)$/;
+const FNAMES=/^(sin|cos|tan|sec|csc|cot|ln|log|exp|abs|arctan|arcsin|arccos|sqrt|cbrt|sinh|cosh|tanh)$/;
 function pexp(s){
   let t=esc(s).replace(/sqrt\(/g,'√(').replace(/cbrt\(/g,'∛(').replace(/pi/g,'π').replace(/inf/g,'∞').replace(/\*/g,'·').replace(/-/g,'−')
     .replace(/[A-Za-zθ]+/g,w=>FNAMES.test(w)?w:w.split('').map(c=>'\u0001'+c+'\u0002').join(''));
@@ -119,7 +120,8 @@ function texprHTML(toks){
   return seq(false);
 }
 const KLAB={back:'⌫','*':'×','/':'<span class="frac kf"><span>▢</span><span>▢</span></span>','-':'−','^2':'x²','^':'xⁿ','sqrt(':'√','cbrt(':'∛',pi:'π',clear:'Clear',inf:'∞',U:'∪','(':'(',')':')',
-  'sin(':'sin','cos(':'cos','tan(':'tan','ln(':'ln','e^(':'eˣ','sec(':'sec','e':'e'};
+  'sin(':'sin','cos(':'cos','tan(':'tan','ln(':'ln','e^(':'eˣ','sec(':'sec','e':'e',
+  'csc(':'csc','cot(':'cot','arcsin(':'arcsin','arccos(':'arccos','arctan(':'arctan','sinh(':'sinh','cosh(':'cosh','tanh(':'tanh','abs(':'|x|'};
 const keyLab=k=>KLAB[k]!=null?KLAB[k]:/'$/.test(k)?esc(k.slice(0,-1))+'′':esc(k);
 /* a row of keys */
 const keyRow=(ks,cls)=>ks.map(k=>k==null?'<span></span>':'<button class="key'+(cls||'')+(k==='clear'?' wide':'')+'" data-k="'+esc(k)+'"'+(k==='back'?' aria-label="Delete"':k==='/'?' aria-label="Fraction (divide)"':'')+'>'+keyLab(k)+'</button>').join('');
@@ -127,7 +129,7 @@ const keyRow=(ks,cls)=>ks.map(k=>k==null?'<span></span>':'<button class="key'+(c
 function mountExpr(q,ix,onChange){
   const vars=q.vars||['x'],answers=[].concat(q.answer); let toks=[],locked=false;
   const top=[...vars,...(q.keys||[])];
-  ix.innerHTML='<div class="ans xans"><span>'+fmt(q.label||'Answer =')+'</span><output class="ans-box xbox empty" aria-live="polite">?</output></div><p class="tiny xerr" hidden></p>'+
+  ix.innerHTML='<div class="ans xans"><span>'+fmt(q.label||'Answer =')+'</span><output class="ans-box xbox empty" aria-live="polite">?</output>'+(q.post?'<span>'+fmt(q.post)+'</span>':'')+'</div><p class="tiny xerr" hidden></p>'+
     '<div class="xkeys">'+keyRow(top,' xk')+'</div>'+
     '<div class="pad pad6">'+keyRow(['7','8','9','(',')','back','4','5','6','*','/','^','1','2','3','+','-','^2','0','.','clear'])+'</div>';
   const box=$('.xbox',ix),err=$('.xerr',ix),str=()=>closeParens(toks.join(''));
@@ -233,7 +235,12 @@ function mountSteps(it,ix,onChange){
     const upd=()=>{ if(!C)return; if(C.kind==='pass'){btn.textContent=last?'Finish':'Next part';btn.disabled=!C.canGo();}
       else if(phase==='answer'){btn.textContent='Check';btn.disabled=!C.canGo();} };
     C=mountItem(st,$('.st-item',li),upd); upd();
-    const next=()=>{li.className='step done';btn.parentNode.remove();at++;run();
+    /* a finished part shrinks to one line of work (its "work" text, or label + answer), so the
+       whole solution so far stays on screen, like lines written on paper */
+    const next=()=>{li.className='step done';btn.parentNode.remove();
+      const good=res[at]!==false,a=st.work||((st.label?st.label+' ':'')+(answerText(st)||''));
+      if(st.type!=='info'&&a.trim()){li.innerHTML='<div class="st-work'+(good?'':' fixed')+'"><span class="st-m">'+(good?'✓':'✗')+'</span><span>'+fmt(a)+'</span></div>';}
+      at++;run();
       const nx=ol.lastElementChild; if(nx&&nx!==li)nx.scrollIntoView({block:'nearest',behavior:'smooth'});};
     const reveal=()=>{C.lock(true,false);res[at]=false;
       const a=answerText(st);
@@ -252,7 +259,7 @@ function mountSteps(it,ix,onChange){
   run();
   const right=()=>res.filter(Boolean).length;
   if(CTX==='lesson')return {kind:'pass',canGo:()=>done};
-  return {kind:'q',canGo:()=>done,check:()=>right()===n,lock(){},reset(){},
+  return {kind:'q',auto:true,canGo:()=>done,check:()=>right()===n,lock(){},reset(){},
     summary:()=>'You got '+right()+' of '+n+' parts right on the first try.'};
 }
 

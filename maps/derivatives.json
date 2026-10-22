@@ -22,7 +22,7 @@
       "label": "Definition",
       "x": 50,
       "y": 12,
-      "deck": null,
+      "deck": "d-defn",
       "requires": [
         "start"
       ],
@@ -35,7 +35,7 @@
       "label": "Derivative function",
       "x": 84,
       "y": 12,
-      "deck": null,
+      "deck": "d-func",
       "requires": [
         "defn"
       ],
@@ -47,7 +47,7 @@
       "title": "Derivative Rules",
       "x": 84,
       "y": 58,
-      "deck": null,
+      "deck": "d-rules",
       "requires": [
         "dfunc"
       ],
@@ -59,7 +59,7 @@
       "title": "Trig Functions",
       "x": 50,
       "y": 58,
-      "deck": null,
+      "deck": "d-trig",
       "requires": [
         "rules"
       ],
@@ -71,7 +71,7 @@
       "title": "Chain Rule",
       "x": 16,
       "y": 58,
-      "deck": null,
+      "deck": "d-chain",
       "requires": [
         "trig"
       ],
@@ -84,7 +84,7 @@
       "label": "Implicit diff.",
       "x": 16,
       "y": 104,
-      "deck": null,
+      "deck": "d-implicit",
       "requires": [
         "chain"
       ],
@@ -97,7 +97,7 @@
       "label": "Exponentials",
       "x": 50,
       "y": 104,
-      "deck": null,
+      "deck": "d-exp",
       "requires": [
         "implicit"
       ],
@@ -110,7 +110,7 @@
       "label": "Logs and inverses",
       "x": 84,
       "y": 104,
-      "deck": null,
+      "deck": "d-log",
       "requires": [
         "exp"
       ],
@@ -123,7 +123,7 @@
       "label": "Log. differentiation",
       "x": 84,
       "y": 150,
-      "deck": null,
+      "deck": "d-logdiff",
       "requires": [
         "dlog"
       ],
@@ -136,7 +136,7 @@
       "label": "Inverse trig",
       "x": 50,
       "y": 150,
-      "deck": null,
+      "deck": "d-invtrig",
       "requires": [
         "logdiff"
       ],
@@ -148,7 +148,7 @@
       "title": "Chapter Review",
       "x": 16,
       "y": 150,
-      "deck": null,
+      "deck": "review2",
       "requires": [
         "invtrig"
       ],
@@ -160,7 +160,7 @@
       "title": "Compositions of Functions",
       "x": 16,
       "y": 34,
-      "deck": null,
+      "deck": "d-compose",
       "requires": [
         "start"
       ],
@@ -173,7 +173,7 @@
       "label": "Trig review",
       "x": 60,
       "y": 34,
-      "deck": null,
+      "deck": "d-trigrev",
       "requires": [
         "rules"
       ],
@@ -186,7 +186,7 @@
       "label": "Solving for y",
       "x": 36,
       "y": 81,
-      "deck": null,
+      "deck": "d-solvey",
       "requires": [
         "chain"
       ],
@@ -198,7 +198,7 @@
       "title": "Inverse Functions",
       "x": 50,
       "y": 127,
-      "deck": null,
+      "deck": "d-invfun",
       "requires": [
         "exp"
       ],
@@ -211,7 +211,7 @@
       "label": "Inverse trig review",
       "x": 84,
       "y": 174,
-      "deck": null,
+      "deck": "d-invtrigrev",
       "requires": [
         "logdiff"
       ],
@@ -223,7 +223,7 @@
       "title": "Hyperbolic Trig",
       "x": 50,
       "y": 174,
-      "deck": null,
+      "deck": "d-hyper",
       "requires": [
         "invtrig"
       ],

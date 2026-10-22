@@ -1,0 +1,3763 @@
+{
+ "id": "d-chain",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "The Chain Rule",
+ "subtitle": "The derivative of a function inside a function.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "Which of these is a **composition** (a function inside a function)?",
+     "options": [
+      "$sqrt(sin(x))$",
+      "$x sin(x)$",
+      "$x + sin(x)$",
+      "$frac{sin(x)}{x}$"
+     ],
+     "answer": 0,
+     "explain": "$sqrt(sin(x))$ puts $sin(x)$ inside the square root. The others combine $x$ and $sin(x)$ by multiplying, adding or dividing."
+    },
+    {
+     "id": "T2",
+     "type": "bank",
+     "text": "The chain rule: if $f(x) = h(g(x))$ then $f'(x) =$ ___ $·$ ___",
+     "blanks": [
+      "$h'(g(x))$",
+      "$g'(x)$"
+     ],
+     "distractors": [
+      "$h'(x)$",
+      "$g(x)$",
+      "$h(g'(x))$"
+     ],
+     "explain": "Outside derivative (inside left alone) times the inside derivative."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "In Leibniz notation, with $y = h(u)$ and $u = g(x)$, the chain rule is",
+     "options": [
+      "$frac{dy}{dx} = frac{dy}{du}·frac{du}{dx}$",
+      "$frac{dy}{dx} = frac{dy}{du} + frac{du}{dx}$",
+      "$frac{dy}{dx} = frac{du}{dy}·frac{dx}{du}$",
+      "$frac{dy}{dx} = frac{dy}{du}$"
+     ],
+     "answer": 0,
+     "explain": "It looks like the $du$'s cancel, which is a nice way to remember it."
+    },
+    {
+     "id": "T4",
+     "type": "tf",
+     "text": "$frac{d}{dx} sin(x^2) = cos(2x)$",
+     "answer": false,
+     "explain": "$cos(x^2)·2x$. The inside $x^2$ stays inside the cosine, and the $2x$ multiplies on the outside."
+    },
+    {
+     "id": "T5",
+     "type": "tf",
+     "text": "When you take the derivative of the outside function, the inside function is left unchanged.",
+     "answer": true,
+     "explain": "That is why $(3x^2 + 1)^10$ becomes $10(3x^2 + 1)^9$, with $3x^2 + 1$ still inside."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "A student says $frac{d}{dx}(3x^2 + 1)^10 = 10(3x^2 + 1)^9$. What is missing?",
+     "options": [
+      "the factor $6x$",
+      "nothing, it is correct",
+      "the factor $10$",
+      "a minus sign"
+     ],
+     "answer": 0,
+     "explain": "Always multiply by the derivative of the inside."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "$f(x) = sin(sin(sin(x)))$. When you use the chain rule, how many factors does $f'(x)$ have?",
+     "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "explain": "Three layers, three factors: $cos(sin(sin(x)))·cos(sin(x))·cos(x)$."
+    },
+    {
+     "id": "T8",
+     "type": "mc",
+     "text": "Which one needs the **product** rule, not the chain rule, at the top level?",
+     "options": [
+      "$x sin(x)$",
+      "$sin(x^2)$",
+      "$(x + 1)^5$",
+      "$sqrt(cos(x))$"
+     ],
+     "answer": 0,
+     "explain": "$x sin(x)$ is $x$ times $sin(x)$: a product."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "I1",
+     "type": "expr",
+     "text": "Write $f(x) = (3x^2 + 1)^10$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "3x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3x^2 + 1$",
+     "level": 1,
+     "explain": "The inside is $g(x) = 3x^2 + 1$ and the outside is $h(u) = u^10$."
+    },
+    {
+     "id": "I2",
+     "type": "expr",
+     "text": "Write $f(x) = sin(x^2)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2$",
+     "level": 1,
+     "explain": "The inside is $g(x) = x^2$ and the outside is $h(u) = sin(u)$."
+    },
+    {
+     "id": "I3",
+     "type": "expr",
+     "text": "Write $f(x) = sqrt(1 - x^2)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "1 - x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$1 - x^2$",
+     "level": 1,
+     "explain": "The inside is $g(x) = 1 - x^2$ and the outside is $h(u) = sqrt(u)$."
+    },
+    {
+     "id": "I4",
+     "type": "expr",
+     "text": "Write $f(x) = tan^2(x)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "tan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$tan(x)$",
+     "level": 1,
+     "explain": "The inside is $g(x) = tan(x)$ and the outside is $h(u) = u^2$."
+    },
+    {
+     "id": "I5",
+     "type": "expr",
+     "text": "Write $f(x) = tan(x^2 - 2x + 5)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "x^2 - 2x + 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2 - 2x + 5$",
+     "level": 1,
+     "explain": "The inside is $g(x) = x^2 - 2x + 5$ and the outside is $h(u) = tan(u)$."
+    },
+    {
+     "id": "I6",
+     "type": "expr",
+     "text": "Write $f(x) = sec(4x^5 + 5)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "4x^5 + 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$4x^5 + 5$",
+     "level": 1,
+     "explain": "The inside is $g(x) = 4x^5 + 5$ and the outside is $h(u) = sec(u)$."
+    },
+    {
+     "id": "I7",
+     "type": "expr",
+     "text": "Write $f(x) = (x + sin(x))^3$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "x + sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x + sin(x)$",
+     "level": 1,
+     "explain": "The inside is $g(x) = x + sin(x)$ and the outside is $h(u) = u^3$."
+    },
+    {
+     "id": "I8",
+     "type": "expr",
+     "text": "Write $f(x) = frac{1}{(3x - 1)^3}$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "3x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$3x - 1$",
+     "level": 1,
+     "explain": "The inside is $g(x) = 3x - 1$ and the outside is $h(u) = frac{1}{u^3}$."
+    },
+    {
+     "id": "I9",
+     "type": "expr",
+     "text": "Write $f(x) = cos(5x)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "5x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$5x$",
+     "level": 1,
+     "explain": "The inside is $g(x) = 5x$ and the outside is $h(u) = cos(u)$."
+    },
+    {
+     "id": "I10",
+     "type": "expr",
+     "text": "Write $f(x) = sqrt(x^2 - x + 1)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "x^2 - x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$x^2 - x + 1$",
+     "level": 1,
+     "explain": "The inside is $g(x) = x^2 - x + 1$ and the outside is $h(u) = sqrt(u)$."
+    },
+    {
+     "id": "I11",
+     "type": "expr",
+     "text": "Write $f(x) = (2x^3 - x)^4$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "2x^3 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$2x^3 - x$",
+     "level": 1,
+     "explain": "The inside is $g(x) = 2x^3 - x$ and the outside is $h(u) = u^4$."
+    },
+    {
+     "id": "I12",
+     "type": "expr",
+     "text": "Write $f(x) = sin(frac{1}{x})$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 1,
+     "explain": "The inside is $g(x) = frac{1}{x}$ and the outside is $h(u) = sin(u)$."
+    },
+    {
+     "id": "I13",
+     "type": "expr",
+     "text": "Write $f(x) = cos^5(x)$ as $h(g(x))$. What is the **inside** function?",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$g(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 1,
+     "explain": "The inside is $g(x) = cos(x)$ and the outside is $h(u) = u^5$."
+    },
+    {
+     "id": "O14",
+     "type": "expr",
+     "text": "Write $f(x) = sin(frac{1}{x})$ as $h(g(x))$ with inside $g(x) = frac{1}{x}$. What is the **outside** function $h(u)$?",
+     "answer": "sin(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$sin(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = sin(u)$."
+    },
+    {
+     "id": "O15",
+     "type": "expr",
+     "text": "Write $f(x) = cos^5(x)$ as $h(g(x))$ with inside $g(x) = cos(x)$. What is the **outside** function $h(u)$?",
+     "answer": "u^5",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$u^5$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = u^5$."
+    },
+    {
+     "id": "O16",
+     "type": "expr",
+     "text": "Write $f(x) = cos(x^3)$ as $h(g(x))$ with inside $g(x) = x^3$. What is the **outside** function $h(u)$?",
+     "answer": "cos(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$cos(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = cos(u)$."
+    },
+    {
+     "id": "O17",
+     "type": "expr",
+     "text": "Write $f(x) = tan(3x)$ as $h(g(x))$ with inside $g(x) = 3x$. What is the **outside** function $h(u)$?",
+     "answer": "tan(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$tan(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = tan(u)$."
+    },
+    {
+     "id": "O18",
+     "type": "expr",
+     "text": "Write $f(x) = (x^2 + 4)^(-2)$ as $h(g(x))$ with inside $g(x) = x^2 + 4$. What is the **outside** function $h(u)$?",
+     "answer": "u^(-2)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$u^(-2)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = u^(-2)$."
+    },
+    {
+     "id": "O19",
+     "type": "expr",
+     "text": "Write $f(x) = sin(sqrt(x))$ as $h(g(x))$ with inside $g(x) = sqrt(x)$. What is the **outside** function $h(u)$?",
+     "answer": "sin(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$sin(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = sin(u)$."
+    },
+    {
+     "id": "O20",
+     "type": "expr",
+     "text": "Write $f(x) = (1 - 4x)^7$ as $h(g(x))$ with inside $g(x) = 1 - 4x$. What is the **outside** function $h(u)$?",
+     "answer": "u^7",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$u^7$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = u^7$."
+    },
+    {
+     "id": "O21",
+     "type": "expr",
+     "text": "Write $f(x) = sin^2(x)$ as $h(g(x))$ with inside $g(x) = sin(x)$. What is the **outside** function $h(u)$?",
+     "answer": "u^2",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$u^2$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = u^2$."
+    },
+    {
+     "id": "O22",
+     "type": "expr",
+     "text": "Write $f(x) = sqrt(sin(x))$ as $h(g(x))$ with inside $g(x) = sin(x)$. What is the **outside** function $h(u)$?",
+     "answer": "sqrt(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$sqrt(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = sqrt(u)$."
+    },
+    {
+     "id": "O23",
+     "type": "expr",
+     "text": "Write $f(x) = (x^2 + x)^6$ as $h(g(x))$ with inside $g(x) = x^2 + x$. What is the **outside** function $h(u)$?",
+     "answer": "u^6",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$u^6$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = u^6$."
+    },
+    {
+     "id": "O24",
+     "type": "expr",
+     "text": "Write $f(x) = frac{1}{x^2 + 1}$ as $h(g(x))$ with inside $g(x) = x^2 + 1$. What is the **outside** function $h(u)$?",
+     "answer": "1/u",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$frac{1}{u}$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = frac{1}{u}$."
+    },
+    {
+     "id": "O25",
+     "type": "expr",
+     "text": "Write $f(x) = cos(x^2 + 3x)$ as $h(g(x))$ with inside $g(x) = x^2 + 3x$. What is the **outside** function $h(u)$?",
+     "answer": "cos(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$cos(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = cos(u)$."
+    },
+    {
+     "id": "O26",
+     "type": "expr",
+     "text": "Write $f(x) = sec(2x)$ as $h(g(x))$ with inside $g(x) = 2x$. What is the **outside** function $h(u)$?",
+     "answer": "sec(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h(u)$ =",
+     "show": "$sec(u)$",
+     "level": 1,
+     "explain": "Put $u$ where the inside was: $h(u) = sec(u)$."
+    },
+    {
+     "id": "D27",
+     "type": "expr",
+     "text": "The outside function is $h(u) = u^10$. Find $h'(u)$.",
+     "answer": "10u^9",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$10u^9$",
+     "level": 1,
+     "explain": "$h'(u) = 10u^9$"
+    },
+    {
+     "id": "D28",
+     "type": "expr",
+     "text": "The outside function is $h(u) = sin(u)$. Find $h'(u)$.",
+     "answer": "cos(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$cos(u)$",
+     "level": 1,
+     "explain": "$h'(u) = cos(u)$"
+    },
+    {
+     "id": "D29",
+     "type": "expr",
+     "text": "The outside function is $h(u) = sqrt(u)$. Find $h'(u)$.",
+     "answer": "1/(2sqrt(u))",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$frac{1}{2sqrt(u)}$",
+     "level": 1,
+     "explain": "$h'(u) = frac{1}{2sqrt(u)}$"
+    },
+    {
+     "id": "D30",
+     "type": "expr",
+     "text": "The outside function is $h(u) = frac{1}{u^3}$. Find $h'(u)$.",
+     "answer": "-3/u^4",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$-frac{3}{u^4}$",
+     "level": 1,
+     "explain": "$h'(u) = -frac{3}{u^4}$"
+    },
+    {
+     "id": "D31",
+     "type": "expr",
+     "text": "The outside function is $h(u) = tan(u)$. Find $h'(u)$.",
+     "answer": "sec(u)^2",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$sec(u)^2$",
+     "level": 1,
+     "explain": "$h'(u) = sec(u)^2$"
+    },
+    {
+     "id": "D32",
+     "type": "expr",
+     "text": "The outside function is $h(u) = sec(u)$. Find $h'(u)$.",
+     "answer": "sec(u)tan(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$sec(u)tan(u)$",
+     "level": 1,
+     "explain": "$h'(u) = sec(u)tan(u)$"
+    },
+    {
+     "id": "D33",
+     "type": "expr",
+     "text": "The outside function is $h(u) = u^(-2)$. Find $h'(u)$.",
+     "answer": "-2u^(-3)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$-2u^(-3)$",
+     "level": 1,
+     "explain": "$h'(u) = -2u^(-3)$"
+    },
+    {
+     "id": "D34",
+     "type": "expr",
+     "text": "The outside function is $h(u) = cos(u)$. Find $h'(u)$.",
+     "answer": "-sin(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(u)$ =",
+     "show": "$-sin(u)$",
+     "level": 1,
+     "explain": "$h'(u) = -sin(u)$"
+    },
+    {
+     "id": "P35",
+     "type": "expr",
+     "text": "$f(x) = sqrt(1 - x^2)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = 1 - x^2$ back in.",
+     "answer": "1/(2sqrt(1 - x^2))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$frac{1}{2sqrt(1 - x^2)}$",
+     "level": 2,
+     "explain": "Replace $u$ with $1 - x^2$ and leave it alone: $frac{1}{2sqrt(1 - x^2)}$."
+    },
+    {
+     "id": "P36",
+     "type": "expr",
+     "text": "$f(x) = tan^2(x)$ has outside $h(u) = u^2$, so $h'(u) = 2u$. Put the inside $g(x) = tan(x)$ back in.",
+     "answer": "2tan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$2tan(x)$",
+     "level": 2,
+     "explain": "Replace $u$ with $tan(x)$ and leave it alone: $2tan(x)$."
+    },
+    {
+     "id": "P37",
+     "type": "expr",
+     "text": "$f(x) = tan(x^2 - 2x + 5)$ has outside $h(u) = tan(u)$, so $h'(u) = sec(u)^2$. Put the inside $g(x) = x^2 - 2x + 5$ back in.",
+     "answer": "sec(x^2 - 2x + 5)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sec(x^2 - 2x + 5)^2$",
+     "level": 2,
+     "explain": "Replace $u$ with $x^2 - 2x + 5$ and leave it alone: $sec(x^2 - 2x + 5)^2$."
+    },
+    {
+     "id": "P38",
+     "type": "expr",
+     "text": "$f(x) = sec(4x^5 + 5)$ has outside $h(u) = sec(u)$, so $h'(u) = sec(u)tan(u)$. Put the inside $g(x) = 4x^5 + 5$ back in.",
+     "answer": "sec(4x^5 + 5)tan(4x^5 + 5)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sec(4x^5 + 5)tan(4x^5 + 5)$",
+     "level": 2,
+     "explain": "Replace $u$ with $4x^5 + 5$ and leave it alone: $sec(4x^5 + 5)tan(4x^5 + 5)$."
+    },
+    {
+     "id": "P39",
+     "type": "expr",
+     "text": "$f(x) = (x + sin(x))^3$ has outside $h(u) = u^3$, so $h'(u) = 3u^2$. Put the inside $g(x) = x + sin(x)$ back in.",
+     "answer": "3(x + sin(x))^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$3(x + sin(x))^2$",
+     "level": 2,
+     "explain": "Replace $u$ with $x + sin(x)$ and leave it alone: $3(x + sin(x))^2$."
+    },
+    {
+     "id": "P40",
+     "type": "expr",
+     "text": "$f(x) = frac{1}{(3x - 1)^3}$ has outside $h(u) = frac{1}{u^3}$, so $h'(u) = -frac{3}{u^4}$. Put the inside $g(x) = 3x - 1$ back in.",
+     "answer": "-3/(3x - 1)^4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$-frac{3}{(3x - 1)^4}$",
+     "level": 2,
+     "explain": "Replace $u$ with $3x - 1$ and leave it alone: $-frac{3}{(3x - 1)^4}$."
+    },
+    {
+     "id": "P41",
+     "type": "expr",
+     "text": "$f(x) = cos(5x)$ has outside $h(u) = cos(u)$, so $h'(u) = -sin(u)$. Put the inside $g(x) = 5x$ back in.",
+     "answer": "-sin(5x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$-sin(5x)$",
+     "level": 2,
+     "explain": "Replace $u$ with $5x$ and leave it alone: $-sin(5x)$."
+    },
+    {
+     "id": "P42",
+     "type": "expr",
+     "text": "$f(x) = sqrt(x^2 - x + 1)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = x^2 - x + 1$ back in.",
+     "answer": "1/(2sqrt(x^2 - x + 1))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$frac{1}{2sqrt(x^2 - x + 1)}$",
+     "level": 2,
+     "explain": "Replace $u$ with $x^2 - x + 1$ and leave it alone: $frac{1}{2sqrt(x^2 - x + 1)}$."
+    },
+    {
+     "id": "P43",
+     "type": "expr",
+     "text": "$f(x) = (2x^3 - x)^4$ has outside $h(u) = u^4$, so $h'(u) = 4u^3$. Put the inside $g(x) = 2x^3 - x$ back in.",
+     "answer": "4(2x^3 - x)^3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$4(2x^3 - x)^3$",
+     "level": 2,
+     "explain": "Replace $u$ with $2x^3 - x$ and leave it alone: $4(2x^3 - x)^3$."
+    },
+    {
+     "id": "P44",
+     "type": "expr",
+     "text": "$f(x) = sin(frac{1}{x})$ has outside $h(u) = sin(u)$, so $h'(u) = cos(u)$. Put the inside $g(x) = frac{1}{x}$ back in.",
+     "answer": "cos(1/x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$h'(g(x))$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$cos(1/x)$",
+     "level": 2,
+     "explain": "Replace $u$ with $frac{1}{x}$ and leave it alone: $cos(1/x)$."
+    },
+    {
+     "id": "F45",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = (3x^2 + 1)^10$.",
+     "answer": "6x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = 10(3x^2 + 1)^9·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$6x$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $3x^2 + 1$: that's $6x$."
+    },
+    {
+     "id": "F46",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sin(x^2)$.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = cos(x^2)·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $x^2$: that's $2x$."
+    },
+    {
+     "id": "F47",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sqrt(1 - x^2)$.",
+     "answer": "-2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = frac{1}{2sqrt(1 - x^2)}·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$-2x$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $1 - x^2$: that's $-2x$."
+    },
+    {
+     "id": "F48",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = tan^2(x)$.",
+     "answer": "sec(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = 2tan(x)·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sec(x)^2$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $tan(x)$: that's $sec(x)^2$."
+    },
+    {
+     "id": "F49",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = tan(x^2 - 2x + 5)$.",
+     "answer": "2x - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = sec(x^2 - 2x + 5)^2·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$2x - 2$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $x^2 - 2x + 5$: that's $2x - 2$."
+    },
+    {
+     "id": "F50",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sec(4x^5 + 5)$.",
+     "answer": "20x^4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = sec(4x^5 + 5)tan(4x^5 + 5)·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$20x^4$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $4x^5 + 5$: that's $20x^4$."
+    },
+    {
+     "id": "F51",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = (x + sin(x))^3$.",
+     "answer": "cos(x) + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = 3(x + sin(x))^2·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$cos(x) + 1$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $x + sin(x)$: that's $cos(x) + 1$."
+    },
+    {
+     "id": "F52",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = frac{1}{(3x - 1)^3}$.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = -frac{3}{(3x - 1)^4}·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$3$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $3x - 1$: that's $3$."
+    },
+    {
+     "id": "F53",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = cos(5x)$.",
+     "answer": "5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = -sin(5x)·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$5$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $5x$: that's $5$."
+    },
+    {
+     "id": "F54",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sqrt(x^2 - x + 1)$.",
+     "answer": "2x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = frac{1}{2sqrt(x^2 - x + 1)}·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$2x - 1$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $x^2 - x + 1$: that's $2x - 1$."
+    },
+    {
+     "id": "F55",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = (2x^3 - x)^4$.",
+     "answer": "6x^2 - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = 4(2x^3 - x)^3·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$6x^2 - 1$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $2x^3 - x$: that's $6x^2 - 1$."
+    },
+    {
+     "id": "F56",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sin(frac{1}{x})$.",
+     "answer": "-1/x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = cos(1/x)·($",
+     "post": "$)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$-frac{1}{x^2}$",
+     "level": 2,
+     "explain": "The missing factor is the derivative of the inside, $frac{1}{x}$: that's $-frac{1}{x^2}$."
+    },
+    {
+     "id": "G57",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = cos^5(x)$.",
+     "answer": "5cos(x)^4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(-sin(x))$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$5cos(x)^4$",
+     "level": 2,
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $5cos(x)^4$."
+    },
+    {
+     "id": "G58",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = cos(x^3)$.",
+     "answer": "-sin(x^3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(3x^2)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$-sin(x^3)$",
+     "level": 2,
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $-sin(x^3)$."
+    },
+    {
+     "id": "G59",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = tan(3x)$.",
+     "answer": "sec(3x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(3)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sec(3x)^2$",
+     "level": 2,
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $sec(3x)^2$."
+    },
+    {
+     "id": "G60",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = (x^2 + 4)^(-2)$.",
+     "answer": "-2(x^2 + 4)^(-3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(2x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$-2(x^2 + 4)^(-3)$",
+     "level": 2,
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $-2(x^2 + 4)^(-3)$."
+    },
+    {
+     "id": "G61",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = sin(sqrt(x))$.",
+     "answer": "cos(sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(frac{1}{2sqrt(x)})$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$cos(sqrt(x))$",
+     "level": 2,
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $cos(sqrt(x))$."
+    },
+    {
+     "id": "G62",
+     "type": "expr",
+     "text": "Finish the chain rule for $f(x) = (1 - 4x)^7$.",
+     "answer": "7(1 - 4x)^6",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$)·(-4)$",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$7(1 - 4x)^6$",
+     "level": 2,
+     "explain": "The missing factor is the outside's derivative with the inside left alone: $7(1 - 4x)^6$."
+    },
+    {
+     "id": "W63",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = (3x^2 + 1)^10$.",
+     "steps": [
+      {
+       "id": "W63.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "3x^2 + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$3x^2 + 1$",
+       "work": "inside: $g(x) = 3x^2 + 1$"
+      },
+      {
+       "id": "W63.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^10$.",
+       "answer": "10u^9",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$10u^9$",
+       "work": "$h'(u) = 10u^9$"
+      },
+      {
+       "id": "W63.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "6x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$6x$",
+       "work": "$g'(x) = 6x$"
+      },
+      {
+       "id": "W63.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(10(3x^2 + 1)^9)(6x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(10(3x^2 + 1)^9)(6x)$",
+       "work": "$f'(x) = (10(3x^2 + 1)^9)(6x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (10(3x^2 + 1)^9)(6x)$"
+    },
+    {
+     "id": "W64",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = sqrt(1 - x^2)$.",
+     "steps": [
+      {
+       "id": "W64.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "1 - x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$1 - x^2$",
+       "work": "inside: $g(x) = 1 - x^2$"
+      },
+      {
+       "id": "W64.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = sqrt(u)$.",
+       "answer": "1/(2sqrt(u))",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$frac{1}{2sqrt(u)}$",
+       "work": "$h'(u) = frac{1}{2sqrt(u)}$"
+      },
+      {
+       "id": "W64.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "-2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$-2x$",
+       "work": "$g'(x) = -2x$"
+      },
+      {
+       "id": "W64.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(1/(2sqrt(1 - x^2)))(-2x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(1/(2sqrt(1 - x^2)))(-2x)$",
+       "work": "$f'(x) = (1/(2sqrt(1 - x^2)))(-2x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (1/(2sqrt(1 - x^2)))(-2x)$"
+    },
+    {
+     "id": "W65",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = tan(x^2 - 2x + 5)$.",
+     "steps": [
+      {
+       "id": "W65.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "x^2 - 2x + 5",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x^2 - 2x + 5$",
+       "work": "inside: $g(x) = x^2 - 2x + 5$"
+      },
+      {
+       "id": "W65.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = tan(u)$.",
+       "answer": "sec(u)^2",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$sec(u)^2$",
+       "work": "$h'(u) = sec(u)^2$"
+      },
+      {
+       "id": "W65.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "2x - 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$2x - 2$",
+       "work": "$g'(x) = 2x - 2$"
+      },
+      {
+       "id": "W65.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(sec(x^2 - 2x + 5)^2)(2x - 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(sec(x^2 - 2x + 5)^2)(2x - 2)$",
+       "work": "$f'(x) = (sec(x^2 - 2x + 5)^2)(2x - 2)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (sec(x^2 - 2x + 5)^2)(2x - 2)$"
+    },
+    {
+     "id": "W66",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = (x + sin(x))^3$.",
+     "steps": [
+      {
+       "id": "W66.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "x + sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x + sin(x)$",
+       "work": "inside: $g(x) = x + sin(x)$"
+      },
+      {
+       "id": "W66.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^3$.",
+       "answer": "3u^2",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$3u^2$",
+       "work": "$h'(u) = 3u^2$"
+      },
+      {
+       "id": "W66.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "cos(x) + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$cos(x) + 1$",
+       "work": "$g'(x) = cos(x) + 1$"
+      },
+      {
+       "id": "W66.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(3(x + sin(x))^2)(cos(x) + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(3(x + sin(x))^2)(cos(x) + 1)$",
+       "work": "$f'(x) = (3(x + sin(x))^2)(cos(x) + 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (3(x + sin(x))^2)(cos(x) + 1)$"
+    },
+    {
+     "id": "W67",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = cos(5x)$.",
+     "steps": [
+      {
+       "id": "W67.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "5x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$5x$",
+       "work": "inside: $g(x) = 5x$"
+      },
+      {
+       "id": "W67.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = cos(u)$.",
+       "answer": "-sin(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$-sin(u)$",
+       "work": "$h'(u) = -sin(u)$"
+      },
+      {
+       "id": "W67.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "5",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$5$",
+       "work": "$g'(x) = 5$"
+      },
+      {
+       "id": "W67.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(-sin(5x))(5)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(-sin(5x))(5)$",
+       "work": "$f'(x) = (-sin(5x))(5)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (-sin(5x))(5)$"
+    },
+    {
+     "id": "W68",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = (2x^3 - x)^4$.",
+     "steps": [
+      {
+       "id": "W68.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "2x^3 - x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$2x^3 - x$",
+       "work": "inside: $g(x) = 2x^3 - x$"
+      },
+      {
+       "id": "W68.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^4$.",
+       "answer": "4u^3",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$4u^3$",
+       "work": "$h'(u) = 4u^3$"
+      },
+      {
+       "id": "W68.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "6x^2 - 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$6x^2 - 1$",
+       "work": "$g'(x) = 6x^2 - 1$"
+      },
+      {
+       "id": "W68.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(4(2x^3 - x)^3)(6x^2 - 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(4(2x^3 - x)^3)(6x^2 - 1)$",
+       "work": "$f'(x) = (4(2x^3 - x)^3)(6x^2 - 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (4(2x^3 - x)^3)(6x^2 - 1)$"
+    },
+    {
+     "id": "W69",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = cos^5(x)$.",
+     "steps": [
+      {
+       "id": "W69.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "inside: $g(x) = cos(x)$"
+      },
+      {
+       "id": "W69.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^5$.",
+       "answer": "5u^4",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$5u^4$",
+       "work": "$h'(u) = 5u^4$"
+      },
+      {
+       "id": "W69.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$g'(x) = -sin(x)$"
+      },
+      {
+       "id": "W69.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(5cos(x)^4)(-sin(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(5cos(x)^4)(-sin(x))$",
+       "work": "$f'(x) = (5cos(x)^4)(-sin(x))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (5cos(x)^4)(-sin(x))$"
+    },
+    {
+     "id": "W70",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = tan(3x)$.",
+     "steps": [
+      {
+       "id": "W70.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "3x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$3x$",
+       "work": "inside: $g(x) = 3x$"
+      },
+      {
+       "id": "W70.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = tan(u)$.",
+       "answer": "sec(u)^2",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$sec(u)^2$",
+       "work": "$h'(u) = sec(u)^2$"
+      },
+      {
+       "id": "W70.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$3$",
+       "work": "$g'(x) = 3$"
+      },
+      {
+       "id": "W70.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(sec(3x)^2)(3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(sec(3x)^2)(3)$",
+       "work": "$f'(x) = (sec(3x)^2)(3)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (sec(3x)^2)(3)$"
+    },
+    {
+     "id": "W71",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = sin(sqrt(x))$.",
+     "steps": [
+      {
+       "id": "W71.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "sqrt(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$sqrt(x)$",
+       "work": "inside: $g(x) = sqrt(x)$"
+      },
+      {
+       "id": "W71.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = sin(u)$.",
+       "answer": "cos(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$cos(u)$",
+       "work": "$h'(u) = cos(u)$"
+      },
+      {
+       "id": "W71.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "1/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$frac{1}{2sqrt(x)}$",
+       "work": "$g'(x) = frac{1}{2sqrt(x)}$"
+      },
+      {
+       "id": "W71.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(cos(sqrt(x)))(1/(2sqrt(x)))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(cos(sqrt(x)))(1/(2sqrt(x)))$",
+       "work": "$f'(x) = (cos(sqrt(x)))(1/(2sqrt(x)))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (cos(sqrt(x)))(1/(2sqrt(x)))$"
+    },
+    {
+     "id": "W72",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = sin^2(x)$.",
+     "steps": [
+      {
+       "id": "W72.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$sin(x)$",
+       "work": "inside: $g(x) = sin(x)$"
+      },
+      {
+       "id": "W72.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^2$.",
+       "answer": "2u",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$2u$",
+       "work": "$h'(u) = 2u$"
+      },
+      {
+       "id": "W72.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$g'(x) = cos(x)$"
+      },
+      {
+       "id": "W72.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(2sin(x))(cos(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(2sin(x))(cos(x))$",
+       "work": "$f'(x) = (2sin(x))(cos(x))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2sin(x))(cos(x))$"
+    },
+    {
+     "id": "W73",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = (x^2 + x)^6$.",
+     "steps": [
+      {
+       "id": "W73.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "x^2 + x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x^2 + x$",
+       "work": "inside: $g(x) = x^2 + x$"
+      },
+      {
+       "id": "W73.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = u^6$.",
+       "answer": "6u^5",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$6u^5$",
+       "work": "$h'(u) = 6u^5$"
+      },
+      {
+       "id": "W73.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "2x + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$2x + 1$",
+       "work": "$g'(x) = 2x + 1$"
+      },
+      {
+       "id": "W73.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(6(x^2 + x)^5)(2x + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(6(x^2 + x)^5)(2x + 1)$",
+       "work": "$f'(x) = (6(x^2 + x)^5)(2x + 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (6(x^2 + x)^5)(2x + 1)$"
+    },
+    {
+     "id": "W74",
+     "type": "steps",
+     "text": "Use the chain rule on $f(x) = cos(x^2 + 3x)$.",
+     "steps": [
+      {
+       "id": "W74.1",
+       "type": "expr",
+       "text": "What is inside?",
+       "answer": "x^2 + 3x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x^2 + 3x$",
+       "work": "inside: $g(x) = x^2 + 3x$"
+      },
+      {
+       "id": "W74.2",
+       "type": "expr",
+       "text": "The outside is $h(u) = cos(u)$.",
+       "answer": "-sin(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$h'(u)$ =",
+       "show": "$-sin(u)$",
+       "work": "$h'(u) = -sin(u)$"
+      },
+      {
+       "id": "W74.3",
+       "type": "expr",
+       "text": "Derivative of the inside.",
+       "answer": "2x + 3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$2x + 3$",
+       "work": "$g'(x) = 2x + 3$"
+      },
+      {
+       "id": "W74.4",
+       "type": "expr",
+       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "answer": "(-sin(x^2 + 3x))(2x + 3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$(-sin(x^2 + 3x))(2x + 3)$",
+       "work": "$f'(x) = (-sin(x^2 + 3x))(2x + 3)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (-sin(x^2 + 3x))(2x + 3)$"
+    },
+    {
+     "id": "C75",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cos(5x)$.",
+     "answer": "-5sin(5x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$-5sin(5x)$",
+     "level": 3,
+     "explain": "$-5sin(5x)$"
+    },
+    {
+     "id": "C76",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = (1 - 4x)^7$.",
+     "answer": "-28(1 - 4x)^6",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$-28(1 - 4x)^6$",
+     "level": 3,
+     "explain": "$-28(1 - 4x)^6$"
+    },
+    {
+     "id": "C77",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = tan(3x)$.",
+     "answer": "3sec(3x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$3sec(3x)^2$",
+     "level": 3,
+     "explain": "$3sec(3x)^2$"
+    },
+    {
+     "id": "C78",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sin^2(x)$.",
+     "answer": "2sin(x)cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$2sin(x)cos(x)$",
+     "level": 3,
+     "explain": "$2sin(x)cos(x)$"
+    },
+    {
+     "id": "C79",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sqrt(2x + 1)$.",
+     "answer": "1/sqrt(2x + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$frac{1}{sqrt(2x + 1)}$",
+     "level": 3,
+     "explain": "$frac{1}{sqrt(2x + 1)}$"
+    },
+    {
+     "id": "C80",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = (x^2 + 1)^3$.",
+     "answer": "6x(x^2 + 1)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$6x(x^2 + 1)^2$",
+     "level": 3,
+     "explain": "$6x(x^2 + 1)^2$"
+    },
+    {
+     "id": "C81",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sec(2x)$.",
+     "answer": "2sec(2x)tan(2x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$2sec(2x)tan(2x)$",
+     "level": 3,
+     "explain": "$2sec(2x)tan(2x)$"
+    },
+    {
+     "id": "C82",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cos(x^3)$.",
+     "answer": "-3x^2sin(x^3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       0.7
+      ]
+     },
+     "show": "$-3x^2sin(x^3)$",
+     "level": 3,
+     "explain": "$-3x^2sin(x^3)$"
+    },
+    {
+     "id": "X83",
+     "type": "steps",
+     "text": "Peel the layers of $f(x) = (sin(sqrt(x)))^2$ from the outside in.",
+     "steps": [
+      {
+       "id": "X83.1",
+       "type": "expr",
+       "text": "Derivative of the square, with everything inside it left alone.",
+       "answer": "2sin(sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$2sin(sqrt(x))$",
+       "work": "the square: $2sin(sqrt(x))$"
+      },
+      {
+       "id": "X83.2",
+       "type": "expr",
+       "text": "Derivative of the sine, with everything inside it left alone.",
+       "answer": "cos(sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$cos(sqrt(x))$",
+       "work": "the sine: $cos(sqrt(x))$"
+      },
+      {
+       "id": "X83.3",
+       "type": "expr",
+       "text": "Derivative of the square root, with everything inside it left alone.",
+       "answer": "1/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$frac{1}{2sqrt(x)}$",
+       "work": "the square root: $1/(2sqrt(x))$"
+      },
+      {
+       "id": "X83.4",
+       "type": "expr",
+       "text": "Multiply all the factors.",
+       "answer": "(2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$(2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))$",
+       "work": "$f'(x) = (2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))$"
+    },
+    {
+     "id": "X84",
+     "type": "steps",
+     "text": "Peel the layers of $f(x) = tan^3(x^2 + 2x - 1)$ from the outside in.",
+     "steps": [
+      {
+       "id": "X84.1",
+       "type": "expr",
+       "text": "Derivative of the cube, with everything inside it left alone.",
+       "answer": "3tan(x^2 + 2x - 1)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$3tan(x^2 + 2x - 1)^2$",
+       "work": "the cube: $3tan(x^2 + 2x - 1)^2$"
+      },
+      {
+       "id": "X84.2",
+       "type": "expr",
+       "text": "Derivative of the tangent, with everything inside it left alone.",
+       "answer": "sec(x^2 + 2x - 1)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$sec(x^2 + 2x - 1)^2$",
+       "work": "the tangent: $sec(x^2 + 2x - 1)^2$"
+      },
+      {
+       "id": "X84.3",
+       "type": "expr",
+       "text": "Derivative of the inside polynomial, with everything inside it left alone.",
+       "answer": "2x + 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$2x + 2$",
+       "work": "the inside polynomial: $2x + 2$"
+      },
+      {
+       "id": "X84.4",
+       "type": "expr",
+       "text": "Multiply all the factors.",
+       "answer": "(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$",
+       "work": "$f'(x) = (3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$"
+    },
+    {
+     "id": "X85",
+     "type": "steps",
+     "text": "Peel the layers of $f(x) = sin(sin(sin(x)))$ from the outside in.",
+     "steps": [
+      {
+       "id": "X85.1",
+       "type": "expr",
+       "text": "Derivative of the outer sine, with everything inside it left alone.",
+       "answer": "cos(sin(sin(x)))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$cos(sin(sin(x)))$",
+       "work": "the outer sine: $cos(sin(sin(x)))$"
+      },
+      {
+       "id": "X85.2",
+       "type": "expr",
+       "text": "Derivative of the middle sine, with everything inside it left alone.",
+       "answer": "cos(sin(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$cos(sin(x))$",
+       "work": "the middle sine: $cos(sin(x))$"
+      },
+      {
+       "id": "X85.3",
+       "type": "expr",
+       "text": "Derivative of the inner sine, with everything inside it left alone.",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "the inner sine: $cos(x)$"
+      },
+      {
+       "id": "X85.4",
+       "type": "expr",
+       "text": "Multiply all the factors.",
+       "answer": "(cos(sin(sin(x))))(cos(sin(x)))(cos(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$(cos(sin(sin(x))))(cos(sin(x)))(cos(x))$",
+       "work": "$f'(x) = (cos(sin(sin(x))))(cos(sin(x)))(cos(x))$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (cos(sin(sin(x))))(cos(sin(x)))(cos(x))$"
+    },
+    {
+     "id": "X86",
+     "type": "steps",
+     "text": "Peel the layers of $f(x) = sqrt(cos(x^2 + 1))$ from the outside in.",
+     "steps": [
+      {
+       "id": "X86.1",
+       "type": "expr",
+       "text": "Derivative of the square root, with everything inside it left alone.",
+       "answer": "1/(2sqrt(cos(x^2 + 1)))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$frac{1}{2sqrt(cos(x^2 + 1))}$",
+       "work": "the square root: $1/(2sqrt(cos(x^2 + 1)))$"
+      },
+      {
+       "id": "X86.2",
+       "type": "expr",
+       "text": "Derivative of the cosine, with everything inside it left alone.",
+       "answer": "-sin(x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$-sin(x^2 + 1)$",
+       "work": "the cosine: $-sin(x^2 + 1)$"
+      },
+      {
+       "id": "X86.3",
+       "type": "expr",
+       "text": "Derivative of the inside polynomial, with everything inside it left alone.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$2x$",
+       "work": "the inside polynomial: $2x$"
+      },
+      {
+       "id": "X86.4",
+       "type": "expr",
+       "text": "Multiply all the factors.",
+       "answer": "(1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$(1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)$",
+       "work": "$f'(x) = (1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)$"
+    },
+    {
+     "id": "X87",
+     "type": "steps",
+     "text": "Peel the layers of $f(x) = cos^2(3x)$ from the outside in.",
+     "steps": [
+      {
+       "id": "X87.1",
+       "type": "expr",
+       "text": "Derivative of the square, with everything inside it left alone.",
+       "answer": "2cos(3x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$2cos(3x)$",
+       "work": "the square: $2cos(3x)$"
+      },
+      {
+       "id": "X87.2",
+       "type": "expr",
+       "text": "Derivative of the cosine, with everything inside it left alone.",
+       "answer": "-sin(3x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$-sin(3x)$",
+       "work": "the cosine: $-sin(3x)$"
+      },
+      {
+       "id": "X87.3",
+       "type": "expr",
+       "text": "Derivative of the inside $3x$, with everything inside it left alone.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "factor =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$3$",
+       "work": "the inside $3x$: $3$"
+      },
+      {
+       "id": "X87.4",
+       "type": "expr",
+       "text": "Multiply all the factors.",
+       "answer": "(2cos(3x))(-sin(3x))(3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec(",
+        "sqrt("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         0.6
+        ]
+       },
+       "show": "$(2cos(3x))(-sin(3x))(3)$",
+       "work": "$f'(x) = (2cos(3x))(-sin(3x))(3)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2cos(3x))(-sin(3x))(3)$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "The chain rule is for a **composition**, a function inside a function: $f(x) = h(g(x))$. In $f(x) = (3x^2 + 1)^10$, what is the **inside** function $g(x)$?",
+    "options": [
+     "$3x^2 + 1$",
+     "$(3x^2 + 1)^10$",
+     "$u^10$",
+     "$10$"
+    ],
+    "answer": 0,
+    "hint": "What gets raised to the 10th power?",
+    "explain": "The inside is $g(x) = 3x^2 + 1$. The outside is \"raise it to the 10th\": $h(u) = u^10$."
+   },
+   {
+    "id": "L2",
+    "type": "steps",
+    "text": "**Chain rule:** $f'(x) = h'(g(x))·g'(x)$. Derivative of the outside, with the inside left alone, times the derivative of the inside. Let's do $f(x) = (3x^2 + 1)^10$.",
+    "steps": [
+     {
+      "id": "L2.1",
+      "type": "expr",
+      "text": "The outside is $h(u) = u^10$.",
+      "answer": "10u^9",
+      "vars": [
+       "u"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec(",
+       "sqrt("
+      ],
+      "label": "$h'(u)$ =",
+      "show": "$10u^9$",
+      "hint": "Power rule.",
+      "work": "$h'(u) = 10u^9$"
+     },
+     {
+      "id": "L2.2",
+      "type": "expr",
+      "text": "Put the inside back in for $u$. Leave it alone.",
+      "answer": "10(3x^2 + 1)^9",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec(",
+       "sqrt("
+      ],
+      "label": "$h'(g(x))$ =",
+      "show": "$10(3x^2 + 1)^9$",
+      "hint": "Replace $u$ with $(3x^2 + 1)$.",
+      "work": "$h'(g(x)) = 10(3x^2 + 1)^9$"
+     },
+     {
+      "id": "L2.3",
+      "type": "expr",
+      "text": "Now the derivative of the inside, $g(x) = 3x^2 + 1$.",
+      "answer": "6x",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec(",
+       "sqrt("
+      ],
+      "label": "$g'(x)$ =",
+      "show": "$6x$",
+      "hint": "Power rule.",
+      "work": "$g'(x) = 6x$"
+     },
+     {
+      "id": "L2.4",
+      "type": "expr",
+      "text": "Multiply.",
+      "answer": "10(3x^2 + 1)^9(6x)",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec(",
+       "sqrt("
+      ],
+      "label": "$f'(x)$ =",
+      "show": "$10(3x^2 + 1)^9(6x)$",
+      "hint": "$10(3x^2 + 1)^9·6x$",
+      "work": "$f'(x) = 10(3x^2 + 1)^9·6x$"
+     }
+    ]
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "$sin^2(x)$ means $(sin(x))^2$. Which function is on the **outside**?",
+    "options": [
+     "the square",
+     "the sine",
+     "neither: it is a product",
+     "the $x$"
+    ],
+    "answer": 0,
+    "hint": "What is the last thing you would do to compute it on a calculator?",
+    "explain": "Find $sin(x)$ first, then square it. The square is outside, so $f' = 2sin(x)·cos(x)$."
+   },
+   {
+    "id": "L4",
+    "type": "expr",
+    "text": "Your turn: $f(x) = sin(x^2)$. Outside: sine. Inside: $x^2$.",
+    "answer": "cos(x^2)(2x)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sin(",
+     "cos(",
+     "tan(",
+     "sec(",
+     "sqrt("
+    ],
+    "label": "$f'(x)$ =",
+    "show": "$cos(x^2)(2x)$",
+    "hint": "Derivative of the outside with the inside left alone: $cos(x^2)$. Then times the derivative of the inside.",
+    "explain": "$cos(x^2)·2x$"
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "Some functions are three deep: $f(x) = (sin(sqrt(x)))^2$. Peel from the outside in, one factor per layer:\n$f'(x) = 2sin(sqrt(x))·cos(sqrt(x))·frac{1}{2sqrt(x)}$\nWhich factor is the derivative of the **innermost** function?",
+    "options": [
+     "$frac{1}{2sqrt(x)}$",
+     "$cos(sqrt(x))$",
+     "$2sin(sqrt(x))$",
+     "$sqrt(x)$"
+    ],
+    "answer": 0,
+    "hint": "The innermost function is $sqrt(x)$.",
+    "explain": "Square → sine → square root. Each layer adds one factor."
+   }
+  ]
+ }
+}

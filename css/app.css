@@ -556,3 +556,30 @@ body{margin:0}
 #app.wide{max-width:64rem}
 @media (min-width:760px){ #app.wide .ak details{columns:2;column-gap:28px} #app.wide .ak-q{break-inside:avoid} #app.wide .ak summary{column-span:all} }
 .pad .kf{font-size:12px}
+
+/* ---------- pool and all-required drills ---------- */
+.pstat{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:13px;color:var(--muted)}
+.pstat .ok{color:var(--good);font-weight:700} .pstat .no{color:var(--bad);font-weight:700}
+.lvl{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1.5px solid currentColor}
+.lvl.l1{color:var(--teal)} .lvl.l2{color:var(--gold)} .lvl.l3{color:var(--curve)}
+.note.small{font-size:13px;padding:8px 10px}
+.note.small .link{padding:0;font-size:13px}
+
+/* ---------- a multi-step problem: finished parts shrink to one line of work ---------- */
+.step.done{padding:8px 12px;gap:0}
+.st-work{display:flex;align-items:baseline;gap:10px;font-size:17px;overflow-wrap:anywhere}
+.st-m{font-size:13px;font-weight:700;color:var(--good);flex:none}
+.st-work.fixed .st-m{color:var(--bad)}
+.st-work.fixed{border-left:3px solid var(--bad);padding-left:8px}
+
+/* ---------- secant and derivative-trace explorers ---------- */
+.sec-read{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:15px}
+.sec-read b{font-variant-numeric:tabular-nums}
+.sec-tab{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.sec-tab td,.sec-tab th{padding:3px 6px;border-bottom:1px solid var(--rule);text-align:right}
+.sec-tab th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.g-sec{stroke:var(--teal);stroke-width:2.2;fill:none}
+.g-pa{fill:var(--ink)} .g-pb{fill:var(--teal)}
+.dt-dot{fill:var(--curve)}
+.dt-true{stroke:var(--teal);stroke-width:2;fill:none;stroke-dasharray:5 4}
+.gw-cap{font-size:12px;color:var(--muted);margin:-6px 0 0;text-align:center}

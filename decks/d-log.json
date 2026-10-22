@@ -1,0 +1,1673 @@
+{
+ "id": "d-log",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Derivatives of Logarithms and Inverse Functions",
+ "subtitle": "ln x, log base b, and the slope of an inverse.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "$frac{d}{dx} ln(x) =$",
+     "options": [
+      "$frac{1}{x}$",
+      "$ln(x)$",
+      "$e^x$",
+      "$frac{1}{ln(x)}$"
+     ],
+     "answer": 0,
+     "explain": "One of the most-used derivatives in calculus."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$frac{d}{dx} ln(g(x)) =$",
+     "options": [
+      "$frac{g'(x)}{g(x)}$",
+      "$frac{1}{g(x)}$",
+      "$frac{1}{g'(x)}$",
+      "$ln(g'(x))$"
+     ],
+     "answer": 0,
+     "explain": "Chain rule: $frac{1}{g(x)}·g'(x)$."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "$frac{d}{dx} ln(2x) = frac{1}{2x}$",
+     "answer": false,
+     "explain": "$frac{2}{2x} = frac{1}{x}$. (Or: $ln(2x) = ln(2) + ln(x)$, and $ln(2)$ is a constant.)"
+    },
+    {
+     "id": "T4",
+     "type": "match",
+     "text": "Match the log rules.",
+     "pairs": [
+      [
+       "$ln(ab)$",
+       "$ln(a) + ln(b)$"
+      ],
+      [
+       "$ln(frac{a}{b})$",
+       "$ln(a) - ln(b)$"
+      ],
+      [
+       "$ln(a^r)$",
+       "$r ln(a)$"
+      ],
+      [
+       "$ln(e)$",
+       "$1$"
+      ]
+     ],
+     "explain": "Use these to simplify before differentiating."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$frac{d}{dx} log_b(x) =$",
+     "options": [
+      "$frac{1}{x ln(b)}$",
+      "$frac{1}{x}$",
+      "$frac{ln(b)}{x}$",
+      "$b^x ln(b)$"
+     ],
+     "answer": 0,
+     "explain": "$log_b(x) = frac{ln(x)}{ln(b)}$, and $ln(b)$ is a constant."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "The inverse function theorem says $(f^(-1))'(a) =$",
+     "options": [
+      "$frac{1}{f'(f^(-1)(a))}$",
+      "$frac{1}{f'(a)}$",
+      "$-f'(a)$",
+      "$f'(f^(-1)(a))$"
+     ],
+     "answer": 0,
+     "explain": "Find where $f$ takes the value $a$, take the slope of $f$ there, and flip it."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "The graph of $f^(-1)$ is the graph of $f$",
+     "options": [
+      "reflected over the line $y = x$",
+      "reflected over the $x$-axis",
+      "shifted up 1",
+      "turned upside down"
+     ],
+     "answer": 0,
+     "explain": "Swapping $x$ and $y$ reflects over $y = x$, which turns a slope $m$ into $frac{1}{m}$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "B1",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(5x)$.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{x}$",
+     "level": 1,
+     "explain": "$frac{1}{x}$"
+    },
+    {
+     "id": "B2",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x^3)$.",
+     "answer": "3/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{3}{x}$",
+     "level": 1,
+     "explain": "$frac{3}{x}$"
+    },
+    {
+     "id": "B3",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 4ln(x)$.",
+     "answer": "4/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{4}{x}$",
+     "level": 1,
+     "explain": "$frac{4}{x}$"
+    },
+    {
+     "id": "B4",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = log_2(x)$.",
+     "answer": "1/(xln(2))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{xln(2)}$",
+     "level": 1,
+     "explain": "$frac{1}{xln(2)}$"
+    },
+    {
+     "id": "B5",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x) + x^2$.",
+     "answer": "1/x + 2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$1/x + 2x$",
+     "level": 1,
+     "explain": "$1/x + 2x$"
+    },
+    {
+     "id": "B6",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x^7)$.",
+     "answer": "7/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{7}{x}$",
+     "level": 1,
+     "explain": "$frac{7}{x}$"
+    },
+    {
+     "id": "B7",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = log_10(x)$.",
+     "answer": "1/(xln(10))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{xln(10)}$",
+     "level": 1,
+     "explain": "$frac{1}{xln(10)}$"
+    },
+    {
+     "id": "B8",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x/3)$.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{x}$",
+     "level": 1,
+     "explain": "$frac{1}{x}$"
+    },
+    {
+     "id": "B9",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x - ln(x)$.",
+     "answer": "1 - 1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$1 - 1/x$",
+     "level": 1,
+     "explain": "$1 - 1/x$"
+    },
+    {
+     "id": "B10",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(sqrt(x))$.",
+     "answer": "1/(2x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{2x}$",
+     "level": 1,
+     "explain": "$frac{1}{2x}$"
+    },
+    {
+     "id": "B11",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(e^x)$.",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "$1$"
+    },
+    {
+     "id": "B12",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(3) + ln(x)$.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{1}{x}$",
+     "level": 1,
+     "explain": "$frac{1}{x}$"
+    },
+    {
+     "id": "B13",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 5log_3(x)$.",
+     "answer": "5/(xln(3))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$frac{5}{xln(3)}$",
+     "level": 1,
+     "explain": "$frac{5}{xln(3)}$"
+    },
+    {
+     "id": "B14",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x^2) + e^x$.",
+     "answer": "2/x + e^x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2/x + e^x$",
+     "level": 1,
+     "explain": "$2/x + e^x$"
+    },
+    {
+     "id": "R15",
+     "type": "num",
+     "text": "Use log rules: $ln(x^5) = n ln(x)$. What is $n$?",
+     "answer": 5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$ln(x^5) = 5 ln(x)$"
+    },
+    {
+     "id": "R16",
+     "type": "num",
+     "text": "Use log rules: $ln(sqrt(x)) = n ln(x)$. What is $n$?",
+     "answer": 0.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$ln(sqrt(x)) = 1/2 ln(x)$"
+    },
+    {
+     "id": "R17",
+     "type": "num",
+     "text": "Use log rules: $ln(frac{1}{x}) = n ln(x)$. What is $n$?",
+     "answer": -1,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$ln(frac{1}{x}) = -1 ln(x)$"
+    },
+    {
+     "id": "R18",
+     "type": "num",
+     "text": "Use log rules: $ln(x^(2/3)) = n ln(x)$. What is $n$?",
+     "answer": 0.666667,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$ln(x^(2/3)) = 2/3 ln(x)$"
+    },
+    {
+     "id": "R19",
+     "type": "num",
+     "text": "Use log rules: $ln(frac{1}{x^4}) = n ln(x)$. What is $n$?",
+     "answer": -4,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$ln(frac{1}{x^4}) = -4 ln(x)$"
+    },
+    {
+     "id": "R20",
+     "type": "num",
+     "text": "Use log rules: $ln(x sqrt(x)) = n ln(x)$. What is $n$?",
+     "answer": 1.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$ln(x sqrt(x)) = 3/2 ln(x)$"
+    },
+    {
+     "id": "F21",
+     "type": "expr",
+     "text": "$f(x) = ln(x^2 + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x^2 + 1)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The derivative of the inside: $2x$."
+    },
+    {
+     "id": "F22",
+     "type": "expr",
+     "text": "$f(x) = ln(sin(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (sin(x))$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 2,
+     "explain": "The derivative of the inside: $cos(x)$."
+    },
+    {
+     "id": "F23",
+     "type": "expr",
+     "text": "$f(x) = ln(3x - 2)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (3x - 2)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3$",
+     "level": 2,
+     "explain": "The derivative of the inside: $3$."
+    },
+    {
+     "id": "F24",
+     "type": "expr",
+     "text": "$f(x) = ln(x^3 + 2x + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "3x^2 + 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x^3 + 2x + 1)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3x^2 + 2$",
+     "level": 2,
+     "explain": "The derivative of the inside: $3x^2 + 2$."
+    },
+    {
+     "id": "F25",
+     "type": "expr",
+     "text": "$f(x) = ln(cos(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "-sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (cos(x))$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$-sin(x)$",
+     "level": 2,
+     "explain": "The derivative of the inside: $-sin(x)$."
+    },
+    {
+     "id": "F26",
+     "type": "expr",
+     "text": "$f(x) = ln(e^x + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "e^x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (e^x + 1)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$e^x$",
+     "level": 2,
+     "explain": "The derivative of the inside: $e^x$."
+    },
+    {
+     "id": "F27",
+     "type": "expr",
+     "text": "$f(x) = ln(x^4 - x)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "4x^3 - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x^4 - x)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$4x^3 - 1$",
+     "level": 2,
+     "explain": "The derivative of the inside: $4x^3 - 1$."
+    },
+    {
+     "id": "F28",
+     "type": "expr",
+     "text": "$f(x) = ln(2x^2 + 7)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "4x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (2x^2 + 7)$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$4x$",
+     "level": 2,
+     "explain": "The derivative of the inside: $4x$."
+    },
+    {
+     "id": "F29",
+     "type": "expr",
+     "text": "$f(x) = ln(x + sqrt(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "1 + 1/(2sqrt(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (x + sqrt(x))$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$1 + 1/(2sqrt(x))$",
+     "level": 2,
+     "explain": "The derivative of the inside: $1 + 1/(2sqrt(x))$."
+    },
+    {
+     "id": "F30",
+     "type": "expr",
+     "text": "$f(x) = ln(1 + e^(2x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "answer": "2e^(2x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos(",
+      "sqrt("
+     ],
+     "label": "$f'(x) = ($",
+     "post": "$) / (1 + e^(2x))$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$2e^(2x)$",
+     "level": 2,
+     "explain": "The derivative of the inside: $2e^(2x)$."
+    },
+    {
+     "id": "I31",
+     "type": "num",
+     "text": "$f(x) = x^3 + x$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "level": 2,
+     "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$."
+    },
+    {
+     "id": "I32",
+     "type": "num",
+     "text": "$f(x) = x^3 + x$. Find $f^(-1)(10)$: the $x$ with $f(x) = 10$.",
+     "answer": 2,
+     "label": "$f^(-1)(10)$ =",
+     "level": 2,
+     "explain": "$f(2) = 10$, so $f^(-1)(10) = 2$."
+    },
+    {
+     "id": "I33",
+     "type": "num",
+     "text": "$f(x) = 2x + sin(x)$. Find $f^(-1)(0)$: the $x$ with $f(x) = 0$.",
+     "answer": 0,
+     "label": "$f^(-1)(0)$ =",
+     "level": 2,
+     "explain": "$f(0) = 0$, so $f^(-1)(0) = 0$."
+    },
+    {
+     "id": "I34",
+     "type": "num",
+     "text": "$f(x) = x^5 + x$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "level": 2,
+     "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$."
+    },
+    {
+     "id": "I35",
+     "type": "num",
+     "text": "$f(x) = e^x + x$. Find $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
+     "answer": 0,
+     "label": "$f^(-1)(1)$ =",
+     "level": 2,
+     "explain": "$f(0) = 1$, so $f^(-1)(1) = 0$."
+    },
+    {
+     "id": "I36",
+     "type": "num",
+     "text": "$f(x) = x^3 + 2x - 1$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "level": 2,
+     "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$."
+    },
+    {
+     "id": "I37",
+     "type": "num",
+     "text": "$f(x) = x + ln(x)$. Find $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
+     "answer": 1,
+     "label": "$f^(-1)(1)$ =",
+     "level": 2,
+     "explain": "$f(1) = 1$, so $f^(-1)(1) = 1$."
+    },
+    {
+     "id": "V38",
+     "type": "steps",
+     "text": "$f(x) = x^3 + x$. Find $(f^(-1))'(2)$.",
+     "steps": [
+      {
+       "id": "V38.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 2$?",
+       "answer": 1,
+       "label": "$f^(-1)(2)$ =",
+       "work": "$f^(-1)(2) = 1$"
+      },
+      {
+       "id": "V38.2",
+       "type": "num",
+       "text": "$f'(x) = 3x^2 + 1$",
+       "answer": 4,
+       "label": "$f'(1)$ =",
+       "work": "$f'(1) = 4$"
+      },
+      {
+       "id": "V38.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.25,
+       "label": "$(f^(-1))'(2)$ =",
+       "work": "$(f^(-1))'(2) = 1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(2) = frac{1}{f'(1)} = 1/4$"
+    },
+    {
+     "id": "V39",
+     "type": "steps",
+     "text": "$f(x) = x^3 + x$. Find $(f^(-1))'(10)$.",
+     "steps": [
+      {
+       "id": "V39.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 10$?",
+       "answer": 2,
+       "label": "$f^(-1)(10)$ =",
+       "work": "$f^(-1)(10) = 2$"
+      },
+      {
+       "id": "V39.2",
+       "type": "num",
+       "text": "$f'(x) = 3x^2 + 1$",
+       "answer": 13,
+       "label": "$f'(2)$ =",
+       "work": "$f'(2) = 13$"
+      },
+      {
+       "id": "V39.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.076923,
+       "label": "$(f^(-1))'(10)$ =",
+       "work": "$(f^(-1))'(10) = 1/13$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(10) = frac{1}{f'(2)} = 1/13$"
+    },
+    {
+     "id": "V40",
+     "type": "steps",
+     "text": "$f(x) = 2x + sin(x)$. Find $(f^(-1))'(0)$.",
+     "steps": [
+      {
+       "id": "V40.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 0$?",
+       "answer": 0,
+       "label": "$f^(-1)(0)$ =",
+       "work": "$f^(-1)(0) = 0$"
+      },
+      {
+       "id": "V40.2",
+       "type": "num",
+       "text": "$f'(x) = cos(x) + 2$",
+       "answer": 3,
+       "label": "$f'(0)$ =",
+       "work": "$f'(0) = 3$"
+      },
+      {
+       "id": "V40.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.333333,
+       "label": "$(f^(-1))'(0)$ =",
+       "work": "$(f^(-1))'(0) = 1/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(0) = frac{1}{f'(0)} = 1/3$"
+    },
+    {
+     "id": "V41",
+     "type": "steps",
+     "text": "$f(x) = x^5 + x$. Find $(f^(-1))'(2)$.",
+     "steps": [
+      {
+       "id": "V41.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 2$?",
+       "answer": 1,
+       "label": "$f^(-1)(2)$ =",
+       "work": "$f^(-1)(2) = 1$"
+      },
+      {
+       "id": "V41.2",
+       "type": "num",
+       "text": "$f'(x) = 5x^4 + 1$",
+       "answer": 6,
+       "label": "$f'(1)$ =",
+       "work": "$f'(1) = 6$"
+      },
+      {
+       "id": "V41.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.166667,
+       "label": "$(f^(-1))'(2)$ =",
+       "work": "$(f^(-1))'(2) = 1/6$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(2) = frac{1}{f'(1)} = 1/6$"
+    },
+    {
+     "id": "V42",
+     "type": "steps",
+     "text": "$f(x) = e^x + x$. Find $(f^(-1))'(1)$.",
+     "steps": [
+      {
+       "id": "V42.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 1$?",
+       "answer": 0,
+       "label": "$f^(-1)(1)$ =",
+       "work": "$f^(-1)(1) = 0$"
+      },
+      {
+       "id": "V42.2",
+       "type": "num",
+       "text": "$f'(x) = e^(x) + 1$",
+       "answer": 2,
+       "label": "$f'(0)$ =",
+       "work": "$f'(0) = 2$"
+      },
+      {
+       "id": "V42.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.5,
+       "label": "$(f^(-1))'(1)$ =",
+       "work": "$(f^(-1))'(1) = 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(1) = frac{1}{f'(0)} = 1/2$"
+    },
+    {
+     "id": "V43",
+     "type": "steps",
+     "text": "$f(x) = x^3 + 2x - 1$. Find $(f^(-1))'(2)$.",
+     "steps": [
+      {
+       "id": "V43.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 2$?",
+       "answer": 1,
+       "label": "$f^(-1)(2)$ =",
+       "work": "$f^(-1)(2) = 1$"
+      },
+      {
+       "id": "V43.2",
+       "type": "num",
+       "text": "$f'(x) = 3x^2 + 2$",
+       "answer": 5,
+       "label": "$f'(1)$ =",
+       "work": "$f'(1) = 5$"
+      },
+      {
+       "id": "V43.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.2,
+       "label": "$(f^(-1))'(2)$ =",
+       "work": "$(f^(-1))'(2) = 1/5$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(2) = frac{1}{f'(1)} = 1/5$"
+    },
+    {
+     "id": "V44",
+     "type": "steps",
+     "text": "$f(x) = x + ln(x)$. Find $(f^(-1))'(1)$.",
+     "steps": [
+      {
+       "id": "V44.1",
+       "type": "num",
+       "text": "Which $x$ gives $f(x) = 1$?",
+       "answer": 1,
+       "label": "$f^(-1)(1)$ =",
+       "work": "$f^(-1)(1) = 1$"
+      },
+      {
+       "id": "V44.2",
+       "type": "num",
+       "text": "$f'(x) = 1 + x^(-1)$",
+       "answer": 2,
+       "label": "$f'(1)$ =",
+       "work": "$f'(1) = 2$"
+      },
+      {
+       "id": "V44.3",
+       "type": "num",
+       "text": "Flip it.",
+       "answer": 0.5,
+       "label": "$(f^(-1))'(1)$ =",
+       "work": "$(f^(-1))'(1) = 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(f^(-1))'(1) = frac{1}{f'(1)} = 1/2$"
+    },
+    {
+     "id": "W45",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = ln(x^2 + 1)$.",
+     "steps": [
+      {
+       "id": "W45.1",
+       "type": "expr",
+       "text": "Inside: $g(x) = x^2 + 1$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$2x$",
+       "work": "$g'(x) = 2x$"
+      },
+      {
+       "id": "W45.2",
+       "type": "expr",
+       "text": "$frac{g'(x)}{g(x)}$",
+       "answer": "(2x)/(x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{2x}{x^2 + 1}$",
+       "work": "$f'(x) = frac{2x}{x^2 + 1}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{2x}{x^2 + 1}$"
+    },
+    {
+     "id": "W46",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = ln(sin(x))$.",
+     "steps": [
+      {
+       "id": "W46.1",
+       "type": "expr",
+       "text": "Inside: $g(x) = sin(x)$",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$g'(x) = cos(x)$"
+      },
+      {
+       "id": "W46.2",
+       "type": "expr",
+       "text": "$frac{g'(x)}{g(x)}$",
+       "answer": "(cos(x))/(sin(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{cos(x)}{sin(x)}$",
+       "work": "$f'(x) = frac{cos(x)}{sin(x)}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{cos(x)}{sin(x)}$"
+    },
+    {
+     "id": "W47",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = ln(3x - 2)$.",
+     "steps": [
+      {
+       "id": "W47.1",
+       "type": "expr",
+       "text": "Inside: $g(x) = 3x - 2$",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3$",
+       "work": "$g'(x) = 3$"
+      },
+      {
+       "id": "W47.2",
+       "type": "expr",
+       "text": "$frac{g'(x)}{g(x)}$",
+       "answer": "(3)/(3x - 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{3}{3x - 2}$",
+       "work": "$f'(x) = frac{3}{3x - 2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{3}{3x - 2}$"
+    },
+    {
+     "id": "W48",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = ln(x^3 + 2x + 1)$.",
+     "steps": [
+      {
+       "id": "W48.1",
+       "type": "expr",
+       "text": "Inside: $g(x) = x^3 + 2x + 1$",
+       "answer": "3x^2 + 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x^2 + 2$",
+       "work": "$g'(x) = 3x^2 + 2$"
+      },
+      {
+       "id": "W48.2",
+       "type": "expr",
+       "text": "$frac{g'(x)}{g(x)}$",
+       "answer": "(3x^2 + 2)/(x^3 + 2x + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{3x^2 + 2}{x^3 + 2x + 1}$",
+       "work": "$f'(x) = frac{3x^2 + 2}{x^3 + 2x + 1}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{3x^2 + 2}{x^3 + 2x + 1}$"
+    },
+    {
+     "id": "W49",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = ln(cos(x))$.",
+     "steps": [
+      {
+       "id": "W49.1",
+       "type": "expr",
+       "text": "Inside: $g(x) = cos(x)$",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$g'(x) = -sin(x)$"
+      },
+      {
+       "id": "W49.2",
+       "type": "expr",
+       "text": "$frac{g'(x)}{g(x)}$",
+       "answer": "(-sin(x))/(cos(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{-sin(x)}{cos(x)}$",
+       "work": "$f'(x) = frac{-sin(x)}{cos(x)}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{-sin(x)}{cos(x)}$"
+    },
+    {
+     "id": "W50",
+     "type": "steps",
+     "text": "Find the derivative of $f(x) = ln(e^x + 1)$.",
+     "steps": [
+      {
+       "id": "W50.1",
+       "type": "expr",
+       "text": "Inside: $g(x) = e^x + 1$",
+       "answer": "e^x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$g'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$e^x$",
+       "work": "$g'(x) = e^x$"
+      },
+      {
+       "id": "W50.2",
+       "type": "expr",
+       "text": "$frac{g'(x)}{g(x)}$",
+       "answer": "(e^x)/(e^x + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{e^x}{e^x + 1}$",
+       "work": "$f'(x) = frac{e^x}{e^x + 1}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{e^x}{e^x + 1}$"
+    },
+    {
+     "id": "C51",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = xln(x)$.",
+     "answer": "ln(x) + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.6
+      ]
+     },
+     "show": "$ln(x) + 1$",
+     "level": 3,
+     "explain": "$ln(x) + 1$"
+    },
+    {
+     "id": "C52",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^2ln(x)$.",
+     "answer": "2xln(x) + x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.6
+      ]
+     },
+     "show": "$2xln(x) + x$",
+     "level": 3,
+     "explain": "$2xln(x) + x$"
+    },
+    {
+     "id": "C53",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x)/x$.",
+     "answer": "(1 - ln(x))/x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.6
+      ]
+     },
+     "show": "$frac{1 - ln(x)}{x^2}$",
+     "level": 3,
+     "explain": "$frac{1 - ln(x)}{x^2}$"
+    },
+    {
+     "id": "C54",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(x^2 + 1)^3$.",
+     "answer": "3ln(x^2 + 1)^2(2x/(x^2 + 1))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.6
+      ]
+     },
+     "show": "$3ln(x^2 + 1)^2(2x/(x^2 + 1))$",
+     "level": 3,
+     "explain": "$3ln(x^2 + 1)^2(2x/(x^2 + 1))$"
+    },
+    {
+     "id": "C55",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = ln(ln(x))$.",
+     "answer": "1/(xln(x))",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^(",
+      "sin(",
+      "cos("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.6
+      ]
+     },
+     "show": "$frac{1}{xln(x)}$",
+     "level": 3,
+     "explain": "$frac{1}{xln(x)}$"
+    },
+    {
+     "id": "X56",
+     "type": "steps",
+     "text": "Find $frac{dy}{dx}$ for $y = ln(frac{x^2 sin(x)}{2x + 1})$ by expanding first.",
+     "steps": [
+      {
+       "id": "X56.1",
+       "type": "mc",
+       "text": "Expand with log rules:",
+       "options": [
+        "$2ln(x) + ln(sin(x)) - ln(2x + 1)$",
+        "$2ln(x)·ln(sin(x)) - ln(2x + 1)$",
+        "$ln(x^2) - ln(sin(x)) - ln(2x + 1)$",
+        "$2ln(x) + ln(sin(x)) + ln(2x + 1)$"
+       ],
+       "answer": 0,
+       "work": "$y = 2ln(x) + ln(sin(x)) - ln(2x + 1)$"
+      },
+      {
+       "id": "X56.2",
+       "type": "expr",
+       "text": "Differentiate each piece.",
+       "answer": "2/x + cos(x)/sin(x) - 2/(2x + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$2/x + cos(x)/sin(x) - 2/(2x + 1)$",
+       "work": "$y' = frac{2}{x} + frac{cos(x)}{sin(x)} - frac{2}{2x + 1}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{2}{x} + cot(x) - frac{2}{2x + 1}$"
+    },
+    {
+     "id": "X57",
+     "type": "steps",
+     "text": "Find the tangent line to $y = log_2(3x + 1)$ at $x = 1$.",
+     "steps": [
+      {
+       "id": "X57.1",
+       "type": "num",
+       "text": "",
+       "answer": 2,
+       "label": "$y(1)$ =",
+       "work": "$y(1) = log_2(4) = 2$"
+      },
+      {
+       "id": "X57.2",
+       "type": "expr",
+       "text": "$frac{d}{dx} log_2(g) = frac{g'}{g ln(2)}$",
+       "answer": "3/((3x + 1)ln(2))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "ln(",
+        "e^(",
+        "sin(",
+        "cos("
+       ],
+       "label": "$y'$ =",
+       "show": "$frac{3}{(3x + 1)ln(2)}$",
+       "work": "$y' = frac{3}{(3x + 1)ln(2)}$"
+      },
+      {
+       "id": "X57.3",
+       "type": "num",
+       "text": "Slope at $x = 1$ (a decimal is fine).",
+       "answer": 1.082021,
+       "label": "$y'(1)$ =",
+       "tol": 0.005,
+       "work": "$y'(1) = frac{3}{4 ln(2)} ≈ 1.082$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y = frac{3}{4 ln(2)}(x - 1) + 2$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "$y = ln(x)$ means $e^y = x$. Differentiate both sides: $e^y·y' = 1$, so $y' = frac{1}{e^y}$. Since $e^y = x$, that is",
+    "options": [
+     "$frac{1}{x}$",
+     "$e^x$",
+     "$ln(x)$",
+     "$frac{1}{e}$"
+    ],
+    "answer": 0,
+    "hint": "Replace $e^y$ with what it equals.",
+    "explain": "$frac{d}{dx} ln(x) = frac{1}{x}$"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "With the chain rule, $frac{d}{dx} ln(f(x)) = frac{f'(x)}{f(x)}$: the derivative of the inside over the inside. Try $y = ln(x^3 + 2x + 1)$.",
+    "answer": "(3x^2 + 2)/(x^3 + 2x + 1)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "ln(",
+     "e^(",
+     "sin(",
+     "cos("
+    ],
+    "label": "$y'$ =",
+    "show": "$frac{3x^2 + 2}{x^3 + 2x + 1}$",
+    "hint": "Top: the derivative of $x^3 + 2x + 1$. Bottom: $x^3 + 2x + 1$.",
+    "explain": "$frac{3x^2 + 2}{x^3 + 2x + 1}$"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Log rules can make a derivative easy **before** you start. Which is the same as $ln(frac{x^2 sin(x)}{2x + 1})$?",
+    "options": [
+     "$2ln(x) + ln(sin(x)) - ln(2x + 1)$",
+     "$frac{ln(x^2) ln(sin(x))}{ln(2x + 1)}$",
+     "$2ln(x) · ln(sin(x)) - ln(2x + 1)$",
+     "$ln(x^2) - ln(sin(x)) + ln(2x + 1)$"
+    ],
+    "answer": 0,
+    "hint": "Products become sums, quotients become differences, powers come out front.",
+    "explain": "Now each piece is easy: $frac{2}{x} + frac{cos(x)}{sin(x)} - frac{2}{2x + 1}$."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Other bases pick up $ln(b)$: $frac{d}{dx} log_b(x) = frac{1}{x ln(b)}$. What is $frac{d}{dx} log_2(x)$?",
+    "options": [
+     "$frac{1}{x ln(2)}$",
+     "$frac{1}{2x}$",
+     "$frac{ln(2)}{x}$",
+     "$frac{2}{x}$"
+    ],
+    "answer": 0,
+    "hint": "Put $b = 2$ in the formula.",
+    "explain": "$frac{1}{x ln(2)}$"
+   },
+   {
+    "id": "L5",
+    "type": "steps",
+    "text": "**Inverse functions:** $(f^(-1))'(a) = frac{1}{f'(f^(-1)(a))}$. Flip the graph over $y = x$ and slopes flip too. Let $f(x) = x^3 + x$. Find $(f^(-1))'(2)$.",
+    "steps": [
+     {
+      "id": "L5.1",
+      "type": "num",
+      "text": "First find $f^(-1)(2)$: which $x$ gives $x^3 + x = 2$?",
+      "answer": 1,
+      "label": "$f^(-1)(2)$ =",
+      "hint": "Try small whole numbers.",
+      "work": "$f^(-1)(2) = 1$"
+     },
+     {
+      "id": "L5.2",
+      "type": "num",
+      "text": "$f'(x) = 3x^2 + 1$. Evaluate it there.",
+      "answer": 4,
+      "label": "$f'(1)$ =",
+      "hint": "$3(1)^2 + 1$",
+      "work": "$f'(1) = 4$"
+     },
+     {
+      "id": "L5.3",
+      "type": "num",
+      "text": "Flip it.",
+      "answer": 0.25,
+      "label": "$(f^(-1))'(2)$ =",
+      "hint": "One over the slope you just found.",
+      "work": "$(f^(-1))'(2) = frac{1}{4}$"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1913 @@
+{
+ "id": "d-rules",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Derivative Rules",
+ "subtitle": "Shortcuts so you never need the limit definition again.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each rule to its formula.",
+     "pairs": [
+      [
+       "Constant rule",
+       "$frac{d}{dx}(c) = 0$"
+      ],
+      [
+       "Power rule",
+       "$frac{d}{dx} x^n = nx^(n-1)$"
+      ],
+      [
+       "Constant multiple rule",
+       "$frac{d}{dx}(cf) = cf'$"
+      ],
+      [
+       "Sum rule",
+       "$(f + g)' = f' + g'$"
+      ]
+     ],
+     "explain": "These four handle every polynomial."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "The product rule says $(gk)' =$",
+     "options": [
+      "$gk' + g'k$",
+      "$g'k'$",
+      "$g'k - gk'$",
+      "$frac{g'}{k'}$"
+     ],
+     "answer": 0,
+     "explain": "Each factor takes a turn being differentiated: $gk' + g'k$."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "The derivative of a product is the product of the derivatives.",
+     "answer": false,
+     "explain": "No! $(x·x)' = (x^2)' = 2x$, but $(x)'(x)' = 1$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "The quotient rule says $(frac{g}{k})' =$",
+     "options": [
+      "$frac{kg' - gk'}{k^2}$",
+      "$frac{gk' - kg'}{k^2}$",
+      "$frac{g'}{k'}$",
+      "$frac{kg' + gk'}{k^2}$"
+     ],
+     "answer": 0,
+     "explain": "Low d-high minus high d-low, over low squared. The order matters because of the minus sign."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "To use the power rule on $frac{5}{x^4}$, first rewrite it as",
+     "options": [
+      "$5x^(-4)$",
+      "$5x^4$",
+      "$x^(-5)$",
+      "$frac{1}{5}x^4$"
+     ],
+     "answer": 0,
+     "explain": "$frac{1}{x^4} = x^(-4)$."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "$sqrt(x)$ is the same as",
+     "options": [
+      "$x^(1/2)$",
+      "$x^2$",
+      "$x^(-2)$",
+      "$frac{x}{2}$"
+     ],
+     "answer": 0,
+     "explain": "A square root is the $frac{1}{2}$ power."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "What is $frac{d}{dx}(pi^2)$?",
+     "options": [
+      "$0$",
+      "$2pi$",
+      "$pi^2$",
+      "$2x$"
+     ],
+     "answer": 0,
+     "explain": "$pi^2$ is just a number (about 9.87), so its derivative is 0."
+    },
+    {
+     "id": "T8",
+     "type": "tf",
+     "text": "$(f - g)' = f' - g'$",
+     "answer": true,
+     "explain": "Derivatives go term by term, sums and differences alike."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "P1",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 3x^2$.",
+     "answer": "6x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x$",
+     "level": 1,
+     "explain": "Bring down the $2$ and lower the power by 1: $6x$."
+    },
+    {
+     "id": "P2",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 5x^3$.",
+     "answer": "15x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$15x^2$",
+     "level": 1,
+     "explain": "Bring down the $3$ and lower the power by 1: $15x^2$."
+    },
+    {
+     "id": "P3",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^4$.",
+     "answer": "8x^3",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$8x^3$",
+     "level": 1,
+     "explain": "Bring down the $4$ and lower the power by 1: $8x^3$."
+    },
+    {
+     "id": "P4",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = -4x^3$.",
+     "answer": "-12x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$-12x^2$",
+     "level": 1,
+     "explain": "Bring down the $3$ and lower the power by 1: $-12x^2$."
+    },
+    {
+     "id": "P5",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 7x$.",
+     "answer": "7",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$7$",
+     "level": 1,
+     "explain": "Bring down the $1$ and lower the power by 1: $7$."
+    },
+    {
+     "id": "P6",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^6$.",
+     "answer": "6x^5",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x^5$",
+     "level": 1,
+     "explain": "Bring down the $6$ and lower the power by 1: $6x^5$."
+    },
+    {
+     "id": "P7",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^(-1)$.",
+     "answer": "-2x^(-2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$-2x^(-2)$",
+     "level": 1,
+     "explain": "Bring down the $-1$ and lower the power by 1: $-2x^(-2)$."
+    },
+    {
+     "id": "P8",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 3x^(-2)$.",
+     "answer": "-6x^(-3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$-6x^(-3)$",
+     "level": 1,
+     "explain": "Bring down the $-2$ and lower the power by 1: $-6x^(-3)$."
+    },
+    {
+     "id": "P9",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = -x^(-3)$.",
+     "answer": "3x^(-4)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$3x^(-4)$",
+     "level": 1,
+     "explain": "Bring down the $-3$ and lower the power by 1: $3x^(-4)$."
+    },
+    {
+     "id": "P10",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 4x^(1/2)$.",
+     "answer": "2x^(-1/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2x^(-1/2)$",
+     "level": 1,
+     "explain": "Bring down the $1/2$ and lower the power by 1: $2x^(-1/2)$."
+    },
+    {
+     "id": "P11",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 6x^(3/2)$.",
+     "answer": "9x^(1/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$9x^(1/2)$",
+     "level": 1,
+     "explain": "Bring down the $3/2$ and lower the power by 1: $9x^(1/2)$."
+    },
+    {
+     "id": "P12",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^(-1/2)$.",
+     "answer": "-x^(-3/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$-x^(-3/2)$",
+     "level": 1,
+     "explain": "Bring down the $-1/2$ and lower the power by 1: $-x^(-3/2)$."
+    },
+    {
+     "id": "P13",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 9x^(1/3)$.",
+     "answer": "3x^(-2/3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$3x^(-2/3)$",
+     "level": 1,
+     "explain": "Bring down the $1/3$ and lower the power by 1: $3x^(-2/3)$."
+    },
+    {
+     "id": "P14",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = -2x^5$.",
+     "answer": "-10x^4",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$-10x^4$",
+     "level": 1,
+     "explain": "Bring down the $5$ and lower the power by 1: $-10x^4$."
+    },
+    {
+     "id": "X15",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $frac{1}{x^3} = x^n$. What is $n$?",
+     "answer": -3,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{x^3} = x^(-3)$"
+    },
+    {
+     "id": "X16",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $sqrt(x) = x^n$. What is $n$?",
+     "answer": 0.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$sqrt(x) = x^(1/2)$"
+    },
+    {
+     "id": "X17",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $frac{1}{x} = x^n$. What is $n$?",
+     "answer": -1,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{x} = x^(-1)$"
+    },
+    {
+     "id": "X18",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $frac{1}{sqrt(x)} = x^n$. What is $n$?",
+     "answer": -0.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{sqrt(x)} = x^(-1/2)$"
+    },
+    {
+     "id": "X19",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $x^2 sqrt(x) = x^n$. What is $n$?",
+     "answer": 2.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$x^2 sqrt(x) = x^(5/2)$"
+    },
+    {
+     "id": "X20",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $frac{1}{x^5} = x^n$. What is $n$?",
+     "answer": -5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{x^5} = x^(-5)$"
+    },
+    {
+     "id": "X21",
+     "type": "num",
+     "text": "Rewrite as a power of $x$: $x sqrt(x) = x^n$. What is $n$?",
+     "answer": 1.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$x sqrt(x) = x^(3/2)$"
+    },
+    {
+     "id": "Y22",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 4x^3 - x - 4$.",
+     "answer": "12x^2 - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$12x^2 - 1$",
+     "level": 2,
+     "explain": "Term by term: $12x^2 - 1$."
+    },
+    {
+     "id": "Y23",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 6x + 1$.",
+     "answer": "6",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6$",
+     "level": 1,
+     "explain": "Term by term: $6$."
+    },
+    {
+     "id": "Y24",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^3 + 6x + 9$.",
+     "answer": "6x^2 + 6",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x^2 + 6$",
+     "level": 2,
+     "explain": "Term by term: $6x^2 + 6$."
+    },
+    {
+     "id": "Y25",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^2 - x + 9$.",
+     "answer": "2x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2x - 1$",
+     "level": 1,
+     "explain": "Term by term: $2x - 1$."
+    },
+    {
+     "id": "Y26",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^3 + x^2 - x + 9$.",
+     "answer": "6x^2 + 2x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x^2 + 2x - 1$",
+     "level": 2,
+     "explain": "Term by term: $6x^2 + 2x - 1$."
+    },
+    {
+     "id": "Y27",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 3x^2 + 2x$.",
+     "answer": "6x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x + 2$",
+     "level": 1,
+     "explain": "Term by term: $6x + 2$."
+    },
+    {
+     "id": "Y28",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2x^3 - 2x^2 + 6x + 9$.",
+     "answer": "6x^2 - 4x + 6",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$6x^2 - 4x + 6$",
+     "level": 2,
+     "explain": "Term by term: $6x^2 - 4x + 6$."
+    },
+    {
+     "id": "Y29",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^2 - x + 9$.",
+     "answer": "2x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x)$ =",
+     "show": "$2x - 1$",
+     "level": 1,
+     "explain": "Term by term: $2x - 1$."
+    },
+    {
+     "id": "F30",
+     "type": "expr",
+     "text": "$f(x) = (x^2 + 2)(3x + 1)$. Fill in the missing piece of the product rule.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (x^2 + 2)·($",
+     "post": "$) + (2x)(3x + 1)$",
+     "show": "$3$",
+     "level": 2,
+     "explain": "The missing piece is $k' = 3$, the derivative of $3x + 1$."
+    },
+    {
+     "id": "F31",
+     "type": "expr",
+     "text": "$f(x) = (2x - 1)(x + 4)$. Fill in the missing piece of the product rule.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (2x - 1)(1) + ($",
+     "post": "$)·(x + 4)$",
+     "show": "$2$",
+     "level": 2,
+     "explain": "The missing piece is $g' = 2$, the derivative of $2x - 1$."
+    },
+    {
+     "id": "F32",
+     "type": "expr",
+     "text": "$f(x) = (x^2 - 3)(2x + 5)$. Fill in the missing piece of the product rule.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (x^2 - 3)·($",
+     "post": "$) + (2x)(2x + 5)$",
+     "show": "$2$",
+     "level": 2,
+     "explain": "The missing piece is $k' = 2$, the derivative of $2x + 5$."
+    },
+    {
+     "id": "F33",
+     "type": "expr",
+     "text": "$f(x) = (3x)(x^2 - 2x + 1)$. Fill in the missing piece of the product rule.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (3x)(2x - 2) + ($",
+     "post": "$)·(x^2 - 2x + 1)$",
+     "show": "$3$",
+     "level": 2,
+     "explain": "The missing piece is $g' = 3$, the derivative of $3x$."
+    },
+    {
+     "id": "F34",
+     "type": "expr",
+     "text": "$f(x) = (x + 1)(x - 1)$. Fill in the missing piece of the product rule.",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (x + 1)·($",
+     "post": "$) + (1)(x - 1)$",
+     "show": "$1$",
+     "level": 2,
+     "explain": "The missing piece is $k' = 1$, the derivative of $x - 1$."
+    },
+    {
+     "id": "F35",
+     "type": "expr",
+     "text": "$f(x) = (4x - 1)(x^2 + 1)$. Fill in the missing piece of the product rule.",
+     "answer": "4",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (4x - 1)(2x) + ($",
+     "post": "$)·(x^2 + 1)$",
+     "show": "$4$",
+     "level": 2,
+     "explain": "The missing piece is $g' = 4$, the derivative of $4x - 1$."
+    },
+    {
+     "id": "F36",
+     "type": "expr",
+     "text": "$f(x) = (x^3 + 1)(2x + 3)$. Fill in the missing piece of the product rule.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (x^3 + 1)·($",
+     "post": "$) + (3x^2)(2x + 3)$",
+     "show": "$2$",
+     "level": 2,
+     "explain": "The missing piece is $k' = 2$, the derivative of $2x + 3$."
+    },
+    {
+     "id": "F37",
+     "type": "expr",
+     "text": "$f(x) = (5x + 2)(x^2 - 1)$. Fill in the missing piece of the product rule.",
+     "answer": "5",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = (5x + 2)(2x) + ($",
+     "post": "$)·(x^2 - 1)$",
+     "show": "$5$",
+     "level": 2,
+     "explain": "The missing piece is $g' = 5$, the derivative of $5x + 2$."
+    },
+    {
+     "id": "U38",
+     "type": "expr",
+     "text": "$f(x) = frac{x^2}{x + 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x + 1)·($",
+     "post": "$) - (x^2)(1)] / (x + 1)^2$",
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $2x$."
+    },
+    {
+     "id": "U39",
+     "type": "expr",
+     "text": "$f(x) = frac{3x}{2x - 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "3",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(2x - 1)·($",
+     "post": "$) - (3x)(2)] / (2x - 1)^2$",
+     "show": "$3$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $3$."
+    },
+    {
+     "id": "U40",
+     "type": "expr",
+     "text": "$f(x) = frac{x^2 + 1}{x}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x)·($",
+     "post": "$) - (x^2 + 1)(1)] / (x)^2$",
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $2x$."
+    },
+    {
+     "id": "U41",
+     "type": "expr",
+     "text": "$f(x) = frac{2x + 5}{x^2 + 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x^2 + 1)·($",
+     "post": "$) - (2x + 5)(2x)] / (x^2 + 1)^2$",
+     "show": "$2$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $2$."
+    },
+    {
+     "id": "U42",
+     "type": "expr",
+     "text": "$f(x) = frac{x - 2}{x + 3}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x + 3)·($",
+     "post": "$) - (x - 2)(1)] / (x + 3)^2$",
+     "show": "$1$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $1$."
+    },
+    {
+     "id": "U43",
+     "type": "expr",
+     "text": "$f(x) = frac{4x^2}{2x + 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "8x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(2x + 1)·($",
+     "post": "$) - (4x^2)(2)] / (2x + 1)^2$",
+     "show": "$8x$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $8x$."
+    },
+    {
+     "id": "U44",
+     "type": "expr",
+     "text": "$f(x) = frac{x}{x^2 + 4}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x^2 + 4)·($",
+     "post": "$) - (x)(2x)] / (x^2 + 4)^2$",
+     "show": "$1$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $1$."
+    },
+    {
+     "id": "U45",
+     "type": "expr",
+     "text": "$f(x) = frac{5x}{x - 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "answer": "5",
+     "vars": [
+      "x"
+     ],
+     "label": "$f'(x) = [(x - 1)·($",
+     "post": "$) - (5x)(1)] / (x - 1)^2$",
+     "show": "$5$",
+     "level": 2,
+     "explain": "The missing piece is the derivative of the top: $5$."
+    },
+    {
+     "id": "W46",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (x^2 + 2)(3x + 1)$.",
+     "steps": [
+      {
+       "id": "W46.1",
+       "type": "expr",
+       "text": "$g = x^2 + 2$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "W46.2",
+       "type": "expr",
+       "text": "$k = 3x + 1$",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$3$",
+       "work": "$k' = 3$"
+      },
+      {
+       "id": "W46.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(x^2 + 2)(3) + (2x)(3x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(x^2 + 2)(3) + (2x)(3x + 1)$",
+       "work": "$f'(x) = (x^2 + 2)(3) + (2x)(3x + 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (x^2 + 2)(3) + (2x)(3x + 1)$"
+    },
+    {
+     "id": "W47",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (2x - 1)(x + 4)$.",
+     "steps": [
+      {
+       "id": "W47.1",
+       "type": "expr",
+       "text": "$g = 2x - 1$",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$2$",
+       "work": "$g' = 2$"
+      },
+      {
+       "id": "W47.2",
+       "type": "expr",
+       "text": "$k = x + 4$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "W47.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(2x - 1)(1) + (2)(x + 4)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(2x - 1)(1) + (2)(x + 4)$",
+       "work": "$f'(x) = (2x - 1)(1) + (2)(x + 4)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2x - 1)(1) + (2)(x + 4)$"
+    },
+    {
+     "id": "W48",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (x^2 - 3)(2x + 5)$.",
+     "steps": [
+      {
+       "id": "W48.1",
+       "type": "expr",
+       "text": "$g = x^2 - 3$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "W48.2",
+       "type": "expr",
+       "text": "$k = 2x + 5$",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$2$",
+       "work": "$k' = 2$"
+      },
+      {
+       "id": "W48.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(x^2 - 3)(2) + (2x)(2x + 5)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(x^2 - 3)(2) + (2x)(2x + 5)$",
+       "work": "$f'(x) = (x^2 - 3)(2) + (2x)(2x + 5)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (x^2 - 3)(2) + (2x)(2x + 5)$"
+    },
+    {
+     "id": "W49",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (3x)(x^2 - 2x + 1)$.",
+     "steps": [
+      {
+       "id": "W49.1",
+       "type": "expr",
+       "text": "$g = 3x$",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$3$",
+       "work": "$g' = 3$"
+      },
+      {
+       "id": "W49.2",
+       "type": "expr",
+       "text": "$k = x^2 - 2x + 1$",
+       "answer": "2x - 2",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$2x - 2$",
+       "work": "$k' = 2x - 2$"
+      },
+      {
+       "id": "W49.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(3x)(2x - 2) + (3)(x^2 - 2x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(3x)(2x - 2) + (3)(x^2 - 2x + 1)$",
+       "work": "$f'(x) = (3x)(2x - 2) + (3)(x^2 - 2x + 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (3x)(2x - 2) + (3)(x^2 - 2x + 1)$"
+    },
+    {
+     "id": "W50",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (x + 1)(x - 1)$.",
+     "steps": [
+      {
+       "id": "W50.1",
+       "type": "expr",
+       "text": "$g = x + 1$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "W50.2",
+       "type": "expr",
+       "text": "$k = x - 1$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "W50.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(x + 1)(1) + (1)(x - 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(x + 1)(1) + (1)(x - 1)$",
+       "work": "$f'(x) = (x + 1)(1) + (1)(x - 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (x + 1)(1) + (1)(x - 1)$"
+    },
+    {
+     "id": "W51",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (4x - 1)(x^2 + 1)$.",
+     "steps": [
+      {
+       "id": "W51.1",
+       "type": "expr",
+       "text": "$g = 4x - 1$",
+       "answer": "4",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$4$",
+       "work": "$g' = 4$"
+      },
+      {
+       "id": "W51.2",
+       "type": "expr",
+       "text": "$k = x^2 + 1$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$2x$",
+       "work": "$k' = 2x$"
+      },
+      {
+       "id": "W51.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(4x - 1)(2x) + (4)(x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(4x - 1)(2x) + (4)(x^2 + 1)$",
+       "work": "$f'(x) = (4x - 1)(2x) + (4)(x^2 + 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (4x - 1)(2x) + (4)(x^2 + 1)$"
+    },
+    {
+     "id": "W52",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (x^3 + 1)(2x + 3)$.",
+     "steps": [
+      {
+       "id": "W52.1",
+       "type": "expr",
+       "text": "$g = x^3 + 1$",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$3x^2$",
+       "work": "$g' = 3x^2$"
+      },
+      {
+       "id": "W52.2",
+       "type": "expr",
+       "text": "$k = 2x + 3$",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$2$",
+       "work": "$k' = 2$"
+      },
+      {
+       "id": "W52.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(x^3 + 1)(2) + (3x^2)(2x + 3)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(x^3 + 1)(2) + (3x^2)(2x + 3)$",
+       "work": "$f'(x) = (x^3 + 1)(2) + (3x^2)(2x + 3)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (x^3 + 1)(2) + (3x^2)(2x + 3)$"
+    },
+    {
+     "id": "W53",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (5x + 2)(x^2 - 1)$.",
+     "steps": [
+      {
+       "id": "W53.1",
+       "type": "expr",
+       "text": "$g = 5x + 2$",
+       "answer": "5",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$5$",
+       "work": "$g' = 5$"
+      },
+      {
+       "id": "W53.2",
+       "type": "expr",
+       "text": "$k = x^2 - 1$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$2x$",
+       "work": "$k' = 2x$"
+      },
+      {
+       "id": "W53.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(5x + 2)(2x) + (5)(x^2 - 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(5x + 2)(2x) + (5)(x^2 - 1)$",
+       "work": "$f'(x) = (5x + 2)(2x) + (5)(x^2 - 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (5x + 2)(2x) + (5)(x^2 - 1)$"
+    },
+    {
+     "id": "W54",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (x - 3)(2x^2 + 1)$.",
+     "steps": [
+      {
+       "id": "W54.1",
+       "type": "expr",
+       "text": "$g = x - 3$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "W54.2",
+       "type": "expr",
+       "text": "$k = 2x^2 + 1$",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$4x$",
+       "work": "$k' = 4x$"
+      },
+      {
+       "id": "W54.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(x - 3)(4x) + (1)(2x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(x - 3)(4x) + (1)(2x^2 + 1)$",
+       "work": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$"
+    },
+    {
+     "id": "W55",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = (2x^2 + 1)(3x - 2)$.",
+     "steps": [
+      {
+       "id": "W55.1",
+       "type": "expr",
+       "text": "$g = 2x^2 + 1$",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'$ =",
+       "show": "$4x$",
+       "work": "$g' = 4x$"
+      },
+      {
+       "id": "W55.2",
+       "type": "expr",
+       "text": "$k = 3x - 2$",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "$k'$ =",
+       "show": "$3$",
+       "work": "$k' = 3$"
+      },
+      {
+       "id": "W55.3",
+       "type": "expr",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
+       "answer": "(2x^2 + 1)(3) + (4x)(3x - 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$(2x^2 + 1)(3) + (4x)(3x - 2)$",
+       "work": "$f'(x) = (2x^2 + 1)(3) + (4x)(3x - 2)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = (2x^2 + 1)(3) + (4x)(3x - 2)$"
+    },
+    {
+     "id": "V56",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x^2}{x + 1}$.",
+     "steps": [
+      {
+       "id": "V56.1",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "V56.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "V56.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x + 1)(2x) - (x^2)(1))/(x + 1)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$",
+       "work": "$f'(x) = frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$"
+    },
+    {
+     "id": "V57",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{3x}{2x - 1}$.",
+     "steps": [
+      {
+       "id": "V57.1",
+       "type": "expr",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$3$",
+       "work": "$g' = 3$"
+      },
+      {
+       "id": "V57.2",
+       "type": "expr",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$2$",
+       "work": "$k' = 2$"
+      },
+      {
+       "id": "V57.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((2x - 1)(3) - (3x)(2))/(2x - 1)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$",
+       "work": "$f'(x) = frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$"
+    },
+    {
+     "id": "V58",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x^2 + 1}{x}$.",
+     "steps": [
+      {
+       "id": "V58.1",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "V58.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "V58.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x)(2x) - (x^2 + 1)(1))/(x)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+       "work": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$"
+    },
+    {
+     "id": "V59",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{2x + 5}{x^2 + 1}$.",
+     "steps": [
+      {
+       "id": "V59.1",
+       "type": "expr",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$2$",
+       "work": "$g' = 2$"
+      },
+      {
+       "id": "V59.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$2x$",
+       "work": "$k' = 2x$"
+      },
+      {
+       "id": "V59.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x^2 + 1)(2) - (2x + 5)(2x))/(x^2 + 1)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+       "work": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$"
+    },
+    {
+     "id": "V60",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x - 2}{x + 3}$.",
+     "steps": [
+      {
+       "id": "V60.1",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "V60.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "V60.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x + 3)(1) - (x - 2)(1))/(x + 3)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$",
+       "work": "$f'(x) = frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$"
+    },
+    {
+     "id": "V61",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{4x^2}{2x + 1}$.",
+     "steps": [
+      {
+       "id": "V61.1",
+       "type": "expr",
+       "answer": "8x",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$8x$",
+       "work": "$g' = 8x$"
+      },
+      {
+       "id": "V61.2",
+       "type": "expr",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$2$",
+       "work": "$k' = 2$"
+      },
+      {
+       "id": "V61.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((2x + 1)(8x) - (4x^2)(2))/(2x + 1)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$",
+       "work": "$f'(x) = frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$"
+    },
+    {
+     "id": "V62",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x}{x^2 + 4}$.",
+     "steps": [
+      {
+       "id": "V62.1",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "V62.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$2x$",
+       "work": "$k' = 2x$"
+      },
+      {
+       "id": "V62.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x^2 + 4)(1) - (x)(2x))/(x^2 + 4)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$",
+       "work": "$f'(x) = frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$"
+    },
+    {
+     "id": "V63",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{5x}{x - 1}$.",
+     "steps": [
+      {
+       "id": "V63.1",
+       "type": "expr",
+       "answer": "5",
+       "vars": [
+        "x"
+       ],
+       "label": "top: $g'$ =",
+       "show": "$5$",
+       "work": "$g' = 5$"
+      },
+      {
+       "id": "V63.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "bottom: $k'$ =",
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "V63.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
+       "answer": "((x - 1)(5) - (5x)(1))/(x - 1)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.35,
+         2.65
+        ]
+       },
+       "show": "$frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$",
+       "work": "$f'(x) = frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$"
+    },
+    {
+     "id": "T64",
+     "type": "steps",
+     "text": "Find the tangent line to $f(x) = x^2 + 2x - 1$ at $x = 2$.",
+     "steps": [
+      {
+       "id": "T64.1",
+       "type": "num",
+       "text": "",
+       "answer": 7,
+       "label": "$f(2)$ =",
+       "work": "$f(2) = 7$"
+      },
+      {
+       "id": "T64.2",
+       "type": "expr",
+       "answer": "2x + 2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$2x + 2$",
+       "work": "$f'(x) = 2x + 2$"
+      },
+      {
+       "id": "T64.3",
+       "type": "num",
+       "text": "",
+       "answer": 6,
+       "label": "$f'(2)$ =",
+       "work": "$f'(2) = 6$"
+      },
+      {
+       "id": "T64.4",
+       "type": "expr",
+       "text": "$y = f'(a)(x - a) + f(a)$",
+       "answer": "6(x - 2) + 7",
+       "vars": [
+        "x"
+       ],
+       "label": "$y$ =",
+       "show": "$6(x - 2) + 7$",
+       "work": "$y = 6(x - 2) + 7$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y = 6(x - 2) + 7$"
+    },
+    {
+     "id": "T65",
+     "type": "steps",
+     "text": "Find the tangent line to $f(x) = 2x^2 - 3$ at $x = 1$.",
+     "steps": [
+      {
+       "id": "T65.1",
+       "type": "num",
+       "text": "",
+       "answer": -1,
+       "label": "$f(1)$ =",
+       "work": "$f(1) = -1$"
+      },
+      {
+       "id": "T65.2",
+       "type": "expr",
+       "answer": "4x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$4x$",
+       "work": "$f'(x) = 4x$"
+      },
+      {
+       "id": "T65.3",
+       "type": "num",
+       "text": "",
+       "answer": 4,
+       "label": "$f'(1)$ =",
+       "work": "$f'(1) = 4$"
+      },
+      {
+       "id": "T65.4",
+       "type": "expr",
+       "text": "$y = f'(a)(x - a) + f(a)$",
+       "answer": "4(x - 1) - 1",
+       "vars": [
+        "x"
+       ],
+       "label": "$y$ =",
+       "show": "$4(x - 1) - 1$",
+       "work": "$y = 4(x - 1) - 1$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y = 4(x - 1) - 1$"
+    },
+    {
+     "id": "T66",
+     "type": "steps",
+     "text": "Find the tangent line to $f(x) = x^2 - 4x$ at $x = -1$.",
+     "steps": [
+      {
+       "id": "T66.1",
+       "type": "num",
+       "text": "",
+       "answer": 5,
+       "label": "$f(-1)$ =",
+       "work": "$f(-1) = 5$"
+      },
+      {
+       "id": "T66.2",
+       "type": "expr",
+       "answer": "2x - 4",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$2x - 4$",
+       "work": "$f'(x) = 2x - 4$"
+      },
+      {
+       "id": "T66.3",
+       "type": "num",
+       "text": "",
+       "answer": -6,
+       "label": "$f'(-1)$ =",
+       "work": "$f'(-1) = -6$"
+      },
+      {
+       "id": "T66.4",
+       "type": "expr",
+       "text": "$y = f'(a)(x - a) + f(a)$",
+       "answer": "-6(x + 1) + 5",
+       "vars": [
+        "x"
+       ],
+       "label": "$y$ =",
+       "show": "$-6(x + 1) + 5$",
+       "work": "$y = -6(x + 1) + 5$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y = -6(x + 1) + 5$"
+    },
+    {
+     "id": "T67",
+     "type": "steps",
+     "text": "Find the tangent line to $f(x) = x^3 - 2$ at $x = 1$.",
+     "steps": [
+      {
+       "id": "T67.1",
+       "type": "num",
+       "text": "",
+       "answer": -1,
+       "label": "$f(1)$ =",
+       "work": "$f(1) = -1$"
+      },
+      {
+       "id": "T67.2",
+       "type": "expr",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$3x^2$",
+       "work": "$f'(x) = 3x^2$"
+      },
+      {
+       "id": "T67.3",
+       "type": "num",
+       "text": "",
+       "answer": 3,
+       "label": "$f'(1)$ =",
+       "work": "$f'(1) = 3$"
+      },
+      {
+       "id": "T67.4",
+       "type": "expr",
+       "text": "$y = f'(a)(x - a) + f(a)$",
+       "answer": "3(x - 1) - 1",
+       "vars": [
+        "x"
+       ],
+       "label": "$y$ =",
+       "show": "$3(x - 1) - 1$",
+       "work": "$y = 3(x - 1) - 1$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y = 3(x - 1) - 1$"
+    },
+    {
+     "id": "T68",
+     "type": "steps",
+     "text": "Find the tangent line to $f(x) = 3x^2 - x + 2$ at $x = 0$.",
+     "steps": [
+      {
+       "id": "T68.1",
+       "type": "num",
+       "text": "",
+       "answer": 2,
+       "label": "$f(0)$ =",
+       "work": "$f(0) = 2$"
+      },
+      {
+       "id": "T68.2",
+       "type": "expr",
+       "answer": "6x - 1",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6x - 1$",
+       "work": "$f'(x) = 6x - 1$"
+      },
+      {
+       "id": "T68.3",
+       "type": "num",
+       "text": "",
+       "answer": -1,
+       "label": "$f'(0)$ =",
+       "work": "$f'(0) = -1$"
+      },
+      {
+       "id": "T68.4",
+       "type": "expr",
+       "text": "$y = f'(a)(x - a) + f(a)$",
+       "answer": "-(x - 0) + 2",
+       "vars": [
+        "x"
+       ],
+       "label": "$y$ =",
+       "show": "$-(x - 0) + 2$",
+       "work": "$y = -(x - 0) + 2$"
+      }
+     ],
+     "level": 3,
+     "explain": "$y = -(x - 0) + 2$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "**Power rule:** $frac{d}{dx} x^n = nx^(n-1)$. Bring the power down in front, then lower the power by one. What is $frac{d}{dx} x^5$?",
+    "options": [
+     "$5x^4$",
+     "$x^4$",
+     "$5x^5$",
+     "$4x^5$"
+    ],
+    "answer": 0,
+    "hint": "Bring the 5 down, then subtract 1 from the power.",
+    "explain": "$5x^4$"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "Constants in front stay, and a sum is differentiated one term at a time. A constant alone has derivative 0. Find the derivative of $f(x) = 3x^2 + 2x + 1$.",
+    "answer": "6x + 2",
+    "vars": [
+     "x"
+    ],
+    "label": "$f'(x)$ =",
+    "show": "$6x + 2$",
+    "hint": "$3x^2 -> 3·2x$, $2x -> 2$, and $1 -> 0$.",
+    "explain": "$6x + 2$"
+   },
+   {
+    "id": "L3",
+    "type": "steps",
+    "text": "**Product rule:** if $f = gk$ then $f' = gk' + g'k$. Take $f(x) = (x^2 + 2)(3x + 1)$ with $g = x^2 + 2$ and $k = 3x + 1$.",
+    "steps": [
+     {
+      "id": "L3.1",
+      "type": "expr",
+      "answer": "2x",
+      "vars": [
+       "x"
+      ],
+      "label": "$g'$ =",
+      "show": "$2x$",
+      "hint": "Power rule on $x^2$; the 2 is a constant.",
+      "work": "$g' = 2x$"
+     },
+     {
+      "id": "L3.2",
+      "type": "expr",
+      "answer": "3",
+      "vars": [
+       "x"
+      ],
+      "label": "$k'$ =",
+      "show": "$3$",
+      "hint": "The slope of $3x + 1$.",
+      "work": "$k' = 3$"
+     },
+     {
+      "id": "L3.3",
+      "type": "expr",
+      "text": "Put it together: $gk' + g'k$.",
+      "answer": "(x^2 + 2)(3) + 2x(3x + 1)",
+      "vars": [
+       "x"
+      ],
+      "label": "$f'(x)$ =",
+      "show": "$(x^2 + 2)(3) + 2x(3x + 1)$",
+      "hint": "$(x^2 + 2)·3 + 2x·(3x + 1)$",
+      "work": "$f'(x) = 3(x^2 + 2) + 2x(3x + 1)$"
+     }
+    ]
+   },
+   {
+    "id": "L4",
+    "type": "steps",
+    "text": "**Quotient rule:** $(frac{g}{k})' = frac{kg' - gk'}{k^2}$ (\"low d-high minus high d-low, over low squared\"). Take $f(x) = frac{4x^2}{2x + 1}$.",
+    "steps": [
+     {
+      "id": "L4.1",
+      "type": "expr",
+      "answer": "8x",
+      "vars": [
+       "x"
+      ],
+      "label": "top: $g'$ =",
+      "show": "$8x$",
+      "hint": "$4x^2 -> 4·2x$",
+      "work": "$g' = 8x$"
+     },
+     {
+      "id": "L4.2",
+      "type": "expr",
+      "answer": "2",
+      "vars": [
+       "x"
+      ],
+      "label": "bottom: $k'$ =",
+      "show": "$2$",
+      "hint": "The slope of $2x + 1$.",
+      "work": "$k' = 2$"
+     },
+     {
+      "id": "L4.3",
+      "type": "expr",
+      "text": "Low d-high minus high d-low, over low squared.",
+      "answer": "((2x + 1)(8x) - 4x^2(2))/(2x + 1)^2",
+      "vars": [
+       "x"
+      ],
+      "label": "$f'(x)$ =",
+      "show": "$frac{(2x + 1)(8x) - 4x^2(2)}{(2x + 1)^2}$",
+      "hint": "$frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$. Use ( ) around the top and the bottom.",
+      "work": "$f'(x) = frac{(2x + 1)(8x) - 8x^2}{(2x + 1)^2}$"
+     }
+    ]
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "The power rule works for **negative** powers too. Rewrite $f(x) = frac{1}{x^3}$ as $x^(-3)$, then use the power rule.",
+    "answer": "-3x^(-4)",
+    "vars": [
+     "x"
+    ],
+    "label": "$f'(x)$ =",
+    "show": "$-3x^(-4)$",
+    "hint": "Bring down the $-3$, then $-3 - 1 = -4$.",
+    "explain": "$-3x^(-4) = -frac{3}{x^4}$"
+   }
+  ]
+ }
+}

@@ -1,0 +1,914 @@
+{
+ "id": "d-solvey",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Algebra: Solving for y",
+ "subtitle": "Review: get y (or y') alone.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "A1",
+     "type": "expr",
+     "text": "Solve for $y$: $3x + 2y = 6$",
+     "answer": "(6 - 3x)/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$frac{6 - 3x}{2}$",
+     "level": 1,
+     "explain": "$y = frac{6 - 3x}{2}$"
+    },
+    {
+     "id": "A2",
+     "type": "expr",
+     "text": "Solve for $y$: $y - 4x = 1$",
+     "answer": "4x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$4x + 1$",
+     "level": 1,
+     "explain": "$y = 4x + 1$"
+    },
+    {
+     "id": "A3",
+     "type": "expr",
+     "text": "Solve for $y$: $2y + x = 8$",
+     "answer": "(8 - x)/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$frac{8 - x}{2}$",
+     "level": 1,
+     "explain": "$y = frac{8 - x}{2}$"
+    },
+    {
+     "id": "A4",
+     "type": "expr",
+     "text": "Solve for $y$: $5x - y = 3$",
+     "answer": "5x - 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$5x - 3$",
+     "level": 1,
+     "explain": "$y = 5x - 3$"
+    },
+    {
+     "id": "A5",
+     "type": "expr",
+     "text": "Solve for $y$: $4y = 3x - 12$",
+     "answer": "(3x - 12)/4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$frac{3x - 12}{4}$",
+     "level": 1,
+     "explain": "$y = frac{3x - 12}{4}$"
+    },
+    {
+     "id": "A6",
+     "type": "expr",
+     "text": "Solve for $y$: $x + 3y = 9$",
+     "answer": "(9 - x)/3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$frac{9 - x}{3}$",
+     "level": 1,
+     "explain": "$y = frac{9 - x}{3}$"
+    },
+    {
+     "id": "A7",
+     "type": "expr",
+     "text": "Solve for $y$: $6x + 2y = 10$",
+     "answer": "5 - 3x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$5 - 3x$",
+     "level": 1,
+     "explain": "$y = 5 - 3x$"
+    },
+    {
+     "id": "A8",
+     "type": "expr",
+     "text": "Solve for $y$: $y/2 + x = 4$",
+     "answer": "8 - 2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$8 - 2x$",
+     "level": 1,
+     "explain": "$y = 8 - 2x$"
+    },
+    {
+     "id": "A9",
+     "type": "expr",
+     "text": "Solve for $y$: $3(y - 1) = x$",
+     "answer": "x/3 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$x/3 + 1$",
+     "level": 1,
+     "explain": "$y = x/3 + 1$"
+    },
+    {
+     "id": "A10",
+     "type": "expr",
+     "text": "Solve for $y$: $2x - 5y = 10$",
+     "answer": "(2x - 10)/5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "show": "$frac{2x - 10}{5}$",
+     "level": 1,
+     "explain": "$y = frac{2x - 10}{5}$"
+    },
+    {
+     "id": "F11",
+     "type": "expr",
+     "text": "Solve for $y$: $xy + 2y = 5$",
+     "answer": "5/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{5}{x + 2}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{5}{x + 2}$"
+    },
+    {
+     "id": "F12",
+     "type": "expr",
+     "text": "Solve for $y$: $xy - y = 4$",
+     "answer": "4/(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{4}{x - 1}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{4}{x - 1}$"
+    },
+    {
+     "id": "F13",
+     "type": "expr",
+     "text": "Solve for $y$: $3y + x^2y = 7$",
+     "answer": "7/(3 + x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{7}{3 + x^2}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{7}{3 + x^2}$"
+    },
+    {
+     "id": "F14",
+     "type": "expr",
+     "text": "Solve for $y$: $xy = 2x + 3y$",
+     "answer": "2x/(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{2x}{x - 3}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{2x}{x - 3}$"
+    },
+    {
+     "id": "F15",
+     "type": "expr",
+     "text": "Solve for $y$: $y + xy = x$",
+     "answer": "x/(1 + x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x}{1 + x}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{x}{1 + x}$"
+    },
+    {
+     "id": "F16",
+     "type": "expr",
+     "text": "Solve for $y$: $2y - xy = 1$",
+     "answer": "1/(2 - x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{1}{2 - x}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{1}{2 - x}$"
+    },
+    {
+     "id": "F17",
+     "type": "expr",
+     "text": "Solve for $y$: $x^2y + y = 1$",
+     "answer": "1/(x^2 + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{1}{x^2 + 1}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{1}{x^2 + 1}$"
+    },
+    {
+     "id": "F18",
+     "type": "expr",
+     "text": "Solve for $y$: $xy + 5 = 3y$",
+     "answer": "5/(3 - x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{5}{3 - x}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{5}{3 - x}$"
+    },
+    {
+     "id": "F19",
+     "type": "expr",
+     "text": "Solve for $y$: $y(x + 4) = 2x$",
+     "answer": "2x/(x + 4)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{2x}{x + 4}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{2x}{x + 4}$"
+    },
+    {
+     "id": "F20",
+     "type": "expr",
+     "text": "Solve for $y$: $y/x = 3 + y$",
+     "answer": "3x/(1 - x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "y'"
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{3x}{1 - x}$",
+     "level": 2,
+     "explain": "Factor out $y$: $y = frac{3x}{1 - x}$"
+    },
+    {
+     "id": "P21",
+     "type": "expr",
+     "text": "Solve for $y'$: $2x + 2yy' = 0$",
+     "answer": "-x/y",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{x}{y}$",
+     "level": 3,
+     "explain": "$y' = -frac{x}{y}$"
+    },
+    {
+     "id": "P22",
+     "type": "expr",
+     "text": "Solve for $y'$: $xy' + y = 0$",
+     "answer": "-y/x",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{y}{x}$",
+     "level": 3,
+     "explain": "$y' = -frac{y}{x}$"
+    },
+    {
+     "id": "P23",
+     "type": "expr",
+     "text": "Solve for $y'$: $3y^2y' = 2x$",
+     "answer": "2x/(3y^2)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2x}{3y^2}$",
+     "level": 3,
+     "explain": "$y' = frac{2x}{3y^2}$"
+    },
+    {
+     "id": "P24",
+     "type": "expr",
+     "text": "Solve for $y'$: $y' + xy' = 4$",
+     "answer": "4/(1 + x)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{4}{1 + x}$",
+     "level": 3,
+     "explain": "$y' = frac{4}{1 + x}$"
+    },
+    {
+     "id": "P25",
+     "type": "expr",
+     "text": "Solve for $y'$: $2yy' - 3 = x$",
+     "answer": "(x + 3)/(2y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x + 3}{2y}$",
+     "level": 3,
+     "explain": "$y' = frac{x + 3}{2y}$"
+    },
+    {
+     "id": "P26",
+     "type": "expr",
+     "text": "Solve for $y'$: $x^2y' + 2xy = 0$",
+     "answer": "-2y/x",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{2y}{x}$",
+     "level": 3,
+     "explain": "$y' = -frac{2y}{x}$"
+    },
+    {
+     "id": "P27",
+     "type": "expr",
+     "text": "Solve for $y'$: $y'cos(y) + 1 = 2x$",
+     "answer": "(2x - 1)/cos(y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2x - 1}{cos(y)}$",
+     "level": 3,
+     "explain": "$y' = frac{2x - 1}{cos(y)}$"
+    },
+    {
+     "id": "P28",
+     "type": "expr",
+     "text": "Solve for $y'$: $4y' - xy' = y$",
+     "answer": "y/(4 - x)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{y}{4 - x}$",
+     "level": 3,
+     "explain": "$y' = frac{y}{4 - x}$"
+    },
+    {
+     "id": "P29",
+     "type": "expr",
+     "text": "Solve for $y'$: $y'(x + y) = x$",
+     "answer": "x/(x + y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x}{x + y}$",
+     "level": 3,
+     "explain": "$y' = frac{x}{x + y}$"
+    },
+    {
+     "id": "P30",
+     "type": "expr",
+     "text": "Solve for $y'$: $6x + 4yy' = 2$",
+     "answer": "(2 - 6x)/(4y)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2 - 6x}{4y}$",
+     "level": 3,
+     "explain": "$y' = frac{2 - 6x}{4y}$"
+    },
+    {
+     "id": "P31",
+     "type": "expr",
+     "text": "Solve for $y'$: $xy' + y' = 1 - y$",
+     "answer": "(1 - y)/(x + 1)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{1 - y}{x + 1}$",
+     "level": 3,
+     "explain": "$y' = frac{1 - y}{x + 1}$"
+    },
+    {
+     "id": "P32",
+     "type": "expr",
+     "text": "Solve for $y'$: $5y^4y' + y' = 3x^2$",
+     "answer": "3x^2/(5y^4 + 1)",
+     "vars": [
+      "x",
+      "y"
+     ],
+     "keys": [
+      "cos("
+     ],
+     "label": "$y'$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ],
+      "y": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{3x^2}{5y^4 + 1}$",
+     "level": 3,
+     "explain": "$y' = frac{3x^2}{5y^4 + 1}$"
+    },
+    {
+     "id": "R33",
+     "type": "expr",
+     "text": "Solve for $y$ (take $y > 0$): $x^2 + y^2 = 9$",
+     "answer": "sqrt(9 - x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       2.5
+      ]
+     },
+     "show": "$sqrt(9 - x^2)$",
+     "level": 2,
+     "explain": "$y = sqrt(9 - x^2)$"
+    },
+    {
+     "id": "R34",
+     "type": "expr",
+     "text": "Solve for $y$ (take $y > 0$): $y^2 - x = 4$",
+     "answer": "sqrt(x + 4)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       2.5
+      ]
+     },
+     "show": "$sqrt(x + 4)$",
+     "level": 2,
+     "explain": "$y = sqrt(x + 4)$"
+    },
+    {
+     "id": "R35",
+     "type": "expr",
+     "text": "Solve for $y$ (take $y > 0$): $x = y^3$",
+     "answer": "x^(1/3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       2.5
+      ]
+     },
+     "show": "$x^(1/3)$",
+     "level": 2,
+     "explain": "$y = x^(1/3)$"
+    },
+    {
+     "id": "R36",
+     "type": "expr",
+     "text": "Solve for $y$ (take $y > 0$): $e^y = x$",
+     "answer": "ln(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       2.5
+      ]
+     },
+     "show": "$ln(x)$",
+     "level": 2,
+     "explain": "$y = ln(x)$"
+    },
+    {
+     "id": "R37",
+     "type": "expr",
+     "text": "Solve for $y$ (take $y > 0$): $ln(y) = 2x$",
+     "answer": "e^(2x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       2.5
+      ]
+     },
+     "show": "$e^(2x)$",
+     "level": 2,
+     "explain": "$y = e^(2x)$"
+    },
+    {
+     "id": "R38",
+     "type": "expr",
+     "text": "Solve for $y$ (take $y > 0$): $y^2 = 4x$",
+     "answer": "2sqrt(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       2.5
+      ]
+     },
+     "show": "$2sqrt(x)$",
+     "level": 2,
+     "explain": "$y = 2sqrt(x)$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "To solve for $y$, undo what is done to it. In $3x + 2y = 6$, first subtract $3x$ from both sides:",
+    "options": [
+     "$2y = 6 - 3x$",
+     "$2y = 6 + 3x$",
+     "$y = 6 - 3x$",
+     "$3x = 6 - 2y$"
+    ],
+    "answer": 0,
+    "hint": "Move the $3x$ to the other side.",
+    "explain": "Then divide by 2: $y = frac{6 - 3x}{2}$."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "When $y$ is in **two** terms, factor it out: $xy + 2y = 5$ becomes",
+    "options": [
+     "$y(x + 2) = 5$",
+     "$y = 5 - xy - 2$",
+     "$2xy = 5$",
+     "$y(x + 2y) = 5$"
+    ],
+    "answer": 0,
+    "hint": "Both terms on the left have a $y$.",
+    "explain": "Then divide: $y = frac{5}{x + 2}$."
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "The same move finishes implicit differentiation. Solve $xy' + y' = 3$ for $y'$.",
+    "answer": "3/(x + 1)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "y'"
+    ],
+    "label": "$y'$ =",
+    "show": "$frac{3}{x + 1}$",
+    "hint": "Factor: $y'(x + 1) = 3$.",
+    "explain": "$y' = frac{3}{x + 1}$"
+   }
+  ]
+ },
+ "lessonOptional": true
+}

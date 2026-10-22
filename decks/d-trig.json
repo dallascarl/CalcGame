@@ -1,0 +1,2330 @@
+{
+ "id": "d-trig",
+ "course": "Calculus 1",
+ "unit": "Derivatives",
+ "title": "Derivatives of Trig Functions",
+ "subtitle": "Slide along sine and the cosine appears.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each function to its derivative.",
+     "pairs": [
+      [
+       "$sin(x)$",
+       "$cos(x)$"
+      ],
+      [
+       "$cos(x)$",
+       "$-sin(x)$"
+      ],
+      [
+       "$tan(x)$",
+       "$sec^2(x)$"
+      ]
+     ],
+     "explain": "Learn these three by heart."
+    },
+    {
+     "id": "T2",
+     "type": "match",
+     "text": "Match each function to its derivative.",
+     "pairs": [
+      [
+       "$sec(x)$",
+       "$sec(x)tan(x)$"
+      ],
+      [
+       "$csc(x)$",
+       "$-csc(x)cot(x)$"
+      ],
+      [
+       "$cot(x)$",
+       "$-csc^2(x)$"
+      ]
+     ],
+     "explain": "The co-functions get the minus signs."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "$frac{d}{dx} cos(x) = sin(x)$",
+     "answer": false,
+     "explain": "It is $-sin(x)$: cosine starts falling right after $x = 0$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "Which limit is the key fact behind $frac{d}{dx} sin(x) = cos(x)$?",
+     "options": [
+      "$lim[x->0] frac{sin(x)}{x} = 1$",
+      "$lim[x->0] sin(x) = 1$",
+      "$lim[x->infty] frac{sin(x)}{x} = 1$",
+      "$lim[x->0] frac{x}{sin(x)} = 0$"
+     ],
+     "answer": 0,
+     "explain": "It comes from the definition of the derivative with $sin(x + h)$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "What is $frac{d^47}{dx^47} cos(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 0,
+     "explain": "47 = 44 + 3. After 44 derivatives you are back at $cos(x)$; three more: $-sin(x)$, $-cos(x)$, $sin(x)$."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "How would you find $frac{d}{dx} tan(x)$ if you forgot it?",
+     "options": [
+      "Write $tan(x) = frac{sin(x)}{cos(x)}$ and use the quotient rule",
+      "Use the power rule",
+      "Take the derivative of the top and the bottom separately",
+      "It cannot be done"
+     ],
+     "answer": 0,
+     "explain": "$frac{cos(x)cos(x) - sin(x)(-sin(x))}{cos^2(x)} = frac{1}{cos^2(x)} = sec^2(x)$"
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "B1",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 3sin(x)$.",
+     "answer": "3cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$3cos(x)$",
+     "level": 1,
+     "explain": "$3cos(x)$"
+    },
+    {
+     "id": "B2",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 5cos(x)$.",
+     "answer": "-5sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$-5sin(x)$",
+     "level": 1,
+     "explain": "$-5sin(x)$"
+    },
+    {
+     "id": "B3",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2tan(x)$.",
+     "answer": "2sec(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$2sec(x)^2$",
+     "level": 1,
+     "explain": "$2sec(x)^2$"
+    },
+    {
+     "id": "B4",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sec(x)$.",
+     "answer": "sec(x)tan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$sec(x)tan(x)$",
+     "level": 1,
+     "explain": "$sec(x)tan(x)$"
+    },
+    {
+     "id": "B5",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 4sin(x) - cos(x)$.",
+     "answer": "4cos(x) + sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$4cos(x) + sin(x)$",
+     "level": 1,
+     "explain": "$4cos(x) + sin(x)$"
+    },
+    {
+     "id": "B6",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = x^2 + cos(x)$.",
+     "answer": "2x - sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$2x - sin(x)$",
+     "level": 1,
+     "explain": "$2x - sin(x)$"
+    },
+    {
+     "id": "B7",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = csc(x)$.",
+     "answer": "-csc(x)cot(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$-csc(x)cot(x)$",
+     "level": 1,
+     "explain": "$-csc(x)cot(x)$"
+    },
+    {
+     "id": "B8",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = cot(x)$.",
+     "answer": "-csc(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$-csc(x)^2$",
+     "level": 1,
+     "explain": "$-csc(x)^2$"
+    },
+    {
+     "id": "B9",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 7x - 2sin(x)$.",
+     "answer": "7 - 2cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$7 - 2cos(x)$",
+     "level": 1,
+     "explain": "$7 - 2cos(x)$"
+    },
+    {
+     "id": "B10",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = tan(x) + sec(x)$.",
+     "answer": "sec(x)^2 + sec(x)tan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$sec(x)^2 + sec(x)tan(x)$",
+     "level": 1,
+     "explain": "$sec(x)^2 + sec(x)tan(x)$"
+    },
+    {
+     "id": "B11",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = -6cos(x) + x^3$.",
+     "answer": "6sin(x) + 3x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$6sin(x) + 3x^2$",
+     "level": 1,
+     "explain": "$6sin(x) + 3x^2$"
+    },
+    {
+     "id": "B12",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 2sec(x)$.",
+     "answer": "2sec(x)tan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$2sec(x)tan(x)$",
+     "level": 1,
+     "explain": "$2sec(x)tan(x)$"
+    },
+    {
+     "id": "B13",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = sin(x) + cos(x)$.",
+     "answer": "cos(x) - sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$cos(x) - sin(x)$",
+     "level": 1,
+     "explain": "$cos(x) - sin(x)$"
+    },
+    {
+     "id": "B14",
+     "type": "expr",
+     "text": "Find the derivative of $f(x) = 3x^2 - tan(x)$.",
+     "answer": "6x - sec(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec(",
+      "csc(",
+      "cot("
+     ],
+     "label": "$f'(x)$ =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$6x - sec(x)^2$",
+     "level": 1,
+     "explain": "$6x - sec(x)^2$"
+    },
+    {
+     "id": "V15",
+     "type": "num",
+     "text": "For $f(x) = sin(x)$, find $f'(0)$.",
+     "answer": 1,
+     "label": "$f'(0)$ =",
+     "level": 1,
+     "explain": "$f'(x) = cos(x)$, so $f'(0) = 1$."
+    },
+    {
+     "id": "V16",
+     "type": "num",
+     "text": "For $f(x) = cos(x) + 2x$, find $f'(0)$.",
+     "answer": 2,
+     "label": "$f'(0)$ =",
+     "level": 1,
+     "explain": "$f'(x) = 2 - sin(x)$, so $f'(0) = 2$."
+    },
+    {
+     "id": "V17",
+     "type": "num",
+     "text": "For $f(x) = tan(x)$, find $f'(0)$.",
+     "answer": 1,
+     "label": "$f'(0)$ =",
+     "level": 1,
+     "explain": "$f'(x) = tan(x)^2 + 1$, so $f'(0) = 1$."
+    },
+    {
+     "id": "V18",
+     "type": "num",
+     "text": "For $f(x) = 5sin(x) + x$, find $f'(0)$.",
+     "answer": 6,
+     "label": "$f'(0)$ =",
+     "level": 1,
+     "explain": "$f'(x) = 5cos(x) + 1$, so $f'(0) = 6$."
+    },
+    {
+     "id": "V19",
+     "type": "num",
+     "text": "For $f(x) = sec(x)$, find $f'(0)$.",
+     "answer": 0,
+     "label": "$f'(0)$ =",
+     "level": 1,
+     "explain": "$f'(x) = tan(x)sec(x)$, so $f'(0) = 0$."
+    },
+    {
+     "id": "V20",
+     "type": "num",
+     "text": "For $f(x) = x + cos(x)$, find $f'(pi)$.",
+     "answer": 1,
+     "label": "$f'(pi)$ =",
+     "level": 1,
+     "explain": "$f'(x) = 1 - sin(x)$, so $f'(pi) = 1$."
+    },
+    {
+     "id": "F21",
+     "type": "expr",
+     "text": "$f(x) = x·cos(x)$. Fill in the missing piece of the product rule.",
+     "answer": "-sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x·($",
+     "post": "$) + (1)·cos(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$-sin(x)$",
+     "level": 2,
+     "explain": "The derivative of $cos(x)$ is $-sin(x)$."
+    },
+    {
+     "id": "F22",
+     "type": "expr",
+     "text": "$f(x) = x^2·sin(x)$. Fill in the missing piece of the product rule.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x^2·(cos(x)) + ($",
+     "post": "$)·sin(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The derivative of $x^2$ is $2x$."
+    },
+    {
+     "id": "F23",
+     "type": "expr",
+     "text": "$f(x) = x·tan(x)$. Fill in the missing piece of the product rule.",
+     "answer": "sec(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x·($",
+     "post": "$) + (1)·tan(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$sec(x)^2$",
+     "level": 2,
+     "explain": "The derivative of $tan(x)$ is $sec(x)^2$."
+    },
+    {
+     "id": "F24",
+     "type": "expr",
+     "text": "$f(x) = x^3·cos(x)$. Fill in the missing piece of the product rule.",
+     "answer": "3x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x^3·(-sin(x)) + ($",
+     "post": "$)·cos(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$3x^2$",
+     "level": 2,
+     "explain": "The derivative of $x^3$ is $3x^2$."
+    },
+    {
+     "id": "F25",
+     "type": "expr",
+     "text": "$f(x) = sin(x)·cos(x)$. Fill in the missing piece of the product rule.",
+     "answer": "-sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = sin(x)·($",
+     "post": "$) + (cos(x))·cos(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$-sin(x)$",
+     "level": 2,
+     "explain": "The derivative of $cos(x)$ is $-sin(x)$."
+    },
+    {
+     "id": "F26",
+     "type": "expr",
+     "text": "$f(x) = x·sec(x)$. Fill in the missing piece of the product rule.",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x·(sec(x)tan(x)) + ($",
+     "post": "$)·sec(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$1$",
+     "level": 2,
+     "explain": "The derivative of $x$ is $1$."
+    },
+    {
+     "id": "F27",
+     "type": "expr",
+     "text": "$f(x) = 4x·sin(x)$. Fill in the missing piece of the product rule.",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = 4x·($",
+     "post": "$) + (4)·sin(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 2,
+     "explain": "The derivative of $sin(x)$ is $cos(x)$."
+    },
+    {
+     "id": "F28",
+     "type": "expr",
+     "text": "$f(x) = x^2·tan(x)$. Fill in the missing piece of the product rule.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sec("
+     ],
+     "label": "$f'(x) = x^2·(sec(x)^2) + ($",
+     "post": "$)·tan(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.3
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "The derivative of $x^2$ is $2x$."
+    },
+    {
+     "id": "C29",
+     "type": "mc",
+     "text": "What is $frac{d^2}{dx^2} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 2 = 0 + 2, so take 2 more steps from $sin(x)$."
+    },
+    {
+     "id": "C30",
+     "type": "mc",
+     "text": "What is $frac{d^3}{dx^3} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 3,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 3 = 0 + 3, so take 3 more steps from $sin(x)$."
+    },
+    {
+     "id": "C31",
+     "type": "mc",
+     "text": "What is $frac{d^4}{dx^4} cos(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 4 = 4 + 0, so take 0 more steps from $cos(x)$."
+    },
+    {
+     "id": "C32",
+     "type": "mc",
+     "text": "What is $frac{d^5}{dx^5} cos(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 5 = 4 + 1, so take 1 more step from $cos(x)$."
+    },
+    {
+     "id": "C33",
+     "type": "mc",
+     "text": "What is $frac{d^6}{dx^6} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 6 = 4 + 2, so take 2 more steps from $sin(x)$."
+    },
+    {
+     "id": "C34",
+     "type": "mc",
+     "text": "What is $frac{d^47}{dx^47} cos(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 47 = 44 + 3, so take 3 more steps from $cos(x)$."
+    },
+    {
+     "id": "C35",
+     "type": "mc",
+     "text": "What is $frac{d^10}{dx^10} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 10 = 8 + 2, so take 2 more steps from $sin(x)$."
+    },
+    {
+     "id": "C36",
+     "type": "mc",
+     "text": "What is $frac{d^101}{dx^101} sin(x)$?",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-sin(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "The derivatives repeat every 4. 101 = 100 + 1, so take 1 more step from $sin(x)$."
+    },
+    {
+     "id": "Q37",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{cos(x)}{2x}$.",
+     "steps": [
+      {
+       "id": "Q37.1",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$g' = -sin(x)$"
+      },
+      {
+       "id": "Q37.2",
+       "type": "expr",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2$",
+       "work": "$k' = 2$"
+      },
+      {
+       "id": "Q37.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((2x)(-sin(x)) - (cos(x))(2))/(2x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(2x)(-sin(x)) - (cos(x))(2)}{(2x)^2}$",
+       "work": "$f'(x) = frac{(2x)(-sin(x)) - (cos(x))(2)}{(2x)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(2x)(-sin(x)) - (cos(x))(2)}{(2x)^2}$"
+    },
+    {
+     "id": "Q38",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{sin(x)}{x}$.",
+     "steps": [
+      {
+       "id": "Q38.1",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$g' = cos(x)$"
+      },
+      {
+       "id": "Q38.2",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$1$",
+       "work": "$k' = 1$"
+      },
+      {
+       "id": "Q38.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((x)(cos(x)) - (sin(x))(1))/(x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(x)(cos(x)) - (sin(x))(1)}{(x)^2}$",
+       "work": "$f'(x) = frac{(x)(cos(x)) - (sin(x))(1)}{(x)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x)(cos(x)) - (sin(x))(1)}{(x)^2}$"
+    },
+    {
+     "id": "Q39",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{cos(x)}{x^2 + 1}$.",
+     "steps": [
+      {
+       "id": "Q39.1",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$g' = -sin(x)$"
+      },
+      {
+       "id": "Q39.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2x$",
+       "work": "$k' = 2x$"
+      },
+      {
+       "id": "Q39.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((x^2 + 1)(-sin(x)) - (cos(x))(2x))/(x^2 + 1)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(x^2 + 1)(-sin(x)) - (cos(x))(2x)}{(x^2 + 1)^2}$",
+       "work": "$f'(x) = frac{(x^2 + 1)(-sin(x)) - (cos(x))(2x)}{(x^2 + 1)^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(x^2 + 1)(-sin(x)) - (cos(x))(2x)}{(x^2 + 1)^2}$"
+    },
+    {
+     "id": "Q40",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x}{cos(x)}$.",
+     "steps": [
+      {
+       "id": "Q40.1",
+       "type": "expr",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "Q40.2",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "Q40.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((cos(x))(1) - (x)(-sin(x)))/(cos(x))^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
+       "work": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$"
+    },
+    {
+     "id": "Q41",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{sin(x)}{1 + cos(x)}$.",
+     "steps": [
+      {
+       "id": "Q41.1",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$g' = cos(x)$"
+      },
+      {
+       "id": "Q41.2",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "Q41.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((1 + cos(x))(cos(x)) - (sin(x))(-sin(x)))/(1 + cos(x))^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
+       "work": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$"
+    },
+    {
+     "id": "Q42",
+     "type": "steps",
+     "text": "Use the quotient rule on $f(x) = frac{x^2}{sin(x)}$.",
+     "steps": [
+      {
+       "id": "Q42.1",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "top: $g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "Q42.2",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "bottom: $k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$k' = cos(x)$"
+      },
+      {
+       "id": "Q42.3",
+       "type": "expr",
+       "text": "Low d-high minus high d-low, over low squared.",
+       "answer": "((sin(x))(2x) - (x^2)(cos(x)))/(sin(x))^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$frac{(sin(x))(2x) - (x^2)(cos(x))}{(sin(x))^2}$",
+       "work": "$f'(x) = frac{(sin(x))(2x) - (x^2)(cos(x))}{(sin(x))^2}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = frac{(sin(x))(2x) - (x^2)(cos(x))}{(sin(x))^2}$"
+    },
+    {
+     "id": "W43",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x·cos(x)$.",
+     "steps": [
+      {
+       "id": "W43.1",
+       "type": "expr",
+       "text": "$g = x$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "W43.2",
+       "type": "expr",
+       "text": "$k = cos(x)$",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "W43.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x(-sin(x)) + (1)cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x(-sin(x)) + (1)cos(x)$",
+       "work": "$f'(x) = x(-sin(x)) + (1)cos(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = x(-sin(x)) + (1)cos(x)$"
+    },
+    {
+     "id": "W44",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x^2·sin(x)$.",
+     "steps": [
+      {
+       "id": "W44.1",
+       "type": "expr",
+       "text": "$g = x^2$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "W44.2",
+       "type": "expr",
+       "text": "$k = sin(x)$",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$k' = cos(x)$"
+      },
+      {
+       "id": "W44.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x^2(cos(x)) + (2x)sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x^2(cos(x)) + (2x)sin(x)$",
+       "work": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$"
+    },
+    {
+     "id": "W45",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x·tan(x)$.",
+     "steps": [
+      {
+       "id": "W45.1",
+       "type": "expr",
+       "text": "$g = x$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "W45.2",
+       "type": "expr",
+       "text": "$k = tan(x)$",
+       "answer": "sec(x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$sec(x)^2$",
+       "work": "$k' = sec(x)^2$"
+      },
+      {
+       "id": "W45.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x(sec(x)^2) + (1)tan(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x(sec(x)^2) + (1)tan(x)$",
+       "work": "$f'(x) = x(sec(x)^2) + (1)tan(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = x(sec(x)^2) + (1)tan(x)$"
+    },
+    {
+     "id": "W46",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x^3·cos(x)$.",
+     "steps": [
+      {
+       "id": "W46.1",
+       "type": "expr",
+       "text": "$g = x^3$",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$3x^2$",
+       "work": "$g' = 3x^2$"
+      },
+      {
+       "id": "W46.2",
+       "type": "expr",
+       "text": "$k = cos(x)$",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "W46.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x^3(-sin(x)) + (3x^2)cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x^3(-sin(x)) + (3x^2)cos(x)$",
+       "work": "$f'(x) = x^3(-sin(x)) + (3x^2)cos(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = x^3(-sin(x)) + (3x^2)cos(x)$"
+    },
+    {
+     "id": "W47",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = sin(x)·cos(x)$.",
+     "steps": [
+      {
+       "id": "W47.1",
+       "type": "expr",
+       "text": "$g = sin(x)$",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$g' = cos(x)$"
+      },
+      {
+       "id": "W47.2",
+       "type": "expr",
+       "text": "$k = cos(x)$",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$k' = -sin(x)$"
+      },
+      {
+       "id": "W47.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "sin(x)(-sin(x)) + (cos(x))cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$sin(x)(-sin(x)) + (cos(x))cos(x)$",
+       "work": "$f'(x) = sin(x)(-sin(x)) + (cos(x))cos(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = sin(x)(-sin(x)) + (cos(x))cos(x)$"
+    },
+    {
+     "id": "W48",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x·sec(x)$.",
+     "steps": [
+      {
+       "id": "W48.1",
+       "type": "expr",
+       "text": "$g = x$",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$1$",
+       "work": "$g' = 1$"
+      },
+      {
+       "id": "W48.2",
+       "type": "expr",
+       "text": "$k = sec(x)$",
+       "answer": "sec(x)tan(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$sec(x)tan(x)$",
+       "work": "$k' = sec(x)tan(x)$"
+      },
+      {
+       "id": "W48.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x(sec(x)tan(x)) + (1)sec(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x(sec(x)tan(x)) + (1)sec(x)$",
+       "work": "$f'(x) = x(sec(x)tan(x)) + (1)sec(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = x(sec(x)tan(x)) + (1)sec(x)$"
+    },
+    {
+     "id": "W49",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = 4x·sin(x)$.",
+     "steps": [
+      {
+       "id": "W49.1",
+       "type": "expr",
+       "text": "$g = 4x$",
+       "answer": "4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$4$",
+       "work": "$g' = 4$"
+      },
+      {
+       "id": "W49.2",
+       "type": "expr",
+       "text": "$k = sin(x)$",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$k' = cos(x)$"
+      },
+      {
+       "id": "W49.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "4x(cos(x)) + (4)sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$4x(cos(x)) + (4)sin(x)$",
+       "work": "$f'(x) = 4x(cos(x)) + (4)sin(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = 4x(cos(x)) + (4)sin(x)$"
+    },
+    {
+     "id": "W50",
+     "type": "steps",
+     "text": "Use the product rule on $f(x) = x^2·tan(x)$.",
+     "steps": [
+      {
+       "id": "W50.1",
+       "type": "expr",
+       "text": "$g = x^2$",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$g'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2x$",
+       "work": "$g' = 2x$"
+      },
+      {
+       "id": "W50.2",
+       "type": "expr",
+       "text": "$k = tan(x)$",
+       "answer": "sec(x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$k'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$sec(x)^2$",
+       "work": "$k' = sec(x)^2$"
+      },
+      {
+       "id": "W50.3",
+       "type": "expr",
+       "text": "$gk' + g'k$",
+       "answer": "x^2(sec(x)^2) + (2x)tan(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$f'(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$x^2(sec(x)^2) + (2x)tan(x)$",
+       "work": "$f'(x) = x^2(sec(x)^2) + (2x)tan(x)$"
+      }
+     ],
+     "level": 3,
+     "explain": "$f'(x) = x^2(sec(x)^2) + (2x)tan(x)$"
+    },
+    {
+     "id": "S51",
+     "type": "steps",
+     "text": "Find the slope of the tangent line to $y = frac{x}{x^2 + 1}$ at $x = 0$.",
+     "steps": [
+      {
+       "id": "S51.1",
+       "type": "expr",
+       "answer": "-2x^2/(x^2 + 1)^2 + (x^2 + 1)^(-1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-2x^2/(x^2 + 1)^2 + (x^2 + 1)^(-1)$",
+       "work": "$y' = -2x^2/(x^2 + 1)^2 + (x^2 + 1)^(-1)$"
+      },
+      {
+       "id": "S51.2",
+       "type": "num",
+       "text": "Plug in $x = 0$.",
+       "answer": 1,
+       "label": "slope =",
+       "work": "slope = $1$"
+      }
+     ],
+     "level": 3,
+     "explain": "The slope is $1$."
+    },
+    {
+     "id": "S52",
+     "type": "steps",
+     "text": "Find the slope of the tangent line to $y = x cos(x)$ at $x = 0$.",
+     "steps": [
+      {
+       "id": "S52.1",
+       "type": "expr",
+       "answer": "-xsin(x) + cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-xsin(x) + cos(x)$",
+       "work": "$y' = -xsin(x) + cos(x)$"
+      },
+      {
+       "id": "S52.2",
+       "type": "num",
+       "text": "Plug in $x = 0$.",
+       "answer": 1,
+       "label": "slope =",
+       "work": "slope = $1$"
+      }
+     ],
+     "level": 3,
+     "explain": "The slope is $1$."
+    },
+    {
+     "id": "S53",
+     "type": "steps",
+     "text": "Find the slope of the tangent line to $y = sin(x)cos(x)$ at $x = 0$.",
+     "steps": [
+      {
+       "id": "S53.1",
+       "type": "expr",
+       "answer": "-sin(x)^2 + cos(x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$-sin(x)^2 + cos(x)^2$",
+       "work": "$y' = -sin(x)^2 + cos(x)^2$"
+      },
+      {
+       "id": "S53.2",
+       "type": "num",
+       "text": "Plug in $x = 0$.",
+       "answer": 1,
+       "label": "slope =",
+       "work": "slope = $1$"
+      }
+     ],
+     "level": 3,
+     "explain": "The slope is $1$."
+    },
+    {
+     "id": "S54",
+     "type": "steps",
+     "text": "Find the slope of the tangent line to $y = (x^2 + 1) + (x - 2)$ at $x = 1$.",
+     "steps": [
+      {
+       "id": "S54.1",
+       "type": "expr",
+       "answer": "2x + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sec("
+       ],
+       "label": "$y'$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.3
+        ]
+       },
+       "show": "$2x + 1$",
+       "work": "$y' = 2x + 1$"
+      },
+      {
+       "id": "S54.2",
+       "type": "num",
+       "text": "Plug in $x = 1$.",
+       "answer": 3,
+       "label": "slope =",
+       "work": "slope = $3$"
+      }
+     ],
+     "level": 3,
+     "explain": "The slope is $3$."
+    },
+    {
+     "id": "A55",
+     "type": "steps",
+     "text": "A particle has position $s(t) = 2sin(t) - t$ for $0 <= t <= 2pi$. When is it at rest?",
+     "steps": [
+      {
+       "id": "A55.1",
+       "type": "expr",
+       "answer": "2cos(t) - 1",
+       "vars": [
+        "t"
+       ],
+       "keys": [
+        "sin(",
+        "cos("
+       ],
+       "label": "$v(t) = s'(t)$ =",
+       "show": "$2cos(t) - 1$",
+       "work": "$v(t) = 2cos(t) - 1$"
+      },
+      {
+       "id": "A55.2",
+       "type": "mc",
+       "text": "At rest means $v(t) = 0$, so $cos(t) = frac{1}{2}$. In $[0, 2pi]$ that happens at",
+       "options": [
+        "$t = frac{pi}{3}$ and $t = frac{5pi}{3}$",
+        "$t = frac{pi}{6}$ and $t = frac{5pi}{6}$",
+        "$t = 0$ and $t = pi$",
+        "$t = frac{pi}{2}$ only"
+       ],
+       "answer": 0,
+       "work": "$t = frac{pi}{3}$ and $t = frac{5pi}{3}$"
+      }
+     ],
+     "level": 3,
+     "explain": "$v(t) = 2cos(t) - 1 = 0$ when $cos(t) = frac{1}{2}$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "dtrace",
+    "title": "The slopes of sine",
+    "text": "Slide along $f(x) = sin(x)$ and watch its slopes land on the lower graph. Does the new graph look familiar?",
+    "fn": "sin(x)",
+    "window": [
+     -6.4,
+     6.4,
+     -1.6,
+     1.6
+    ],
+    "dwindow": [
+     -1.6,
+     1.6
+    ],
+    "xstep": 2,
+    "ystep": 1,
+    "dstep": 1,
+    "after": "The slopes of $sin(x)$ trace out $cos(x)$. So $frac{d}{dx} sin(x) = cos(x)$."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "At $x = 0$, $cos(x)$ is at its top (flat), then it falls. Which graph has exactly those slopes?",
+    "options": [
+     "$-sin(x)$",
+     "$sin(x)$",
+     "$cos(x)$",
+     "$-cos(x)$"
+    ],
+    "answer": 0,
+    "hint": "The slope starts at 0 and then goes negative. Which graph is 0 at $x = 0$ and then negative?",
+    "explain": "$frac{d}{dx} cos(x) = -sin(x)$"
+   },
+   {
+    "id": "L3",
+    "type": "steps",
+    "text": "Trig functions follow all the same rules. Find $frac{dy}{dx}$ for $y = x^2 sin(x)$ with the product rule.",
+    "steps": [
+     {
+      "id": "L3.1",
+      "type": "expr",
+      "text": "$g = x^2$",
+      "answer": "2x",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec("
+      ],
+      "label": "$g'$ =",
+      "show": "$2x$",
+      "hint": "Power rule.",
+      "work": "$g' = 2x$"
+     },
+     {
+      "id": "L3.2",
+      "type": "expr",
+      "text": "$k = sin(x)$",
+      "answer": "cos(x)",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec("
+      ],
+      "label": "$k'$ =",
+      "show": "$cos(x)$",
+      "hint": "What did the slider show?",
+      "work": "$k' = cos(x)$"
+     },
+     {
+      "id": "L3.3",
+      "type": "expr",
+      "text": "$gk' + g'k$",
+      "answer": "x^2cos(x) + 2xsin(x)",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sec("
+      ],
+      "label": "$y'$ =",
+      "show": "$x^2cos(x) + 2xsin(x)$",
+      "hint": "$x^2·cos(x) + 2x·sin(x)$",
+      "work": "$y' = x^2 cos(x) + 2x sin(x)$"
+     }
+    ]
+   },
+   {
+    "id": "L4",
+    "type": "match",
+    "text": "The other four come from writing them with sine and cosine and using the quotient rule. Match each function to its derivative.",
+    "pairs": [
+     [
+      "$tan(x)$",
+      "$sec^2(x)$"
+     ],
+     [
+      "$sec(x)$",
+      "$sec(x)tan(x)$"
+     ],
+     [
+      "$cot(x)$",
+      "$-csc^2(x)$"
+     ],
+     [
+      "$csc(x)$",
+      "$-csc(x)cot(x)$"
+     ]
+    ],
+    "hint": "The \"co\" functions (cos, cot, csc) all get a minus sign.",
+    "explain": "Tip: the co-functions get the minus signs."
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "Derivatives of sine go around a cycle of four: $sin -> cos -> -sin -> -cos -> sin$. What is $frac{d^4}{dx^4} sin(x)$?",
+    "options": [
+     "$sin(x)$",
+     "$cos(x)$",
+     "$-sin(x)$",
+     "$-cos(x)$"
+    ],
+    "answer": 0,
+    "hint": "Four steps around a cycle of four brings you back to the start.",
+    "explain": "Every 4 derivatives you are back where you started."
+   }
+  ]
+ }
+}

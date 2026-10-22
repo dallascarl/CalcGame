@@ -1,0 +1,1380 @@
+{
+ "id": "review1",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Chapter Review: Limits",
+ "subtitle": "Which tool, and a practice test.",
+ "version": 2,
+ "graphs": {
+  "limits-intro-D7": {
+   "window": [
+    -3,
+    4,
+    -1,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "x^2/2",
+     "from": -3,
+     "to": 1
+    },
+    {
+     "expr": "x+2",
+     "from": 1,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     1,
+     0.5
+    ]
+   ],
+   "dots": [
+    [
+     1,
+     3
+    ]
+   ]
+  },
+  "limits-intro-D6": {
+   "window": [
+    -4,
+    4,
+    -2,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x+3",
+     "from": -4,
+     "to": -1
+    },
+    {
+     "expr": "2",
+     "from": -1,
+     "to": 2
+    },
+    {
+     "expr": "6-2*x",
+     "from": 2,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     -1,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "dots": [
+    [
+     -1,
+     4
+    ],
+    [
+     2,
+     -1
+    ]
+   ]
+  },
+  "limits-intro-D2": {
+   "window": [
+    -3,
+    4,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x+2",
+     "from": -3,
+     "to": 0
+    },
+    {
+     "expr": "4-x",
+     "from": 0,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     0,
+     2
+    ]
+   ],
+   "dots": [
+    [
+     0,
+     4
+    ]
+   ]
+  },
+  "limits-intro-D9": {
+   "window": [
+    -4,
+    3,
+    -3,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "1-x",
+     "from": -4,
+     "to": 0
+    },
+    {
+     "expr": "x^2-2",
+     "from": 0,
+     "to": 3
+    }
+   ],
+   "holes": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     -2
+    ]
+   ]
+  }
+ },
+ "drills": {
+  "tool": {
+   "title": "Which tool?",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "W1",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->1] frac{x^2 + 1}{x + 2}$?",
+     "options": [
+      "Plug in (it is just a number)",
+      "Multiply by the conjugate",
+      "Combine fractions",
+      "Infinite limit: check the signs"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Plug in (it is just a number)."
+    },
+    {
+     "id": "W2",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->3] frac{x^2 - 9}{x - 3}$?",
+     "options": [
+      "Factor and cancel",
+      "Combine fractions",
+      "Multiply by the conjugate",
+      "Plug in (it is just a number)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Factor and cancel."
+    },
+    {
+     "id": "W3",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->4] frac{sqrt(x) - 2}{x - 4}$?",
+     "options": [
+      "Multiply by the conjugate",
+      "Special trig limit",
+      "Factor and cancel",
+      "Squeeze Theorem"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Multiply by the conjugate."
+    },
+    {
+     "id": "W4",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->2] frac{frac{1}{x} - frac{1}{2}}{x - 2}$?",
+     "options": [
+      "Combine fractions",
+      "Squeeze Theorem",
+      "Multiply by the conjugate",
+      "Infinite limit: check the signs"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Combine fractions."
+    },
+    {
+     "id": "W5",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] x^2 cos(frac{1}{x})$?",
+     "options": [
+      "Squeeze Theorem",
+      "Multiply by the conjugate",
+      "Combine fractions",
+      "Factor and cancel"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Squeeze Theorem."
+    },
+    {
+     "id": "W6",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] frac{sin(3x)}{x}$?",
+     "options": [
+      "Special trig limit",
+      "Combine fractions",
+      "Infinite limit: check the signs",
+      "Squeeze Theorem"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Special trig limit."
+    },
+    {
+     "id": "W7",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->2] frac{x + 1}{(x - 2)^2}$?",
+     "options": [
+      "Infinite limit: check the signs",
+      "Factor and cancel",
+      "Special trig limit",
+      "Multiply by the conjugate"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Infinite limit: check the signs."
+    },
+    {
+     "id": "W8",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->2] frac{x^2 + x - 6}{x - 2}$?",
+     "options": [
+      "Factor and cancel",
+      "Combine fractions",
+      "Infinite limit: check the signs",
+      "Plug in (it is just a number)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Factor and cancel."
+    },
+    {
+     "id": "W9",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] frac{x}{sqrt(x + 1) - 1}$?",
+     "options": [
+      "Multiply by the conjugate",
+      "Combine fractions",
+      "Infinite limit: check the signs",
+      "Plug in (it is just a number)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Multiply by the conjugate."
+    },
+    {
+     "id": "W10",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] frac{1}{x} - frac{1}{x^2 + x}$?",
+     "options": [
+      "Combine fractions",
+      "Squeeze Theorem",
+      "Plug in (it is just a number)",
+      "Special trig limit"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Combine fractions."
+    },
+    {
+     "id": "W11",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->5] frac{3x - 1}{x - 5}$?",
+     "options": [
+      "Infinite limit: check the signs",
+      "Plug in (it is just a number)",
+      "Squeeze Theorem",
+      "Factor and cancel"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Infinite limit: check the signs."
+    },
+    {
+     "id": "W12",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->3] sqrt(x^2 + 7)$?",
+     "options": [
+      "Plug in (it is just a number)",
+      "Infinite limit: check the signs",
+      "Combine fractions",
+      "Factor and cancel"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Plug in (it is just a number)."
+    },
+    {
+     "id": "W13",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] frac{tan(x)}{2x}$?",
+     "options": [
+      "Special trig limit",
+      "Factor and cancel",
+      "Multiply by the conjugate",
+      "Infinite limit: check the signs"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Special trig limit."
+    },
+    {
+     "id": "W14",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] x sin(frac{1}{x})$?",
+     "options": [
+      "Squeeze Theorem",
+      "Infinite limit: check the signs",
+      "Combine fractions",
+      "Factor and cancel"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Squeeze Theorem."
+    },
+    {
+     "id": "W15",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->1] frac{x^3 - 1}{x - 1}$?",
+     "options": [
+      "Factor and cancel",
+      "Infinite limit: check the signs",
+      "Squeeze Theorem",
+      "Combine fractions"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Factor and cancel."
+    },
+    {
+     "id": "W16",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->9] frac{3 - sqrt(x)}{9 - x}$?",
+     "options": [
+      "Multiply by the conjugate",
+      "Squeeze Theorem",
+      "Plug in (it is just a number)",
+      "Special trig limit"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Multiply by the conjugate."
+    },
+    {
+     "id": "W17",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] cos(x) + x^3$?",
+     "options": [
+      "Plug in (it is just a number)",
+      "Multiply by the conjugate",
+      "Special trig limit",
+      "Combine fractions"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Plug in (it is just a number)."
+    },
+    {
+     "id": "W18",
+     "type": "mc",
+     "text": "What is the best tool for $lim[x->0] frac{1 - cos(x)}{x}$?",
+     "options": [
+      "Special trig limit",
+      "Factor and cancel",
+      "Plug in (it is just a number)",
+      "Multiply by the conjugate"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Special trig limit."
+    }
+   ]
+  },
+  "exam": {
+   "title": "Practice test",
+   "exam": true,
+   "setSize": 20,
+   "questions": [
+    {
+     "id": "LIMc33",
+     "type": "graph",
+     "graph": "limits-intro-D7",
+     "ask": "limit",
+     "at": 1,
+     "answer": 0.499999,
+     "side": "left",
+     "explain": "Follow the graph toward $x = 1$ from the left only.",
+     "topic": "Limits from graphs"
+    },
+    {
+     "id": "LIMc32",
+     "type": "graph",
+     "graph": "limits-intro-D6",
+     "ask": "limit",
+     "at": 3,
+     "answer": 0,
+     "side": "both",
+     "explain": "Follow the graph toward $x = 3$ from both sides. If they disagree, the limit is DNE.",
+     "topic": "Limits from graphs"
+    },
+    {
+     "id": "LIMc06",
+     "type": "graph",
+     "graph": "limits-intro-D2",
+     "ask": "limit",
+     "side": "left",
+     "at": 0,
+     "answer": 2,
+     "explain": "From the left, the line heads to the open circle at height 2.",
+     "topic": "Limits from graphs"
+    },
+    {
+     "id": "LIMc29",
+     "type": "graph",
+     "graph": "limits-intro-D6",
+     "ask": "limit",
+     "at": 2,
+     "answer": 1.999998,
+     "side": "right",
+     "explain": "Follow the graph toward $x = 2$ from the right only.",
+     "topic": "Limits from graphs"
+    },
+    {
+     "id": "LIMc48",
+     "type": "graph",
+     "graph": "limits-intro-D9",
+     "ask": "limit",
+     "at": 2,
+     "answer": 2,
+     "side": "both",
+     "explain": "Follow the graph toward $x = 2$ from both sides. If they disagree, the limit is DNE.",
+     "topic": "Limits from graphs"
+    },
+    {
+     "id": "LIMc30",
+     "type": "graph",
+     "graph": "limits-intro-D6",
+     "ask": "limit",
+     "at": 2,
+     "answer": 1.999999,
+     "side": "both",
+     "explain": "Follow the graph toward $x = 2$ from both sides. If they disagree, the limit is DNE.",
+     "topic": "Limits from graphs"
+    },
+    {
+     "id": "INFL39",
+     "type": "lim",
+     "text": "Find $lim[x->2^+] frac{1}{x - 2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $infty$.",
+     "topic": "Infinite limits"
+    },
+    {
+     "id": "INFL56",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{1}{x - 1}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "explain": "The top goes to 1 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist.",
+     "topic": "Infinite limits"
+    },
+    {
+     "id": "INFL71",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{-1}{(x - 4)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$.",
+     "topic": "Infinite limits"
+    },
+    {
+     "id": "INFL52",
+     "type": "lim",
+     "text": "Find $lim[x->3^-] frac{3}{(x - 3)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$.",
+     "topic": "Infinite limits"
+    },
+    {
+     "id": "INFL46",
+     "type": "lim",
+     "text": "Find $lim[x->-1^-] frac{x^2 + 1}{x + 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "explain": "The top goes to 2 and the bottom goes to 0 so it blows up to $-infty$.",
+     "topic": "Infinite limits"
+    },
+    {
+     "id": "INFL36",
+     "type": "lim",
+     "text": "Find $lim[x->-1^+] frac{-2}{x + 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $-infty$.",
+     "topic": "Infinite limits"
+    },
+    {
+     "id": "LAWQ36",
+     "type": "num",
+     "text": "Find $lim[x->-2] frac{x^2 + x}{3 - x}$.",
+     "answer": 0.4,
+     "label": "limit =",
+     "explain": "The bottom is not 0 at $x = -2$, so plug in: 2/5.",
+     "topic": "Limit laws"
+    },
+    {
+     "id": "LAWW51",
+     "type": "mc",
+     "text": "Which law justifies this step? $lim[x->2] x^2 = (lim[x->2] x)^2$",
+     "options": [
+      "Power law",
+      "Sum law",
+      "Constant multiple law",
+      "Product law"
+     ],
+     "answer": 0,
+     "explain": "Power law.",
+     "topic": "Limit laws"
+    },
+    {
+     "id": "LAWQ29",
+     "type": "num",
+     "text": "Find $lim[x->2] frac{2x + 1}{x + 2}$.",
+     "answer": 1.25,
+     "label": "limit =",
+     "explain": "The bottom is not 0 at $x = 2$, so plug in: 5/4.",
+     "topic": "Limit laws"
+    },
+    {
+     "id": "LAWK46",
+     "type": "mc",
+     "text": "Plug $x = 0$ into $frac{x}{x + 7}$. What happens?",
+     "options": [
+      "just a number: that is the limit",
+      "a nonzero number over 0: infinite limit or DNE",
+      "0 over 0: more algebra needed"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "explain": "just a number: that is the limit.",
+     "topic": "Limit laws"
+    },
+    {
+     "id": "LAWK44",
+     "type": "mc",
+     "text": "Plug $x = 2$ into $frac{x + 1}{x - 2}$. What happens?",
+     "options": [
+      "just a number: that is the limit",
+      "a nonzero number over 0: infinite limit or DNE",
+      "0 over 0: more algebra needed"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "a nonzero number over 0: infinite limit or DNE.",
+     "topic": "Limit laws"
+    },
+    {
+     "id": "LAWK41",
+     "type": "mc",
+     "text": "Plug $x = 1$ into $frac{x^2 + 2x + 1}{(x - 1)^2}$. What happens?",
+     "options": [
+      "just a number: that is the limit",
+      "a nonzero number over 0: infinite limit or DNE",
+      "0 over 0: more algebra needed"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "a nonzero number over 0: infinite limit or DNE.",
+     "topic": "Limit laws"
+    },
+    {
+     "id": "FACW33",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{x - 1}{x^2 + x - 2}$.",
+     "steps": [
+      {
+       "id": "FACW33.1",
+       "type": "mc",
+       "text": "Plug in $x = 1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "FACW33.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 2)^(-1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$(x + 2)^(-1)$",
+       "work": "$= (x + 2)^(-1)$"
+      },
+      {
+       "id": "FACW33.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.333333,
+       "label": "limit =",
+       "work": "limit $= 1/3$"
+      }
+     ],
+     "explain": "1/3",
+     "topic": "Factor and cancel"
+    },
+    {
+     "id": "FACW35",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{x^2 + 2x - 8}{x^2 - 4}$.",
+     "steps": [
+      {
+       "id": "FACW35.1",
+       "type": "mc",
+       "text": "Plug in $x = 2$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "FACW35.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 4)/(x + 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$frac{x + 4}{x + 2}$",
+       "work": "$= frac{x + 4}{x + 2}$"
+      },
+      {
+       "id": "FACW35.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 1.5,
+       "label": "limit =",
+       "work": "limit $= 3/2$"
+      }
+     ],
+     "explain": "3/2",
+     "topic": "Factor and cancel"
+    },
+    {
+     "id": "FACC15",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 1}{x - 1}$ simplifies to",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x + 1$",
+     "explain": "Cancel the common factor: $x + 1$.",
+     "topic": "Factor and cancel"
+    },
+    {
+     "id": "FACW36",
+     "type": "steps",
+     "text": "Find $lim[x->3] frac{x^2 - x - 6}{x - 3}$.",
+     "steps": [
+      {
+       "id": "FACW36.1",
+       "type": "mc",
+       "text": "Plug in $x = 3$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "FACW36.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x + 2",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x + 2$",
+       "work": "$= x + 2$"
+      },
+      {
+       "id": "FACW36.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 5,
+       "label": "limit =",
+       "work": "limit $= 5$"
+      }
+     ],
+     "explain": "5",
+     "topic": "Factor and cancel"
+    },
+    {
+     "id": "FACX47",
+     "type": "lim",
+     "text": "Find $lim[x->2] frac{x - 2}{x^2 - 4x + 4}$. (After canceling, check what is left.)",
+     "answer": "DNE",
+     "label": "limit =",
+     "explain": "After canceling you get a nonzero number over 0: DNE.",
+     "topic": "Factor and cancel"
+    },
+    {
+     "id": "FACW42",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{x^3 - x}{x - 1}$.",
+     "steps": [
+      {
+       "id": "FACW42.1",
+       "type": "mc",
+       "text": "Plug in $x = 1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "FACW42.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x^2 + x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x^2 + x$",
+       "work": "$= x^2 + x$"
+      },
+      {
+       "id": "FACW42.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 2,
+       "label": "limit =",
+       "work": "limit $= 2$"
+      }
+     ],
+     "explain": "2",
+     "topic": "Factor and cancel"
+    },
+    {
+     "id": "TRIW41",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{sin(6x)}{x}$ one step at a time.",
+     "steps": [
+      {
+       "id": "TRIW41.1",
+       "type": "num",
+       "text": "Write $frac{sin(6x)}{x} = k·frac{sin(6x)}{6x}$.",
+       "answer": 6,
+       "label": "$k$ =",
+       "work": "$= 6·frac{sin(6x)}{6x}$"
+      },
+      {
+       "id": "TRIW41.2",
+       "type": "lim",
+       "text": "Use $frac{sin(6x)}{6x} -> 1$.",
+       "answer": 6,
+       "label": "limit =",
+       "work": "limit $= 6$"
+      }
+     ],
+     "explain": "6",
+     "topic": "Trig limits"
+    },
+    {
+     "id": "TRIM32",
+     "type": "lim",
+     "text": "Find $lim[x->0] frac{sin^2(x)}{x}$.",
+     "answer": 0,
+     "label": "limit =",
+     "explain": "Use $frac{sin(x)}{x} -> 1$ and $frac{1 - cos(x)}{x} -> 0$ with the limit laws: 0.",
+     "topic": "Trig limits"
+    },
+    {
+     "id": "TRIB18",
+     "type": "lim",
+     "text": "Find $lim[x->0] frac{sin(2x)}{sin(7x)}$.",
+     "answer": 0.285714,
+     "label": "limit =",
+     "explain": "Divide top and bottom by $x$: $frac{2}{7}$.",
+     "topic": "Trig limits"
+    },
+    {
+     "id": "TRIA7",
+     "type": "lim",
+     "text": "Find $lim[x->0] frac{sin(6x)}{5x}$.",
+     "answer": 1.2,
+     "label": "limit =",
+     "explain": "$frac{6}{5}·frac{sin(6x)}{6x} -> frac{6}{5}$",
+     "topic": "Trig limits"
+    },
+    {
+     "id": "TRIM34",
+     "type": "lim",
+     "text": "Find $lim[x->0] frac{x + sin(x)}{x}$.",
+     "answer": 2,
+     "label": "limit =",
+     "explain": "Use $frac{sin(x)}{x} -> 1$ and $frac{1 - cos(x)}{x} -> 0$ with the limit laws: 2.",
+     "topic": "Trig limits"
+    },
+    {
+     "id": "TRIT24",
+     "type": "lim",
+     "text": "Find $lim[x->0] frac{tan(3x)}{4x}$.",
+     "answer": 0.75,
+     "label": "limit =",
+     "explain": "$tan = frac{sin}{cos}$, and $cos(0) = 1$: $frac{3}{4}$.",
+     "topic": "Trig limits"
+    },
+    {
+     "id": "SQRW26",
+     "type": "steps",
+     "text": "Find $lim[x->4] frac{sqrt(x) - 2}{x - 4}$.",
+     "steps": [
+      {
+       "id": "SQRW26.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x) + 2$. The top becomes",
+       "answer": "x - 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x - 4$",
+       "work": "$frac{x - 4}{(x - 4)(sqrt(x) + 2)}$"
+      },
+      {
+       "id": "SQRW26.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x) + 2}$",
+        "$sqrt(x) + 2$",
+        "$frac{x - 4}{sqrt(x) + 2}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x) + 2}$"
+      },
+      {
+       "id": "SQRW26.3",
+       "type": "lim",
+       "text": "Plug in $x = 4$.",
+       "answer": 0.25,
+       "label": "limit =",
+       "work": "limit $= 1/4$"
+      }
+     ],
+     "explain": "1/4",
+     "topic": "Square roots"
+    },
+    {
+     "id": "SQRD40",
+     "type": "lim",
+     "text": "Find $lim[x->3] frac{sqrt(x^2 + 7)}{x}$. (Check first: is it even $frac{0}{0}$?)",
+     "answer": 1.333333,
+     "label": "limit =",
+     "explain": "No $frac{0}{0}$ here. Just plug in: 4/3.",
+     "topic": "Square roots"
+    },
+    {
+     "id": "SQRU4",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x) - 2)(sqrt(x) + 2)$.",
+     "answer": "x - 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x - 4$",
+     "explain": "$= x - 4$",
+     "topic": "Square roots"
+    },
+    {
+     "id": "SQRU8",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$.",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x^2$",
+     "explain": "$= x^2$",
+     "topic": "Square roots"
+    },
+    {
+     "id": "SQRU14",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(4 + x) - 2)(sqrt(4 + x) + 2)$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x$",
+     "explain": "$= x$",
+     "topic": "Square roots"
+    },
+    {
+     "id": "SQRU24",
+     "type": "expr",
+     "text": "Multiply out $(2 - sqrt(x + 3))(2 + sqrt(x + 3))$.",
+     "answer": "1 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$1 - x$",
+     "explain": "$= 1 - x$",
+     "topic": "Square roots"
+    },
+    {
+     "id": "COMW23",
+     "type": "steps",
+     "text": "Find $lim[x->3] frac{frac{1}{x} - frac{1}{3}}{x - 3}$.",
+     "steps": [
+      {
+       "id": "COMW23.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(3 - x)/(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{3 - x}{3x}$",
+       "work": "top $= frac{3 - x}{3x}$"
+      },
+      {
+       "id": "COMW23.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{3x}$",
+       "work": "$= -frac{1}{3x}$"
+      },
+      {
+       "id": "COMW23.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.111111,
+       "label": "limit =",
+       "work": "limit $= -1/9$"
+      }
+     ],
+     "explain": "-1/9",
+     "topic": "Complex fractions"
+    },
+    {
+     "id": "COMS11",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x + 2} + 1}{x + 3}$, using $frac{1}{x + 2} + 1 = frac{x + 3}{x + 2}$.",
+     "answer": "1/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{1}{x + 2}$",
+     "explain": "Cancel $x + 3$: $frac{1}{x + 2}$.",
+     "topic": "Complex fractions"
+    },
+    {
+     "id": "COMS14",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x} - 1}{x - 1}$, using $frac{1}{x} - 1 = frac{1 - x}{x}$.",
+     "answer": "-1/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{x}$",
+     "explain": "Cancel $x - 1$: $-frac{1}{x}$.",
+     "topic": "Complex fractions"
+    },
+    {
+     "id": "COMS18",
+     "type": "expr",
+     "text": "Simplify $frac{frac{3}{x + 1} - 1}{x - 2}$, using $frac{3}{x + 1} - 1 = frac{2 - x}{x + 1}$.",
+     "answer": "-1/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{x + 1}$",
+     "explain": "Cancel $x - 2$: $-frac{1}{x + 1}$.",
+     "topic": "Complex fractions"
+    },
+    {
+     "id": "COMW29",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{frac{1}{x - 2} + frac{1}{2}}{x}$.",
+     "steps": [
+      {
+       "id": "COMW29.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "x/(2(x - 2))",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{x}{2(x - 2)}$",
+       "work": "top $= frac{x}{2(x - 2)}$"
+      },
+      {
+       "id": "COMW29.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "1/(2(x - 2))",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{2(x - 2)}$",
+       "work": "$= frac{1}{2(x - 2)}$"
+      },
+      {
+       "id": "COMW29.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.25,
+       "label": "limit =",
+       "work": "limit $= -1/4$"
+      }
+     ],
+     "explain": "-1/4",
+     "topic": "Complex fractions"
+    },
+    {
+     "id": "COMV35",
+     "type": "steps",
+     "text": "Find $lim[x->2] (frac{2}{x - 2} - frac{8}{x^2 - 4})$.",
+     "steps": [
+      {
+       "id": "COMV35.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "2/(x + 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{2}{x + 2}$",
+       "work": "$= frac{2}{x + 2}$"
+      },
+      {
+       "id": "COMV35.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.5,
+       "label": "limit =",
+       "work": "limit $= 1/2$"
+      }
+     ],
+     "explain": "1/2",
+     "topic": "Complex fractions"
+    },
+    {
+     "id": "CONC18",
+     "type": "mc",
+     "text": "$f(x) = -x^2 + 4$ for $x < 3$ and $f(x) = 4x - 8$ for $x >= 3$. Is $f$ continuous at $x = 3$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "Left side → -5, right side and $f(3)$ = 4. They do not match.",
+     "topic": "Continuity"
+    },
+    {
+     "id": "CONP15",
+     "type": "num",
+     "text": "$f(x) = 2x + k$ for $x < 1$ and $f(x) = 5 - x$ for $x >= 1$. What $k$ makes $f$ continuous at $x = 1$?",
+     "answer": 2,
+     "label": "$k$ =",
+     "explain": "Make the pieces meet at $x = 1$: $k = 2$.",
+     "topic": "Continuity"
+    },
+    {
+     "id": "CONP10",
+     "type": "num",
+     "text": "$f(x) = x^2 + k$ for $x < 2$ and $f(x) = 3x$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "answer": 2,
+     "label": "$k$ =",
+     "explain": "Make the pieces meet at $x = 2$: $k = 2$.",
+     "topic": "Continuity"
+    },
+    {
+     "id": "CONP17",
+     "type": "num",
+     "text": "$f(x) = k$ for $x < 9$ and $f(x) = sqrt(x)$ for $x >= 9$. What $k$ makes $f$ continuous at $x = 9$?",
+     "answer": 3,
+     "label": "$k$ =",
+     "explain": "Make the pieces meet at $x = 9$: $k = 3$.",
+     "topic": "Continuity"
+    },
+    {
+     "id": "CONP16",
+     "type": "num",
+     "text": "$f(x) = kx$ for $x < 2$ and $f(x) = x^2 + 4$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "answer": 4,
+     "label": "$k$ =",
+     "explain": "Make the pieces meet at $x = 2$: $k = 4$.",
+     "topic": "Continuity"
+    },
+    {
+     "id": "CONI35",
+     "type": "mc",
+     "text": "$f(x) = x^2 - 4x + 5$. $f(0) = 5$ and $f(3) = 2$. Does the Intermediate Value Theorem promise a zero in $(0, 3)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "Both values have the same sign, so the IVT promises nothing.",
+     "topic": "Continuity"
+    },
+    {
+     "id": "ATIQ50",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{sqrt(3x^2 + 4)}{x + 6}$. (A decimal is fine.)",
+     "answer": -1.732051,
+     "label": "limit =",
+     "tol": 0.01,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms.",
+     "topic": "Limits at infinity"
+    },
+    {
+     "id": "ATIR35",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{5x - 3}{x + 1}$.",
+     "answer": 5,
+     "label": "limit =",
+     "explain": "Compare the leading terms of the top and bottom.",
+     "topic": "Limits at infinity"
+    },
+    {
+     "id": "ATIE62",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] 2 + frac{1}{x}$.",
+     "answer": 2,
+     "label": "limit =",
+     "tol": 0.01,
+     "explain": "The limit is 2.",
+     "topic": "Limits at infinity"
+    },
+    {
+     "id": "ATIR33",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{4x^2 + 1}{2x^2 - 5}$.",
+     "answer": 2,
+     "label": "limit =",
+     "explain": "Compare the leading terms of the top and bottom.",
+     "topic": "Limits at infinity"
+    },
+    {
+     "id": "ATIR27",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{2x^6 - 1}{3x^3 + x - 7}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "explain": "Compare the leading terms of the top and bottom.",
+     "topic": "Limits at infinity"
+    },
+    {
+     "id": "ATIE56",
+     "type": "lim",
+     "text": "Find $lim[x->infty] ln(x)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "tol": 0.01,
+     "explain": "The limit is inf.",
+     "topic": "Limits at infinity"
+    }
+   ]
+  }
+ }
+}

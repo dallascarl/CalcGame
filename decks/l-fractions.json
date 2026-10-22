@@ -1,0 +1,534 @@
+{
+ "id": "l-fractions",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Reducing Fractions",
+ "subtitle": "Review: factor and cancel; combine fractions.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "N1",
+     "type": "num",
+     "text": "Reduce $frac{18}{24}$ (type it as a fraction).",
+     "answer": 0.75,
+     "label": "reduced =",
+     "tol": 0.0001,
+     "level": 1,
+     "explain": "$3/4$"
+    },
+    {
+     "id": "N2",
+     "type": "num",
+     "text": "Reduce $frac{15}{35}$ (type it as a fraction).",
+     "answer": 0.428571,
+     "label": "reduced =",
+     "tol": 0.0001,
+     "level": 1,
+     "explain": "$3/7$"
+    },
+    {
+     "id": "N3",
+     "type": "num",
+     "text": "Reduce $frac{42}{56}$ (type it as a fraction).",
+     "answer": 0.75,
+     "label": "reduced =",
+     "tol": 0.0001,
+     "level": 1,
+     "explain": "$3/4$"
+    },
+    {
+     "id": "N4",
+     "type": "num",
+     "text": "Reduce $frac{12}{30}$ (type it as a fraction).",
+     "answer": 0.4,
+     "label": "reduced =",
+     "tol": 0.0001,
+     "level": 1,
+     "explain": "$2/5$"
+    },
+    {
+     "id": "N5",
+     "type": "num",
+     "text": "Reduce $frac{27}{45}$ (type it as a fraction).",
+     "answer": 0.6,
+     "label": "reduced =",
+     "tol": 0.0001,
+     "level": 1,
+     "explain": "$3/5$"
+    },
+    {
+     "id": "N6",
+     "type": "num",
+     "text": "Reduce $frac{16}{64}$ (type it as a fraction).",
+     "answer": 0.25,
+     "label": "reduced =",
+     "tol": 0.0001,
+     "level": 1,
+     "explain": "$1/4$"
+    },
+    {
+     "id": "R7",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 - 4}{x - 2}$.",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$x + 2$",
+     "level": 2,
+     "explain": "Factor, cancel: $x + 2$."
+    },
+    {
+     "id": "R8",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 - 9}{x + 3}$.",
+     "answer": "x - 3",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$x - 3$",
+     "level": 2,
+     "explain": "Factor, cancel: $x - 3$."
+    },
+    {
+     "id": "R9",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 + 5x + 6}{x + 2}$.",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$x + 3$",
+     "level": 2,
+     "explain": "Factor, cancel: $x + 3$."
+    },
+    {
+     "id": "R10",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 - x}{x}$.",
+     "answer": "x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$x - 1$",
+     "level": 2,
+     "explain": "Factor, cancel: $x - 1$."
+    },
+    {
+     "id": "R11",
+     "type": "expr",
+     "text": "Reduce $frac{2x + 6}{x + 3}$.",
+     "answer": "2",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$2$",
+     "level": 2,
+     "explain": "Factor, cancel: $2$."
+    },
+    {
+     "id": "R12",
+     "type": "expr",
+     "text": "Reduce $frac{x^3 - x}{x^2 - x}$.",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$x + 1$",
+     "level": 2,
+     "explain": "Factor, cancel: $x + 1$."
+    },
+    {
+     "id": "R13",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 - 1}{x^2 + 2x + 1}$.",
+     "answer": "(x - 1)/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{x - 1}{x + 1}$",
+     "level": 2,
+     "explain": "Factor, cancel: $frac{x - 1}{x + 1}$."
+    },
+    {
+     "id": "R14",
+     "type": "expr",
+     "text": "Reduce $frac{3x^2 - 12}{x - 2}$.",
+     "answer": "3x + 6",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$3x + 6$",
+     "level": 2,
+     "explain": "Factor, cancel: $3x + 6$."
+    },
+    {
+     "id": "R15",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 - 6x + 9}{x^2 - 9}$.",
+     "answer": "(x - 3)/(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{x - 3}{x + 3}$",
+     "level": 2,
+     "explain": "Factor, cancel: $frac{x - 3}{x + 3}$."
+    },
+    {
+     "id": "R16",
+     "type": "expr",
+     "text": "Reduce $frac{4x^2 - 1}{2x + 1}$.",
+     "answer": "2x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$2x - 1$",
+     "level": 2,
+     "explain": "Factor, cancel: $2x - 1$."
+    },
+    {
+     "id": "R17",
+     "type": "expr",
+     "text": "Reduce $frac{x^2 + 3x}{x^2 - 9}$.",
+     "answer": "x/(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{x}{x - 3}$",
+     "level": 2,
+     "explain": "Factor, cancel: $frac{x}{x - 3}$."
+    },
+    {
+     "id": "R18",
+     "type": "expr",
+     "text": "Reduce $frac{5x - 10}{10x - 20}$.",
+     "answer": "1/2",
+     "vars": [
+      "x"
+     ],
+     "label": "reduced =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{1}{2}$",
+     "level": 2,
+     "explain": "Factor, cancel: $frac{1}{2}$."
+    },
+    {
+     "id": "C19",
+     "type": "expr",
+     "text": "Write $frac{1}{x} + frac{1}{x + 1}$ as one fraction.",
+     "answer": "(2x + 1)/(x(x + 1))",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{2x + 1}{x(x + 1)}$",
+     "level": 3,
+     "explain": "$frac{2x + 1}{x(x + 1)}$"
+    },
+    {
+     "id": "C20",
+     "type": "expr",
+     "text": "Write $frac{1}{x} - frac{1}{2}$ as one fraction.",
+     "answer": "-(x - 2)/(2x)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$-frac{x - 2}{2x}$",
+     "level": 3,
+     "explain": "$-frac{x - 2}{2x}$"
+    },
+    {
+     "id": "C21",
+     "type": "expr",
+     "text": "Write $frac{3}{x - 1} + frac{2}{x + 1}$ as one fraction.",
+     "answer": "(5x + 1)/((x - 1)(x + 1))",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{5x + 1}{(x - 1)(x + 1)}$",
+     "level": 3,
+     "explain": "$frac{5x + 1}{(x - 1)(x + 1)}$"
+    },
+    {
+     "id": "C22",
+     "type": "expr",
+     "text": "Write $frac{x}{x + 2} - 1$ as one fraction.",
+     "answer": "-2/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$-frac{2}{x + 2}$",
+     "level": 3,
+     "explain": "$-frac{2}{x + 2}$"
+    },
+    {
+     "id": "C23",
+     "type": "expr",
+     "text": "Write $frac{1}{x + 2} + 1$ as one fraction.",
+     "answer": "(x + 3)/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{x + 3}{x + 2}$",
+     "level": 3,
+     "explain": "$frac{x + 3}{x + 2}$"
+    },
+    {
+     "id": "C24",
+     "type": "expr",
+     "text": "Write $frac{2}{x} + frac{5}{x^2}$ as one fraction.",
+     "answer": "(2x + 5)/x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{2x + 5}{x^2}$",
+     "level": 3,
+     "explain": "$frac{2x + 5}{x^2}$"
+    },
+    {
+     "id": "C25",
+     "type": "expr",
+     "text": "Write $frac{1}{x - 3} - frac{1}{x + 3}$ as one fraction.",
+     "answer": "6/((x - 3)(x + 3))",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{6}{(x - 3)(x + 3)}$",
+     "level": 3,
+     "explain": "$frac{6}{(x - 3)(x + 3)}$"
+    },
+    {
+     "id": "C26",
+     "type": "expr",
+     "text": "Write $frac{4}{x^2 - 4} + frac{1}{x - 2}$ as one fraction.",
+     "answer": "(x + 6)/((x - 2)(x + 2))",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4,
+       6
+      ]
+     },
+     "show": "$frac{x + 6}{(x - 2)(x + 2)}$",
+     "level": 3,
+     "explain": "$frac{x + 6}{(x - 2)(x + 2)}$"
+    },
+    {
+     "id": "T27",
+     "type": "tf",
+     "text": "Is this correct? $frac{x + 3}{x} = 3$",
+     "answer": false,
+     "level": 2,
+     "explain": "Only factors cancel, not terms."
+    },
+    {
+     "id": "T28",
+     "type": "tf",
+     "text": "Is this correct? $frac{x^2 + 1}{x} = x + 1$",
+     "answer": false,
+     "level": 2,
+     "explain": "Only factors cancel, not terms."
+    },
+    {
+     "id": "T29",
+     "type": "tf",
+     "text": "Is this correct? $frac{x + 5}{5} = x$",
+     "answer": false,
+     "level": 2,
+     "explain": "Only factors cancel, not terms."
+    },
+    {
+     "id": "T30",
+     "type": "tf",
+     "text": "Is this correct? $frac{2x + 4}{2} = x + 4$",
+     "answer": false,
+     "level": 2,
+     "explain": "Only factors cancel, not terms."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "expr",
+    "text": "Reduce by factoring and canceling: $frac{x^2 - 4}{x - 2} = frac{(x - 2)(x + 2)}{x - 2}$.",
+    "answer": "x + 2",
+    "vars": [
+     "x"
+    ],
+    "label": "reduced =",
+    "show": "$x + 2$",
+    "hint": "Cancel the matching factor.",
+    "explain": "$x + 2$"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "To add fractions, get a common denominator: $frac{1}{x} + frac{1}{x + 1} = frac{(x + 1) + x}{x(x + 1)}$. Simplify the top.",
+    "answer": "(2x + 1)/(x(x + 1))",
+    "vars": [
+     "x"
+    ],
+    "label": "sum =",
+    "show": "$frac{2x + 1}{x(x + 1)}$",
+    "hint": "$(x + 1) + x = 2x + 1$",
+    "explain": "$frac{2x + 1}{x(x + 1)}$"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Only **factors** cancel, never terms. Which one is a correct cancel?",
+    "options": [
+     "$frac{x(x + 3)}{x} = x + 3$",
+     "$frac{x + 3}{x} = 3$",
+     "$frac{x^2 + 1}{x} = x + 1$",
+     "$frac{x + 5}{5} = x$"
+    ],
+    "answer": 0,
+    "hint": "The thing you cancel has to multiply everything on top.",
+    "explain": "In $frac{x + 3}{x}$ the $x$ is added, not multiplied, so it cannot cancel."
+   }
+  ]
+ },
+ "lessonOptional": true
+}

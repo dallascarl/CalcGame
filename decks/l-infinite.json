@@ -1,0 +1,910 @@
+{
+ "id": "l-infinite",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Infinite Limits",
+ "subtitle": "When a function grows without bound.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "$lim[x->a] f(x) = infty$ means",
+     "options": [
+      "$f(x)$ grows without bound as $x -> a$",
+      "$f(a) = infty$",
+      "the limit is a very large number",
+      "$f$ is undefined at $a$"
+     ],
+     "answer": 0,
+     "explain": "It describes the behavior; the limit is still not a number."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "You plug in $x = a$ and get $frac{4}{0}$. The limit is",
+     "options": [
+      "$infty$, $-infty$, or DNE (check the signs)",
+      "0",
+      "4",
+      "always $infty$"
+     ],
+     "answer": 0,
+     "explain": "A nonzero number over 0 blows up. Signs on each side decide."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "If $lim[x->a^+] f(x) = infty$ and $lim[x->a^-] f(x) = -infty$, then $lim[x->a] f(x)$ does not exist.",
+     "answer": true,
+     "explain": "The two sides must agree."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "An infinite limit at $x = a$ shows up on the graph as",
+     "options": [
+      "a vertical asymptote at $x = a$",
+      "a horizontal asymptote",
+      "a hole",
+      "a jump"
+     ],
+     "answer": 0,
+     "explain": "The graph shoots up or down along $x = a$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "For $frac{1}{(x - a)^2}$, the bottom is",
+     "options": [
+      "positive on both sides of $a$, so the limit is $infty$",
+      "negative on both sides",
+      "positive on one side and negative on the other",
+      "always 0"
+     ],
+     "answer": 0,
+     "explain": "A square is never negative, so both sides blow up to $infty$."
+    },
+    {
+     "id": "T6",
+     "type": "lim",
+     "text": "Find $lim[x->pi/2^-] tan(x)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "explain": "Just left of $frac{pi}{2}$, $sin$ is near 1 and $cos$ is a tiny positive number."
+    },
+    {
+     "id": "T7",
+     "type": "tf",
+     "text": "$lim[x->0] frac{1}{x}$ = $infty$.",
+     "answer": false,
+     "explain": "From the left it goes to $-infty$, so the two-sided limit is DNE."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "P1",
+     "type": "mc",
+     "text": "Plug $x = 1$ into $frac{x^2 + 2}{x - 1}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "explain": "The limit is $infty$, $-infty$ or DNE."
+    },
+    {
+     "id": "P2",
+     "type": "mc",
+     "text": "Plug $x = 2$ into $frac{x^2 - 4}{x - 2}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 1,
+     "explain": "Indeterminate: more algebra needed (later stops)."
+    },
+    {
+     "id": "P3",
+     "type": "mc",
+     "text": "Plug $x = 3$ into $frac{x + 5}{x + 1}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "explain": "Then that number is the limit."
+    },
+    {
+     "id": "P4",
+     "type": "mc",
+     "text": "Plug $x = 2$ into $frac{3x}{(x - 2)^2}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "explain": "The limit is $infty$, $-infty$ or DNE."
+    },
+    {
+     "id": "P5",
+     "type": "mc",
+     "text": "Plug $x = 3$ into $frac{x - 3}{x^2 - 9}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 1,
+     "explain": "Indeterminate: more algebra needed (later stops)."
+    },
+    {
+     "id": "P6",
+     "type": "mc",
+     "text": "Plug $x = 0$ into $frac{x^2 + 1}{x}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "explain": "The limit is $infty$, $-infty$ or DNE."
+    },
+    {
+     "id": "P7",
+     "type": "mc",
+     "text": "Plug $x = 1$ into $frac{x^2}{x + 4}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "explain": "Then that number is the limit."
+    },
+    {
+     "id": "P8",
+     "type": "mc",
+     "text": "Plug $x = 1$ into $frac{2x - 2}{x - 1}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 1,
+     "explain": "Indeterminate: more algebra needed (later stops)."
+    },
+    {
+     "id": "P9",
+     "type": "mc",
+     "text": "Plug $x = 0$ into $frac{cos(x)}{x}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "explain": "The limit is $infty$, $-infty$ or DNE."
+    },
+    {
+     "id": "P10",
+     "type": "mc",
+     "text": "Plug $x = 1$ into $frac{x - 1}{x + 1}$. What do you get?",
+     "options": [
+      "just a number",
+      "a nonzero number over 0",
+      "0 over 0"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "explain": "Then that number is the limit."
+    },
+    {
+     "id": "B11",
+     "type": "mc",
+     "text": "As $x -> -2^+$, is the bottom $(x + 2)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = -1.99$: the bottom is positive."
+    },
+    {
+     "id": "B12",
+     "type": "mc",
+     "text": "As $x -> 4^+$, is the bottom $(x - 4)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = 4.01$: the bottom is positive."
+    },
+    {
+     "id": "B13",
+     "type": "mc",
+     "text": "As $x -> 2^-$, is the bottom $(x - 2)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = 1.99$: the bottom is negative."
+    },
+    {
+     "id": "B14",
+     "type": "mc",
+     "text": "As $x -> -1^-$, is the bottom $(x + 1)^2$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = -1.01$: the bottom is positive."
+    },
+    {
+     "id": "B15",
+     "type": "mc",
+     "text": "As $x -> -2^+$, is the bottom $(x + 2)^2$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = -1.99$: the bottom is positive."
+    },
+    {
+     "id": "B16",
+     "type": "mc",
+     "text": "As $x -> -1^-$, is the bottom $(x + 1)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = -1.01$: the bottom is negative."
+    },
+    {
+     "id": "B17",
+     "type": "mc",
+     "text": "As $x -> 2^+$, is the bottom $(x - 2)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = 2.01$: the bottom is positive."
+    },
+    {
+     "id": "B18",
+     "type": "mc",
+     "text": "As $x -> 4^+$, is the bottom $(x - 4)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = 4.01$: the bottom is positive."
+    },
+    {
+     "id": "B19",
+     "type": "mc",
+     "text": "As $x -> -1^-$, is the bottom $(x + 1)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = -1.01$: the bottom is negative."
+    },
+    {
+     "id": "B20",
+     "type": "mc",
+     "text": "As $x -> 4^+$, is the bottom $(x - 4)$ a tiny positive or a tiny negative number?",
+     "options": [
+      "tiny positive",
+      "tiny negative"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Try $x = 4.01$: the bottom is positive."
+    },
+    {
+     "id": "L21",
+     "type": "lim",
+     "text": "Find $lim[x->-2^+] frac{-2}{x + 2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L22",
+     "type": "lim",
+     "text": "Find $lim[x->-2^-] frac{-2}{x + 2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L23",
+     "type": "lim",
+     "text": "Find $lim[x->-2] frac{-2}{x + 2}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -2 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L24",
+     "type": "lim",
+     "text": "Find $lim[x->4^+] frac{5 - 2x}{x - 4}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -3 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L25",
+     "type": "lim",
+     "text": "Find $lim[x->4^-] frac{5 - 2x}{x - 4}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -3 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L26",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{5 - 2x}{x - 4}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -3 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L27",
+     "type": "lim",
+     "text": "Find $lim[x->2^+] frac{5 - 2x}{x - 2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L28",
+     "type": "lim",
+     "text": "Find $lim[x->2^-] frac{5 - 2x}{x - 2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L29",
+     "type": "lim",
+     "text": "Find $lim[x->2] frac{5 - 2x}{x - 2}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 1 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L30",
+     "type": "lim",
+     "text": "Find $lim[x->-1^+] frac{-1}{(x + 1)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L31",
+     "type": "lim",
+     "text": "Find $lim[x->-1^-] frac{-1}{(x + 1)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L32",
+     "type": "lim",
+     "text": "Find $lim[x->-1] frac{-1}{(x + 1)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L33",
+     "type": "lim",
+     "text": "Find $lim[x->-2^+] frac{x}{(x + 2)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L34",
+     "type": "lim",
+     "text": "Find $lim[x->-2^-] frac{x}{(x + 2)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L35",
+     "type": "lim",
+     "text": "Find $lim[x->-2] frac{x}{(x + 2)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -2 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L36",
+     "type": "lim",
+     "text": "Find $lim[x->-1^+] frac{-2}{x + 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L37",
+     "type": "lim",
+     "text": "Find $lim[x->-1^-] frac{-2}{x + 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L38",
+     "type": "lim",
+     "text": "Find $lim[x->-1] frac{-2}{x + 1}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -2 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L39",
+     "type": "lim",
+     "text": "Find $lim[x->2^+] frac{1}{x - 2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L40",
+     "type": "lim",
+     "text": "Find $lim[x->2^-] frac{1}{x - 2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L41",
+     "type": "lim",
+     "text": "Find $lim[x->2] frac{1}{x - 2}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 1 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L42",
+     "type": "lim",
+     "text": "Find $lim[x->4^+] frac{x^2 + 1}{x - 4}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 17 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L43",
+     "type": "lim",
+     "text": "Find $lim[x->4^-] frac{x^2 + 1}{x - 4}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 17 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L44",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{x^2 + 1}{x - 4}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 17 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L45",
+     "type": "lim",
+     "text": "Find $lim[x->-1^+] frac{x^2 + 1}{x + 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 2 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L46",
+     "type": "lim",
+     "text": "Find $lim[x->-1^-] frac{x^2 + 1}{x + 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 2 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L47",
+     "type": "lim",
+     "text": "Find $lim[x->-1] frac{x^2 + 1}{x + 1}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 2 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L48",
+     "type": "lim",
+     "text": "Find $lim[x->4^+] frac{-2}{x - 4}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L49",
+     "type": "lim",
+     "text": "Find $lim[x->4^-] frac{-2}{x - 4}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -2 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L50",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{-2}{x - 4}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -2 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L51",
+     "type": "lim",
+     "text": "Find $lim[x->3^+] frac{3}{(x - 3)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$."
+    },
+    {
+     "id": "L52",
+     "type": "lim",
+     "text": "Find $lim[x->3^-] frac{3}{(x - 3)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$."
+    },
+    {
+     "id": "L53",
+     "type": "lim",
+     "text": "Find $lim[x->3] frac{3}{(x - 3)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$."
+    },
+    {
+     "id": "L54",
+     "type": "lim",
+     "text": "Find $lim[x->1^+] frac{1}{x - 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L55",
+     "type": "lim",
+     "text": "Find $lim[x->1^-] frac{1}{x - 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L56",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{1}{x - 1}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 1 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L57",
+     "type": "lim",
+     "text": "Find $lim[x->1^+] frac{5 - 2x}{x - 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 3 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L58",
+     "type": "lim",
+     "text": "Find $lim[x->1^-] frac{5 - 2x}{x - 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 3 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L59",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{5 - 2x}{x - 1}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 3 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L60",
+     "type": "lim",
+     "text": "Find $lim[x->-1^+] frac{1}{x + 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $infty$."
+    },
+    {
+     "id": "L61",
+     "type": "lim",
+     "text": "Find $lim[x->-1^-] frac{1}{x + 1}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 1 and the bottom goes to 0 so it blows up to $-infty$."
+    },
+    {
+     "id": "L62",
+     "type": "lim",
+     "text": "Find $lim[x->-1] frac{1}{x + 1}$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 1 and the bottom goes to 0 with opposite signs on the two sides, so the limit does not exist."
+    },
+    {
+     "id": "L63",
+     "type": "lim",
+     "text": "Find $lim[x->1^+] frac{-1}{(x - 1)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L64",
+     "type": "lim",
+     "text": "Find $lim[x->1^-] frac{-1}{(x - 1)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L65",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{-1}{(x - 1)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L66",
+     "type": "lim",
+     "text": "Find $lim[x->1^+] frac{3}{(x - 1)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$."
+    },
+    {
+     "id": "L67",
+     "type": "lim",
+     "text": "Find $lim[x->1^-] frac{3}{(x - 1)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$."
+    },
+    {
+     "id": "L68",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{3}{(x - 1)^2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to 3 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $infty$."
+    },
+    {
+     "id": "L69",
+     "type": "lim",
+     "text": "Find $lim[x->4^+] frac{-1}{(x - 4)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L70",
+     "type": "lim",
+     "text": "Find $lim[x->4^-] frac{-1}{(x - 4)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    },
+    {
+     "id": "L71",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{-1}{(x - 4)^2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "The top goes to -1 and the bottom goes to 0 from the same side both ways (squared), so it blows up to $-infty$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "As $x -> 0$, $f(x) = frac{1}{x^2}$ gives 100, then 10,000, then 1,000,000… It **increases without bound**. We describe that by writing",
+    "options": [
+     "$lim[x->0] frac{1}{x^2} = infty$",
+     "$lim[x->0] frac{1}{x^2} = 0$",
+     "$lim[x->0] frac{1}{x^2} = 1$",
+     "$lim[x->0] frac{1}{x^2} = -infty$"
+    ],
+    "answer": 0,
+    "hint": "The values keep getting bigger.",
+    "explain": "$= infty$ tells HOW the limit fails to be a number: the function blows up."
+   },
+   {
+    "id": "L2",
+    "type": "lim",
+    "text": "Use the $infty$ button. As $x -> 0^+$ ($x$ small and positive), $frac{1}{x}$ is a big positive number. Find $lim[x->0^+] frac{1}{x}$.",
+    "answer": "inf",
+    "label": "$lim[x->0^+] frac{1}{x}$ =",
+    "hint": "1 divided by a tiny positive number is a huge positive number.",
+    "explain": "$infty$"
+   },
+   {
+    "id": "L3",
+    "type": "lim",
+    "text": "From the left, $x$ is small and **negative**. Find $lim[x->0^-] frac{1}{x}$.",
+    "answer": "-inf",
+    "label": "$lim[x->0^-] frac{1}{x}$ =",
+    "hint": "1 divided by a tiny negative number is a huge negative number.",
+    "explain": "$-infty$"
+   },
+   {
+    "id": "L4",
+    "type": "lim",
+    "text": "So what is the two-sided limit $lim[x->0] frac{1}{x}$?",
+    "answer": "DNE",
+    "label": "$lim[x->0] frac{1}{x}$ =",
+    "hint": "The two sides go opposite ways.",
+    "explain": "One side goes to $infty$ and the other to $-infty$, so the two-sided limit does not exist."
+   },
+   {
+    "id": "L5",
+    "type": "steps",
+    "text": "The trick: plug in. If you get $frac{a}{0}$ with $a ≠ 0$, the answer is $infty$, $-infty$ or DNE, and **signs** decide which. Find $lim[x->3^-] frac{5 - 2x}{x - 3}$.",
+    "steps": [
+     {
+      "id": "L5.1",
+      "type": "num",
+      "text": "Plug $x = 3$ into the top.",
+      "answer": -1,
+      "label": "top =",
+      "hint": "$5 - 6$",
+      "work": "top → −1"
+     },
+     {
+      "id": "L5.2",
+      "type": "mc",
+      "text": "For $x$ a little less than 3 (like 2.99), the bottom $x - 3$ is",
+      "options": [
+       "a tiny negative number",
+       "a tiny positive number",
+       "exactly 0",
+       "a big number"
+      ],
+      "answer": 0,
+      "hint": "$2.99 - 3$",
+      "work": "bottom → tiny negative"
+     },
+     {
+      "id": "L5.3",
+      "type": "lim",
+      "text": "$frac{negative}{tiny negative}$ is…",
+      "answer": "inf",
+      "label": "lim[x->3^-] = ",
+      "hint": "Negative over negative is positive, and dividing by something tiny makes it huge.",
+      "work": "limit $= infty$"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,800 @@
+{
+ "id": "l-cont",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Continuity",
+ "subtitle": "No holes, no jumps, no blow-ups.",
+ "version": 2,
+ "graphs": {
+  "rem": {
+   "window": [
+    -1,
+    4,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x+1",
+     "from": -1,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     2,
+     3
+    ]
+   ],
+   "dots": [
+    [
+     2,
+     4.5
+    ]
+   ]
+  },
+  "jump": {
+   "window": [
+    -1,
+    4,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x+1",
+     "from": -1,
+     "to": 2
+    },
+    {
+     "expr": "x-1",
+     "from": 2,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     2,
+     3
+    ]
+   ],
+   "dots": [
+    [
+     2,
+     1
+    ]
+   ]
+  },
+  "inf": {
+   "window": [
+    -1,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "1/(x-2)",
+     "from": -1,
+     "to": 1.8
+    },
+    {
+     "expr": "1/(x-2)",
+     "from": 2.2,
+     "to": 4
+    }
+   ],
+   "vlines": [
+    2
+   ]
+  },
+  "cont": {
+   "window": [
+    -1,
+    4,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "(x-1)^2",
+     "from": -1,
+     "to": 3.2
+    }
+   ]
+  },
+  "undef": {
+   "window": [
+    -1,
+    4,
+    -1,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "4-x",
+     "from": -1,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     2,
+     2
+    ]
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "pick",
+     "text": "Which are part of the definition of \"continuous at $x = a$\"? Select all.",
+     "options": [
+      "$f(a)$ is defined",
+      "$lim[x->a] f(x)$ exists",
+      "$lim[x->a] f(x) = f(a)$",
+      "$f(a) = 0$",
+      "$f'(a)$ exists"
+     ],
+     "answers": [
+      0,
+      1,
+      2
+     ],
+     "explain": "Just those three."
+    },
+    {
+     "id": "T2",
+     "type": "match",
+     "text": "Match each discontinuity to its description.",
+     "pairs": [
+      [
+       "removable",
+       "a hole (a single point is off)"
+      ],
+      [
+       "jump",
+       "the two sides go to different heights"
+      ],
+      [
+       "infinite",
+       "a vertical asymptote"
+      ]
+     ],
+     "explain": "Removable ones can be fixed by redefining one point."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "Polynomials are continuous everywhere.",
+     "answer": true,
+     "explain": "No holes, jumps or asymptotes."
+    },
+    {
+     "id": "T4",
+     "type": "tf",
+     "text": "Rational functions are continuous everywhere on their domains.",
+     "answer": true,
+     "explain": "They only break where the bottom is 0."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "If $f$ is continuous at $a$, then $lim[x->a] f(x) =$",
+     "options": [
+      "$f(a)$",
+      "0",
+      "DNE",
+      "$infty$"
+     ],
+     "answer": 0,
+     "explain": "That is what makes plugging in work."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "The Intermediate Value Theorem needs $f$ to be",
+     "options": [
+      "continuous on $[a, b]$",
+      "differentiable",
+      "a polynomial",
+      "increasing"
+     ],
+     "answer": 0,
+     "explain": "A break could let $f$ skip over a height."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "G1",
+     "type": "mc",
+     "text": "Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No: $f(2)$ is undefined",
+      "No: the limit does not exist",
+      "No: the limit and the value are different",
+      "No: the function blows up"
+     ],
+     "answer": 3,
+     "fixed": true,
+     "level": 1,
+     "explain": "No: the limit and the value are different.",
+     "graph": "rem"
+    },
+    {
+     "id": "K2",
+     "type": "mc",
+     "text": "What kind of discontinuity is at $x = 2$?",
+     "options": [
+      "removable",
+      "jump",
+      "infinite"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Removable.",
+     "graph": "rem"
+    },
+    {
+     "id": "G3",
+     "type": "mc",
+     "text": "Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No: $f(2)$ is undefined",
+      "No: the limit does not exist",
+      "No: the limit and the value are different",
+      "No: the function blows up"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 1,
+     "explain": "No: the limit does not exist.",
+     "graph": "jump"
+    },
+    {
+     "id": "K4",
+     "type": "mc",
+     "text": "What kind of discontinuity is at $x = 2$?",
+     "options": [
+      "removable",
+      "jump",
+      "infinite"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Jump.",
+     "graph": "jump"
+    },
+    {
+     "id": "G5",
+     "type": "mc",
+     "text": "Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No: $f(2)$ is undefined",
+      "No: the limit does not exist",
+      "No: the limit and the value are different",
+      "No: the function blows up"
+     ],
+     "answer": 4,
+     "fixed": true,
+     "level": 1,
+     "explain": "No: the function blows up.",
+     "graph": "inf"
+    },
+    {
+     "id": "K6",
+     "type": "mc",
+     "text": "What kind of discontinuity is at $x = 2$?",
+     "options": [
+      "removable",
+      "jump",
+      "infinite"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 2,
+     "explain": "Infinite.",
+     "graph": "inf"
+    },
+    {
+     "id": "G7",
+     "type": "mc",
+     "text": "Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No: $f(2)$ is undefined",
+      "No: the limit does not exist",
+      "No: the limit and the value are different",
+      "No: the function blows up"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "explain": "Yes.",
+     "graph": "cont"
+    },
+    {
+     "id": "G8",
+     "type": "mc",
+     "text": "Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No: $f(2)$ is undefined",
+      "No: the limit does not exist",
+      "No: the limit and the value are different",
+      "No: the function blows up"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "explain": "No: $f(2)$ is undefined.",
+     "graph": "undef"
+    },
+    {
+     "id": "K9",
+     "type": "mc",
+     "text": "What kind of discontinuity is at $x = 2$?",
+     "options": [
+      "removable",
+      "jump",
+      "infinite"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Removable.",
+     "graph": "undef"
+    },
+    {
+     "id": "P10",
+     "type": "num",
+     "text": "$f(x) = x^2 + k$ for $x < 2$ and $f(x) = 3x$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "answer": 2,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 2$: $k = 2$."
+    },
+    {
+     "id": "P11",
+     "type": "num",
+     "text": "$f(x) = kx + 1$ for $x < 3$ and $f(x) = x^2$ for $x >= 3$. What $k$ makes $f$ continuous at $x = 3$?",
+     "answer": 2.666667,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 3$: $k = 8/3$."
+    },
+    {
+     "id": "P12",
+     "type": "num",
+     "text": "$f(x) = k - x$ for $x < 1$ and $f(x) = 2x + 1$ for $x >= 1$. What $k$ makes $f$ continuous at $x = 1$?",
+     "answer": 4,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 1$: $k = 4$."
+    },
+    {
+     "id": "P13",
+     "type": "num",
+     "text": "$f(x) = kx^2$ for $x < 2$ and $f(x) = x + 6$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "answer": 2,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 2$: $k = 2$."
+    },
+    {
+     "id": "P14",
+     "type": "num",
+     "text": "$f(x) = x + k$ for $x < 2$ and $f(x) = x^3$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "answer": 6,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 2$: $k = 6$."
+    },
+    {
+     "id": "P15",
+     "type": "num",
+     "text": "$f(x) = 2x + k$ for $x < 1$ and $f(x) = 5 - x$ for $x >= 1$. What $k$ makes $f$ continuous at $x = 1$?",
+     "answer": 2,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 1$: $k = 2$."
+    },
+    {
+     "id": "P16",
+     "type": "num",
+     "text": "$f(x) = kx$ for $x < 2$ and $f(x) = x^2 + 4$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "answer": 4,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 2$: $k = 4$."
+    },
+    {
+     "id": "P17",
+     "type": "num",
+     "text": "$f(x) = k$ for $x < 9$ and $f(x) = sqrt(x)$ for $x >= 9$. What $k$ makes $f$ continuous at $x = 9$?",
+     "answer": 3,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Make the pieces meet at $x = 9$: $k = 3$."
+    },
+    {
+     "id": "C18",
+     "type": "mc",
+     "text": "$f(x) = -x^2 + 4$ for $x < 3$ and $f(x) = 4x - 8$ for $x >= 3$. Is $f$ continuous at $x = 3$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Left side → -5, right side and $f(3)$ = 4. They do not match."
+    },
+    {
+     "id": "C19",
+     "type": "mc",
+     "text": "$f(x) = x + 1$ for $x < 1$ and $f(x) = x^2 + 1$ for $x >= 1$. Is $f$ continuous at $x = 1$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Left side → 2, right side and $f(1)$ = 2. They match."
+    },
+    {
+     "id": "C20",
+     "type": "mc",
+     "text": "$f(x) = 2x$ for $x < 2$ and $f(x) = x^2$ for $x >= 2$. Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Left side → 4, right side and $f(2)$ = 4. They match."
+    },
+    {
+     "id": "C21",
+     "type": "mc",
+     "text": "$f(x) = x^2$ for $x < 2$ and $f(x) = x + 3$ for $x >= 2$. Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Left side → 4, right side and $f(2)$ = 5. They do not match."
+    },
+    {
+     "id": "C22",
+     "type": "mc",
+     "text": "$f(x) = 3 - x$ for $x < 2$ and $f(x) = x - 1$ for $x >= 2$. Is $f$ continuous at $x = 2$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 2,
+     "explain": "Left side → 1, right side and $f(2)$ = 1. They match."
+    },
+    {
+     "id": "C23",
+     "type": "mc",
+     "text": "$f(x) = sqrt(x)$ for $x < 4$ and $f(x) = x - 1$ for $x >= 4$. Is $f$ continuous at $x = 4$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 2,
+     "explain": "Left side → 2, right side and $f(4)$ = 3. They do not match."
+    },
+    {
+     "id": "W24",
+     "type": "mc",
+     "text": "Where is $f(x) = frac{x^2 - 4}{x - 2}$ discontinuous?",
+     "options": [
+      "$x = 2$ only",
+      "nowhere",
+      "$x = 2$ and $x = -2$",
+      "$x = 4$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$x = 2$ only."
+    },
+    {
+     "id": "W25",
+     "type": "mc",
+     "text": "Where is $f(x) = frac{1}{x^2 - 9}$ discontinuous?",
+     "options": [
+      "$x = 3$ and $x = -3$",
+      "$x = 9$ only",
+      "$x = 3$ only",
+      "nowhere"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$x = 3$ and $x = -3$."
+    },
+    {
+     "id": "W26",
+     "type": "mc",
+     "text": "Where is $f(x) = x^3 - 5x + 1$ discontinuous?",
+     "options": [
+      "nowhere",
+      "$x = 0$",
+      "$x = 5$",
+      "$x = 1$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "nowhere."
+    },
+    {
+     "id": "W27",
+     "type": "mc",
+     "text": "Where is $f(x) = frac{x}{x^2 + 1}$ discontinuous?",
+     "options": [
+      "nowhere",
+      "$x = 1$ and $x = -1$",
+      "$x = 0$",
+      "$x = -1$ only"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "nowhere."
+    },
+    {
+     "id": "W28",
+     "type": "mc",
+     "text": "Where is $f(x) = tan(x)$ discontinuous?",
+     "options": [
+      "$x = frac{pi}{2} + kpi$ (odd multiples of $frac{pi}{2}$)",
+      "$x = kpi$",
+      "nowhere",
+      "$x = 0$ only"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$x = frac{pi}{2} + kpi$ (odd multiples of $frac{pi}{2}$)."
+    },
+    {
+     "id": "W29",
+     "type": "mc",
+     "text": "Where is $f(x) = frac{x + 1}{x(x - 5)}$ discontinuous?",
+     "options": [
+      "$x = 0$ and $x = 5$",
+      "$x = -1$",
+      "$x = 5$ only",
+      "nowhere"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$x = 0$ and $x = 5$."
+    },
+    {
+     "id": "I30",
+     "type": "mc",
+     "text": "$f(x) = x^3 - x^2 - 3x + 1$. $f(0) = 1$ and $f(1) = -2$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "0 is between them, and $f$ is continuous."
+    },
+    {
+     "id": "I31",
+     "type": "mc",
+     "text": "$f(x) = x^2 - 2$. $f(1) = -1$ and $f(2) = 2$. Does the Intermediate Value Theorem promise a zero in $(1, 2)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "0 is between them, and $f$ is continuous."
+    },
+    {
+     "id": "I32",
+     "type": "mc",
+     "text": "$f(x) = x^2 + 1$. $f(-1) = 2$ and $f(1) = 2$. Does the Intermediate Value Theorem promise a zero in $(-1, 1)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "Both values have the same sign, so the IVT promises nothing."
+    },
+    {
+     "id": "I33",
+     "type": "mc",
+     "text": "$f(x) = cos(x) - x$. $f(0) = 1$ and $f(1) = -0.459698$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "0 is between them, and $f$ is continuous."
+    },
+    {
+     "id": "I34",
+     "type": "mc",
+     "text": "$f(x) = x^3 + x + 1$. $f(-1) = -1$ and $f(0) = 1$. Does the Intermediate Value Theorem promise a zero in $(-1, 0)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "0 is between them, and $f$ is continuous."
+    },
+    {
+     "id": "I35",
+     "type": "mc",
+     "text": "$f(x) = x^2 - 4x + 5$. $f(0) = 5$ and $f(3) = 2$. Does the Intermediate Value Theorem promise a zero in $(0, 3)$?",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "Both values have the same sign, so the IVT promises nothing."
+    },
+    {
+     "id": "V36",
+     "type": "lim",
+     "text": "This function is continuous at $x = 0$. Find $lim[x->0] sin(x^2 + frac{pi}{2})$.",
+     "answer": 1,
+     "label": "limit =",
+     "level": 1,
+     "explain": "Continuous, so just plug in: 1."
+    },
+    {
+     "id": "V37",
+     "type": "lim",
+     "text": "This function is continuous at $x = 1$. Find $lim[x->1] cos(frac{pi x}{3})$.",
+     "answer": 0.5,
+     "label": "limit =",
+     "level": 1,
+     "explain": "Continuous, so just plug in: 1/2."
+    },
+    {
+     "id": "V38",
+     "type": "lim",
+     "text": "This function is continuous at $x = 3$. Find $lim[x->3] sqrt(x^2 + 16)$.",
+     "answer": 5,
+     "label": "limit =",
+     "level": 1,
+     "explain": "Continuous, so just plug in: 5."
+    },
+    {
+     "id": "V39",
+     "type": "lim",
+     "text": "This function is continuous at $x = 1$. Find $lim[x->1] e^(x - 1)$.",
+     "answer": 1,
+     "label": "limit =",
+     "level": 1,
+     "explain": "Continuous, so just plug in: 1."
+    },
+    {
+     "id": "V40",
+     "type": "lim",
+     "text": "This function is continuous at $x = 0$. Find $lim[x->0] ln(x^2 + 1)$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 1,
+     "explain": "Continuous, so just plug in: 0."
+    },
+    {
+     "id": "V41",
+     "type": "lim",
+     "text": "This function is continuous at $x = 1$. Find $lim[x->1] frac{x^2 + 1}{x + 1}$.",
+     "answer": 1,
+     "label": "limit =",
+     "level": 1,
+     "explain": "Continuous, so just plug in: 1."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "order",
+    "text": "A function is **continuous** at $x = a$ when three things are true. Put them in the order you check them.",
+    "items": [
+     "$f(a)$ is defined",
+     "$lim[x->a] f(x)$ exists",
+     "$lim[x->a] f(x) = f(a)$"
+    ],
+    "hint": "First the point, then the limit, then compare.",
+    "explain": "Informally: you can draw it through $x = a$ without lifting your pencil."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "This graph is not continuous at $x = 2$. Which condition fails?",
+    "options": [
+     "$lim[x->2] f(x) ≠ f(2)$",
+     "$f(2)$ is undefined",
+     "the limit does not exist",
+     "none: it is continuous"
+    ],
+    "answer": 0,
+    "hint": "There is a dot at $x = 2$, and the curve heads somewhere else.",
+    "explain": "The limit is 3 but $f(2) = 4.5$. This is a **removable** discontinuity.",
+    "graph": "rem"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Which kind of discontinuity is this?",
+    "options": [
+     "jump",
+     "removable",
+     "infinite",
+     "it is continuous"
+    ],
+    "answer": 0,
+    "hint": "Do the two sides meet?",
+    "explain": "The two sides go to different heights: a **jump**.",
+    "graph": "jump"
+   },
+   {
+    "id": "L4",
+    "type": "num",
+    "text": "Piecewise functions: $f(x) = x^2 + k$ for $x < 2$ and $f(x) = 3x$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+    "answer": 2,
+    "label": "$k$ =",
+    "hint": "Make the two pieces meet at $x = 2$: $4 + k = 6$.",
+    "explain": "$k = 2$"
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "**Intermediate Value Theorem:** if $f$ is continuous on $[a, b]$, it hits every height between $f(a)$ and $f(b)$. $f(x) = x^3 - x^2 - 3x + 1$ has $f(0) = 1$ and $f(1) = -2$. So on $[0, 1]$ it…",
+    "options": [
+     "has at least one zero",
+     "has no zeros",
+     "has exactly two zeros",
+     "is never negative"
+    ],
+    "answer": 0,
+    "hint": "Is 0 between 1 and −2?",
+    "explain": "0 is between 1 and −2, so $f(c) = 0$ for some $c$ in $(0, 1)$."
+   }
+  ]
+ }
+}

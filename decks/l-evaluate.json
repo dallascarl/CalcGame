@@ -1,0 +1,445 @@
+{
+ "id": "l-evaluate",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Evaluate Functions",
+ "subtitle": "Review: plug numbers into formulas, pieces and graphs.",
+ "version": 2,
+ "graphs": {
+  "pg": {
+   "window": [
+    -3,
+    4,
+    -1,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "x+3",
+     "from": -3,
+     "to": 1
+    },
+    {
+     "expr": "5-x",
+     "from": 1,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     1,
+     4
+    ]
+   ],
+   "dots": [
+    [
+     1,
+     2
+    ]
+   ]
+  }
+ },
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "P1",
+     "type": "num",
+     "text": "$f(x) = x^2 - 3x$. Find $f(-2)$.",
+     "answer": 10,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "10"
+    },
+    {
+     "id": "P2",
+     "type": "num",
+     "text": "$f(x) = 2x^3 - x$. Find $f(2)$.",
+     "answer": 14,
+     "label": "$f(2)$ =",
+     "level": 1,
+     "explain": "14"
+    },
+    {
+     "id": "P3",
+     "type": "num",
+     "text": "$f(x) = 5 - x^2$. Find $f(-3)$.",
+     "answer": -4,
+     "label": "$f(-3)$ =",
+     "level": 1,
+     "explain": "-4"
+    },
+    {
+     "id": "P4",
+     "type": "num",
+     "text": "$f(x) = x^2 + 4x + 4$. Find $f(-2)$.",
+     "answer": 0,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "0"
+    },
+    {
+     "id": "P5",
+     "type": "num",
+     "text": "$f(x) = (x - 1)(x + 5)$. Find $f(3)$.",
+     "answer": 16,
+     "label": "$f(3)$ =",
+     "level": 1,
+     "explain": "16"
+    },
+    {
+     "id": "P6",
+     "type": "num",
+     "text": "$f(x) = -x^2$. Find $f(4)$.",
+     "answer": -16,
+     "label": "$f(4)$ =",
+     "level": 1,
+     "explain": "-16"
+    },
+    {
+     "id": "P7",
+     "type": "num",
+     "text": "$f(x) = 3x^4$. Find $f(-1)$.",
+     "answer": 3,
+     "label": "$f(-1)$ =",
+     "level": 1,
+     "explain": "3"
+    },
+    {
+     "id": "P8",
+     "type": "num",
+     "text": "$f(x) = x^3 - x^2 - 3x + 1$. Find $f(1)$.",
+     "answer": -2,
+     "label": "$f(1)$ =",
+     "level": 1,
+     "explain": "-2"
+    },
+    {
+     "id": "P9",
+     "type": "num",
+     "text": "$f(x) = 7$. Find $f(100)$.",
+     "answer": 7,
+     "label": "$f(100)$ =",
+     "level": 1,
+     "explain": "7"
+    },
+    {
+     "id": "P10",
+     "type": "num",
+     "text": "$f(x) = 4x - x^3$. Find $f(-2)$.",
+     "answer": 0,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "0"
+    },
+    {
+     "id": "R11",
+     "type": "num",
+     "text": "$f(x) = frac{x + 1}{x - 2}$. Find $f(4)$.",
+     "answer": 2.5,
+     "label": "$f(4)$ =",
+     "level": 1,
+     "explain": "5/2"
+    },
+    {
+     "id": "R12",
+     "type": "num",
+     "text": "$f(x) = frac{x^2}{x + 3}$. Find $f(-1)$.",
+     "answer": 0.5,
+     "label": "$f(-1)$ =",
+     "level": 1,
+     "explain": "1/2"
+    },
+    {
+     "id": "R13",
+     "type": "num",
+     "text": "$f(x) = sqrt(x + 7)$. Find $f(9)$.",
+     "answer": 4,
+     "label": "$f(9)$ =",
+     "level": 1,
+     "explain": "4"
+    },
+    {
+     "id": "R14",
+     "type": "num",
+     "text": "$f(x) = frac{1}{x} + x$. Find $f(2)$.",
+     "answer": 2.5,
+     "label": "$f(2)$ =",
+     "level": 1,
+     "explain": "5/2"
+    },
+    {
+     "id": "R15",
+     "type": "num",
+     "text": "$f(x) = sqrt(25 - x^2)$. Find $f(3)$.",
+     "answer": 4,
+     "label": "$f(3)$ =",
+     "level": 1,
+     "explain": "4"
+    },
+    {
+     "id": "R16",
+     "type": "num",
+     "text": "$f(x) = frac{2x - 1}{x^2 + 1}$. Find $f(1)$.",
+     "answer": 0.5,
+     "label": "$f(1)$ =",
+     "level": 1,
+     "explain": "1/2"
+    },
+    {
+     "id": "R17",
+     "type": "num",
+     "text": "$f(x) = |x - 5|$. Find $f(2)$.",
+     "answer": 3,
+     "label": "$f(2)$ =",
+     "level": 1,
+     "explain": "3"
+    },
+    {
+     "id": "R18",
+     "type": "num",
+     "text": "$f(x) = sin(frac{pi x}{2})$. Find $f(1)$.",
+     "answer": 1,
+     "label": "$f(1)$ =",
+     "level": 1,
+     "explain": "1"
+    },
+    {
+     "id": "W19",
+     "type": "num",
+     "text": "$f(x) = x + 1$ for $x < 2$ and $f(x) = x^2$ for $x >= 2$. Find $f(2)$.",
+     "answer": 4,
+     "label": "$f(2)$ =",
+     "level": 2,
+     "explain": "$2 >= 2$, so use $x^2$: 4."
+    },
+    {
+     "id": "W20",
+     "type": "num",
+     "text": "$f(x) = x + 1$ for $x < 2$ and $f(x) = x^2$ for $x >= 2$. Find $f(1)$.",
+     "answer": 2,
+     "label": "$f(1)$ =",
+     "level": 2,
+     "explain": "$1 < 2$, so use $x + 1$: 2."
+    },
+    {
+     "id": "W21",
+     "type": "num",
+     "text": "$f(x) = 3 - x$ for $x < 0$ and $f(x) = 2x$ for $x >= 0$. Find $f(0)$.",
+     "answer": 0,
+     "label": "$f(0)$ =",
+     "level": 2,
+     "explain": "$0 >= 0$, so use $2x$: 0."
+    },
+    {
+     "id": "W22",
+     "type": "num",
+     "text": "$f(x) = 3 - x$ for $x < 0$ and $f(x) = 2x$ for $x >= 0$. Find $f(-4)$.",
+     "answer": 7,
+     "label": "$f(-4)$ =",
+     "level": 2,
+     "explain": "$-4 < 0$, so use $3 - x$: 7."
+    },
+    {
+     "id": "W23",
+     "type": "num",
+     "text": "$f(x) = x^2$ for $x < 3$ and $f(x) = 10 - x$ for $x >= 3$. Find $f(3)$.",
+     "answer": 7,
+     "label": "$f(3)$ =",
+     "level": 2,
+     "explain": "$3 >= 3$, so use $10 - x$: 7."
+    },
+    {
+     "id": "W24",
+     "type": "num",
+     "text": "$f(x) = x^2$ for $x < 3$ and $f(x) = 10 - x$ for $x >= 3$. Find $f(5)$.",
+     "answer": 5,
+     "label": "$f(5)$ =",
+     "level": 2,
+     "explain": "$5 >= 3$, so use $10 - x$: 5."
+    },
+    {
+     "id": "W25",
+     "type": "num",
+     "text": "$f(x) = -x$ for $x < -1$ and $f(x) = x + 4$ for $x >= -1$. Find $f(-1)$.",
+     "answer": 3,
+     "label": "$f(-1)$ =",
+     "level": 2,
+     "explain": "$-1 >= -1$, so use $x + 4$: 3."
+    },
+    {
+     "id": "W26",
+     "type": "num",
+     "text": "$f(x) = 5$ for $x < 1$ and $f(x) = x^3$ for $x >= 1$. Find $f(2)$.",
+     "answer": 8,
+     "label": "$f(2)$ =",
+     "level": 2,
+     "explain": "$2 >= 1$, so use $x^3$: 8."
+    },
+    {
+     "id": "G27",
+     "type": "graph",
+     "graph": "pg",
+     "ask": "value",
+     "at": -2,
+     "answer": 1,
+     "level": 2,
+     "explain": "Read the height of the graph (the filled point) right at that $x$."
+    },
+    {
+     "id": "G28",
+     "type": "graph",
+     "graph": "pg",
+     "ask": "value",
+     "at": 0,
+     "answer": 3,
+     "level": 2,
+     "explain": "Read the height of the graph (the filled point) right at that $x$."
+    },
+    {
+     "id": "G29",
+     "type": "graph",
+     "graph": "pg",
+     "ask": "value",
+     "at": 1,
+     "answer": 2,
+     "level": 2,
+     "explain": "Read the height of the graph (the filled point) right at that $x$."
+    },
+    {
+     "id": "G30",
+     "type": "graph",
+     "graph": "pg",
+     "ask": "value",
+     "at": 3,
+     "answer": 2,
+     "level": 2,
+     "explain": "Read the height of the graph (the filled point) right at that $x$."
+    },
+    {
+     "id": "G31",
+     "type": "graph",
+     "graph": "pg",
+     "ask": "value",
+     "at": -3,
+     "answer": 0,
+     "level": 2,
+     "explain": "Read the height of the graph (the filled point) right at that $x$."
+    },
+    {
+     "id": "G32",
+     "type": "graph",
+     "graph": "pg",
+     "ask": "value",
+     "at": 2,
+     "answer": 3,
+     "level": 2,
+     "explain": "Read the height of the graph (the filled point) right at that $x$."
+    },
+    {
+     "id": "H33",
+     "type": "expr",
+     "text": "$f(x) = x^2$. Find $f(3 + h)$ and multiply it out.",
+     "answer": "h^2 + 6h + 9",
+     "vars": [
+      "h"
+     ],
+     "label": "$f(3 + h)$ =",
+     "show": "$h^2 + 6h + 9$",
+     "level": 3,
+     "explain": "$h^2 + 6h + 9$"
+    },
+    {
+     "id": "H34",
+     "type": "expr",
+     "text": "$f(x) = x^2 + x$. Find $f(1 + h)$ and multiply it out.",
+     "answer": "h^2 + 3h + 2",
+     "vars": [
+      "h"
+     ],
+     "label": "$f(1 + h)$ =",
+     "show": "$h^2 + 3h + 2$",
+     "level": 3,
+     "explain": "$h^2 + 3h + 2$"
+    },
+    {
+     "id": "H35",
+     "type": "expr",
+     "text": "$f(x) = 2x^2 - 1$. Find $f(2 + h)$ and multiply it out.",
+     "answer": "2h^2 + 8h + 7",
+     "vars": [
+      "h"
+     ],
+     "label": "$f(2 + h)$ =",
+     "show": "$2h^2 + 8h + 7$",
+     "level": 3,
+     "explain": "$2h^2 + 8h + 7$"
+    },
+    {
+     "id": "H36",
+     "type": "expr",
+     "text": "$f(x) = x^2 - 4x$. Find $f(-1 + h)$ and multiply it out.",
+     "answer": "h^2 - 6h + 5",
+     "vars": [
+      "h"
+     ],
+     "label": "$f(-1 + h)$ =",
+     "show": "$h^2 - 6h + 5$",
+     "level": 3,
+     "explain": "$h^2 - 6h + 5$"
+    },
+    {
+     "id": "H37",
+     "type": "expr",
+     "text": "$f(x) = 3x + 5$. Find $f(2 + h)$ and multiply it out.",
+     "answer": "3h + 11",
+     "vars": [
+      "h"
+     ],
+     "label": "$f(2 + h)$ =",
+     "show": "$3h + 11$",
+     "level": 3,
+     "explain": "$3h + 11$"
+    },
+    {
+     "id": "H38",
+     "type": "expr",
+     "text": "$f(x) = x^3$. Find $f(1 + h)$ and multiply it out.",
+     "answer": "h^3 + 3h^2 + 3h + 1",
+     "vars": [
+      "h"
+     ],
+     "label": "$f(1 + h)$ =",
+     "show": "$h^3 + 3h^2 + 3h + 1$",
+     "level": 3,
+     "explain": "$h^3 + 3h^2 + 3h + 1$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "num",
+    "text": "$f(x) = x^2 - 3x$. To find $f(-2)$, replace every $x$ with $(-2)$: $(-2)^2 - 3(-2)$.",
+    "answer": 10,
+    "label": "$f(-2)$ =",
+    "hint": "$4 + 6$",
+    "explain": "Parentheses keep the signs right: 10."
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "text": "Piecewise: $f(x) = x + 1$ for $x < 2$ and $f(x) = x^2$ for $x >= 2$. Find $f(2)$.",
+    "answer": 4,
+    "label": "$f(2)$ =",
+    "hint": "$x = 2$ belongs to the piece with $>=$.",
+    "explain": "$2^2 = 4$"
+   }
+  ]
+ },
+ "lessonOptional": true
+}

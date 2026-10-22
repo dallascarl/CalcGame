@@ -39,7 +39,7 @@
       "title": "Infinite Limits",
       "x": 86,
       "y": 12,
-      "deck": null,
+      "deck": "l-infinite",
       "requires": [
         "limits"
       ],
@@ -51,7 +51,7 @@
       "title": "Limit Laws",
       "x": 86,
       "y": 38,
-      "deck": null,
+      "deck": "l-laws",
       "requires": [
         "infinite"
       ],
@@ -64,7 +64,7 @@
       "label": "Factor",
       "x": 50,
       "y": 66,
-      "deck": null,
+      "deck": "l-factor",
       "requires": [
         "laws"
       ],
@@ -76,7 +76,7 @@
       "title": "Squeeze Theorem",
       "x": 50,
       "y": 88,
-      "deck": null,
+      "deck": "l-squeeze",
       "requires": [
         "factor"
       ],
@@ -88,7 +88,7 @@
       "title": "Trig Limits",
       "x": 50,
       "y": 112,
-      "deck": null,
+      "deck": "l-trig",
       "requires": [
         "squeeze"
       ],
@@ -101,7 +101,7 @@
       "label": "Square root limits",
       "x": 16,
       "y": 90,
-      "deck": null,
+      "deck": "l-sqrt",
       "requires": [
         "factor"
       ],
@@ -114,7 +114,7 @@
       "label": "Complex fractions",
       "x": 84,
       "y": 90,
-      "deck": null,
+      "deck": "l-complex",
       "requires": [
         "factor"
       ],
@@ -126,7 +126,7 @@
       "title": "Combo Limits",
       "x": 50,
       "y": 142,
-      "deck": null,
+      "deck": "l-combo",
       "requires": [
         "trig",
         "sqrtlim",
@@ -140,7 +140,7 @@
       "title": "Continuity",
       "x": 30,
       "y": 168,
-      "deck": null,
+      "deck": "l-cont",
       "requires": [
         "combo"
       ],
@@ -152,7 +152,7 @@
       "title": "Limits at Infinity",
       "x": 70,
       "y": 168,
-      "deck": null,
+      "deck": "l-atinf",
       "requires": [
         "combo"
       ],
@@ -164,7 +164,7 @@
       "title": "Chapter Review",
       "x": 50,
       "y": 196,
-      "deck": null,
+      "deck": "review1",
       "requires": [
         "continuity",
         "infinity"
@@ -177,7 +177,7 @@
       "title": "Evaluate Functions",
       "x": 14,
       "y": 36,
-      "deck": null,
+      "deck": "l-evaluate",
       "requires": [
         "start"
       ],
@@ -189,7 +189,7 @@
       "title": "Vertical Asymptotes",
       "x": 50,
       "y": 36,
-      "deck": null,
+      "deck": "l-vasym",
       "requires": [
         "limits"
       ],
@@ -201,7 +201,7 @@
       "title": "Square Roots",
       "x": 16,
       "y": 114,
-      "deck": null,
+      "deck": "l-sqroots",
       "requires": [
         "factor"
       ],
@@ -216,7 +216,7 @@
       "title": "Reducing Fractions",
       "x": 84,
       "y": 114,
-      "deck": null,
+      "deck": "l-fractions",
       "requires": [
         "factor"
       ],
@@ -231,7 +231,7 @@
       "title": "Precise Definition",
       "x": 84,
       "y": 142,
-      "deck": null,
+      "deck": "l-precise",
       "requires": [
         "combo"
       ],

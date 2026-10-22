@@ -99,3 +99,26 @@ function mountRiemann(it,ix,onChange,host){
   draw();
   return {kind:'pass',canGo:()=>done};
 }
+
+/* ---------- lim: a limit answer: a number, ∞, −∞, or DNE ---------- */
+/* { "type":"lim", "text":..., "label":"$lim[x->2] f(x)$ =", "answer": 4 | "inf" | "-inf" | "DNE", "tol": 0.01 } */
+const LIMSP={inf:'∞','-inf':'−∞',DNE:'DNE'};
+function mountLim(q,ix,onChange){
+  let val='',locked=false;
+  ix.innerHTML='<div class="ans"><span>'+fmt(q.label||'Limit =')+'</span><output class="ans-box empty" aria-live="polite">?</output></div>'+
+    padHTML('<button class="key sp" data-k="inf" aria-pressed="false">∞</button><button class="key sp" data-k="-inf" aria-pressed="false">−∞</button><button class="key wide sp" data-k="DNE" aria-pressed="false">DNE</button>');
+  const box=$('.ans-box',ix);
+  const show=()=>{box.innerHTML=LIMSP[val]||valHTML(val);box.classList.toggle('empty',val==='');ix.querySelectorAll('.sp').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===val));};
+  const press=k=>{ if(locked)return;
+    if(LIMSP[k])val=val===k?'':k;
+    else if(k==='back')val=LIMSP[val]?'':val.slice(0,-1);
+    else{if(LIMSP[val])val='';val=editVal(val,k,6);}
+    show();onChange(); };
+  ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
+  itemKeys=padKeys(press);
+  SINK=v=>{if(locked)return;val=v;show();onChange();};
+  return {kind:'q',canGo:()=>!!LIMSP[val]||!Number.isNaN(parseVal(val)),
+    check:()=>typeof q.answer==='string'?val===q.answer:(!LIMSP[val]&&Math.abs(parseVal(val)-q.answer)<=(q.tol==null?0.01:q.tol)),
+    lock(r,ok){locked=true;box.classList.add(ok?'is-right':'is-wrong');},
+    reset(){locked=false;val='';box.classList.remove('is-right','is-wrong');show();onChange();}};
+}

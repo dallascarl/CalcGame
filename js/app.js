@@ -294,7 +294,7 @@ function mountItem(it,host,onChange){
   const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
     match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff,
     tap:mountTap,expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio,
-    secant:mountSecant,dtrace:mountDtrace,riemann:mountRiemann}[it.type];
+    secant:mountSecant,dtrace:mountDtrace,riemann:mountRiemann,lim:mountLim}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -308,6 +308,7 @@ function answerLabel(q){
 function answerText(q){
   if(q.type==='graph')return typeof q.answer==='string'?(q.answer==='UND'?'undefined':q.answer==='NONE'?'none (there is no such point)':'DNE'):neg(q.answer);
   if(q.type==='num')return neg(q.answer);
+  if(q.type==='lim')return typeof q.answer==='string'?({inf:'∞','-inf':'−∞',DNE:'DNE (does not exist)'}[q.answer]||q.answer):neg(q.answer);
   if(q.type==='multi')return q.fails?(q.failText||'Newton’s method breaks down here'):q.parts.map(p=>p.label+' '+neg(+p.answer.toFixed(4))).join(', ');
   if(q.type==='crit')return q.answers.length?q.answers.map(v=>neg(+v.toFixed(4))).join(', '):(q.noneText||'no critical numbers');
   if(q.type==='pick')return q.answers.map(i=>q.options[i]).join('; ');
@@ -1410,7 +1411,7 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap'];
+    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap','lim'];
     const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio','secant','dtrace','riemann',...QT]:QT;
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').length%2===0)errs.push('unmatched $ in '+k);
@@ -1597,7 +1598,8 @@ function validate(D){
         if(typeof q.value==='number'&&!(Math.abs(v-q.value)<=0.01*Math.max(1,Math.abs(q.value))))errs.push('value says '+q.value+' but the last row gives '+showA(v));}
       catch(e){errs.push(e.message);}
     }
-    const isQ=['graph','mc','tf','bank','multi','match','pick','expr','interval','order','tap'].includes(q.type);
+    const isQ=['graph','mc','tf','bank','multi','match','pick','expr','interval','order','tap','lim'].includes(q.type);
+    if(q.type==='lim'&&!(typeof q.answer==='number'||['inf','-inf','DNE'].includes(q.answer)))errs.push('answer must be a number, "inf", "-inf" or "DNE"');
     if(isQ&&inLesson&&!q.hint&&!/ part \d+ ·$/.test(where))warns.push('no hint for a wrong answer');
     if(isQ&&!inLesson&&!q.explain&&!inPart)warns.push('no explanation');
     errs.forEach(e=>add('fail',tag+': '+e)); warns.forEach(x=>add('warn',tag+': '+x));

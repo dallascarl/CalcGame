@@ -347,7 +347,7 @@
      "explain": "$-frac{1}{sqrt(1 - x^2)}$"
     },
     {
-     "id": "T11",
+     "id": "T20",
      "type": "mc",
      "text": "Use a right triangle to simplify $sin(arccos(x))$.",
      "options": [
@@ -361,7 +361,7 @@
      "explain": "$sin(arccos(x)) = sqrt(1 - x^2)$"
     },
     {
-     "id": "T12",
+     "id": "T21",
      "type": "mc",
      "text": "Use a right triangle to simplify $cos(arcsin(x))$.",
      "options": [
@@ -375,7 +375,7 @@
      "explain": "$cos(arcsin(x)) = sqrt(1 - x^2)$"
     },
     {
-     "id": "T13",
+     "id": "T22",
      "type": "mc",
      "text": "Use a right triangle to simplify $sec(arctan(x))$.",
      "options": [
@@ -389,7 +389,7 @@
      "explain": "$sec(arctan(x)) = sqrt(1 + x^2)$"
     },
     {
-     "id": "T14",
+     "id": "T23",
      "type": "mc",
      "text": "Use a right triangle to simplify $cos(arctan(x))$.",
      "options": [
@@ -403,7 +403,7 @@
      "explain": "$cos(arctan(x)) = frac{1}{sqrt(1 + x^2)}$"
     },
     {
-     "id": "T15",
+     "id": "T24",
      "type": "mc",
      "text": "Use a right triangle to simplify $tan(arcsin(x))$.",
      "options": [
@@ -417,7 +417,7 @@
      "explain": "$tan(arcsin(x)) = frac{x}{sqrt(1 - x^2)}$"
     },
     {
-     "id": "T16",
+     "id": "T25",
      "type": "mc",
      "text": "Use a right triangle to simplify $sin(arctan(x))$.",
      "options": [
@@ -431,7 +431,7 @@
      "explain": "$sin(arctan(x)) = frac{x}{sqrt(1 + x^2)}$"
     },
     {
-     "id": "F17",
+     "id": "F26",
      "type": "expr",
      "text": "$f(x) = arctan(x^2)$. Fill in the derivative of the inside.",
      "answer": "2x",
@@ -459,7 +459,7 @@
      "explain": "The inside is $x^2$, and its derivative is $2x$."
     },
     {
-     "id": "F18",
+     "id": "F27",
      "type": "expr",
      "text": "$f(x) = arctan(3x)$. Fill in the derivative of the inside.",
      "answer": "3",
@@ -487,7 +487,7 @@
      "explain": "The inside is $3x$, and its derivative is $3$."
     },
     {
-     "id": "F19",
+     "id": "F28",
      "type": "expr",
      "text": "$f(x) = arcsin(2x)$. Fill in the derivative of the inside.",
      "answer": "2",
@@ -515,7 +515,7 @@
      "explain": "The inside is $2x$, and its derivative is $2$."
     },
     {
-     "id": "F20",
+     "id": "F29",
      "type": "expr",
      "text": "$f(x) = arctan(e^x)$. Fill in the derivative of the inside.",
      "answer": "e^x",
@@ -543,7 +543,7 @@
      "explain": "The inside is $e^x$, and its derivative is $e^x$."
     },
     {
-     "id": "F21",
+     "id": "F30",
      "type": "expr",
      "text": "$f(x) = arcsin(x^2)$. Fill in the derivative of the inside.",
      "answer": "2x",
@@ -571,7 +571,7 @@
      "explain": "The inside is $x^2$, and its derivative is $2x$."
     },
     {
-     "id": "F22",
+     "id": "F31",
      "type": "expr",
      "text": "$f(x) = arctan(sqrt(x))$. Fill in the derivative of the inside.",
      "answer": "1/(2sqrt(x))",
@@ -599,7 +599,7 @@
      "explain": "The inside is $sqrt(x)$, and its derivative is $frac{1}{2sqrt(x)}$."
     },
     {
-     "id": "F23",
+     "id": "F32",
      "type": "expr",
      "text": "$f(x) = arccos(3x)$. Fill in the derivative of the inside.",
      "answer": "3",
@@ -627,7 +627,7 @@
      "explain": "The inside is $3x$, and its derivative is $3$."
     },
     {
-     "id": "F24",
+     "id": "F33",
      "type": "expr",
      "text": "$f(x) = arctan(x^3)$. Fill in the derivative of the inside.",
      "answer": "3x^2",
@@ -655,7 +655,7 @@
      "explain": "The inside is $x^3$, and its derivative is $3x^2$."
     },
     {
-     "id": "F25",
+     "id": "F34",
      "type": "expr",
      "text": "$f(x) = arcsin(x/2)$. Fill in the derivative of the inside.",
      "answer": "1/2",
@@ -683,7 +683,7 @@
      "explain": "The inside is $x/2$, and its derivative is $frac{1}{2}$."
     },
     {
-     "id": "F26",
+     "id": "F35",
      "type": "expr",
      "text": "$f(x) = arctan(ln(x))$. Fill in the derivative of the inside.",
      "answer": "1/x",
@@ -711,7 +711,7 @@
      "explain": "The inside is $ln(x)$, and its derivative is $frac{1}{x}$."
     },
     {
-     "id": "F27",
+     "id": "F36",
      "type": "expr",
      "text": "$f(x) = arcsin(sqrt(x))$. Fill in the derivative of the inside.",
      "answer": "1/(2sqrt(x))",
@@ -739,7 +739,7 @@
      "explain": "The inside is $sqrt(x)$, and its derivative is $frac{1}{2sqrt(x)}$."
     },
     {
-     "id": "F28",
+     "id": "F37",
      "type": "expr",
      "text": "$f(x) = arctan(5x + 1)$. Fill in the derivative of the inside.",
      "answer": "5",
@@ -767,12 +767,12 @@
      "explain": "The inside is $5x + 1$, and its derivative is $5$."
     },
     {
-     "id": "W29",
+     "id": "W38",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(x^2)$.",
      "steps": [
       {
-       "id": "W29.1",
+       "id": "W38.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + x^4)",
@@ -797,7 +797,7 @@
        "work": "outside: $frac{1}{1 + x^4}$"
       },
       {
-       "id": "W29.2",
+       "id": "W38.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "2x",
@@ -822,7 +822,7 @@
        "work": "inside: $2x$"
       },
       {
-       "id": "W29.3",
+       "id": "W38.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(2x)(1/(1 + x^4))",
@@ -851,12 +851,12 @@
      "explain": "$f'(x) = (2x)(1/(1 + x^4))$"
     },
     {
-     "id": "W30",
+     "id": "W39",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(3x)$.",
      "steps": [
       {
-       "id": "W30.1",
+       "id": "W39.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + 9x^2)",
@@ -881,7 +881,7 @@
        "work": "outside: $frac{1}{1 + 9x^2}$"
       },
       {
-       "id": "W30.2",
+       "id": "W39.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "3",
@@ -906,7 +906,7 @@
        "work": "inside: $3$"
       },
       {
-       "id": "W30.3",
+       "id": "W39.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "3(1/(1 + 9x^2))",
@@ -935,12 +935,12 @@
      "explain": "$f'(x) = 3(1/(1 + 9x^2))$"
     },
     {
-     "id": "W31",
+     "id": "W40",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arcsin(2x)$.",
      "steps": [
       {
-       "id": "W31.1",
+       "id": "W40.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/sqrt(1 - 4x^2)",
@@ -965,7 +965,7 @@
        "work": "outside: $frac{1}{sqrt(1 - 4x^2)}$"
       },
       {
-       "id": "W31.2",
+       "id": "W40.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "2",
@@ -990,7 +990,7 @@
        "work": "inside: $2$"
       },
       {
-       "id": "W31.3",
+       "id": "W40.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "2(1/sqrt(1 - 4x^2))",
@@ -1019,12 +1019,12 @@
      "explain": "$f'(x) = 2(1/sqrt(1 - 4x^2))$"
     },
     {
-     "id": "W32",
+     "id": "W41",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(e^x)$.",
      "steps": [
       {
-       "id": "W32.1",
+       "id": "W41.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + e^(2x))",
@@ -1049,7 +1049,7 @@
        "work": "outside: $frac{1}{1 + e^(2x)}$"
       },
       {
-       "id": "W32.2",
+       "id": "W41.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "e^x",
@@ -1074,7 +1074,7 @@
        "work": "inside: $e^x$"
       },
       {
-       "id": "W32.3",
+       "id": "W41.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(e^x)(1/(1 + e^(2x)))",
@@ -1103,12 +1103,12 @@
      "explain": "$f'(x) = (e^x)(1/(1 + e^(2x)))$"
     },
     {
-     "id": "W33",
+     "id": "W42",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arcsin(x^2)$.",
      "steps": [
       {
-       "id": "W33.1",
+       "id": "W42.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/sqrt(1 - x^4)",
@@ -1133,7 +1133,7 @@
        "work": "outside: $frac{1}{sqrt(1 - x^4)}$"
       },
       {
-       "id": "W33.2",
+       "id": "W42.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "2x",
@@ -1158,7 +1158,7 @@
        "work": "inside: $2x$"
       },
       {
-       "id": "W33.3",
+       "id": "W42.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(2x)(1/sqrt(1 - x^4))",
@@ -1187,12 +1187,12 @@
      "explain": "$f'(x) = (2x)(1/sqrt(1 - x^4))$"
     },
     {
-     "id": "W34",
+     "id": "W43",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(sqrt(x))$.",
      "steps": [
       {
-       "id": "W34.1",
+       "id": "W43.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + x)",
@@ -1217,7 +1217,7 @@
        "work": "outside: $frac{1}{1 + x}$"
       },
       {
-       "id": "W34.2",
+       "id": "W43.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "1/(2sqrt(x))",
@@ -1242,7 +1242,7 @@
        "work": "inside: $frac{1}{2sqrt(x)}$"
       },
       {
-       "id": "W34.3",
+       "id": "W43.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(1/(2sqrt(x)))(1/(1 + x))",
@@ -1271,12 +1271,12 @@
      "explain": "$f'(x) = (1/(2sqrt(x)))(1/(1 + x))$"
     },
     {
-     "id": "W35",
+     "id": "W44",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arccos(3x)$.",
      "steps": [
       {
-       "id": "W35.1",
+       "id": "W44.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "-1/sqrt(1 - 9x^2)",
@@ -1301,7 +1301,7 @@
        "work": "outside: $-frac{1}{sqrt(1 - 9x^2)}$"
       },
       {
-       "id": "W35.2",
+       "id": "W44.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "3",
@@ -1326,7 +1326,7 @@
        "work": "inside: $3$"
       },
       {
-       "id": "W35.3",
+       "id": "W44.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "3(-1/sqrt(1 - 9x^2))",
@@ -1355,12 +1355,12 @@
      "explain": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$"
     },
     {
-     "id": "W36",
+     "id": "W45",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(x^3)$.",
      "steps": [
       {
-       "id": "W36.1",
+       "id": "W45.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + x^6)",
@@ -1385,7 +1385,7 @@
        "work": "outside: $frac{1}{1 + x^6}$"
       },
       {
-       "id": "W36.2",
+       "id": "W45.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "3x^2",
@@ -1410,7 +1410,7 @@
        "work": "inside: $3x^2$"
       },
       {
-       "id": "W36.3",
+       "id": "W45.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(3x^2)(1/(1 + x^6))",
@@ -1439,12 +1439,12 @@
      "explain": "$f'(x) = (3x^2)(1/(1 + x^6))$"
     },
     {
-     "id": "W37",
+     "id": "W46",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arcsin(x/2)$.",
      "steps": [
       {
-       "id": "W37.1",
+       "id": "W46.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/sqrt(1 - x^2/4)",
@@ -1469,7 +1469,7 @@
        "work": "outside: $frac{1}{sqrt(1 - x^2/4)}$"
       },
       {
-       "id": "W37.2",
+       "id": "W46.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "1/2",
@@ -1494,7 +1494,7 @@
        "work": "inside: $frac{1}{2}$"
       },
       {
-       "id": "W37.3",
+       "id": "W46.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(1/sqrt(1 - x^2/4))/2",
@@ -1523,7 +1523,7 @@
      "explain": "$f'(x) = (1/sqrt(1 - x^2/4))/2$"
     },
     {
-     "id": "C38",
+     "id": "C47",
      "type": "expr",
      "text": "Find the derivative of $f(x) = xarcsin(x)$.",
      "answer": "arcsin(x) + x/sqrt(1 - x^2)",
@@ -1550,7 +1550,7 @@
      "explain": "$arcsin(x) + x/sqrt(1 - x^2)$"
     },
     {
-     "id": "C39",
+     "id": "C48",
      "type": "expr",
      "text": "Find the derivative of $f(x) = x^2arctan(x)$.",
      "answer": "2xarctan(x) + x^2/(1 + x^2)",
@@ -1577,7 +1577,7 @@
      "explain": "$2xarctan(x) + x^2/(1 + x^2)$"
     },
     {
-     "id": "C40",
+     "id": "C49",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(x)/x$.",
      "answer": "(x/(1 + x^2) - arctan(x))/x^2",
@@ -1604,7 +1604,7 @@
      "explain": "$(x/(1 + x^2) - arctan(x))/x^2$"
     },
     {
-     "id": "C41",
+     "id": "C50",
      "type": "expr",
      "text": "Find the derivative of $f(x) = e^xarctan(x)$.",
      "answer": "e^xarctan(x) + e^x/(1 + x^2)",
@@ -1631,7 +1631,7 @@
      "explain": "$e^xarctan(x) + e^x/(1 + x^2)$"
     },
     {
-     "id": "C42",
+     "id": "C51",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arcsin(x)^2$.",
      "answer": "2arcsin(x)/sqrt(1 - x^2)",
@@ -1658,7 +1658,7 @@
      "explain": "$2arcsin(x)/sqrt(1 - x^2)$"
     },
     {
-     "id": "C43",
+     "id": "C52",
      "type": "expr",
      "text": "Find the derivative of $f(x) = 2^(arctan(x))$.",
      "answer": "2^(arctan(x))ln(2)/(1 + x^2)",
@@ -1685,7 +1685,7 @@
      "explain": "$2^(arctan(x))ln(2)/(1 + x^2)$"
     },
     {
-     "id": "G44",
+     "id": "G53",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(x^2)$.",
      "answer": "2x/(1 + x^4)",
@@ -1713,7 +1713,7 @@
      "explain": "$frac{2x}{1 + x^4}$"
     },
     {
-     "id": "G45",
+     "id": "G54",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arcsin(3x)$.",
      "answer": "3/sqrt(1 - 9x^2)",
@@ -1741,7 +1741,7 @@
      "explain": "$frac{3}{sqrt(1 - 9x^2)}$"
     },
     {
-     "id": "G46",
+     "id": "G55",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(1/x)$.",
      "answer": "-1/(1 + x^2)",
@@ -1769,7 +1769,7 @@
      "explain": "$-frac{1}{1 + x^2}$"
     },
     {
-     "id": "G47",
+     "id": "G56",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arccos(x^2)$.",
      "answer": "-2x/sqrt(1 - x^4)",
@@ -1797,7 +1797,7 @@
      "explain": "$-frac{2x}{sqrt(1 - x^4)}$"
     },
     {
-     "id": "G48",
+     "id": "G57",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(2x^3)$.",
      "answer": "6x^2/(1 + 4x^6)",
@@ -1825,7 +1825,7 @@
      "explain": "$frac{6x^2}{1 + 4x^6}$"
     },
     {
-     "id": "G49",
+     "id": "G58",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(e^(2x))$.",
      "answer": "2e^(2x)/(1 + e^(4x))",
@@ -1853,7 +1853,7 @@
      "explain": "$frac{2e^(2x)}{1 + e^(4x)}$"
     },
     {
-     "id": "G50",
+     "id": "G59",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arcsin(sqrt(x))$.",
      "answer": "1/(2sqrt(x)sqrt(1 - x))",
@@ -1881,7 +1881,7 @@
      "explain": "$frac{1}{2sqrt(x)sqrt(1 - x)}$"
     },
     {
-     "id": "G51",
+     "id": "G60",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(x/3)$.",
      "answer": "3/(9 + x^2)",
@@ -1909,7 +1909,7 @@
      "explain": "$frac{3}{9 + x^2}$"
     },
     {
-     "id": "G52",
+     "id": "G61",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arcsin(5x)$.",
      "answer": "5/sqrt(1 - 25x^2)",
@@ -1937,7 +1937,7 @@
      "explain": "$frac{5}{sqrt(1 - 25x^2)}$"
     },
     {
-     "id": "G53",
+     "id": "G62",
      "type": "expr",
      "text": "Find the derivative of $f(x) = arctan(sin(x))$.",
      "answer": "cos(x)/(1 + sin(x)^2)",
@@ -1965,7 +1965,7 @@
      "explain": "$frac{cos(x)}{1 + sin(x)^2}$"
     },
     {
-     "id": "S54",
+     "id": "S63",
      "type": "num",
      "text": "Find the slope of $y = arctan(x)$ at $x = 1$. (A decimal is fine.)",
      "answer": 0.5,
@@ -1975,7 +1975,7 @@
      "explain": "The slope is $0.5$."
     },
     {
-     "id": "S55",
+     "id": "S64",
      "type": "num",
      "text": "Find the slope of $y = arcsin(x)$ at $x = 0$. (A decimal is fine.)",
      "answer": 1,
@@ -1985,7 +1985,7 @@
      "explain": "The slope is $1$."
     },
     {
-     "id": "S56",
+     "id": "S65",
      "type": "num",
      "text": "Find the slope of $y = arctan(2x)$ at $x = 0$. (A decimal is fine.)",
      "answer": 2,
@@ -1995,7 +1995,7 @@
      "explain": "The slope is $2$."
     },
     {
-     "id": "S57",
+     "id": "S66",
      "type": "num",
      "text": "Find the slope of $y = arcsin(x)$ at $x = 0.5$. (A decimal is fine.)",
      "answer": 1.154701,

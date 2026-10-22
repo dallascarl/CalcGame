@@ -8,4 +8,4 @@ for n in m['nodes']:
         n['deck'] = want[n['id']]
 json.dump(m, open(p, 'w'), indent=2, ensure_ascii=False)
 open(p, 'a').write('\n')
-print([(n['id'], n['deck']) for n in m['nodes']])
+print([(n['id'], n.get('deck')) for n in m['nodes']])

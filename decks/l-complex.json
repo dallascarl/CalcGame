@@ -1,0 +1,1238 @@
+{
+ "id": "l-complex",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Limits with Complex Fractions",
+ "subtitle": "Combine the little fractions first.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "To simplify a fraction inside a fraction, first",
+     "options": [
+      "combine the small fractions over a common denominator",
+      "plug in",
+      "multiply by the conjugate",
+      "take the derivative"
+     ],
+     "answer": 0,
+     "explain": "Get one fraction, then cancel."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$lim[x->0] (frac{1}{x} + frac{5}{x(x - 5)})$ can be done with the sum law, piece by piece.",
+     "answer": false,
+     "explain": "Each piece has no limit, so the sum law does not apply. Combine first."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$frac{a/b}{c}$ is the same as",
+     "options": [
+      "$frac{a}{bc}$",
+      "$frac{ac}{b}$",
+      "$frac{a}{b} + c$",
+      "$frac{b}{ac}$"
+     ],
+     "answer": 0,
+     "explain": "Dividing by $c$ multiplies the bottom by $c$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "C1",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x + 2} + 1$",
+     "answer": "(x + 3)/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{x + 3}{x + 2}$",
+     "level": 1,
+     "explain": "$= frac{x + 3}{x + 2}$"
+    },
+    {
+     "id": "C2",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x + 1} - frac{1}{2}$",
+     "answer": "(1 - x)/(2(x + 1))",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{1 - x}{2(x + 1)}$",
+     "level": 1,
+     "explain": "$= frac{1 - x}{2(x + 1)}$"
+    },
+    {
+     "id": "C3",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x} - frac{1}{3}$",
+     "answer": "(3 - x)/(3x)",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{3 - x}{3x}$",
+     "level": 1,
+     "explain": "$= frac{3 - x}{3x}$"
+    },
+    {
+     "id": "C4",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x} - 1$",
+     "answer": "(1 - x)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{1 - x}{x}$",
+     "level": 1,
+     "explain": "$= frac{1 - x}{x}$"
+    },
+    {
+     "id": "C5",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{2}{x} - 1$",
+     "answer": "(2 - x)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{2 - x}{x}$",
+     "level": 1,
+     "explain": "$= frac{2 - x}{x}$"
+    },
+    {
+     "id": "C6",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x + 4} - frac{1}{4}$",
+     "answer": "-x/(4(x + 4))",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{x}{4(x + 4)}$",
+     "level": 1,
+     "explain": "$= -frac{x}{4(x + 4)}$"
+    },
+    {
+     "id": "C7",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x^2} - frac{1}{4}$",
+     "answer": "(4 - x^2)/(4x^2)",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{4 - x^2}{4x^2}$",
+     "level": 1,
+     "explain": "$= frac{4 - x^2}{4x^2}$"
+    },
+    {
+     "id": "C8",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{3}{x + 1} - 1$",
+     "answer": "(2 - x)/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{2 - x}{x + 1}$",
+     "level": 1,
+     "explain": "$= frac{2 - x}{x + 1}$"
+    },
+    {
+     "id": "C9",
+     "type": "expr",
+     "text": "Combine into one fraction: $frac{1}{x - 2} + frac{1}{2}$",
+     "answer": "x/(2(x - 2))",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{x}{2(x - 2)}$",
+     "level": 1,
+     "explain": "$= frac{x}{2(x - 2)}$"
+    },
+    {
+     "id": "C10",
+     "type": "expr",
+     "text": "Combine into one fraction: $1 - frac{5}{x}$",
+     "answer": "(x - 5)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "combined =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{x - 5}{x}$",
+     "level": 1,
+     "explain": "$= frac{x - 5}{x}$"
+    },
+    {
+     "id": "S11",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x + 2} + 1}{x + 3}$, using $frac{1}{x + 2} + 1 = frac{x + 3}{x + 2}$.",
+     "answer": "1/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{1}{x + 2}$",
+     "level": 2,
+     "explain": "Cancel $x + 3$: $frac{1}{x + 2}$."
+    },
+    {
+     "id": "S12",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x + 1} - frac{1}{2}}{x - 1}$, using $frac{1}{x + 1} - frac{1}{2} = frac{1 - x}{2(x + 1)}$.",
+     "answer": "-1/(2(x + 1))",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{2(x + 1)}$",
+     "level": 2,
+     "explain": "Cancel $x - 1$: $-frac{1}{2(x + 1)}$."
+    },
+    {
+     "id": "S13",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x} - frac{1}{3}}{x - 3}$, using $frac{1}{x} - frac{1}{3} = frac{3 - x}{3x}$.",
+     "answer": "-1/(3x)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{3x}$",
+     "level": 2,
+     "explain": "Cancel $x - 3$: $-frac{1}{3x}$."
+    },
+    {
+     "id": "S14",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x} - 1}{x - 1}$, using $frac{1}{x} - 1 = frac{1 - x}{x}$.",
+     "answer": "-1/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{x}$",
+     "level": 2,
+     "explain": "Cancel $x - 1$: $-frac{1}{x}$."
+    },
+    {
+     "id": "S15",
+     "type": "expr",
+     "text": "Simplify $frac{frac{2}{x} - 1}{x - 2}$, using $frac{2}{x} - 1 = frac{2 - x}{x}$.",
+     "answer": "-1/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{x}$",
+     "level": 2,
+     "explain": "Cancel $x - 2$: $-frac{1}{x}$."
+    },
+    {
+     "id": "S16",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x + 4} - frac{1}{4}}{x}$, using $frac{1}{x + 4} - frac{1}{4} = -frac{x}{4(x + 4)}$.",
+     "answer": "-1/(4(x + 4))",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{4(x + 4)}$",
+     "level": 2,
+     "explain": "Cancel $x$: $-frac{1}{4(x + 4)}$."
+    },
+    {
+     "id": "S17",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x^2} - frac{1}{4}}{x - 2}$, using $frac{1}{x^2} - frac{1}{4} = frac{4 - x^2}{4x^2}$.",
+     "answer": "-(2 + x)/(4x^2)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{2 + x}{4x^2}$",
+     "level": 2,
+     "explain": "Cancel $x - 2$: $-frac{2 + x}{4x^2}$."
+    },
+    {
+     "id": "S18",
+     "type": "expr",
+     "text": "Simplify $frac{frac{3}{x + 1} - 1}{x - 2}$, using $frac{3}{x + 1} - 1 = frac{2 - x}{x + 1}$.",
+     "answer": "-1/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$-frac{1}{x + 1}$",
+     "level": 2,
+     "explain": "Cancel $x - 2$: $-frac{1}{x + 1}$."
+    },
+    {
+     "id": "S19",
+     "type": "expr",
+     "text": "Simplify $frac{frac{1}{x - 2} + frac{1}{2}}{x}$, using $frac{1}{x - 2} + frac{1}{2} = frac{x}{2(x - 2)}$.",
+     "answer": "1/(2(x - 2))",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{1}{2(x - 2)}$",
+     "level": 2,
+     "explain": "Cancel $x$: $frac{1}{2(x - 2)}$."
+    },
+    {
+     "id": "S20",
+     "type": "expr",
+     "text": "Simplify $frac{1 - frac{5}{x}}{x - 5}$, using $1 - frac{5}{x} = frac{x - 5}{x}$.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       6,
+       8
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 2,
+     "explain": "Cancel $x - 5$: $frac{1}{x}$."
+    },
+    {
+     "id": "W21",
+     "type": "steps",
+     "text": "Find $lim[x->-3] frac{frac{1}{x + 2} + 1}{x + 3}$.",
+     "steps": [
+      {
+       "id": "W21.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(x + 3)/(x + 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{x + 3}{x + 2}$",
+       "work": "top $= frac{x + 3}{x + 2}$"
+      },
+      {
+       "id": "W21.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "1/(x + 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x + 2}$",
+       "work": "$= frac{1}{x + 2}$"
+      },
+      {
+       "id": "W21.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -1,
+       "label": "limit =",
+       "work": "limit $= -1$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1"
+    },
+    {
+     "id": "W22",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{frac{1}{x + 1} - frac{1}{2}}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W22.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(1 - x)/(2(x + 1))",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1 - x}{2(x + 1)}$",
+       "work": "top $= frac{1 - x}{2(x + 1)}$"
+      },
+      {
+       "id": "W22.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/(2(x + 1))",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{2(x + 1)}$",
+       "work": "$= -frac{1}{2(x + 1)}$"
+      },
+      {
+       "id": "W22.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.25,
+       "label": "limit =",
+       "work": "limit $= -1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/4"
+    },
+    {
+     "id": "W23",
+     "type": "steps",
+     "text": "Find $lim[x->3] frac{frac{1}{x} - frac{1}{3}}{x - 3}$.",
+     "steps": [
+      {
+       "id": "W23.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(3 - x)/(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{3 - x}{3x}$",
+       "work": "top $= frac{3 - x}{3x}$"
+      },
+      {
+       "id": "W23.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{3x}$",
+       "work": "$= -frac{1}{3x}$"
+      },
+      {
+       "id": "W23.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.111111,
+       "label": "limit =",
+       "work": "limit $= -1/9$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/9"
+    },
+    {
+     "id": "W24",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{frac{1}{x} - 1}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W24.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(1 - x)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1 - x}{x}$",
+       "work": "top $= frac{1 - x}{x}$"
+      },
+      {
+       "id": "W24.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{x}$",
+       "work": "$= -frac{1}{x}$"
+      },
+      {
+       "id": "W24.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -1,
+       "label": "limit =",
+       "work": "limit $= -1$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1"
+    },
+    {
+     "id": "W25",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{frac{2}{x} - 1}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W25.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(2 - x)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{2 - x}{x}$",
+       "work": "top $= frac{2 - x}{x}$"
+      },
+      {
+       "id": "W25.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{x}$",
+       "work": "$= -frac{1}{x}$"
+      },
+      {
+       "id": "W25.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.5,
+       "label": "limit =",
+       "work": "limit $= -1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/2"
+    },
+    {
+     "id": "W26",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{frac{1}{x + 4} - frac{1}{4}}{x}$.",
+     "steps": [
+      {
+       "id": "W26.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "-x/(4(x + 4))",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{x}{4(x + 4)}$",
+       "work": "top $= -frac{x}{4(x + 4)}$"
+      },
+      {
+       "id": "W26.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/(4(x + 4))",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{4(x + 4)}$",
+       "work": "$= -frac{1}{4(x + 4)}$"
+      },
+      {
+       "id": "W26.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.0625,
+       "label": "limit =",
+       "work": "limit $= -1/16$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/16"
+    },
+    {
+     "id": "W27",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{frac{1}{x^2} - frac{1}{4}}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W27.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(4 - x^2)/(4x^2)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{4 - x^2}{4x^2}$",
+       "work": "top $= frac{4 - x^2}{4x^2}$"
+      },
+      {
+       "id": "W27.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-(2 + x)/(4x^2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{2 + x}{4x^2}$",
+       "work": "$= -frac{2 + x}{4x^2}$"
+      },
+      {
+       "id": "W27.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.25,
+       "label": "limit =",
+       "work": "limit $= -1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/4"
+    },
+    {
+     "id": "W28",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{frac{3}{x + 1} - 1}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W28.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(2 - x)/(x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{2 - x}{x + 1}$",
+       "work": "top $= frac{2 - x}{x + 1}$"
+      },
+      {
+       "id": "W28.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "-1/(x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$-frac{1}{x + 1}$",
+       "work": "$= -frac{1}{x + 1}$"
+      },
+      {
+       "id": "W28.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.333333,
+       "label": "limit =",
+       "work": "limit $= -1/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/3"
+    },
+    {
+     "id": "W29",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{frac{1}{x - 2} + frac{1}{2}}{x}$.",
+     "steps": [
+      {
+       "id": "W29.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "x/(2(x - 2))",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{x}{2(x - 2)}$",
+       "work": "top $= frac{x}{2(x - 2)}$"
+      },
+      {
+       "id": "W29.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "1/(2(x - 2))",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{2(x - 2)}$",
+       "work": "$= frac{1}{2(x - 2)}$"
+      },
+      {
+       "id": "W29.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.25,
+       "label": "limit =",
+       "work": "limit $= -1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/4"
+    },
+    {
+     "id": "W30",
+     "type": "steps",
+     "text": "Find $lim[x->5] frac{1 - frac{5}{x}}{x - 5}$.",
+     "steps": [
+      {
+       "id": "W30.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(x - 5)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{x - 5}{x}$",
+       "work": "top $= frac{x - 5}{x}$"
+      },
+      {
+       "id": "W30.2",
+       "type": "expr",
+       "text": "Divide by the bottom and cancel.",
+       "answer": "1/x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x}$",
+       "work": "$= frac{1}{x}$"
+      },
+      {
+       "id": "W30.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.2,
+       "label": "limit =",
+       "work": "limit $= 1/5$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/5"
+    },
+    {
+     "id": "V31",
+     "type": "steps",
+     "text": "Find $lim[x->0] (frac{1}{x} + frac{5}{x(x - 5)})$.",
+     "steps": [
+      {
+       "id": "V31.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "1/(x - 5)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x - 5}$",
+       "work": "$= frac{1}{x - 5}$"
+      },
+      {
+       "id": "V31.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.2,
+       "label": "limit =",
+       "work": "limit $= -1/5$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/5"
+    },
+    {
+     "id": "V32",
+     "type": "steps",
+     "text": "Find $lim[x->3] (frac{1}{x - 3} - frac{4}{x^2 - 2x - 3})$.",
+     "steps": [
+      {
+       "id": "V32.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "1/(x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x + 1}$",
+       "work": "$= frac{1}{x + 1}$"
+      },
+      {
+       "id": "V32.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.25,
+       "label": "limit =",
+       "work": "limit $= 1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/4"
+    },
+    {
+     "id": "V33",
+     "type": "steps",
+     "text": "Find $lim[x->1] (frac{1}{x - 1} - frac{2}{x^2 - 1})$.",
+     "steps": [
+      {
+       "id": "V33.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "1/(x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x + 1}$",
+       "work": "$= frac{1}{x + 1}$"
+      },
+      {
+       "id": "V33.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.5,
+       "label": "limit =",
+       "work": "limit $= 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/2"
+    },
+    {
+     "id": "V34",
+     "type": "steps",
+     "text": "Find $lim[x->0] (frac{1}{x} - frac{1}{x^2 + x})$.",
+     "steps": [
+      {
+       "id": "V34.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "1/(x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x + 1}$",
+       "work": "$= frac{1}{x + 1}$"
+      },
+      {
+       "id": "V34.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 1,
+       "label": "limit =",
+       "work": "limit $= 1$"
+      }
+     ],
+     "level": 3,
+     "explain": "1"
+    },
+    {
+     "id": "V35",
+     "type": "steps",
+     "text": "Find $lim[x->2] (frac{2}{x - 2} - frac{8}{x^2 - 4})$.",
+     "steps": [
+      {
+       "id": "V35.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "2/(x + 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{2}{x + 2}$",
+       "work": "$= frac{2}{x + 2}$"
+      },
+      {
+       "id": "V35.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.5,
+       "label": "limit =",
+       "work": "limit $= 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/2"
+    },
+    {
+     "id": "V36",
+     "type": "steps",
+     "text": "Find $lim[x->-2] (frac{1}{x + 2} + frac{4}{x^2 - 4})$.",
+     "steps": [
+      {
+       "id": "V36.1",
+       "type": "expr",
+       "text": "Combine into one fraction and cancel.",
+       "answer": "1/(x - 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6,
+         8
+        ]
+       },
+       "show": "$frac{1}{x - 2}$",
+       "work": "$= frac{1}{x - 2}$"
+      },
+      {
+       "id": "V36.2",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -0.25,
+       "label": "limit =",
+       "work": "limit $= -1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/4"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Find $lim[x->-3] frac{frac{1}{x + 2} + 1}{x + 3}$. It is $frac{0}{0}$, and there are fractions inside a fraction. First combine the top over a common denominator:",
+    "options": [
+     "$frac{1}{x + 2} + 1 = frac{x + 3}{x + 2}$",
+     "$frac{1}{x + 2} + 1 = frac{2}{x + 2}$",
+     "$frac{1}{x + 2} + 1 = frac{1}{x + 3}$",
+     "$frac{1}{x + 2} + 1 = x + 3$"
+    ],
+    "answer": 0,
+    "hint": "$1 = frac{x + 2}{x + 2}$",
+    "explain": "$frac{1 + (x + 2)}{x + 2} = frac{x + 3}{x + 2}$"
+   },
+   {
+    "id": "L2",
+    "type": "steps",
+    "text": "Finish it: $frac{(x + 3)/(x + 2)}{x + 3}$.",
+    "steps": [
+     {
+      "id": "L2.1",
+      "type": "expr",
+      "text": "Dividing by $x + 3$ cancels the $x + 3$ on top. What is left?",
+      "answer": "1/(x + 2)",
+      "vars": [
+       "x"
+      ],
+      "label": "simplified =",
+      "ranges": {
+       "x": [
+        0.5,
+        2
+       ]
+      },
+      "show": "$frac{1}{x + 2}$",
+      "hint": "$frac{x + 3}{(x + 2)(x + 3)}$",
+      "work": "$= frac{1}{x + 2}$"
+     },
+     {
+      "id": "L2.2",
+      "type": "lim",
+      "text": "Plug in $x = -3$.",
+      "answer": -1,
+      "label": "limit =",
+      "hint": "$frac{1}{-1}$",
+      "work": "limit $= -1$"
+     }
+    ]
+   },
+   {
+    "id": "L3",
+    "type": "lim",
+    "text": "From class: $lim[x->0] (frac{1}{x} + frac{5}{x(x - 5)})$. Each piece blows up, so combine into one fraction first.",
+    "answer": -0.2,
+    "label": "limit =",
+    "hint": "Common denominator $x(x - 5)$: $frac{(x - 5) + 5}{x(x - 5)} = frac{1}{x - 5}$.",
+    "explain": "$frac{1}{x - 5} -> -frac{1}{5}$"
+   }
+  ]
+ }
+}

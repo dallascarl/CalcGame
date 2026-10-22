@@ -282,7 +282,7 @@
      "explain": "$arcsin(-1) = -frac{pi}{2}$"
     },
     {
-     "id": "T19",
+     "id": "T20",
      "type": "mc",
      "text": "Draw a right triangle to simplify $sin(arccos(x))$.",
      "options": [
@@ -296,7 +296,7 @@
      "explain": "$sin(arccos(x)) = sqrt(1 - x^2)$"
     },
     {
-     "id": "T20",
+     "id": "T21",
      "type": "mc",
      "text": "Draw a right triangle to simplify $cos(arcsin(x))$.",
      "options": [
@@ -310,7 +310,7 @@
      "explain": "$cos(arcsin(x)) = sqrt(1 - x^2)$"
     },
     {
-     "id": "T21",
+     "id": "T22",
      "type": "mc",
      "text": "Draw a right triangle to simplify $sec(arctan(x))$.",
      "options": [
@@ -324,7 +324,7 @@
      "explain": "$sec(arctan(x)) = sqrt(1 + x^2)$"
     },
     {
-     "id": "T22",
+     "id": "T23",
      "type": "mc",
      "text": "Draw a right triangle to simplify $cos(arctan(x))$.",
      "options": [
@@ -338,7 +338,7 @@
      "explain": "$cos(arctan(x)) = frac{1}{sqrt(1 + x^2)}$"
     },
     {
-     "id": "T23",
+     "id": "T24",
      "type": "mc",
      "text": "Draw a right triangle to simplify $tan(arcsin(x))$.",
      "options": [
@@ -352,7 +352,7 @@
      "explain": "$tan(arcsin(x)) = frac{x}{sqrt(1 - x^2)}$"
     },
     {
-     "id": "T24",
+     "id": "T25",
      "type": "mc",
      "text": "Draw a right triangle to simplify $sin(arctan(x))$.",
      "options": [
@@ -366,7 +366,7 @@
      "explain": "$sin(arctan(x)) = frac{x}{sqrt(1 + x^2)}$"
     },
     {
-     "id": "R25",
+     "id": "R26",
      "type": "mc",
      "text": "The range of $arcsin(x)$ is",
      "options": [
@@ -380,7 +380,7 @@
      "explain": "$[-frac{pi}{2}, frac{pi}{2}]$"
     },
     {
-     "id": "R26",
+     "id": "R27",
      "type": "mc",
      "text": "The range of $arccos(x)$ is",
      "options": [
@@ -394,7 +394,7 @@
      "explain": "$[0, pi]$"
     },
     {
-     "id": "R27",
+     "id": "R28",
      "type": "mc",
      "text": "The domain of $arcsin(x)$ is",
      "options": [
@@ -408,7 +408,7 @@
      "explain": "$[-1, 1]$"
     },
     {
-     "id": "R28",
+     "id": "R29",
      "type": "mc",
      "text": "The domain of $arctan(x)$ is",
      "options": [
@@ -422,7 +422,7 @@
      "explain": "all real numbers"
     },
     {
-     "id": "R29",
+     "id": "R30",
      "type": "mc",
      "text": "$sin^(-1)(x)$ means",
      "options": [
@@ -436,7 +436,7 @@
      "explain": "$arcsin(x)$"
     },
     {
-     "id": "R30",
+     "id": "R31",
      "type": "mc",
      "text": "$arcsin(sin(frac{5pi}{6}))$ equals",
      "options": [

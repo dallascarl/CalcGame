@@ -1,0 +1,1448 @@
+{
+ "id": "l-factor",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Factor and Cancel",
+ "subtitle": "The first trick for 0/0: factor the top and bottom.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "Plugging in gives $frac{0}{0}$. A good first move is",
+     "options": [
+      "factor the top and bottom and cancel",
+      "say the limit is 0",
+      "say the limit is DNE",
+      "say the limit is 1"
+     ],
+     "answer": 0,
+     "explain": "$frac{0}{0}$ means there is a common factor hiding."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "If $p(a) = 0$ for a polynomial $p$, then $(x - a)$ is a factor of $p(x)$.",
+     "answer": true,
+     "explain": "The factor theorem."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "$frac{(x - 2)(x + 2)}{x - 2}$ and $x + 2$ have the same limit as $x -> 2$.",
+     "answer": true,
+     "explain": "They agree everywhere except $x = 2$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "After canceling, you plug in and get $frac{3}{0}$. The limit is",
+     "options": [
+      "$infty$, $-infty$ or DNE",
+      "3",
+      "0",
+      "still $frac{0}{0}$"
+     ],
+     "answer": 0,
+     "explain": "Now it is an infinite-limit question: check signs."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$x^2 - 9$ factors as",
+     "options": [
+      "$(x - 3)(x + 3)$",
+      "$(x - 9)(x + 1)$",
+      "$(x - 3)^2$",
+      "$x(x - 9)$"
+     ],
+     "answer": 0,
+     "explain": "Difference of squares: $a^2 - b^2 = (a - b)(a + b)$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "F1",
+     "type": "expr",
+     "text": "Factor $x^2 - 1$. Fill in the missing factor.",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 1 = (x - 1)·($",
+     "post": "$)$",
+     "show": "$x + 1$",
+     "level": 1,
+     "explain": "$x^2 - 1 = (x - 1)(x + 1)$"
+    },
+    {
+     "id": "F2",
+     "type": "expr",
+     "text": "Factor $x^2 - 4$. Fill in the missing factor.",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 4 = (x - 2)·($",
+     "post": "$)$",
+     "show": "$x + 2$",
+     "level": 1,
+     "explain": "$x^2 - 4 = (x - 2)(x + 2)$"
+    },
+    {
+     "id": "F3",
+     "type": "expr",
+     "text": "Factor $x^2 - 9$. Fill in the missing factor.",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 9 = (x - 3)·($",
+     "post": "$)$",
+     "show": "$x + 3$",
+     "level": 1,
+     "explain": "$x^2 - 9 = (x - 3)(x + 3)$"
+    },
+    {
+     "id": "F4",
+     "type": "expr",
+     "text": "Factor $x^2 + x - 2$. Fill in the missing factor.",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + x - 2 = (x - 1)·($",
+     "post": "$)$",
+     "show": "$x + 2$",
+     "level": 1,
+     "explain": "$x^2 + x - 2 = (x - 1)(x + 2)$"
+    },
+    {
+     "id": "F5",
+     "type": "expr",
+     "text": "Factor $x^2 - 5x + 6$. Fill in the missing factor.",
+     "answer": "x - 3",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 5x + 6 = (x - 2)·($",
+     "post": "$)$",
+     "show": "$x - 3$",
+     "level": 1,
+     "explain": "$x^2 - 5x + 6 = (x - 2)(x - 3)$"
+    },
+    {
+     "id": "F6",
+     "type": "expr",
+     "text": "Factor $x^2 + 2x - 8$. Fill in the missing factor.",
+     "answer": "x + 4",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 2x - 8 = (x - 2)·($",
+     "post": "$)$",
+     "show": "$x + 4$",
+     "level": 1,
+     "explain": "$x^2 + 2x - 8 = (x - 2)(x + 4)$"
+    },
+    {
+     "id": "F7",
+     "type": "expr",
+     "text": "Factor $x^2 - x - 6$. Fill in the missing factor.",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - x - 6 = (x - 3)·($",
+     "post": "$)$",
+     "show": "$x + 2$",
+     "level": 1,
+     "explain": "$x^2 - x - 6 = (x - 3)(x + 2)$"
+    },
+    {
+     "id": "F8",
+     "type": "expr",
+     "text": "Factor $x^3 - 8$. Fill in the missing factor.",
+     "answer": "x^2 + 2x + 4",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 - 8 = (x - 2)·($",
+     "post": "$)$",
+     "show": "$x^2 + 2x + 4$",
+     "level": 1,
+     "explain": "$x^3 - 8 = (x - 2)(x^2 + 2x + 4)$"
+    },
+    {
+     "id": "F9",
+     "type": "expr",
+     "text": "Factor $x^2 - 16$. Fill in the missing factor.",
+     "answer": "x - 4",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 16 = (x + 4)·($",
+     "post": "$)$",
+     "show": "$x - 4$",
+     "level": 1,
+     "explain": "$x^2 - 16 = (x + 4)(x - 4)$"
+    },
+    {
+     "id": "F10",
+     "type": "expr",
+     "text": "Factor $2x^2 - 2x$. Fill in the missing factor.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "label": "$2x^2 - 2x = (x - 1)·($",
+     "post": "$)$",
+     "show": "$2x$",
+     "level": 1,
+     "explain": "$2x^2 - 2x = (x - 1)(2x)$"
+    },
+    {
+     "id": "F11",
+     "type": "expr",
+     "text": "Factor $x^2 + 5x + 4$. Fill in the missing factor.",
+     "answer": "x + 4",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 5x + 4 = (x + 1)·($",
+     "post": "$)$",
+     "show": "$x + 4$",
+     "level": 1,
+     "explain": "$x^2 + 5x + 4 = (x + 1)(x + 4)$"
+    },
+    {
+     "id": "F12",
+     "type": "expr",
+     "text": "Factor $x^3 - x$. Fill in the missing factor.",
+     "answer": "x(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 - x = (x - 1)·($",
+     "post": "$)$",
+     "show": "$x(x + 1)$",
+     "level": 1,
+     "explain": "$x^3 - x = (x - 1)(x(x + 1))$"
+    },
+    {
+     "id": "F13",
+     "type": "expr",
+     "text": "Factor $x^2 - 2x - 15$. Fill in the missing factor.",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 2x - 15 = (x - 5)·($",
+     "post": "$)$",
+     "show": "$x + 3$",
+     "level": 1,
+     "explain": "$x^2 - 2x - 15 = (x - 5)(x + 3)$"
+    },
+    {
+     "id": "F14",
+     "type": "expr",
+     "text": "Factor $x^3 + 1$. Fill in the missing factor.",
+     "answer": "x^2 - x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 + 1 = (x + 1)·($",
+     "post": "$)$",
+     "show": "$x^2 - x + 1$",
+     "level": 1,
+     "explain": "$x^3 + 1 = (x + 1)(x^2 - x + 1)$"
+    },
+    {
+     "id": "C15",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 1}{x - 1}$ simplifies to",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x + 1$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x + 1$."
+    },
+    {
+     "id": "C16",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 4}{x - 2}$ simplifies to",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x + 2$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x + 2$."
+    },
+    {
+     "id": "C17",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x - 1}{x^2 + x - 2}$ simplifies to",
+     "answer": "(x + 2)^(-1)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$(x + 2)^(-1)$",
+     "level": 2,
+     "explain": "Cancel the common factor: $(x + 2)^(-1)$."
+    },
+    {
+     "id": "C18",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 5x + 6}{x - 2}$ simplifies to",
+     "answer": "x - 3",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x - 3$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x - 3$."
+    },
+    {
+     "id": "C19",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 + 2x - 8}{x^2 - 4}$ simplifies to",
+     "answer": "(x + 4)/(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$frac{x + 4}{x + 2}$",
+     "level": 2,
+     "explain": "Cancel the common factor: $frac{x + 4}{x + 2}$."
+    },
+    {
+     "id": "C20",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - x - 6}{x - 3}$ simplifies to",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x + 2$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x + 2$."
+    },
+    {
+     "id": "C21",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^3 - 8}{x - 2}$ simplifies to",
+     "answer": "x^2 + 2x + 4",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x^2 + 2x + 4$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x^2 + 2x + 4$."
+    },
+    {
+     "id": "C22",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 16}{x + 4}$ simplifies to",
+     "answer": "x - 4",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x - 4$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x - 4$."
+    },
+    {
+     "id": "C23",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{2x^2 - 2x}{x - 1}$ simplifies to",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$2x$",
+     "level": 2,
+     "explain": "Cancel the common factor: $2x$."
+    },
+    {
+     "id": "C24",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 + 5x + 4}{x^2 - 1}$ simplifies to",
+     "answer": "(x + 4)/(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$frac{x + 4}{x - 1}$",
+     "level": 2,
+     "explain": "Cancel the common factor: $frac{x + 4}{x - 1}$."
+    },
+    {
+     "id": "C25",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 9}{x^2 - 2x - 3}$ simplifies to",
+     "answer": "(x + 3)/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$frac{x + 3}{x + 1}$",
+     "level": 2,
+     "explain": "Cancel the common factor: $frac{x + 3}{x + 1}$."
+    },
+    {
+     "id": "C26",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^3 - x}{x - 1}$ simplifies to",
+     "answer": "x^2 + x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x^2 + x$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x^2 + x$."
+    },
+    {
+     "id": "C27",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 2x - 15}{x - 5}$ simplifies to",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x + 3$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x + 3$."
+    },
+    {
+     "id": "C28",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^3 + 1}{x + 1}$ simplifies to",
+     "answer": "x^2 - x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x^2 - x + 1$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x^2 - x + 1$."
+    },
+    {
+     "id": "C29",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 - 4}{x^2 - 5x + 6}$ simplifies to",
+     "answer": "(x + 2)/(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$frac{x + 2}{x - 3}$",
+     "level": 2,
+     "explain": "Cancel the common factor: $frac{x + 2}{x - 3}$."
+    },
+    {
+     "id": "C30",
+     "type": "expr",
+     "text": "Factor and cancel: $frac{x^2 + 3x}{x}$ simplifies to",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       2.5,
+       4.5
+      ]
+     },
+     "show": "$x + 3$",
+     "level": 2,
+     "explain": "Cancel the common factor: $x + 3$."
+    },
+    {
+     "id": "W31",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{x^2 - 1}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W31.1",
+       "type": "mc",
+       "text": "Plug in $x = 1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W31.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x + 1",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x + 1$",
+       "work": "$= x + 1$"
+      },
+      {
+       "id": "W31.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 2,
+       "label": "limit =",
+       "work": "limit $= 2$"
+      }
+     ],
+     "level": 3,
+     "explain": "2"
+    },
+    {
+     "id": "W32",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{x^2 - 4}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W32.1",
+       "type": "mc",
+       "text": "Plug in $x = 2$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W32.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x + 2",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x + 2$",
+       "work": "$= x + 2$"
+      },
+      {
+       "id": "W32.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 4,
+       "label": "limit =",
+       "work": "limit $= 4$"
+      }
+     ],
+     "level": 3,
+     "explain": "4"
+    },
+    {
+     "id": "W33",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{x - 1}{x^2 + x - 2}$.",
+     "steps": [
+      {
+       "id": "W33.1",
+       "type": "mc",
+       "text": "Plug in $x = 1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W33.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 2)^(-1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$(x + 2)^(-1)$",
+       "work": "$= (x + 2)^(-1)$"
+      },
+      {
+       "id": "W33.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 0.333333,
+       "label": "limit =",
+       "work": "limit $= 1/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/3"
+    },
+    {
+     "id": "W34",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{x^2 - 5x + 6}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W34.1",
+       "type": "mc",
+       "text": "Plug in $x = 2$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W34.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x - 3",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x - 3$",
+       "work": "$= x - 3$"
+      },
+      {
+       "id": "W34.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -1,
+       "label": "limit =",
+       "work": "limit $= -1$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1"
+    },
+    {
+     "id": "W35",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{x^2 + 2x - 8}{x^2 - 4}$.",
+     "steps": [
+      {
+       "id": "W35.1",
+       "type": "mc",
+       "text": "Plug in $x = 2$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W35.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 4)/(x + 2)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$frac{x + 4}{x + 2}$",
+       "work": "$= frac{x + 4}{x + 2}$"
+      },
+      {
+       "id": "W35.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 1.5,
+       "label": "limit =",
+       "work": "limit $= 3/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "3/2"
+    },
+    {
+     "id": "W36",
+     "type": "steps",
+     "text": "Find $lim[x->3] frac{x^2 - x - 6}{x - 3}$.",
+     "steps": [
+      {
+       "id": "W36.1",
+       "type": "mc",
+       "text": "Plug in $x = 3$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W36.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x + 2",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x + 2$",
+       "work": "$= x + 2$"
+      },
+      {
+       "id": "W36.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 5,
+       "label": "limit =",
+       "work": "limit $= 5$"
+      }
+     ],
+     "level": 3,
+     "explain": "5"
+    },
+    {
+     "id": "W37",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{x^3 - 8}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W37.1",
+       "type": "mc",
+       "text": "Plug in $x = 2$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W37.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x^2 + 2x + 4",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x^2 + 2x + 4$",
+       "work": "$= x^2 + 2x + 4$"
+      },
+      {
+       "id": "W37.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 12,
+       "label": "limit =",
+       "work": "limit $= 12$"
+      }
+     ],
+     "level": 3,
+     "explain": "12"
+    },
+    {
+     "id": "W38",
+     "type": "steps",
+     "text": "Find $lim[x->-4] frac{x^2 - 16}{x + 4}$.",
+     "steps": [
+      {
+       "id": "W38.1",
+       "type": "mc",
+       "text": "Plug in $x = -4$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W38.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x - 4",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x - 4$",
+       "work": "$= x - 4$"
+      },
+      {
+       "id": "W38.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -8,
+       "label": "limit =",
+       "work": "limit $= -8$"
+      }
+     ],
+     "level": 3,
+     "explain": "-8"
+    },
+    {
+     "id": "W39",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{2x^2 - 2x}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W39.1",
+       "type": "mc",
+       "text": "Plug in $x = 1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W39.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$2x$",
+       "work": "$= 2x$"
+      },
+      {
+       "id": "W39.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 2,
+       "label": "limit =",
+       "work": "limit $= 2$"
+      }
+     ],
+     "level": 3,
+     "explain": "2"
+    },
+    {
+     "id": "W40",
+     "type": "steps",
+     "text": "Find $lim[x->-1] frac{x^2 + 5x + 4}{x^2 - 1}$.",
+     "steps": [
+      {
+       "id": "W40.1",
+       "type": "mc",
+       "text": "Plug in $x = -1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W40.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 4)/(x - 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$frac{x + 4}{x - 1}$",
+       "work": "$= frac{x + 4}{x - 1}$"
+      },
+      {
+       "id": "W40.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -1.5,
+       "label": "limit =",
+       "work": "limit $= -3/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "-3/2"
+    },
+    {
+     "id": "W41",
+     "type": "steps",
+     "text": "Find $lim[x->3] frac{x^2 - 9}{x^2 - 2x - 3}$.",
+     "steps": [
+      {
+       "id": "W41.1",
+       "type": "mc",
+       "text": "Plug in $x = 3$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W41.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 3)/(x + 1)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$frac{x + 3}{x + 1}$",
+       "work": "$= frac{x + 3}{x + 1}$"
+      },
+      {
+       "id": "W41.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 1.5,
+       "label": "limit =",
+       "work": "limit $= 3/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "3/2"
+    },
+    {
+     "id": "W42",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{x^3 - x}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W42.1",
+       "type": "mc",
+       "text": "Plug in $x = 1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W42.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x^2 + x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x^2 + x$",
+       "work": "$= x^2 + x$"
+      },
+      {
+       "id": "W42.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 2,
+       "label": "limit =",
+       "work": "limit $= 2$"
+      }
+     ],
+     "level": 3,
+     "explain": "2"
+    },
+    {
+     "id": "W43",
+     "type": "steps",
+     "text": "Find $lim[x->5] frac{x^2 - 2x - 15}{x - 5}$.",
+     "steps": [
+      {
+       "id": "W43.1",
+       "type": "mc",
+       "text": "Plug in $x = 5$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W43.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x + 3",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x + 3$",
+       "work": "$= x + 3$"
+      },
+      {
+       "id": "W43.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 8,
+       "label": "limit =",
+       "work": "limit $= 8$"
+      }
+     ],
+     "level": 3,
+     "explain": "8"
+    },
+    {
+     "id": "W44",
+     "type": "steps",
+     "text": "Find $lim[x->-1] frac{x^3 + 1}{x + 1}$.",
+     "steps": [
+      {
+       "id": "W44.1",
+       "type": "mc",
+       "text": "Plug in $x = -1$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W44.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x^2 - x + 1",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x^2 - x + 1$",
+       "work": "$= x^2 - x + 1$"
+      },
+      {
+       "id": "W44.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 3,
+       "label": "limit =",
+       "work": "limit $= 3$"
+      }
+     ],
+     "level": 3,
+     "explain": "3"
+    },
+    {
+     "id": "W45",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{x^2 - 4}{x^2 - 5x + 6}$.",
+     "steps": [
+      {
+       "id": "W45.1",
+       "type": "mc",
+       "text": "Plug in $x = 2$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W45.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "(x + 2)/(x - 3)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$frac{x + 2}{x - 3}$",
+       "work": "$= frac{x + 2}{x - 3}$"
+      },
+      {
+       "id": "W45.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": -4,
+       "label": "limit =",
+       "work": "limit $= -4$"
+      }
+     ],
+     "level": 3,
+     "explain": "-4"
+    },
+    {
+     "id": "W46",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{x^2 + 3x}{x}$.",
+     "steps": [
+      {
+       "id": "W46.1",
+       "type": "mc",
+       "text": "Plug in $x = 0$. You get",
+       "options": [
+        "$frac{0}{0}$",
+        "a number",
+        "$frac{a}{0}$ with $a ≠ 0$"
+       ],
+       "answer": 0,
+       "work": "$frac{0}{0}$: factor"
+      },
+      {
+       "id": "W46.2",
+       "type": "expr",
+       "text": "Factor, cancel, and write what is left.",
+       "answer": "x + 3",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         2.5,
+         4.5
+        ]
+       },
+       "show": "$x + 3$",
+       "work": "$= x + 3$"
+      },
+      {
+       "id": "W46.3",
+       "type": "lim",
+       "text": "Plug in.",
+       "answer": 3,
+       "label": "limit =",
+       "work": "limit $= 3$"
+      }
+     ],
+     "level": 3,
+     "explain": "3"
+    },
+    {
+     "id": "X47",
+     "type": "lim",
+     "text": "Find $lim[x->2] frac{x - 2}{x^2 - 4x + 4}$. (After canceling, check what is left.)",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "After canceling you get a nonzero number over 0: DNE."
+    },
+    {
+     "id": "X48",
+     "type": "lim",
+     "text": "Find $lim[x->-1] frac{x + 1}{x^2 + 2x + 1}$. (After canceling, check what is left.)",
+     "answer": "DNE",
+     "label": "limit =",
+     "level": 3,
+     "explain": "After canceling you get a nonzero number over 0: DNE."
+    },
+    {
+     "id": "X49",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{x^2 - 1}{(x - 1)^3}$. (After canceling, check what is left.)",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "After canceling you get a nonzero number over 0: inf."
+    },
+    {
+     "id": "X50",
+     "type": "lim",
+     "text": "Find $lim[x->0] frac{x}{x^3}$. (After canceling, check what is left.)",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 3,
+     "explain": "After canceling you get a nonzero number over 0: inf."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Find $lim[x->1] frac{x^2 - 1}{x - 1}$. Plugging in gives $frac{0}{0}$. Both are 0 at $x = 1$, so both have a factor of",
+    "options": [
+     "$(x - 1)$",
+     "$(x + 1)$",
+     "$x$",
+     "$(x^2 - 1)$"
+    ],
+    "answer": 0,
+    "hint": "A polynomial that is 0 at $x = 1$ has $(x - 1)$ as a factor.",
+    "explain": "That shared factor is what makes $frac{0}{0}$."
+   },
+   {
+    "id": "L2",
+    "type": "steps",
+    "text": "Finish $lim[x->1] frac{x^2 - 1}{x - 1}$.",
+    "steps": [
+     {
+      "id": "L2.1",
+      "type": "expr",
+      "text": "Factor the top.",
+      "answer": "x + 1",
+      "vars": [
+       "x"
+      ],
+      "label": "$x^2 - 1 = (x - 1)·($",
+      "post": "$)$",
+      "show": "$x + 1$",
+      "hint": "Difference of squares.",
+      "work": "$frac{(x - 1)(x + 1)}{x - 1}$"
+     },
+     {
+      "id": "L2.2",
+      "type": "expr",
+      "text": "Cancel the $(x - 1)$. (Fine in a limit, because $x ≠ 1$ there.)",
+      "answer": "x + 1",
+      "vars": [
+       "x"
+      ],
+      "label": "simplified =",
+      "show": "$x + 1$",
+      "hint": "What is left?",
+      "work": "$= x + 1$ (for $x ≠ 1$)"
+     },
+     {
+      "id": "L2.3",
+      "type": "lim",
+      "text": "Now plug in.",
+      "answer": 2,
+      "label": "lim[x->1] = ",
+      "hint": "$1 + 1$",
+      "work": "limit $= 2$"
+     }
+    ]
+   },
+   {
+    "id": "L3",
+    "type": "lim",
+    "text": "Your turn (from class): $lim[x->1] frac{x - 1}{x^2 + x - 2}$. Factor the bottom.",
+    "answer": 0.333333,
+    "label": "limit =",
+    "hint": "$x^2 + x - 2 = (x - 1)(x + 2)$",
+    "explain": "Cancel to get $frac{1}{x + 2}$, then plug in: $frac{1}{3}$."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Why are we allowed to cancel $(x - 1)$?",
+    "options": [
+     "A limit only looks at $x$ near 1, never at $x = 1$, so $x - 1 ≠ 0$",
+     "Because $x - 1 = 1$",
+     "We are not; it is a trick",
+     "Because $0/0 = 1$"
+    ],
+    "answer": 0,
+    "hint": "Does the limit care about $x = 1$ itself?",
+    "explain": "The simplified function matches the original everywhere except $x = 1$, which a limit ignores."
+   }
+  ]
+ }
+}

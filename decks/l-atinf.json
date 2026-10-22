@@ -1,0 +1,742 @@
+{
+ "id": "l-atinf",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Limits at Infinity",
+ "subtitle": "What a function does far out on the ends.",
+ "version": 2,
+ "graphs": {
+  "hyp": {
+   "window": [
+    -9,
+    9,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "2+1/x",
+     "from": -9,
+     "to": -0.2
+    },
+    {
+     "expr": "2+1/x",
+     "from": 0.2,
+     "to": 9
+    }
+   ],
+   "xstep": 2
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "For $lim[x->infty] frac{p(x)}{q(x)}$, match the degrees to the answer.",
+     "pairs": [
+      [
+       "degree of top < degree of bottom",
+       "0"
+      ],
+      [
+       "degrees equal",
+       "ratio of the leading coefficients"
+      ],
+      [
+       "degree of top > degree of bottom",
+       "$infty$ or $-infty$"
+      ]
+     ],
+     "explain": "Leading order is all that matters at infinity!"
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "If $lim[x->infty] f(x) = L$, then the graph has",
+     "options": [
+      "a horizontal asymptote $y = L$",
+      "a vertical asymptote $x = L$",
+      "a hole at $L$",
+      "a zero at $L$"
+     ],
+     "answer": 0,
+     "explain": "It levels off at height $L$."
+    },
+    {
+     "id": "T3",
+     "type": "lim",
+     "text": "Find $lim[x->infty] sin(x)$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "explain": "Sine keeps waving between −1 and 1 forever, so it never settles."
+    },
+    {
+     "id": "T4",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] e^x$.",
+     "answer": 0,
+     "label": "limit =",
+     "explain": "$e^x$ shrinks toward 0 on the left."
+    },
+    {
+     "id": "T5",
+     "type": "lim",
+     "text": "Find $lim[x->infty] ln(x)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "explain": "Slowly, but it grows without bound."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "For $f(x) = -x^4$, the end behavior is",
+     "options": [
+      "down on both ends",
+      "up on both ends",
+      "down on the left, up on the right",
+      "up on the left, down on the right"
+     ],
+     "answer": 0,
+     "explain": "Even power, negative leading coefficient."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "P1",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (-x^4)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P2",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (-x^4)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P3",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (2x^3)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P4",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (2x^3)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P5",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (-x^5/2)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P6",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (-x^5/2)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P7",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (x^3 + 2x - 1)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P8",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (x^3 + 2x - 1)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P9",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (2x^8 + 32x^2 - x - 4)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P10",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (2x^8 + 32x^2 - x - 4)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P11",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (2x^4 - x - 100)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P12",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (2x^4 - x - 100)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P13",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (5x^3 - 3x^2 + 4)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P14",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (5x^3 - 3x^2 + 4)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P15",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (-3x^2 + x)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P16",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (-3x^2 + x)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P17",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (7 - x^3)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P18",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (7 - x^3)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P19",
+     "type": "lim",
+     "text": "Find $lim[x->infty] (x^6 - x^7)$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "P20",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] (x^6 - x^7)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 1,
+     "explain": "Only the leading term matters."
+    },
+    {
+     "id": "R21",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R22",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R23",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{3x^3 + x - 1}{x^4 + 2x - 2}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R24",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{3x^3 + x - 1}{x^4 + 2x - 2}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R25",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{3x^5 + x - 1}{x^4 + 2x - 2}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R26",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{3x^5 + x - 1}{x^4 + 2x - 2}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R27",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{2x^6 - 1}{3x^3 + x - 7}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R28",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{2x^6 - 1}{3x^3 + x - 7}$.",
+     "answer": "-inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R29",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{-3x^4 - 2}{3x^4 + x}$.",
+     "answer": -1,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R30",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{-3x^4 - 2}{3x^4 + x}$.",
+     "answer": -1,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R31",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{-x^4 - 2x - 1}{3x^7 + x}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R32",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{-x^4 - 2x - 1}{3x^7 + x}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R33",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{4x^2 + 1}{2x^2 - 5}$.",
+     "answer": 2,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R34",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{4x^2 + 1}{2x^2 - 5}$.",
+     "answer": 2,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R35",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{5x - 3}{x + 1}$.",
+     "answer": 5,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R36",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{5x - 3}{x + 1}$.",
+     "answer": 5,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R37",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{x^3 + 1}{2x - 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R38",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{x^3 + 1}{2x - 1}$.",
+     "answer": "inf",
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R39",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{7x}{x^2 + 1}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R40",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{7x}{x^2 + 1}$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R41",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{3e^x + 4x - 1}{-5e^x - 2}$.",
+     "answer": -0.6,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R42",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{1 - x^2}{x^2 + x}$.",
+     "answer": -1,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "R43",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{1 - x^2}{x^2 + x}$.",
+     "answer": -1,
+     "label": "limit =",
+     "level": 2,
+     "explain": "Compare the leading terms of the top and bottom."
+    },
+    {
+     "id": "Q44",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{sqrt(3x^6 + x - 1)}{x^4 + 2x - 2}$. (A decimal is fine.)",
+     "answer": 0,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q45",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{sqrt(3x^6 + x - 1)}{x^4 + 2x - 2}$. (A decimal is fine.)",
+     "answer": 0,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q46",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{sqrt(3x^6 + x - 1)}{x^2 + 2x - 2}$. (A decimal is fine.)",
+     "answer": "inf",
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q47",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{sqrt(3x^6 + x - 1)}{x^2 + 2x - 2}$. (A decimal is fine.)",
+     "answer": "inf",
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q48",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{sqrt(3x - 1)}{x^2 + 2x - 2}$. (A decimal is fine.)",
+     "answer": 0,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q49",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{sqrt(3x^2 + 4)}{x + 6}$. (A decimal is fine.)",
+     "answer": 1.732051,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q50",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{sqrt(3x^2 + 4)}{x + 6}$. (A decimal is fine.)",
+     "answer": -1.732051,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q51",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{sqrt(4x^2 + 1)}{2x - 3}$. (A decimal is fine.)",
+     "answer": 1,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "Q52",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] frac{sqrt(4x^2 + 1)}{2x - 3}$. (A decimal is fine.)",
+     "answer": -1,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 3,
+     "explain": "$sqrt(x^2) = |x|$, which is $-x$ when $x$ is negative. Compare leading terms."
+    },
+    {
+     "id": "E53",
+     "type": "lim",
+     "text": "Find $lim[x->infty] e^x$.",
+     "answer": "inf",
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is inf."
+    },
+    {
+     "id": "E54",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] e^x$.",
+     "answer": 0,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is 0."
+    },
+    {
+     "id": "E55",
+     "type": "lim",
+     "text": "Find $lim[x->infty] e^(-x)$.",
+     "answer": 0,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is 0."
+    },
+    {
+     "id": "E56",
+     "type": "lim",
+     "text": "Find $lim[x->infty] ln(x)$.",
+     "answer": "inf",
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is inf."
+    },
+    {
+     "id": "E57",
+     "type": "lim",
+     "text": "Find $lim[x->infty] arctan(x)$. (A decimal is fine.)",
+     "answer": 1.570796,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is 1.570796."
+    },
+    {
+     "id": "E58",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] arctan(x)$. (A decimal is fine.)",
+     "answer": -1.570796,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is -1.570796."
+    },
+    {
+     "id": "E59",
+     "type": "lim",
+     "text": "Find $lim[x->infty] sin(x)$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "It keeps oscillating, so there is no limit."
+    },
+    {
+     "id": "E60",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] cos(x)$.",
+     "answer": "DNE",
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "It keeps oscillating, so there is no limit."
+    },
+    {
+     "id": "E61",
+     "type": "lim",
+     "text": "Find $lim[x->infty] frac{sin(x)}{x}$.",
+     "answer": 0,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is 0."
+    },
+    {
+     "id": "E62",
+     "type": "lim",
+     "text": "Find $lim[x->-infty] 2 + frac{1}{x}$.",
+     "answer": 2,
+     "label": "limit =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "The limit is 2."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "lim",
+    "text": "$f(x) = 2 + frac{1}{x}$. As $x$ gets huge (10, 100, 1000…), $f(x)$ is 2.1, 2.01, 2.001… Find $lim[x->infty] f(x)$.",
+    "answer": 2,
+    "label": "$lim[x->infty] f(x)$ =",
+    "hint": "What are the values closing in on?",
+    "explain": "$y = 2$ is a **horizontal asymptote**.",
+    "graph": "hyp"
+   },
+   {
+    "id": "L2",
+    "type": "lim",
+    "text": "Polynomials never level off: they go to $infty$ or $-infty$, and only the **leading term** matters. Find $lim[x->-infty] (x^3 + 2x - 1)$.",
+    "answer": "-inf",
+    "label": "limit =",
+    "hint": "$x^3$ for a huge negative $x$ is a huge negative number.",
+    "explain": "$-infty$"
+   },
+   {
+    "id": "L3",
+    "type": "lim",
+    "text": "Rational functions: compare leading terms. $lim[x->infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$ behaves like $frac{3x^2}{x^4} = frac{3}{x^2}$. So the limit is",
+    "answer": 0,
+    "label": "limit =",
+    "hint": "$frac{3}{x^2}$ when $x$ is huge.",
+    "explain": "Bottom wins: 0."
+   },
+   {
+    "id": "L4",
+    "type": "lim",
+    "text": "Same degree on top and bottom: $lim[x->infty] frac{-3x^4 - 2}{3x^4 + x}$ behaves like $frac{-3x^4}{3x^4}$.",
+    "answer": -1,
+    "label": "limit =",
+    "hint": "The $x^4$ cancels.",
+    "explain": "$-1$"
+   },
+   {
+    "id": "L5",
+    "type": "lim",
+    "text": "Top wins: $lim[x->infty] frac{2x^6 - 1}{3x^3 + x - 7}$ behaves like $frac{2x^6}{3x^3} = frac{2}{3}x^3$.",
+    "answer": "inf",
+    "label": "limit =",
+    "hint": "$frac{2}{3}x^3$ for huge $x$.",
+    "explain": "$infty$"
+   }
+  ]
+ }
+}

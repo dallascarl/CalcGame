@@ -1,0 +1,413 @@
+{
+ "id": "l-vasym",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Vertical Asymptotes",
+ "subtitle": "Review: where the bottom is 0 (and does not cancel).",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "A1",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x + 1}{x - 3}$.",
+     "answers": [
+      3
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 3$."
+    },
+    {
+     "id": "A2",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{2}{x^2 - 9}$.",
+     "answers": [
+      3,
+      -3
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 3$, $x = -3$."
+    },
+    {
+     "id": "A3",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x^2 - 4}{x - 2}$.",
+     "answers": [],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: none."
+    },
+    {
+     "id": "A4",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x}{x^2 + 1}$.",
+     "answers": [],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: none."
+    },
+    {
+     "id": "A5",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x - 1}{x^2 - x - 6}$.",
+     "answers": [
+      3,
+      -2
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 3$, $x = -2$."
+    },
+    {
+     "id": "A6",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x + 2}{x^2 - 4}$.",
+     "answers": [
+      2
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 2$."
+    },
+    {
+     "id": "A7",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{5}{x}$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 0$."
+    },
+    {
+     "id": "A8",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x^2}{(x - 1)^2}$.",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 1$."
+    },
+    {
+     "id": "A9",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x + 3}{x^2 + 5x + 6}$.",
+     "answers": [
+      -2
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = -2$."
+    },
+    {
+     "id": "A10",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{1}{x^2 - 5x}$.",
+     "answers": [
+      0,
+      5
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 0$, $x = 5$."
+    },
+    {
+     "id": "A11",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{3x}{2x - 1}$.",
+     "answers": [
+      0.5
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 0.5$."
+    },
+    {
+     "id": "A12",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x^2 + 1}{x^3 - x}$.",
+     "answers": [
+      0,
+      1,
+      -1
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 0$, $x = 1$, $x = -1$."
+    },
+    {
+     "id": "A13",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x - 4}{x^2 - 16}$.",
+     "answers": [
+      -4
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = -4$."
+    },
+    {
+     "id": "A14",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{1}{x^2 + 4}$.",
+     "answers": [],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: none."
+    },
+    {
+     "id": "A15",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{2x + 6}{x + 3}$.",
+     "answers": [],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 2,
+     "explain": "Bottom = 0 and the factor does not cancel: none."
+    },
+    {
+     "id": "A16",
+     "type": "crit",
+     "text": "List every vertical asymptote of $f(x) = frac{x}{x^2 - 2x + 1}$.",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "Asymptote at $x$ =",
+     "noneText": "There are none",
+     "level": 1,
+     "explain": "Bottom = 0 and the factor does not cancel: $x = 1$."
+    },
+    {
+     "id": "H17",
+     "type": "mc",
+     "text": "At $x = 2$, does $f(x) = frac{x^2 - 4}{x - 2}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor cancels: a hole."
+    },
+    {
+     "id": "H18",
+     "type": "mc",
+     "text": "At $x = 3$, does $f(x) = frac{x + 1}{x - 3}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor stays on the bottom: an asymptote."
+    },
+    {
+     "id": "H19",
+     "type": "mc",
+     "text": "At $x = -1$, does $f(x) = frac{x^2 - 1}{x + 1}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor cancels: a hole."
+    },
+    {
+     "id": "H20",
+     "type": "mc",
+     "text": "At $x = 3$, does $f(x) = frac{x}{x^2 - 9}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor stays on the bottom: an asymptote."
+    },
+    {
+     "id": "H21",
+     "type": "mc",
+     "text": "At $x = 5$, does $f(x) = frac{x - 5}{x^2 - 25}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor cancels: a hole."
+    },
+    {
+     "id": "H22",
+     "type": "mc",
+     "text": "At $x = -5$, does $f(x) = frac{x - 5}{x^2 - 25}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor stays on the bottom: an asymptote."
+    },
+    {
+     "id": "H23",
+     "type": "mc",
+     "text": "At $x = 0$, does $f(x) = frac{x^2 + x}{x}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor cancels: a hole."
+    },
+    {
+     "id": "H24",
+     "type": "mc",
+     "text": "At $x = 2$, does $f(x) = frac{1}{(x - 2)^2}$ have a hole or a vertical asymptote?",
+     "options": [
+      "a hole",
+      "a vertical asymptote"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "The factor stays on the bottom: an asymptote."
+    },
+    {
+     "id": "Z25",
+     "type": "num",
+     "text": "Solve $2x - 6 = 0$.",
+     "answer": 3,
+     "label": "$x$ =",
+     "level": 1,
+     "explain": "$x = 3$"
+    },
+    {
+     "id": "Z26",
+     "type": "num",
+     "text": "Solve $x + 7 = 0$.",
+     "answer": -7,
+     "label": "$x$ =",
+     "level": 1,
+     "explain": "$x = -7$"
+    },
+    {
+     "id": "Z27",
+     "type": "num",
+     "text": "Solve $4x + 2 = 0$.",
+     "answer": -0.5,
+     "label": "$x$ =",
+     "level": 1,
+     "explain": "$x = -1/2$"
+    },
+    {
+     "id": "Z28",
+     "type": "num",
+     "text": "Solve $3x = 0$.",
+     "answer": 0,
+     "label": "$x$ =",
+     "level": 1,
+     "explain": "$x = 0$"
+    },
+    {
+     "id": "Z29",
+     "type": "num",
+     "text": "Solve $5 - x = 0$.",
+     "answer": 5,
+     "label": "$x$ =",
+     "level": 1,
+     "explain": "$x = 5$"
+    },
+    {
+     "id": "Z30",
+     "type": "num",
+     "text": "Solve $6x - 4 = 0$.",
+     "answer": 0.666667,
+     "label": "$x$ =",
+     "level": 1,
+     "explain": "$x = 2/3$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "A rational function has a **vertical asymptote** where the bottom is 0 and the top is not. Where is the vertical asymptote of $f(x) = frac{x + 1}{x - 3}$?",
+    "options": [
+     "$x = 3$",
+     "$x = -1$",
+     "$x = 1$",
+     "there is none"
+    ],
+    "answer": 0,
+    "hint": "Set the bottom equal to 0.",
+    "explain": "$x - 3 = 0$ at $x = 3$, and the top is 4 there."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "Careful: $f(x) = frac{x^2 - 4}{x - 2}$ has bottom 0 at $x = 2$, but the top is 0 too. It cancels to $x + 2$. So at $x = 2$ there is",
+    "options": [
+     "a hole, not an asymptote",
+     "a vertical asymptote",
+     "a jump",
+     "nothing at all"
+    ],
+    "answer": 0,
+    "hint": "Does the $(x - 2)$ cancel?",
+    "explain": "Canceled factors make holes. Only factors left on the bottom make asymptotes."
+   }
+  ]
+ },
+ "lessonOptional": true
+}

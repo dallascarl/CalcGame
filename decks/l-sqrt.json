@@ -1,0 +1,1227 @@
+{
+ "id": "l-sqrt",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Limits with Square Roots",
+ "subtitle": "Multiply by the conjugate.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "The conjugate of $sqrt(x) - 5$ is",
+     "options": [
+      "$sqrt(x) + 5$",
+      "$-sqrt(x) - 5$",
+      "$sqrt(x) - 5$",
+      "$x - 25$"
+     ],
+     "answer": 0,
+     "explain": "Flip the sign between the terms."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$(sqrt(a) - b)(sqrt(a) + b) =$",
+     "options": [
+      "$a - b^2$",
+      "$a + b^2$",
+      "$sqrt(a) - b^2$",
+      "$a^2 - b^2$"
+     ],
+     "answer": 0,
+     "explain": "Difference of squares; the root disappears."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "After multiplying by the conjugate, you should multiply out the bottom too.",
+     "answer": false,
+     "explain": "Leave the bottom factored so the bad factor can cancel."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "When do you reach for the conjugate?",
+     "options": [
+      "$frac{0}{0}$ with a square root in it",
+      "whenever there is a fraction",
+      "when plugging in gives a number",
+      "for trig limits"
+     ],
+     "answer": 0,
+     "explain": "It is the square-root trick for $frac{0}{0}$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "C1",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x + 2) - 1}{x + 1}$ by?",
+     "options": [
+      "$sqrt(x + 2) + 1$",
+      "$sqrt(x + 2) - 1$",
+      "$x + 1$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x + 2) + 1$."
+    },
+    {
+     "id": "U2",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 2) - 1)(sqrt(x + 2) + 1)$.",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x + 1$",
+     "level": 2,
+     "explain": "$= x + 1$"
+    },
+    {
+     "id": "C3",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x) - 2}{x - 4}$ by?",
+     "options": [
+      "$sqrt(x) + 2$",
+      "$sqrt(x) - 2$",
+      "$x - 4$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x) + 2$."
+    },
+    {
+     "id": "U4",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x) - 2)(sqrt(x) + 2)$.",
+     "answer": "x - 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x - 4$",
+     "level": 2,
+     "explain": "$= x - 4$"
+    },
+    {
+     "id": "C5",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x + 5) - 3}{x - 4}$ by?",
+     "options": [
+      "$sqrt(x + 5) + 3$",
+      "$sqrt(x + 5) - 3$",
+      "$x - 4$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x + 5) + 3$."
+    },
+    {
+     "id": "U6",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 5) - 3)(sqrt(x + 5) + 3)$.",
+     "answer": "x - 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x - 4$",
+     "level": 2,
+     "explain": "$= x - 4$"
+    },
+    {
+     "id": "C7",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x^2 + 9) - 3}{x^2}$ by?",
+     "options": [
+      "$sqrt(x^2 + 9) + 3$",
+      "$sqrt(x^2 + 9) - 3$",
+      "$x^2$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x^2 + 9) + 3$."
+    },
+    {
+     "id": "U8",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$.",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x^2$",
+     "level": 2,
+     "explain": "$= x^2$"
+    },
+    {
+     "id": "C9",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x + 1) - 1}{x}$ by?",
+     "options": [
+      "$sqrt(x + 1) + 1$",
+      "$sqrt(x + 1) - 1$",
+      "$x$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x + 1) + 1$."
+    },
+    {
+     "id": "U10",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 1) - 1)(sqrt(x + 1) + 1)$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x$",
+     "level": 2,
+     "explain": "$= x$"
+    },
+    {
+     "id": "C11",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{3 - sqrt(x)}{9 - x}$ by?",
+     "options": [
+      "$3 + sqrt(x)$",
+      "$3 - sqrt(x)$",
+      "$9 - x$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $3 + sqrt(x)$."
+    },
+    {
+     "id": "U12",
+     "type": "expr",
+     "text": "Multiply out $(3 - sqrt(x))(3 + sqrt(x))$.",
+     "answer": "9 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$9 - x$",
+     "level": 2,
+     "explain": "$= 9 - x$"
+    },
+    {
+     "id": "C13",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(4 + x) - 2}{x}$ by?",
+     "options": [
+      "$sqrt(4 + x) + 2$",
+      "$sqrt(4 + x) - 2$",
+      "$x$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(4 + x) + 2$."
+    },
+    {
+     "id": "U14",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(4 + x) - 2)(sqrt(4 + x) + 2)$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x$",
+     "level": 2,
+     "explain": "$= x$"
+    },
+    {
+     "id": "C15",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x) - 1}{x - 1}$ by?",
+     "options": [
+      "$sqrt(x) + 1$",
+      "$sqrt(x) - 1$",
+      "$x - 1$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x) + 1$."
+    },
+    {
+     "id": "U16",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x) - 1)(sqrt(x) + 1)$.",
+     "answer": "x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x - 1$",
+     "level": 2,
+     "explain": "$= x - 1$"
+    },
+    {
+     "id": "C17",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(2x + 1) - 3}{x - 4}$ by?",
+     "options": [
+      "$sqrt(2x + 1) + 3$",
+      "$sqrt(2x + 1) - 3$",
+      "$x - 4$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(2x + 1) + 3$."
+    },
+    {
+     "id": "U18",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(2x + 1) - 3)(sqrt(2x + 1) + 3)$.",
+     "answer": "2x - 8",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$2x - 8$",
+     "level": 2,
+     "explain": "$= 2x - 8$"
+    },
+    {
+     "id": "C19",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x + 7) - 3}{x - 2}$ by?",
+     "options": [
+      "$sqrt(x + 7) + 3$",
+      "$sqrt(x + 7) - 3$",
+      "$x - 2$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x + 7) + 3$."
+    },
+    {
+     "id": "U20",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 7) - 3)(sqrt(x + 7) + 3)$.",
+     "answer": "x - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x - 2$",
+     "level": 2,
+     "explain": "$= x - 2$"
+    },
+    {
+     "id": "C21",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{sqrt(x + 9) - 3}{x}$ by?",
+     "options": [
+      "$sqrt(x + 9) + 3$",
+      "$sqrt(x + 9) - 3$",
+      "$x$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $sqrt(x + 9) + 3$."
+    },
+    {
+     "id": "U22",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 9) - 3)(sqrt(x + 9) + 3)$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$x$",
+     "level": 2,
+     "explain": "$= x$"
+    },
+    {
+     "id": "C23",
+     "type": "mc",
+     "text": "What do you multiply top and bottom of $frac{2 - sqrt(x + 3)}{x - 1}$ by?",
+     "options": [
+      "$2 + sqrt(x + 3)$",
+      "$2 - sqrt(x + 3)$",
+      "$x - 1$",
+      "$sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "The conjugate $2 + sqrt(x + 3)$."
+    },
+    {
+     "id": "U24",
+     "type": "expr",
+     "text": "Multiply out $(2 - sqrt(x + 3))(2 + sqrt(x + 3))$.",
+     "answer": "1 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "top =",
+     "ranges": {
+      "x": [
+       1.2,
+       3
+      ]
+     },
+     "show": "$1 - x$",
+     "level": 2,
+     "explain": "$= 1 - x$"
+    },
+    {
+     "id": "W25",
+     "type": "steps",
+     "text": "Find $lim[x->-1] frac{sqrt(x + 2) - 1}{x + 1}$.",
+     "steps": [
+      {
+       "id": "W25.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x + 2) + 1$. The top becomes",
+       "answer": "x + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x + 1$",
+       "work": "$frac{x + 1}{(x + 1)(sqrt(x + 2) + 1)}$"
+      },
+      {
+       "id": "W25.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x + 2) + 1}$",
+        "$sqrt(x + 2) + 1$",
+        "$frac{x + 1}{sqrt(x + 2) + 1}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x + 2) + 1}$"
+      },
+      {
+       "id": "W25.3",
+       "type": "lim",
+       "text": "Plug in $x = -1$.",
+       "answer": 0.5,
+       "label": "limit =",
+       "work": "limit $= 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/2"
+    },
+    {
+     "id": "W26",
+     "type": "steps",
+     "text": "Find $lim[x->4] frac{sqrt(x) - 2}{x - 4}$.",
+     "steps": [
+      {
+       "id": "W26.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x) + 2$. The top becomes",
+       "answer": "x - 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x - 4$",
+       "work": "$frac{x - 4}{(x - 4)(sqrt(x) + 2)}$"
+      },
+      {
+       "id": "W26.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x) + 2}$",
+        "$sqrt(x) + 2$",
+        "$frac{x - 4}{sqrt(x) + 2}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x) + 2}$"
+      },
+      {
+       "id": "W26.3",
+       "type": "lim",
+       "text": "Plug in $x = 4$.",
+       "answer": 0.25,
+       "label": "limit =",
+       "work": "limit $= 1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/4"
+    },
+    {
+     "id": "W27",
+     "type": "steps",
+     "text": "Find $lim[x->4] frac{sqrt(x + 5) - 3}{x - 4}$.",
+     "steps": [
+      {
+       "id": "W27.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x + 5) + 3$. The top becomes",
+       "answer": "x - 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x - 4$",
+       "work": "$frac{x - 4}{(x - 4)(sqrt(x + 5) + 3)}$"
+      },
+      {
+       "id": "W27.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x + 5) + 3}$",
+        "$sqrt(x + 5) + 3$",
+        "$frac{x - 4}{sqrt(x + 5) + 3}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x + 5) + 3}$"
+      },
+      {
+       "id": "W27.3",
+       "type": "lim",
+       "text": "Plug in $x = 4$.",
+       "answer": 0.166667,
+       "label": "limit =",
+       "work": "limit $= 1/6$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/6"
+    },
+    {
+     "id": "W28",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{sqrt(x^2 + 9) - 3}{x^2}$.",
+     "steps": [
+      {
+       "id": "W28.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x^2 + 9) + 3$. The top becomes",
+       "answer": "x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x^2$",
+       "work": "$frac{x^2}{(x^2)(sqrt(x^2 + 9) + 3)}$"
+      },
+      {
+       "id": "W28.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x^2 + 9) + 3}$",
+        "$sqrt(x^2 + 9) + 3$",
+        "$frac{x^2}{sqrt(x^2 + 9) + 3}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x^2 + 9) + 3}$"
+      },
+      {
+       "id": "W28.3",
+       "type": "lim",
+       "text": "Plug in $x = 0$.",
+       "answer": 0.166667,
+       "label": "limit =",
+       "work": "limit $= 1/6$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/6"
+    },
+    {
+     "id": "W29",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{sqrt(x + 1) - 1}{x}$.",
+     "steps": [
+      {
+       "id": "W29.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x + 1) + 1$. The top becomes",
+       "answer": "x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x$",
+       "work": "$frac{x}{(x)(sqrt(x + 1) + 1)}$"
+      },
+      {
+       "id": "W29.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x + 1) + 1}$",
+        "$sqrt(x + 1) + 1$",
+        "$frac{x}{sqrt(x + 1) + 1}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x + 1) + 1}$"
+      },
+      {
+       "id": "W29.3",
+       "type": "lim",
+       "text": "Plug in $x = 0$.",
+       "answer": 0.5,
+       "label": "limit =",
+       "work": "limit $= 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/2"
+    },
+    {
+     "id": "W30",
+     "type": "steps",
+     "text": "Find $lim[x->9] frac{3 - sqrt(x)}{9 - x}$.",
+     "steps": [
+      {
+       "id": "W30.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $3 + sqrt(x)$. The top becomes",
+       "answer": "9 - x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$9 - x$",
+       "work": "$frac{9 - x}{(9 - x)(3 + sqrt(x))}$"
+      },
+      {
+       "id": "W30.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{3 + sqrt(x)}$",
+        "$3 + sqrt(x)$",
+        "$frac{9 - x}{3 + sqrt(x)}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{3 + sqrt(x)}$"
+      },
+      {
+       "id": "W30.3",
+       "type": "lim",
+       "text": "Plug in $x = 9$.",
+       "answer": 0.166667,
+       "label": "limit =",
+       "work": "limit $= 1/6$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/6"
+    },
+    {
+     "id": "W31",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{sqrt(4 + x) - 2}{x}$.",
+     "steps": [
+      {
+       "id": "W31.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(4 + x) + 2$. The top becomes",
+       "answer": "x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x$",
+       "work": "$frac{x}{(x)(sqrt(4 + x) + 2)}$"
+      },
+      {
+       "id": "W31.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(4 + x) + 2}$",
+        "$sqrt(4 + x) + 2$",
+        "$frac{x}{sqrt(4 + x) + 2}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(4 + x) + 2}$"
+      },
+      {
+       "id": "W31.3",
+       "type": "lim",
+       "text": "Plug in $x = 0$.",
+       "answer": 0.25,
+       "label": "limit =",
+       "work": "limit $= 1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/4"
+    },
+    {
+     "id": "W32",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{sqrt(x) - 1}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W32.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x) + 1$. The top becomes",
+       "answer": "x - 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x - 1$",
+       "work": "$frac{x - 1}{(x - 1)(sqrt(x) + 1)}$"
+      },
+      {
+       "id": "W32.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x) + 1}$",
+        "$sqrt(x) + 1$",
+        "$frac{x - 1}{sqrt(x) + 1}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x) + 1}$"
+      },
+      {
+       "id": "W32.3",
+       "type": "lim",
+       "text": "Plug in $x = 1$.",
+       "answer": 0.5,
+       "label": "limit =",
+       "work": "limit $= 1/2$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/2"
+    },
+    {
+     "id": "W33",
+     "type": "steps",
+     "text": "Find $lim[x->4] frac{sqrt(2x + 1) - 3}{x - 4}$.",
+     "steps": [
+      {
+       "id": "W33.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(2x + 1) + 3$. The top becomes",
+       "answer": "2x - 8",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$2x - 8$",
+       "work": "$frac{2x - 8}{(x - 4)(sqrt(2x + 1) + 3)}$"
+      },
+      {
+       "id": "W33.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{2}{sqrt(2x + 1) + 3}$",
+        "$sqrt(2x + 1) + 3$",
+        "$frac{x - 4}{sqrt(2x + 1) + 3}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{2}{sqrt(2x + 1) + 3}$"
+      },
+      {
+       "id": "W33.3",
+       "type": "lim",
+       "text": "Plug in $x = 4$.",
+       "answer": 0.333333,
+       "label": "limit =",
+       "work": "limit $= 1/3$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/3"
+    },
+    {
+     "id": "W34",
+     "type": "steps",
+     "text": "Find $lim[x->2] frac{sqrt(x + 7) - 3}{x - 2}$.",
+     "steps": [
+      {
+       "id": "W34.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x + 7) + 3$. The top becomes",
+       "answer": "x - 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x - 2$",
+       "work": "$frac{x - 2}{(x - 2)(sqrt(x + 7) + 3)}$"
+      },
+      {
+       "id": "W34.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x + 7) + 3}$",
+        "$sqrt(x + 7) + 3$",
+        "$frac{x - 2}{sqrt(x + 7) + 3}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x + 7) + 3}$"
+      },
+      {
+       "id": "W34.3",
+       "type": "lim",
+       "text": "Plug in $x = 2$.",
+       "answer": 0.166667,
+       "label": "limit =",
+       "work": "limit $= 1/6$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/6"
+    },
+    {
+     "id": "W35",
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{sqrt(x + 9) - 3}{x}$.",
+     "steps": [
+      {
+       "id": "W35.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $sqrt(x + 9) + 3$. The top becomes",
+       "answer": "x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$x$",
+       "work": "$frac{x}{(x)(sqrt(x + 9) + 3)}$"
+      },
+      {
+       "id": "W35.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{1}{sqrt(x + 9) + 3}$",
+        "$sqrt(x + 9) + 3$",
+        "$frac{x}{sqrt(x + 9) + 3}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{1}{sqrt(x + 9) + 3}$"
+      },
+      {
+       "id": "W35.3",
+       "type": "lim",
+       "text": "Plug in $x = 0$.",
+       "answer": 0.166667,
+       "label": "limit =",
+       "work": "limit $= 1/6$"
+      }
+     ],
+     "level": 3,
+     "explain": "1/6"
+    },
+    {
+     "id": "W36",
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{2 - sqrt(x + 3)}{x - 1}$.",
+     "steps": [
+      {
+       "id": "W36.1",
+       "type": "expr",
+       "text": "Multiply top and bottom by $2 + sqrt(x + 3)$. The top becomes",
+       "answer": "1 - x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         1.2,
+         3
+        ]
+       },
+       "show": "$1 - x$",
+       "work": "$frac{1 - x}{(x - 1)(2 + sqrt(x + 3))}$"
+      },
+      {
+       "id": "W36.2",
+       "type": "mc",
+       "text": "Cancel. What is left?",
+       "options": [
+        "$frac{-1}{2 + sqrt(x + 3)}$",
+        "$2 + sqrt(x + 3)$",
+        "$frac{x - 1}{2 + sqrt(x + 3)}$",
+        "0"
+       ],
+       "answer": 0,
+       "work": "$= frac{-1}{2 + sqrt(x + 3)}$"
+      },
+      {
+       "id": "W36.3",
+       "type": "lim",
+       "text": "Plug in $x = 1$.",
+       "answer": -0.25,
+       "label": "limit =",
+       "work": "limit $= -1/4$"
+      }
+     ],
+     "level": 3,
+     "explain": "-1/4"
+    },
+    {
+     "id": "D37",
+     "type": "lim",
+     "text": "Find $lim[x->1] frac{sqrt(x + 3)}{x}$. (Check first: is it even $frac{0}{0}$?)",
+     "answer": 2,
+     "label": "limit =",
+     "level": 2,
+     "explain": "No $frac{0}{0}$ here. Just plug in: 2."
+    },
+    {
+     "id": "D38",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{sqrt(x) + 2}{x + 1}$. (Check first: is it even $frac{0}{0}$?)",
+     "answer": 0.8,
+     "label": "limit =",
+     "level": 2,
+     "explain": "No $frac{0}{0}$ here. Just plug in: 4/5."
+    },
+    {
+     "id": "D39",
+     "type": "lim",
+     "text": "Find $lim[x->4] frac{sqrt(2x + 1)}{x - 1}$. (Check first: is it even $frac{0}{0}$?)",
+     "answer": 1,
+     "label": "limit =",
+     "level": 2,
+     "explain": "No $frac{0}{0}$ here. Just plug in: 1."
+    },
+    {
+     "id": "D40",
+     "type": "lim",
+     "text": "Find $lim[x->3] frac{sqrt(x^2 + 7)}{x}$. (Check first: is it even $frac{0}{0}$?)",
+     "answer": 1.333333,
+     "label": "limit =",
+     "level": 2,
+     "explain": "No $frac{0}{0}$ here. Just plug in: 4/3."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Find $lim[x->-1] frac{sqrt(x + 2) - 1}{x + 1}$. Plugging in gives $frac{0}{0}$, and there is a square root. Multiply top and bottom by the **conjugate** of the top, which is",
+    "options": [
+     "$sqrt(x + 2) + 1$",
+     "$sqrt(x + 2) - 1$",
+     "$x + 1$",
+     "$sqrt(x + 2)$"
+    ],
+    "answer": 0,
+    "hint": "Flip the sign in the middle.",
+    "explain": "$(a - b)(a + b) = a^2 - b^2$ gets rid of the root."
+   },
+   {
+    "id": "L2",
+    "type": "steps",
+    "text": "Finish $lim[x->-1] frac{sqrt(x + 2) - 1}{x + 1}$.",
+    "steps": [
+     {
+      "id": "L2.1",
+      "type": "expr",
+      "text": "Multiply out the top: $(sqrt(x + 2) - 1)(sqrt(x + 2) + 1)$.",
+      "answer": "x + 1",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sqrt("
+      ],
+      "label": "top =",
+      "show": "$x + 1$",
+      "hint": "$(x + 2) - 1$",
+      "work": "$frac{x + 1}{(x + 1)(sqrt(x + 2) + 1)}$"
+     },
+     {
+      "id": "L2.2",
+      "type": "mc",
+      "text": "Cancel the $(x + 1)$. (Do not multiply out the bottom!) What is left?",
+      "options": [
+       "$frac{1}{sqrt(x + 2) + 1}$",
+       "$sqrt(x + 2) + 1$",
+       "$frac{x + 1}{sqrt(x + 2)}$",
+       "$1$"
+      ],
+      "answer": 0,
+      "hint": "The top was $x + 1$.",
+      "work": "$= frac{1}{sqrt(x + 2) + 1}$"
+     },
+     {
+      "id": "L2.3",
+      "type": "lim",
+      "text": "Plug in $x = -1$.",
+      "answer": 0.5,
+      "label": "limit =",
+      "hint": "$frac{1}{sqrt(1) + 1}$",
+      "work": "limit $= frac{1}{2}$"
+     }
+    ]
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "From class: a calculator falls apart on $frac{sqrt(x^2 + 9) - 3}{x^2}$ near 0 (round-off error). The conjugate gets the exact answer. Which conjugate?",
+    "options": [
+     "$sqrt(x^2 + 9) + 3$",
+     "$sqrt(x^2 + 9) - 3$",
+     "$x^2 + 3$",
+     "$sqrt(x^2) + 3$"
+    ],
+    "answer": 0,
+    "hint": "Same as before: flip the middle sign.",
+    "explain": "It simplifies to $frac{1}{sqrt(x^2 + 9) + 3} -> frac{1}{6}$."
+   }
+  ]
+ }
+}

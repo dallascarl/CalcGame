@@ -2862,12 +2862,12 @@
      "topic": "Log. differentiation"
     },
     {
-     "id": "INVW32",
+     "id": "INVW41",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(e^x)$.",
      "steps": [
       {
-       "id": "INVW32.1",
+       "id": "INVW41.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + e^(2x))",
@@ -2892,7 +2892,7 @@
        "work": "outside: $frac{1}{1 + e^(2x)}$"
       },
       {
-       "id": "INVW32.2",
+       "id": "INVW41.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "e^x",
@@ -2917,7 +2917,7 @@
        "work": "inside: $e^x$"
       },
       {
-       "id": "INVW32.3",
+       "id": "INVW41.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(e^x)(1/(1 + e^(2x)))",
@@ -2946,12 +2946,12 @@
      "topic": "Inverse trig"
     },
     {
-     "id": "INVW36",
+     "id": "INVW45",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(x^3)$.",
      "steps": [
       {
-       "id": "INVW36.1",
+       "id": "INVW45.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + x^6)",
@@ -2976,7 +2976,7 @@
        "work": "outside: $frac{1}{1 + x^6}$"
       },
       {
-       "id": "INVW36.2",
+       "id": "INVW45.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "3x^2",
@@ -3001,7 +3001,7 @@
        "work": "inside: $3x^2$"
       },
       {
-       "id": "INVW36.3",
+       "id": "INVW45.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "(3x^2)(1/(1 + x^6))",
@@ -3030,7 +3030,7 @@
      "topic": "Inverse trig"
     },
     {
-     "id": "INVS57",
+     "id": "INVS66",
      "type": "num",
      "text": "Find the slope of $y = arcsin(x)$ at $x = 0.5$. (A decimal is fine.)",
      "answer": 1.154701,
@@ -3040,7 +3040,7 @@
      "topic": "Inverse trig"
     },
     {
-     "id": "INVC41",
+     "id": "INVC50",
      "type": "expr",
      "text": "Find the derivative of $f(x) = e^xarctan(x)$.",
      "answer": "e^xarctan(x) + e^x/(1 + x^2)",
@@ -3067,12 +3067,12 @@
      "topic": "Inverse trig"
     },
     {
-     "id": "INVW35",
+     "id": "INVW44",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arccos(3x)$.",
      "steps": [
       {
-       "id": "INVW35.1",
+       "id": "INVW44.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "-1/sqrt(1 - 9x^2)",
@@ -3097,7 +3097,7 @@
        "work": "outside: $-frac{1}{sqrt(1 - 9x^2)}$"
       },
       {
-       "id": "INVW35.2",
+       "id": "INVW44.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "3",
@@ -3122,7 +3122,7 @@
        "work": "inside: $3$"
       },
       {
-       "id": "INVW35.3",
+       "id": "INVW44.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "3(-1/sqrt(1 - 9x^2))",
@@ -3151,12 +3151,12 @@
      "topic": "Inverse trig"
     },
     {
-     "id": "INVW30",
+     "id": "INVW39",
      "type": "steps",
      "text": "Find the derivative of $f(x) = arctan(3x)$.",
      "steps": [
       {
-       "id": "INVW30.1",
+       "id": "INVW39.1",
        "type": "expr",
        "text": "Derivative of the outside, with the inside left alone.",
        "answer": "1/(1 + 9x^2)",
@@ -3181,7 +3181,7 @@
        "work": "outside: $frac{1}{1 + 9x^2}$"
       },
       {
-       "id": "INVW30.2",
+       "id": "INVW39.2",
        "type": "expr",
        "text": "Derivative of the inside.",
        "answer": "3",
@@ -3206,7 +3206,7 @@
        "work": "inside: $3$"
       },
       {
-       "id": "INVW30.3",
+       "id": "INVW39.3",
        "type": "expr",
        "text": "Multiply.",
        "answer": "3(1/(1 + 9x^2))",
@@ -3235,7 +3235,7 @@
      "topic": "Inverse trig"
     },
     {
-     "id": "INVF22",
+     "id": "INVF31",
      "type": "expr",
      "text": "$f(x) = arctan(sqrt(x))$. Fill in the derivative of the inside.",
      "answer": "1/(2sqrt(x))",

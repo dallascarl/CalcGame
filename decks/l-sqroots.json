@@ -1,0 +1,520 @@
+{
+ "id": "l-sqroots",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "Square Roots",
+ "subtitle": "Review: simplify roots and use conjugates.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "S1",
+     "type": "expr",
+     "text": "Simplify $sqrt(50)$.",
+     "answer": "5sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(50)$ =",
+     "show": "$5sqrt(2)$",
+     "level": 1,
+     "explain": "$5sqrt(2)$"
+    },
+    {
+     "id": "S2",
+     "type": "expr",
+     "text": "Simplify $sqrt(12)$.",
+     "answer": "2sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(12)$ =",
+     "show": "$2sqrt(3)$",
+     "level": 1,
+     "explain": "$2sqrt(3)$"
+    },
+    {
+     "id": "S3",
+     "type": "expr",
+     "text": "Simplify $sqrt(18)$.",
+     "answer": "3sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(18)$ =",
+     "show": "$3sqrt(2)$",
+     "level": 1,
+     "explain": "$3sqrt(2)$"
+    },
+    {
+     "id": "S4",
+     "type": "expr",
+     "text": "Simplify $sqrt(75)$.",
+     "answer": "5sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(75)$ =",
+     "show": "$5sqrt(3)$",
+     "level": 1,
+     "explain": "$5sqrt(3)$"
+    },
+    {
+     "id": "S5",
+     "type": "expr",
+     "text": "Simplify $sqrt(8)$.",
+     "answer": "2sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(8)$ =",
+     "show": "$2sqrt(2)$",
+     "level": 1,
+     "explain": "$2sqrt(2)$"
+    },
+    {
+     "id": "S6",
+     "type": "expr",
+     "text": "Simplify $sqrt(48)$.",
+     "answer": "4sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(48)$ =",
+     "show": "$4sqrt(3)$",
+     "level": 1,
+     "explain": "$4sqrt(3)$"
+    },
+    {
+     "id": "S7",
+     "type": "expr",
+     "text": "Simplify $sqrt(200)$.",
+     "answer": "10sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(200)$ =",
+     "show": "$10sqrt(2)$",
+     "level": 1,
+     "explain": "$10sqrt(2)$"
+    },
+    {
+     "id": "S8",
+     "type": "expr",
+     "text": "Simplify $sqrt(27)$.",
+     "answer": "3sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(27)$ =",
+     "show": "$3sqrt(3)$",
+     "level": 1,
+     "explain": "$3sqrt(3)$"
+    },
+    {
+     "id": "S9",
+     "type": "expr",
+     "text": "Simplify $sqrt(98)$.",
+     "answer": "7sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(98)$ =",
+     "show": "$7sqrt(2)$",
+     "level": 1,
+     "explain": "$7sqrt(2)$"
+    },
+    {
+     "id": "S10",
+     "type": "expr",
+     "text": "Simplify $sqrt(45)$.",
+     "answer": "3sqrt(5)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sqrt(45)$ =",
+     "show": "$3sqrt(5)$",
+     "level": 1,
+     "explain": "$3sqrt(5)$"
+    },
+    {
+     "id": "R11",
+     "type": "expr",
+     "text": "Rationalize: write $frac{1}{sqrt(2)}$ with no root on the bottom.",
+     "answer": "sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "answer =",
+     "show": "$frac{sqrt(2)}{2}$",
+     "level": 2,
+     "explain": "Multiply top and bottom by the root: $frac{sqrt(2)}{2}$."
+    },
+    {
+     "id": "R12",
+     "type": "expr",
+     "text": "Rationalize: write $frac{6}{sqrt(3)}$ with no root on the bottom.",
+     "answer": "2sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "answer =",
+     "show": "$2sqrt(3)$",
+     "level": 2,
+     "explain": "Multiply top and bottom by the root: $2sqrt(3)$."
+    },
+    {
+     "id": "R13",
+     "type": "expr",
+     "text": "Rationalize: write $frac{4}{sqrt(8)}$ with no root on the bottom.",
+     "answer": "sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "answer =",
+     "show": "$sqrt(2)$",
+     "level": 2,
+     "explain": "Multiply top and bottom by the root: $sqrt(2)$."
+    },
+    {
+     "id": "R14",
+     "type": "expr",
+     "text": "Rationalize: write $frac{10}{sqrt(5)}$ with no root on the bottom.",
+     "answer": "2sqrt(5)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "answer =",
+     "show": "$2sqrt(5)$",
+     "level": 2,
+     "explain": "Multiply top and bottom by the root: $2sqrt(5)$."
+    },
+    {
+     "id": "R15",
+     "type": "expr",
+     "text": "Rationalize: write $frac{3}{sqrt(6)}$ with no root on the bottom.",
+     "answer": "sqrt(6)/2",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "answer =",
+     "show": "$frac{sqrt(6)}{2}$",
+     "level": 2,
+     "explain": "Multiply top and bottom by the root: $frac{sqrt(6)}{2}$."
+    },
+    {
+     "id": "R16",
+     "type": "expr",
+     "text": "Rationalize: write $frac{1}{sqrt(3)}$ with no root on the bottom.",
+     "answer": "sqrt(3)/3",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "answer =",
+     "show": "$frac{sqrt(3)}{3}$",
+     "level": 2,
+     "explain": "Multiply top and bottom by the root: $frac{sqrt(3)}{3}$."
+    },
+    {
+     "id": "C17",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x) - 3)(sqrt(x) + 3)$.",
+     "answer": "x - 9",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$x - 9$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = x - 9$"
+    },
+    {
+     "id": "C18",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 2) - 1)(sqrt(x + 2) + 1)$.",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$x + 1$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = x + 1$"
+    },
+    {
+     "id": "C19",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x) - 5)(sqrt(x) + 5)$.",
+     "answer": "x - 25",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$x - 25$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = x - 25$"
+    },
+    {
+     "id": "C20",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x + 5) - 3)(sqrt(x + 5) + 3)$.",
+     "answer": "x - 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$x - 4$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = x - 4$"
+    },
+    {
+     "id": "C21",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(2x + 1) - 3)(sqrt(2x + 1) + 3)$.",
+     "answer": "2x - 8",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$2x - 8$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = 2x - 8$"
+    },
+    {
+     "id": "C22",
+     "type": "expr",
+     "text": "Multiply out $(2 - sqrt(x + 3))(2 + sqrt(x + 3))$.",
+     "answer": "1 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$1 - x$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = 1 - x$"
+    },
+    {
+     "id": "C23",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$.",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$x^2$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = x^2$"
+    },
+    {
+     "id": "C24",
+     "type": "expr",
+     "text": "Multiply out $(sqrt(x) - sqrt(2))(sqrt(x) + sqrt(2))$.",
+     "answer": "x - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "ranges": {
+      "x": [
+       1,
+       3
+      ]
+     },
+     "show": "$x - 2$",
+     "level": 2,
+     "explain": "$a^2 - b^2 = x - 2$"
+    },
+    {
+     "id": "Q25",
+     "type": "num",
+     "text": "Solve $sqrt(x + 3) = 4$.",
+     "answer": 13,
+     "label": "$x$ =",
+     "level": 3,
+     "explain": "Square both sides and solve: $x = 13$."
+    },
+    {
+     "id": "Q26",
+     "type": "num",
+     "text": "Solve $sqrt(2x) = 6$.",
+     "answer": 18,
+     "label": "$x$ =",
+     "level": 3,
+     "explain": "Square both sides and solve: $x = 18$."
+    },
+    {
+     "id": "Q27",
+     "type": "num",
+     "text": "Solve $sqrt(x) + 1 = 5$.",
+     "answer": 16,
+     "label": "$x$ =",
+     "level": 3,
+     "explain": "Square both sides and solve: $x = 16$."
+    },
+    {
+     "id": "Q28",
+     "type": "num",
+     "text": "Solve $sqrt(x - 4) = 3$.",
+     "answer": 13,
+     "label": "$x$ =",
+     "level": 3,
+     "explain": "Square both sides and solve: $x = 13$."
+    },
+    {
+     "id": "Q29",
+     "type": "num",
+     "text": "Solve $3sqrt(x) = 12$.",
+     "answer": 16,
+     "label": "$x$ =",
+     "level": 3,
+     "explain": "Square both sides and solve: $x = 16$."
+    },
+    {
+     "id": "Q30",
+     "type": "num",
+     "text": "Solve $sqrt(5x + 1) = 4$.",
+     "answer": 3,
+     "label": "$x$ =",
+     "level": 3,
+     "explain": "Square both sides and solve: $x = 3$."
+    },
+    {
+     "id": "A31",
+     "type": "mc",
+     "text": "$sqrt(x^2)$ is equal to",
+     "options": [
+      "$|x|$",
+      "$x$",
+      "$-x$",
+      "$x^2$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "If $x = -3$: $sqrt(9) = 3 = |-3|$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "expr",
+    "text": "Pull perfect squares out of a root: $sqrt(50) = sqrt(25·2) = 5sqrt(2)$. Simplify $sqrt(12)$.",
+    "answer": "2sqrt(3)",
+    "vars": [],
+    "keys": [
+     "sqrt("
+    ],
+    "label": "$sqrt(12)$ =",
+    "show": "$2sqrt(3)$",
+    "hint": "$12 = 4·3$",
+    "explain": "$2sqrt(3)$"
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "Conjugates: $(a - b)(a + b) = a^2 - b^2$, and the root disappears. Multiply out $(sqrt(x) - 3)(sqrt(x) + 3)$.",
+    "answer": "x - 9",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sqrt("
+    ],
+    "label": "product =",
+    "show": "$x - 9$",
+    "hint": "$(sqrt(x))^2 - 3^2$",
+    "explain": "$x - 9$"
+   }
+  ]
+ },
+ "lessonOptional": true
+}

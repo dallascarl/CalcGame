@@ -165,6 +165,8 @@ class Deck:
 
     def qid(self, p):
         self.n += 1
+        if p in ('T', 'L') and self.n < 20:
+            self.n = 20
         return f'{p}{self.n}'
 
     def lesson(self, slides, optional=False, title=None):
@@ -391,6 +393,41 @@ def STEPS(qid, text, steps, level=None, explain=None, title=None, topic=None):
     if explain:
         q['explain'] = explain
     return q
+
+
+def LIM(qid, text, answer, label=None, level=None, explain=None, hint=None, work=None, tol=None, topic=None, graph=None):
+    """a limit answer: a number, 'inf', '-inf' or 'DNE'"""
+    q = {'id': qid, 'type': 'lim', 'text': text}
+    q['answer'] = answer if isinstance(answer, str) else num(answer)
+    if label:
+        q['label'] = label
+    if tol is not None:
+        q['tol'] = tol
+    if graph:
+        q['graph'] = graph
+    for k, v in (('level', level), ('topic', topic), ('hint', hint), ('explain', explain), ('work', work)):
+        if v:
+            q[k] = v
+    return q
+
+
+def lim_of(e, a0, dirn='+-'):
+    """sympy limit as 'inf' / '-inf' / 'DNE' / number"""
+    a0 = sp.sympify(a0)
+    if dirn == '+-':
+        L1, L2 = sp.limit(e, x, a0, '-'), sp.limit(e, x, a0, '+')
+        if L1 != L2:
+            return 'DNE'
+        r = L1
+    else:
+        r = sp.limit(e, x, a0, dirn)
+    if r == sp.oo:
+        return 'inf'
+    if r == -sp.oo:
+        return '-inf'
+    if not r.is_finite:
+        return 'DNE'
+    return r
 
 
 def INFO(qid, text, title=None):

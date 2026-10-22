@@ -1,0 +1,474 @@
+{
+ "id": "l-squeeze",
+ "course": "Calculus 1",
+ "unit": "Limits",
+ "title": "The Squeeze Theorem",
+ "subtitle": "Trap a wiggly function between two simple ones.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "The Squeeze Theorem needs",
+     "options": [
+      "$f(x) <= g(x) <= h(x)$ near $a$ and $lim f = lim h$",
+      "$f$, $g$, $h$ to be polynomials",
+      "$g(a)$ to be defined",
+      "$lim f ≠ lim h$"
+     ],
+     "answer": 0,
+     "explain": "Trapped, and both walls meet at the same height."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "For every $x$, $sin(x)$ and $cos(x)$ are between",
+     "options": [
+      "−1 and 1",
+      "0 and 1",
+      "$-x$ and $x$",
+      "0 and $pi$"
+     ],
+     "answer": 0,
+     "explain": "That is the usual starting point for a squeeze."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "If $1 <= g(x) <= 3$ for all $x$, then $lim[x->0] g(x)$ must be 2.",
+     "answer": false,
+     "explain": "The walls are 1 and 3, which do not agree. $g$ could do anything in between."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "The Squeeze Theorem is most useful for functions like",
+     "options": [
+      "$x^2 sin(frac{1}{x})$ that wiggle and cannot be plugged in",
+      "polynomials",
+      "$frac{x^2 - 1}{x - 1}$",
+      "$frac{1}{x}$"
+     ],
+     "answer": 0,
+     "explain": "Wiggly pieces with known bounds."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "W1",
+     "type": "lim",
+     "text": "For $x$ near 4, $4x - 9 <= g(x) <= x^2 - 4x + 7$. Find $lim[x->4] g(x)$.",
+     "answer": 7,
+     "label": "$lim[x->4] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 7 at $x = 4$, so $g$ is squeezed to 7."
+    },
+    {
+     "id": "W2",
+     "type": "lim",
+     "text": "For $x$ near 1, $2x <= g(x) <= x^4 - x^2 + 2$. Find $lim[x->1] g(x)$.",
+     "answer": 2,
+     "label": "$lim[x->1] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 2 at $x = 1$, so $g$ is squeezed to 2."
+    },
+    {
+     "id": "W3",
+     "type": "lim",
+     "text": "For $x$ near 0, $1 - x^2 <= g(x) <= 1 + x^2$. Find $lim[x->0] g(x)$.",
+     "answer": 1,
+     "label": "$lim[x->0] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 1 at $x = 0$, so $g$ is squeezed to 1."
+    },
+    {
+     "id": "W4",
+     "type": "lim",
+     "text": "For $x$ near 1, $3x - 2 <= g(x) <= x^3$. Find $lim[x->1] g(x)$.",
+     "answer": 1,
+     "label": "$lim[x->1] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 1 at $x = 1$, so $g$ is squeezed to 1."
+    },
+    {
+     "id": "W5",
+     "type": "lim",
+     "text": "For $x$ near 0, $cos(x) <= g(x) <= 1 + x^2$. Find $lim[x->0] g(x)$.",
+     "answer": 1,
+     "label": "$lim[x->0] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 1 at $x = 0$, so $g$ is squeezed to 1."
+    },
+    {
+     "id": "W6",
+     "type": "lim",
+     "text": "For $x$ near 3, $-x^2 + 6x <= g(x) <= x^2 - 6x + 18$. Find $lim[x->3] g(x)$.",
+     "answer": 9,
+     "label": "$lim[x->3] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 9 at $x = 3$, so $g$ is squeezed to 9."
+    },
+    {
+     "id": "W7",
+     "type": "lim",
+     "text": "For $x$ near 0, $cos(x) <= g(x) <= 1$. Find $lim[x->0] g(x)$.",
+     "answer": 1,
+     "label": "$lim[x->0] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 1 at $x = 0$, so $g$ is squeezed to 1."
+    },
+    {
+     "id": "W8",
+     "type": "lim",
+     "text": "For $x$ near 0, $2 - x^2 <= g(x) <= 2 + x^2$. Find $lim[x->0] g(x)$.",
+     "answer": 2,
+     "label": "$lim[x->0] g(x)$ =",
+     "level": 2,
+     "explain": "Both walls go to 2 at $x = 0$, so $g$ is squeezed to 2."
+    },
+    {
+     "id": "N9",
+     "type": "mc",
+     "text": "For $x$ near 0, $x <= g(x) <= x + 2$. What can you say about $lim[x->0] g(x)$?",
+     "options": [
+      "Nothing: the walls go to different limits",
+      "It is 0",
+      "It is 2",
+      "It does not exist"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "The two walls do not meet, so the Squeeze Theorem does not apply."
+    },
+    {
+     "id": "N10",
+     "type": "mc",
+     "text": "For $x$ near 2, $1 <= g(x) <= 3$. What can you say about $lim[x->2] g(x)$?",
+     "options": [
+      "Nothing: the walls go to different limits",
+      "It is 1",
+      "It is 3",
+      "It does not exist"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "The two walls do not meet, so the Squeeze Theorem does not apply."
+    },
+    {
+     "id": "N11",
+     "type": "mc",
+     "text": "For $x$ near 0, $x^2 <= g(x) <= 2x^2 + 1$. What can you say about $lim[x->0] g(x)$?",
+     "options": [
+      "Nothing: the walls go to different limits",
+      "It is 0",
+      "It is 1",
+      "It does not exist"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "The two walls do not meet, so the Squeeze Theorem does not apply."
+    },
+    {
+     "id": "N12",
+     "type": "mc",
+     "text": "For $x$ near 0, $-1 <= g(x) <= 1$. What can you say about $lim[x->0] g(x)$?",
+     "options": [
+      "Nothing: the walls go to different limits",
+      "It is -1",
+      "It is 1",
+      "It does not exist"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "The two walls do not meet, so the Squeeze Theorem does not apply."
+    },
+    {
+     "id": "S13",
+     "type": "lim",
+     "text": "Find $lim[x->0] x^2 sin(frac{1}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-x^2$ and $x^2$, which both go to 0."
+    },
+    {
+     "id": "B14",
+     "type": "mc",
+     "text": "To find $lim[x->0] x^2 sin(frac{1}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-x^2$ and $x^2$",
+      "$-1$ and $1$",
+      "$0$ and $x^2$",
+      "$-x^2$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S15",
+     "type": "lim",
+     "text": "Find $lim[x->0] x cos(frac{1}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-|x|$ and $|x|$, which both go to 0."
+    },
+    {
+     "id": "B16",
+     "type": "mc",
+     "text": "To find $lim[x->0] x cos(frac{1}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-|x|$ and $|x|$",
+      "$-1$ and $1$",
+      "$0$ and $|x|$",
+      "$-|x|$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S17",
+     "type": "lim",
+     "text": "Find $lim[x->0] x^4 sin(frac{2}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-x^4$ and $x^4$, which both go to 0."
+    },
+    {
+     "id": "B18",
+     "type": "mc",
+     "text": "To find $lim[x->0] x^4 sin(frac{2}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-x^4$ and $x^4$",
+      "$-1$ and $1$",
+      "$0$ and $x^4$",
+      "$-x^4$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S19",
+     "type": "lim",
+     "text": "Find $lim[x->0] x^2 cos(frac{3}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-x^2$ and $x^2$, which both go to 0."
+    },
+    {
+     "id": "B20",
+     "type": "mc",
+     "text": "To find $lim[x->0] x^2 cos(frac{3}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-x^2$ and $x^2$",
+      "$-1$ and $1$",
+      "$0$ and $x^2$",
+      "$-x^2$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S21",
+     "type": "lim",
+     "text": "Find $lim[x->0] x sin(frac{1}{x^2})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-|x|$ and $|x|$, which both go to 0."
+    },
+    {
+     "id": "B22",
+     "type": "mc",
+     "text": "To find $lim[x->0] x sin(frac{1}{x^2})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-|x|$ and $|x|$",
+      "$-1$ and $1$",
+      "$0$ and $|x|$",
+      "$-|x|$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S23",
+     "type": "lim",
+     "text": "Find $lim[x->0] x^3 cos(frac{1}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-|x^3|$ and $|x^3|$, which both go to 0."
+    },
+    {
+     "id": "B24",
+     "type": "mc",
+     "text": "To find $lim[x->0] x^3 cos(frac{1}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-|x^3|$ and $|x^3|$",
+      "$-1$ and $1$",
+      "$0$ and $|x^3|$",
+      "$-|x^3|$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S25",
+     "type": "lim",
+     "text": "Find $lim[x->0^+] sqrt(x) sin(frac{1}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-sqrt(x)$ and $sqrt(x)$, which both go to 0."
+    },
+    {
+     "id": "B26",
+     "type": "mc",
+     "text": "To find $lim[x->0^+] sqrt(x) sin(frac{1}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-sqrt(x)$ and $sqrt(x)$",
+      "$-1$ and $1$",
+      "$0$ and $sqrt(x)$",
+      "$-sqrt(x)$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "S27",
+     "type": "lim",
+     "text": "Find $lim[x->0] x^2 sin^2(frac{1}{x})$.",
+     "answer": 0,
+     "label": "limit =",
+     "level": 3,
+     "explain": "The trig part stays between −1 and 1, so the whole thing is trapped between $-x^2$ and $x^2$, which both go to 0."
+    },
+    {
+     "id": "B28",
+     "type": "mc",
+     "text": "To find $lim[x->0] x^2 sin^2(frac{1}{x})$ with the Squeeze Theorem, which walls work?",
+     "options": [
+      "$-x^2$ and $x^2$",
+      "$-1$ and $1$",
+      "$0$ and $x^2$",
+      "$-x^2$ and $1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Start from $-1 <=$ trig $<= 1$ and multiply by the outside factor."
+    },
+    {
+     "id": "M29",
+     "type": "mc",
+     "text": "$-1 <= sin(frac{1}{x}) <= 1$. Multiply by $x^2$:",
+     "options": [
+      "$-x^2 <= x^2 sin(frac{1}{x}) <= x^2$",
+      "$-1 <= x^2 sin(frac{1}{x}) <= 1$",
+      "$x^2 <= x^2 sin(frac{1}{x}) <= 1$",
+      "$0 <= x^2 sin(frac{1}{x}) <= 1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$-x^2 <= x^2 sin(frac{1}{x}) <= x^2$"
+    },
+    {
+     "id": "M30",
+     "type": "mc",
+     "text": "$-1 <= cos(x) <= 1$. Add 2:",
+     "options": [
+      "$1 <= 2 + cos(x) <= 3$",
+      "$-3 <= 2 + cos(x) <= 3$",
+      "$2 <= 2 + cos(x) <= 3$",
+      "$-1 <= 2 + cos(x) <= 1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$1 <= 2 + cos(x) <= 3$"
+    },
+    {
+     "id": "M31",
+     "type": "mc",
+     "text": "$0 <= sin^2(x) <= 1$. Multiply by $x^4$:",
+     "options": [
+      "$0 <= x^4 sin^2(x) <= x^4$",
+      "$-x^4 <= x^4 sin^2(x) <= x^4$",
+      "$0 <= x^4 sin^2(x) <= 1$",
+      "$x^4 <= x^4 sin^2(x) <= 1$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$0 <= x^4 sin^2(x) <= x^4$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "What is $lim[x->0] x^2 sin(frac{1}{x})$? The $sin(frac{1}{x})$ wiggles forever, so we cannot plug in. But sine is always between −1 and 1:\n$-1 <= sin(frac{1}{x}) <= 1$\nMultiply everything by $x^2$ (which is never negative):",
+    "options": [
+     "$-x^2 <= x^2 sin(frac{1}{x}) <= x^2$",
+     "$-1 <= x^2 sin(frac{1}{x}) <= 1$",
+     "$x^2 <= x^2 sin(frac{1}{x}) <= -x^2$",
+     "$0 <= x^2 sin(frac{1}{x}) <= x^2$"
+    ],
+    "answer": 0,
+    "hint": "Multiply all three parts by $x^2$.",
+    "explain": "Now the wiggly function is trapped between $-x^2$ and $x^2$."
+   },
+   {
+    "id": "L2",
+    "type": "lim",
+    "text": "Both outside functions are easy. Find $lim[x->0] x^2$ (and $lim[x->0] -x^2$ is the same).",
+    "answer": 0,
+    "label": "limit =",
+    "hint": "Plug in 0.",
+    "explain": "Both squeeze down to 0."
+   },
+   {
+    "id": "L3",
+    "type": "lim",
+    "text": "**Squeeze Theorem:** if $f(x) <= g(x) <= h(x)$ near $a$, and $f$ and $h$ have the **same** limit $L$, then $g$ has limit $L$ too. So $lim[x->0] x^2 sin(frac{1}{x}) =$",
+    "answer": 0,
+    "label": "limit =",
+    "hint": "It is trapped between two things going to 0.",
+    "explain": "0. The wiggles get squeezed flat."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "What if the two outside functions go to **different** limits, like 0 and 2?",
+    "options": [
+     "The Squeeze Theorem tells you nothing",
+     "The limit is 1 (the average)",
+     "The limit is 0",
+     "The limit is 2"
+    ],
+    "answer": 0,
+    "hint": "Is the middle function trapped at one value?",
+    "explain": "The outside limits must agree for the squeeze to work."
+   }
+  ]
+ }
+}

@@ -27,11 +27,15 @@ function mpart(t){
     .replace(/\^\((?=[^)]*\()/g,'\u0004').split('\u0004').reduce((acc,t,k)=>k?acc+supBal(t):t,'')
     .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a.replace(/\^([+-]?[A-Za-z0-9.]+)/g,'<sup>$1</sup>'):b)+'</sup>')
     .replace(/_\(([^)]*)\)|_([A-Za-z0-9]+)/g,(_,a,b)=>'<sub>'+(a!=null?a:b)+'</sub>')
-    .replace(/-/g,'−').replace(/(?<![A-Za-z])pi(?![A-Za-z])/g,'π').replace(/\binfty\b/g,'∞').replace(/(?<![A-Za-z])sqrt(?![A-Za-z])/g,'√')
+    .replace(/-/g,'−').replace(/(?<![A-Za-z])pi(?![A-Za-z])/g,'π').replace(/(?<![A-Za-z])int(?![A-Za-z])/g,'∫').replace(/(?<![A-Za-z])theta(?![A-Za-z])/g,'θ').replace(/(?<![A-Za-z])Delta(?![A-Za-z])/g,'Δ').replace(/\binfty\b/g,'∞').replace(/(?<![A-Za-z])sqrt(?![A-Za-z])/g,'√')
     .replace(/[A-Za-z]+/g,w=>w.length===1?'<i>'+w+'</i>':w);
 }
+/* int[a,b] and sum[k=1,n] draw a big ∫ or Σ with limits; a plain "int" is just the ∫ sign */
+function bigop(sym,lo,hi){return '<span class="bigop"><span class="bo-s">'+sym+'</span><span class="bo-l"><span>'+mpart(hi||'')+'</span><span>'+mpart(lo||'')+'</span></span></span>';}
 function math(m){
-  return '<span class="math">'+m.split(/(lim\[[^\]]*\]|frac\{[^{}]*\}\{[^{}]*\})/).map(t=>{const k=/^lim\[(.*)\]$/.exec(t),f=/^frac\{([^{}]*)\}\{([^{}]*)\}$/.exec(t);
+  return '<span class="math">'+m.split(/(lim\[[^\]]*\]|frac\{[^{}]*\}\{[^{}]*\}|int\[[^\]]*\]|sum\[[^\]]*\])/).map(t=>{const k=/^lim\[(.*)\]$/.exec(t),f=/^frac\{([^{}]*)\}\{([^{}]*)\}$/.exec(t),
+      I=/^(int|sum)\[([^,\]]*),([^\]]*)\]$/.exec(t);
+    if(I)return bigop(I[1]==='int'?'∫':'Σ',I[2].trim(),I[3].trim());
     if(f)return '<span class="frac"><span>'+mpart(f[1])+'</span><span>'+mpart(f[2])+'</span></span>';
     return k?'<span class="lim"><span>lim</span><span class="lim-s">'+mpart(k[1])+'</span></span>':mpart(t);}).join('')+'</span>';
 }
@@ -290,7 +294,7 @@ function mountItem(it,host,onChange){
   const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
     match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff,
     tap:mountTap,expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio,
-    secant:mountSecant,dtrace:mountDtrace}[it.type];
+    secant:mountSecant,dtrace:mountDtrace,riemann:mountRiemann}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -366,8 +370,8 @@ function mountBank(it,ix,onChange){
     .replace(/\u0006/g,'<span class="frac bf"><span>').replace(/\u0007/g,'</span><span>').replace(/\u0008/g,'</span></span>');
   let fill=Array(n).fill(null),locked=false,marks=null;
   const draw=()=>{ let b=0;
-    ix.innerHTML='<p class="txt bank-t">'+tmpl.replace(/\u0005/g,()=>{const i=b++;return '<button class="blank'+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-b="'+i+'" aria-label="Blank '+(i+1)+'">'+(fill[i]!=null?esc(chips[fill[i]]):'&nbsp;')+'</button>';})+
-      '</p><div class="chips">'+chips.map((c,i)=>'<button class="chip" data-c="'+i+'"'+(fill.includes(i)||locked?' disabled':'')+'>'+esc(c)+'</button>').join('')+'</div>';
+    ix.innerHTML='<p class="txt bank-t">'+tmpl.replace(/\u0005/g,()=>{const i=b++;return '<button class="blank'+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-b="'+i+'" aria-label="Blank '+(i+1)+'">'+(fill[i]!=null?fmt(chips[fill[i]]):'&nbsp;')+'</button>';})+
+      '</p><div class="chips">'+chips.map((c,i)=>'<button class="chip" data-c="'+i+'"'+(fill.includes(i)||locked?' disabled':'')+'>'+fmt(c)+'</button>').join('')+'</div>';
   };
   ix.addEventListener('click',e=>{
     if(locked)return;
@@ -1281,7 +1285,7 @@ function drill(kind){
 /* ---------- answer key (instructor only): every lesson step and drill question with its answer ---------- */
 function keyItem(q,n,stages){
   const kind={info:'info',explore:'explorer',extrema:'walk-through',newton:'Newton explorer',bisect:'bisection game',mvt:'MVT explorer',linear:'linearization explorer',diff:'differentials explorer',
-    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph',secant:'secant explorer',dtrace:'derivative tracer'}[q.type]||q.type;
+    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph',secant:'secant explorer',dtrace:'derivative tracer',riemann:'Riemann sum explorer'}[q.type]||q.type;
   let h='<div class="ak-q"><div class="ak-h"><b>'+esc(n)+'</b><span>'+esc(q.id||'')+' · '+esc(kind)+(q.stage?' · '+esc(((stages||[]).find(s=>s.id===q.stage)||{title:q.stage}).title):'')+(q.topic?' · '+esc(q.topic):'')+(q.level?' · level '+q.level:'')+'</span></div>';
   if(q.title)h+='<p><strong>'+fmt(q.title)+'</strong></p>';
   if(q.type==='bank')h+='<p>'+fmt(String(q.text).split('___').map((t,i,a)=>i<a.length-1?t+'【'+q.blanks[i]+'】':t).join(''))+'</p>';
@@ -1407,7 +1411,7 @@ function validate(D){
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
     const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap'];
-    const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio','secant','dtrace',...QT]:QT;
+    const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio','secant','dtrace','riemann',...QT]:QT;
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').length%2===0)errs.push('unmatched $ in '+k);
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').filter((t,i)=>i%2===0).join('').split('**').length%2===0)errs.push('a ** bold marker is not closed in '+k);

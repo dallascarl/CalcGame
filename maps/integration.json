@@ -21,7 +21,7 @@
       "title": "Areas and Distance",
       "x": 16,
       "y": 38,
-      "deck": null,
+      "deck": "w-areas",
       "requires": [
         "start"
       ],
@@ -33,7 +33,7 @@
       "title": "Definite Integral",
       "x": 50,
       "y": 38,
-      "deck": null,
+      "deck": "w-definite",
       "requires": [
         "areas"
       ],
@@ -45,7 +45,7 @@
       "title": "Antiderivatives",
       "x": 84,
       "y": 38,
-      "deck": null,
+      "deck": "w-anti",
       "requires": [
         "start"
       ],
@@ -57,7 +57,7 @@
       "title": "Summation Notation",
       "x": 16,
       "y": 66,
-      "deck": null,
+      "deck": "w-sumnot",
       "requires": [
         "areas"
       ],
@@ -70,7 +70,7 @@
       "label": "Fundamental Theorem",
       "x": 50,
       "y": 94,
-      "deck": null,
+      "deck": "w-ftc",
       "requires": [
         "definite",
         "anti"
@@ -84,7 +84,7 @@
       "label": "Proof of FTC",
       "x": 84,
       "y": 94,
-      "deck": null,
+      "deck": "w-proof",
       "requires": [
         "ftc"
       ],
@@ -97,7 +97,7 @@
       "label": "Indefinite integral",
       "x": 50,
       "y": 122,
-      "deck": null,
+      "deck": "w-indef",
       "requires": [
         "ftc"
       ],
@@ -109,7 +109,7 @@
       "title": "Substitution",
       "x": 50,
       "y": 150,
-      "deck": null,
+      "deck": "w-subst",
       "requires": [
         "indef"
       ],
@@ -121,7 +121,7 @@
       "title": "Chapter Review",
       "x": 50,
       "y": 180,
-      "deck": null,
+      "deck": "review4",
       "requires": [
         "subst"
       ],

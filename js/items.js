@@ -63,12 +63,14 @@ function xcompile(src,vars){
 }
 const closeParens=s=>{let d=0;for(const c of s){if(c==='(')d++;else if(c===')')d--;}return s+')'.repeat(Math.max(0,d));};
 /* two formulas are the same if they agree at many random points */
-function xequiv(a,b,vars,ranges){
+/* upToC: an antiderivative is right if it differs from the key by the same constant everywhere (the + C) */
+function xequiv(a,b,vars,ranges,upToC){
   let A,B; try{A=xcompile(a,vars);B=xcompile(b,vars);}catch(e){return false;}
-  let good=0;
+  let good=0,c=null;
   for(let k=0;k<60&&good<10;k++){
     const env={}; vars.forEach(v=>{const r=(ranges&&ranges[v])||[0.35,2.65];env[v]=r[0]+(r[1]-r[0])*Math.random();});
-    const y=B(env),x=A(env); if(!Number.isFinite(y))continue; if(!Number.isFinite(x))return false;
+    let y=B(env),x=A(env); if(!Number.isFinite(y))continue; if(!Number.isFinite(x))return false;
+    if(upToC){if(c==null)c=x-y;x-=c;}
     if(Math.abs(x-y)>1e-6*Math.max(1,Math.abs(y)))return false; good++;
   }
   return good>=4;
@@ -145,7 +147,7 @@ function mountExpr(q,ix,onChange){
   SINK=v=>{if(locked)return;String(v).split('').forEach(c=>toks.push(c));show();onChange();};
   show();
   return {kind:'q',canGo:()=>toks.length>0&&ok(),
-    check:()=>answers.some(a=>xequiv(str(),a,vars,q.ranges)),
+    check:()=>answers.some(a=>xequiv(str(),a,vars,q.ranges,q.upToC)),
     lock(r,good){locked=true;box.classList.add(good?'is-right':'is-wrong');},
     reset(){locked=false;toks=[];box.classList.remove('is-right','is-wrong');show();onChange();}};
 }

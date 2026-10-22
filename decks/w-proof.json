@@ -1,0 +1,123 @@
+{
+ "id": "w-proof",
+ "course": "Calculus 1",
+ "unit": "Integration",
+ "title": "Proof of the Fundamental Theorem",
+ "subtitle": "Optional: why the Fundamental Theorem is true.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "order",
+     "text": "Put the steps of the proof of Part 1 in order.",
+     "items": [
+      "Define the area function $g(x) = int[a,x] f(t) dt$",
+      "The extra area from $x$ to $x + h$ is about $f(x)h$",
+      "Divide by $h$",
+      "Let $h -> 0$ to get $g'(x) = f(x)$"
+     ],
+     "explain": "Thin strip, divide, take the limit."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "Two antiderivatives of the same function always differ by a constant.",
+     "answer": true,
+     "explain": "Their difference has derivative 0, so it is constant (by the Mean Value Theorem)."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "Why is $g(a) = 0$?",
+     "options": [
+      "There is no width from $a$ to $a$",
+      "Because $f(a) = 0$",
+      "Because $C = 0$",
+      "It is not always 0"
+     ],
+     "answer": 0,
+     "explain": "$int[a,a] f = 0$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Define the area function $g(x) = int[a,x] f(t) dt$: the area under $f$ from $a$ up to $x$. When $x$ grows a tiny bit to $x + h$, the area grows by",
+    "options": [
+     "$int[x,x+h] f(t) dt$",
+     "$f(h)$",
+     "$g(h)$",
+     "$h$"
+    ],
+    "answer": 0,
+    "hint": "The new strip runs from $x$ to $x + h$.",
+    "explain": "$g(x + h) - g(x) = int[x,x+h] f(t) dt$, a thin strip."
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "That thin strip is almost a rectangle of width $h$ and height",
+    "options": [
+     "$f(x)$",
+     "$g(x)$",
+     "1",
+     "$x$"
+    ],
+    "answer": 0,
+    "hint": "How tall is the curve right at $x$?",
+    "explain": "So $g(x + h) - g(x) ≈ f(x)·h$."
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Divide by $h$: $frac{g(x + h) - g(x)}{h} ≈ f(x)$. Let $h -> 0$. The left side becomes",
+    "options": [
+     "$g'(x)$",
+     "$g(x)$",
+     "0",
+     "$f'(x)$"
+    ],
+    "answer": 0,
+    "hint": "That is the definition of the derivative.",
+    "explain": "$g'(x) = f(x)$. That is **Part 1**: the area function is an antiderivative of $f$."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Now let $F$ be **any** antiderivative of $f$. Two antiderivatives of the same function differ by a constant, so $F(x) = g(x) + C$. Then $F(b) - F(a) =$",
+    "options": [
+     "$g(b) - g(a)$",
+     "$g(b) + 2C$",
+     "$C$",
+     "$g(a) - g(b)$"
+    ],
+    "answer": 0,
+    "hint": "The $C$s cancel.",
+    "explain": "$(g(b) + C) - (g(a) + C) = g(b) - g(a)$."
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "Finally $g(b) = int[a,b] f(t) dt$ and $g(a) = int[a,a] f(t) dt = 0$. So $F(b) - F(a) =$",
+    "options": [
+     "$int[a,b] f(t) dt$",
+     "0",
+     "$f(b) - f(a)$",
+     "$g(a)$"
+    ],
+    "answer": 0,
+    "hint": "Plug in what $g(b)$ and $g(a)$ are.",
+    "explain": "That is **Part 2**: $int[a,b] f = F(b) - F(a)$. ∎"
+   }
+  ]
+ }
+}

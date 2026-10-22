@@ -1,0 +1,425 @@
+{
+ "id": "w-sumnot",
+ "course": "Calculus 1",
+ "unit": "Integration",
+ "title": "Summation Notation",
+ "subtitle": "Review: reading and adding up Σ sums.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "A1",
+     "type": "num",
+     "text": "Find $sum[k=1,6] k$.",
+     "answer": 21,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 6 and add: 21."
+    },
+    {
+     "id": "A2",
+     "type": "num",
+     "text": "Find $sum[k=3,5] k^2 - 5$.",
+     "answer": 35,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 3 to 5 and add: 35."
+    },
+    {
+     "id": "A3",
+     "type": "num",
+     "text": "Find $sum[k=1,3] 1/k$.",
+     "answer": 1.833333,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 3 and add: 11/6."
+    },
+    {
+     "id": "A4",
+     "type": "num",
+     "text": "Find $sum[k=1,5] 5$.",
+     "answer": 25,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 5 and add: 25."
+    },
+    {
+     "id": "A5",
+     "type": "num",
+     "text": "Find $sum[i=1,4] 2i + 1$.",
+     "answer": 24,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in i = 1 to 4 and add: 24."
+    },
+    {
+     "id": "A6",
+     "type": "num",
+     "text": "Find $sum[k=1,4] k^2$.",
+     "answer": 30,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 4 and add: 30."
+    },
+    {
+     "id": "A7",
+     "type": "num",
+     "text": "Find $sum[k=1,5] 3k - 1$.",
+     "answer": 40,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 5 and add: 40."
+    },
+    {
+     "id": "A8",
+     "type": "num",
+     "text": "Find $sum[k=1,5] (-1)^k$.",
+     "answer": -1,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 5 and add: -1."
+    },
+    {
+     "id": "A9",
+     "type": "num",
+     "text": "Find $sum[k=0,4] 2^k$.",
+     "answer": 31,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 0 to 4 and add: 31."
+    },
+    {
+     "id": "A10",
+     "type": "num",
+     "text": "Find $sum[k=1,3] k(k + 1)$.",
+     "answer": 20,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 3 and add: 20."
+    },
+    {
+     "id": "A11",
+     "type": "num",
+     "text": "Find $sum[k=1,4] 10 - k$.",
+     "answer": 30,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 4 and add: 30."
+    },
+    {
+     "id": "A12",
+     "type": "num",
+     "text": "Find $sum[k=1,3] k^3$.",
+     "answer": 36,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 3 and add: 36."
+    },
+    {
+     "id": "A13",
+     "type": "num",
+     "text": "Find $sum[k=1,3] (2k + 1)^2$.",
+     "answer": 83,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 3 and add: 83."
+    },
+    {
+     "id": "A14",
+     "type": "num",
+     "text": "Find $sum[k=1,3] 1/2^k$.",
+     "answer": 0.875,
+     "label": "sum =",
+     "level": 1,
+     "explain": "Plug in k = 1 to 3 and add: 7/8."
+    },
+    {
+     "id": "C15",
+     "type": "num",
+     "text": "Find $sum[k=1,5] 5$.",
+     "answer": 25,
+     "label": "sum =",
+     "level": 1,
+     "explain": "5 copies of 5: $sum[k=1,n] c = nc = 25$."
+    },
+    {
+     "id": "C16",
+     "type": "num",
+     "text": "Find $sum[k=1,10] 7$.",
+     "answer": 70,
+     "label": "sum =",
+     "level": 1,
+     "explain": "10 copies of 7: $sum[k=1,n] c = nc = 70$."
+    },
+    {
+     "id": "C17",
+     "type": "num",
+     "text": "Find $sum[k=1,20] 3$.",
+     "answer": 60,
+     "label": "sum =",
+     "level": 1,
+     "explain": "20 copies of 3: $sum[k=1,n] c = nc = 60$."
+    },
+    {
+     "id": "C18",
+     "type": "num",
+     "text": "Find $sum[k=1,6] -2$.",
+     "answer": -12,
+     "label": "sum =",
+     "level": 1,
+     "explain": "6 copies of -2: $sum[k=1,n] c = nc = -12$."
+    },
+    {
+     "id": "F19",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k = frac{n(n + 1)}{2}$ to find $sum[k=1,10] k$.",
+     "answer": 55,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{10·11}{2} = 55$"
+    },
+    {
+     "id": "F20",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k = frac{n(n + 1)}{2}$ to find $sum[k=1,20] k$.",
+     "answer": 210,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{20·21}{2} = 210$"
+    },
+    {
+     "id": "F21",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k = frac{n(n + 1)}{2}$ to find $sum[k=1,50] k$.",
+     "answer": 1275,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{50·51}{2} = 1275$"
+    },
+    {
+     "id": "F22",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k = frac{n(n + 1)}{2}$ to find $sum[k=1,100] k$.",
+     "answer": 5050,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{100·101}{2} = 5050$"
+    },
+    {
+     "id": "G23",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k^2 = frac{n(n + 1)(2n + 1)}{6}$ to find $sum[k=1,5] k^2$.",
+     "answer": 55,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{5·6·11}{6} = 55$"
+    },
+    {
+     "id": "G24",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k^2 = frac{n(n + 1)(2n + 1)}{6}$ to find $sum[k=1,10] k^2$.",
+     "answer": 385,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{10·11·21}{6} = 385$"
+    },
+    {
+     "id": "G25",
+     "type": "num",
+     "text": "Use $sum[k=1,n] k^2 = frac{n(n + 1)(2n + 1)}{6}$ to find $sum[k=1,20] k^2$.",
+     "answer": 2870,
+     "label": "sum =",
+     "level": 2,
+     "explain": "$frac{20·21·41}{6} = 2870$"
+    },
+    {
+     "id": "H26",
+     "type": "num",
+     "text": "Find $sum[k=1,8] (2k - k^2)$. Split it up and use the formulas.",
+     "answer": -132,
+     "label": "sum =",
+     "level": 3,
+     "explain": "Split into separate sums, use the formulas for $sum k$, $sum k^2$ and $sum k^3 = (frac{n(n+1)}{2})^2$: -132."
+    },
+    {
+     "id": "H27",
+     "type": "num",
+     "text": "Find $sum[k=1,100] (k^3 - k)$. Split it up and use the formulas.",
+     "answer": 25497450,
+     "label": "sum =",
+     "level": 3,
+     "explain": "Split into separate sums, use the formulas for $sum k$, $sum k^2$ and $sum k^3 = (frac{n(n+1)}{2})^2$: 25497450."
+    },
+    {
+     "id": "H28",
+     "type": "num",
+     "text": "Find $sum[k=1,10] ((2k + 1)^2)$. Split it up and use the formulas.",
+     "answer": 1770,
+     "label": "sum =",
+     "level": 3,
+     "explain": "Split into separate sums, use the formulas for $sum k$, $sum k^2$ and $sum k^3 = (frac{n(n+1)}{2})^2$: 1770."
+    },
+    {
+     "id": "H29",
+     "type": "num",
+     "text": "Find $sum[k=1,20] (3k + 2)$. Split it up and use the formulas.",
+     "answer": 670,
+     "label": "sum =",
+     "level": 3,
+     "explain": "Split into separate sums, use the formulas for $sum k$, $sum k^2$ and $sum k^3 = (frac{n(n+1)}{2})^2$: 670."
+    },
+    {
+     "id": "P30",
+     "type": "num",
+     "text": "$sum[k=1,n] a_k = 10$ and $sum[k=1,n] b_k = 4$. Find $sum[k=1,n] (3a_k - 1b_k)$.",
+     "answer": 26,
+     "label": "sum =",
+     "level": 2,
+     "explain": "Sums split and constants come out: $3(10) + -1(4) = 26$."
+    },
+    {
+     "id": "P31",
+     "type": "num",
+     "text": "$sum[k=1,n] a_k = 6$ and $sum[k=1,n] b_k = 2$. Find $sum[k=1,n] (2a_k + 5b_k)$.",
+     "answer": 22,
+     "label": "sum =",
+     "level": 2,
+     "explain": "Sums split and constants come out: $2(6) + 5(2) = 22$."
+    },
+    {
+     "id": "P32",
+     "type": "num",
+     "text": "$sum[k=1,n] a_k = 12$ and $sum[k=1,n] b_k = -3$. Find $sum[k=1,n] (a_k + b_k)$.",
+     "answer": 9,
+     "label": "sum =",
+     "level": 2,
+     "explain": "Sums split and constants come out: $1(12) + 1(-3) = 9$."
+    },
+    {
+     "id": "P33",
+     "type": "num",
+     "text": "$sum[k=1,n] a_k = 8$ and $sum[k=1,n] b_k = 5$. Find $sum[k=1,n] (-1a_k + 2b_k)$.",
+     "answer": 2,
+     "label": "sum =",
+     "level": 2,
+     "explain": "Sums split and constants come out: $-1(8) + 2(5) = 2$."
+    },
+    {
+     "id": "P34",
+     "type": "num",
+     "text": "$sum[k=1,n] a_k = 7$ and $sum[k=1,n] b_k = 1$. Find $sum[k=1,n] (4a_k )$.",
+     "answer": 28,
+     "label": "sum =",
+     "level": 2,
+     "explain": "Sums split and constants come out: $4(7) + 0(1) = 28$."
+    },
+    {
+     "id": "P35",
+     "type": "num",
+     "text": "$sum[k=1,n] a_k = 20$ and $sum[k=1,n] b_k = 6$. Find $sum[k=1,n] (a_k - 2b_k)$.",
+     "answer": 8,
+     "label": "sum =",
+     "level": 2,
+     "explain": "Sums split and constants come out: $1(20) + -2(6) = 8$."
+    },
+    {
+     "id": "W36",
+     "type": "mc",
+     "text": "Write $2 + 4 + 6 + 8 + 10$ in sigma notation.",
+     "options": [
+      "$sum[k=1,5] 2k$",
+      "$sum[k=2,10] k$",
+      "$sum[k=1,10] 2k$",
+      "$sum[k=1,5] (k + 2)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sum[k=1,5] 2k$"
+    },
+    {
+     "id": "W37",
+     "type": "mc",
+     "text": "Write $1 + 4 + 9 + 16$ in sigma notation.",
+     "options": [
+      "$sum[k=1,4] k^2$",
+      "$sum[k=1,4] 2k$",
+      "$sum[k=1,16] k$",
+      "$sum[k=1,4] (k + 3)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sum[k=1,4] k^2$"
+    },
+    {
+     "id": "W38",
+     "type": "mc",
+     "text": "Write $frac{1}{2} + frac{1}{3} + frac{1}{4}$ in sigma notation.",
+     "options": [
+      "$sum[k=2,4] frac{1}{k}$",
+      "$sum[k=1,3] frac{1}{k}$",
+      "$sum[k=2,4] k$",
+      "$sum[k=1,4] frac{1}{2k}$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sum[k=2,4] frac{1}{k}$"
+    },
+    {
+     "id": "W39",
+     "type": "mc",
+     "text": "Write $3 + 3 + 3 + 3 + 3 + 3$ in sigma notation.",
+     "options": [
+      "$sum[k=1,6] 3$",
+      "$sum[k=1,3] 6$",
+      "$sum[k=1,6] k$",
+      "$sum[k=3,6] 3$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sum[k=1,6] 3$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "num",
+    "text": "$sum[i=1,4] (2i + 1)$ means: plug in $i = 1, 2, 3, 4$ and add. $3 + 5 + 7 + 9 =$",
+    "answer": 24,
+    "label": "sum =",
+    "hint": "Add the four numbers.",
+    "explain": "24"
+   },
+   {
+    "id": "L2",
+    "type": "mc",
+    "text": "Which sum is $25 + 21 + 17 + 13 + 9 + 5 + 1 - 3$?",
+    "options": [
+     "$sum[k=0,7] (25 - 4k)$",
+     "$sum[k=1,8] (25 - 4k)$",
+     "$sum[k=0,7] (25 + 4k)$",
+     "$sum[k=0,7] 4k$"
+    ],
+    "answer": 0,
+    "hint": "It starts at 25 and goes down by 4 each time.",
+    "explain": "$k = 0$ gives 25, and $k = 7$ gives $-3$."
+   },
+   {
+    "id": "L3",
+    "type": "num",
+    "text": "Formulas help with long sums: $sum[k=1,n] k = frac{n(n + 1)}{2}$. Find $sum[k=1,100] k$.",
+    "answer": 5050,
+    "label": "sum =",
+    "hint": "$frac{100·101}{2}$",
+    "explain": "5050"
+   }
+  ]
+ },
+ "lessonOptional": true
+}

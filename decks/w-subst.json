@@ -1,0 +1,2667 @@
+{
+ "id": "w-subst",
+ "course": "Calculus 1",
+ "unit": "Integration",
+ "title": "Substitution",
+ "subtitle": "Undoing the chain rule.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "Substitution is the reverse of which derivative rule?",
+     "options": [
+      "the chain rule",
+      "the product rule",
+      "the quotient rule",
+      "the power rule"
+     ],
+     "answer": 0,
+     "explain": "$int f(g(x))g'(x) dx = F(g(x)) + C$"
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "A good choice for $u$ is usually",
+     "options": [
+      "an inside function whose derivative also appears",
+      "the whole integrand",
+      "always $x$",
+      "the outside function"
+     ],
+     "answer": 0,
+     "explain": "Then $du$ soaks up the derivative."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "Your final answer to an indefinite integral should be written in terms of $u$.",
+     "answer": false,
+     "explain": "Put $x$ back in at the end."
+    },
+    {
+     "id": "T4",
+     "type": "tf",
+     "text": "In a definite integral, after substituting you can either change the limits to $u$-values or go back to $x$ first.",
+     "answer": true,
+     "explain": "Just do not mix them: $u$-limits go with a $u$-integral."
+    },
+    {
+     "id": "T5",
+     "type": "order",
+     "text": "Put the steps of substitution in order.",
+     "items": [
+      "Choose $u$",
+      "Find $du$ in terms of $dx$",
+      "Rewrite the integral in $u$ and integrate",
+      "Put $x$ back in (and $+ C$)"
+     ],
+     "explain": "Choose, differentiate, rewrite and integrate, substitute back."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "U1",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 6x(3x^2 + 4)^4 dx$?",
+     "answer": "3x^2 + 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3x^2 + 4$",
+     "level": 1,
+     "explain": "$u = 3x^2 + 4$, because its derivative $6x$ is right there."
+    },
+    {
+     "id": "U2",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 3x^2(x^3 - 3)^2 dx$?",
+     "answer": "x^3 - 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^3 - 3$",
+     "level": 1,
+     "explain": "$u = x^3 - 3$, because its derivative $3x^2$ is right there."
+    },
+    {
+     "id": "U3",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 2x cos(x^2) dx$?",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^2$",
+     "level": 1,
+     "explain": "$u = x^2$, because its derivative $2x$ is right there."
+    },
+    {
+     "id": "U4",
+     "type": "expr",
+     "text": "What is a good $u$ for $int cos(x) sin^3(x) dx$?",
+     "answer": "sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$sin(x)$",
+     "level": 1,
+     "explain": "$u = sin(x)$, because its derivative $cos(x)$ is right there."
+    },
+    {
+     "id": "U5",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 2x e^(x^2) dx$?",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^2$",
+     "level": 1,
+     "explain": "$u = x^2$, because its derivative $2x$ is right there."
+    },
+    {
+     "id": "U6",
+     "type": "expr",
+     "text": "What is a good $u$ for $int frac{2x}{x^2 + 1} dx$?",
+     "answer": "x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^2 + 1$",
+     "level": 1,
+     "explain": "$u = x^2 + 1$, because its derivative $2x$ is right there."
+    },
+    {
+     "id": "U7",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 3(3x + 1)^5 dx$?",
+     "answer": "3x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3x + 1$",
+     "level": 1,
+     "explain": "$u = 3x + 1$, because its derivative $3$ is right there."
+    },
+    {
+     "id": "U8",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 2x sqrt(x^2 + 5) dx$?",
+     "answer": "x^2 + 5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^2 + 5$",
+     "level": 1,
+     "explain": "$u = x^2 + 5$, because its derivative $2x$ is right there."
+    },
+    {
+     "id": "U9",
+     "type": "expr",
+     "text": "What is a good $u$ for $int -sin(x) cos^2(x) dx$?",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 1,
+     "explain": "$u = cos(x)$, because its derivative $-sin(x)$ is right there."
+    },
+    {
+     "id": "U10",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 5e^(5x) dx$?",
+     "answer": "5x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$5x$",
+     "level": 1,
+     "explain": "$u = 5x$, because its derivative $5$ is right there."
+    },
+    {
+     "id": "U11",
+     "type": "expr",
+     "text": "What is a good $u$ for $int frac{3x^2}{x^3 + 2} dx$?",
+     "answer": "x^3 + 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^3 + 2$",
+     "level": 1,
+     "explain": "$u = x^3 + 2$, because its derivative $3x^2$ is right there."
+    },
+    {
+     "id": "U12",
+     "type": "expr",
+     "text": "What is a good $u$ for $int 4x^3(x^4 + 1)^2 dx$?",
+     "answer": "x^4 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$x^4 + 1$",
+     "level": 1,
+     "explain": "$u = x^4 + 1$, because its derivative $4x^3$ is right there."
+    },
+    {
+     "id": "U13",
+     "type": "expr",
+     "text": "What is a good $u$ for $int frac{e^x}{e^x + 1} dx$?",
+     "answer": "e^x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$e^x + 1$",
+     "level": 1,
+     "explain": "$u = e^x + 1$, because its derivative $e^x$ is right there."
+    },
+    {
+     "id": "U14",
+     "type": "expr",
+     "text": "What is a good $u$ for $int frac{arctan(x)}{1 + x^2} dx$?",
+     "answer": "arctan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan("
+     ],
+     "label": "$u$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$arctan(x)$",
+     "level": 1,
+     "explain": "$u = arctan(x)$, because its derivative $frac{1}{1 + x^2}$ is right there."
+    },
+    {
+     "id": "V15",
+     "type": "expr",
+     "text": "With $u = x^2 + 1$, find $frac{du}{dx}$.",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$frac{du}{dx}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$2x$",
+     "level": 1,
+     "explain": "$du = 2x dx$"
+    },
+    {
+     "id": "V16",
+     "type": "expr",
+     "text": "With $u = 4x^2 + 3$, find $frac{du}{dx}$.",
+     "answer": "8x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$frac{du}{dx}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$8x$",
+     "level": 1,
+     "explain": "$du = 8x dx$"
+    },
+    {
+     "id": "V17",
+     "type": "expr",
+     "text": "With $u = cos(x)$, find $frac{du}{dx}$.",
+     "answer": "-sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$frac{du}{dx}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$-sin(x)$",
+     "level": 1,
+     "explain": "$du = -sin(x) dx$"
+    },
+    {
+     "id": "V18",
+     "type": "expr",
+     "text": "With $u = cos(x)$, find $frac{du}{dx}$.",
+     "answer": "-sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$frac{du}{dx}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$-sin(x)$",
+     "level": 1,
+     "explain": "$du = -sin(x) dx$"
+    },
+    {
+     "id": "V19",
+     "type": "expr",
+     "text": "With $u = x^3$, find $frac{du}{dx}$.",
+     "answer": "3x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$frac{du}{dx}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$3x^2$",
+     "level": 1,
+     "explain": "$du = 3x^2 dx$"
+    },
+    {
+     "id": "V20",
+     "type": "expr",
+     "text": "With $u = 4x$, find $frac{du}{dx}$.",
+     "answer": "4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$frac{du}{dx}$ =",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "show": "$4$",
+     "level": 1,
+     "explain": "$du = 4 dx$"
+    },
+    {
+     "id": "W21",
+     "type": "expr",
+     "text": "$int 6x(3x^2 + 4)^4 dx$ with $u = 3x^2 + 4$ becomes $int u^4 du$. Integrate in $u$.",
+     "answer": "u^5/5",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int u^4 du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$frac{u^5}{5}$",
+     "level": 2,
+     "explain": "$frac{u^5}{5} + C$"
+    },
+    {
+     "id": "W22",
+     "type": "expr",
+     "text": "$int 3x^2(x^3 - 3)^2 dx$ with $u = x^3 - 3$ becomes $int u^2 du$. Integrate in $u$.",
+     "answer": "u^3/3",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int u^2 du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$frac{u^3}{3}$",
+     "level": 2,
+     "explain": "$frac{u^3}{3} + C$"
+    },
+    {
+     "id": "W23",
+     "type": "expr",
+     "text": "$int 2x cos(x^2) dx$ with $u = x^2$ becomes $int cos(u) du$. Integrate in $u$.",
+     "answer": "sin(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int cos(u) du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$sin(u)$",
+     "level": 2,
+     "explain": "$sin(u) + C$"
+    },
+    {
+     "id": "W24",
+     "type": "expr",
+     "text": "$int cos(x) sin^3(x) dx$ with $u = sin(x)$ becomes $int u^3 du$. Integrate in $u$.",
+     "answer": "u^4/4",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int u^3 du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$frac{u^4}{4}$",
+     "level": 2,
+     "explain": "$frac{u^4}{4} + C$"
+    },
+    {
+     "id": "W25",
+     "type": "expr",
+     "text": "$int 2x e^(x^2) dx$ with $u = x^2$ becomes $int e^u du$. Integrate in $u$.",
+     "answer": "e^u",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int e^u du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$e^u$",
+     "level": 2,
+     "explain": "$e^u + C$"
+    },
+    {
+     "id": "W26",
+     "type": "expr",
+     "text": "$int frac{2x}{x^2 + 1} dx$ with $u = x^2 + 1$ becomes $int 1/u du$. Integrate in $u$.",
+     "answer": "ln(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int 1/u du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$ln(u)$",
+     "level": 2,
+     "explain": "$ln(u) + C$"
+    },
+    {
+     "id": "W27",
+     "type": "expr",
+     "text": "$int 3(3x + 1)^5 dx$ with $u = 3x + 1$ becomes $int u^5 du$. Integrate in $u$.",
+     "answer": "u^6/6",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int u^5 du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$frac{u^6}{6}$",
+     "level": 2,
+     "explain": "$frac{u^6}{6} + C$"
+    },
+    {
+     "id": "W28",
+     "type": "expr",
+     "text": "$int 2x sqrt(x^2 + 5) dx$ with $u = x^2 + 5$ becomes $int sqrt(u) du$. Integrate in $u$.",
+     "answer": "(2/3)u^(3/2)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int sqrt(u) du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$(2/3)u^(3/2)$",
+     "level": 2,
+     "explain": "$(2/3)u^(3/2) + C$"
+    },
+    {
+     "id": "W29",
+     "type": "expr",
+     "text": "$int -sin(x) cos^2(x) dx$ with $u = cos(x)$ becomes $int u^2 du$. Integrate in $u$.",
+     "answer": "u^3/3",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int u^2 du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$frac{u^3}{3}$",
+     "level": 2,
+     "explain": "$frac{u^3}{3} + C$"
+    },
+    {
+     "id": "W30",
+     "type": "expr",
+     "text": "$int 5e^(5x) dx$ with $u = 5x$ becomes $int e^u du$. Integrate in $u$.",
+     "answer": "e^u",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int e^u du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$e^u$",
+     "level": 2,
+     "explain": "$e^u + C$"
+    },
+    {
+     "id": "W31",
+     "type": "expr",
+     "text": "$int frac{3x^2}{x^3 + 2} dx$ with $u = x^3 + 2$ becomes $int 1/u du$. Integrate in $u$.",
+     "answer": "ln(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int 1/u du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$ln(u)$",
+     "level": 2,
+     "explain": "$ln(u) + C$"
+    },
+    {
+     "id": "W32",
+     "type": "expr",
+     "text": "$int 4x^3(x^4 + 1)^2 dx$ with $u = x^4 + 1$ becomes $int u^2 du$. Integrate in $u$.",
+     "answer": "u^3/3",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int u^2 du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$frac{u^3}{3}$",
+     "level": 2,
+     "explain": "$frac{u^3}{3} + C$"
+    },
+    {
+     "id": "K33",
+     "type": "num",
+     "text": "In $int x(x^2 + 1)^3 dx$ let $u = x^2 + 1$, so $du = 2x dx$. The leftover piece is $k du$. What is $k$?",
+     "answer": 0.5,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = 1/2$."
+    },
+    {
+     "id": "K34",
+     "type": "num",
+     "text": "In $int x e^(4x^2 + 3) dx$ let $u = 4x^2 + 3$, so $du = 8x dx$. The leftover piece is $k du$. What is $k$?",
+     "answer": 0.125,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = 1/8$."
+    },
+    {
+     "id": "K35",
+     "type": "num",
+     "text": "In $int z sqrt(z^2 - 5) dz$ let $u = z^2 - 5$, so $du = 2z dz$. The leftover piece is $k du$. What is $k$?",
+     "answer": 0.5,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = 1/2$."
+    },
+    {
+     "id": "K36",
+     "type": "num",
+     "text": "In $int frac{sin(x)}{cos^2(x)} dx$ let $u = cos(x)$, so $du = -sin(x) dx$. The leftover piece is $k du$. What is $k$?",
+     "answer": -1,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = -1$."
+    },
+    {
+     "id": "K37",
+     "type": "num",
+     "text": "In $int tan(x) dx$ let $u = cos(x)$, so $du = -sin(x) dx$. The leftover piece is $k du$. What is $k$?",
+     "answer": -1,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = -1$."
+    },
+    {
+     "id": "K38",
+     "type": "num",
+     "text": "In $int sin(theta) cos^2(theta) dtheta$ let $u = cos(theta)$, so $du = -sin(theta) dtheta$. The leftover piece is $k du$. What is $k$?",
+     "answer": -1,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = -1$."
+    },
+    {
+     "id": "K39",
+     "type": "num",
+     "text": "In $int x^2 sin(x^3) dx$ let $u = x^3$, so $du = 3x^2 dx$. The leftover piece is $k du$. What is $k$?",
+     "answer": 0.333333,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = 1/3$."
+    },
+    {
+     "id": "K40",
+     "type": "num",
+     "text": "In $int cos(4x) dx$ let $u = 4x$, so $du = 4 dx$. The leftover piece is $k du$. What is $k$?",
+     "answer": 0.25,
+     "label": "$k$ =",
+     "level": 2,
+     "explain": "Divide $du$ by what is missing: $k = 1/4$."
+    },
+    {
+     "id": "S41",
+     "type": "steps",
+     "text": "Use substitution: $int 6x(3x^2 + 4)^4 dx$.",
+     "steps": [
+      {
+       "id": "S41.1",
+       "type": "expr",
+       "answer": "3x^2 + 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x^2 + 4$",
+       "work": "$u = 3x^2 + 4$"
+      },
+      {
+       "id": "S41.2",
+       "type": "expr",
+       "answer": "6x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$6x$",
+       "work": "$du = 6x dx$, so it is $int u^4 du$"
+      },
+      {
+       "id": "S41.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(3x^2 + 4)^5/5",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{(3x^2 + 4)^5}{5}$",
+       "work": "$frac{(3x^2 + 4)^5}{5} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{(3x^2 + 4)^5}{5} + C$"
+    },
+    {
+     "id": "S42",
+     "type": "steps",
+     "text": "Use substitution: $int 3x^2(x^3 - 3)^2 dx$.",
+     "steps": [
+      {
+       "id": "S42.1",
+       "type": "expr",
+       "answer": "x^3 - 3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^3 - 3$",
+       "work": "$u = x^3 - 3$"
+      },
+      {
+       "id": "S42.2",
+       "type": "expr",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x^2$",
+       "work": "$du = 3x^2 dx$, so it is $int u^2 du$"
+      },
+      {
+       "id": "S42.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(x^3 - 3)^3/3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{(x^3 - 3)^3}{3}$",
+       "work": "$frac{(x^3 - 3)^3}{3} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{(x^3 - 3)^3}{3} + C$"
+    },
+    {
+     "id": "S43",
+     "type": "steps",
+     "text": "Use substitution: $int 2x cos(x^2) dx$.",
+     "steps": [
+      {
+       "id": "S43.1",
+       "type": "expr",
+       "answer": "x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^2$",
+       "work": "$u = x^2$"
+      },
+      {
+       "id": "S43.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$2x$",
+       "work": "$du = 2x dx$, so it is $int cos(u) du$"
+      },
+      {
+       "id": "S43.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "sin(x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$sin(x^2)$",
+       "work": "$sin(x^2) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$sin(x^2) + C$"
+    },
+    {
+     "id": "S44",
+     "type": "steps",
+     "text": "Use substitution: $int cos(x) sin^3(x) dx$.",
+     "steps": [
+      {
+       "id": "S44.1",
+       "type": "expr",
+       "answer": "sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$sin(x)$",
+       "work": "$u = sin(x)$"
+      },
+      {
+       "id": "S44.2",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$du = cos(x) dx$, so it is $int u^3 du$"
+      },
+      {
+       "id": "S44.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "sin(x)^4/4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{sin(x)^4}{4}$",
+       "work": "$frac{sin(x)^4}{4} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{sin(x)^4}{4} + C$"
+    },
+    {
+     "id": "S45",
+     "type": "steps",
+     "text": "Use substitution: $int 2x e^(x^2) dx$.",
+     "steps": [
+      {
+       "id": "S45.1",
+       "type": "expr",
+       "answer": "x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^2$",
+       "work": "$u = x^2$"
+      },
+      {
+       "id": "S45.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$2x$",
+       "work": "$du = 2x dx$, so it is $int e^u du$"
+      },
+      {
+       "id": "S45.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "e^(x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$e^(x^2)$",
+       "work": "$e^(x^2) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$e^(x^2) + C$"
+    },
+    {
+     "id": "S46",
+     "type": "steps",
+     "text": "Use substitution: $int frac{2x}{x^2 + 1} dx$.",
+     "steps": [
+      {
+       "id": "S46.1",
+       "type": "expr",
+       "answer": "x^2 + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^2 + 1$",
+       "work": "$u = x^2 + 1$"
+      },
+      {
+       "id": "S46.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$2x$",
+       "work": "$du = 2x dx$, so it is $int 1/u du$"
+      },
+      {
+       "id": "S46.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "ln(x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$ln(x^2 + 1)$",
+       "work": "$ln(x^2 + 1) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$ln(x^2 + 1) + C$"
+    },
+    {
+     "id": "S47",
+     "type": "steps",
+     "text": "Use substitution: $int 3(3x + 1)^5 dx$.",
+     "steps": [
+      {
+       "id": "S47.1",
+       "type": "expr",
+       "answer": "3x + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x + 1$",
+       "work": "$u = 3x + 1$"
+      },
+      {
+       "id": "S47.2",
+       "type": "expr",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3$",
+       "work": "$du = 3 dx$, so it is $int u^5 du$"
+      },
+      {
+       "id": "S47.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(3x + 1)^6/6",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{(3x + 1)^6}{6}$",
+       "work": "$frac{(3x + 1)^6}{6} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{(3x + 1)^6}{6} + C$"
+    },
+    {
+     "id": "S48",
+     "type": "steps",
+     "text": "Use substitution: $int 2x sqrt(x^2 + 5) dx$.",
+     "steps": [
+      {
+       "id": "S48.1",
+       "type": "expr",
+       "answer": "x^2 + 5",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^2 + 5$",
+       "work": "$u = x^2 + 5$"
+      },
+      {
+       "id": "S48.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$2x$",
+       "work": "$du = 2x dx$, so it is $int sqrt(u) du$"
+      },
+      {
+       "id": "S48.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(2/3)(x^2 + 5)^(3/2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$(2/3)(x^2 + 5)^(3/2)$",
+       "work": "$(2/3)(x^2 + 5)^(3/2) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$(2/3)(x^2 + 5)^(3/2) + C$"
+    },
+    {
+     "id": "S49",
+     "type": "steps",
+     "text": "Use substitution: $int -sin(x) cos^2(x) dx$.",
+     "steps": [
+      {
+       "id": "S49.1",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$u = cos(x)$"
+      },
+      {
+       "id": "S49.2",
+       "type": "expr",
+       "answer": "-sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$-sin(x)$",
+       "work": "$du = -sin(x) dx$, so it is $int u^2 du$"
+      },
+      {
+       "id": "S49.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "cos(x)^3/3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{cos(x)^3}{3}$",
+       "work": "$frac{cos(x)^3}{3} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{cos(x)^3}{3} + C$"
+    },
+    {
+     "id": "S50",
+     "type": "steps",
+     "text": "Use substitution: $int 5e^(5x) dx$.",
+     "steps": [
+      {
+       "id": "S50.1",
+       "type": "expr",
+       "answer": "5x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$5x$",
+       "work": "$u = 5x$"
+      },
+      {
+       "id": "S50.2",
+       "type": "expr",
+       "answer": "5",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$5$",
+       "work": "$du = 5 dx$, so it is $int e^u du$"
+      },
+      {
+       "id": "S50.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "e^(5x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$e^(5x)$",
+       "work": "$e^(5x) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$e^(5x) + C$"
+    },
+    {
+     "id": "S51",
+     "type": "steps",
+     "text": "Use substitution: $int frac{3x^2}{x^3 + 2} dx$.",
+     "steps": [
+      {
+       "id": "S51.1",
+       "type": "expr",
+       "answer": "x^3 + 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^3 + 2$",
+       "work": "$u = x^3 + 2$"
+      },
+      {
+       "id": "S51.2",
+       "type": "expr",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x^2$",
+       "work": "$du = 3x^2 dx$, so it is $int 1/u du$"
+      },
+      {
+       "id": "S51.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "ln(x^3 + 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$ln(x^3 + 2)$",
+       "work": "$ln(x^3 + 2) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$ln(x^3 + 2) + C$"
+    },
+    {
+     "id": "S52",
+     "type": "steps",
+     "text": "Use substitution: $int 4x^3(x^4 + 1)^2 dx$.",
+     "steps": [
+      {
+       "id": "S52.1",
+       "type": "expr",
+       "answer": "x^4 + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^4 + 1$",
+       "work": "$u = x^4 + 1$"
+      },
+      {
+       "id": "S52.2",
+       "type": "expr",
+       "answer": "4x^3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$4x^3$",
+       "work": "$du = 4x^3 dx$, so it is $int u^2 du$"
+      },
+      {
+       "id": "S52.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(x^4 + 1)^3/3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{(x^4 + 1)^3}{3}$",
+       "work": "$frac{(x^4 + 1)^3}{3} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{(x^4 + 1)^3}{3} + C$"
+    },
+    {
+     "id": "S53",
+     "type": "steps",
+     "text": "Use substitution: $int frac{e^x}{e^x + 1} dx$.",
+     "steps": [
+      {
+       "id": "S53.1",
+       "type": "expr",
+       "answer": "e^x + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$e^x + 1$",
+       "work": "$u = e^x + 1$"
+      },
+      {
+       "id": "S53.2",
+       "type": "expr",
+       "answer": "e^x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$e^x$",
+       "work": "$du = e^x dx$, so it is $int 1/u du$"
+      },
+      {
+       "id": "S53.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "ln(e^x + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$ln(e^x + 1)$",
+       "work": "$ln(e^x + 1) + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$ln(e^x + 1) + C$"
+    },
+    {
+     "id": "S54",
+     "type": "steps",
+     "text": "Use substitution: $int frac{arctan(x)}{1 + x^2} dx$.",
+     "steps": [
+      {
+       "id": "S54.1",
+       "type": "expr",
+       "answer": "arctan(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$arctan(x)$",
+       "work": "$u = arctan(x)$"
+      },
+      {
+       "id": "S54.2",
+       "type": "expr",
+       "answer": "1/(1 + x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$frac{1}{1 + x^2}$",
+       "work": "$du = 1/(1 + x^2) dx$, so it is $int u du$"
+      },
+      {
+       "id": "S54.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "arctan(x)^2/2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{arctan(x)^2}{2}$",
+       "work": "$frac{arctan(x)^2}{2} + C$"
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{arctan(x)^2}{2} + C$"
+    },
+    {
+     "id": "D55",
+     "type": "steps",
+     "text": "Evaluate $int[0,1] 2x(x^2 + 1)^3 dx$ with $u = x^2 + 1$.",
+     "steps": [
+      {
+       "id": "D55.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 1,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 1$"
+      },
+      {
+       "id": "D55.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = 1$.",
+       "answer": 2,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = 2$"
+      },
+      {
+       "id": "D55.3",
+       "type": "num",
+       "text": "The integral is $int[1,2] u^3 du$. Evaluate it (a decimal is fine).",
+       "answer": 3.75,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 3.75$"
+      }
+     ],
+     "level": 3,
+     "explain": "3.75"
+    },
+    {
+     "id": "D56",
+     "type": "steps",
+     "text": "Evaluate $int[0,1] x e^(4x^2 + 3) dx$ with $u = 4x^2 + 3$.",
+     "steps": [
+      {
+       "id": "D56.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 3,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 3$"
+      },
+      {
+       "id": "D56.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = 1$.",
+       "answer": 7,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = 7$"
+      },
+      {
+       "id": "D56.3",
+       "type": "num",
+       "text": "The integral is $int[3,7] e^u/8 du$. Evaluate it (a decimal is fine).",
+       "answer": 134.568453,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 134.568453$"
+      }
+     ],
+     "level": 3,
+     "explain": "134.568453"
+    },
+    {
+     "id": "D57",
+     "type": "steps",
+     "text": "Evaluate $int[0,1] frac{arctan(x)}{1 + x^2} dx$ with $u = arctan(x)$.",
+     "steps": [
+      {
+       "id": "D57.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 0,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 0$"
+      },
+      {
+       "id": "D57.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = 1$.",
+       "answer": 0.785398,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = frac{pi}{4}$"
+      },
+      {
+       "id": "D57.3",
+       "type": "num",
+       "text": "The integral is $int[0,frac{pi}{4}] u du$. Evaluate it (a decimal is fine).",
+       "answer": 0.308425,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 0.308425$"
+      }
+     ],
+     "level": 3,
+     "explain": "0.308425"
+    },
+    {
+     "id": "D58",
+     "type": "steps",
+     "text": "Evaluate $int[0,1] x^2(1 + 2x^3)^5 dx$ with $u = 1 + 2x^3$.",
+     "steps": [
+      {
+       "id": "D58.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 1,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 1$"
+      },
+      {
+       "id": "D58.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = 1$.",
+       "answer": 3,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = 3$"
+      },
+      {
+       "id": "D58.3",
+       "type": "num",
+       "text": "The integral is $int[1,3] u^5/6 du$. Evaluate it (a decimal is fine).",
+       "answer": 20.222222,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 20.222222$"
+      }
+     ],
+     "level": 3,
+     "explain": "20.222222"
+    },
+    {
+     "id": "D59",
+     "type": "steps",
+     "text": "Evaluate $int[0,sqrt(pi)] 2x cos(x^2) dx$ with $u = x^2$.",
+     "steps": [
+      {
+       "id": "D59.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 0,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 0$"
+      },
+      {
+       "id": "D59.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = sqrt(pi)$.",
+       "answer": 3.141593,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = pi$"
+      },
+      {
+       "id": "D59.3",
+       "type": "num",
+       "text": "The integral is $int[0,pi] cos(u) du$. Evaluate it (a decimal is fine).",
+       "answer": 0,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 0$"
+      }
+     ],
+     "level": 3,
+     "explain": "0"
+    },
+    {
+     "id": "D60",
+     "type": "steps",
+     "text": "Evaluate $int[0,2] frac{2x}{x^2 + 1} dx$ with $u = x^2 + 1$.",
+     "steps": [
+      {
+       "id": "D60.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 1,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 1$"
+      },
+      {
+       "id": "D60.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = 2$.",
+       "answer": 5,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = 5$"
+      },
+      {
+       "id": "D60.3",
+       "type": "num",
+       "text": "The integral is $int[1,5] 1/u du$. Evaluate it (a decimal is fine).",
+       "answer": 1.609438,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 1.609438$"
+      }
+     ],
+     "level": 3,
+     "explain": "1.609438"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Substitution undoes the chain rule. In $int 6x(3x^2 + 4)^4 dx$, notice that $6x$ is the derivative of $3x^2 + 4$. So we let $u =$",
+    "options": [
+     "$3x^2 + 4$",
+     "$6x$",
+     "$(3x^2 + 4)^4$",
+     "$x$"
+    ],
+    "answer": 0,
+    "hint": "Pick the inside function whose derivative is sitting next to it.",
+    "explain": "$u = 3x^2 + 4$"
+   },
+   {
+    "id": "L2",
+    "type": "steps",
+    "text": "Finish $int 6x(3x^2 + 4)^4 dx$ with $u = 3x^2 + 4$.",
+    "steps": [
+     {
+      "id": "L2.1",
+      "type": "expr",
+      "answer": "6x",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sqrt(",
+       "e^(",
+       "ln("
+      ],
+      "label": "$frac{du}{dx}$ =",
+      "show": "$6x$",
+      "hint": "The derivative of $3x^2 + 4$.",
+      "work": "$du = 6x dx$, so the integral is $int u^4 du$"
+     },
+     {
+      "id": "L2.2",
+      "type": "expr",
+      "text": "Integrate in $u$.",
+      "answer": "u^5/5",
+      "vars": [
+       "u"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sqrt(",
+       "e^(",
+       "ln("
+      ],
+      "label": "$int u^4 du$ =",
+      "post": "$+ C$",
+      "upToC": true,
+      "show": "$frac{u^5}{5}$",
+      "hint": "Anti-power rule.",
+      "work": "$int u^4 du = frac{u^5}{5} + C$"
+     },
+     {
+      "id": "L2.3",
+      "type": "expr",
+      "text": "Put $u = 3x^2 + 4$ back.",
+      "answer": "(3x^2 + 4)^5/5",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sin(",
+       "cos(",
+       "tan(",
+       "sqrt(",
+       "e^(",
+       "ln("
+      ],
+      "label": "answer =",
+      "post": "$+ C$",
+      "upToC": true,
+      "show": "$frac{(3x^2 + 4)^5}{5}$",
+      "hint": "Replace $u$.",
+      "work": "$frac{(3x^2 + 4)^5}{5} + C$"
+     }
+    ]
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "Your turn: $int 3x^2(x^3 - 3)^2 dx$. (Let $u = x^3 - 3$.)",
+    "answer": "(x^3 - 3)^3/3",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sin(",
+     "cos(",
+     "tan(",
+     "sqrt(",
+     "e^(",
+     "ln("
+    ],
+    "label": "answer =",
+    "post": "$+ C$",
+    "upToC": true,
+    "show": "$frac{(x^3 - 3)^3}{3}$",
+    "hint": "$du = 3x^2 dx$, so it is $int u^2 du = frac{u^3}{3}$.",
+    "explain": "$frac{(x^3 - 3)^3}{3} + C$"
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Sometimes a constant is missing. In $int x e^(4x^2 + 3) dx$ let $u = 4x^2 + 3$. Then $du = 8x dx$, so $x dx =$",
+    "options": [
+     "$frac{1}{8} du$",
+     "$8 du$",
+     "$du$",
+     "$frac{1}{4x} du$"
+    ],
+    "answer": 0,
+    "hint": "Divide $du = 8x dx$ by 8.",
+    "explain": "So the integral is $frac{1}{8} int e^u du = frac{1}{8}e^(4x^2 + 3) + C$."
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "For a **definite** integral, change the limits too. In $int[0,1] x e^(4x^2 + 3) dx$ with $u = 4x^2 + 3$, the limits $x = 0$ and $x = 1$ become",
+    "options": [
+     "$u = 3$ and $u = 7$",
+     "$u = 0$ and $u = 1$",
+     "$u = 3$ and $u = 4$",
+     "$u = 0$ and $u = 8$"
+    ],
+    "answer": 0,
+    "hint": "Plug each $x$ into $u = 4x^2 + 3$.",
+    "explain": "Then $frac{1}{8} int[3,7] e^u du = frac{e^7 - e^3}{8}$."
+   }
+  ]
+ }
+}

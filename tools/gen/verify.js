@@ -10,7 +10,9 @@ for(const f of fs.readdirSync(path.join(__dirname,'out')).filter(f=>f.endsWith('
   for(const m of JSON.parse(fs.readFileSync(path.join(__dirname,'out',f),'utf8'))){
     n++; let F;
     try{F=xcompile(m.answer,m.vars);}catch(e){bad++;console.log('PARSE',m.deck,m.id,JSON.stringify(m.answer),e.message);continue;}
-    for(const [env,want] of m.samples){const got=F(env);
+    let c=null;
+    for(const [env,want] of m.samples){let got=F(env);
+      if(m.upToC){if(c==null)c=got-want;got-=c;}
       if(!(Math.abs(got-want)<=1e-6*Math.max(1,Math.abs(want)))){bad++;console.log('WRONG',m.deck,m.id,JSON.stringify(m.answer),JSON.stringify(env),'got',got,'want',want);break;}}
   }
 }

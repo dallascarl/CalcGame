@@ -1,0 +1,912 @@
+{
+ "id": "w-definite",
+ "course": "Calculus 1",
+ "unit": "Integration",
+ "title": "The Definite Integral",
+ "subtitle": "The exact area, as a limit of rectangle sums.",
+ "version": 2,
+ "graphs": {
+  "trap": {
+   "window": [
+    -0.5,
+    4.5,
+    -0.5,
+    9.5
+   ],
+   "pieces": [
+    {
+     "expr": "2*x+1",
+     "from": 0,
+     "to": 4
+    }
+   ],
+   "vlines": [
+    4
+   ],
+   "ystep": 1
+  },
+  "quarter": {
+   "window": [
+    -0.5,
+    3.5,
+    -0.5,
+    3.5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(9-x^2)",
+     "from": 0,
+     "to": 3
+    }
+   ]
+  },
+  "sine": {
+   "window": [
+    -3.4,
+    3.4,
+    -1.4,
+    1.4
+   ],
+   "pieces": [
+    {
+     "expr": "sin(x)",
+     "from": -3.1416,
+     "to": 3.1416
+    }
+   ]
+  },
+  "pw0": {
+   "window": [
+    -0.5,
+    6.5,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "2",
+     "from": 0,
+     "to": 2
+    },
+    {
+     "expr": "4 - x",
+     "from": 2,
+     "to": 4
+    },
+    {
+     "expr": "4 - x",
+     "from": 4,
+     "to": 6
+    }
+   ]
+  },
+  "pw1": {
+   "window": [
+    -0.5,
+    6.5,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "2*x",
+     "from": 0,
+     "to": 2
+    },
+    {
+     "expr": "4",
+     "from": 2,
+     "to": 4
+    },
+    {
+     "expr": "12 - 2*x",
+     "from": 4,
+     "to": 6
+    }
+   ]
+  },
+  "pw2": {
+   "window": [
+    -0.5,
+    6.5,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "3 - x",
+     "from": 0,
+     "to": 3
+    },
+    {
+     "expr": "x - 3",
+     "from": 3,
+     "to": 6
+    }
+   ]
+  },
+  "pw3": {
+   "window": [
+    -0.5,
+    6.5,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "2*x - 2",
+     "from": 0,
+     "to": 2
+    },
+    {
+     "expr": "2",
+     "from": 2,
+     "to": 4
+    },
+    {
+     "expr": "10 - 2*x",
+     "from": 4,
+     "to": 6
+    }
+   ]
+  },
+  "pw4": {
+   "window": [
+    -0.5,
+    6.5,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "4 - x",
+     "from": 0,
+     "to": 4
+    },
+    {
+     "expr": "4 - x",
+     "from": 4,
+     "to": 6
+    }
+   ]
+  },
+  "circ2-2": {
+   "window": [
+    -2.5,
+    2.5,
+    -0.5,
+    2.5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(4-x^2)",
+     "from": -2,
+     "to": 2
+    }
+   ]
+  },
+  "circ30": {
+   "window": [
+    -3.5,
+    3.5,
+    -0.5,
+    3.5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(9-x^2)",
+     "from": 0,
+     "to": 3
+    }
+   ]
+  },
+  "circ4-4": {
+   "window": [
+    -4.5,
+    4.5,
+    -0.5,
+    4.5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(16-x^2)",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  },
+  "circ1-1": {
+   "window": [
+    -1.5,
+    1.5,
+    -0.5,
+    1.5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(1-x^2)",
+     "from": -1,
+     "to": 1
+    }
+   ]
+  },
+  "line2": {
+   "window": [
+    -3.5,
+    3.5,
+    -7,
+    7
+   ],
+   "pieces": [
+    {
+     "expr": "2*x",
+     "from": -3,
+     "to": 3
+    }
+   ]
+  },
+  "line1": {
+   "window": [
+    -3.5,
+    3.5,
+    -4,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "1*x",
+     "from": -3,
+     "to": 3
+    }
+   ]
+  },
+  "line3": {
+   "window": [
+    -3.5,
+    3.5,
+    -10,
+    10
+   ],
+   "pieces": [
+    {
+     "expr": "3*x",
+     "from": -3,
+     "to": 3
+    }
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "If $f$ is continuous on $[a, b]$, then $f$ is integrable on $[a, b]$.",
+     "answer": true,
+     "explain": "Continuous functions always have a definite integral."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$int[a,a] f(x) dx =$",
+     "options": [
+      "0",
+      "$f(a)$",
+      "$a$",
+      "1"
+     ],
+     "answer": 0,
+     "explain": "No width, no area."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$int[b,a] f(x) dx =$",
+     "options": [
+      "$-int[a,b] f(x) dx$",
+      "$int[a,b] f(x) dx$",
+      "0",
+      "$frac{1}{int[a,b] f(x) dx}$"
+     ],
+     "answer": 0,
+     "explain": "Running backwards flips the sign."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "What is the difference between $int[0,2] x^2 dx$ and $int x^2 dx$?",
+     "options": [
+      "The first is a number; the second is a family of functions",
+      "There is no difference",
+      "The first is a function; the second is a number",
+      "The second is always bigger"
+     ],
+     "answer": 0,
+     "explain": "Definite integrals give numbers (areas). Indefinite integrals give antiderivatives $+ C$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$f(x) = 2x$ on $[-3, 3]$. Which is true?",
+     "options": [
+      "The net signed area is 0 but the total area is 18",
+      "The net signed area is 18",
+      "Both are 0",
+      "Both are 18"
+     ],
+     "answer": 0,
+     "explain": "Two triangles of area 9, one below the axis: $-9 + 9 = 0$, but total area $9 + 9 = 18$."
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "If $f(x) >= g(x)$ on $[a, b]$, then $int[a,b] f(x) dx >= int[a,b] g(x) dx$.",
+     "answer": true,
+     "explain": "A taller function has more area under it."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "$int[a,b] c dx$ for a constant $c$ is",
+     "options": [
+      "$c(b - a)$",
+      "$c$",
+      "$cb$",
+      "0"
+     ],
+     "answer": 0,
+     "explain": "A rectangle of height $c$ and width $b - a$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "id": "G1",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,2] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw0"
+    },
+    {
+     "id": "G2",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,4] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 6,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 6.",
+     "graph": "pw0"
+    },
+    {
+     "id": "G3",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 0.",
+     "graph": "pw0"
+    },
+    {
+     "id": "G4",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw0"
+    },
+    {
+     "id": "G5",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,2] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw1"
+    },
+    {
+     "id": "G6",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,4] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 12,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 12.",
+     "graph": "pw1"
+    },
+    {
+     "id": "G7",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 12,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 12.",
+     "graph": "pw1"
+    },
+    {
+     "id": "G8",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 16,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 16.",
+     "graph": "pw1"
+    },
+    {
+     "id": "G9",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,2] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw2"
+    },
+    {
+     "id": "G10",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,4] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 5,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 5.",
+     "graph": "pw2"
+    },
+    {
+     "id": "G11",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 5,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 5.",
+     "graph": "pw2"
+    },
+    {
+     "id": "G12",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 9,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 9.",
+     "graph": "pw2"
+    },
+    {
+     "id": "G13",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,2] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 0.",
+     "graph": "pw3"
+    },
+    {
+     "id": "G14",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,4] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw3"
+    },
+    {
+     "id": "G15",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw3"
+    },
+    {
+     "id": "G16",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "pw3"
+    },
+    {
+     "id": "G17",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,2] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 6,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 6.",
+     "graph": "pw4"
+    },
+    {
+     "id": "G18",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,4] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 8,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 8.",
+     "graph": "pw4"
+    },
+    {
+     "id": "G19",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 0.",
+     "graph": "pw4"
+    },
+    {
+     "id": "G20",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 6,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 6.",
+     "graph": "pw4"
+    },
+    {
+     "id": "C21",
+     "type": "num",
+     "text": "Find $int[-2,2] sqrt(4 - x^2) dx$. (It is half of a circle of radius 2. A decimal is fine.)",
+     "answer": 6.283185,
+     "label": "integral =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "$1/2·pi(2)^2 = 6.283185$",
+     "graph": "circ2-2"
+    },
+    {
+     "id": "C22",
+     "type": "num",
+     "text": "Find $int[0,3] sqrt(9 - x^2) dx$. (It is a quarter of a circle of radius 3. A decimal is fine.)",
+     "answer": 7.068583,
+     "label": "integral =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "$1/4·pi(3)^2 = 7.068583$",
+     "graph": "circ30"
+    },
+    {
+     "id": "C23",
+     "type": "num",
+     "text": "Find $int[-4,4] sqrt(16 - x^2) dx$. (It is half of a circle of radius 4. A decimal is fine.)",
+     "answer": 25.132741,
+     "label": "integral =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "$1/2·pi(4)^2 = 25.132741$",
+     "graph": "circ4-4"
+    },
+    {
+     "id": "C24",
+     "type": "num",
+     "text": "Find $int[-1,1] sqrt(1 - x^2) dx$. (It is half of a circle of radius 1. A decimal is fine.)",
+     "answer": 1.570796,
+     "label": "integral =",
+     "tol": 0.01,
+     "level": 2,
+     "explain": "$1/2·pi(1)^2 = 1.570796$",
+     "graph": "circ1-1"
+    },
+    {
+     "id": "P25",
+     "type": "num",
+     "text": "Given $int[0,3] f = 5$ and $int[3,7] f = 2$. Find $int[0,7] f(x) dx$.",
+     "answer": 7,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 7."
+    },
+    {
+     "id": "P26",
+     "type": "num",
+     "text": "Given $int[1,4] f = 8$. Find $int[4,1] f(x) dx$.",
+     "answer": -8,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: -8."
+    },
+    {
+     "id": "P27",
+     "type": "num",
+     "text": "Given $int[2,6] f = 9$. Find $int[2,6] 4f(x) dx$.",
+     "answer": 36,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 36."
+    },
+    {
+     "id": "P28",
+     "type": "num",
+     "text": "Given $int[0,5] f = 3$ and $int[0,5] g = -2$. Find $int[0,5] (f(x) + g(x)) dx$.",
+     "answer": 1,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 1."
+    },
+    {
+     "id": "P29",
+     "type": "num",
+     "text": "Given $int[0,5] f = 3$ and $int[0,5] g = -2$. Find $int[0,5] (2f(x) - 3g(x)) dx$.",
+     "answer": 12,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Use the properties of integrals: 12."
+    },
+    {
+     "id": "P30",
+     "type": "num",
+     "text": "Given $int[1,9] f = 20$ and $int[1,4] f = 6$. Find $int[4,9] f(x) dx$.",
+     "answer": 14,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 14."
+    },
+    {
+     "id": "P31",
+     "type": "num",
+     "text": "Given $f$ is any function. Find $int[3,3] f(x) dx$.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 0."
+    },
+    {
+     "id": "P32",
+     "type": "num",
+     "text": "Given $int[0,2] f = 4$. Find $int[0,2] (f(x) + 1) dx$.",
+     "answer": 6,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 6."
+    },
+    {
+     "id": "P33",
+     "type": "num",
+     "text": "Given $int[1,3] f = 10$, $int[3,5] f = 3$ and $int[1,5] g = 9$. Find $int[1,5] (3f(x) - g(x)) dx$.",
+     "answer": 30,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Use the properties of integrals: 30."
+    },
+    {
+     "id": "P34",
+     "type": "num",
+     "text": "Given $int[-2,2] f = 6$ and $int[0,2] f = 1$. Find $int[-2,0] f(x) dx$.",
+     "answer": 5,
+     "label": "integral =",
+     "level": 2,
+     "explain": "Use the properties of integrals: 5."
+    },
+    {
+     "id": "P35",
+     "type": "num",
+     "text": "Given $int[0,4] f = 7$. Find $int[4,0] 2f(x) dx$.",
+     "answer": -14,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: -14."
+    },
+    {
+     "id": "P36",
+     "type": "num",
+     "text": "Given nothing else is needed. Find $int[2,7] 3 dx$.",
+     "answer": 15,
+     "label": "integral =",
+     "level": 1,
+     "explain": "Use the properties of integrals: 15."
+    },
+    {
+     "id": "N37",
+     "type": "num",
+     "text": "$f(x) = 2x$ on $[-3, 3]$. Find the **total** area between the graph and the $x$-axis.",
+     "answer": 18,
+     "label": "total area =",
+     "level": 2,
+     "explain": "Two triangles each of area $frac{1}{2}·3·6 = 9$, both counted positive: 18.",
+     "graph": "line2"
+    },
+    {
+     "id": "N38",
+     "type": "num",
+     "text": "$f(x) = 2x$ on $[-3, 3]$. Find the **net signed** area, $int[-3,3] 2x dx$.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 2,
+     "explain": "The triangle below the axis cancels the one above: 0.",
+     "graph": "line2"
+    },
+    {
+     "id": "N39",
+     "type": "num",
+     "text": "$f(x) = 1x$ on $[-3, 3]$. Find the **total** area between the graph and the $x$-axis.",
+     "answer": 9,
+     "label": "total area =",
+     "level": 2,
+     "explain": "Two triangles each of area $frac{1}{2}·3·3 = 9/2$, both counted positive: 9.",
+     "graph": "line1"
+    },
+    {
+     "id": "N40",
+     "type": "num",
+     "text": "$f(x) = 1x$ on $[-3, 3]$. Find the **net signed** area, $int[-3,3] 1x dx$.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 2,
+     "explain": "The triangle below the axis cancels the one above: 0.",
+     "graph": "line1"
+    },
+    {
+     "id": "N41",
+     "type": "num",
+     "text": "$f(x) = 3x$ on $[-3, 3]$. Find the **total** area between the graph and the $x$-axis.",
+     "answer": 27,
+     "label": "total area =",
+     "level": 2,
+     "explain": "Two triangles each of area $frac{1}{2}·3·9 = 27/2$, both counted positive: 27.",
+     "graph": "line3"
+    },
+    {
+     "id": "N42",
+     "type": "num",
+     "text": "$f(x) = 3x$ on $[-3, 3]$. Find the **net signed** area, $int[-3,3] 3x dx$.",
+     "answer": 0,
+     "label": "integral =",
+     "level": 2,
+     "explain": "The triangle below the axis cancels the one above: 0.",
+     "graph": "line3"
+    },
+    {
+     "id": "B43",
+     "type": "mc",
+     "text": "Which is bigger: $int[3,5] x^2 dx$ or $int[3,5] e^x + 1 dx$?",
+     "options": [
+      "$int[3,5] x^2 dx$",
+      "$int[3,5] e^x + 1 dx$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "On $[3, 5]$ one function is always at least as big as the other, so its integral is bigger."
+    },
+    {
+     "id": "B44",
+     "type": "mc",
+     "text": "Which is bigger: $int[0,1] sqrt(x) dx$ or $int[0,1] x dx$?",
+     "options": [
+      "$int[0,1] sqrt(x) dx$",
+      "$int[0,1] x dx$"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 3,
+     "explain": "On $[0, 1]$ one function is always at least as big as the other, so its integral is bigger."
+    },
+    {
+     "id": "B45",
+     "type": "mc",
+     "text": "Which is bigger: $int[2,3] 1/x dx$ or $int[2,3] x dx$?",
+     "options": [
+      "$int[2,3] 1/x dx$",
+      "$int[2,3] x dx$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "On $[2, 3]$ one function is always at least as big as the other, so its integral is bigger."
+    },
+    {
+     "id": "B46",
+     "type": "mc",
+     "text": "Which is bigger: $int[0,3] sin(x) dx$ or $int[0,3] 1 dx$?",
+     "options": [
+      "$int[0,3] sin(x) dx$",
+      "$int[0,3] 1 dx$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "On $[0, 3]$ one function is always at least as big as the other, so its integral is bigger."
+    },
+    {
+     "id": "B47",
+     "type": "mc",
+     "text": "Which is bigger: $int[0,1] x^3 dx$ or $int[0,1] x^2 dx$?",
+     "options": [
+      "$int[0,1] x^3 dx$",
+      "$int[0,1] x^2 dx$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 3,
+     "explain": "On $[0, 1]$ one function is always at least as big as the other, so its integral is bigger."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "The **definite integral** is the exact area: the limit of the rectangle sums.\n$int[a,b] f(x) dx = lim[n->infty] sum[i=1,n] f(x_i) Delta x$\nThe $int$ sign is a stretched-out S. S for…",
+    "options": [
+     "Sum",
+     "Slope",
+     "Square",
+     "Second"
+    ],
+    "answer": 0,
+    "hint": "What do the rectangles do?",
+    "explain": "It adds up (sums) infinitely many thin rectangles $f(x) dx$."
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "text": "Often geometry does the work. Find $int[0,4] (2x + 1) dx$, the area under this line: a trapezoid.",
+    "answer": 20,
+    "label": "integral =",
+    "hint": "Heights 1 and 9, width 4: $frac{1 + 9}{2}·4$.",
+    "explain": "$frac{1 + 9}{2}·4 = 20$",
+    "graph": "trap"
+   },
+   {
+    "id": "L3",
+    "type": "num",
+    "text": "$int[0,3] sqrt(9 - x^2) dx$ is a quarter of a circle of radius 3. Find it (a decimal is fine).",
+    "answer": 7.068583,
+    "label": "integral =",
+    "tol": 0.01,
+    "hint": "A full circle has area $pi r^2$. Take a quarter.",
+    "explain": "$frac{1}{4}pi(3^2) = frac{9pi}{4} ≈ 7.07$",
+    "graph": "quarter"
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Area **below** the $x$-axis counts as negative. What is $int[-pi,pi] sin(x) dx$?",
+    "options": [
+     "0",
+     "2",
+     "4",
+     "$-2$"
+    ],
+    "answer": 0,
+    "hint": "The part below the axis exactly cancels the part above.",
+    "explain": "The two humps are the same size with opposite signs, so they cancel: 0.",
+    "graph": "sine"
+   },
+   {
+    "id": "L5",
+    "type": "num",
+    "text": "Integrals split and combine like sums. $int[1,3] f(x) dx = 10$, $int[3,5] f(x) dx = 3$ and $int[1,5] g(x) dx = 9$. Find $int[1,5] (3f(x) - g(x)) dx$.",
+    "answer": 30,
+    "label": "integral =",
+    "hint": "First $int[1,5] f = 10 + 3$. Then $3·13 - 9$.",
+    "explain": "$int[1,5] f = 13$, so $3(13) - 9 = 30$."
+   }
+  ]
+ }
+}

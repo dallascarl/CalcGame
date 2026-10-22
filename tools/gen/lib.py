@@ -148,9 +148,9 @@ def samples(truth, vars_, ranges=None, n=8, seed=0):
     return out
 
 
-def register(deck, qid, answer, vars_, truth, ranges=None):
+def register(deck, qid, answer, vars_, truth, ranges=None, upToC=False):
     for k, ans in enumerate([answer] if isinstance(answer, str) else answer):
-        MANIFEST.append({'deck': deck, 'id': qid, 'answer': ans, 'vars': vars_,
+        MANIFEST.append({'deck': deck, 'id': qid, 'answer': ans, 'vars': vars_, 'upToC': upToC,
                          'samples': samples(truth, vars_, ranges, seed=hash((deck, qid, k)) & 0xffff)})
 
 
@@ -225,8 +225,8 @@ def keys_for(answer, base):
 
 
 def E(deck, qid, text, answer, truth, vars_=('x',), label=None, post=None, level=None, explain=None,
-      ranges=None, keys=None, show=None, hint=None, work=None, title=None, topic=None):
-    """a typed-formula question, checked against sympy truth"""
+      ranges=None, keys=None, show=None, hint=None, work=None, title=None, topic=None, upToC=False):
+    """a typed-formula question, checked against sympy truth (upToC: any antiderivative counts)"""
     vars_ = list(vars_)
     q = {'id': qid, 'type': 'expr'}
     if title:
@@ -244,6 +244,8 @@ def E(deck, qid, text, answer, truth, vars_=('x',), label=None, post=None, level
         q['post'] = post
     if ranges:
         q['ranges'] = ranges
+    if upToC:
+        q['upToC'] = True
     q['show'] = show or M(answer if isinstance(answer, str) else answer[0])
     if level:
         q['level'] = level
@@ -255,7 +257,7 @@ def E(deck, qid, text, answer, truth, vars_=('x',), label=None, post=None, level
         q['explain'] = explain
     if work:
         q['work'] = work
-    register(deck.id, qid, answer, vars_, sp.sympify(truth), ranges)
+    register(deck.id, qid, answer, vars_, sp.sympify(truth), ranges, upToC)
     return q
 
 

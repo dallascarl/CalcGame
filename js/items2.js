@@ -70,3 +70,32 @@ function mountDtrace(it,ix,onChange,host){
   draw();
   return {kind:'pass',canGo:()=>done};
 }
+
+/* ---------- riemann: rectangles under a curve, more and more of them ---------- */
+/* { "type":"riemann", "fn":"x^2", "a":0, "b":2, "window":[...], "exact": 8/3 (optional, shown at the end),
+     "rule":"left"|"right"|"mid" (start), "rules":["left","right"] (buttons offered), "goal": 32 (reach this n),
+     "after":"..." } */
+function mountRiemann(it,ix,onChange,host){
+  const F=fn(it.fn),a=it.a,b=it.b,W=it.window,goal=it.goal||32,rules=it.rules||['left','right'];
+  let n=it.n||2,rule=it.rule||rules[0],done=false;
+  const gw=document.createElement('div');gw.className='gwrap gw-s';host.insertBefore(gw,ix);
+  const NS=[1,2,3,4,5,6,8,10,12,16,20,24,32,40,50,64,100];
+  ix.innerHTML='<label class="slide-l" for="rmn">'+fmt('Number of rectangles $n$')+'</label><input type="range" id="rmn" min="0" max="'+(NS.length-1)+'" step="1" value="'+Math.max(0,NS.indexOf(n))+'">'+
+    (rules.length>1?'<div class="rm-ctl">'+rules.map(r=>'<button class="btn small ghost" data-r="'+r+'" aria-pressed="'+(r===rule)+'">'+({left:'Left endpoints',right:'Right endpoints',mid:'Midpoints'}[r])+'</button>').join('')+'</div>':'')+
+    '<div class="sec-read" id="rmr"></div><div class="fb" id="rmfb" hidden></div>';
+  const draw=()=>{
+    const dx=(b-a)/n,P=plot({window:W,pieces:[],xstep:it.xstep,ystep:it.ystep},false),r=v=>Math.round(Math.max(-9999,Math.min(9999,v))*10)/10,X=t=>r(P.sx(t)),Y=t=>r(P.sy(t));
+    let o='<g clip-path="url(#'+P.clip+')">',sum=0;
+    for(let i=0;i<n;i++){const xs=rule==='left'?a+i*dx:rule==='right'?a+(i+1)*dx:a+(i+0.5)*dx,h=F(xs);sum+=h*dx;
+      const y0=Math.min(0,h),y1=Math.max(0,h);o+='<rect class="rm-r'+(h<0?' neg':'')+'" x="'+X(a+i*dx)+'" y="'+Y(y1)+'" width="'+r(X(a+(i+1)*dx)-X(a+i*dx))+'" height="'+r(Y(y0)-Y(y1))+'"/>';}
+    o+='<path class="g-curve" d="'+curvePath(F,P,W)+'"/></g>';
+    gw.innerHTML=P.svg.replace('</svg>',o+'</svg>');
+    $('#rmr',ix).innerHTML='<span>'+fmt('$n$')+'</span><b>'+n+'</b><span>'+fmt('$Delta x = frac{b - a}{n}$')+'</span><b>'+sci(dx,4)+'</b><span>'+({left:'left',right:'right',mid:'midpoint'}[rule])+' sum</span><b>'+sci(sum,6)+'</b>'+
+      (done&&it.exact!=null?'<span>exact area</span><b>'+sci(it.exact,6)+'</b>':'');
+    if(!done&&n>=goal){done=true;sayIn($('#rmfb',ix),true,it.after||'More rectangles, better estimate. The exact area is the limit as $n -> infty$.');draw();onChange();}
+  };
+  $('#rmn',ix).addEventListener('input',e=>{n=NS[+e.target.value];draw();});
+  ix.querySelectorAll('[data-r]').forEach(bt=>bt.onclick=()=>{rule=bt.dataset.r;ix.querySelectorAll('[data-r]').forEach(z=>z.setAttribute('aria-pressed',z===bt));draw();});
+  draw();
+  return {kind:'pass',canGo:()=>done};
+}

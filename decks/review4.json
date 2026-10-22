@@ -1,0 +1,2049 @@
+{
+ "id": "review4",
+ "course": "Calculus 1",
+ "unit": "Integration",
+ "title": "Chapter Review: Integration",
+ "subtitle": "Mixed practice from every stop, and a practice test.",
+ "version": 2,
+ "graphs": {
+  "w-definite-pw3": {
+   "window": [
+    -0.5,
+    6.5,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "2*x - 2",
+     "from": 0,
+     "to": 2
+    },
+    {
+     "expr": "2",
+     "from": 2,
+     "to": 4
+    },
+    {
+     "expr": "10 - 2*x",
+     "from": 4,
+     "to": 6
+    }
+   ]
+  },
+  "w-definite-line1": {
+   "window": [
+    -3.5,
+    3.5,
+    -4,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "1*x",
+     "from": -3,
+     "to": 3
+    }
+   ]
+  },
+  "w-definite-circ30": {
+   "window": [
+    -3.5,
+    3.5,
+    -0.5,
+    3.5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(9-x^2)",
+     "from": 0,
+     "to": 3
+    }
+   ]
+  },
+  "w-definite-line2": {
+   "window": [
+    -3.5,
+    3.5,
+    -7,
+    7
+   ],
+   "pieces": [
+    {
+     "expr": "2*x",
+     "from": -3,
+     "to": 3
+    }
+   ]
+  }
+ },
+ "drills": {
+  "tool": {
+   "title": "Which tool?",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "W1",
+     "type": "mc",
+     "text": "What is the best first move for $int[0,4] sqrt(16 - x^2) dx$?",
+     "options": [
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Geometry (a known shape)."
+    },
+    {
+     "id": "W2",
+     "type": "mc",
+     "text": "What is the best first move for $int 6x(3x^2 + 4)^4 dx$?",
+     "options": [
+      "Substitution",
+      "Geometry (a known shape)",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Substitution."
+    },
+    {
+     "id": "W3",
+     "type": "mc",
+     "text": "What is the best first move for $int (x^5 + 2) dx$?",
+     "options": [
+      "Antiderivative rules (term by term)",
+      "Geometry (a known shape)",
+      "Substitution",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Antiderivative rules (term by term)."
+    },
+    {
+     "id": "W4",
+     "type": "mc",
+     "text": "What is the best first move for $frac{d}{dx} int[1,x] t^3 dt$?",
+     "options": [
+      "FTC part 1",
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "FTC part 1."
+    },
+    {
+     "id": "W5",
+     "type": "mc",
+     "text": "What is the best first move for $int[0,2] x^2 dx$?",
+     "options": [
+      "FTC part 2 (antiderivative, then F(b) − F(a))",
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "FTC part 2 (antiderivative, then F(b) − F(a))."
+    },
+    {
+     "id": "W6",
+     "type": "mc",
+     "text": "What is the best first move for $int 2x cos(x^2) dx$?",
+     "options": [
+      "Substitution",
+      "Geometry (a known shape)",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Substitution."
+    },
+    {
+     "id": "W7",
+     "type": "mc",
+     "text": "What is the best first move for $int[-3,3] 2x dx$?",
+     "options": [
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Geometry (a known shape)."
+    },
+    {
+     "id": "W8",
+     "type": "mc",
+     "text": "What is the best first move for $int sec^2(x) dx$?",
+     "options": [
+      "Antiderivative rules (term by term)",
+      "Geometry (a known shape)",
+      "Substitution",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Antiderivative rules (term by term)."
+    },
+    {
+     "id": "W9",
+     "type": "mc",
+     "text": "What is the best first move for $frac{d}{dx} int[0,x^2] sin(t) dt$?",
+     "options": [
+      "FTC part 1",
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "FTC part 1."
+    },
+    {
+     "id": "W10",
+     "type": "mc",
+     "text": "What is the best first move for $int[1,e] frac{1}{x} dx$?",
+     "options": [
+      "FTC part 2 (antiderivative, then F(b) − F(a))",
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "FTC part 2 (antiderivative, then F(b) − F(a))."
+    },
+    {
+     "id": "W11",
+     "type": "mc",
+     "text": "What is the best first move for $int frac{e^x}{e^x + 1} dx$?",
+     "options": [
+      "Substitution",
+      "Geometry (a known shape)",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Substitution."
+    },
+    {
+     "id": "W12",
+     "type": "mc",
+     "text": "What is the best first move for $int (3x^2 - 2x + 5) dx$?",
+     "options": [
+      "Antiderivative rules (term by term)",
+      "Geometry (a known shape)",
+      "Substitution",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Antiderivative rules (term by term)."
+    },
+    {
+     "id": "W13",
+     "type": "mc",
+     "text": "What is the best first move for $int[0,4] (2x + 1) dx$?",
+     "options": [
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Geometry (a known shape)."
+    },
+    {
+     "id": "W14",
+     "type": "mc",
+     "text": "What is the best first move for $int x sqrt(x^2 + 5) dx$?",
+     "options": [
+      "Substitution",
+      "Geometry (a known shape)",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Substitution."
+    },
+    {
+     "id": "W15",
+     "type": "mc",
+     "text": "What is the best first move for $frac{d}{dx} int[2,x] e^(t^2) dt$?",
+     "options": [
+      "FTC part 1",
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "FTC part 1."
+    },
+    {
+     "id": "W16",
+     "type": "mc",
+     "text": "What is the best first move for $int[0,pi] sin(x) dx$?",
+     "options": [
+      "FTC part 2 (antiderivative, then F(b) − F(a))",
+      "Geometry (a known shape)",
+      "Substitution",
+      "Antiderivative rules (term by term)"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "FTC part 2 (antiderivative, then F(b) − F(a))."
+    },
+    {
+     "id": "W17",
+     "type": "mc",
+     "text": "What is the best first move for $int frac{4}{x^3} dx$?",
+     "options": [
+      "Antiderivative rules (term by term)",
+      "Geometry (a known shape)",
+      "Substitution",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "topic": "Which tool?",
+     "explain": "Antiderivative rules (term by term)."
+    },
+    {
+     "id": "W18",
+     "type": "mc",
+     "text": "What is the best first move for $int tan(x) dx$?",
+     "options": [
+      "Substitution",
+      "Geometry (a known shape)",
+      "Antiderivative rules (term by term)",
+      "FTC part 1"
+     ],
+     "answer": 0,
+     "level": 2,
+     "topic": "Which tool?",
+     "explain": "Substitution."
+    }
+   ]
+  },
+  "exam": {
+   "title": "Practice test",
+   "exam": true,
+   "setSize": 20,
+   "questions": [
+    {
+     "id": "AREW26",
+     "type": "steps",
+     "text": "Estimate the area under $f(x) = x^3$ on $[0, 2]$ with $L_2$.",
+     "steps": [
+      {
+       "id": "AREW26.1",
+       "type": "num",
+       "text": "",
+       "answer": 1,
+       "label": "$Delta x$ =",
+       "work": "$Delta x = 1$"
+      },
+      {
+       "id": "AREW26.2",
+       "type": "num",
+       "text": "Add the heights at the left endpoints, $x$ = 0, 1.",
+       "answer": 1,
+       "label": "sum of heights =",
+       "tol": 0.01,
+       "work": "heights add to 1"
+      },
+      {
+       "id": "AREW26.3",
+       "type": "num",
+       "text": "Multiply by the width.",
+       "answer": 1,
+       "label": "$L_2$ =",
+       "tol": 0.01,
+       "work": "$L_2 = 1$"
+      }
+     ],
+     "explain": "$L_2 = 1$",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "ARES21",
+     "type": "num",
+     "text": "Find $L_4$ for $f(x) = 2x + 1$ on $[0, 4]$ (left endpoints, $n = 4$).",
+     "answer": 16,
+     "label": "$L_4$ =",
+     "tol": 0.01,
+     "explain": "$Delta x = 1$ and the heights at $x$ = 0, 1, 2, 3 add to 16, so $L_4 = 16$.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "AREW24",
+     "type": "steps",
+     "text": "Estimate the area under $f(x) = 10 - x^2$ on $[1, 2]$ with $R_4$.",
+     "steps": [
+      {
+       "id": "AREW24.1",
+       "type": "num",
+       "text": "",
+       "answer": 0.25,
+       "label": "$Delta x$ =",
+       "work": "$Delta x = 1/4$"
+      },
+      {
+       "id": "AREW24.2",
+       "type": "num",
+       "text": "Add the heights at the right endpoints, $x$ = 5/4, 3/2, 7/4, 2.",
+       "answer": 29.125,
+       "label": "sum of heights =",
+       "tol": 0.01,
+       "work": "heights add to 29.125"
+      },
+      {
+       "id": "AREW24.3",
+       "type": "num",
+       "text": "Multiply by the width.",
+       "answer": 7.28125,
+       "label": "$R_4$ =",
+       "tol": 0.01,
+       "work": "$R_4 = 7.28125$"
+      }
+     ],
+     "explain": "$R_4 = 7.28125$",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "AREO48",
+     "type": "mc",
+     "text": "$f(x) = cos(x)$ on $[0, frac{pi}{2}]$ is decreasing. Is the right endpoint sum an over- or underestimate?",
+     "options": [
+      "an overestimate",
+      "an underestimate"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "Decreasing: the right endpoints give the shortest height on each piece.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "ARES35",
+     "type": "num",
+     "text": "Find $R_3$ for $f(x) = x^2 - x$ on $[1, 4]$ (right endpoints, $n = 3$).",
+     "answer": 20,
+     "label": "$R_3$ =",
+     "tol": 0.01,
+     "explain": "$Delta x = 1$ and the heights at $x$ = 2, 3, 4 add to 20, so $R_3 = 20$.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "AREV52",
+     "type": "num",
+     "text": "Velocity readings (ft/s): $v(0) = 30$ · $v(5) = 28$ · $v(10) = 25$ · $v(15) = 20$. Estimate the distance traveled with right endpoints.",
+     "answer": 365,
+     "label": "distance =",
+     "explain": "Each piece lasts 5 s. Using the right readings: $5 × (28 + 25 + 20) = 365$ ft.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "ARES23",
+     "type": "num",
+     "text": "Find $R_4$ for $f(x) = 10 - x^2$ on $[1, 2]$ (right endpoints, $n = 4$).",
+     "answer": 7.28125,
+     "label": "$R_4$ =",
+     "tol": 0.01,
+     "explain": "$Delta x = 1/4$ and the heights at $x$ = 5/4, 3/2, 7/4, 2 add to 29.125, so $R_4 = 7.28125$.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "AREO39",
+     "type": "mc",
+     "text": "$f(x) = 10 - x^2$ on $[0, 3]$ is decreasing. Is the left endpoint sum an over- or underestimate?",
+     "options": [
+      "an overestimate",
+      "an underestimate"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "explain": "Decreasing: the left endpoints give the tallest height on each piece.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "AREV49",
+     "type": "num",
+     "text": "Velocity readings (ft/s): $v(0) = 10$ · $v(1) = 14$ · $v(2) = 20$ · $v(3) = 24$. Estimate the distance traveled with left endpoints.",
+     "answer": 44,
+     "label": "distance =",
+     "explain": "Each piece lasts 1 s. Using the left readings: $1 × (10 + 14 + 20) = 44$ ft.",
+     "topic": "Areas and Riemann sums"
+    },
+    {
+     "id": "DEFG16",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "w-definite-pw3",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFG15",
+     "type": "num",
+     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "answer": 4,
+     "label": "integral =",
+     "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
+     "graph": "w-definite-pw3",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFN39",
+     "type": "num",
+     "text": "$f(x) = 1x$ on $[-3, 3]$. Find the **total** area between the graph and the $x$-axis.",
+     "answer": 9,
+     "label": "total area =",
+     "explain": "Two triangles each of area $frac{1}{2}·3·3 = 9/2$, both counted positive: 9.",
+     "graph": "w-definite-line1",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFC22",
+     "type": "num",
+     "text": "Find $int[0,3] sqrt(9 - x^2) dx$. (It is a quarter of a circle of radius 3. A decimal is fine.)",
+     "answer": 7.068583,
+     "label": "integral =",
+     "tol": 0.01,
+     "explain": "$1/4·pi(3)^2 = 7.068583$",
+     "graph": "w-definite-circ30",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFP34",
+     "type": "num",
+     "text": "Given $int[-2,2] f = 6$ and $int[0,2] f = 1$. Find $int[-2,0] f(x) dx$.",
+     "answer": 5,
+     "label": "integral =",
+     "explain": "Use the properties of integrals: 5.",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFN37",
+     "type": "num",
+     "text": "$f(x) = 2x$ on $[-3, 3]$. Find the **total** area between the graph and the $x$-axis.",
+     "answer": 18,
+     "label": "total area =",
+     "explain": "Two triangles each of area $frac{1}{2}·3·6 = 9$, both counted positive: 18.",
+     "graph": "w-definite-line2",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFN38",
+     "type": "num",
+     "text": "$f(x) = 2x$ on $[-3, 3]$. Find the **net signed** area, $int[-3,3] 2x dx$.",
+     "answer": 0,
+     "label": "integral =",
+     "explain": "The triangle below the axis cancels the one above: 0.",
+     "graph": "w-definite-line2",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFB47",
+     "type": "mc",
+     "text": "Which is bigger: $int[0,1] x^3 dx$ or $int[0,1] x^2 dx$?",
+     "options": [
+      "$int[0,1] x^3 dx$",
+      "$int[0,1] x^2 dx$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "On $[0, 1]$ one function is always at least as big as the other, so its integral is bigger.",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "DEFB46",
+     "type": "mc",
+     "text": "Which is bigger: $int[0,3] sin(x) dx$ or $int[0,3] 1 dx$?",
+     "options": [
+      "$int[0,3] sin(x) dx$",
+      "$int[0,3] 1 dx$"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "explain": "On $[0, 3]$ one function is always at least as big as the other, so its integral is bigger.",
+     "topic": "Definite integrals"
+    },
+    {
+     "id": "ANTB38",
+     "type": "expr",
+     "text": "Find $int sec(x)tan(x) dx$.",
+     "answer": "sec(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "arcsin(",
+      "sec("
+     ],
+     "label": "$int sec(x)tan(x) dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       0.9
+      ]
+     },
+     "upToC": true,
+     "show": "$sec(x)$",
+     "explain": "$sec(x) + C$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTB40",
+     "type": "expr",
+     "text": "Find $int e^x + x^e dx$.",
+     "answer": "e^x + x^(e + 1)/(e + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "arcsin(",
+      "sec(",
+      "e"
+     ],
+     "label": "$int e^x + x^e dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       0.9
+      ]
+     },
+     "upToC": true,
+     "show": "$e^x + x^(e + 1)/(e + 1)$",
+     "explain": "$e^x + x^(e + 1)/(e + 1) + C$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTB37",
+     "type": "expr",
+     "text": "Find $int x^2 - 4x + 1 dx$.",
+     "answer": "x^3/3 - 2x^2 + x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "arcsin(",
+      "sec("
+     ],
+     "label": "$int x^2 - 4x + 1 dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       0.9
+      ]
+     },
+     "upToC": true,
+     "show": "$x^3/3 - 2x^2 + x$",
+     "explain": "$x^3/3 - 2x^2 + x + C$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTB39",
+     "type": "expr",
+     "text": "Find $int 3/x dx$.",
+     "answer": "3ln(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "arcsin(",
+      "sec("
+     ],
+     "label": "$int 3/x dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       0.9
+      ]
+     },
+     "upToC": true,
+     "show": "$3ln(x)$",
+     "explain": "$3ln(x) + C$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTI44",
+     "type": "steps",
+     "text": "Solve $frac{dy}{dx} = 3x^2 - 4$ with $y(2) = 0$.",
+     "steps": [
+      {
+       "id": "ANTI44.1",
+       "type": "expr",
+       "text": "General antiderivative.",
+       "answer": "x^3 - 4x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "sec("
+       ],
+       "label": "$y$ =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$x^3 - 4x$",
+       "work": "$y = x^3 - 4x + C$"
+      },
+      {
+       "id": "ANTI44.2",
+       "type": "num",
+       "text": "Use $y(2) = 0$.",
+       "answer": 0,
+       "label": "$C$ =",
+       "work": "$C = 0$"
+      },
+      {
+       "id": "ANTI44.3",
+       "type": "expr",
+       "text": "Write the solution.",
+       "answer": "x^3 - 4x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "sec("
+       ],
+       "label": "$y$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^3 - 4x$",
+       "work": "$y = x^3 - 4x$"
+      }
+     ],
+     "explain": "$y = x^3 - 4x$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTI50",
+     "type": "steps",
+     "text": "Solve $frac{dy}{dx} = 2 - x$ with $y(0) = 6$.",
+     "steps": [
+      {
+       "id": "ANTI50.1",
+       "type": "expr",
+       "text": "General antiderivative.",
+       "answer": "-x^2/2 + 2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "sec("
+       ],
+       "label": "$y$ =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$-x^2/2 + 2x$",
+       "work": "$y = -x^2/2 + 2x + C$"
+      },
+      {
+       "id": "ANTI50.2",
+       "type": "num",
+       "text": "Use $y(0) = 6$.",
+       "answer": 6,
+       "label": "$C$ =",
+       "work": "$C = 6$"
+      },
+      {
+       "id": "ANTI50.3",
+       "type": "expr",
+       "text": "Write the solution.",
+       "answer": "-x^2/2 + 2x + 6",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "sec("
+       ],
+       "label": "$y$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$-x^2/2 + 2x + 6$",
+       "work": "$y = -x^2/2 + 2x + 6$"
+      }
+     ],
+     "explain": "$y = -x^2/2 + 2x + 6$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTB30",
+     "type": "expr",
+     "text": "Find $int 4/(x^2 + 1) dx$.",
+     "answer": "4arctan(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "arcsin(",
+      "sec("
+     ],
+     "label": "$int 4/(x^2 + 1) dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       0.9
+      ]
+     },
+     "upToC": true,
+     "show": "$4arctan(x)$",
+     "explain": "$4arctan(x) + C$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTB36",
+     "type": "expr",
+     "text": "Find $int 1/sqrt(1 - x^2) dx$.",
+     "answer": "arcsin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "arcsin(",
+      "sec("
+     ],
+     "label": "$int 1/sqrt(1 - x^2) dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       0.9
+      ]
+     },
+     "upToC": true,
+     "show": "$arcsin(x)$",
+     "explain": "$arcsin(x) + C$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "ANTI47",
+     "type": "steps",
+     "text": "Solve $frac{dy}{dx} = 1/x$ with $y(1) = 3$.",
+     "steps": [
+      {
+       "id": "ANTI47.1",
+       "type": "expr",
+       "text": "General antiderivative.",
+       "answer": "ln(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "sec("
+       ],
+       "label": "$y$ =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$ln(x)$",
+       "work": "$y = ln(x) + C$"
+      },
+      {
+       "id": "ANTI47.2",
+       "type": "num",
+       "text": "Use $y(1) = 3$.",
+       "answer": 3,
+       "label": "$C$ =",
+       "work": "$C = 3$"
+      },
+      {
+       "id": "ANTI47.3",
+       "type": "expr",
+       "text": "Write the solution.",
+       "answer": "ln(x) + 3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "sec("
+       ],
+       "label": "$y$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$ln(x) + 3$",
+       "work": "$y = ln(x) + 3$"
+      }
+     ],
+     "explain": "$y = ln(x) + 3$",
+     "topic": "Antiderivatives"
+    },
+    {
+     "id": "FTCW56",
+     "type": "steps",
+     "text": "Evaluate $int[0,frac{pi}{4}] sec(x)^2 dx$ with the Fundamental Theorem.",
+     "steps": [
+      {
+       "id": "FTCW56.1",
+       "type": "expr",
+       "text": "Find an antiderivative.",
+       "answer": "tan(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$F(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$tan(x)$",
+       "work": "$F(x) = tan(x)$"
+      },
+      {
+       "id": "FTCW56.2",
+       "type": "num",
+       "text": "$F(frac{pi}{4}) - F(0)$ (a decimal is fine).",
+       "answer": 1,
+       "label": "integral =",
+       "tol": 0.005,
+       "work": "integral $= 1$"
+      }
+     ],
+     "explain": "1",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCW50",
+     "type": "steps",
+     "text": "Evaluate $int[0,1] x^2 + 2 dx$ with the Fundamental Theorem.",
+     "steps": [
+      {
+       "id": "FTCW50.1",
+       "type": "expr",
+       "text": "Find an antiderivative.",
+       "answer": "x^3/3 + 2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$F(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$x^3/3 + 2x$",
+       "work": "$F(x) = x^3/3 + 2x$"
+      },
+      {
+       "id": "FTCW50.2",
+       "type": "num",
+       "text": "$F(1) - F(0)$ (a decimal is fine).",
+       "answer": 2.333333,
+       "label": "integral =",
+       "tol": 0.005,
+       "work": "integral $= 7/3$"
+      }
+     ],
+     "explain": "7/3",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCC23",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} int[0,sin(x)] e^t dt$.",
+     "answer": "e^(sin(x))cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$e^(sin(x))cos(x)$",
+     "explain": "$f(g(x))·g'(x) = e^(sin(x))cos(x)$",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCW48",
+     "type": "steps",
+     "text": "Evaluate $int[0,4] sqrt(x) dx$ with the Fundamental Theorem.",
+     "steps": [
+      {
+       "id": "FTCW48.1",
+       "type": "expr",
+       "text": "Find an antiderivative.",
+       "answer": "2x^(3/2)/3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$F(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{2x^(3/2)}{3}$",
+       "work": "$F(x) = 2x^(3/2)/3$"
+      },
+      {
+       "id": "FTCW48.2",
+       "type": "num",
+       "text": "$F(4) - F(0)$ (a decimal is fine).",
+       "answer": 5.333333,
+       "label": "integral =",
+       "tol": 0.005,
+       "work": "integral $= 16/3$"
+      }
+     ],
+     "explain": "16/3",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCD53",
+     "type": "num",
+     "text": "Evaluate $int[1,2] 1/x^2 dx$.",
+     "answer": 0.5,
+     "label": "integral =",
+     "tol": 0.005,
+     "explain": "$F(x) = -1/x$, and $F(2) - F(1) = 1/2$.",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCC20",
+     "type": "expr",
+     "text": "Find $frac{d}{dx} int[0,2x] t^3 dt$.",
+     "answer": "(2x)^3(2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$(2x)^3(2)$",
+     "explain": "$f(g(x))·g'(x) = (2x)^3(2)$",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCD27",
+     "type": "num",
+     "text": "Evaluate $int[0,2] x^2 dx$.",
+     "answer": 2.666667,
+     "label": "integral =",
+     "tol": 0.005,
+     "explain": "$F(x) = x^3/3$, and $F(2) - F(0) = 8/3$.",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCW32",
+     "type": "steps",
+     "text": "Evaluate $int[1,2] 3x^2 dx$ with the Fundamental Theorem.",
+     "steps": [
+      {
+       "id": "FTCW32.1",
+       "type": "expr",
+       "text": "Find an antiderivative.",
+       "answer": "x^3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$F(x)$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$x^3$",
+       "work": "$F(x) = x^3$"
+      },
+      {
+       "id": "FTCW32.2",
+       "type": "num",
+       "text": "$F(2) - F(1)$ (a decimal is fine).",
+       "answer": 7,
+       "label": "integral =",
+       "tol": 0.005,
+       "work": "integral $= 7$"
+      }
+     ],
+     "explain": "7",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "FTCD47",
+     "type": "num",
+     "text": "Evaluate $int[0,4] sqrt(x) dx$.",
+     "answer": 5.333333,
+     "label": "integral =",
+     "tol": 0.005,
+     "explain": "$F(x) = 2x^(3/2)/3$, and $F(4) - F(0) = 16/3$.",
+     "topic": "Fundamental Theorem"
+    },
+    {
+     "id": "INDI17",
+     "type": "expr",
+     "text": "Find $int 6x^5 - 4x^3 dx$.",
+     "answer": "x^6 - x^4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "sec("
+     ],
+     "label": "$int 6x^5 - 4x^3 dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "upToC": true,
+     "show": "$x^6 - x^4$",
+     "explain": "$x^6 - x^4 + C$",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDI19",
+     "type": "expr",
+     "text": "Find $int (1 - x)/sqrt(x) dx$.",
+     "answer": "2sqrt(x) - (2/3)x^(3/2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "sec("
+     ],
+     "label": "$int (1 - x)/sqrt(x) dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "upToC": true,
+     "show": "$2sqrt(x) - (2/3)x^(3/2)$",
+     "explain": "$2sqrt(x) - (2/3)x^(3/2) + C$",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDN23",
+     "type": "num",
+     "text": "Oil leaks at $r(t) = 6 - t$ gallons per hour. How much leaks in the first 4 hours?",
+     "answer": 16,
+     "label": "total =",
+     "tol": 0.01,
+     "explain": "Integrate the rate: $int[0,4] 6 - t dt = 16$.",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDT36",
+     "type": "steps",
+     "text": "A particle has velocity $v(t) = 4 - 2t$ m/s for $0 <= t <= 3$. It changes direction at $t = 2$.",
+     "steps": [
+      {
+       "id": "INDT36.1",
+       "type": "num",
+       "text": "Displacement: $int[0,3] v(t) dt$.",
+       "answer": 3,
+       "label": "displacement =",
+       "work": "displacement $= 3$"
+      },
+      {
+       "id": "INDT36.2",
+       "type": "num",
+       "text": "Total distance: add the size of each part, $|int[0,2] v| + |int[2,3] v|$.",
+       "answer": 5,
+       "label": "distance =",
+       "work": "distance $= 5$"
+      }
+     ],
+     "explain": "Displacement 3 m, distance 5 m.",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDI13",
+     "type": "expr",
+     "text": "Find $int 5 dx$.",
+     "answer": "5x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "sec("
+     ],
+     "label": "$int 5 dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "upToC": true,
+     "show": "$5x$",
+     "explain": "$5x + C$",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDI16",
+     "type": "expr",
+     "text": "Find $int x^(-1/2) dx$.",
+     "answer": "2sqrt(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "sec("
+     ],
+     "label": "$int x^(-1/2) dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "upToC": true,
+     "show": "$2sqrt(x)$",
+     "explain": "$2sqrt(x) + C$",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDN28",
+     "type": "num",
+     "text": "Revenue comes in at $R'(t) = 100e^t$ dollars per day. How much comes in from $t = 0$ to $t = 1$? (A decimal is fine.)",
+     "answer": 171.828183,
+     "label": "total =",
+     "tol": 0.01,
+     "explain": "Integrate the rate: $int[0,1] 100e^t dt = 171.828183$.",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDN30",
+     "type": "num",
+     "text": "A balloon rises at $v(t) = 6t - t^2$ m/s. How much higher is it at $t = 3$ than at $t = 0$?",
+     "answer": 18,
+     "label": "total =",
+     "tol": 0.01,
+     "explain": "Integrate the rate: $int[0,3] 6t - t^2 dt = 18$.",
+     "topic": "Net change"
+    },
+    {
+     "id": "INDI15",
+     "type": "expr",
+     "text": "Find $int 2e^x - 3sin(x) dx$.",
+     "answer": "2e^x + 3cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln(",
+      "arctan(",
+      "sec("
+     ],
+     "label": "$int 2e^x - 3sin(x) dx$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "x": [
+       0.2,
+       1.2
+      ]
+     },
+     "upToC": true,
+     "show": "$2e^x + 3cos(x)$",
+     "explain": "$2e^x + 3cos(x) + C$",
+     "topic": "Net change"
+    },
+    {
+     "id": "SUBK38",
+     "type": "num",
+     "text": "In $int sin(theta) cos^2(theta) dtheta$ let $u = cos(theta)$, so $du = -sin(theta) dtheta$. The leftover piece is $k du$. What is $k$?",
+     "answer": -1,
+     "label": "$k$ =",
+     "explain": "Divide $du$ by what is missing: $k = -1$.",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBS41",
+     "type": "steps",
+     "text": "Use substitution: $int 6x(3x^2 + 4)^4 dx$.",
+     "steps": [
+      {
+       "id": "SUBS41.1",
+       "type": "expr",
+       "answer": "3x^2 + 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x^2 + 4$",
+       "work": "$u = 3x^2 + 4$"
+      },
+      {
+       "id": "SUBS41.2",
+       "type": "expr",
+       "answer": "6x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$6x$",
+       "work": "$du = 6x dx$, so it is $int u^4 du$"
+      },
+      {
+       "id": "SUBS41.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(3x^2 + 4)^5/5",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{(3x^2 + 4)^5}{5}$",
+       "work": "$frac{(3x^2 + 4)^5}{5} + C$"
+      }
+     ],
+     "explain": "$frac{(3x^2 + 4)^5}{5} + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBS43",
+     "type": "steps",
+     "text": "Use substitution: $int 2x cos(x^2) dx$.",
+     "steps": [
+      {
+       "id": "SUBS43.1",
+       "type": "expr",
+       "answer": "x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^2$",
+       "work": "$u = x^2$"
+      },
+      {
+       "id": "SUBS43.2",
+       "type": "expr",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$2x$",
+       "work": "$du = 2x dx$, so it is $int cos(u) du$"
+      },
+      {
+       "id": "SUBS43.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "sin(x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$sin(x^2)$",
+       "work": "$sin(x^2) + C$"
+      }
+     ],
+     "explain": "$sin(x^2) + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBW26",
+     "type": "expr",
+     "text": "$int frac{2x}{x^2 + 1} dx$ with $u = x^2 + 1$ becomes $int 1/u du$. Integrate in $u$.",
+     "answer": "ln(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int 1/u du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$ln(u)$",
+     "explain": "$ln(u) + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBW28",
+     "type": "expr",
+     "text": "$int 2x sqrt(x^2 + 5) dx$ with $u = x^2 + 5$ becomes $int sqrt(u) du$. Integrate in $u$.",
+     "answer": "(2/3)u^(3/2)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$int sqrt(u) du$ =",
+     "post": "$+ C$",
+     "ranges": {
+      "u": [
+       0.3,
+       1.5
+      ]
+     },
+     "upToC": true,
+     "show": "$(2/3)u^(3/2)$",
+     "explain": "$(2/3)u^(3/2) + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBS44",
+     "type": "steps",
+     "text": "Use substitution: $int cos(x) sin^3(x) dx$.",
+     "steps": [
+      {
+       "id": "SUBS44.1",
+       "type": "expr",
+       "answer": "sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$sin(x)$",
+       "work": "$u = sin(x)$"
+      },
+      {
+       "id": "SUBS44.2",
+       "type": "expr",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$cos(x)$",
+       "work": "$du = cos(x) dx$, so it is $int u^3 du$"
+      },
+      {
+       "id": "SUBS44.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "sin(x)^4/4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{sin(x)^4}{4}$",
+       "work": "$frac{sin(x)^4}{4} + C$"
+      }
+     ],
+     "explain": "$frac{sin(x)^4}{4} + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBS51",
+     "type": "steps",
+     "text": "Use substitution: $int frac{3x^2}{x^3 + 2} dx$.",
+     "steps": [
+      {
+       "id": "SUBS51.1",
+       "type": "expr",
+       "answer": "x^3 + 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^3 + 2$",
+       "work": "$u = x^3 + 2$"
+      },
+      {
+       "id": "SUBS51.2",
+       "type": "expr",
+       "answer": "3x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$3x^2$",
+       "work": "$du = 3x^2 dx$, so it is $int 1/u du$"
+      },
+      {
+       "id": "SUBS51.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "ln(x^3 + 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$ln(x^3 + 2)$",
+       "work": "$ln(x^3 + 2) + C$"
+      }
+     ],
+     "explain": "$ln(x^3 + 2) + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBS52",
+     "type": "steps",
+     "text": "Use substitution: $int 4x^3(x^4 + 1)^2 dx$.",
+     "steps": [
+      {
+       "id": "SUBS52.1",
+       "type": "expr",
+       "answer": "x^4 + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$x^4 + 1$",
+       "work": "$u = x^4 + 1$"
+      },
+      {
+       "id": "SUBS52.2",
+       "type": "expr",
+       "answer": "4x^3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "$frac{du}{dx}$ =",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "show": "$4x^3$",
+       "work": "$du = 4x^3 dx$, so it is $int u^2 du$"
+      },
+      {
+       "id": "SUBS52.3",
+       "type": "expr",
+       "text": "Integrate, then put $x$ back.",
+       "answer": "(x^4 + 1)^3/3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln(",
+        "arctan("
+       ],
+       "label": "answer =",
+       "post": "$+ C$",
+       "ranges": {
+        "x": [
+         0.2,
+         1.2
+        ]
+       },
+       "upToC": true,
+       "show": "$frac{(x^4 + 1)^3}{3}$",
+       "work": "$frac{(x^4 + 1)^3}{3} + C$"
+      }
+     ],
+     "explain": "$frac{(x^4 + 1)^3}{3} + C$",
+     "topic": "Substitution"
+    },
+    {
+     "id": "SUBD59",
+     "type": "steps",
+     "text": "Evaluate $int[0,sqrt(pi)] 2x cos(x^2) dx$ with $u = x^2$.",
+     "steps": [
+      {
+       "id": "SUBD59.1",
+       "type": "num",
+       "text": "New lower limit: $u$ at $x = 0$.",
+       "answer": 0,
+       "label": "lower $u$ =",
+       "tol": 0.005,
+       "work": "lower: $u = 0$"
+      },
+      {
+       "id": "SUBD59.2",
+       "type": "num",
+       "text": "New upper limit: $u$ at $x = sqrt(pi)$.",
+       "answer": 3.141593,
+       "label": "upper $u$ =",
+       "tol": 0.005,
+       "work": "upper: $u = pi$"
+      },
+      {
+       "id": "SUBD59.3",
+       "type": "num",
+       "text": "The integral is $int[0,pi] cos(u) du$. Evaluate it (a decimal is fine).",
+       "answer": 0,
+       "label": "integral =",
+       "tol": 0.01,
+       "work": "integral $≈ 0$"
+      }
+     ],
+     "explain": "0",
+     "topic": "Substitution"
+    }
+   ]
+  }
+ }
+}

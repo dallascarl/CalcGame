@@ -1039,8 +1039,15 @@ function home(){
   MAP.nodes.forEach(n=>edgesOf(n).forEach(id=>{const m=nodeById(id); if(!m)return; const side=n.kind==='review'||n.kind==='extra';
     svg+='<line class="road'+(side?' side':nodeCleared(m)?' open':'')+'" x1="'+m.x+'" y1="'+m.y+'" x2="'+n.x+'" y2="'+n.y+'"/>';}));
   svg+='</svg>';
-  const tiles=MAP.nodes.map(n=>{const open=nodeOpen(n),done=nodeCleared(n)&&n.kind!=='start';
-    return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':'')+ACCT.dueDot(MAP,n)+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+(done?', cleared':'')+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span><span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
+  /* one pip per part of a stop (each lesson, then each drill), filled once that part is done, so the map shows
+     what has been finished even before the whole stop is cleared */
+  const parts=n=>{const d=n.deck&&DECKS[n.deck];if(!d||d.error)return null;
+    return lessonsOf(d).map(l=>({lesson:true,done:lp(d,l.id).done})).concat(drillKinds(d).map(k=>({lesson:false,done:drillPassed(d,k)})));};
+  const tiles=MAP.nodes.map(n=>{const open=nodeOpen(n),done=nodeCleared(n)&&n.kind!=='start',P=n.kind==='start'?null:parts(n);
+    const nd=P?P.filter(x=>x.done).length:0,ld=P&&P.some(x=>x.lesson)&&P.filter(x=>x.lesson).every(x=>x.done);
+    const pips=P&&P.length?'<span class="npips" aria-hidden="true">'+P.map(x=>'<i class="'+(x.lesson?'l':'d')+(x.done?' on':'')+'"></i>').join('')+'</span>':'';
+    const say=done?', cleared':P&&nd?(ld?', lesson done':'')+', '+nd+' of '+P.length+' parts done':'';
+    return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':nd?' started':'')+ACCT.dueDot(MAP,n)+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+say+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span>'+pips+'<span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
   const left=RULES.streak-S.streak;
   screen({
     top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-r"><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div>'+(BACK?'<button class="me-b" data-me aria-label="Your account">'+avatarSVG(ACCT.avatar())+'</button>':'<button class="code-b'+(S.sid==null?' need':'')+'" data-appcode>App code</button>')+'</div></div>'+

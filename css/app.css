@@ -672,3 +672,10 @@ body{margin:0}
 .ac-more{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px}
 .ac-more summary{cursor:pointer;font-weight:600}
 #ac-in{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.04em;text-transform:uppercase}
+/* progress pips under each map stop: a round pip per lesson, a square pip per drill */
+.npips{display:flex;gap:3px;justify-content:center;margin-top:-1px}
+.npips i{width:8px;height:8px;border:1.5px solid var(--muted);background:var(--card)}
+.npips i.l{border-radius:50%}
+.npips i.d{border-radius:2px}
+.npips i.on{background:var(--good);border-color:var(--good)}
+.node.done .npips i{background:var(--good);border-color:var(--good)}

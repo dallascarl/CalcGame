@@ -1,0 +1,1118 @@
+{
+ "id": "t-notation",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Function Notation",
+ "subtitle": "What f( ) means, and how to put anything inside it.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "$f(3) = 7$ means",
+     "options": [
+      "the input 3 gives the output 7",
+      "$f$ times 3 equals 7",
+      "the input 7 gives the output 3",
+      "$x$ is both 3 and 7"
+     ],
+     "answer": 0,
+     "explain": "$f(3)$ is read \"f of 3\". It is the output when the input is 3. It is never multiplication."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$$f(x) = x^2$$\nWhat is $f(-3)$?",
+     "options": [
+      "9",
+      "−9",
+      "6",
+      "−6"
+     ],
+     "answer": 0,
+     "explain": "$f(-3) = (-3)^2 = 9$. The parentheses make the minus sign part of what gets squared."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$$f(x) = 2x + 1$$\nWhich is $f(x + h)$?",
+     "options": [
+      "$2(x + h) + 1$",
+      "$2x + h + 1$",
+      "$2x + 1 + h$",
+      "$(2x + 1)(x + h)$"
+     ],
+     "answer": 0,
+     "explain": "Replace the $x$ with $(x + h)$, parentheses and all: $2(x + h) + 1 = 2x + 2h + 1$."
+    },
+    {
+     "id": "T4",
+     "type": "tf",
+     "text": "For every function, $f(x + h) = f(x) + f(h)$.",
+     "answer": false,
+     "explain": "Try $f(x) = x^2$: $(x + h)^2 = x^2 + 2xh + h^2$, which is not $x^2 + h^2$. A function does not \"distribute\"."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$$f(x) = x^2$$\nWhat is $f(2x)$?",
+     "options": [
+      "$4x^2$",
+      "$2x^2$",
+      "$2x$",
+      "$x^4$"
+     ],
+     "answer": 0,
+     "explain": "$f(2x) = (2x)^2 = 4x^2$. The 2 is inside the blank, so it gets squared too."
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "$f(x) = 5$ is a constant function. So $f(x + h) = 5 + h$.",
+     "answer": false,
+     "explain": "The rule has no blank to fill: every input gives 5. So $f(x + h) = 5$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "P1",
+     "type": "num",
+     "text": "$$f(x) = x^2 - 3x$$\nFind $f(-2)$.",
+     "answer": 10,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "$f(-2) = (-2)^2 - 3(-2) = 10$"
+    },
+    {
+     "id": "P2",
+     "type": "num",
+     "text": "$$f(x) = 2x^2 + x$$\nFind $f(-3)$.",
+     "answer": 15,
+     "label": "$f(-3)$ =",
+     "level": 1,
+     "explain": "$f(-3) = 2(-3)^2 + (-3) = 15$"
+    },
+    {
+     "id": "P3",
+     "type": "num",
+     "text": "$$f(x) = 5 - x^2$$\nFind $f(-3)$.",
+     "answer": -4,
+     "label": "$f(-3)$ =",
+     "level": 1,
+     "explain": "$f(-3) = 5 - (-3)^2 = -4$"
+    },
+    {
+     "id": "P4",
+     "type": "num",
+     "text": "$$f(x) = x^3 - x$$\nFind $f(-2)$.",
+     "answer": -6,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "$f(-2) = (-2)^3 - (-2) = -6$"
+    },
+    {
+     "id": "P5",
+     "type": "num",
+     "text": "$$f(x) = -x^2$$\nFind $f(4)$.",
+     "answer": -16,
+     "label": "$f(4)$ =",
+     "level": 1,
+     "explain": "$f(4) = -(4)^2 = -16$"
+    },
+    {
+     "id": "P6",
+     "type": "num",
+     "text": "$$f(x) = (x - 1)(x + 5)$$\nFind $f(3)$.",
+     "answer": 16,
+     "label": "$f(3)$ =",
+     "level": 1,
+     "explain": "$f(3) = ((3) - 1)((3) + 5) = 16$"
+    },
+    {
+     "id": "P7",
+     "type": "num",
+     "text": "$$f(x) = x^2 + 4x + 4$$\nFind $f(-2)$.",
+     "answer": 0,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "$f(-2) = (-2)^2 + 4(-2) + 4 = 0$"
+    },
+    {
+     "id": "P8",
+     "type": "num",
+     "text": "$$f(x) = 3x^4$$\nFind $f(-1)$.",
+     "answer": 3,
+     "label": "$f(-1)$ =",
+     "level": 1,
+     "explain": "$f(-1) = 3(-1)^4 = 3$"
+    },
+    {
+     "id": "P9",
+     "type": "num",
+     "text": "$$f(x) = 4x - x^3$$\nFind $f(-2)$.",
+     "answer": 0,
+     "label": "$f(-2)$ =",
+     "level": 1,
+     "explain": "$f(-2) = 4(-2) - (-2)^3 = 0$"
+    },
+    {
+     "id": "P10",
+     "type": "num",
+     "text": "$$f(x) = 7$$\nFind $f(100)$.",
+     "answer": 7,
+     "label": "$f(100)$ =",
+     "level": 1,
+     "explain": "Every input gives 7."
+    },
+    {
+     "id": "P11",
+     "type": "num",
+     "text": "$$f(x) = x^2 - x$$\nFind $f(-1)$.",
+     "answer": 2,
+     "label": "$f(-1)$ =",
+     "level": 1,
+     "explain": "$f(-1) = (-1)^2 - (-1) = 2$"
+    },
+    {
+     "id": "P12",
+     "type": "num",
+     "text": "$$f(x) = 1 - 2x$$\nFind $f(-5)$.",
+     "answer": 11,
+     "label": "$f(-5)$ =",
+     "level": 1,
+     "explain": "$f(-5) = 1 - 2(-5) = 11$"
+    },
+    {
+     "id": "R13",
+     "type": "num",
+     "text": "$$f(x) = frac{x + 1}{x - 2}$$\nFind $f(4)$.",
+     "answer": 2.5,
+     "label": "$f(4)$ =",
+     "level": 1,
+     "explain": "$f(4) = frac{5}{2}$"
+    },
+    {
+     "id": "R14",
+     "type": "num",
+     "text": "$$f(x) = frac{x^2}{x + 3}$$\nFind $f(-1)$.",
+     "answer": 0.5,
+     "label": "$f(-1)$ =",
+     "level": 1,
+     "explain": "$f(-1) = frac{1}{2}$"
+    },
+    {
+     "id": "R15",
+     "type": "num",
+     "text": "$$f(x) = sqrt(x + 7)$$\nFind $f(9)$.",
+     "answer": 4,
+     "label": "$f(9)$ =",
+     "level": 1,
+     "explain": "$f(9) = 4$"
+    },
+    {
+     "id": "R16",
+     "type": "num",
+     "text": "$$f(x) = frac{1}{x} + x$$\nFind $f(2)$.",
+     "answer": 2.5,
+     "label": "$f(2)$ =",
+     "level": 1,
+     "explain": "$f(2) = frac{5}{2}$"
+    },
+    {
+     "id": "R17",
+     "type": "num",
+     "text": "$$f(x) = sqrt(25 - x^2)$$\nFind $f(3)$.",
+     "answer": 4,
+     "label": "$f(3)$ =",
+     "level": 1,
+     "explain": "$f(3) = 4$"
+    },
+    {
+     "id": "R18",
+     "type": "num",
+     "text": "$$f(x) = frac{2x - 1}{x^2 + 1}$$\nFind $f(1)$.",
+     "answer": 0.5,
+     "label": "$f(1)$ =",
+     "level": 1,
+     "explain": "$f(1) = frac{1}{2}$"
+    },
+    {
+     "id": "R19",
+     "type": "num",
+     "text": "$$f(x) = |x - 5|$$\nFind $f(2)$.",
+     "answer": 3,
+     "label": "$f(2)$ =",
+     "level": 1,
+     "explain": "$f(2) = 3$"
+    },
+    {
+     "id": "W20",
+     "type": "num",
+     "text": "$$f(x) = cases{x + 1, x < 2; x^2, x >= 2}$$\nFind $f(2)$.",
+     "answer": 4,
+     "label": "$f(2)$ =",
+     "level": 1,
+     "explain": "$2 >= 2$ is true, so use $x^2$: 4."
+    },
+    {
+     "id": "W21",
+     "type": "num",
+     "text": "$$f(x) = cases{x + 1, x < 2; x^2, x >= 2}$$\nFind $f(1)$.",
+     "answer": 2,
+     "label": "$f(1)$ =",
+     "level": 1,
+     "explain": "$1 < 2$ is true, so use $x + 1$: 2."
+    },
+    {
+     "id": "W22",
+     "type": "num",
+     "text": "$$f(x) = cases{x + 1, x < 2; x^2, x >= 2}$$\nFind $f(-3)$.",
+     "answer": -2,
+     "label": "$f(-3)$ =",
+     "level": 1,
+     "explain": "$-3 < 2$ is true, so use $x + 1$: -2."
+    },
+    {
+     "id": "W23",
+     "type": "num",
+     "text": "$$f(x) = cases{3 - x, x < 0; 2x, x >= 0}$$\nFind $f(0)$.",
+     "answer": 0,
+     "label": "$f(0)$ =",
+     "level": 1,
+     "explain": "$0 >= 0$ is true, so use $2x$: 0."
+    },
+    {
+     "id": "W24",
+     "type": "num",
+     "text": "$$f(x) = cases{3 - x, x < 0; 2x, x >= 0}$$\nFind $f(-4)$.",
+     "answer": 7,
+     "label": "$f(-4)$ =",
+     "level": 1,
+     "explain": "$-4 < 0$ is true, so use $3 - x$: 7."
+    },
+    {
+     "id": "W25",
+     "type": "num",
+     "text": "$$f(x) = cases{3 - x, x < 0; 2x, x >= 0}$$\nFind $f(3)$.",
+     "answer": 6,
+     "label": "$f(3)$ =",
+     "level": 1,
+     "explain": "$3 >= 0$ is true, so use $2x$: 6."
+    },
+    {
+     "id": "W26",
+     "type": "num",
+     "text": "$$f(x) = cases{x^2, x < 3; 10 - x, x >= 3}$$\nFind $f(3)$.",
+     "answer": 7,
+     "label": "$f(3)$ =",
+     "level": 1,
+     "explain": "$3 >= 3$ is true, so use $10 - x$: 7."
+    },
+    {
+     "id": "W27",
+     "type": "num",
+     "text": "$$f(x) = cases{x^2, x < 3; 10 - x, x >= 3}$$\nFind $f(5)$.",
+     "answer": 5,
+     "label": "$f(5)$ =",
+     "level": 1,
+     "explain": "$5 >= 3$ is true, so use $10 - x$: 5."
+    },
+    {
+     "id": "C28",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(2x)$. Simplify if you can.",
+     "answer": "4x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(2x)$ =",
+     "show": "$4x^2$",
+     "level": 2,
+     "explain": "Put $(2x)$ in every blank: $f(2x) = 4x^2$."
+    },
+    {
+     "id": "C29",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(x + 1)$. Simplify if you can.",
+     "answer": "x^2 + 2x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x + 1)$ =",
+     "show": "$x^2 + 2x + 1$",
+     "level": 2,
+     "explain": "Put $(x + 1)$ in every blank: $f(x + 1) = x^2 + 2x + 1$."
+    },
+    {
+     "id": "C30",
+     "type": "expr",
+     "text": "$$f(x) = 3x - 2$$\nFind $f(x + 4)$. Simplify if you can.",
+     "answer": "3x + 10",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x + 4)$ =",
+     "show": "$3x + 10$",
+     "level": 2,
+     "explain": "Put $(x + 4)$ in every blank: $f(x + 4) = 3x + 10$."
+    },
+    {
+     "id": "C31",
+     "type": "expr",
+     "text": "$$f(x) = x^2 + x$$\nFind $f(-x)$. Simplify if you can.",
+     "answer": "x^2 - x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(-x)$ =",
+     "show": "$x^2 - x$",
+     "level": 2,
+     "explain": "Put $(-x)$ in every blank: $f(-x) = x^2 - x$."
+    },
+    {
+     "id": "C32",
+     "type": "expr",
+     "text": "$$f(x) = 2x + 5$$\nFind $f(a)$. Simplify if you can.",
+     "answer": "2a + 5",
+     "vars": [
+      "a"
+     ],
+     "label": "$f(a)$ =",
+     "show": "$2a + 5$",
+     "level": 2,
+     "explain": "Put $(a)$ in every blank: $f(a) = 2a + 5$."
+    },
+    {
+     "id": "C33",
+     "type": "expr",
+     "text": "$$f(x) = x^2 - 1$$\nFind $f(x^2)$. Simplify if you can.",
+     "answer": "x^4 - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x^2)$ =",
+     "show": "$x^4 - 1$",
+     "level": 2,
+     "explain": "Put $(x^2)$ in every blank: $f(x^2) = x^4 - 1$."
+    },
+    {
+     "id": "C34",
+     "type": "expr",
+     "text": "$$f(x) = frac{1}{x}$$\nFind $f(x + h)$. Simplify if you can.",
+     "answer": "1/(x + h)",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$frac{1}{x + h}$",
+     "level": 2,
+     "explain": "Put $(x + h)$ in every blank: $f(x + h) = frac{1}{x + h}$."
+    },
+    {
+     "id": "C35",
+     "type": "expr",
+     "text": "$$f(x) = sqrt(x)$$\nFind $f(x + h)$. Simplify if you can.",
+     "answer": "sqrt(x + h)",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$sqrt(x + h)$",
+     "level": 2,
+     "explain": "Put $(x + h)$ in every blank: $f(x + h) = sqrt(x + h)$."
+    },
+    {
+     "id": "C36",
+     "type": "expr",
+     "text": "$$f(x) = 5$$\nFind $f(x + h)$. Simplify if you can.",
+     "answer": "5",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$5$",
+     "level": 2,
+     "explain": "Put $(x + h)$ in every blank: $f(x + h) = 5$."
+    },
+    {
+     "id": "C37",
+     "type": "expr",
+     "text": "$$f(x) = x^3$$\nFind $f(2x)$. Simplify if you can.",
+     "answer": "8x^3",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(2x)$ =",
+     "show": "$8x^3$",
+     "level": 2,
+     "explain": "Put $(2x)$ in every blank: $f(2x) = 8x^3$."
+    },
+    {
+     "id": "C38",
+     "type": "expr",
+     "text": "$$f(x) = x^2 + 3$$\nFind $f(x - 1)$. Simplify if you can.",
+     "answer": "x^2 - 2x + 4",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x - 1)$ =",
+     "show": "$x^2 - 2x + 4$",
+     "level": 2,
+     "explain": "Put $(x - 1)$ in every blank: $f(x - 1) = x^2 - 2x + 4$."
+    },
+    {
+     "id": "C39",
+     "type": "expr",
+     "text": "$$f(x) = 4 - x$$\nFind $f(x + h)$. Simplify if you can.",
+     "answer": "4 - x - h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$4 - x - h$",
+     "level": 2,
+     "explain": "Put $(x + h)$ in every blank: $f(x + h) = 4 - x - h$."
+    },
+    {
+     "id": "C40",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(-x)$. Simplify if you can.",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(-x)$ =",
+     "show": "$x^2$",
+     "level": 2,
+     "explain": "Put $(-x)$ in every blank: $f(-x) = x^2$."
+    },
+    {
+     "id": "C41",
+     "type": "expr",
+     "text": "$$f(x) = 2x^2$$\nFind $f(3x)$. Simplify if you can.",
+     "answer": "18x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(3x)$ =",
+     "show": "$18x^2$",
+     "level": 2,
+     "explain": "Put $(3x)$ in every blank: $f(3x) = 18x^2$."
+    },
+    {
+     "id": "H42",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "x^2 + 2xh + h^2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$x^2 + 2xh + h^2$",
+     "level": 2,
+     "explain": "$f(x + h) = (x + h)^2 = x^2 + 2xh + h^2$"
+    },
+    {
+     "id": "H43",
+     "type": "expr",
+     "text": "$$f(x) = 3x + 2$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "3x + 3h + 2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$3x + 3h + 2$",
+     "level": 2,
+     "explain": "$f(x + h) = 3(x + h) + 2 = 3x + 3h + 2$"
+    },
+    {
+     "id": "H44",
+     "type": "expr",
+     "text": "$$f(x) = x^2 + x$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "x^2 + 2xh + h^2 + x + h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$x^2 + 2xh + h^2 + x + h$",
+     "level": 2,
+     "explain": "$f(x + h) = (x + h)^2 + (x + h) = x^2 + 2xh + h^2 + x + h$"
+    },
+    {
+     "id": "H45",
+     "type": "expr",
+     "text": "$$f(x) = 2x^2$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "2x^2 + 4xh + 2h^2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$2x^2 + 4xh + 2h^2$",
+     "level": 2,
+     "explain": "$f(x + h) = 2(x + h)^2 = 2x^2 + 4xh + 2h^2$"
+    },
+    {
+     "id": "H46",
+     "type": "expr",
+     "text": "$$f(x) = x^2 - 4x$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "x^2 + 2xh + h^2 - 4x - 4h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$x^2 + 2xh + h^2 - 4x - 4h$",
+     "level": 2,
+     "explain": "$f(x + h) = (x + h)^2 - 4(x + h) = x^2 + 2xh + h^2 - 4x - 4h$"
+    },
+    {
+     "id": "H47",
+     "type": "expr",
+     "text": "$$f(x) = 1 - x^2$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "-x^2 - 2xh - h^2 + 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$-x^2 - 2xh - h^2 + 1$",
+     "level": 2,
+     "explain": "$f(x + h) = 1 - (x + h)^2 = -x^2 - 2xh - h^2 + 1$"
+    },
+    {
+     "id": "H48",
+     "type": "expr",
+     "text": "$$f(x) = x^2 + 2x + 1$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "x^2 + 2xh + h^2 + 2x + 2h + 1",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$x^2 + 2xh + h^2 + 2x + 2h + 1$",
+     "level": 2,
+     "explain": "$f(x + h) = (x + h)^2 + 2(x + h) + 1 = x^2 + 2xh + h^2 + 2x + 2h + 1$"
+    },
+    {
+     "id": "H49",
+     "type": "expr",
+     "text": "$$f(x) = 5x$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "5x + 5h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$5x + 5h$",
+     "level": 2,
+     "explain": "$f(x + h) = 5(x + h) = 5x + 5h$"
+    },
+    {
+     "id": "Q50",
+     "type": "steps",
+     "text": "$$f(x) = x^2$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q50.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "x^2 + 2xh + h^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$x^2 + 2xh + h^2$",
+       "work": "$f(x + h) = x^2 + 2xh + h^2$"
+      },
+      {
+       "id": "Q50.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "2xh + h^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$2xh + h^2$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 2xh + h^2$",
+       "maxLen": 9
+      },
+      {
+       "id": "Q50.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2x + h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$2x + h$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 2x + h$",
+       "maxLen": 5
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 2x + h$"
+    },
+    {
+     "id": "Q51",
+     "type": "steps",
+     "text": "$$f(x) = 3x + 2$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q51.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "3x + 3h + 2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$3x + 3h + 2$",
+       "work": "$f(x + h) = 3x + 3h + 2$"
+      },
+      {
+       "id": "Q51.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "3h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$3h$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 3h$",
+       "maxLen": 4
+      },
+      {
+       "id": "Q51.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$3$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 3$",
+       "maxLen": 2
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 3$"
+    },
+    {
+     "id": "Q52",
+     "type": "steps",
+     "text": "$$f(x) = x^2 + x$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q52.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "x^2 + 2xh + h^2 + x + h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$x^2 + 2xh + h^2 + x + h$",
+       "work": "$f(x + h) = x^2 + 2xh + h^2 + x + h$"
+      },
+      {
+       "id": "Q52.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "2xh + h^2 + h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$2xh + h^2 + h$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 2xh + h^2 + h$",
+       "maxLen": 11
+      },
+      {
+       "id": "Q52.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2x + h + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$2x + h + 1$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 2x + h + 1$",
+       "maxLen": 7
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 2x + h + 1$"
+    },
+    {
+     "id": "Q53",
+     "type": "steps",
+     "text": "$$f(x) = 2x^2$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q53.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "2x^2 + 4xh + 2h^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$2x^2 + 4xh + 2h^2$",
+       "work": "$f(x + h) = 2x^2 + 4xh + 2h^2$"
+      },
+      {
+       "id": "Q53.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "4xh + 2h^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$4xh + 2h^2$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 4xh + 2h^2$",
+       "maxLen": 10
+      },
+      {
+       "id": "Q53.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "4x + 2h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$4x + 2h$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 4x + 2h$",
+       "maxLen": 6
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 4x + 2h$"
+    },
+    {
+     "id": "Q54",
+     "type": "steps",
+     "text": "$$f(x) = x^2 - 4x$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q54.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "x^2 + 2xh + h^2 - 4x - 4h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$x^2 + 2xh + h^2 - 4x - 4h$",
+       "work": "$f(x + h) = x^2 + 2xh + h^2 - 4x - 4h$"
+      },
+      {
+       "id": "Q54.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "2xh + h^2 - 4h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$2xh + h^2 - 4h$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 2xh + h^2 - 4h$",
+       "maxLen": 12
+      },
+      {
+       "id": "Q54.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2x + h - 4",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$2x + h - 4$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 2x + h - 4$",
+       "maxLen": 8
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 2x + h - 4$"
+    },
+    {
+     "id": "Q55",
+     "type": "steps",
+     "text": "$$f(x) = 1 - x^2$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q55.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "-x^2 - 2xh - h^2 + 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$-x^2 - 2xh - h^2 + 1$",
+       "work": "$f(x + h) = -x^2 - 2xh - h^2 + 1$"
+      },
+      {
+       "id": "Q55.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "-2xh - h^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$-2xh - h^2$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = -2xh - h^2$",
+       "maxLen": 10
+      },
+      {
+       "id": "Q55.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "-2x - h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$-2x - h$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = -2x - h$",
+       "maxLen": 6
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = -2x - h$"
+    },
+    {
+     "id": "Q56",
+     "type": "steps",
+     "text": "$$f(x) = 5x - 1$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q56.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "5x + 5h - 1",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$5x + 5h - 1$",
+       "work": "$f(x + h) = 5x + 5h - 1$"
+      },
+      {
+       "id": "Q56.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "5h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$5h$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 5h$",
+       "maxLen": 4
+      },
+      {
+       "id": "Q56.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "5",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$5$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 5$",
+       "maxLen": 2
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 5$"
+    },
+    {
+     "id": "Q57",
+     "type": "steps",
+     "text": "$$f(x) = x^2 + 3$$\nBuild the **difference quotient** $frac{f(x + h) - f(x)}{h}$ one piece at a time.",
+     "steps": [
+      {
+       "id": "Q57.1",
+       "type": "expr",
+       "text": "First $f(x + h)$, multiplied out.",
+       "answer": "x^2 + 2xh + h^2 + 3",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h)$ =",
+       "show": "$x^2 + 2xh + h^2 + 3$",
+       "work": "$f(x + h) = x^2 + 2xh + h^2 + 3$"
+      },
+      {
+       "id": "Q57.2",
+       "type": "expr",
+       "text": "Subtract $f(x)$. A lot should cancel.",
+       "answer": "2xh + h^2",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$f(x + h) - f(x)$ =",
+       "show": "$2xh + h^2$",
+       "explain": "Every term without an $h$ cancels. That always happens.",
+       "work": "$f(x + h) - f(x) = 2xh + h^2$",
+       "maxLen": 9
+      },
+      {
+       "id": "Q57.3",
+       "type": "expr",
+       "text": "Divide by $h$.",
+       "answer": "2x + h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "$frac{f(x + h) - f(x)}{h}$ =",
+       "show": "$2x + h$",
+       "explain": "Every term had an $h$, so the $h$ divides out.",
+       "work": "$frac{f(x + h) - f(x)}{h} = 2x + h$",
+       "maxLen": 5
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{f(x + h) - f(x)}{h} = 2x + h$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "expr",
+    "text": "$$f(x) = x^2 - 3x$$\nA function is a rule with blanks in it. Whatever you put inside $f( )$ goes into **every** blank.\nPut 5 in and watch.",
+    "answer": "5",
+    "vars": [],
+    "label": "Input:",
+    "show": "$5$",
+    "hint": "Type 5.",
+    "explain": "$f(5) = (5)^2 - 3(5) = 10$. One input, and it lands in every blank.",
+    "template": "f([]) = ([])^2 - 3([])"
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "text": "A negative input needs its parentheses.$$f(-2) = (-2)^2 - 3(-2)$$\nWhat number is that?",
+    "answer": 10,
+    "label": "$f(-2)$ =",
+    "hint": "$(-2)^2 = 4$ and $-3(-2) = +6$.",
+    "explain": "$4 + 6 = 10$. Without the parentheses, $-2^2$ would have been $-4$."
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "$$f(x) = x^2 - 3x$$\nThe input does not have to be a number. Put $x + h$ into the blanks.",
+    "answer": "x + h",
+    "vars": [
+     "x",
+     "h"
+    ],
+    "label": "Input:",
+    "show": "$x + h$",
+    "hint": "Type x + h. The rule does not change, only what sits in the blanks.",
+    "explain": "$f(x + h) = (x + h)^2 - 3(x + h)$. Nothing else about the rule changed.",
+    "template": "f([]) = ([])^2 - 3([])"
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "To finish, you have to multiply out $(x + h)^2$. Which is it?",
+    "options": [
+     "$x^2 + 2xh + h^2$",
+     "$x^2 + h^2$",
+     "$x^2 + xh + h^2$",
+     "$2x + 2h$"
+    ],
+    "answer": 0,
+    "hint": "Write it as $(x + h)(x + h)$ and multiply all four pairs.",
+    "explain": "$(x + h)(x + h) = x^2 + xh + hx + h^2$. The middle term $2xh$ is the one that goes missing."
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "Now multiply out the whole thing.$$f(x + h) = (x + h)^2 - 3(x + h)$$\n",
+    "answer": "x^2 + 2xh + h^2 - 3x - 3h",
+    "vars": [
+     "x",
+     "h"
+    ],
+    "label": "$f(x + h)$ =",
+    "show": "$x^2 + 2xh + h^2 - 3x - 3h$",
+    "hint": "$(x + h)^2 = x^2 + 2xh + h^2$, and $-3(x + h) = -3x - 3h$.",
+    "explain": "This is the first move of every derivative you will compute in this course."
+   }
+  ]
+ }
+}

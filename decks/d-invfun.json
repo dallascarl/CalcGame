@@ -488,7 +488,7 @@
     {
      "id": "V27",
      "type": "num",
-     "text": "$f(x) = x^3 + x$. Find $f^(-1)(2)$ by guessing a whole number.",
+     "text": "$$f(x) = x^3 + x$$\nFind $f^(-1)(2)$ by guessing a whole number.",
      "answer": 1,
      "label": "$f^(-1)(2)$ =",
      "level": 3,
@@ -497,7 +497,7 @@
     {
      "id": "V28",
      "type": "num",
-     "text": "$f(x) = 2x + 1$. Find $f^(-1)(9)$ by guessing a whole number.",
+     "text": "$$f(x) = 2x + 1$$\nFind $f^(-1)(9)$ by guessing a whole number.",
      "answer": 4,
      "label": "$f^(-1)(9)$ =",
      "level": 3,
@@ -506,7 +506,7 @@
     {
      "id": "V29",
      "type": "num",
-     "text": "$f(x) = x^5 + 2$. Find $f^(-1)(3)$ by guessing a whole number.",
+     "text": "$$f(x) = x^5 + 2$$\nFind $f^(-1)(3)$ by guessing a whole number.",
      "answer": 1,
      "label": "$f^(-1)(3)$ =",
      "level": 3,
@@ -515,7 +515,7 @@
     {
      "id": "V30",
      "type": "num",
-     "text": "$f(x) = e^x + x$. Find $f^(-1)(1)$ by guessing a whole number.",
+     "text": "$$f(x) = e^x + x$$\nFind $f^(-1)(1)$ by guessing a whole number.",
      "answer": 0,
      "label": "$f^(-1)(1)$ =",
      "level": 3,
@@ -524,7 +524,7 @@
     {
      "id": "V31",
      "type": "num",
-     "text": "$f(x) = x^3 + 2x$. Find $f^(-1)(3)$ by guessing a whole number.",
+     "text": "$$f(x) = x^3 + 2x$$\nFind $f^(-1)(3)$ by guessing a whole number.",
      "answer": 1,
      "label": "$f^(-1)(3)$ =",
      "level": 3,

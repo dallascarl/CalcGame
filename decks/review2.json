@@ -960,7 +960,7 @@
     {
      "id": "RULU42",
      "type": "expr",
-     "text": "$f(x) = frac{x - 2}{x + 3}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x - 2}{x + 3}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "1",
      "vars": [
       "x"
@@ -1036,7 +1036,7 @@
     {
      "id": "RULF32",
      "type": "expr",
-     "text": "$f(x) = (x^2 - 3)(2x + 5)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (x^2 - 3)(2x + 5)$$\nFill in the missing piece of the product rule.",
      "answer": "2",
      "vars": [
       "x"
@@ -1095,7 +1095,7 @@
     {
      "id": "RULF36",
      "type": "expr",
-     "text": "$f(x) = (x^3 + 1)(2x + 3)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (x^3 + 1)(2x + 3)$$\nFill in the missing piece of the product rule.",
      "answer": "2",
      "vars": [
       "x"
@@ -1139,7 +1139,7 @@
     {
      "id": "TRIF27",
      "type": "expr",
-     "text": "$f(x) = 4x·sin(x)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = 4x·sin(x)$$\nFill in the missing piece of the product rule.",
      "answer": "cos(x)",
      "vars": [
       "x"
@@ -1244,7 +1244,7 @@
     {
      "id": "TRIF22",
      "type": "expr",
-     "text": "$f(x) = x^2·sin(x)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = x^2·sin(x)$$\nFill in the missing piece of the product rule.",
      "answer": "2x",
      "vars": [
       "x"
@@ -1989,7 +1989,7 @@
     {
      "id": "EXPF32",
      "type": "expr",
-     "text": "$f(x) = e^(tan(x))$. Finish the derivative.",
+     "text": "$$f(x) = e^(tan(x))$$\nFinish the derivative.",
      "answer": "sec(x)^2",
      "vars": [
       "x"
@@ -2270,7 +2270,7 @@
     {
      "id": "EXPF27",
      "type": "expr",
-     "text": "$f(x) = e^(x^3 - x)$. Finish the derivative.",
+     "text": "$$f(x) = e^(x^3 - x)$$\nFinish the derivative.",
      "answer": "3x^2 - 1",
      "vars": [
       "x"
@@ -2299,7 +2299,7 @@
     {
      "id": "LOGF24",
      "type": "expr",
-     "text": "$f(x) = ln(x^3 + 2x + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^3 + 2x + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "3x^2 + 2",
      "vars": [
       "x"
@@ -2351,7 +2351,7 @@
     {
      "id": "LOGI37",
      "type": "num",
-     "text": "$f(x) = x + ln(x)$. Find $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
+     "text": "$$f(x) = x + ln(x)$$\nFind $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
      "answer": 1,
      "label": "$f^(-1)(1)$ =",
      "explain": "$f(1) = 1$, so $f^(-1)(1) = 1$.",
@@ -2360,7 +2360,7 @@
     {
      "id": "LOGF27",
      "type": "expr",
-     "text": "$f(x) = ln(x^4 - x)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^4 - x)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "4x^3 - 1",
      "vars": [
       "x"
@@ -2387,7 +2387,7 @@
     {
      "id": "LOGF29",
      "type": "expr",
-     "text": "$f(x) = ln(x + sqrt(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x + sqrt(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "1 + 1/(2sqrt(x))",
      "vars": [
       "x"
@@ -2414,7 +2414,7 @@
     {
      "id": "LOGI36",
      "type": "num",
-     "text": "$f(x) = x^3 + 2x - 1$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "text": "$$f(x) = x^3 + 2x - 1$$\nFind $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
      "answer": 1,
      "label": "$f^(-1)(2)$ =",
      "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$.",
@@ -2423,7 +2423,7 @@
     {
      "id": "LOGF22",
      "type": "expr",
-     "text": "$f(x) = ln(sin(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(sin(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "cos(x)",
      "vars": [
       "x"
@@ -3237,7 +3237,7 @@
     {
      "id": "INVF31",
      "type": "expr",
-     "text": "$f(x) = arctan(sqrt(x))$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(sqrt(x))$$\nFill in the derivative of the inside.",
      "answer": "1/(2sqrt(x))",
      "vars": [
       "x"

@@ -1,0 +1,895 @@
+{
+ "id": "t-inverse",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Inverse Functions",
+ "subtitle": "What an inverse undoes, how to find one, and what its graph looks like.",
+ "version": 2,
+ "graphs": {
+  "mirror": {
+   "window": [
+    -4,
+    6,
+    -4,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "exp(x)",
+     "from": -4,
+     "to": 1.8
+    },
+    {
+     "expr": "ln(x)",
+     "from": 0.02,
+     "to": 6
+    },
+    {
+     "expr": "x",
+     "from": -4,
+     "to": 6,
+     "dash": true
+    }
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "$f(f^(-1)(x)) =$",
+     "options": [
+      "$x$",
+      "1",
+      "0",
+      "$f(x)$"
+     ],
+     "answer": 0,
+     "explain": "Doing and then undoing gets you back where you started."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "If $(2, 9)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(9, 2)$",
+      "$(2, -9)$",
+      "$(-2, 9)$",
+      "$(2, frac{1}{9})$"
+     ],
+     "answer": 0,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "A function has an inverse function when its graph passes the",
+     "options": [
+      "horizontal line test",
+      "vertical line test",
+      "diagonal line test",
+      "tangent line test"
+     ],
+     "answer": 0,
+     "explain": "No two inputs may share an output. Otherwise there is no single input to go back to."
+    },
+    {
+     "id": "T4",
+     "type": "tf",
+     "text": "$f(x) = x^2$, on all real numbers, has an inverse function.",
+     "answer": false,
+     "explain": "$f(2) = 4$ and $f(-2) = 4$, so the inverse would not know where to send 4. It works once the domain is cut to $x >= 0$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "The domain of $f^(-1)$ is",
+     "options": [
+      "the range of $f$",
+      "the domain of $f$",
+      "all real numbers",
+      "the positive numbers"
+     ],
+     "answer": 0,
+     "explain": "The inverse takes the outputs of $f$ as its inputs."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "The inverse of $f(x) = x^3$ is",
+     "options": [
+      "$x^(1/3)$",
+      "$frac{1}{x^3}$",
+      "$x^(-3)$",
+      "$3x$"
+     ],
+     "answer": 0,
+     "explain": "The cube root undoes the cube. $x^(-3)$ is the reciprocal, which is a different thing."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "P1",
+     "type": "num",
+     "text": "Suppose $f(2) = 7$ and $f$ has an inverse. Find $f^(-1)(7)$.",
+     "answer": 2,
+     "label": "$f^(-1)(7)$ =",
+     "level": 1,
+     "explain": "$f$ sends 2 to 7, so the inverse sends 7 back to 2."
+    },
+    {
+     "id": "P2",
+     "type": "num",
+     "text": "Suppose $f(-1) = 4$ and $f$ has an inverse. Find $f^(-1)(4)$.",
+     "answer": -1,
+     "label": "$f^(-1)(4)$ =",
+     "level": 1,
+     "explain": "$f$ sends -1 to 4, so the inverse sends 4 back to -1."
+    },
+    {
+     "id": "P3",
+     "type": "num",
+     "text": "Suppose $f(5) = 0$ and $f$ has an inverse. Find $f^(-1)(0)$.",
+     "answer": 5,
+     "label": "$f^(-1)(0)$ =",
+     "level": 1,
+     "explain": "$f$ sends 5 to 0, so the inverse sends 0 back to 5."
+    },
+    {
+     "id": "P4",
+     "type": "num",
+     "text": "Suppose $f(3) = -2$ and $f$ has an inverse. Find $f^(-1)(-2)$.",
+     "answer": 3,
+     "label": "$f^(-1)(-2)$ =",
+     "level": 1,
+     "explain": "$f$ sends 3 to -2, so the inverse sends -2 back to 3."
+    },
+    {
+     "id": "P5",
+     "type": "num",
+     "text": "Suppose $f(0) = 6$ and $f$ has an inverse. Find $f^(-1)(6)$.",
+     "answer": 0,
+     "label": "$f^(-1)(6)$ =",
+     "level": 1,
+     "explain": "$f$ sends 0 to 6, so the inverse sends 6 back to 0."
+    },
+    {
+     "id": "P6",
+     "type": "num",
+     "text": "Suppose $f(4) = 10$ and $f$ has an inverse. Find $f^(-1)(10)$.",
+     "answer": 4,
+     "label": "$f^(-1)(10)$ =",
+     "level": 1,
+     "explain": "$f$ sends 4 to 10, so the inverse sends 10 back to 4."
+    },
+    {
+     "id": "S7",
+     "type": "mc",
+     "text": "If $(2, 5)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(5, 2)$",
+      "$(-2, -5)$",
+      "$(2, -5)$",
+      "$(-5, 2)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "S8",
+     "type": "mc",
+     "text": "If $(-1, 3)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(3, -1)$",
+      "$(1, -3)$",
+      "$(-1, -3)$",
+      "$(-3, -1)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "S9",
+     "type": "mc",
+     "text": "If $(4, -2)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(-2, 4)$",
+      "$(-4, 2)$",
+      "$(4, 2)$",
+      "$(2, 4)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "S10",
+     "type": "mc",
+     "text": "If $(0, 7)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(7, 0)$",
+      "$(0, -7)$",
+      "$(-7, 0)$",
+      "$(1, 7)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "S11",
+     "type": "mc",
+     "text": "If $(6, 6)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(6, 6)$",
+      "$(-6, -6)$",
+      "$(6, -6)$",
+      "$(-6, 6)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "S12",
+     "type": "mc",
+     "text": "If $(-3, -8)$ is on the graph of $f$, which point is on the graph of $f^(-1)$?",
+     "options": [
+      "$(-8, -3)$",
+      "$(3, 8)$",
+      "$(-3, 8)$",
+      "$(8, -3)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Swap the coordinates."
+    },
+    {
+     "id": "V13",
+     "type": "num",
+     "text": "$$f(x) = 2x + 3$$\nFind $f^(-1)(11)$ by asking: which input gives the output 11?",
+     "answer": 4,
+     "label": "$f^(-1)(11)$ =",
+     "level": 1,
+     "explain": "Solve $2x + 3 = 11$: $x = 4$."
+    },
+    {
+     "id": "V14",
+     "type": "num",
+     "text": "$$f(x) = x - 5$$\nFind $f^(-1)(2)$ by asking: which input gives the output 2?",
+     "answer": 7,
+     "label": "$f^(-1)(2)$ =",
+     "level": 1,
+     "explain": "Solve $x - 5 = 2$: $x = 7$."
+    },
+    {
+     "id": "V15",
+     "type": "num",
+     "text": "$$f(x) = 3x$$\nFind $f^(-1)(12)$ by asking: which input gives the output 12?",
+     "answer": 4,
+     "label": "$f^(-1)(12)$ =",
+     "level": 1,
+     "explain": "Solve $3x = 12$: $x = 4$."
+    },
+    {
+     "id": "V16",
+     "type": "num",
+     "text": "$$f(x) = frac{x}{2} + 1$$\nFind $f^(-1)(4)$ by asking: which input gives the output 4?",
+     "answer": 6,
+     "label": "$f^(-1)(4)$ =",
+     "level": 1,
+     "explain": "Solve $frac{x}{2} + 1 = 4$: $x = 6$."
+    },
+    {
+     "id": "V17",
+     "type": "num",
+     "text": "$$f(x) = 10 - x$$\nFind $f^(-1)(3)$ by asking: which input gives the output 3?",
+     "answer": 7,
+     "label": "$f^(-1)(3)$ =",
+     "level": 1,
+     "explain": "Solve $10 - x = 3$: $x = 7$."
+    },
+    {
+     "id": "V18",
+     "type": "num",
+     "text": "$$f(x) = 4x - 1$$\nFind $f^(-1)(7)$ by asking: which input gives the output 7?",
+     "answer": 2,
+     "label": "$f^(-1)(7)$ =",
+     "level": 1,
+     "explain": "Solve $4x - 1 = 7$: $x = 2$."
+    },
+    {
+     "id": "I19",
+     "type": "expr",
+     "text": "$$f(x) = 3x - 5$$\nFind a formula for the inverse.",
+     "answer": "(x + 5)/3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$frac{x + 5}{3}$",
+     "level": 2,
+     "explain": "Write $y = 3x - 5$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = frac{x + 5}{3}$."
+    },
+    {
+     "id": "I20",
+     "type": "expr",
+     "text": "$$f(x) = frac{x}{2} + 1$$\nFind a formula for the inverse.",
+     "answer": "2(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$2(x - 1)$",
+     "level": 2,
+     "explain": "Write $y = frac{x}{2} + 1$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = 2(x - 1)$."
+    },
+    {
+     "id": "I21",
+     "type": "expr",
+     "text": "$$f(x) = x^3$$\nFind a formula for the inverse.",
+     "answer": "cbrt(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$cbrt(x)$",
+     "level": 2,
+     "explain": "Write $y = x^3$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = cbrt(x)$."
+    },
+    {
+     "id": "I22",
+     "type": "expr",
+     "text": "$$f(x) = x^3 + 1$$\nFind a formula for the inverse.",
+     "answer": "cbrt(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$cbrt(x - 1)$",
+     "level": 2,
+     "explain": "Write $y = x^3 + 1$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = cbrt(x - 1)$."
+    },
+    {
+     "id": "I23",
+     "type": "expr",
+     "text": "$$f(x) = frac{1}{x}$$\nFind a formula for the inverse.",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 2,
+     "explain": "Write $y = frac{1}{x}$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = frac{1}{x}$."
+    },
+    {
+     "id": "I24",
+     "type": "expr",
+     "text": "$$f(x) = frac{2}{x + 1}$$\nFind a formula for the inverse.",
+     "answer": "2/x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$2/x - 1$",
+     "level": 2,
+     "explain": "Write $y = frac{2}{x + 1}$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = 2/x - 1$."
+    },
+    {
+     "id": "I25",
+     "type": "expr",
+     "text": "$$f(x) = e^x$$\nFind a formula for the inverse.",
+     "answer": "ln(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$ln(x)$",
+     "level": 2,
+     "explain": "Write $y = e^x$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = ln(x)$."
+    },
+    {
+     "id": "I26",
+     "type": "expr",
+     "text": "$$f(x) = ln(x)$$\nFind a formula for the inverse.",
+     "answer": "e^x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$e^x$",
+     "level": 2,
+     "explain": "Write $y = ln(x)$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = e^x$."
+    },
+    {
+     "id": "I27",
+     "type": "expr",
+     "text": "$$f(x) = 4 - x$$\nFind a formula for the inverse.",
+     "answer": "4 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$4 - x$",
+     "level": 2,
+     "explain": "Write $y = 4 - x$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = 4 - x$."
+    },
+    {
+     "id": "I28",
+     "type": "expr",
+     "text": "$$f(x) = 5x$$\nFind a formula for the inverse.",
+     "answer": "x/5",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$frac{x}{5}$",
+     "level": 2,
+     "explain": "Write $y = 5x$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = frac{x}{5}$."
+    },
+    {
+     "id": "I29",
+     "type": "expr",
+     "text": "$$f(x) = frac{x - 2}{3}$$\nFind a formula for the inverse.",
+     "answer": "3x + 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$3x + 2$",
+     "level": 2,
+     "explain": "Write $y = frac{x - 2}{3}$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = 3x + 2$."
+    },
+    {
+     "id": "I30",
+     "type": "expr",
+     "text": "$$f(x) = e^(2x)$$\nFind a formula for the inverse.",
+     "answer": "ln(x)/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$frac{ln(x)}{2}$",
+     "level": 2,
+     "explain": "Write $y = e^(2x)$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = frac{ln(x)}{2}$."
+    },
+    {
+     "id": "I31",
+     "type": "expr",
+     "text": "$$f(x) = 8x^3$$\nFind a formula for the inverse.",
+     "answer": "cbrt(x)/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$frac{cbrt(x)}{2}$",
+     "level": 2,
+     "explain": "Write $y = 8x^3$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = frac{cbrt(x)}{2}$."
+    },
+    {
+     "id": "I32",
+     "type": "expr",
+     "text": "$$f(x) = x + 9$$\nFind a formula for the inverse.",
+     "answer": "x - 9",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$x - 9$",
+     "level": 2,
+     "explain": "Write $y = x + 9$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = x - 9$."
+    },
+    {
+     "id": "K33",
+     "type": "expr",
+     "text": "$$f(x) = 3x - 5,    g(x) = frac{x + 5}{3}$$\nWork out $f(g(x))$ and simplify. What does the answer tell you?",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.4
+      ]
+     },
+     "show": "$x$",
+     "level": 3,
+     "explain": "$f(g(x)) = x$: each function undoes the other, so they are inverses."
+    },
+    {
+     "id": "K34",
+     "type": "expr",
+     "text": "$$f(x) = x^3 + 1,    g(x) = cbrt(x - 1)$$\nWork out $f(g(x))$ and simplify. What does the answer tell you?",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.4
+      ]
+     },
+     "show": "$x$",
+     "level": 3,
+     "explain": "$f(g(x)) = x$: each function undoes the other, so they are inverses."
+    },
+    {
+     "id": "K35",
+     "type": "expr",
+     "text": "$$f(x) = 2x + 8,    g(x) = frac{x}{2} - 4$$\nWork out $f(g(x))$ and simplify. What does the answer tell you?",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.4
+      ]
+     },
+     "show": "$x$",
+     "level": 3,
+     "explain": "$f(g(x)) = x$: each function undoes the other, so they are inverses."
+    },
+    {
+     "id": "K36",
+     "type": "expr",
+     "text": "$$f(x) = e^(2x),    g(x) = frac{ln(x)}{2}$$\nWork out $f(g(x))$ and simplify. What does the answer tell you?",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.4
+      ]
+     },
+     "show": "$x$",
+     "level": 3,
+     "explain": "$f(g(x)) = x$: each function undoes the other, so they are inverses."
+    },
+    {
+     "id": "G37",
+     "type": "num",
+     "text": "$$f(x) = x^3 + x$$\nYou cannot solve for a formula here. Find $f^(-1)(2)$ anyway, by trying small whole numbers as inputs.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "level": 3,
+     "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$. You only need the one input that works."
+    },
+    {
+     "id": "G38",
+     "type": "num",
+     "text": "$$f(x) = x^3 + x$$\nYou cannot solve for a formula here. Find $f^(-1)(10)$ anyway, by trying small whole numbers as inputs.",
+     "answer": 2,
+     "label": "$f^(-1)(10)$ =",
+     "level": 3,
+     "explain": "$f(2) = 10$, so $f^(-1)(10) = 2$. You only need the one input that works."
+    },
+    {
+     "id": "G39",
+     "type": "num",
+     "text": "$$f(x) = e^x + x$$\nYou cannot solve for a formula here. Find $f^(-1)(1)$ anyway, by trying small whole numbers as inputs.",
+     "answer": 0,
+     "label": "$f^(-1)(1)$ =",
+     "level": 3,
+     "explain": "$f(0) = 1$, so $f^(-1)(1) = 0$. You only need the one input that works."
+    },
+    {
+     "id": "G40",
+     "type": "num",
+     "text": "$$f(x) = x^5 + 2x$$\nYou cannot solve for a formula here. Find $f^(-1)(3)$ anyway, by trying small whole numbers as inputs.",
+     "answer": 1,
+     "label": "$f^(-1)(3)$ =",
+     "level": 3,
+     "explain": "$f(1) = 3$, so $f^(-1)(3) = 1$. You only need the one input that works."
+    },
+    {
+     "id": "G41",
+     "type": "num",
+     "text": "$$f(x) = 2x + ln(x)$$\nYou cannot solve for a formula here. Find $f^(-1)(2)$ anyway, by trying small whole numbers as inputs.",
+     "answer": 1,
+     "label": "$f^(-1)(2)$ =",
+     "level": 3,
+     "explain": "$f(1) = 2$, so $f^(-1)(2) = 1$. You only need the one input that works."
+    },
+    {
+     "id": "R42",
+     "type": "mc",
+     "text": "The inverse of $f(x) = x^2$ with domain $x >= 0$ is",
+     "options": [
+      "$sqrt(x)$",
+      "$-sqrt(x)$",
+      "$x^2$",
+      "$frac{1}{x^2}$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "With only $x >= 0$ allowed, the positive root undoes the square."
+    },
+    {
+     "id": "R43",
+     "type": "mc",
+     "text": "The inverse of $f(x) = x^2$ with domain $x <= 0$ is",
+     "options": [
+      "$-sqrt(x)$",
+      "$sqrt(x)$",
+      "$-x^2$",
+      "$sqrt(-x)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The inputs were negative, so the inverse must give negative answers."
+    },
+    {
+     "id": "R44",
+     "type": "mc",
+     "text": "The inverse of $f(x) = (x - 1)^2$ with domain $x >= 1$ is",
+     "options": [
+      "$sqrt(x) + 1$",
+      "$sqrt(x) - 1$",
+      "$sqrt(x - 1)$",
+      "$sqrt(x + 1)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "Undo the square, then undo the \"minus 1\"."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "num",
+    "text": "An inverse function **undoes** $f$: it takes each output back to the input it came from.$$f(2) = 7$$\nSo what is $f^(-1)(7)$?",
+    "answer": 2,
+    "label": "$f^(-1)(7)$ =",
+    "hint": "$f$ sent 2 to 7. The inverse sends 7 back.",
+    "explain": "$f^(-1)(7) = 2$. Inputs and outputs trade places."
+   },
+   {
+    "id": "L2",
+    "type": "order",
+    "text": "To find a formula for an inverse, undo each step in reverse order. $f(x) = 2x + 3$ doubles, then adds 3. Put the steps of $f^(-1)$ in order.",
+    "items": [
+     "Start with $x$",
+     "Subtract 3",
+     "Divide by 2"
+    ],
+    "hint": "Think of shoes and socks: the last thing you put on is the first thing you take off.",
+    "explain": "$f$ added 3 last, so the inverse subtracts 3 first."
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "So write the formula for the inverse of $f(x) = 2x + 3$.",
+    "answer": "(x - 3)/2",
+    "vars": [
+     "x"
+    ],
+    "label": "$f^(-1)(x)$ =",
+    "show": "$frac{x - 3}{2}$",
+    "hint": "Subtract 3, then divide all of it by 2. The other way to get there: write $y = 2x + 3$, swap $x$ and $y$, and solve for $y$.",
+    "explain": "$f^(-1)(x) = frac{x - 3}{2}$. Check: $f(1) = 5$ and $f^(-1)(5) = 1$."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Because inputs and outputs trade places, the graph of $f^(-1)$ is the graph of $f$ reflected over the dashed line. Which line is it?",
+    "options": [
+     "$y = x$",
+     "$y = 0$",
+     "$x = 0$",
+     "$y = -x$"
+    ],
+    "answer": 0,
+    "graph": "mirror",
+    "hint": "A point $(a, b)$ becomes $(b, a)$.",
+    "explain": "Swapping $x$ and $y$ reflects over $y = x$. The two curves here are $e^x$ and its inverse, $ln(x)$."
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "One warning about the notation. Which statement is true?",
+    "options": [
+     "$f^(-1)(x)$ is the inverse function, not $frac{1}{f(x)}$",
+     "$f^(-1)(x)$ always equals $frac{1}{f(x)}$",
+     "$f^(-1)(x)$ equals $-f(x)$",
+     "$f^(-1)(x)$ equals $f(-x)$"
+    ],
+    "answer": 0,
+    "hint": "For $f(x) = 2x + 3$ you just found $f^(-1)(x) = frac{x - 3}{2}$. Is that $frac{1}{2x + 3}$?",
+    "explain": "The $-1$ is not an exponent here. It means \"inverse\". The reciprocal is written $(f(x))^(-1)$ or $frac{1}{f(x)}$."
+   }
+  ]
+ }
+}

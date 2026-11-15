@@ -1171,7 +1171,7 @@
     {
      "id": "c56",
      "type": "num",
-     "text": "A table of values: $f(1.9) ≈ 3.6100$ · $f(1.99) ≈ 3.9601$ · $f(1.999) ≈ 3.9960$ · $f(2.001) ≈ 4.0040$ · $f(2.01) ≈ 4.0401$ · $f(2.1) ≈ 4.4100$. Guess $lim[x->2] f(x)$.",
+     "text": "The table shows values of $f$ close to $x = 2$.{{table: x | f(x) ;; 1.9 | 3.61 ;; 1.99 | 3.9601 ;; !2 | ? ;; 2.01 | 4.0401 ;; 2.1 | 4.41}}What does the table suggest for $lim[x->2] f(x)$?",
      "answer": 4,
      "label": "$lim[x->2] f(x)$ =",
      "tol": 0.01,
@@ -1181,7 +1181,7 @@
     {
      "id": "c57",
      "type": "num",
-     "text": "A table of values: $f(0.9) ≈ 0.3448$ · $f(0.99) ≈ 0.3344$ · $f(0.999) ≈ 0.3334$ · $f(1.001) ≈ 0.3332$ · $f(1.01) ≈ 0.3322$ · $f(1.1) ≈ 0.3226$. Guess $lim[x->1] f(x)$.",
+     "text": "The table shows values of $f$ close to $x = 1$.{{table: x | f(x) ;; 0.9 | 0.34483 ;; 0.99 | 0.33445 ;; !1 | ? ;; 1.01 | 0.33223 ;; 1.1 | 0.32258}}What does the table suggest for $lim[x->1] f(x)$?",
      "answer": 0.333333,
      "label": "$lim[x->1] f(x)$ =",
      "tol": 0.01,
@@ -1191,7 +1191,7 @@
     {
      "id": "c58",
      "type": "num",
-     "text": "A table of values: $f(-0.1) ≈ 0.9983$ · $f(-0.01) ≈ 1.0000$ · $f(-0.001) ≈ 1.0000$ · $f(0.001) ≈ 1.0000$ · $f(0.01) ≈ 1.0000$ · $f(0.1) ≈ 0.9983$. Guess $lim[x->0] f(x)$.",
+     "text": "The table shows values of $f$ close to $x = 0$.{{table: x | f(x) ;; -0.1 | 0.99833 ;; -0.01 | 0.99998 ;; !0 | ? ;; 0.01 | 0.99998 ;; 0.1 | 0.99833}}What does the table suggest for $lim[x->0] f(x)$?",
      "answer": 1,
      "label": "$lim[x->0] f(x)$ =",
      "tol": 0.01,
@@ -1201,7 +1201,7 @@
     {
      "id": "c59",
      "type": "num",
-     "text": "A table of values: $f(2.9) ≈ 5.9000$ · $f(2.99) ≈ 5.9900$ · $f(2.999) ≈ 5.9990$ · $f(3.001) ≈ 6.0010$ · $f(3.01) ≈ 6.0100$ · $f(3.1) ≈ 6.1000$. Guess $lim[x->3] f(x)$.",
+     "text": "The table shows values of $f$ close to $x = 3$.{{table: x | f(x) ;; 2.9 | 5.9 ;; 2.99 | 5.99 ;; !3 | ? ;; 3.01 | 6.01 ;; 3.1 | 6.1}}What does the table suggest for $lim[x->3] f(x)$?",
      "answer": 6,
      "label": "$lim[x->3] f(x)$ =",
      "tol": 0.01,

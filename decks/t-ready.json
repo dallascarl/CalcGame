@@ -1,0 +1,1142 @@
+{
+ "id": "t-ready",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Readiness Check",
+ "subtitle": "A practice run for the in-class Algebra Readiness Check.",
+ "version": 2,
+ "graphs": {
+  "dpw2": {
+   "window": [
+    -4,
+    4,
+    -3,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "1-x",
+     "from": -4,
+     "to": -1
+    },
+    {
+     "expr": "x^2-1",
+     "from": -1,
+     "to": 2
+    },
+    {
+     "expr": "4",
+     "from": 2,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     -1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "dots": [
+    [
+     -1,
+     0
+    ],
+    [
+     2,
+     4
+    ]
+   ]
+  },
+  "gS4": {
+   "window": [
+    -6,
+    6,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(x + 3)",
+     "from": -3,
+     "to": 6
+    }
+   ]
+  },
+  "gS3": {
+   "window": [
+    -6,
+    6,
+    -6,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "abs(x - 2) - 2",
+     "from": -6,
+     "to": 6
+    }
+   ]
+  }
+ },
+ "drills": {
+  "exam": {
+   "title": "Readiness Check",
+   "exam": true,
+   "setSize": 20,
+   "questions": [
+    {
+     "id": "nC29",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(x + 1)$. Simplify if you can.",
+     "answer": "x^2 + 2x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x + 1)$ =",
+     "show": "$x^2 + 2x + 1$",
+     "explain": "Put $(x + 1)$ in every blank: $f(x + 1) = x^2 + 2x + 1$.",
+     "topic": "Function notation"
+    },
+    {
+     "id": "nH49",
+     "type": "expr",
+     "text": "$$f(x) = 5x$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "5x + 5h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$5x + 5h$",
+     "explain": "$f(x + h) = 5(x + h) = 5x + 5h$",
+     "topic": "Function notation"
+    },
+    {
+     "id": "nC30",
+     "type": "expr",
+     "text": "$$f(x) = 3x - 2$$\nFind $f(x + 4)$. Simplify if you can.",
+     "answer": "3x + 10",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(x + 4)$ =",
+     "show": "$3x + 10$",
+     "explain": "Put $(x + 4)$ in every blank: $f(x + 4) = 3x + 10$.",
+     "topic": "Function notation"
+    },
+    {
+     "id": "nH42",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(x + h)$ and multiply it out.",
+     "answer": "x^2 + 2xh + h^2",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "$f(x + h)$ =",
+     "show": "$x^2 + 2xh + h^2$",
+     "explain": "$f(x + h) = (x + h)^2 = x^2 + 2xh + h^2$",
+     "topic": "Function notation"
+    },
+    {
+     "id": "nC40",
+     "type": "expr",
+     "text": "$$f(x) = x^2$$\nFind $f(-x)$. Simplify if you can.",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(-x)$ =",
+     "show": "$x^2$",
+     "explain": "Put $(-x)$ in every blank: $f(-x) = x^2$.",
+     "topic": "Function notation"
+    },
+    {
+     "id": "dD20",
+     "type": "interval",
+     "text": "Find the domain of $f(x) = sqrt(x + 5)$.",
+     "answer": "[-5,inf)",
+     "label": "Domain:",
+     "explain": "The inside of the square root must be 0 or more.",
+     "topic": "Domain and piecewise"
+    },
+    {
+     "id": "dG46",
+     "type": "graph",
+     "graph": "dpw2",
+     "ask": "value",
+     "at": 0,
+     "answer": -1,
+     "explain": "Read the height of the graph at that $x$. Where there is a filled dot, the dot is the value.",
+     "topic": "Domain and piecewise"
+    },
+    {
+     "id": "dW32",
+     "type": "num",
+     "text": "$$f(x) = cases{x + 1, x < 2; x^2, x >= 2}$$\nFind $f(5)$.",
+     "answer": 25,
+     "label": "$f(5)$ =",
+     "explain": "Check each condition with $x = 5$. Only one is true, and its rule gives 25.",
+     "topic": "Domain and piecewise"
+    },
+    {
+     "id": "dX55",
+     "type": "interval",
+     "text": "Find the domain of $f(x) = frac{sqrt(x - 1)}{x^2 - 9}$.",
+     "answer": "[1,3)U(3,inf)",
+     "label": "Domain:",
+     "explain": "$x >= 1$ for the root. Of $x = 3$ and $x = -3$, only 3 is left to throw out.",
+     "topic": "Domain and piecewise"
+    },
+    {
+     "id": "dD17",
+     "type": "interval",
+     "text": "Find the domain of $f(x) = frac{1}{x^2 - 9}$.",
+     "answer": "(-inf,-3)U(-3,3)U(3,inf)",
+     "label": "Domain:",
+     "explain": "The bottom cannot be 0.",
+     "topic": "Domain and piecewise"
+    },
+    {
+     "id": "fA62",
+     "type": "expr",
+     "text": "Factor:$$4x^2 - 4x - 3$$\n",
+     "answer": "(2x + 1)(2x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$4x^2 - 4x - 3$ =",
+     "show": "$(2x + 1)(2x - 3)$",
+     "explain": "$4x^2 - 4x - 3 = (2x + 1)(2x - 3)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2,
+     "topic": "Factoring"
+    },
+    {
+     "id": "fB66",
+     "type": "expr",
+     "text": "Factor by grouping:$$x^3 - x^2 + 4x - 4$$\n",
+     "answer": "(x^2 + 4)(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "factored =",
+     "show": "$(x^2 + 4)(x - 1)$",
+     "explain": "Group the first two terms and the last two, and pull a common factor from each: $(x^2 + 4)(x - 1)$.",
+     "form": "product",
+     "factors": 2,
+     "topic": "Factoring"
+    },
+    {
+     "id": "fC53",
+     "type": "expr",
+     "text": "Factor completely:$$5x^2 - 5$$\n",
+     "answer": "5(x - 1)(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$5x^2 - 5$ =",
+     "show": "$5(x - 1)(x + 1)$",
+     "explain": "Common factor first, then factor what is left: $5(x - 1)(x + 1)$.",
+     "form": "product",
+     "factors": 2,
+     "topic": "Factoring"
+    },
+    {
+     "id": "fQ46",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 2x + 1$$\n",
+     "answer": "(x + 1)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 2x + 1$ =",
+     "show": "$(x + 1)^2$",
+     "explain": "The same factor twice: $x^2 + 2x + 1 = (x + 1)^2$.",
+     "form": "product",
+     "factors": 2,
+     "topic": "Factoring"
+    },
+    {
+     "id": "fT40",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 7x + 6$$\n",
+     "answer": "(x - 1)(x - 6)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 7x + 6$ =",
+     "show": "$(x - 1)(x - 6)$",
+     "explain": "Two numbers that multiply to $6$ and add to $-7$: $x^2 - 7x + 6 = (x - 1)(x - 6)$.",
+     "form": "product",
+     "factors": 2,
+     "topic": "Factoring"
+    },
+    {
+     "id": "fZ73",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$2x^2 - 8x + 6 = 0$$\n",
+     "answers": [
+      1,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "explain": "$2x^2 - 8x + 6 = 2(x - 3)(x - 1)$, and a product is 0 only when one of its factors is 0.",
+     "topic": "Factoring"
+    },
+    {
+     "id": "rA30",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{2}{x} - frac{1}{2}$$\n",
+     "answer": "(4 - x)/(2x)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{4 - x}{2x}$",
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{4 - x}{2x}$.",
+     "form": "single",
+     "topic": "Rational expressions"
+    },
+    {
+     "id": "rF27",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^3 - x}{x^2 - x}$$\n",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$x + 1$",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 1$.",
+     "maxLen": 5,
+     "topic": "Rational expressions"
+    },
+    {
+     "id": "rA35",
+     "type": "expr",
+     "text": "Write as one fraction:$$2 - frac{1}{x}$$\n",
+     "answer": "(2x - 1)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2x - 1}{x}$",
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{2x - 1}{x}$.",
+     "form": "single",
+     "topic": "Rational expressions"
+    },
+    {
+     "id": "rF21",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 + 5x + 6}{x + 2}$$\n",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$x + 3$",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 3$.",
+     "maxLen": 5,
+     "topic": "Rational expressions"
+    },
+    {
+     "id": "rA31",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{x + 1} + 1$$\n",
+     "answer": "(x + 2)/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x + 2}{x + 1}$",
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{x + 2}{x + 1}$.",
+     "form": "single",
+     "topic": "Rational expressions"
+    },
+    {
+     "id": "rF22",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - x - 6}{x^2 - 9}$$\n",
+     "answer": "(x + 2)/(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x + 2}{x + 3}$",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 2}{x + 3}$.",
+     "maxLen": 9,
+     "topic": "Rational expressions"
+    },
+    {
+     "id": "eD52",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{x^5 + x^3}{x^3}$$\n",
+     "answer": "x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$x^2 + 1$",
+     "explain": "Each term on top gets divided separately: $x^2 + 1$.",
+     "maxLen": 7,
+     "topic": "Exponent rules"
+    },
+    {
+     "id": "eM32",
+     "type": "mc",
+     "text": "Which is $frac{5}{sqrt(x)}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$5x^(-1/2)$",
+      "$5x^(1/2)$",
+      "$frac{1}{5}x^(-1/2)$",
+      "$(5x)^(-1/2)$"
+     ],
+     "answer": 0,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{5}{sqrt(x)} = 5x^(-1/2)$.",
+     "topic": "Exponent rules"
+    },
+    {
+     "id": "eS41",
+     "type": "expr",
+     "text": "$$frac{1}{x^2 · x^3}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(-5)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(-5)$",
+     "explain": "$frac{1}{x^2 · x^3} = x^(-5)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power.",
+     "topic": "Exponent rules"
+    },
+    {
+     "id": "eV26",
+     "type": "num",
+     "text": "$$16^(3/4)$$\nFind the value: a whole number or a fraction.",
+     "answer": 8,
+     "label": "value =",
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $16^(3/4) = 8$.",
+     "topic": "Exponent rules"
+    },
+    {
+     "id": "eD48",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{4x^5 - 6x^2}{2x}$$\n",
+     "answer": "2x^4 - 3x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$2x^4 - 3x$",
+     "explain": "Each term on top gets divided separately: $2x^4 - 3x$.",
+     "maxLen": 9,
+     "topic": "Exponent rules"
+    },
+    {
+     "id": "eM31",
+     "type": "mc",
+     "text": "Which is $frac{3}{x^2}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$3x^(-2)$",
+      "$frac{1}{3}x^(-2)$",
+      "$(3x)^(-2)$",
+      "$3x^2$"
+     ],
+     "answer": 0,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{3}{x^2} = 3x^(-2)$.",
+     "topic": "Exponent rules"
+    },
+    {
+     "id": "kC26",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x + 4) - 2)(sqrt(x + 4) + 2)$$\n",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x$",
+     "explain": "$a^2 - b^2$ with the root as $a$: $x$.",
+     "maxLen": 3,
+     "topic": "Radicals and conjugates"
+    },
+    {
+     "id": "kJ33",
+     "type": "mc",
+     "text": "What is the conjugate of $5 - sqrt(x)$?",
+     "options": [
+      "$5 + sqrt(x)$",
+      "$-5 - sqrt(x)$",
+      "$5 - sqrt(x)$",
+      "$sqrt(x) - 5$"
+     ],
+     "answer": 0,
+     "explain": "Same two terms, with the sign between them flipped.",
+     "topic": "Radicals and conjugates"
+    },
+    {
+     "id": "kR37",
+     "type": "mc",
+     "text": "Which is equal to $frac{3}{sqrt(3)}$, with no root on the bottom?",
+     "options": [
+      "$sqrt(3)$",
+      "$3sqrt(3)$",
+      "$frac{sqrt(3)}{9}$",
+      "$1$"
+     ],
+     "answer": 0,
+     "explain": "Multiply the top and the bottom by the root: $frac{3}{sqrt(3)} = sqrt(3)$.",
+     "topic": "Radicals and conjugates"
+    },
+    {
+     "id": "kC28",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$$\n",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x^2$",
+     "explain": "$a^2 - b^2$ with the root as $a$: $x^2$.",
+     "maxLen": 5,
+     "topic": "Radicals and conjugates"
+    },
+    {
+     "id": "kJ35",
+     "type": "mc",
+     "text": "What is the conjugate of $sqrt(x^2 + 1) - x$?",
+     "options": [
+      "$sqrt(x^2 + 1) + x$",
+      "$sqrt(x^2 - 1) - x$",
+      "$sqrt(x^2 + 1) - x$",
+      "$x - sqrt(x^2 + 1)$"
+     ],
+     "answer": 0,
+     "explain": "Same two terms, with the sign between them flipped.",
+     "topic": "Radicals and conjugates"
+    },
+    {
+     "id": "gF39",
+     "type": "expr",
+     "text": "This is the graph of $y = sqrt(x)$, moved. Write its formula.",
+     "answer": "sqrt(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       3
+      ]
+     },
+     "show": "$sqrt(x + 3)$",
+     "explain": "It was moved left 3: $y = sqrt(x + 3)$.",
+     "graph": "gS4",
+     "topic": "Graphs and shifts"
+    },
+    {
+     "id": "gH44",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. This target has been flipped as well as moved. Match it.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 2,
+      "k": 3,
+      "a": -1
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip"
+     ],
+     "explain": "The target is $y = -|x - 2| + 3$.",
+     "topic": "Graphs and shifts"
+    },
+    {
+     "id": "gT34",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. Move your graph onto the dashed target.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -2,
+      "k": 4
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "explain": "The target is $y = (x + 2)^2 + 4$: left 2 and up 4.",
+     "topic": "Graphs and shifts"
+    },
+    {
+     "id": "gV52",
+     "type": "mc",
+     "text": "Without graphing: where is the highest point of $y = -(x - 2)^2 + 6$?",
+     "options": [
+      "$(2, 6)$",
+      "$(-2, 6)$",
+      "$(2, -6)$",
+      "$(6, 2)$"
+     ],
+     "answer": 0,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(2, 6)$.",
+     "topic": "Graphs and shifts"
+    },
+    {
+     "id": "gF38",
+     "type": "expr",
+     "text": "This is the graph of $y = |x|$, moved. Write its formula.",
+     "answer": "abs(x - 2) - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       2.5,
+       5
+      ]
+     },
+     "show": "$abs(x - 2) - 2$",
+     "explain": "It was moved right 2 and down 2: $y = |x - 2| - 2$.",
+     "graph": "gS3",
+     "topic": "Graphs and shifts"
+    },
+    {
+     "id": "cC28",
+     "type": "expr",
+     "text": "$$f(x) = sqrt(x),    g(x) = x^2 + 1$$\nWrite a formula for $g(f(x))$.",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$x + 1$",
+     "explain": "Put $sqrt(x)$ into every blank of $g$: $x + 1$.",
+     "topic": "Composition"
+    },
+    {
+     "id": "cL58",
+     "type": "mc",
+     "text": "$$h(x) = sqrt(1 + e^(2x))$$\nHow many layers does this function have? Count the steps you would do in order.",
+     "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "explain": "In order: $2x$, then $e$ to that power (plus 1), then the square root.",
+     "topic": "Composition"
+    },
+    {
+     "id": "cO41",
+     "type": "expr",
+     "text": "$$h(x) = (3x^2 + 1)^10$$\nThe inside is $u = 3x^2 + 1$. Write the **outside** function in terms of $u$.",
+     "answer": "u^10",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$u^10$",
+     "explain": "Once you have $u$, the last step is $u^10$.",
+     "topic": "Composition"
+    },
+    {
+     "id": "cC31",
+     "type": "expr",
+     "text": "$$f(x) = frac{1}{x},    g(x) = x - 4$$\nWrite a formula for $f(g(x))$.",
+     "answer": "(x - 4)^(-1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$(x - 4)^(-1)$",
+     "explain": "Put $x - 4$ into every blank of $f$: $(x - 4)^(-1)$.",
+     "topic": "Composition"
+    },
+    {
+     "id": "cL59",
+     "type": "mc",
+     "text": "$$h(x) = (x^2 + 1)^5$$\nHow many layers does this function have? Count the steps you would do in order.",
+     "options": [
+      "2",
+      "1",
+      "3",
+      "4"
+     ],
+     "answer": 0,
+     "explain": "In order: $x^2 + 1$, then the 5th power.",
+     "topic": "Composition"
+    },
+    {
+     "id": "iG39",
+     "type": "num",
+     "text": "$$f(x) = e^x + x$$\nYou cannot solve for a formula here. Find $f^(-1)(1)$ anyway, by trying small whole numbers as inputs.",
+     "answer": 0,
+     "label": "$f^(-1)(1)$ =",
+     "explain": "$f(0) = 1$, so $f^(-1)(1) = 0$. You only need the one input that works.",
+     "topic": "Inverse functions"
+    },
+    {
+     "id": "iI27",
+     "type": "expr",
+     "text": "$$f(x) = 4 - x$$\nFind a formula for the inverse.",
+     "answer": "4 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "cbrt(",
+      "ln(",
+      "e^("
+     ],
+     "label": "$f^(-1)(x)$ =",
+     "ranges": {
+      "x": [
+       0.6,
+       2.4
+      ]
+     },
+     "show": "$4 - x$",
+     "explain": "Write $y = 4 - x$, swap $x$ and $y$, and solve for $y$: $f^(-1)(x) = 4 - x$.",
+     "topic": "Inverse functions"
+    },
+    {
+     "id": "iK33",
+     "type": "expr",
+     "text": "$$f(x) = 3x - 5,    g(x) = frac{x + 5}{3}$$\nWork out $f(g(x))$ and simplify. What does the answer tell you?",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       1.2,
+       2.4
+      ]
+     },
+     "show": "$x$",
+     "explain": "$f(g(x)) = x$: each function undoes the other, so they are inverses.",
+     "topic": "Inverse functions"
+    },
+    {
+     "id": "iR43",
+     "type": "mc",
+     "text": "The inverse of $f(x) = x^2$ with domain $x <= 0$ is",
+     "options": [
+      "$-sqrt(x)$",
+      "$sqrt(x)$",
+      "$-x^2$",
+      "$sqrt(-x)$"
+     ],
+     "answer": 0,
+     "explain": "The inputs were negative, so the inverse must give negative answers.",
+     "topic": "Inverse functions"
+    },
+    {
+     "id": "lC44",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(6) - ln(2)$$\n",
+     "answer": "ln(3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(3)$",
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(3)$",
+     "maxLen": 3,
+     "longText": "That is equal, but write it as **one** logarithm.",
+     "topic": "Exponentials and logs"
+    },
+    {
+     "id": "lS35",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$ln(2x) = 0$$\n",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$frac{1}{2}$",
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = frac{1}{2}$.",
+     "topic": "Exponentials and logs"
+    },
+    {
+     "id": "lX28",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln((x + 1)^3)$.",
+     "options": [
+      "$3ln(x + 1)$",
+      "$3ln(x) + 3$",
+      "$ln(3x + 3)$",
+      "$(ln(x + 1))^3$"
+     ],
+     "answer": 0,
+     "explain": "Products become sums, quotients become differences, exponents come down: $3ln(x + 1)$.",
+     "topic": "Exponentials and logs"
+    },
+    {
+     "id": "lZ47",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$e^(ln(x) + ln(2))$$\n",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$2x$",
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $2x$.",
+     "maxLen": 3,
+     "topic": "Exponentials and logs"
+    },
+    {
+     "id": "lC42",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(x) - ln(2)$$\n",
+     "answer": "ln(x/2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(x/2)$",
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(x/2)$",
+     "maxLen": 4,
+     "longText": "That is equal, but write it as **one** logarithm.",
+     "topic": "Exponentials and logs"
+    },
+    {
+     "id": "lS33",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$e^(x + 1) = 4$$\n",
+     "answer": "ln(4) - 1",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$ln(4) - 1$",
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = ln(4) - 1$.",
+     "topic": "Exponentials and logs"
+    },
+    {
+     "id": "uF42",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{4})$.",
+     "answer": "sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{4})$ =",
+     "show": "$frac{sqrt(2)}{2}$",
+     "explain": "The point at $frac{pi}{4}$ is $(frac{sqrt(2)}{2}, frac{sqrt(2)}{2})$. Cosine is the $x$-coordinate.",
+     "topic": "The unit circle"
+    },
+    {
+     "id": "uG48",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{5pi}{6})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{5pi}{6})$ =",
+     "show": "$frac{1}{2}$",
+     "explain": "The point at $frac{5pi}{6}$ is $(-frac{sqrt(3)}{2}, frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs.",
+     "topic": "The unit circle"
+    },
+    {
+     "id": "uW61",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = frac{1}{2}$.",
+     "ask": "where",
+     "answers": [
+      3,
+      13
+     ],
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them.",
+     "topic": "The unit circle"
+    },
+    {
+     "id": "uF46",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{3pi}{2})$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{3pi}{2})$ =",
+     "show": "$0$",
+     "explain": "The point at $frac{3pi}{2}$ is $(0, -1)$. Cosine is the $x$-coordinate.",
+     "topic": "The unit circle"
+    },
+    {
+     "id": "uG58",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{5pi}{3})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{5pi}{3})$ =",
+     "show": "$frac{1}{2}$",
+     "explain": "The point at $frac{5pi}{3}$ is $(frac{1}{2}, -frac{sqrt(3)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs.",
+     "topic": "The unit circle"
+    },
+    {
+     "id": "uW69",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = -frac{1}{2}$.",
+     "ask": "where",
+     "answers": [
+      5,
+      11
+     ],
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them.",
+     "topic": "The unit circle"
+    },
+    {
+     "id": "tI27",
+     "type": "mc",
+     "text": "$sin(x + 2pi) =$",
+     "options": [
+      "$sin(x)$",
+      "$-sin(x)$",
+      "$cos(x)$",
+      "$sin(x) + 2pi$"
+     ],
+     "answer": 0,
+     "explain": "$sin(x + 2pi) = sin(x)$",
+     "topic": "Trig identities and equations"
+    },
+    {
+     "id": "tN56",
+     "type": "expr",
+     "text": "$arcsin(1)$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "pi/2",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arcsin(1)$ =",
+     "show": "$frac{pi}{2}$",
+     "explain": "The angle is $frac{pi}{2}$. Inverse trig functions hand back an **angle**.",
+     "topic": "Trig identities and equations"
+    },
+    {
+     "id": "tP29",
+     "type": "num",
+     "text": "If $sin(theta) = frac{3}{5}$ and $theta$ is in the first quadrant, find $cos(theta)$.",
+     "answer": 0.8,
+     "label": "$cos(theta)$ =",
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $frac{4}{5}$.",
+     "topic": "Trig identities and equations"
+    },
+    {
+     "id": "tS42",
+     "type": "ucircle",
+     "text": "Solve $cos(theta) = 1$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      0
+     ],
+     "explain": "The solutions are $theta = 0$.",
+     "topic": "Trig identities and equations"
+    },
+    {
+     "id": "tZ48",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$sec(x)cos(x)$$\n",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$1$",
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $1$.",
+     "maxLen": 2,
+     "topic": "Trig identities and equations"
+    }
+   ]
+  }
+ }
+}

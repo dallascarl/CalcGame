@@ -1,5 +1,6 @@
 {
   "worlds": [
+    "maps/toolkit.json",
     "maps/limits.json",
     "maps/derivatives.json",
     "maps/applications.json",

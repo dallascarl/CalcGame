@@ -21,29 +21,70 @@ function supBal(t){
   let d=1,j=0; for(;j<t.length;j++){if(t[j]==='(')d++;else if(t[j]===')'){d--;if(!d)break;}}
   return j<t.length?'<sup>'+t.slice(0,j).replace(/\^\(([^()]*)\)/g,'<sup>$1</sup>').replace(/\^([+-]?[A-Za-z0-9.]+)/g,'<sup>$1</sup>')+'</sup>'+t.slice(j+1):'^('+t;
 }
+/* letters in math are italic variables; function names stay upright, also when run together: 2xh, xy, xsin(x) */
+const MNAMES=['arcsin','arccos','arctan','sinh','cosh','tanh','sech','csch','coth','sin','cos','tan','sec','csc','cot','ln','log','lim','exp','abs','max','min'];
+const MWORDS=new Set(['kg','cm','ft','mi','hr','mph','DNE','and','or','if','for','is','so','at','in','on','of','to','no','not','the','sup','sub','br','lt','gt','amp','quot']);
+function mword(w){
+  if(w.length===1)return '<i>'+w+'</i>';
+  if(MWORDS.has(w))return w;
+  let out='',i=0,hit=false;
+  while(i<w.length){const nm=MNAMES.find(k=>w.startsWith(k,i));
+    if(nm){out+=nm;i+=nm.length;hit=true;}else{out+='<i>'+w[i]+'</i>';i++;}}
+  return !hit&&w.length>=5?w:out;
+}
 function mpart(t){
   return esc(t).replace(/-&gt;/g,'→').replace(/&lt;=/g,'≤').replace(/&gt;=/g,'≥').replace(/!=/g,'≠')
     .replace(/\^([+-])(?![A-Za-z0-9.])/g,(_,c)=>'<sup>'+(c==='-'?'−':'+')+'</sup>')
     .replace(/\^\((?=[^)]*\()/g,'\u0004').split('\u0004').reduce((acc,t,k)=>k?acc+supBal(t):t,'')
     .replace(/\^\(([^)]*)\)|\^([+-]?[A-Za-z0-9.]+)/g,(_,a,b)=>'<sup>'+(a!=null?a.replace(/\^([+-]?[A-Za-z0-9.]+)/g,'<sup>$1</sup>'):b)+'</sup>')
     .replace(/_\(([^)]*)\)|_([A-Za-z0-9]+)/g,(_,a,b)=>'<sub>'+(a!=null?a:b)+'</sub>')
-    .replace(/-/g,'−').replace(/(?<![A-Za-z])pi(?![A-Za-z])/g,'π').replace(/(?<![A-Za-z])int(?![A-Za-z])/g,'∫').replace(/(?<![A-Za-z])theta(?![A-Za-z])/g,'θ').replace(/(?<![A-Za-z])Delta(?![A-Za-z])/g,'Δ').replace(/\binfty\b/g,'∞').replace(/(?<![A-Za-z])sqrt(?![A-Za-z])/g,'√')
-    .replace(/[A-Za-z]+/g,w=>w.length===1?'<i>'+w+'</i>':w);
+    .replace(/-/g,'−').replace(/(?<![A-Za-z])pi(?![A-Za-z])/g,'π').replace(/(?<![A-Za-z])int(?![A-Za-z])/g,'∫').replace(/(?<![A-Za-z])theta(?![A-Za-z])/g,'θ').replace(/(?<![A-Za-z])Delta(?![A-Za-z])/g,'Δ').replace(/\binfty\b/g,'∞').replace(/(?<![A-Za-z])sqrt(?![A-Za-z])/g,'√').replace(/(?<![A-Za-z])cbrt(?![A-Za-z])/g,'∛').replace(/([√∛])\(([A-Za-z0-9.]+)\)(?!<sup)/g,'$1$2')
+    .replace(/(?<![A-Za-z])delta(?![A-Za-z])/g,'δ').replace(/(?<![A-Za-z])epsilon(?![A-Za-z])/g,'ε')
+    .replace(/[A-Za-z]+/g,mword);
 }
 /* int[a,b] and sum[k=1,n] draw a big ∫ or Σ with limits; a plain "int" is just the ∫ sign */
 function bigop(sym,lo,hi){return '<span class="bigop"><span class="bo-s">'+sym+'</span><span class="bo-l"><span>'+mpart(hi||'')+'</span><span>'+mpart(lo||'')+'</span></span></span>';}
-function math(m){
-  return '<span class="math">'+m.split(/(lim\[[^\]]*\]|frac\{[^{}]*\}\{[^{}]*\}|int\[[^\]]*\]|sum\[[^\]]*\])/).map(t=>{const k=/^lim\[(.*)\]$/.exec(t),f=/^frac\{([^{}]*)\}\{([^{}]*)\}$/.exec(t),
-      I=/^(int|sum)\[([^,\]]*),([^\]]*)\]$/.exec(t);
+/* cases{x + 1, x < 2; x^2, x >= 2} draws a piecewise function with its big brace */
+function casesHTML(body){
+  const rows=body.split(';').map(r=>{const k=r.indexOf(',');return k<0?[r.trim(),'']:[r.slice(0,k).trim(),r.slice(k+1).trim()];});
+  return '<span class="cases"><svg class="cs-b" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M9 1C2 1 6 22 5 40C5 47 3 49 1 50C3 51 5 53 5 60C6 78 2 99 9 99"/></svg><span class="cs-rows">'+
+    rows.map(([a,b])=>'<span class="cs-r"><span>'+minner(a)+'</span><span class="cs-c">'+minner(b)+'</span></span>').join('')+'</span></span>';
+}
+/* frac{..}{..} and cases{..} may hold more markup inside them (a fraction inside a fraction) */
+function mbrace(s,i){let d=0;for(let j=i;j<s.length;j++){if(s[j]==='{')d++;else if(s[j]==='}'){d--;if(!d)return j;}}return -1;}
+function mflat(m){
+  return m.split(/(lim\[[^\]]*\]|int\[[^\]]*\]|sum\[[^\]]*\])/).map(t=>{const k=/^lim\[(.*)\]$/.exec(t),I=/^(int|sum)\[([^,\]]*),([^\]]*)\]$/.exec(t);
     if(I)return bigop(I[1]==='int'?'∫':'Σ',I[2].trim(),I[3].trim());
-    if(f)return '<span class="frac"><span>'+mpart(f[1])+'</span><span>'+mpart(f[2])+'</span></span>';
-    return k?'<span class="lim"><span>lim</span><span class="lim-s">'+mpart(k[1])+'</span></span>':mpart(t);}).join('')+'</span>';
+    return k?'<span class="lim"><span>lim</span><span class="lim-s">'+mpart(k[1])+'</span></span>':mpart(t);}).join('');
+}
+function minner(m){
+  let out='',i=0,plain='';
+  const flush=()=>{if(plain){out+=mflat(plain);plain='';}};
+  while(i<m.length){
+    if(m.startsWith('frac{',i)){const a=mbrace(m,i+4),b=a>0&&m[a+1]==='{'?mbrace(m,a+1):-1;
+      if(b>0){flush();out+='<span class="frac"><span>'+minner(m.slice(i+5,a))+'</span><span>'+minner(m.slice(a+2,b))+'</span></span>';i=b+1;continue;}}
+    if(m.startsWith('cases{',i)){const a=mbrace(m,i+5);
+      if(a>0){flush();out+=casesHTML(m.slice(i+6,a));i=a+1;continue;}}
+    plain+=m[i++];
+  }
+  flush(); return out;
+}
+function math(m){return '<span class="math">'+minner(m)+'</span>';}
+/* {{table: x | f(x) ;; 1.9 | 3.61 ;; 1.99 | 3.9601}} draws a small table; the first row is the heading.
+   A row that starts with ! is highlighted (the row the question is about). */
+function tableHTML(body){
+  const rows=body.split(';;').map(r=>r.trim()).filter(Boolean);
+  return '<span class="vtab">'+rows.map((r,i)=>{const hi=r[0]==='!';if(hi)r=r.slice(1);
+    return '<span class="vt-r'+(i===0?' vt-h':'')+(hi?' vt-hi':'')+'">'+r.split('|').map(c=>'<span>'+math(c.trim())+'</span>').join('')+'</span>';}).join('')+'</span>';
 }
 /* \$ in text is a literal dollar sign (money), not the start of math. **bold** may wrap math. */
+/* $$...$$ puts a formula on its own line in a box, so the formula and the question about it are apart. */
 function fmt(s){
-  let on=false;
-  const out=String(s).replace(/\\\$/g,'\u0003').split('$').map((t,i)=>i%2?math(t):esc(t).split('**').map((u,k)=>(k?((on=!on)?'<strong>':'</strong>'):'')+u).join('').replace(/\n/g,'<br>')).join('');
-  return (on?out+'</strong>':out).replace(/\u0003/g,'$');
+  let on=false; const blocks=[];
+  const src=String(s).replace(/\\\$/g,'\u0003')
+    .replace(/\n?(?:\{\{table:([^}]*)\}\}|\$\$([^$]+)\$\$)\n?/g,(_,t,m)=>{blocks.push(t!=null?tableHTML(t):'<span class="dmath">'+math(m.trim())+'</span>');return '\u0005';});
+  const out=src.split('$').map((t,i)=>i%2?math(t):esc(t).split('**').map((u,k)=>(k?((on=!on)?'<strong>':'</strong>'):'')+u).join('').replace(/\n/g,'<br>')).join('');
+  return (on?out+'</strong>':out).replace(/\u0003/g,'$').replace(/\u0005/g,()=>blocks.shift());
 }
 
 /* ---------- expression parser (no eval) ---------- */
@@ -144,12 +185,13 @@ function plot(g,marker){
   xt.forEach(x=>{s+='<text class="g-t" text-anchor="middle" x="'+r(sx(x))+'" y="'+r(sy(ay)+11)+'">'+neg(x)+'</text>';});
   yt.forEach(y=>{s+='<text class="g-t" text-anchor="end" x="'+r(sx(ax)-4)+'" y="'+r(sy(y)+3.5)+'">'+neg(y)+'</text>';});
   for(const v of g.vlines||[])s+='<line class="g-vline" x1="'+r(sx(v))+'" x2="'+r(sx(v))+'" y1="'+m+'" y2="'+r(H-m)+'"/>';
+  for(const [a,b,h] of g.rects||[]){const ya=sy(Math.max(0,h)),yb=sy(Math.min(0,h));s+='<rect class="g-rect" x="'+r(sx(a))+'" y="'+r(ya)+'" width="'+r(sx(b)-sx(a))+'" height="'+r(yb-ya)+'"/>';}
   for(const p of g.pieces||[]){
     let f; try{f=fn(p.expr);}catch(e){continue;}
     let d='',pen=false; const N=96;
     for(let k=0;k<=N;k++){const x=p.from+(p.to-p.from)*k/N,y=f(x);
       if(Number.isFinite(y)&&y>=y0-0.5&&y<=y1+0.5){d+=(pen?'L':'M')+r(sx(x))+' '+r(sy(y));pen=true;}else pen=false;}
-    s+='<path class="g-curve" d="'+d+'"/>';
+    s+='<path class="g-curve'+(p.dash?' g-dash':'')+'" d="'+d+'"/>';
     for(const end of ['L','R'])if((p.arrow||'').includes(end)){
       const xe=end==='L'?p.from:p.to,dx=(end==='L'?1:-1)*(p.to-p.from)*0.01,ye=f(xe),yi=f(xe+dx);
       if(!Number.isFinite(ye)||!Number.isFinite(yi)||ye<y0||ye>y1)continue;
@@ -294,7 +336,8 @@ function mountItem(it,host,onChange){
   const M={info:()=>({kind:'pass',canGo:()=>true}),explore:mountExplore,graph:mountGraphQ,mc:mountMC,tf:mountMC,bank:mountBank,num:mountNum,crit:mountCrit,extrema:mountExtrema,multi:mountMulti,newton:mountNewton,bisect:mountBisect,
     match:mountMatch,pick:mountPick,mvt:mountMVT,linear:mountLinear,diff:mountDiff,
     tap:mountTap,expr:mountExpr,interval:mountInterval,order:mountOrder,steps:mountSteps,sketch:mountSketch,optim:mountOptim,rr:mountRR,curvex:mountCurvex,ratio:mountRatio,
-    secant:mountSecant,dtrace:mountDtrace,riemann:mountRiemann,lim:mountLim}[it.type];
+    secant:mountSecant,dtrace:mountDtrace,riemann:mountRiemann,lim:mountLim,
+    cancel:mountCancel,transform:mountTransform,ucircle:mountUcircle}[it.type];
   return M(it,$('.ix',host),onChange,host);
 }
 function answerLabel(q){
@@ -318,6 +361,9 @@ function answerText(q){
   if(q.type==='expr')return q.show||'$'+String([].concat(q.answer)[0]).replace(/\*/g,'·')+'$';
   if(q.type==='interval')return q.answer==='none'?(q.noneText||'none'):'$'+pint([].concat(q.answer)[0]).replace(/&lt;/g,'<')+'$';
   if(q.type==='order')return '\n'+q.items.map((t,i)=>(i+1)+'. '+t).join('\n');
+  if(q.type==='cancel')return cancelAnswer(q);
+  if(q.type==='transform')return transformAnswer(q);
+  if(q.type==='ucircle')return ucAnswer(q);
   if(q.type==='steps'||q.type==='sketch'||!q.blanks)return '';
   return q.blanks.join(', ');
 }
@@ -992,7 +1038,7 @@ function home(){
     return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':'')+ACCT.dueDot(MAP,n)+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+(done?', cleared':'')+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span><span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
   const left=RULES.streak-S.streak;
   screen({
-    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+' of '+WORLDS.length+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-r"><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div>'+(BACK?'<button class="me-b" data-me aria-label="Your account">'+avatarSVG(ACCT.avatar())+'</button>':'')+'</div></div>'+
+    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-r"><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div>'+(BACK?'<button class="me-b" data-me aria-label="Your account">'+avatarSVG(ACCT.avatar())+'</button>':'')+'</div></div>'+
       '<nav class="worlds" aria-label="Worlds">'+WORLDS.map(w=>'<button class="wt'+(w===MAP?' on':'')+'" data-world="'+w.id+'" aria-pressed="'+(w===MAP)+'"><b>'+w.world+'</b><span>'+esc(w.short||w.title)+'</span></button>').join('')+'</nav>'+
       '<div class="hud-b">'+pips()+'<span class="tiny">'+left+' more new '+(left===1?'answer':'answers')+' for a play</span><button class="mb" data-go="game">Match Board'+(S.plays?' · '+S.plays:'')+'</button></div></header>',
     body:(S.preview?'<p class="banner">Preview mode is on. Every stop is open and nothing is recorded.</p>':'')+
@@ -1092,7 +1138,7 @@ function lesson(id){
       if(phase==='wrong'){phase='answer';fb.hidden=true;C.reset();return upd();}
       const ok=C.check(); if(!S.preview)ACCT.answer(sl,ok);
       if(ok){phase='right';mark(sl);C.lock(true,true);upd();feedback(fb,true,sl.explain||'');}
-      else{phase='wrong';C.lock(false,false);upd();feedback(fb,false,sl.hint||'Look again and give it another try.');}
+      else{phase='wrong';C.lock(false,false);upd();feedback(fb,false,(C.why&&C.why())||sl.hint||'Look again and give it another try.');}
     };
     $('#prev').onclick=()=>{if(i>0){i--;show();}};
     $('#nextb').onclick=()=>{if(!last){i++;show();}};
@@ -1176,7 +1222,7 @@ function drill(kind){
     R.over=true; const res=answered(); let n=res.length,score=res.filter(r=>r.ok).length;
     if(mode==='all'){const f=firstTry();n=Object.keys(f).length;score=Object.values(f).filter(Boolean).length;}
     const allDone=mode!=='all'||R.ids.slice(R.i).length===0;
-    let msg='Preview mode: nothing was recorded.',cleared='',passNow=false;
+    let msg='Preview mode: nothing was recorded, so no Match Board play was earned. A student who finishes this set earns a play and sees the Play Match Board button here.',cleared='',passNow=false;
     if(!S.preview){ rollDay(); const key=DECK.id+':'+kind,before=deckCleared(DECK);
       passNow=mode==='all'?allDone:mode==='pool'?(n>=R.n&&score>=poolNeed(R.n)):exam||staged||R.passed||(n>0&&score/n>=RULES.passPct-1e-9);
       if(passNow)p.pass[kind]=true;
@@ -1286,7 +1332,7 @@ function drill(kind){
 /* ---------- answer key (instructor only): every lesson step and drill question with its answer ---------- */
 function keyItem(q,n,stages){
   const kind={info:'info',explore:'explorer',extrema:'walk-through',newton:'Newton explorer',bisect:'bisection game',mvt:'MVT explorer',linear:'linearization explorer',diff:'differentials explorer',
-    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph',secant:'secant explorer',dtrace:'derivative tracer',riemann:'Riemann sum explorer'}[q.type]||q.type;
+    optim:'optimization explorer',rr:'related-rates scene',curvex:'curve explorer',ratio:'limit tug-of-war',tap:'tap the graph',secant:'secant explorer',dtrace:'derivative tracer',riemann:'Riemann sum explorer',cancel:'cancel the factors',transform:'move the graph',ucircle:'unit circle'}[q.type]||q.type;
   let h='<div class="ak-q"><div class="ak-h"><b>'+esc(n)+'</b><span>'+esc(q.id||'')+' · '+esc(kind)+(q.stage?' · '+esc(((stages||[]).find(s=>s.id===q.stage)||{title:q.stage}).title):'')+(q.topic?' · '+esc(q.topic):'')+(q.level?' · level '+q.level:'')+'</span></div>';
   if(q.title)h+='<p><strong>'+fmt(q.title)+'</strong></p>';
   if(q.type==='bank')h+='<p>'+fmt(String(q.text).split('___').map((t,i,a)=>i<a.length-1?t+'【'+q.blanks[i]+'】':t).join(''))+'</p>';
@@ -1297,6 +1343,7 @@ function keyItem(q,n,stages){
   if(q.type==='mc')h+='<ol class="ak-o">'+q.options.map((o,i)=>'<li'+(i===q.answer?' class="ok"':'')+'>'+fmt(o)+(i===q.answer?' ✓':'')+'</li>').join('')+'</ol>';
   else if(q.type==='pick')h+='<ol class="ak-o">'+q.options.map((o,i)=>{const r=q.answers.includes(i);return '<li'+(r?' class="ok"':'')+'>'+fmt(o)+(r?' ✓':'')+'</li>';}).join('')+'</ol>';
   else if(q.type==='bank')h+='<p class="ak-a"><strong>Blanks:</strong> '+q.blanks.map(esc).join(' · ')+(q.distractors&&q.distractors.length?' <span class="tiny">(extra words: '+q.distractors.map(esc).join(', ')+')</span>':'')+'</p>';
+  else if(q.type==='cancel')h+='<p>'+fmt('$frac{'+cancelSide(q.top,new Set())+'}{'+cancelSide(q.bot,new Set())+'}$')+'</p><p class="ak-a"><strong>Answer:</strong> '+fmt(cancelAnswer(q))+'</p>';
   else if(q.type==='tap')h+='<p class="ak-a"><strong>Answer:</strong> '+fmt('a tap within '+(q.tol||0.15)+' of $x$ = '+q.answers.map(v=>+v.toFixed(4)).join(' or '))+'</p>';
   else if(q.type==='steps')h+='<ol class="ak-steps">'+q.steps.map((st,k)=>'<li>'+keyItem(st,'Part '+(k+1))+'</li>').join('')+'</ol>';
   else if(q.type==='sketch')h+='<p class="ak-a"><strong>Data given:</strong> '+((q.data||{}).lines||[]).map(fmt).join(' · ')+'</p><div class="ak-g">'+plot({window:q.window,pieces:[{expr:q.fn,from:q.window[0],to:q.window[1]}]},false).svg+'</div>';
@@ -1411,7 +1458,7 @@ function validate(D){
   const check=(q,where,inLesson)=>{
     const errs=[],warns=[],tag=where+' '+(q.id||'(no id)');
     if(!q.id)errs.push('missing id'); else if(seen.has(q.id))errs.push('this id is used twice'); else seen.add(q.id);
-    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap','lim'];
+    const QT=['graph','mc','tf','bank','num','crit','multi','match','pick','expr','interval','order','steps','sketch','tap','lim','cancel','transform','ucircle'];
     const types=inLesson?['info','explore','extrema','newton','bisect','mvt','linear','diff','optim','rr','curvex','ratio','secant','dtrace','riemann',...QT]:QT;
     if(!types.includes(q.type))errs.push('type "'+q.type+'" is not allowed here');
     for(const k of ['title','text','hint','explain','after'])if(q[k]&&String(q[k]).replace(/\\\$/g,'').split('$').length%2===0)errs.push('unmatched $ in '+k);
@@ -1495,6 +1542,32 @@ function validate(D){
             if(v==null||Math.abs(v-p.answer)>Math.max(0.0011,p.tol||q.tol||0))errs.push('part '+(k+1)+' answer key says '+showA(p.answer)+' but Newton\'s method gives '+showA(v));});
         }catch(e){errs.push('verify: '+e.message);} }
       }
+    }
+    if(q.type==='cancel'){
+      for(const k of ['top','bot']){const sd=q[k];
+        if(!sd||!['*','+'].includes(sd.op)||!Array.isArray(sd.parts)||!sd.parts.length)errs.push(k+' needs "op" ("*" or "+") and a list of parts');
+        else if(sd.parts.some(p=>typeof p!=='string'||/[{}$]/.test(p)))errs.push(k+': parts are plain math text, with no $ or { }');}
+    }
+    if(q.type==='transform'){
+      try{const F=compile(q.base),w=q.window,t=q.target||{};if(!Array.isArray(w)||w.length!==4)throw Error('window must be [xmin, xmax, ymin, ymax]');
+        if(![t.h||0,t.k||0].every(Number.isInteger))throw Error('target h and k must be whole numbers (the arrows move one unit at a time)');
+        if(![1,-1,2,-2,0.5,-0.5].includes(t.a==null?1:t.a))throw Error('target a must be 1, -1, 2, -2, 0.5 or -0.5');
+        const c=q.controls||['h','k'];
+        if((t.h||0)!==0&&!c.includes('h'))throw Error('the target is shifted sideways but there is no "h" control');
+        if((t.k||0)!==0&&!c.includes('k'))throw Error('the target is shifted up or down but there is no "k" control');
+        if((t.a==null?1:t.a)<0&&!c.includes('flip'))throw Error('the target is flipped but there is no "flip" control');
+        if(Math.abs(t.a==null?1:t.a)!==1&&!c.includes('stretch'))throw Error('the target is stretched but there is no "stretch" control');
+        let vis=0;for(let k=0;k<=60;k++){const x=w[0]+(w[1]-w[0])*k/60,y=(t.a==null?1:t.a)*F(x-(t.h||0))+(t.k||0);if(Number.isFinite(y)&&y>=w[2]&&y<=w[3])vis++;}
+        if(vis<8)warns.push('very little of the target curve is inside the window');
+      }catch(e){errs.push(e.message);}
+    }
+    if(q.type==='ucircle'){
+      const okI=i=>Number.isInteger(i)&&i>=0&&i<16;
+      if(!['explore','angle','where'].includes(q.ask||'explore'))errs.push('ask must be "explore", "angle" or "where"');
+      else if(q.ask==='angle'&&!okI(q.answer))errs.push('answer must be an angle number from 0 to 15');
+      else if(q.ask==='where'&&(!Array.isArray(q.answers)||!q.answers.length||!q.answers.every(okI)))errs.push('answers must list angle numbers from 0 to 15');
+      else if((q.ask||'explore')==='explore'&&!inLesson)errs.push('the explore circle is for lessons only');
+      if(q.need&&!q.need.every(okI))errs.push('need must list angle numbers from 0 to 15');
     }
     if(q.type==='match'){
       if(!Array.isArray(q.pairs)||q.pairs.length<2)errs.push('needs at least 2 pairs');

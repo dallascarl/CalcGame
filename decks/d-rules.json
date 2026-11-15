@@ -472,7 +472,7 @@
     {
      "id": "F30",
      "type": "expr",
-     "text": "$f(x) = (x^2 + 2)(3x + 1)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (x^2 + 2)(3x + 1)$$\nFill in the missing piece of the product rule.",
      "answer": "3",
      "vars": [
       "x"
@@ -486,7 +486,7 @@
     {
      "id": "F31",
      "type": "expr",
-     "text": "$f(x) = (2x - 1)(x + 4)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (2x - 1)(x + 4)$$\nFill in the missing piece of the product rule.",
      "answer": "2",
      "vars": [
       "x"
@@ -500,7 +500,7 @@
     {
      "id": "F32",
      "type": "expr",
-     "text": "$f(x) = (x^2 - 3)(2x + 5)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (x^2 - 3)(2x + 5)$$\nFill in the missing piece of the product rule.",
      "answer": "2",
      "vars": [
       "x"
@@ -514,7 +514,7 @@
     {
      "id": "F33",
      "type": "expr",
-     "text": "$f(x) = (3x)(x^2 - 2x + 1)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (3x)(x^2 - 2x + 1)$$\nFill in the missing piece of the product rule.",
      "answer": "3",
      "vars": [
       "x"
@@ -528,7 +528,7 @@
     {
      "id": "F34",
      "type": "expr",
-     "text": "$f(x) = (x + 1)(x - 1)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (x + 1)(x - 1)$$\nFill in the missing piece of the product rule.",
      "answer": "1",
      "vars": [
       "x"
@@ -542,7 +542,7 @@
     {
      "id": "F35",
      "type": "expr",
-     "text": "$f(x) = (4x - 1)(x^2 + 1)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (4x - 1)(x^2 + 1)$$\nFill in the missing piece of the product rule.",
      "answer": "4",
      "vars": [
       "x"
@@ -556,7 +556,7 @@
     {
      "id": "F36",
      "type": "expr",
-     "text": "$f(x) = (x^3 + 1)(2x + 3)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (x^3 + 1)(2x + 3)$$\nFill in the missing piece of the product rule.",
      "answer": "2",
      "vars": [
       "x"
@@ -570,7 +570,7 @@
     {
      "id": "F37",
      "type": "expr",
-     "text": "$f(x) = (5x + 2)(x^2 - 1)$. Fill in the missing piece of the product rule.",
+     "text": "$$f(x) = (5x + 2)(x^2 - 1)$$\nFill in the missing piece of the product rule.",
      "answer": "5",
      "vars": [
       "x"
@@ -584,7 +584,7 @@
     {
      "id": "U38",
      "type": "expr",
-     "text": "$f(x) = frac{x^2}{x + 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x^2}{x + 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "2x",
      "vars": [
       "x"
@@ -598,7 +598,7 @@
     {
      "id": "U39",
      "type": "expr",
-     "text": "$f(x) = frac{3x}{2x - 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{3x}{2x - 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "3",
      "vars": [
       "x"
@@ -612,7 +612,7 @@
     {
      "id": "U40",
      "type": "expr",
-     "text": "$f(x) = frac{x^2 + 1}{x}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x^2 + 1}{x}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "2x",
      "vars": [
       "x"
@@ -626,7 +626,7 @@
     {
      "id": "U41",
      "type": "expr",
-     "text": "$f(x) = frac{2x + 5}{x^2 + 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{2x + 5}{x^2 + 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "2",
      "vars": [
       "x"
@@ -640,7 +640,7 @@
     {
      "id": "U42",
      "type": "expr",
-     "text": "$f(x) = frac{x - 2}{x + 3}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x - 2}{x + 3}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "1",
      "vars": [
       "x"
@@ -654,7 +654,7 @@
     {
      "id": "U43",
      "type": "expr",
-     "text": "$f(x) = frac{4x^2}{2x + 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{4x^2}{2x + 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "8x",
      "vars": [
       "x"
@@ -668,7 +668,7 @@
     {
      "id": "U44",
      "type": "expr",
-     "text": "$f(x) = frac{x}{x^2 + 4}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x}{x^2 + 4}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "1",
      "vars": [
       "x"
@@ -682,7 +682,7 @@
     {
      "id": "U45",
      "type": "expr",
-     "text": "$f(x) = frac{5x}{x - 1}$. Fill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{5x}{x - 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
      "answer": "5",
      "vars": [
       "x"

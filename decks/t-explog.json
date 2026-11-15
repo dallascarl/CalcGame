@@ -1,0 +1,1004 @@
+{
+ "id": "t-explog",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Exponentials and Logs",
+ "subtitle": "e and ln, the log rules, and solving equations with them.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "$ln(a + b) = ln(a) + ln(b)$",
+     "answer": false,
+     "explain": "The rule is for a product: $ln(ab) = ln(a) + ln(b)$. The log of a sum does not simplify."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$ln(1) =$",
+     "options": [
+      "0",
+      "1",
+      "$e$",
+      "undefined"
+     ],
+     "answer": 0,
+     "explain": "$e^0 = 1$, so the exponent that gives 1 is 0."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$ln(frac{a}{b}) =$",
+     "options": [
+      "$ln(a) - ln(b)$",
+      "$frac{ln(a)}{ln(b)}$",
+      "$ln(a - b)$",
+      "$ln(a) + ln(b)$"
+     ],
+     "answer": 0,
+     "explain": "Quotients become differences."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "For every real number $x$, $e^x$ is",
+     "options": [
+      "positive",
+      "at least 1",
+      "negative when $x < 0$",
+      "zero when $x = 0$"
+     ],
+     "answer": 0,
+     "explain": "$e^x$ is never zero and never negative. $e^(-5)$ is small, but still positive."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "The domain of $ln(x)$ is",
+     "options": [
+      "$(0, ∞)$",
+      "$[0, ∞)$",
+      "all real numbers",
+      "$(1, ∞)$"
+     ],
+     "answer": 0,
+     "explain": "No power of $e$ gives 0 or a negative, so $ln$ only accepts positive inputs. This is the third \"refused input\" rule."
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "$(ln(x))^2 = 2ln(x)$",
+     "answer": false,
+     "explain": "The exponent rule is for a power **inside** the log: $ln(x^2) = 2ln(x)$. $(ln(x))^2$ does not simplify."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "$cosh(x)$ is defined as",
+     "options": [
+      "$frac{e^x + e^(-x)}{2}$",
+      "$frac{e^x - e^(-x)}{2}$",
+      "$cos(e^x)$",
+      "$frac{1}{cos(x)}$"
+     ],
+     "answer": 0,
+     "explain": "Plus for $cosh$, minus for $sinh$. They are built from $e^x$, not from the unit circle."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "V1",
+     "type": "num",
+     "text": "$$ln(e^4)$$\nFind the exact value.",
+     "answer": 4,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(e^4) = 4$"
+    },
+    {
+     "id": "V2",
+     "type": "num",
+     "text": "$$ln(1)$$\nFind the exact value.",
+     "answer": 0,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(1) = 0$"
+    },
+    {
+     "id": "V3",
+     "type": "num",
+     "text": "$$ln(e)$$\nFind the exact value.",
+     "answer": 1,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(e) = 1$"
+    },
+    {
+     "id": "V4",
+     "type": "num",
+     "text": "$$e^(ln(5))$$\nFind the exact value.",
+     "answer": 5,
+     "label": "value =",
+     "level": 1,
+     "explain": "$e^(ln(5)) = 5$"
+    },
+    {
+     "id": "V5",
+     "type": "num",
+     "text": "$$ln(frac{1}{e})$$\nFind the exact value.",
+     "answer": -1,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(frac{1}{e}) = -1$"
+    },
+    {
+     "id": "V6",
+     "type": "num",
+     "text": "$$ln(sqrt(e))$$\nFind the exact value.",
+     "answer": 0.5,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(sqrt(e)) = frac{1}{2}$"
+    },
+    {
+     "id": "V7",
+     "type": "num",
+     "text": "$$e^0$$\nFind the exact value.",
+     "answer": 1,
+     "label": "value =",
+     "level": 1,
+     "explain": "$e^0 = 1$"
+    },
+    {
+     "id": "V8",
+     "type": "num",
+     "text": "$$ln(e^(-2))$$\nFind the exact value.",
+     "answer": -2,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(e^(-2)) = -2$"
+    },
+    {
+     "id": "V9",
+     "type": "num",
+     "text": "$$e^(2ln(3))$$\nFind the exact value.",
+     "answer": 9,
+     "label": "value =",
+     "level": 1,
+     "explain": "$e^(2ln(3)) = 9$"
+    },
+    {
+     "id": "V10",
+     "type": "num",
+     "text": "$$ln(e^2) + ln(e^3)$$\nFind the exact value.",
+     "answer": 5,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(e^2) + ln(e^3) = 5$"
+    },
+    {
+     "id": "V11",
+     "type": "num",
+     "text": "$$sinh(0)$$\nFind the exact value.",
+     "answer": 0,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sinh(0) = 0$"
+    },
+    {
+     "id": "V12",
+     "type": "num",
+     "text": "$$cosh(0)$$\nFind the exact value.",
+     "answer": 1,
+     "label": "value =",
+     "level": 1,
+     "explain": "$cosh(0) = 1$"
+    },
+    {
+     "id": "V13",
+     "type": "num",
+     "text": "$$e^(ln(2) + ln(3))$$\nFind the exact value.",
+     "answer": 6,
+     "label": "value =",
+     "level": 1,
+     "explain": "$e^(ln(2) + ln(3)) = 6$"
+    },
+    {
+     "id": "V14",
+     "type": "num",
+     "text": "$$ln(e^3 · e^4)$$\nFind the exact value.",
+     "answer": 7,
+     "label": "value =",
+     "level": 1,
+     "explain": "$ln(e^3 · e^4) = 7$"
+    },
+    {
+     "id": "M15",
+     "type": "mc",
+     "text": "$e^x = 5$ says the same thing as",
+     "options": [
+      "$x = ln(5)$",
+      "$x = e^5$",
+      "$x = frac{5}{e}$",
+      "$x = ln(e^5)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$ln$ and $e^x$ undo each other: $e^x = b$ means $x = ln(b)$, and $ln(x) = b$ means $x = e^b$."
+    },
+    {
+     "id": "M16",
+     "type": "mc",
+     "text": "$ln(x) = 2$ says the same thing as",
+     "options": [
+      "$x = e^2$",
+      "$x = ln(2)$",
+      "$x = 2e$",
+      "$x = 2^e$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$ln$ and $e^x$ undo each other: $e^x = b$ means $x = ln(b)$, and $ln(x) = b$ means $x = e^b$."
+    },
+    {
+     "id": "M17",
+     "type": "mc",
+     "text": "$e^x = frac{1}{2}$ says the same thing as",
+     "options": [
+      "$x = ln(frac{1}{2})$",
+      "$x = e^(1/2)$",
+      "$x = frac{1}{2e}$",
+      "$no solution$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$ln$ and $e^x$ undo each other: $e^x = b$ means $x = ln(b)$, and $ln(x) = b$ means $x = e^b$."
+    },
+    {
+     "id": "M18",
+     "type": "mc",
+     "text": "$ln(x) = 0$ says the same thing as",
+     "options": [
+      "$x = 1$",
+      "$x = 0$",
+      "$x = e$",
+      "$no solution$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$ln$ and $e^x$ undo each other: $e^x = b$ means $x = ln(b)$, and $ln(x) = b$ means $x = e^b$."
+    },
+    {
+     "id": "X19",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(3x)$.",
+     "options": [
+      "$ln(3) + ln(x)$",
+      "$ln(3) · ln(x)$",
+      "$3ln(x)$",
+      "$ln(3 + x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $ln(3) + ln(x)$."
+    },
+    {
+     "id": "X20",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(x^4)$.",
+     "options": [
+      "$4ln(x)$",
+      "$(ln(x))^4$",
+      "$ln(4x)$",
+      "$ln(x) + 4$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $4ln(x)$."
+    },
+    {
+     "id": "X21",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(frac{x}{5})$.",
+     "options": [
+      "$ln(x) - ln(5)$",
+      "$frac{ln(x)}{ln(5)}$",
+      "$ln(x - 5)$",
+      "$frac{1}{5}ln(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $ln(x) - ln(5)$."
+    },
+    {
+     "id": "X22",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(x^2 y)$.",
+     "options": [
+      "$2ln(x) + ln(y)$",
+      "$2ln(x) · ln(y)$",
+      "$2ln(xy)$",
+      "$ln(2x) + ln(y)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $2ln(x) + ln(y)$."
+    },
+    {
+     "id": "X23",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(sqrt(x))$.",
+     "options": [
+      "$frac{1}{2}ln(x)$",
+      "$sqrt(ln(x))$",
+      "$2ln(x)$",
+      "$ln(frac{x}{2})$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $frac{1}{2}ln(x)$."
+    },
+    {
+     "id": "X24",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(frac{1}{x})$.",
+     "options": [
+      "$-ln(x)$",
+      "$frac{1}{ln(x)}$",
+      "$ln(-x)$",
+      "$1 - ln(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $-ln(x)$."
+    },
+    {
+     "id": "X25",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(frac{x^3}{y})$.",
+     "options": [
+      "$3ln(x) - ln(y)$",
+      "$frac{3ln(x)}{ln(y)}$",
+      "$3ln(x - y)$",
+      "$ln(3x) - ln(y)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $3ln(x) - ln(y)$."
+    },
+    {
+     "id": "X26",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(5x^2)$.",
+     "options": [
+      "$ln(5) + 2ln(x)$",
+      "$2ln(5x)$",
+      "$10ln(x)$",
+      "$ln(5) · 2ln(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $ln(5) + 2ln(x)$."
+    },
+    {
+     "id": "X27",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln(e x)$.",
+     "options": [
+      "$1 + ln(x)$",
+      "$e · ln(x)$",
+      "$ln(x)$",
+      "$e + ln(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $1 + ln(x)$."
+    },
+    {
+     "id": "X28",
+     "type": "mc",
+     "text": "Use the log rules to expand $ln((x + 1)^3)$.",
+     "options": [
+      "$3ln(x + 1)$",
+      "$3ln(x) + 3$",
+      "$ln(3x + 3)$",
+      "$(ln(x + 1))^3$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Products become sums, quotients become differences, exponents come down: $3ln(x + 1)$."
+    },
+    {
+     "id": "S29",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$e^x = 5$$\n",
+     "answer": "ln(5)",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$ln(5)$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = ln(5)$."
+    },
+    {
+     "id": "S30",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$e^(2x) = 7$$\n",
+     "answer": "ln(7)/2",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$frac{ln(7)}{2}$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = frac{ln(7)}{2}$."
+    },
+    {
+     "id": "S31",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$ln(x) = 3$$\n",
+     "answer": "e^3",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$e^3$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = e^3$."
+    },
+    {
+     "id": "S32",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$ln(x) = -1$$\n",
+     "answer": [
+      "e^(-1)",
+      "1/e"
+     ],
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^(",
+      "e"
+     ],
+     "label": "$x$ =",
+     "show": "$e^(-1)$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = e^(-1)$."
+    },
+    {
+     "id": "S33",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$e^(x + 1) = 4$$\n",
+     "answer": "ln(4) - 1",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$ln(4) - 1$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = ln(4) - 1$."
+    },
+    {
+     "id": "S34",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$2e^x = 10$$\n",
+     "answer": "ln(5)",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$ln(5)$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = ln(5)$."
+    },
+    {
+     "id": "S35",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$ln(2x) = 0$$\n",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$frac{1}{2}$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = frac{1}{2}$."
+    },
+    {
+     "id": "S36",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$e^(3x) = 1$$\n",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$0$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = 0$."
+    },
+    {
+     "id": "S37",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$ln(x - 1) = 2$$\n",
+     "answer": "e^2 + 1",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$e^2 + 1$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = e^2 + 1$."
+    },
+    {
+     "id": "S38",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$5e^(2x) = 20$$\n",
+     "answer": "ln(4)/2",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$frac{ln(4)}{2}$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = frac{ln(4)}{2}$."
+    },
+    {
+     "id": "S39",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$ln(x) + ln(2) = ln(10)$$\n",
+     "answer": "5",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$5$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = 5$."
+    },
+    {
+     "id": "S40",
+     "type": "expr",
+     "text": "Solve for $x$. Give the exact answer.$$e^(-x) = 3$$\n",
+     "answer": "-ln(3)",
+     "vars": [],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "$x$ =",
+     "show": "$-ln(3)$",
+     "level": 2,
+     "explain": "Use $ln$ to undo $e$, or $e$ to undo $ln$: $x = -ln(3)$."
+    },
+    {
+     "id": "C41",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(x) + ln(3)$$\n",
+     "answer": "ln(3x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(3x)$",
+     "level": 3,
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(3x)$",
+     "maxLen": 4,
+     "longText": "That is equal, but write it as **one** logarithm."
+    },
+    {
+     "id": "C42",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(x) - ln(2)$$\n",
+     "answer": "ln(x/2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(x/2)$",
+     "level": 3,
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(x/2)$",
+     "maxLen": 4,
+     "longText": "That is equal, but write it as **one** logarithm."
+    },
+    {
+     "id": "C43",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(x + 1) + ln(x - 1)$$\n",
+     "answer": [
+      "ln(x^2 - 1)",
+      "ln((x + 1)(x - 1))"
+     ],
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(x^2 - 1)$",
+     "level": 3,
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(x^2 - 1)$",
+     "maxLen": 8,
+     "longText": "That is equal, but write it as **one** logarithm."
+    },
+    {
+     "id": "C44",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(6) - ln(2)$$\n",
+     "answer": "ln(3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(3)$",
+     "level": 3,
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(3)$",
+     "maxLen": 3,
+     "longText": "That is equal, but write it as **one** logarithm."
+    },
+    {
+     "id": "C45",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(x) + ln(x + 2)$$\n",
+     "answer": [
+      "ln(x^2 + 2x)",
+      "ln(x(x + 2))"
+     ],
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(x^2 + 2x)$",
+     "level": 3,
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(x^2 + 2x)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as **one** logarithm."
+    },
+    {
+     "id": "C46",
+     "type": "expr",
+     "text": "Combine into a single logarithm.$$ln(5) + ln(x) - ln(10)$$\n",
+     "answer": "ln(x/2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "single log =",
+     "ranges": {
+      "x": [
+       1.4,
+       2.6
+      ]
+     },
+     "show": "$ln(x/2)$",
+     "level": 3,
+     "explain": "Read the rules right to left: a sum of logs is the log of a product. $ln(x/2)$",
+     "maxLen": 5,
+     "longText": "That is equal, but write it as **one** logarithm."
+    },
+    {
+     "id": "Z47",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$e^(ln(x) + ln(2))$$\n",
+     "answer": "2x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$2x$",
+     "level": 3,
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $2x$.",
+     "maxLen": 3
+    },
+    {
+     "id": "Z48",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$ln(e^(x^2))$$\n",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$x^2$",
+     "level": 3,
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $x^2$.",
+     "maxLen": 4
+    },
+    {
+     "id": "Z49",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$e^(2ln(x))$$\n",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$x^2$",
+     "level": 3,
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $x^2$.",
+     "maxLen": 4
+    },
+    {
+     "id": "Z50",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$ln(e^x · e^3)$$\n",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$x + 3$",
+     "level": 3,
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $x + 3$.",
+     "maxLen": 4
+    },
+    {
+     "id": "Z51",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$e^(-ln(x))$$\n",
+     "answer": "1/x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$frac{1}{x}$",
+     "level": 3,
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $frac{1}{x}$.",
+     "maxLen": 4
+    },
+    {
+     "id": "Z52",
+     "type": "expr",
+     "text": "Simplify. No $e$ and no $ln$ should be left.$$ln(sqrt(e^x))$$\n",
+     "answer": "x/2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "ln(",
+      "e^("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.5,
+       1.8
+      ]
+     },
+     "show": "$frac{x}{2}$",
+     "level": 3,
+     "explain": "$ln$ and $e$ undo each other once the inside is in the right form: $frac{x}{2}$.",
+     "maxLen": 4
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "num",
+    "text": "$ln(x)$ asks one question: **$e$ to what power gives $x$?**$$ln(e^3) = ?$$\nAnswer the question.",
+    "answer": 3,
+    "label": "$ln(e^3)$ =",
+    "hint": "$e$ to what power gives $e^3$?",
+    "explain": "$ln(e^3) = 3$. The logarithm **is** the exponent."
+   },
+   {
+    "id": "L2",
+    "type": "match",
+    "text": "That makes $ln$ and $e^x$ inverses: each one undoes the other. Match each expression to its value.",
+    "pairs": [
+     [
+      "$ln(e^5)$",
+      "5"
+     ],
+     [
+      "$e^(ln(7))$",
+      "7"
+     ],
+     [
+      "$ln(1)$",
+      "0"
+     ],
+     [
+      "$ln(e)$",
+      "1"
+     ]
+    ],
+    "hint": "$e^0 = 1$ and $e^1 = e$.",
+    "explain": "$ln(e^x) = x$ and $e^(ln(x)) = x$. And $ln(1) = 0$ because $e^0 = 1$."
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "There are three log rules, and each one is an exponent rule in disguise. The first: a log turns a **product** into a **sum**.$$ln(ab) = ln(a) + ln(b)$$\nSo $ln(2x) =$",
+    "options": [
+     "$ln(2) + ln(x)$",
+     "$ln(2) · ln(x)$",
+     "$2ln(x)$",
+     "$ln(2 + x)$"
+    ],
+    "answer": 0,
+    "hint": "$2x$ is a product: 2 times $x$.",
+    "explain": "Products become sums. (And quotients become differences: $ln(frac{a}{b}) = ln(a) - ln(b)$.)"
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "The one you will use most: an exponent inside a log comes down in front.$$ln(a^n) = n · ln(a)$$\nSo $ln(x^5) =$",
+    "options": [
+     "$5ln(x)$",
+     "$(ln(x))^5$",
+     "$ln(5x)$",
+     "$ln(x) + 5$"
+    ],
+    "answer": 0,
+    "hint": "The 5 comes down and multiplies.",
+    "explain": "$ln(x^5) = 5ln(x)$. This is how logs pull a variable out of an exponent."
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "Which is exactly what you need to solve this.$$e^(2x) = 7$$\nTake $ln$ of both sides, then solve for $x$.",
+    "answer": "ln(7)/2",
+    "vars": [],
+    "keys": [
+     "ln(",
+     "e^("
+    ],
+    "label": "$x$ =",
+    "show": "$frac{ln(7)}{2}$",
+    "hint": "$ln(e^(2x)) = 2x$, so $2x = ln(7)$.",
+    "explain": "$2x = ln(7)$, so $x = frac{ln(7)}{2}$. Leave it exact: no decimals needed."
+   },
+   {
+    "id": "L6",
+    "type": "mc",
+    "text": "One last pair. Two combinations of $e^x$ and $e^(-x)$ come up often enough to have names, the **hyperbolic** sine and cosine:$$sinh(x) = frac{e^x - e^(-x)}{2}$$\n$$cosh(x) = frac{e^x + e^(-x)}{2}$$\nWhat is $cosh(0)$?",
+    "options": [
+     "1",
+     "0",
+     "$e$",
+     "2"
+    ],
+    "answer": 0,
+    "hint": "$e^0 = 1$, twice.",
+    "explain": "$cosh(0) = frac{1 + 1}{2} = 1$, and $sinh(0) = 0$. We will meet their derivatives later; for now, just know what they are."
+   }
+  ]
+ }
+}

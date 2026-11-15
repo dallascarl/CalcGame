@@ -1,0 +1,1051 @@
+{
+ "id": "t-circle",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "The Unit Circle",
+ "subtitle": "Radians, and sine and cosine as coordinates on the unit circle.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "On the unit circle, the point at angle $theta$ is",
+     "options": [
+      "$(cos(theta), sin(theta))$",
+      "$(sin(theta), cos(theta))$",
+      "$(theta, sin(theta))$",
+      "$(tan(theta), 1)$"
+     ],
+     "answer": 0,
+     "explain": "Cosine is across, sine is up. Alphabetical, like $x$ and $y$."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$pi$ radians is",
+     "options": [
+      "180°",
+      "360°",
+      "90°",
+      "3.14°"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "explain": "Half a turn. Everything else follows from this."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "In which quadrant are sine and cosine **both** negative?",
+     "options": [
+      "III",
+      "I",
+      "II",
+      "IV"
+     ],
+     "answer": 0,
+     "explain": "Left of the $y$-axis and below the $x$-axis: the third quadrant."
+    },
+    {
+     "id": "T4",
+     "type": "tf",
+     "text": "$sin(frac{pi}{2}) = 1$",
+     "answer": true,
+     "explain": "A quarter turn puts the point at the top of the circle, $(0, 1)$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "Because the point is on a circle of radius 1, $sin^2(theta) + cos^2(theta) =$",
+     "options": [
+      "1",
+      "0",
+      "$theta$",
+      "2"
+     ],
+     "answer": 0,
+     "explain": "It is the Pythagorean theorem for the triangle inside the circle."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "$cos(0) =$",
+     "options": [
+      "1",
+      "0",
+      "−1",
+      "undefined"
+     ],
+     "answer": 0,
+     "explain": "At angle 0 the point is $(1, 0)$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "D1",
+     "type": "expr",
+     "text": "Convert 30° to radians.",
+     "answer": "pi/6",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "30° =",
+     "show": "$frac{pi}{6}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{pi}{6}$."
+    },
+    {
+     "id": "D2",
+     "type": "expr",
+     "text": "Convert 45° to radians.",
+     "answer": "pi/4",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "45° =",
+     "show": "$frac{pi}{4}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{pi}{4}$."
+    },
+    {
+     "id": "D3",
+     "type": "expr",
+     "text": "Convert 60° to radians.",
+     "answer": "pi/3",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "60° =",
+     "show": "$frac{pi}{3}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{pi}{3}$."
+    },
+    {
+     "id": "D4",
+     "type": "expr",
+     "text": "Convert 90° to radians.",
+     "answer": "pi/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "90° =",
+     "show": "$frac{pi}{2}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{pi}{2}$."
+    },
+    {
+     "id": "D5",
+     "type": "expr",
+     "text": "Convert 120° to radians.",
+     "answer": "2pi/3",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "120° =",
+     "show": "$frac{2pi}{3}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{2pi}{3}$."
+    },
+    {
+     "id": "D6",
+     "type": "expr",
+     "text": "Convert 135° to radians.",
+     "answer": "3pi/4",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "135° =",
+     "show": "$frac{3pi}{4}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{3pi}{4}$."
+    },
+    {
+     "id": "D7",
+     "type": "expr",
+     "text": "Convert 150° to radians.",
+     "answer": "5pi/6",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "150° =",
+     "show": "$frac{5pi}{6}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{5pi}{6}$."
+    },
+    {
+     "id": "D8",
+     "type": "expr",
+     "text": "Convert 180° to radians.",
+     "answer": "pi",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "180° =",
+     "show": "$pi$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $pi$."
+    },
+    {
+     "id": "D9",
+     "type": "expr",
+     "text": "Convert 270° to radians.",
+     "answer": "3pi/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "270° =",
+     "show": "$frac{3pi}{2}$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $frac{3pi}{2}$."
+    },
+    {
+     "id": "D10",
+     "type": "expr",
+     "text": "Convert 360° to radians.",
+     "answer": "2pi",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "360° =",
+     "show": "$2pi$",
+     "level": 1,
+     "explain": "Multiply by $frac{pi}{180}$: $2pi$."
+    },
+    {
+     "id": "R11",
+     "type": "num",
+     "text": "Convert $frac{pi}{6}$ radians to degrees.",
+     "answer": 30,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 30°."
+    },
+    {
+     "id": "R12",
+     "type": "num",
+     "text": "Convert $frac{pi}{4}$ radians to degrees.",
+     "answer": 45,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 45°."
+    },
+    {
+     "id": "R13",
+     "type": "num",
+     "text": "Convert $frac{pi}{3}$ radians to degrees.",
+     "answer": 60,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 60°."
+    },
+    {
+     "id": "R14",
+     "type": "num",
+     "text": "Convert $frac{pi}{2}$ radians to degrees.",
+     "answer": 90,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 90°."
+    },
+    {
+     "id": "R15",
+     "type": "num",
+     "text": "Convert $frac{2pi}{3}$ radians to degrees.",
+     "answer": 120,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 120°."
+    },
+    {
+     "id": "R16",
+     "type": "num",
+     "text": "Convert $pi$ radians to degrees.",
+     "answer": 180,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 180°."
+    },
+    {
+     "id": "R17",
+     "type": "num",
+     "text": "Convert $frac{3pi}{2}$ radians to degrees.",
+     "answer": 270,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 270°."
+    },
+    {
+     "id": "R18",
+     "type": "num",
+     "text": "Convert $frac{5pi}{4}$ radians to degrees.",
+     "answer": 225,
+     "label": "degrees =",
+     "level": 1,
+     "explain": "Replace $pi$ with 180°: 225°."
+    },
+    {
+     "id": "A19",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{pi}{6}$.",
+     "ask": "angle",
+     "answer": 1,
+     "level": 1,
+     "explain": "$frac{pi}{6}$ is 30°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A20",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{pi}{3}$.",
+     "ask": "angle",
+     "answer": 3,
+     "level": 1,
+     "explain": "$frac{pi}{3}$ is 60°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A21",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{2pi}{3}$.",
+     "ask": "angle",
+     "answer": 5,
+     "level": 1,
+     "explain": "$frac{2pi}{3}$ is 120°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A22",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{3pi}{4}$.",
+     "ask": "angle",
+     "answer": 6,
+     "level": 1,
+     "explain": "$frac{3pi}{4}$ is 135°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A23",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{5pi}{6}$.",
+     "ask": "angle",
+     "answer": 7,
+     "level": 1,
+     "explain": "$frac{5pi}{6}$ is 150°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A24",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{7pi}{6}$.",
+     "ask": "angle",
+     "answer": 9,
+     "level": 1,
+     "explain": "$frac{7pi}{6}$ is 210°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A25",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{5pi}{4}$.",
+     "ask": "angle",
+     "answer": 10,
+     "level": 1,
+     "explain": "$frac{5pi}{4}$ is 225°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A26",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{4pi}{3}$.",
+     "ask": "angle",
+     "answer": 11,
+     "level": 1,
+     "explain": "$frac{4pi}{3}$ is 240°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A27",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{5pi}{3}$.",
+     "ask": "angle",
+     "answer": 13,
+     "level": 1,
+     "explain": "$frac{5pi}{3}$ is 300°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A28",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{7pi}{4}$.",
+     "ask": "angle",
+     "answer": 14,
+     "level": 1,
+     "explain": "$frac{7pi}{4}$ is 315°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A29",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{11pi}{6}$.",
+     "ask": "angle",
+     "answer": 15,
+     "level": 1,
+     "explain": "$frac{11pi}{6}$ is 330°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A30",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{pi}{2}$.",
+     "ask": "angle",
+     "answer": 4,
+     "level": 1,
+     "explain": "$frac{pi}{2}$ is 90°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A31",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = frac{3pi}{2}$.",
+     "ask": "angle",
+     "answer": 12,
+     "level": 1,
+     "explain": "$frac{3pi}{2}$ is 270°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "A32",
+     "type": "ucircle",
+     "text": "Tap the point at $theta = pi$.",
+     "ask": "angle",
+     "answer": 8,
+     "level": 1,
+     "explain": "$pi$ is 180°, counted counterclockwise from the positive $x$-axis."
+    },
+    {
+     "id": "F33",
+     "type": "expr",
+     "text": "Find the exact value of $sin(0)$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(0)$ =",
+     "show": "$0$",
+     "level": 2,
+     "explain": "The point at $0$ is $(1, 0)$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F34",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{6})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{6})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{6}$ is $(frac{sqrt(3)}{2}, frac{1}{2})$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F35",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{4})$.",
+     "answer": "sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{4})$ =",
+     "show": "$frac{sqrt(2)}{2}$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{4}$ is $(frac{sqrt(2)}{2}, frac{sqrt(2)}{2})$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F36",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{3})$.",
+     "answer": "sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{3})$ =",
+     "show": "$frac{sqrt(3)}{2}$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{3}$ is $(frac{1}{2}, frac{sqrt(3)}{2})$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F37",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{pi}{2})$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{pi}{2})$ =",
+     "show": "$1$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{2}$ is $(0, 1)$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F38",
+     "type": "expr",
+     "text": "Find the exact value of $sin(pi)$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(pi)$ =",
+     "show": "$0$",
+     "level": 2,
+     "explain": "The point at $pi$ is $(-1, 0)$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F39",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{3pi}{2})$.",
+     "answer": "-1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{3pi}{2})$ =",
+     "show": "$-1$",
+     "level": 2,
+     "explain": "The point at $frac{3pi}{2}$ is $(0, -1)$. Sine is the $y$-coordinate."
+    },
+    {
+     "id": "F40",
+     "type": "expr",
+     "text": "Find the exact value of $cos(0)$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(0)$ =",
+     "show": "$1$",
+     "level": 2,
+     "explain": "The point at $0$ is $(1, 0)$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "F41",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{6})$.",
+     "answer": "sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{6})$ =",
+     "show": "$frac{sqrt(3)}{2}$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{6}$ is $(frac{sqrt(3)}{2}, frac{1}{2})$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "F42",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{4})$.",
+     "answer": "sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{4})$ =",
+     "show": "$frac{sqrt(2)}{2}$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{4}$ is $(frac{sqrt(2)}{2}, frac{sqrt(2)}{2})$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "F43",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{3})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{3})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{3}$ is $(frac{1}{2}, frac{sqrt(3)}{2})$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "F44",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{pi}{2})$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{pi}{2})$ =",
+     "show": "$0$",
+     "level": 2,
+     "explain": "The point at $frac{pi}{2}$ is $(0, 1)$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "F45",
+     "type": "expr",
+     "text": "Find the exact value of $cos(pi)$.",
+     "answer": "-1",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(pi)$ =",
+     "show": "$-1$",
+     "level": 2,
+     "explain": "The point at $pi$ is $(-1, 0)$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "F46",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{3pi}{2})$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{3pi}{2})$ =",
+     "show": "$0$",
+     "level": 2,
+     "explain": "The point at $frac{3pi}{2}$ is $(0, -1)$. Cosine is the $x$-coordinate."
+    },
+    {
+     "id": "G47",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{2pi}{3})$.",
+     "answer": "sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{2pi}{3})$ =",
+     "show": "$frac{sqrt(3)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{2pi}{3}$ is $(-frac{1}{2}, frac{sqrt(3)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G48",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{5pi}{6})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{5pi}{6})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{5pi}{6}$ is $(-frac{sqrt(3)}{2}, frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G49",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{7pi}{6})$.",
+     "answer": "-1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{7pi}{6})$ =",
+     "show": "$-frac{1}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{7pi}{6}$ is $(-frac{sqrt(3)}{2}, -frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G50",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{5pi}{4})$.",
+     "answer": "-sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{5pi}{4})$ =",
+     "show": "$-frac{sqrt(2)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{5pi}{4}$ is $(-frac{sqrt(2)}{2}, -frac{sqrt(2)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G51",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{4pi}{3})$.",
+     "answer": "-sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{4pi}{3})$ =",
+     "show": "$-frac{sqrt(3)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{4pi}{3}$ is $(-frac{1}{2}, -frac{sqrt(3)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G52",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{7pi}{4})$.",
+     "answer": "-sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{7pi}{4})$ =",
+     "show": "$-frac{sqrt(2)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{7pi}{4}$ is $(frac{sqrt(2)}{2}, -frac{sqrt(2)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G53",
+     "type": "expr",
+     "text": "Find the exact value of $sin(frac{11pi}{6})$.",
+     "answer": "-1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$sin(frac{11pi}{6})$ =",
+     "show": "$-frac{1}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{11pi}{6}$ is $(frac{sqrt(3)}{2}, -frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G54",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{3pi}{4})$.",
+     "answer": "-sqrt(2)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{3pi}{4})$ =",
+     "show": "$-frac{sqrt(2)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{3pi}{4}$ is $(-frac{sqrt(2)}{2}, frac{sqrt(2)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G55",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{5pi}{6})$.",
+     "answer": "-sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{5pi}{6})$ =",
+     "show": "$-frac{sqrt(3)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{5pi}{6}$ is $(-frac{sqrt(3)}{2}, frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G56",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{7pi}{6})$.",
+     "answer": "-sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{7pi}{6})$ =",
+     "show": "$-frac{sqrt(3)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{7pi}{6}$ is $(-frac{sqrt(3)}{2}, -frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G57",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{4pi}{3})$.",
+     "answer": "-1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{4pi}{3})$ =",
+     "show": "$-frac{1}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{4pi}{3}$ is $(-frac{1}{2}, -frac{sqrt(3)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G58",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{5pi}{3})$.",
+     "answer": "1/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{5pi}{3})$ =",
+     "show": "$frac{1}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{5pi}{3}$ is $(frac{1}{2}, -frac{sqrt(3)}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "G59",
+     "type": "expr",
+     "text": "Find the exact value of $cos(frac{11pi}{6})$.",
+     "answer": "sqrt(3)/2",
+     "vars": [],
+     "keys": [
+      "sqrt(",
+      "pi"
+     ],
+     "label": "$cos(frac{11pi}{6})$ =",
+     "show": "$frac{sqrt(3)}{2}$",
+     "level": 3,
+     "explain": "The point at $frac{11pi}{6}$ is $(frac{sqrt(3)}{2}, -frac{1}{2})$. Same sizes as the first quadrant; the quadrant sets the signs."
+    },
+    {
+     "id": "W60",
+     "type": "ucircle",
+     "text": "Tap **every** point where $sin(theta) = frac{1}{2}$.",
+     "ask": "where",
+     "answers": [
+      1,
+      7
+     ],
+     "level": 3,
+     "explain": "Sine is the height of the point, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W61",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = frac{1}{2}$.",
+     "ask": "where",
+     "answers": [
+      3,
+      13
+     ],
+     "level": 3,
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W62",
+     "type": "ucircle",
+     "text": "Tap **every** point where $sin(theta) = -frac{sqrt(2)}{2}$.",
+     "ask": "where",
+     "answers": [
+      10,
+      14
+     ],
+     "level": 3,
+     "explain": "Sine is the height of the point, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W63",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = -frac{sqrt(3)}{2}$.",
+     "ask": "where",
+     "answers": [
+      7,
+      9
+     ],
+     "level": 3,
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W64",
+     "type": "ucircle",
+     "text": "Tap **every** point where $sin(theta) = 0$.",
+     "ask": "where",
+     "answers": [
+      0,
+      8
+     ],
+     "level": 3,
+     "explain": "Sine is the height of the point, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W65",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = 0$.",
+     "ask": "where",
+     "answers": [
+      4,
+      12
+     ],
+     "level": 3,
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W66",
+     "type": "ucircle",
+     "text": "Tap **every** point where $sin(theta) = frac{sqrt(3)}{2}$.",
+     "ask": "where",
+     "answers": [
+      3,
+      5
+     ],
+     "level": 3,
+     "explain": "Sine is the height of the point, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W67",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = frac{sqrt(2)}{2}$.",
+     "ask": "where",
+     "answers": [
+      2,
+      14
+     ],
+     "level": 3,
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them."
+    },
+    {
+     "id": "W68",
+     "type": "ucircle",
+     "text": "Tap **every** point where $sin(theta) = -1$.",
+     "ask": "where",
+     "answers": [
+      12
+     ],
+     "level": 3,
+     "explain": "Sine is the height of the point, so look for every point at that level: 1 of them."
+    },
+    {
+     "id": "W69",
+     "type": "ucircle",
+     "text": "Tap **every** point where $cos(theta) = -frac{1}{2}$.",
+     "ask": "where",
+     "answers": [
+      5,
+      11
+     ],
+     "level": 3,
+     "explain": "Cosine is how far right or left the point is, so look for every point at that level: 2 of them."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Calculus measures angles in **radians**. A full turn is $2pi$, so half a turn is $pi$, which is 180°. How many degrees is $frac{pi}{2}$?",
+    "options": [
+     "90°",
+     "45°",
+     "180°",
+     "60°"
+    ],
+    "answer": 0,
+    "fixed": true,
+    "hint": "Half of a half turn.",
+    "explain": "$frac{pi}{2}$ is a quarter turn, 90°. To convert, remember one fact: $pi$ = 180°."
+   },
+   {
+    "id": "L2",
+    "type": "ucircle",
+    "text": "Here is the unit circle: radius 1, centered at the origin. At every angle, **cosine is the x-coordinate and sine is the y-coordinate** of the point. Tap these three angles and watch both.",
+    "ask": "explore",
+    "need": [
+     1,
+     2,
+     3
+    ],
+    "labels": true,
+    "after": "Only three numbers ever show up: $frac{1}{2}$, $frac{sqrt2}{2}$ and $frac{sqrt3}{2}$, smallest to largest. Sine climbs through them while cosine comes down."
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "From what you just saw, $sin(frac{pi}{6}) =$",
+    "options": [
+     "$frac{1}{2}$",
+     "$frac{sqrt3}{2}$",
+     "$frac{sqrt2}{2}$",
+     "1"
+    ],
+    "answer": 0,
+    "hint": "$frac{pi}{6}$ is 30°: a low point, so its height is the small number.",
+    "explain": "At $frac{pi}{6}$ the point is far to the right and not very high: $(frac{sqrt3}{2}, frac{1}{2})$."
+   },
+   {
+    "id": "L4",
+    "type": "ucircle",
+    "text": "The other three quadrants reuse the same values. Only the **signs** change. Tap these and watch the signs.",
+    "ask": "explore",
+    "need": [
+     7,
+     9,
+     15
+    ],
+    "labels": true,
+    "after": "Left of the $y$-axis, cosine is negative. Below the $x$-axis, sine is negative. That is all there is to it."
+   },
+   {
+    "id": "L5",
+    "type": "ucircle",
+    "text": "Now with no labels. Tap the point at $theta = frac{2pi}{3}$.",
+    "ask": "angle",
+    "answer": 5,
+    "hint": "$frac{pi}{3}$ is 60°, so $frac{2pi}{3}$ is 120°: a little past straight up.",
+    "explain": "Angles start on the positive $x$-axis and go counterclockwise. 120° lands in the second quadrant."
+   },
+   {
+    "id": "L6",
+    "type": "mc",
+    "text": "$cos(pi) =$",
+    "options": [
+     "−1",
+     "0",
+     "1",
+     "$pi$"
+    ],
+    "answer": 0,
+    "hint": "$pi$ is half a turn. Where is the point?",
+    "explain": "Half a turn puts the point at $(-1, 0)$, and cosine is the $x$-coordinate."
+   }
+  ]
+ }
+}

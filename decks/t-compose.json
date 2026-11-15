@@ -1,0 +1,1733 @@
+{
+ "id": "t-compose",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Composition",
+ "subtitle": "Functions inside functions: building them and taking them apart.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "$f(g(x))$ and $g(f(x))$ are always the same function.",
+     "answer": false,
+     "explain": "With $f(x) = x^2$ and $g(x) = x + 3$: $(x + 3)^2$ and $x^2 + 3$ are different."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$f(g(x))$ means $f(x) · g(x)$.",
+     "answer": false,
+     "explain": "It is not multiplication. $g(x)$ is the **input** of $f$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "The inside function of $(3x - 1)^5$ is",
+     "options": [
+      "$3x - 1$",
+      "$x^5$",
+      "$3x$",
+      "$5x$"
+     ],
+     "answer": 0,
+     "explain": "You compute $3x - 1$ first, then raise it to the 5th power."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "The inside function of $e^(x^2)$ is",
+     "options": [
+      "$x^2$",
+      "$e^x$",
+      "$e^2$",
+      "$2x$"
+     ],
+     "answer": 0,
+     "explain": "You square $x$ first, then use it as the exponent."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$sin^2(x)$ means $(sin(x))^2$. Its inside function is",
+     "options": [
+      "$sin(x)$",
+      "$x^2$",
+      "$2x$",
+      "$sin(x^2)$"
+     ],
+     "answer": 0,
+     "explain": "Take the sine first, then square the result. The outside is $u^2$."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "The **outside** function of $ln(4x + 1)$ is",
+     "options": [
+      "$ln(u)$",
+      "$4u + 1$",
+      "$4x$",
+      "$u^4$"
+     ],
+     "answer": 0,
+     "explain": "The last thing you do is take the logarithm."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "N1",
+     "type": "num",
+     "text": "$$f(x) = x^2,    g(x) = x + 3$$\nFind $f(g(2))$.",
+     "answer": 25,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "Inside first: $g(2) = 5$. Then $f(5) = 25$."
+    },
+    {
+     "id": "N2",
+     "type": "num",
+     "text": "$$f(x) = x^2,    g(x) = x + 3$$\nFind $g(f(1))$.",
+     "answer": 4,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "Inside first: $f(1) = 1$. Then $g(1) = 4$."
+    },
+    {
+     "id": "N3",
+     "type": "num",
+     "text": "$$f(x) = 2x + 1,    g(x) = x^2$$\nFind $f(g(2))$.",
+     "answer": 9,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "Inside first: $g(2) = 4$. Then $f(4) = 9$."
+    },
+    {
+     "id": "N4",
+     "type": "num",
+     "text": "$$f(x) = 2x + 1,    g(x) = x^2$$\nFind $g(f(1))$.",
+     "answer": 9,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "Inside first: $f(1) = 3$. Then $g(3) = 9$."
+    },
+    {
+     "id": "N5",
+     "type": "num",
+     "text": "$$f(x) = sqrt(x),    g(x) = x + 7$$\nFind $f(g(2))$.",
+     "answer": 3,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "Inside first: $g(2) = 9$. Then $f(9) = 3$."
+    },
+    {
+     "id": "N6",
+     "type": "num",
+     "text": "$$f(x) = sqrt(x),    g(x) = x + 7$$\nFind $g(f(1))$.",
+     "answer": 8,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "Inside first: $f(1) = 1$. Then $g(1) = 8$."
+    },
+    {
+     "id": "N7",
+     "type": "num",
+     "text": "$$f(x) = x^3,    g(x) = x - 1$$\nFind $f(g(2))$.",
+     "answer": 1,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "Inside first: $g(2) = 1$. Then $f(1) = 1$."
+    },
+    {
+     "id": "N8",
+     "type": "num",
+     "text": "$$f(x) = x^3,    g(x) = x - 1$$\nFind $g(f(1))$.",
+     "answer": 0,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "Inside first: $f(1) = 1$. Then $g(1) = 0$."
+    },
+    {
+     "id": "N9",
+     "type": "num",
+     "text": "$$f(x) = frac{1}{x},    g(x) = x + 2$$\nFind $f(g(2))$.",
+     "answer": 0.25,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "Inside first: $g(2) = 4$. Then $f(4) = frac{1}{4}$."
+    },
+    {
+     "id": "N10",
+     "type": "num",
+     "text": "$$f(x) = frac{1}{x},    g(x) = x + 2$$\nFind $g(f(1))$.",
+     "answer": 3,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "Inside first: $f(1) = 1$. Then $g(1) = 3$."
+    },
+    {
+     "id": "N11",
+     "type": "num",
+     "text": "$$f(x) = x^2 - 1,    g(x) = 3x$$\nFind $f(g(2))$.",
+     "answer": 35,
+     "label": "$f(g(2))$ =",
+     "level": 1,
+     "explain": "Inside first: $g(2) = 6$. Then $f(6) = 35$."
+    },
+    {
+     "id": "N12",
+     "type": "num",
+     "text": "$$f(x) = x^2 - 1,    g(x) = 3x$$\nFind $g(f(1))$.",
+     "answer": 0,
+     "label": "$g(f(1))$ =",
+     "level": 1,
+     "explain": "Inside first: $f(1) = 0$. Then $g(0) = 0$."
+    },
+    {
+     "id": "I13",
+     "type": "expr",
+     "text": "$$h(x) = (3x^2 + 1)^10$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "3x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$3x^2 + 1$",
+     "level": 1,
+     "explain": "You compute $3x^2 + 1$ first. The outside is $u^10$."
+    },
+    {
+     "id": "I14",
+     "type": "expr",
+     "text": "$$h(x) = sin(x^2)$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$x^2$",
+     "level": 1,
+     "explain": "You compute $x^2$ first. The outside is $sin(u)$."
+    },
+    {
+     "id": "I15",
+     "type": "expr",
+     "text": "$$h(x) = sqrt(1 - x^2)$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "1 - x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$1 - x^2$",
+     "level": 1,
+     "explain": "You compute $1 - x^2$ first. The outside is $sqrt(u)$."
+    },
+    {
+     "id": "I16",
+     "type": "expr",
+     "text": "$$h(x) = e^(5x)$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "5x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$5x$",
+     "level": 1,
+     "explain": "You compute $5x$ first. The outside is $e^u$."
+    },
+    {
+     "id": "I17",
+     "type": "expr",
+     "text": "$$h(x) = ln(x^2 + 4)$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "x^2 + 4",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$x^2 + 4$",
+     "level": 1,
+     "explain": "You compute $x^2 + 4$ first. The outside is $ln(u)$."
+    },
+    {
+     "id": "I18",
+     "type": "expr",
+     "text": "$$h(x) = cos^3(x)$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 1,
+     "explain": "You compute $cos(x)$ first. The outside is $u^3$."
+    },
+    {
+     "id": "I19",
+     "type": "expr",
+     "text": "$$h(x) = frac{1}{2x + 7}$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "2x + 7",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$2x + 7$",
+     "level": 1,
+     "explain": "You compute $2x + 7$ first. The outside is $frac{1}{u}$."
+    },
+    {
+     "id": "I20",
+     "type": "expr",
+     "text": "$$h(x) = (x^3 - x)^4$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "x^3 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$x^3 - x$",
+     "level": 1,
+     "explain": "You compute $x^3 - x$ first. The outside is $u^4$."
+    },
+    {
+     "id": "I21",
+     "type": "expr",
+     "text": "$$h(x) = sin(3x)$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "3x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$3x$",
+     "level": 1,
+     "explain": "You compute $3x$ first. The outside is $sin(u)$."
+    },
+    {
+     "id": "I22",
+     "type": "expr",
+     "text": "$$h(x) = sqrt(sin(x))$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sin(x)$",
+     "level": 1,
+     "explain": "You compute $sin(x)$ first. The outside is $sqrt(u)$."
+    },
+    {
+     "id": "I23",
+     "type": "expr",
+     "text": "$$h(x) = e^(sin(x))$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sin(x)$",
+     "level": 1,
+     "explain": "You compute $sin(x)$ first. The outside is $e^u$."
+    },
+    {
+     "id": "I24",
+     "type": "expr",
+     "text": "$$h(x) = (1 + sqrt(x))^6$$\nWhat is the **inside** function, the part you would compute first?",
+     "answer": "1 + sqrt(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "inside =",
+     "ranges": {
+      "x": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$1 + sqrt(x)$",
+     "level": 1,
+     "explain": "You compute $1 + sqrt(x)$ first. The outside is $u^6$."
+    },
+    {
+     "id": "C25",
+     "type": "expr",
+     "text": "$$f(x) = x^2,    g(x) = x + 3$$\nWrite a formula for $f(g(x))$.",
+     "answer": "(x + 3)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$(x + 3)^2$",
+     "level": 2,
+     "explain": "Put $x + 3$ into every blank of $f$: $(x + 3)^2$."
+    },
+    {
+     "id": "C26",
+     "type": "expr",
+     "text": "$$f(x) = x^2,    g(x) = x + 3$$\nWrite a formula for $g(f(x))$.",
+     "answer": "x^2 + 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$x^2 + 3$",
+     "level": 2,
+     "explain": "Put $x^2$ into every blank of $g$: $x^2 + 3$."
+    },
+    {
+     "id": "C27",
+     "type": "expr",
+     "text": "$$f(x) = sqrt(x),    g(x) = x^2 + 1$$\nWrite a formula for $f(g(x))$.",
+     "answer": "sqrt(x^2 + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$sqrt(x^2 + 1)$",
+     "level": 2,
+     "explain": "Put $x^2 + 1$ into every blank of $f$: $sqrt(x^2 + 1)$."
+    },
+    {
+     "id": "C28",
+     "type": "expr",
+     "text": "$$f(x) = sqrt(x),    g(x) = x^2 + 1$$\nWrite a formula for $g(f(x))$.",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$x + 1$",
+     "level": 2,
+     "explain": "Put $sqrt(x)$ into every blank of $g$: $x + 1$."
+    },
+    {
+     "id": "C29",
+     "type": "expr",
+     "text": "$$f(x) = 2x + 1,    g(x) = x^2$$\nWrite a formula for $f(g(x))$.",
+     "answer": "2x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$2x^2 + 1$",
+     "level": 2,
+     "explain": "Put $x^2$ into every blank of $f$: $2x^2 + 1$."
+    },
+    {
+     "id": "C30",
+     "type": "expr",
+     "text": "$$f(x) = 2x + 1,    g(x) = x^2$$\nWrite a formula for $g(f(x))$.",
+     "answer": "(2x + 1)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$(2x + 1)^2$",
+     "level": 2,
+     "explain": "Put $2x + 1$ into every blank of $g$: $(2x + 1)^2$."
+    },
+    {
+     "id": "C31",
+     "type": "expr",
+     "text": "$$f(x) = frac{1}{x},    g(x) = x - 4$$\nWrite a formula for $f(g(x))$.",
+     "answer": "(x - 4)^(-1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$(x - 4)^(-1)$",
+     "level": 2,
+     "explain": "Put $x - 4$ into every blank of $f$: $(x - 4)^(-1)$."
+    },
+    {
+     "id": "C32",
+     "type": "expr",
+     "text": "$$f(x) = frac{1}{x},    g(x) = x - 4$$\nWrite a formula for $g(f(x))$.",
+     "answer": "-4 + x^(-1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$-4 + x^(-1)$",
+     "level": 2,
+     "explain": "Put $frac{1}{x}$ into every blank of $g$: $-4 + x^(-1)$."
+    },
+    {
+     "id": "C33",
+     "type": "expr",
+     "text": "$$f(x) = x^3,    g(x) = 2x$$\nWrite a formula for $f(g(x))$.",
+     "answer": "8x^3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$8x^3$",
+     "level": 2,
+     "explain": "Put $2x$ into every blank of $f$: $8x^3$."
+    },
+    {
+     "id": "C34",
+     "type": "expr",
+     "text": "$$f(x) = x^3,    g(x) = 2x$$\nWrite a formula for $g(f(x))$.",
+     "answer": "2x^3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$2x^3$",
+     "level": 2,
+     "explain": "Put $x^3$ into every blank of $g$: $2x^3$."
+    },
+    {
+     "id": "C35",
+     "type": "expr",
+     "text": "$$f(x) = sin(x),    g(x) = 3x$$\nWrite a formula for $f(g(x))$.",
+     "answer": "sin(3x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$sin(3x)$",
+     "level": 2,
+     "explain": "Put $3x$ into every blank of $f$: $sin(3x)$."
+    },
+    {
+     "id": "C36",
+     "type": "expr",
+     "text": "$$f(x) = sin(x),    g(x) = 3x$$\nWrite a formula for $g(f(x))$.",
+     "answer": "3sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$3sin(x)$",
+     "level": 2,
+     "explain": "Put $sin(x)$ into every blank of $g$: $3sin(x)$."
+    },
+    {
+     "id": "C37",
+     "type": "expr",
+     "text": "$$f(x) = e^x,    g(x) = x^2$$\nWrite a formula for $f(g(x))$.",
+     "answer": "e^(x^2)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$e^(x^2)$",
+     "level": 2,
+     "explain": "Put $x^2$ into every blank of $f$: $e^(x^2)$."
+    },
+    {
+     "id": "C38",
+     "type": "expr",
+     "text": "$$f(x) = e^x,    g(x) = x^2$$\nWrite a formula for $g(f(x))$.",
+     "answer": "e^(2x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$e^(2x)$",
+     "level": 2,
+     "explain": "Put $e^x$ into every blank of $g$: $e^(2x)$."
+    },
+    {
+     "id": "C39",
+     "type": "expr",
+     "text": "$$f(x) = x^2 + x,    g(x) = x - 1$$\nWrite a formula for $f(g(x))$.",
+     "answer": "x + (x - 1)^2 - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(g(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$x + (x - 1)^2 - 1$",
+     "level": 2,
+     "explain": "Put $x - 1$ into every blank of $f$: $x + (x - 1)^2 - 1$."
+    },
+    {
+     "id": "C40",
+     "type": "expr",
+     "text": "$$f(x) = x^2 + x,    g(x) = x - 1$$\nWrite a formula for $g(f(x))$.",
+     "answer": "x^2 + x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$g(f(x))$ =",
+     "ranges": {
+      "x": [
+       4.3,
+       5.6
+      ]
+     },
+     "show": "$x^2 + x - 1$",
+     "level": 2,
+     "explain": "Put $x^2 + x$ into every blank of $g$: $x^2 + x - 1$."
+    },
+    {
+     "id": "O41",
+     "type": "expr",
+     "text": "$$h(x) = (3x^2 + 1)^10$$\nThe inside is $u = 3x^2 + 1$. Write the **outside** function in terms of $u$.",
+     "answer": "u^10",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$u^10$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $u^10$."
+    },
+    {
+     "id": "O42",
+     "type": "expr",
+     "text": "$$h(x) = sin(x^2)$$\nThe inside is $u = x^2$. Write the **outside** function in terms of $u$.",
+     "answer": "sin(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sin(u)$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $sin(u)$."
+    },
+    {
+     "id": "O43",
+     "type": "expr",
+     "text": "$$h(x) = sqrt(1 - x^2)$$\nThe inside is $u = 1 - x^2$. Write the **outside** function in terms of $u$.",
+     "answer": "sqrt(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$sqrt(u)$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $sqrt(u)$."
+    },
+    {
+     "id": "O44",
+     "type": "expr",
+     "text": "$$h(x) = e^(5x)$$\nThe inside is $u = 5x$. Write the **outside** function in terms of $u$.",
+     "answer": "e^u",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$e^u$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $e^u$."
+    },
+    {
+     "id": "O45",
+     "type": "expr",
+     "text": "$$h(x) = ln(x^2 + 4)$$\nThe inside is $u = x^2 + 4$. Write the **outside** function in terms of $u$.",
+     "answer": "ln(u)",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$ln(u)$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $ln(u)$."
+    },
+    {
+     "id": "O46",
+     "type": "expr",
+     "text": "$$h(x) = cos^3(x)$$\nThe inside is $u = cos(x)$. Write the **outside** function in terms of $u$.",
+     "answer": "u^3",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$u^3$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $u^3$."
+    },
+    {
+     "id": "O47",
+     "type": "expr",
+     "text": "$$h(x) = frac{1}{2x + 7}$$\nThe inside is $u = 2x + 7$. Write the **outside** function in terms of $u$.",
+     "answer": "1/u",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$frac{1}{u}$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $frac{1}{u}$."
+    },
+    {
+     "id": "O48",
+     "type": "expr",
+     "text": "$$h(x) = (x^3 - x)^4$$\nThe inside is $u = x^3 - x$. Write the **outside** function in terms of $u$.",
+     "answer": "u^4",
+     "vars": [
+      "u"
+     ],
+     "keys": [
+      "sqrt(",
+      "sin(",
+      "cos(",
+      "e^(",
+      "ln("
+     ],
+     "label": "$f(u)$ =",
+     "ranges": {
+      "u": [
+       0.3,
+       0.9
+      ]
+     },
+     "show": "$u^4$",
+     "level": 2,
+     "explain": "Once you have $u$, the last step is $u^4$."
+    },
+    {
+     "id": "D49",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = sqrt(x^2 + 9)$$\n",
+     "steps": [
+      {
+       "id": "D49.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "x^2 + 9",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x^2 + 9$",
+       "work": "inside: $u = x^2 + 9$"
+      },
+      {
+       "id": "D49.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "sqrt(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$sqrt(u)$",
+       "work": "outside: $f(u) = sqrt(u)$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = x^2 + 9$, outside $f(u) = sqrt(u)$."
+    },
+    {
+     "id": "D50",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = (5x - 2)^7$$\n",
+     "steps": [
+      {
+       "id": "D50.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "5x - 2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$5x - 2$",
+       "work": "inside: $u = 5x - 2$"
+      },
+      {
+       "id": "D50.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "u^7",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$u^7$",
+       "work": "outside: $f(u) = u^7$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = 5x - 2$, outside $f(u) = u^7$."
+    },
+    {
+     "id": "D51",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = cos(x^3)$$\n",
+     "steps": [
+      {
+       "id": "D51.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "x^3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x^3$",
+       "work": "inside: $u = x^3$"
+      },
+      {
+       "id": "D51.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "cos(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$cos(u)$",
+       "work": "outside: $f(u) = cos(u)$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = x^3$, outside $f(u) = cos(u)$."
+    },
+    {
+     "id": "D52",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = e^(-x^2)$$\n",
+     "steps": [
+      {
+       "id": "D52.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "-x^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$-x^2$",
+       "work": "inside: $u = -x^2$"
+      },
+      {
+       "id": "D52.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "e^u",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$e^u$",
+       "work": "outside: $f(u) = e^u$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = -x^2$, outside $f(u) = e^u$."
+    },
+    {
+     "id": "D53",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = ln(sin(x))$$\n",
+     "steps": [
+      {
+       "id": "D53.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$sin(x)$",
+       "work": "inside: $u = sin(x)$"
+      },
+      {
+       "id": "D53.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "ln(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$ln(u)$",
+       "work": "outside: $f(u) = ln(u)$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = sin(x)$, outside $f(u) = ln(u)$."
+    },
+    {
+     "id": "D54",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = sin^4(x)$$\n",
+     "steps": [
+      {
+       "id": "D54.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "sin(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$sin(x)$",
+       "work": "inside: $u = sin(x)$"
+      },
+      {
+       "id": "D54.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "u^4",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$u^4$",
+       "work": "outside: $f(u) = u^4$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = sin(x)$, outside $f(u) = u^4$."
+    },
+    {
+     "id": "D55",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = frac{1}{(x^2 + 1)^3}$$\n",
+     "steps": [
+      {
+       "id": "D55.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "x^2 + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$x^2 + 1$",
+       "work": "inside: $u = x^2 + 1$"
+      },
+      {
+       "id": "D55.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "1/u^3",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$frac{1}{u^3}$",
+       "work": "outside: $f(u) = frac{1}{u^3}$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = x^2 + 1$, outside $f(u) = frac{1}{u^3}$."
+    },
+    {
+     "id": "D56",
+     "type": "steps",
+     "text": "Take this function apart into an inside and an outside.$$h(x) = sqrt(e^x + 1)$$\n",
+     "steps": [
+      {
+       "id": "D56.1",
+       "type": "expr",
+       "text": "The inside: what gets computed first?",
+       "answer": "e^x + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$u$ =",
+       "ranges": {
+        "x": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$e^x + 1$",
+       "work": "inside: $u = e^x + 1$"
+      },
+      {
+       "id": "D56.2",
+       "type": "expr",
+       "text": "The outside: what is done to $u$ last?",
+       "answer": "sqrt(u)",
+       "vars": [
+        "u"
+       ],
+       "keys": [
+        "sqrt(",
+        "sin(",
+        "cos(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(u)$ =",
+       "ranges": {
+        "u": [
+         0.3,
+         0.9
+        ]
+       },
+       "show": "$sqrt(u)$",
+       "work": "outside: $f(u) = sqrt(u)$"
+      }
+     ],
+     "level": 3,
+     "explain": "Inside $u = e^x + 1$, outside $f(u) = sqrt(u)$."
+    },
+    {
+     "id": "L57",
+     "type": "mc",
+     "text": "$$h(x) = sin((2x + 1)^3)$$\nHow many layers does this function have? Count the steps you would do in order.",
+     "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "In order: $2x + 1$, then cube it, then take the sine."
+    },
+    {
+     "id": "L58",
+     "type": "mc",
+     "text": "$$h(x) = sqrt(1 + e^(2x))$$\nHow many layers does this function have? Count the steps you would do in order.",
+     "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "In order: $2x$, then $e$ to that power (plus 1), then the square root."
+    },
+    {
+     "id": "L59",
+     "type": "mc",
+     "text": "$$h(x) = (x^2 + 1)^5$$\nHow many layers does this function have? Count the steps you would do in order.",
+     "options": [
+      "2",
+      "1",
+      "3",
+      "4"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "In order: $x^2 + 1$, then the 5th power."
+    },
+    {
+     "id": "L60",
+     "type": "mc",
+     "text": "$$h(x) = ln(cos(x^2))$$\nHow many layers does this function have? Count the steps you would do in order.",
+     "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "In order: $x^2$, then cosine, then the logarithm."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "num",
+    "text": "$f(g(x))$ means: do $g$ first, then put its answer into $f$.$$g(2) = 5,    f(5) = 11$$\nWhat is $f(g(2))$?",
+    "answer": 11,
+    "label": "$f(g(2))$ =",
+    "hint": "Inside first: $g(2) = 5$. Then $f(5)$.",
+    "explain": "$f(g(2)) = f(5) = 11$. Always work from the inside out."
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "$$f(x) = x^2,    g(x) = x + 3$$\nAs a formula, $f(g(x))$ puts **all** of $g(x)$ into the blank of $f$. Type what goes in the blank.",
+    "answer": "x + 3",
+    "vars": [
+     "x"
+    ],
+    "label": "In the blank:",
+    "show": "$x + 3$",
+    "hint": "The blank gets the whole formula for $g(x)$.",
+    "explain": "$f(g(x)) = (x + 3)^2$",
+    "template": "f(g(x)) = ([])^2"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "Order matters. With the same $f(x) = x^2$ and $g(x) = x + 3$, what is $g(f(x))$?",
+    "options": [
+     "$x^2 + 3$",
+     "$(x + 3)^2$",
+     "$x^2 + 6x + 9$",
+     "$3x^2$"
+    ],
+    "answer": 0,
+    "hint": "Now $f(x)$ goes into the blank of $g$.",
+    "explain": "$g(f(x)) = x^2 + 3$, which is not $(x + 3)^2$. Swapping the order changes the function."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Now run it backwards, which is what the chain rule will ask of you.$$h(x) = sqrt(x^2 + 1)$$\nIf you plugged in a number, what would you compute **first**? That part is the inside function.",
+    "options": [
+     "$x^2 + 1$",
+     "$sqrt(x)$",
+     "$x^2$",
+     "$x + 1$"
+    ],
+    "answer": 0,
+    "hint": "You cannot take the square root until you know what is under it.",
+    "explain": "Inside: $x^2 + 1$. It gets computed first, then handed to the square root."
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "The outside function is what you do **last**. Call the inside $u = x^2 + 1$. Write the outside as a function of $u$.",
+    "answer": "sqrt(u)",
+    "vars": [
+     "u"
+    ],
+    "keys": [
+     "sqrt("
+    ],
+    "label": "$f(u)$ =",
+    "show": "$sqrt(u)$",
+    "hint": "Once you have $u$, all that is left is to take its square root.",
+    "explain": "$h(x) = f(g(x))$ with inside $g(x) = x^2 + 1$ and outside $f(u) = sqrt(u)$. Seeing these two layers is the whole chain rule."
+   }
+  ]
+ }
+}

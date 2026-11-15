@@ -160,3 +160,37 @@ See `supabase/SETUP.md`. Students sign up with a class code, a made-up username 
 ## Running it
 
 GitHub Pages serves the site from the `main` branch. Opening `index.html` straight from a folder will not work, because the browser blocks it from reading the JSON files. To test on your computer, run `python3 -m http.server` in this folder and open `http://localhost:8000`.
+
+## World 0, The Toolkit (added November 2026)
+
+The review world for the first six class days of spring: twelve stops (two per class day) plus a
+Readiness Check practice test. Every row of the map is open from the start. The decks are
+`decks/t-*.json`, built by `tools/gen/world0.py` (which runs `world0a.py`, `world0b.py`, `world0c.py`);
+`t-ready` is assembled from the other twelve, so regenerate it last.
+
+Text markup added with it (works in every deck):
+
+| You write | It shows |
+|---|---|
+| `$$f(x) = x^2 - 3x$$` | the formula on its own line, in a box, apart from the question about it |
+| `$f(x) = cases{x + 1, x < 2; x^2, x >= 2}$` | a piecewise function with its brace |
+| `{{table: x \| f(x) ;; 1.9 \| 3.61 ;; !2 \| ?}}` | a small table; the first row is the heading, a row starting with `!` is highlighted |
+| `frac{frac{1}{x} - frac{1}{3}}{x - 3}` | fractions may now sit inside fractions |
+
+Formula (`expr`) answers gained three optional checks. The answer must still be equal to the key:
+
+- `"maxLen": 7` also requires it to be about as short as the key, so retyping the unsimplified expression is not accepted.
+- `"form": "product", "factors": 2` also requires it to be written as a product with at least that many factors ("factor it").
+- `"form": "single"` also requires it to be one fraction, not a sum of pieces.
+- `"template": "f([]) = ([])^2 - 3([])"` shows the formula with a box for each `[]`; what the student types appears in every box.
+
+New item types (`js/items3.js`):
+
+- `cancel`: a fraction made of tappable pieces. `"top": {"op": "*", "parts": ["3", "x", "(x + 2)"]}`, same for `"bot"`. `op` is `"*"` for factors or `"+"` for terms. The app works out what may cancel: matching factors when both sides are products, nothing otherwise.
+- `transform`: move a graph onto a dashed target. `"base": "x^2"`, `"window"`, `"target": {"h": 2, "k": -3, "a": 1}`, `"controls": ["h", "k", "flip", "stretch"]`.
+- `ucircle`: the unit circle. `"ask": "explore"` with `"need": [1, 2, 3]` (lessons), `"ask": "angle"` with `"answer": 5`, or `"ask": "where"` with `"answers": [1, 7]`. Angles are numbered 0 to 15 counterclockwise from 0.
+
+Graphs can draw rectangles (`"rects": [[x0, x1, height], ...]`) and a dashed piece (`"dash": true`).
+
+`tools/fix/layout.py` is the one-time pass that moved formulas into boxes and piecewise functions into
+brace notation across the older decks (from the October 2026 review notes).

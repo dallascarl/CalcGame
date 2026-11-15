@@ -1414,7 +1414,7 @@
       "type": "lim",
       "text": "Now plug in.",
       "answer": 2,
-      "label": "lim[x->1] = ",
+      "label": "$lim[x->1]$ = ",
       "hint": "$1 + 1$",
       "work": "limit $= 2$"
      }

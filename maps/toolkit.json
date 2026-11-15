@@ -1,0 +1,250 @@
+{
+  "id": "toolkit",
+  "course": "Calculus 1",
+  "world": 0,
+  "title": "The Toolkit",
+  "short": "Toolkit",
+  "height": 274,
+  "regions": [
+    {
+      "label": "Day 1",
+      "x": 3,
+      "y": 22,
+      "w": 94,
+      "h": 31
+    },
+    {
+      "label": "Day 2",
+      "x": 3,
+      "y": 58,
+      "w": 94,
+      "h": 31
+    },
+    {
+      "label": "Day 3",
+      "x": 3,
+      "y": 94,
+      "w": 94,
+      "h": 31
+    },
+    {
+      "label": "Day 4",
+      "x": 3,
+      "y": 130,
+      "w": 94,
+      "h": 31
+    },
+    {
+      "label": "Day 5",
+      "x": 3,
+      "y": 166,
+      "w": 94,
+      "h": 31
+    },
+    {
+      "label": "Day 6",
+      "x": 3,
+      "y": 202,
+      "w": 94,
+      "h": 31
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "start",
+      "title": "Start",
+      "x": 28,
+      "y": 10,
+      "blurb": "Six class days of review. Every row is open from the start, so go where you need the most work."
+    },
+    {
+      "id": "notation",
+      "kind": "main",
+      "title": "Function Notation",
+      "x": 28,
+      "y": 40,
+      "deck": "t-notation",
+      "blurb": "What f( ) means, and how to put anything inside it, including x + h.",
+      "requires": [
+        "start"
+      ],
+      "from": [
+        "start"
+      ]
+    },
+    {
+      "id": "domain",
+      "kind": "main",
+      "title": "Domain and Piecewise",
+      "x": 72,
+      "y": 40,
+      "deck": "t-domain",
+      "blurb": "Which inputs a function accepts, and functions with more than one rule.",
+      "requires": [
+        "notation"
+      ]
+    },
+    {
+      "id": "factor",
+      "kind": "main",
+      "title": "Factoring",
+      "x": 28,
+      "y": 76,
+      "deck": "t-factor",
+      "blurb": "Turning a sum into a product: common factors, differences of squares, trinomials.",
+      "requires": [
+        "start"
+      ],
+      "from": [
+        "notation"
+      ]
+    },
+    {
+      "id": "rational",
+      "kind": "main",
+      "title": "Rational Expressions",
+      "x": 72,
+      "y": 76,
+      "deck": "t-rational",
+      "blurb": "What is allowed to cancel, adding fractions, and fractions inside fractions.",
+      "requires": [
+        "factor"
+      ]
+    },
+    {
+      "id": "exponents",
+      "kind": "main",
+      "title": "Exponent Rules",
+      "x": 28,
+      "y": 112,
+      "deck": "t-exponents",
+      "blurb": "Negative and fractional exponents, and rewriting roots and fractions as powers.",
+      "requires": [
+        "start"
+      ],
+      "from": [
+        "factor"
+      ]
+    },
+    {
+      "id": "radicals",
+      "kind": "main",
+      "title": "Radicals and Conjugates",
+      "x": 72,
+      "y": 112,
+      "deck": "t-radicals",
+      "blurb": "Simplifying square roots, and the conjugate trick that clears them.",
+      "requires": [
+        "exponents"
+      ]
+    },
+    {
+      "id": "graphs",
+      "kind": "main",
+      "title": "Graphs and Shifts",
+      "x": 28,
+      "y": 148,
+      "deck": "t-graphs",
+      "blurb": "The basic graphs by sight, and what shifting, flipping and stretching do to them.",
+      "requires": [
+        "start"
+      ],
+      "from": [
+        "exponents"
+      ]
+    },
+    {
+      "id": "compose",
+      "kind": "main",
+      "title": "Composition",
+      "x": 72,
+      "y": 148,
+      "deck": "t-compose",
+      "blurb": "Functions inside functions: building them and taking them apart.",
+      "requires": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "inverse",
+      "kind": "main",
+      "title": "Inverse Functions",
+      "x": 28,
+      "y": 184,
+      "deck": "t-inverse",
+      "blurb": "What an inverse undoes, how to find one, and what its graph looks like.",
+      "requires": [
+        "start"
+      ],
+      "from": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "explog",
+      "kind": "main",
+      "title": "Exponentials and Logs",
+      "x": 72,
+      "y": 184,
+      "deck": "t-explog",
+      "blurb": "e and ln, the log rules, and solving equations with them.",
+      "requires": [
+        "inverse"
+      ]
+    },
+    {
+      "id": "circle",
+      "kind": "main",
+      "title": "The Unit Circle",
+      "x": 28,
+      "y": 220,
+      "deck": "t-circle",
+      "blurb": "Radians, and sine and cosine as coordinates on the unit circle.",
+      "requires": [
+        "start"
+      ],
+      "from": [
+        "inverse"
+      ]
+    },
+    {
+      "id": "trig",
+      "kind": "main",
+      "title": "Trig Identities and Equations",
+      "x": 72,
+      "y": 220,
+      "deck": "t-trig",
+      "blurb": "The other four trig functions, the identities worth knowing, and solving trig equations.",
+      "requires": [
+        "circle"
+      ]
+    },
+    {
+      "id": "ready",
+      "kind": "boss",
+      "title": "Readiness Check",
+      "x": 50,
+      "y": 254,
+      "deck": "t-ready",
+      "requires": [
+        "notation",
+        "domain",
+        "factor",
+        "rational",
+        "exponents",
+        "radicals",
+        "graphs",
+        "compose",
+        "inverse",
+        "explog",
+        "circle",
+        "trig"
+      ],
+      "from": [
+        "circle"
+      ],
+      "blurb": "A practice version of the in-class Algebra Readiness Check: every Toolkit topic, no feedback until the end."
+    }
+  ]
+}

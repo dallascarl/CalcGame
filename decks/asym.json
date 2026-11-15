@@ -100,7 +100,7 @@
    },
    {
     "type": "mc",
-    "text": "$f(x) = frac{x^2}{x - 1}$. Top degree 2, bottom degree 1. What happens as $x$ → ∞?",
+    "text": "$$f(x) = frac{x^2}{x - 1}$$\nTop degree 2, bottom degree 1. What happens as $x$ → ∞?",
     "options": [
      "It levels off at $y$ = 1",
      "It follows a slanted line, $y = x + 1$",

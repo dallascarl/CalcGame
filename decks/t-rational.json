@@ -1,0 +1,1504 @@
+{
+ "id": "t-rational",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Rational Expressions",
+ "subtitle": "What is allowed to cancel, how to add fractions, and fractions inside fractions.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "$frac{x + 6}{x}$ simplifies to 6.",
+     "answer": false,
+     "explain": "The top is a sum, so $x$ is a term there, not a factor. Try $x = 2$: $frac{8}{2} = 4$, not 6."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$frac{x^2 - 9}{x - 3}$ simplifies to",
+     "options": [
+      "$x + 3$",
+      "$x - 3$",
+      "$x^2 - 3$",
+      "3"
+     ],
+     "answer": 0,
+     "explain": "Factor first: $frac{(x - 3)(x + 3)}{x - 3} = x + 3$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$frac{1}{a} + frac{1}{b} =$",
+     "options": [
+      "$frac{a + b}{ab}$",
+      "$frac{2}{a + b}$",
+      "$frac{1}{a + b}$",
+      "$frac{1}{ab}$"
+     ],
+     "answer": 0,
+     "explain": "Common denominator $ab$: $frac{b}{ab} + frac{a}{ab}$."
+    },
+    {
+     "id": "T4",
+     "type": "pick",
+     "text": "Which of these can be reduced exactly as written? Select all that apply.",
+     "options": [
+      "$frac{3x}{3y}$",
+      "$frac{x + 3}{y + 3}$",
+      "$frac{x(x + 1)}{2(x + 1)}$",
+      "$frac{x^2 + 1}{x^2}$"
+     ],
+     "answers": [
+      0,
+      2
+     ],
+     "explain": "Only the ones where the top and the bottom are both products with a factor in common."
+    },
+    {
+     "id": "T5",
+     "type": "tf",
+     "text": "$frac{a + b}{c} = frac{a}{c} + frac{b}{c}$",
+     "answer": true,
+     "explain": "A sum on **top** splits up. This is just adding fractions, read backwards."
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "$frac{c}{a + b} = frac{c}{a} + frac{c}{b}$",
+     "answer": false,
+     "explain": "A sum on the **bottom** does not split. Try $a = b = c = 1$: $frac{1}{2}$ is not $1 + 1$."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "Dividing by a fraction means multiplying by its flip. So $frac{a}{b/c} =$",
+     "options": [
+      "$frac{ac}{b}$",
+      "$frac{ab}{c}$",
+      "$frac{a}{bc}$",
+      "$abc$"
+     ],
+     "answer": 0,
+     "explain": "$a ÷ frac{b}{c} = a · frac{c}{b}$"
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "K1",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "3",
+       "x"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x + 2)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K2",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x - 1)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "(x - 1)",
+       "(x + 4)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K3",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "+",
+      "parts": [
+       "x",
+       "+ 5"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x - 2)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K4",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "2",
+       "(x + 3)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "(x + 3)",
+       "(x - 3)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K5",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "+",
+      "parts": [
+       "x^2",
+       "+ 1"
+      ]
+     },
+     "bot": {
+      "op": "+",
+      "parts": [
+       "x^2",
+       "+ 4"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K6",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x + 1)",
+       "(x - 2)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "(x - 2)",
+       "(x + 1)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K7",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "5",
+       "x"
+      ]
+     },
+     "bot": {
+      "op": "+",
+      "parts": [
+       "x",
+       "+ 5"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K8",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "(x + 2)",
+       "(x - 2)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "(x - 2)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K9",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "+",
+      "parts": [
+       "2x",
+       "+ 7"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "2",
+       "x"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K10",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "4",
+       "x^2"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "x^2",
+       "(x + 1)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K11",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "+",
+      "parts": [
+       "x",
+       "- 3"
+      ]
+     },
+     "bot": {
+      "op": "+",
+      "parts": [
+       "x",
+       "+ 3"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K12",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "(x + 5)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x + 5)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K13",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x + 4)"
+      ]
+     },
+     "bot": {
+      "op": "+",
+      "parts": [
+       "x^2",
+       "+ 4"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K14",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "7",
+       "(x - 1)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "7",
+       "(x + 1)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K15",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(2x + 1)"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "x",
+       "x",
+       "(x + 1)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "K16",
+     "type": "cancel",
+     "text": "Cancel every common factor. If nothing is allowed to cancel, say so.",
+     "top": {
+      "op": "+",
+      "parts": [
+       "x^2",
+       "+ x",
+       "+ 1"
+      ]
+     },
+     "bot": {
+      "op": "*",
+      "parts": [
+       "x",
+       "(x + 2)"
+      ]
+     },
+     "level": 1
+    },
+    {
+     "id": "F17",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 + 3x}{x^2 - 9}$$\n",
+     "answer": "x/(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x}{x - 3}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x}{x - 3}$.",
+     "maxLen": 7
+    },
+    {
+     "id": "F18",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - 4}{x - 2}$$\n",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$x + 2$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 2$.",
+     "maxLen": 5
+    },
+    {
+     "id": "F19",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - 1}{x^2 + x}$$\n",
+     "answer": "(x - 1)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x - 1}{x}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x - 1}{x}$.",
+     "maxLen": 7
+    },
+    {
+     "id": "F20",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{2x + 6}{x^2 + 3x}$$\n",
+     "answer": "2/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{2}{x}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{2}{x}$.",
+     "maxLen": 5
+    },
+    {
+     "id": "F21",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 + 5x + 6}{x + 2}$$\n",
+     "answer": "x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$x + 3$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 3$.",
+     "maxLen": 5
+    },
+    {
+     "id": "F22",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - x - 6}{x^2 - 9}$$\n",
+     "answer": "(x + 2)/(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x + 2}{x + 3}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 2}{x + 3}$.",
+     "maxLen": 9
+    },
+    {
+     "id": "F23",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - 25}{x^2 + 5x}$$\n",
+     "answer": "(x - 5)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x - 5}{x}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x - 5}{x}$.",
+     "maxLen": 7
+    },
+    {
+     "id": "F24",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{3x^2 - 3x}{x - 1}$$\n",
+     "answer": "3x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$3x$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $3x$.",
+     "maxLen": 4
+    },
+    {
+     "id": "F25",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 + 2x + 1}{x^2 - 1}$$\n",
+     "answer": "(x + 1)/(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x + 1}{x - 1}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 1}{x - 1}$.",
+     "maxLen": 9
+    },
+    {
+     "id": "F26",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - 16}{x^2 - 4x}$$\n",
+     "answer": "(x + 4)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$frac{x + 4}{x}$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 4}{x}$.",
+     "maxLen": 7
+    },
+    {
+     "id": "F27",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^3 - x}{x^2 - x}$$\n",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$x + 1$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 1$.",
+     "maxLen": 5
+    },
+    {
+     "id": "F28",
+     "type": "expr",
+     "text": "Factor, then cancel:$$frac{x^2 - 6x + 9}{x - 3}$$\n",
+     "answer": "x - 3",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ]
+     },
+     "show": "$x - 3$",
+     "level": 2,
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x - 3$.",
+     "maxLen": 5
+    },
+    {
+     "id": "A29",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{x} + frac{1}{3}$$\n",
+     "answer": "(x + 3)/(3x)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x + 3}{3x}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{x + 3}{3x}$.",
+     "form": "single"
+    },
+    {
+     "id": "A30",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{2}{x} - frac{1}{2}$$\n",
+     "answer": "(4 - x)/(2x)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{4 - x}{2x}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{4 - x}{2x}$.",
+     "form": "single"
+    },
+    {
+     "id": "A31",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{x + 1} + 1$$\n",
+     "answer": "(x + 2)/(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x + 2}{x + 1}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{x + 2}{x + 1}$.",
+     "form": "single"
+    },
+    {
+     "id": "A32",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{3}{x} + frac{2}{x^2}$$\n",
+     "answer": "(3x + 2)/x^2",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{3x + 2}{x^2}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{3x + 2}{x^2}$.",
+     "form": "single"
+    },
+    {
+     "id": "A33",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{x} - frac{1}{x + 1}$$\n",
+     "answer": "1/(x(x + 1))",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{1}{x(x + 1)}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{1}{x(x + 1)}$.",
+     "form": "single"
+    },
+    {
+     "id": "A34",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{x}{2} + frac{1}{x}$$\n",
+     "answer": "(x^2 + 2)/(2x)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x^2 + 2}{2x}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{x^2 + 2}{2x}$.",
+     "form": "single"
+    },
+    {
+     "id": "A35",
+     "type": "expr",
+     "text": "Write as one fraction:$$2 - frac{1}{x}$$\n",
+     "answer": "(2x - 1)/x",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2x - 1}{x}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{2x - 1}{x}$.",
+     "form": "single"
+    },
+    {
+     "id": "A36",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{x - 1} + frac{1}{x + 1}$$\n",
+     "answer": "2x/((x - 1)(x + 1))",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{2x}{(x - 1)(x + 1)}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{2x}{(x - 1)(x + 1)}$.",
+     "form": "single"
+    },
+    {
+     "id": "A37",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{3} - frac{1}{x}$$\n",
+     "answer": "(x - 3)/(3x)",
+     "vars": [
+      "x"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$frac{x - 3}{3x}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $frac{x - 3}{3x}$.",
+     "form": "single"
+    },
+    {
+     "id": "A38",
+     "type": "expr",
+     "text": "Write as one fraction:$$frac{1}{x + h} - frac{1}{x}$$\n",
+     "answer": "-h/(x(x + h))",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "label": "one fraction =",
+     "ranges": {
+      "x": [
+       4.2,
+       6.5
+      ],
+      "h": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$-frac{h}{x(x + h)}$",
+     "level": 2,
+     "explain": "Give both fractions the same bottom, then combine the tops: $-frac{h}{x(x + h)}$.",
+     "form": "single"
+    },
+    {
+     "id": "X39",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{1}{x} - frac{1}{3}}{x - 3}$$\n",
+     "steps": [
+      {
+       "id": "X39.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(3 - x)/(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{3 - x}{3x}$",
+       "work": "top $= frac{3 - x}{3x}$",
+       "form": "single"
+      },
+      {
+       "id": "X39.2",
+       "type": "expr",
+       "text": "Now divide by $x - 3$ and cancel.",
+       "answer": "-1/(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{1}{3x}$",
+       "explain": "Dividing by $x - 3$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= -frac{1}{3x}$",
+       "maxLen": 6
+      }
+     ],
+     "level": 3,
+     "explain": "$-frac{1}{3x}$"
+    },
+    {
+     "id": "X40",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{1}{x} - frac{1}{2}}{x - 2}$$\n",
+     "steps": [
+      {
+       "id": "X40.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(2 - x)/(2x)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{2 - x}{2x}$",
+       "work": "top $= frac{2 - x}{2x}$",
+       "form": "single"
+      },
+      {
+       "id": "X40.2",
+       "type": "expr",
+       "text": "Now divide by $x - 2$ and cancel.",
+       "answer": "-1/(2x)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{1}{2x}$",
+       "explain": "Dividing by $x - 2$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= -frac{1}{2x}$",
+       "maxLen": 6
+      }
+     ],
+     "level": 3,
+     "explain": "$-frac{1}{2x}$"
+    },
+    {
+     "id": "X41",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{1}{x + 1} - frac{1}{3}}{x - 2}$$\n",
+     "steps": [
+      {
+       "id": "X41.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(2 - x)/(3(x + 1))",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{2 - x}{3(x + 1)}$",
+       "work": "top $= frac{2 - x}{3(x + 1)}$",
+       "form": "single"
+      },
+      {
+       "id": "X41.2",
+       "type": "expr",
+       "text": "Now divide by $x - 2$ and cancel.",
+       "answer": "-1/(3(x + 1))",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{1}{3(x + 1)}$",
+       "explain": "Dividing by $x - 2$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= -frac{1}{3(x + 1)}$",
+       "maxLen": 8
+      }
+     ],
+     "level": 3,
+     "explain": "$-frac{1}{3(x + 1)}$"
+    },
+    {
+     "id": "X42",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{1 - frac{1}{x}}{x - 1}$$\n",
+     "steps": [
+      {
+       "id": "X42.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(x - 1)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{x - 1}{x}$",
+       "work": "top $= frac{x - 1}{x}$",
+       "form": "single"
+      },
+      {
+       "id": "X42.2",
+       "type": "expr",
+       "text": "Now divide by $x - 1$ and cancel.",
+       "answer": "1/x",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{1}{x}$",
+       "explain": "Dividing by $x - 1$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= frac{1}{x}$",
+       "maxLen": 4
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{1}{x}$"
+    },
+    {
+     "id": "X43",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{1}{x} + frac{1}{4}}{x + 4}$$\n",
+     "steps": [
+      {
+       "id": "X43.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(x + 4)/(4x)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{x + 4}{4x}$",
+       "work": "top $= frac{x + 4}{4x}$",
+       "form": "single"
+      },
+      {
+       "id": "X43.2",
+       "type": "expr",
+       "text": "Now divide by $x + 4$ and cancel.",
+       "answer": "1/(4x)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{1}{4x}$",
+       "explain": "Dividing by $x + 4$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= frac{1}{4x}$",
+       "maxLen": 5
+      }
+     ],
+     "level": 3,
+     "explain": "$frac{1}{4x}$"
+    },
+    {
+     "id": "X44",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{1}{x + h} - frac{1}{x}}{h}$$\n",
+     "steps": [
+      {
+       "id": "X44.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "-h/(x(x + h))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{h}{x(x + h)}$",
+       "work": "top $= -frac{h}{x(x + h)}$",
+       "form": "single"
+      },
+      {
+       "id": "X44.2",
+       "type": "expr",
+       "text": "Now divide by $h$ and cancel.",
+       "answer": "-1/(x(x + h))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{1}{x(x + h)}$",
+       "explain": "Dividing by $h$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= -frac{1}{x(x + h)}$",
+       "maxLen": 8
+      }
+     ],
+     "level": 3,
+     "explain": "$-frac{1}{x(x + h)}$"
+    },
+    {
+     "id": "X45",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{1}{x + 2} - frac{1}{2}}{x}$$\n",
+     "steps": [
+      {
+       "id": "X45.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "-x/(2(x + 2))",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{x}{2(x + 2)}$",
+       "work": "top $= -frac{x}{2(x + 2)}$",
+       "form": "single"
+      },
+      {
+       "id": "X45.2",
+       "type": "expr",
+       "text": "Now divide by $x$ and cancel.",
+       "answer": "-1/(2(x + 2))",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{1}{2(x + 2)}$",
+       "explain": "Dividing by $x$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= -frac{1}{2(x + 2)}$",
+       "maxLen": 8
+      }
+     ],
+     "level": 3,
+     "explain": "$-frac{1}{2(x + 2)}$"
+    },
+    {
+     "id": "X46",
+     "type": "steps",
+     "text": "Simplify the complex fraction:$$frac{frac{2}{x} - frac{2}{5}}{x - 5}$$\n",
+     "steps": [
+      {
+       "id": "X46.1",
+       "type": "expr",
+       "text": "Combine the top into one fraction.",
+       "answer": "(10 - 2x)/(5x)",
+       "vars": [
+        "x"
+       ],
+       "label": "top =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$frac{10 - 2x}{5x}$",
+       "work": "top $= frac{10 - 2x}{5x}$",
+       "form": "single"
+      },
+      {
+       "id": "X46.2",
+       "type": "expr",
+       "text": "Now divide by $x - 5$ and cancel.",
+       "answer": "-2/(5x)",
+       "vars": [
+        "x"
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         6.2,
+         8.5
+        ],
+        "h": [
+         0.3,
+         1.2
+        ]
+       },
+       "show": "$-frac{2}{5x}$",
+       "explain": "Dividing by $x - 5$ puts it on the bottom, where it cancels with the top.",
+       "work": "$= -frac{2}{5x}$",
+       "maxLen": 6
+      }
+     ],
+     "level": 3,
+     "explain": "$-frac{2}{5x}$"
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "cancel",
+    "text": "Cancelling means dividing the top and the bottom by the same **factor**. Here both are products, so go ahead: cancel what they share.",
+    "top": {
+     "op": "*",
+     "parts": [
+      "3",
+      "x",
+      "(x + 2)"
+     ]
+    },
+    "bot": {
+     "op": "*",
+     "parts": [
+      "x",
+      "(x - 5)"
+     ]
+    },
+    "hint": "Find a piece that multiplies the whole top and also the whole bottom.",
+    "explain": "$x$ multiplies everything on top and everything on the bottom, so it divides out."
+   },
+   {
+    "id": "L2",
+    "type": "cancel",
+    "text": "Now the top is a **sum**. Can the $x$’s cancel?",
+    "top": {
+     "op": "+",
+     "parts": [
+      "x",
+      "+ 3"
+     ]
+    },
+    "bot": {
+     "op": "*",
+     "parts": [
+      "x"
+     ]
+    },
+    "hint": "Try $x = 3$. The fraction is $frac{3 + 3}{3} = 2$. Crossing out the $x$’s would leave 3.",
+    "explain": "Test it with $x = 3$: the fraction is $frac{6}{3} = 2$, but crossing out the $x$’s leaves 3. On top, $x$ is a **term**, not a factor of the whole top."
+   },
+   {
+    "id": "L3",
+    "type": "steps",
+    "text": "So when you see a sum, **factor first**. Then cancel.$$frac{x^2 + 3x}{x^2 - 9}$$\n",
+    "steps": [
+     {
+      "id": "L3.1",
+      "type": "expr",
+      "text": "Factor the top.",
+      "answer": "x(x + 3)",
+      "vars": [
+       "x"
+      ],
+      "label": "$x^2 + 3x$ =",
+      "show": "$x(x + 3)$",
+      "hint": "Common factor.",
+      "work": "top $= x(x + 3)$",
+      "form": "product",
+      "factors": 2
+     },
+     {
+      "id": "L3.2",
+      "type": "expr",
+      "text": "Factor the bottom.",
+      "answer": "(x - 3)(x + 3)",
+      "vars": [
+       "x"
+      ],
+      "label": "$x^2 - 9$ =",
+      "show": "$(x - 3)(x + 3)$",
+      "hint": "Difference of squares.",
+      "work": "bottom $= (x - 3)(x + 3)$",
+      "form": "product",
+      "factors": 2
+     },
+     {
+      "id": "L3.3",
+      "type": "cancel",
+      "text": "Now both are products. Cancel.",
+      "top": {
+       "op": "*",
+       "parts": [
+        "x",
+        "(x + 3)"
+       ]
+      },
+      "bot": {
+       "op": "*",
+       "parts": [
+        "(x - 3)",
+        "(x + 3)"
+       ]
+      },
+      "work": "$= frac{x}{x - 3}$"
+     }
+    ]
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "Adding fractions needs a common denominator. Multiply each fraction by what it is missing.$$frac{1}{x} + frac{1}{3}$$\nAs one fraction, this is",
+    "options": [
+     "$frac{3 + x}{3x}$",
+     "$frac{2}{x + 3}$",
+     "$frac{1}{3x}$",
+     "$frac{2}{3x}$"
+    ],
+    "answer": 0,
+    "hint": "$frac{1}{x} = frac{3}{3x}$ and $frac{1}{3} = frac{x}{3x}$.",
+    "explain": "$frac{3}{3x} + frac{x}{3x} = frac{3 + x}{3x}$. You never add the bottoms."
+   },
+   {
+    "id": "L5",
+    "type": "steps",
+    "text": "A **complex fraction** has fractions inside a fraction. Tidy the top first, then deal with the bottom.$$frac{frac{1}{x} - frac{1}{3}}{x - 3}$$\n",
+    "steps": [
+     {
+      "id": "L5.1",
+      "type": "mc",
+      "text": "Combine the top into one fraction.",
+      "options": [
+       "$frac{3 - x}{3x}$",
+       "$frac{x - 3}{3x}$",
+       "$frac{1}{x - 3}$",
+       "$frac{-2}{3x}$"
+      ],
+      "answer": 0,
+      "hint": "$frac{1}{x} - frac{1}{3} = frac{3}{3x} - frac{x}{3x}$",
+      "work": "top $= frac{3 - x}{3x}$"
+     },
+     {
+      "id": "L5.2",
+      "type": "mc",
+      "text": "Dividing by $x - 3$ is multiplying by $frac{1}{x - 3}$. And $3 - x = -(x - 3)$. What is left after cancelling?",
+      "options": [
+       "$-frac{1}{3x}$",
+       "$frac{1}{3x}$",
+       "$-frac{1}{x - 3}$",
+       "$frac{3 - x}{3x}$"
+      ],
+      "answer": 0,
+      "hint": "$frac{-(x - 3)}{3x} · frac{1}{x - 3}$",
+      "work": "$= -frac{1}{3x}$"
+     }
+    ]
+   }
+  ]
+ }
+}

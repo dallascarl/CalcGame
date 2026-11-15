@@ -1,0 +1,1263 @@
+{
+ "id": "t-factor",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Factoring",
+ "subtitle": "Turning a sum into a product: common factors, differences of squares, trinomials.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each expression to its factored form.",
+     "pairs": [
+      [
+       "$x^2 - 9$",
+       "$(x - 3)(x + 3)$"
+      ],
+      [
+       "$x^2 - 6x + 9$",
+       "$(x - 3)^2$"
+      ],
+      [
+       "$x^2 - 3x$",
+       "$x(x - 3)$"
+      ],
+      [
+       "$x^2 + 6x + 9$",
+       "$(x + 3)^2$"
+      ]
+     ],
+     "explain": "Multiply each one back out to check it."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$(x + 3)^2 = x^2 + 9$",
+     "answer": false,
+     "explain": "$(x + 3)^2 = (x + 3)(x + 3) = x^2 + 6x + 9$. The middle term is easy to forget and it is never zero."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "What is the first step in factoring $4x^3 - 8x^2$?",
+     "options": [
+      "Pull out $4x^2$",
+      "Find two numbers that multiply to −8",
+      "Use the difference of squares",
+      "Divide by $x$"
+     ],
+     "answer": 0,
+     "explain": "Common factor first, always: $4x^2(x - 2)$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "To factor $x^2 - 5x + 6$, the two numbers are",
+     "options": [
+      "−2 and −3",
+      "2 and 3",
+      "−1 and −6",
+      "1 and 6"
+     ],
+     "answer": 0,
+     "explain": "They multiply to $+6$ (same sign) and add to $-5$ (so both negative): $(x - 2)(x - 3)$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "Which one is factored **completely**?",
+     "options": [
+      "$x(x - 2)(x + 2)$",
+      "$x(x^2 - 4)$",
+      "$(x^2 - 2x)(x + 2)$",
+      "$x^3 - 4x$"
+     ],
+     "answer": 0,
+     "explain": "$x^2 - 4$ and $x^2 - 2x$ can each still be factored. The first choice cannot."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "G1",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "2x + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "$6x^2 + 9x = 3x($",
+     "post": "$)$",
+     "show": "$2x + 3$",
+     "level": 1,
+     "explain": "$6x^2 + 9x = 3x(2x + 3)$"
+    },
+    {
+     "id": "G2",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "x - 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$4x^3 - 8x^2 = 4x^2($",
+     "post": "$)$",
+     "show": "$x - 2$",
+     "level": 1,
+     "explain": "$4x^3 - 8x^2 = 4x^2(x - 2)$"
+    },
+    {
+     "id": "G3",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "x + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$5x^2 + 10x = 5x($",
+     "post": "$)$",
+     "show": "$x + 2$",
+     "level": 1,
+     "explain": "$5x^2 + 10x = 5x(x + 2)$"
+    },
+    {
+     "id": "G4",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 + x^2 = x^2($",
+     "post": "$)$",
+     "show": "$x + 1$",
+     "level": 1,
+     "explain": "$x^3 + x^2 = x^2(x + 1)$"
+    },
+    {
+     "id": "G5",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "2x - 3",
+     "vars": [
+      "x"
+     ],
+     "label": "$12x - 18 = 6($",
+     "post": "$)$",
+     "show": "$2x - 3$",
+     "level": 1,
+     "explain": "$12x - 18 = 6(2x - 3)$"
+    },
+    {
+     "id": "G6",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "x - 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$3x^2 - 3x = 3x($",
+     "post": "$)$",
+     "show": "$x - 1$",
+     "level": 1,
+     "explain": "$3x^2 - 3x = 3x(x - 1)$"
+    },
+    {
+     "id": "G7",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "x^2 + 3",
+     "vars": [
+      "x"
+     ],
+     "label": "$2x^3 + 6x = 2x($",
+     "post": "$)$",
+     "show": "$x^2 + 3$",
+     "level": 1,
+     "explain": "$2x^3 + 6x = 2x(x^2 + 3)$"
+    },
+    {
+     "id": "G8",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "x^2 - 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$7x^2 - 14 = 7($",
+     "post": "$)$",
+     "show": "$x^2 - 2$",
+     "level": 1,
+     "explain": "$7x^2 - 14 = 7(x^2 - 2)$"
+    },
+    {
+     "id": "G9",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "2x + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "$8x^2 + 4x = 4x($",
+     "post": "$)$",
+     "show": "$2x + 1$",
+     "level": 1,
+     "explain": "$8x^2 + 4x = 4x(2x + 1)$"
+    },
+    {
+     "id": "G10",
+     "type": "expr",
+     "text": "Pull out the common factor. What is left inside the parentheses?",
+     "answer": "3x - 2",
+     "vars": [
+      "x"
+     ],
+     "label": "$9x^3 - 6x^2 = 3x^2($",
+     "post": "$)$",
+     "show": "$3x - 2$",
+     "level": 1,
+     "explain": "$9x^3 - 6x^2 = 3x^2(3x - 2)$"
+    },
+    {
+     "id": "N11",
+     "type": "crit",
+     "text": "$$x^2 + 7x + 12$$\nFind the two numbers that multiply to $12$ and add to $7$.",
+     "answers": [
+      3,
+      4
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are 3 and 4, so $x^2 + 7x + 12 = (x + 3)(x + 4)$."
+    },
+    {
+     "id": "N12",
+     "type": "crit",
+     "text": "$$x^2 + 5x + 6$$\nFind the two numbers that multiply to $6$ and add to $5$.",
+     "answers": [
+      2,
+      3
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are 2 and 3, so $x^2 + 5x + 6 = (x + 2)(x + 3)$."
+    },
+    {
+     "id": "N13",
+     "type": "crit",
+     "text": "$$x^2 - 5x + 6$$\nFind the two numbers that multiply to $6$ and add to $-5$.",
+     "answers": [
+      -2,
+      -3
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are -2 and -3, so $x^2 - 5x + 6 = (x - 2)(x - 3)$."
+    },
+    {
+     "id": "N14",
+     "type": "crit",
+     "text": "$$x^2 + x - 6$$\nFind the two numbers that multiply to $-6$ and add to $1$.",
+     "answers": [
+      3,
+      -2
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are 3 and -2, so $x^2 + x - 6 = (x + 3)(x - 2)$."
+    },
+    {
+     "id": "N15",
+     "type": "crit",
+     "text": "$$x^2 - x - 12$$\nFind the two numbers that multiply to $-12$ and add to $-1$.",
+     "answers": [
+      -4,
+      3
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are -4 and 3, so $x^2 - x - 12 = (x - 4)(x + 3)$."
+    },
+    {
+     "id": "N16",
+     "type": "crit",
+     "text": "$$x^2 + 8x + 15$$\nFind the two numbers that multiply to $15$ and add to $8$.",
+     "answers": [
+      3,
+      5
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are 3 and 5, so $x^2 + 8x + 15 = (x + 3)(x + 5)$."
+    },
+    {
+     "id": "N17",
+     "type": "crit",
+     "text": "$$x^2 - 7x + 10$$\nFind the two numbers that multiply to $10$ and add to $-7$.",
+     "answers": [
+      -2,
+      -5
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are -2 and -5, so $x^2 - 7x + 10 = (x - 2)(x - 5)$."
+    },
+    {
+     "id": "N18",
+     "type": "crit",
+     "text": "$$x^2 + 2x - 8$$\nFind the two numbers that multiply to $-8$ and add to $2$.",
+     "answers": [
+      4,
+      -2
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are 4 and -2, so $x^2 + 2x - 8 = (x + 4)(x - 2)$."
+    },
+    {
+     "id": "N19",
+     "type": "crit",
+     "text": "$$x^2 - 3x - 10$$\nFind the two numbers that multiply to $-10$ and add to $-3$.",
+     "answers": [
+      -5,
+      2
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are -5 and 2, so $x^2 - 3x - 10 = (x - 5)(x + 2)$."
+    },
+    {
+     "id": "N20",
+     "type": "crit",
+     "text": "$$x^2 + 9x + 20$$\nFind the two numbers that multiply to $20$ and add to $9$.",
+     "answers": [
+      4,
+      5
+     ],
+     "var": "n",
+     "label": "number =",
+     "noneText": "No such numbers",
+     "level": 1,
+     "explain": "The numbers are 4 and 5, so $x^2 + 9x + 20 = (x + 4)(x + 5)$."
+    },
+    {
+     "id": "S21",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$x^2 - 9$$\n",
+     "answer": "(x - 3)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 9$ =",
+     "show": "$(x - 3)(x + 3)$",
+     "level": 1,
+     "explain": "$x^2 - 9 = (x - 3)(x + 3)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S22",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$x^2 - 25$$\n",
+     "answer": "(x - 5)(x + 5)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 25$ =",
+     "show": "$(x - 5)(x + 5)$",
+     "level": 1,
+     "explain": "$x^2 - 25 = (x - 5)(x + 5)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S23",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$x^2 - 1$$\n",
+     "answer": "(x - 1)(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 1$ =",
+     "show": "$(x - 1)(x + 1)$",
+     "level": 1,
+     "explain": "$x^2 - 1 = (x - 1)(x + 1)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S24",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$4x^2 - 9$$\n",
+     "answer": "(2x - 3)(2x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$4x^2 - 9$ =",
+     "show": "$(2x - 3)(2x + 3)$",
+     "level": 1,
+     "explain": "$4x^2 - 9 = (2x - 3)(2x + 3)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S25",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$x^2 - 49$$\n",
+     "answer": "(x - 7)(x + 7)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 49$ =",
+     "show": "$(x - 7)(x + 7)$",
+     "level": 1,
+     "explain": "$x^2 - 49 = (x - 7)(x + 7)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S26",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$9x^2 - 1$$\n",
+     "answer": "(3x - 1)(3x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$9x^2 - 1$ =",
+     "show": "$(3x - 1)(3x + 1)$",
+     "level": 1,
+     "explain": "$9x^2 - 1 = (3x - 1)(3x + 1)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S27",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$x^2 - 100$$\n",
+     "answer": "(x - 10)(x + 10)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 100$ =",
+     "show": "$(x - 10)(x + 10)$",
+     "level": 1,
+     "explain": "$x^2 - 100 = (x - 10)(x + 10)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S28",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$25x^2 - 4$$\n",
+     "answer": "(5x - 2)(5x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$25x^2 - 4$ =",
+     "show": "$(5x - 2)(5x + 2)$",
+     "level": 1,
+     "explain": "$25x^2 - 4 = (5x - 2)(5x + 2)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "S29",
+     "type": "expr",
+     "text": "Factor the difference of squares:$$16 - x^2$$\n",
+     "answer": "(4 - x)(4 + x)",
+     "vars": [
+      "x"
+     ],
+     "label": "$16 - x^2$ =",
+     "show": "$(4 - x)(4 + x)$",
+     "level": 1,
+     "explain": "$16 - x^2 = (4 - x)(4 + x)$",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T30",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 7x + 12$$\n",
+     "answer": "(x + 3)(x + 4)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 7x + 12$ =",
+     "show": "$(x + 3)(x + 4)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $12$ and add to $7$: $x^2 + 7x + 12 = (x + 3)(x + 4)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T31",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 5x + 6$$\n",
+     "answer": "(x + 2)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 5x + 6$ =",
+     "show": "$(x + 2)(x + 3)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $6$ and add to $5$: $x^2 + 5x + 6 = (x + 2)(x + 3)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T32",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 5x + 6$$\n",
+     "answer": "(x - 2)(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 5x + 6$ =",
+     "show": "$(x - 2)(x - 3)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $6$ and add to $-5$: $x^2 - 5x + 6 = (x - 2)(x - 3)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T33",
+     "type": "expr",
+     "text": "Factor:$$x^2 - x - 6$$\n",
+     "answer": "(x - 3)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - x - 6$ =",
+     "show": "$(x - 3)(x + 2)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $-6$ and add to $-1$: $x^2 - x - 6 = (x - 3)(x + 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T34",
+     "type": "expr",
+     "text": "Factor:$$x^2 - x - 12$$\n",
+     "answer": "(x - 4)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - x - 12$ =",
+     "show": "$(x - 4)(x + 3)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $-12$ and add to $-1$: $x^2 - x - 12 = (x - 4)(x + 3)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T35",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 8x + 15$$\n",
+     "answer": "(x + 3)(x + 5)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 8x + 15$ =",
+     "show": "$(x + 3)(x + 5)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $15$ and add to $8$: $x^2 + 8x + 15 = (x + 3)(x + 5)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T36",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 7x + 10$$\n",
+     "answer": "(x - 2)(x - 5)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 7x + 10$ =",
+     "show": "$(x - 2)(x - 5)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $10$ and add to $-7$: $x^2 - 7x + 10 = (x - 2)(x - 5)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T37",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 2x - 8$$\n",
+     "answer": "(x + 4)(x - 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 2x - 8$ =",
+     "show": "$(x + 4)(x - 2)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $-8$ and add to $2$: $x^2 + 2x - 8 = (x + 4)(x - 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T38",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 3x - 10$$\n",
+     "answer": "(x - 5)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 3x - 10$ =",
+     "show": "$(x - 5)(x + 2)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $-10$ and add to $-3$: $x^2 - 3x - 10 = (x - 5)(x + 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T39",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 9x + 20$$\n",
+     "answer": "(x + 4)(x + 5)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 9x + 20$ =",
+     "show": "$(x + 4)(x + 5)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $20$ and add to $9$: $x^2 + 9x + 20 = (x + 4)(x + 5)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T40",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 7x + 6$$\n",
+     "answer": "(x - 1)(x - 6)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 7x + 6$ =",
+     "show": "$(x - 1)(x - 6)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $6$ and add to $-7$: $x^2 - 7x + 6 = (x - 1)(x - 6)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T41",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 6x - 7$$\n",
+     "answer": "(x + 1)(x - 7)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 6x - 7$ =",
+     "show": "$(x + 1)(x - 7)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $-7$ and add to $-6$: $x^2 - 6x - 7 = (x + 1)(x - 7)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T42",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 4x - 12$$\n",
+     "answer": "(x - 6)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 4x - 12$ =",
+     "show": "$(x - 6)(x + 2)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $-12$ and add to $-4$: $x^2 - 4x - 12 = (x - 6)(x + 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "T43",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 7x + 6$$\n",
+     "answer": "(x + 6)(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 7x + 6$ =",
+     "show": "$(x + 6)(x + 1)$",
+     "level": 2,
+     "explain": "Two numbers that multiply to $6$ and add to $7$: $x^2 + 7x + 6 = (x + 6)(x + 1)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "Q44",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 6x + 9$$\n",
+     "answer": "(x + 3)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 6x + 9$ =",
+     "show": "$(x + 3)^2$",
+     "level": 2,
+     "explain": "The same factor twice: $x^2 + 6x + 9 = (x + 3)^2$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "Q45",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 10x + 25$$\n",
+     "answer": "(x - 5)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 10x + 25$ =",
+     "show": "$(x - 5)^2$",
+     "level": 2,
+     "explain": "The same factor twice: $x^2 - 10x + 25 = (x - 5)^2$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "Q46",
+     "type": "expr",
+     "text": "Factor:$$x^2 + 2x + 1$$\n",
+     "answer": "(x + 1)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 + 2x + 1$ =",
+     "show": "$(x + 1)^2$",
+     "level": 2,
+     "explain": "The same factor twice: $x^2 + 2x + 1 = (x + 1)^2$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "Q47",
+     "type": "expr",
+     "text": "Factor:$$x^2 - 8x + 16$$\n",
+     "answer": "(x - 4)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^2 - 8x + 16$ =",
+     "show": "$(x - 4)^2$",
+     "level": 2,
+     "explain": "The same factor twice: $x^2 - 8x + 16 = (x - 4)^2$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "Q48",
+     "type": "expr",
+     "text": "Factor:$$4x^2 + 4x + 1$$\n",
+     "answer": "(2x + 1)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$4x^2 + 4x + 1$ =",
+     "show": "$(2x + 1)^2$",
+     "level": 2,
+     "explain": "The same factor twice: $4x^2 + 4x + 1 = (2x + 1)^2$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "C49",
+     "type": "expr",
+     "text": "Factor completely:$$2x^2 + 10x + 12$$\n",
+     "answer": "2(x + 2)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$2x^2 + 10x + 12$ =",
+     "show": "$2(x + 2)(x + 3)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $2(x + 2)(x + 3)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "C50",
+     "type": "expr",
+     "text": "Factor completely:$$3x^2 - 12$$\n",
+     "answer": "3(x - 2)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$3x^2 - 12$ =",
+     "show": "$3(x - 2)(x + 2)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $3(x - 2)(x + 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "C51",
+     "type": "expr",
+     "text": "Factor completely:$$x^3 - 4x$$\n",
+     "answer": "x(x - 2)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 - 4x$ =",
+     "show": "$x(x - 2)(x + 2)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $x(x - 2)(x + 2)$.",
+     "form": "product",
+     "factors": 3
+    },
+    {
+     "id": "C52",
+     "type": "expr",
+     "text": "Factor completely:$$x^3 + 5x^2 + 6x$$\n",
+     "answer": "x(x + 2)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 + 5x^2 + 6x$ =",
+     "show": "$x(x + 2)(x + 3)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $x(x + 2)(x + 3)$.",
+     "form": "product",
+     "factors": 3
+    },
+    {
+     "id": "C53",
+     "type": "expr",
+     "text": "Factor completely:$$5x^2 - 5$$\n",
+     "answer": "5(x - 1)(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$5x^2 - 5$ =",
+     "show": "$5(x - 1)(x + 1)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $5(x - 1)(x + 1)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "C54",
+     "type": "expr",
+     "text": "Factor completely:$$4x^2 - 16x + 16$$\n",
+     "answer": "4(x - 2)^2",
+     "vars": [
+      "x"
+     ],
+     "label": "$4x^2 - 16x + 16$ =",
+     "show": "$4(x - 2)^2$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $4(x - 2)^2$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "C55",
+     "type": "expr",
+     "text": "Factor completely:$$x^3 - x$$\n",
+     "answer": "x(x - 1)(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x^3 - x$ =",
+     "show": "$x(x - 1)(x + 1)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $x(x - 1)(x + 1)$.",
+     "form": "product",
+     "factors": 3
+    },
+    {
+     "id": "C56",
+     "type": "expr",
+     "text": "Factor completely:$$3x^2 + 3x - 18$$\n",
+     "answer": "3(x + 3)(x - 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$3x^2 + 3x - 18$ =",
+     "show": "$3(x + 3)(x - 2)$",
+     "level": 2,
+     "explain": "Common factor first, then factor what is left: $3(x + 3)(x - 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A57",
+     "type": "expr",
+     "text": "Factor:$$2x^2 + 7x + 3$$\n",
+     "answer": "(2x + 1)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$2x^2 + 7x + 3$ =",
+     "show": "$(2x + 1)(x + 3)$",
+     "level": 3,
+     "explain": "$2x^2 + 7x + 3 = (2x + 1)(x + 3)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A58",
+     "type": "expr",
+     "text": "Factor:$$3x^2 + 5x + 2$$\n",
+     "answer": "(3x + 2)(x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$3x^2 + 5x + 2$ =",
+     "show": "$(3x + 2)(x + 1)$",
+     "level": 3,
+     "explain": "$3x^2 + 5x + 2 = (3x + 2)(x + 1)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A59",
+     "type": "expr",
+     "text": "Factor:$$2x^2 - 5x - 3$$\n",
+     "answer": "(2x + 1)(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$2x^2 - 5x - 3$ =",
+     "show": "$(2x + 1)(x - 3)$",
+     "level": 3,
+     "explain": "$2x^2 - 5x - 3 = (2x + 1)(x - 3)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A60",
+     "type": "expr",
+     "text": "Factor:$$2x^2 + x - 6$$\n",
+     "answer": "(2x - 3)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$2x^2 + x - 6$ =",
+     "show": "$(2x - 3)(x + 2)$",
+     "level": 3,
+     "explain": "$2x^2 + x - 6 = (2x - 3)(x + 2)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A61",
+     "type": "expr",
+     "text": "Factor:$$3x^2 - 10x + 3$$\n",
+     "answer": "(3x - 1)(x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$3x^2 - 10x + 3$ =",
+     "show": "$(3x - 1)(x - 3)$",
+     "level": 3,
+     "explain": "$3x^2 - 10x + 3 = (3x - 1)(x - 3)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A62",
+     "type": "expr",
+     "text": "Factor:$$4x^2 - 4x - 3$$\n",
+     "answer": "(2x + 1)(2x - 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$4x^2 - 4x - 3$ =",
+     "show": "$(2x + 1)(2x - 3)$",
+     "level": 3,
+     "explain": "$4x^2 - 4x - 3 = (2x + 1)(2x - 3)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A63",
+     "type": "expr",
+     "text": "Factor:$$6x^2 + x - 1$$\n",
+     "answer": "(3x - 1)(2x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$6x^2 + x - 1$ =",
+     "show": "$(3x - 1)(2x + 1)$",
+     "level": 3,
+     "explain": "$6x^2 + x - 1 = (3x - 1)(2x + 1)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "A64",
+     "type": "expr",
+     "text": "Factor:$$5x^2 + 9x - 2$$\n",
+     "answer": "(5x - 1)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$5x^2 + 9x - 2$ =",
+     "show": "$(5x - 1)(x + 2)$",
+     "level": 3,
+     "explain": "$5x^2 + 9x - 2 = (5x - 1)(x + 2)$. Multiply it back out to check the middle term.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "B65",
+     "type": "expr",
+     "text": "Factor by grouping:$$x^3 + 2x^2 + 3x + 6$$\n",
+     "answer": "(x^2 + 3)(x + 2)",
+     "vars": [
+      "x"
+     ],
+     "label": "factored =",
+     "show": "$(x^2 + 3)(x + 2)$",
+     "level": 3,
+     "explain": "Group the first two terms and the last two, and pull a common factor from each: $(x^2 + 3)(x + 2)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "B66",
+     "type": "expr",
+     "text": "Factor by grouping:$$x^3 - x^2 + 4x - 4$$\n",
+     "answer": "(x^2 + 4)(x - 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "factored =",
+     "show": "$(x^2 + 4)(x - 1)$",
+     "level": 3,
+     "explain": "Group the first two terms and the last two, and pull a common factor from each: $(x^2 + 4)(x - 1)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "B67",
+     "type": "expr",
+     "text": "Factor by grouping:$$x^3 + 3x^2 - 4x - 12$$\n",
+     "answer": "(x - 2)(x + 2)(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "label": "factored =",
+     "show": "$(x - 2)(x + 2)(x + 3)$",
+     "level": 3,
+     "explain": "Group the first two terms and the last two, and pull a common factor from each: $(x - 2)(x + 2)(x + 3)$.",
+     "form": "product",
+     "factors": 3
+    },
+    {
+     "id": "B68",
+     "type": "expr",
+     "text": "Factor by grouping:$$2x^3 + x^2 + 8x + 4$$\n",
+     "answer": "(x^2 + 4)(2x + 1)",
+     "vars": [
+      "x"
+     ],
+     "label": "factored =",
+     "show": "$(x^2 + 4)(2x + 1)$",
+     "level": 3,
+     "explain": "Group the first two terms and the last two, and pull a common factor from each: $(x^2 + 4)(2x + 1)$.",
+     "form": "product",
+     "factors": 2
+    },
+    {
+     "id": "Z69",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$x^2 - 5x + 6 = 0$$\n",
+     "answers": [
+      2,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "level": 3,
+     "explain": "$x^2 - 5x + 6 = (x - 3)(x - 2)$, and a product is 0 only when one of its factors is 0."
+    },
+    {
+     "id": "Z70",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$x^2 + 3x - 10 = 0$$\n",
+     "answers": [
+      -5,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "level": 3,
+     "explain": "$x^2 + 3x - 10 = (x - 2)(x + 5)$, and a product is 0 only when one of its factors is 0."
+    },
+    {
+     "id": "Z71",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$x^2 - 16 = 0$$\n",
+     "answers": [
+      -4,
+      4
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "level": 3,
+     "explain": "$x^2 - 16 = (x - 4)(x + 4)$, and a product is 0 only when one of its factors is 0."
+    },
+    {
+     "id": "Z72",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$x^2 - 7x = 0$$\n",
+     "answers": [
+      0,
+      7
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "level": 3,
+     "explain": "$x^2 - 7x = x(x - 7)$, and a product is 0 only when one of its factors is 0."
+    },
+    {
+     "id": "Z73",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$2x^2 - 8x + 6 = 0$$\n",
+     "answers": [
+      1,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "level": 3,
+     "explain": "$2x^2 - 8x + 6 = 2(x - 3)(x - 1)$, and a product is 0 only when one of its factors is 0."
+    },
+    {
+     "id": "Z74",
+     "type": "crit",
+     "text": "Solve by factoring. List every solution.$$x^3 - 9x = 0$$\n",
+     "answers": [
+      -3,
+      0,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no solutions",
+     "level": 3,
+     "explain": "$x^3 - 9x = x(x - 3)(x + 3)$, and a product is 0 only when one of its factors is 0."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Factoring rewrites a **sum** as a **product**. Always look for a common factor first.$$6x^2 + 9x$$\nBoth terms are divisible by $3x$. Pull it out.",
+    "options": [
+     "$3x(2x + 3)$",
+     "$6x(x + 9)$",
+     "$3x(2x + 9)$",
+     "$x(6x^2 + 9)$"
+    ],
+    "answer": 0,
+    "hint": "$6x^2 = 3x · 2x$ and $9x = 3x · 3$.",
+    "explain": "Check by multiplying back: $3x · 2x + 3x · 3 = 6x^2 + 9x$."
+   },
+   {
+    "id": "L2",
+    "type": "crit",
+    "text": "$$x^2 + 7x + 12$$\nFor a trinomial like this, find two numbers that **multiply to 12** and **add to 7**. Enter both.",
+    "answers": [
+     3,
+     4
+    ],
+    "var": "n",
+    "label": "number =",
+    "noneText": "No such numbers",
+    "hint": "List the pairs that multiply to 12: 1 and 12, 2 and 6, 3 and 4. Which pair adds to 7?",
+    "explain": "$3 · 4 = 12$ and $3 + 4 = 7$, so $x^2 + 7x + 12 = (x + 3)(x + 4)$."
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "Your turn. Factor it:$$x^2 - x - 6$$\n",
+    "answer": "(x - 3)(x + 2)",
+    "vars": [
+     "x"
+    ],
+    "label": "$x^2 - x - 6$ =",
+    "show": "$(x - 3)(x + 2)$",
+    "hint": "Two numbers that multiply to −6 and add to −1: try −3 and 2.",
+    "explain": "$(x - 3)(x + 2)$. A negative product means the two numbers have opposite signs.",
+    "form": "product",
+    "factors": 2
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "One pattern is worth knowing on sight, the **difference of squares**:$$a^2 - b^2 = (a - b)(a + b)$$\nFactor $x^2 - 25$.",
+    "options": [
+     "$(x - 5)(x + 5)$",
+     "$(x - 5)^2$",
+     "$(x + 5)^2$",
+     "It does not factor"
+    ],
+    "answer": 0,
+    "hint": "$25 = 5^2$.",
+    "explain": "$(x - 5)(x + 5) = x^2 + 5x - 5x - 25$. The middle terms cancel."
+   },
+   {
+    "id": "L5",
+    "type": "tf",
+    "text": "$x^2 + 25$ factors as $(x + 5)(x + 5)$.",
+    "answer": false,
+    "hint": "Multiply $(x + 5)(x + 5)$ out and count the terms.",
+    "explain": "$(x + 5)^2 = x^2 + 10x + 25$. A **sum** of squares does not factor at all."
+   },
+   {
+    "id": "L6",
+    "type": "expr",
+    "text": "Put it together: common factor first, then look again.$$2x^2 - 18$$\n",
+    "answer": "2(x - 3)(x + 3)",
+    "vars": [
+     "x"
+    ],
+    "label": "$2x^2 - 18$ =",
+    "show": "$2(x - 3)(x + 3)$",
+    "hint": "Pull out the 2: $2(x^2 - 9)$. Now what is $x^2 - 9$?",
+    "explain": "$2(x^2 - 9) = 2(x - 3)(x + 3)$. Factored completely means nothing inside can be factored again.",
+    "form": "product",
+    "factors": 2
+   }
+  ]
+ }
+}

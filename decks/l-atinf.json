@@ -694,7 +694,7 @@
    {
     "id": "L1",
     "type": "lim",
-    "text": "$f(x) = 2 + frac{1}{x}$. As $x$ gets huge (10, 100, 1000…), $f(x)$ is 2.1, 2.01, 2.001… Find $lim[x->infty] f(x)$.",
+    "text": "$$f(x) = 2 + frac{1}{x}$$\nAs $x$ gets huge (10, 100, 1000…), $f(x)$ is 2.1, 2.01, 2.001… Find $lim[x->infty] f(x)$.",
     "answer": 2,
     "label": "$lim[x->infty] f(x)$ =",
     "hint": "What are the values closing in on?",

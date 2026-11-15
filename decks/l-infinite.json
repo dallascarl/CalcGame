@@ -899,7 +899,7 @@
       "type": "lim",
       "text": "$frac{negative}{tiny negative}$ is…",
       "answer": "inf",
-      "label": "lim[x->3^-] = ",
+      "label": "$lim[x->3^-]$ = ",
       "hint": "Negative over negative is positive, and dividing by something tiny makes it huge.",
       "work": "limit $= infty$"
      }

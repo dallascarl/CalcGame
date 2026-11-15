@@ -1,0 +1,771 @@
+{
+ "id": "t-exponents",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Exponent Rules",
+ "subtitle": "Negative and fractional exponents, and rewriting roots and fractions as powers.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "$x^2 · x^3 = x^6$",
+     "answer": false,
+     "explain": "Multiplying adds the exponents: $x^2 · x^3 = x^5$. (It is $(x^2)^3$ that equals $x^6$.)"
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "$(x^2)^3 = x^6$",
+     "answer": true,
+     "explain": "A power of a power multiplies: $2 · 3 = 6$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "For $x ≠ 0$, $x^0 =$",
+     "options": [
+      "1",
+      "0",
+      "$x$",
+      "undefined"
+     ],
+     "answer": 0,
+     "explain": "$frac{x^3}{x^3} = x^(3 - 3) = x^0$, and anything divided by itself is 1."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "$x^(-2)$ means",
+     "options": [
+      "$frac{1}{x^2}$",
+      "$-x^2$",
+      "$-2x$",
+      "$frac{1}{2x}$"
+     ],
+     "answer": 0,
+     "explain": "A negative exponent never makes the number negative. It sends the power to the bottom."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$(2x)^3 =$",
+     "options": [
+      "$8x^3$",
+      "$2x^3$",
+      "$6x^3$",
+      "$8x$"
+     ],
+     "answer": 0,
+     "explain": "The exponent applies to everything in the parentheses: $2^3 · x^3$."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "$frac{1}{2x^3}$ written with a power of $x$ is",
+     "options": [
+      "$frac{1}{2}x^(-3)$",
+      "$2x^(-3)$",
+      "$(2x)^(-3)$",
+      "$frac{1}{2}x^3$"
+     ],
+     "answer": 0,
+     "explain": "Only the $x^3$ moves up and becomes $x^(-3)$. The 2 stays on the bottom, as $frac{1}{2}$."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "$sqrt(x^2 + 9)$ simplifies to",
+     "options": [
+      "It does not simplify",
+      "$x + 3$",
+      "$x + 9$",
+      "$3x$"
+     ],
+     "answer": 0,
+     "explain": "Roots (and powers) do not split over a sum. Try $x = 4$: $sqrt(25) = 5$, not 7."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "N1",
+     "type": "num",
+     "text": "$$frac{1}{x^3} = x^n$$\nWhat is $n$?",
+     "answer": -3,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{x^3} = x^(-3)$"
+    },
+    {
+     "id": "N2",
+     "type": "num",
+     "text": "$$sqrt(x) = x^n$$\nWhat is $n$? Use the fraction key.",
+     "answer": 0.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$sqrt(x) = x^(1/2)$"
+    },
+    {
+     "id": "N3",
+     "type": "num",
+     "text": "$$frac{1}{x} = x^n$$\nWhat is $n$?",
+     "answer": -1,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{x} = x^(-1)$"
+    },
+    {
+     "id": "N4",
+     "type": "num",
+     "text": "$$x^2 · x^5 = x^n$$\nWhat is $n$?",
+     "answer": 7,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$x^2 · x^5 = x^(7)$"
+    },
+    {
+     "id": "N5",
+     "type": "num",
+     "text": "$$frac{x^7}{x^3} = x^n$$\nWhat is $n$?",
+     "answer": 4,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{x^7}{x^3} = x^(4)$"
+    },
+    {
+     "id": "N6",
+     "type": "num",
+     "text": "$$(x^3)^4 = x^n$$\nWhat is $n$?",
+     "answer": 12,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$(x^3)^4 = x^(12)$"
+    },
+    {
+     "id": "N7",
+     "type": "num",
+     "text": "$$frac{1}{x^5} = x^n$$\nWhat is $n$?",
+     "answer": -5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{x^5} = x^(-5)$"
+    },
+    {
+     "id": "N8",
+     "type": "num",
+     "text": "$$x · x^4 = x^n$$\nWhat is $n$?",
+     "answer": 5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$x · x^4 = x^(5)$"
+    },
+    {
+     "id": "N9",
+     "type": "num",
+     "text": "$$frac{x^2}{x^6} = x^n$$\nWhat is $n$?",
+     "answer": -4,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{x^2}{x^6} = x^(-4)$"
+    },
+    {
+     "id": "N10",
+     "type": "num",
+     "text": "$$(x^2)^(-3) = x^n$$\nWhat is $n$?",
+     "answer": -6,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$(x^2)^(-3) = x^(-6)$"
+    },
+    {
+     "id": "N11",
+     "type": "num",
+     "text": "$$frac{1}{sqrt(x)} = x^n$$\nWhat is $n$? Use the fraction key.",
+     "answer": -0.5,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{sqrt(x)} = x^(-1/2)$"
+    },
+    {
+     "id": "N12",
+     "type": "num",
+     "text": "$$x^3 · x^(-5) = x^n$$\nWhat is $n$?",
+     "answer": -2,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$x^3 · x^(-5) = x^(-2)$"
+    },
+    {
+     "id": "N13",
+     "type": "num",
+     "text": "$$sqrt(x) · sqrt(x) = x^n$$\nWhat is $n$?",
+     "answer": 1,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$sqrt(x) · sqrt(x) = x^(1)$"
+    },
+    {
+     "id": "N14",
+     "type": "num",
+     "text": "$$(x^(1/2))^6 = x^n$$\nWhat is $n$?",
+     "answer": 3,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$(x^(1/2))^6 = x^(3)$"
+    },
+    {
+     "id": "N15",
+     "type": "num",
+     "text": "$$cbrt(x) = x^n$$\nWhat is $n$? Use the fraction key.",
+     "answer": 0.333333,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$cbrt(x) = x^(1/3)$"
+    },
+    {
+     "id": "N16",
+     "type": "num",
+     "text": "$$cbrt(x^2) = x^n$$\nWhat is $n$? Use the fraction key.",
+     "answer": 0.666667,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$cbrt(x^2) = x^(2/3)$"
+    },
+    {
+     "id": "N17",
+     "type": "num",
+     "text": "$$frac{1}{cbrt(x)} = x^n$$\nWhat is $n$? Use the fraction key.",
+     "answer": -0.333333,
+     "label": "$n$ =",
+     "level": 1,
+     "explain": "$frac{1}{cbrt(x)} = x^(-1/3)$"
+    },
+    {
+     "id": "V18",
+     "type": "num",
+     "text": "$$8^(2/3)$$\nFind the value: a whole number or a fraction.",
+     "answer": 4,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $8^(2/3) = 4$."
+    },
+    {
+     "id": "V19",
+     "type": "num",
+     "text": "$$16^(1/2)$$\nFind the value: a whole number or a fraction.",
+     "answer": 4,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $16^(1/2) = 4$."
+    },
+    {
+     "id": "V20",
+     "type": "num",
+     "text": "$$27^(1/3)$$\nFind the value: a whole number or a fraction.",
+     "answer": 3,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $27^(1/3) = 3$."
+    },
+    {
+     "id": "V21",
+     "type": "num",
+     "text": "$$4^(-1)$$\nFind the value: a whole number or a fraction.",
+     "answer": 0.25,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $4^(-1) = frac{1}{4}$."
+    },
+    {
+     "id": "V22",
+     "type": "num",
+     "text": "$$9^(3/2)$$\nFind the value: a whole number or a fraction.",
+     "answer": 27,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $9^(3/2) = 27$."
+    },
+    {
+     "id": "V23",
+     "type": "num",
+     "text": "$$2^(-3)$$\nFind the value: a whole number or a fraction.",
+     "answer": 0.125,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $2^(-3) = frac{1}{8}$."
+    },
+    {
+     "id": "V24",
+     "type": "num",
+     "text": "$$25^(-1/2)$$\nFind the value: a whole number or a fraction.",
+     "answer": 0.2,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $25^(-1/2) = frac{1}{5}$."
+    },
+    {
+     "id": "V25",
+     "type": "num",
+     "text": "$$(frac{1}{2})^(-2)$$\nFind the value: a whole number or a fraction.",
+     "answer": 4,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $(frac{1}{2})^(-2) = 4$."
+    },
+    {
+     "id": "V26",
+     "type": "num",
+     "text": "$$16^(3/4)$$\nFind the value: a whole number or a fraction.",
+     "answer": 8,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $16^(3/4) = 8$."
+    },
+    {
+     "id": "V27",
+     "type": "num",
+     "text": "$$5^0$$\nFind the value: a whole number or a fraction.",
+     "answer": 1,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $5^0 = 1$."
+    },
+    {
+     "id": "V28",
+     "type": "num",
+     "text": "$$32^(2/5)$$\nFind the value: a whole number or a fraction.",
+     "answer": 4,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $32^(2/5) = 4$."
+    },
+    {
+     "id": "V29",
+     "type": "num",
+     "text": "$$100^(-1/2)$$\nFind the value: a whole number or a fraction.",
+     "answer": 0.1,
+     "label": "value =",
+     "level": 2,
+     "explain": "Root first, then the power, and a negative exponent means \"one over\": $100^(-1/2) = frac{1}{10}$."
+    },
+    {
+     "id": "M30",
+     "type": "mc",
+     "text": "Which is $frac{1}{2x^3}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$frac{1}{2}x^(-3)$",
+      "$2x^(-3)$",
+      "$(2x)^(-3)$",
+      "$frac{1}{2}x^3$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{1}{2x^3} = frac{1}{2}x^(-3)$."
+    },
+    {
+     "id": "M31",
+     "type": "mc",
+     "text": "Which is $frac{3}{x^2}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$3x^(-2)$",
+      "$frac{1}{3}x^(-2)$",
+      "$(3x)^(-2)$",
+      "$3x^2$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{3}{x^2} = 3x^(-2)$."
+    },
+    {
+     "id": "M32",
+     "type": "mc",
+     "text": "Which is $frac{5}{sqrt(x)}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$5x^(-1/2)$",
+      "$5x^(1/2)$",
+      "$frac{1}{5}x^(-1/2)$",
+      "$(5x)^(-1/2)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{5}{sqrt(x)} = 5x^(-1/2)$."
+    },
+    {
+     "id": "M33",
+     "type": "mc",
+     "text": "Which is $frac{1}{4x}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$frac{1}{4}x^(-1)$",
+      "$4x^(-1)$",
+      "$(4x)^(-1) · 4$",
+      "$frac{1}{4}x$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{1}{4x} = frac{1}{4}x^(-1)$."
+    },
+    {
+     "id": "M34",
+     "type": "mc",
+     "text": "Which is $frac{2}{3x^4}$ written with a power of $x$ and no $x$ on the bottom?",
+     "options": [
+      "$frac{2}{3}x^(-4)$",
+      "$frac{3}{2}x^(-4)$",
+      "$6x^(-4)$",
+      "$frac{2}{3}x^4$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Only the power of $x$ moves up. The numbers stay where they are: $frac{2}{3x^4} = frac{2}{3}x^(-4)$."
+    },
+    {
+     "id": "S35",
+     "type": "expr",
+     "text": "$$frac{x^2}{sqrt(x)}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(3/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(3/2)$",
+     "level": 3,
+     "explain": "$frac{x^2}{sqrt(x)} = x^(3/2)$",
+     "maxLen": 7,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S36",
+     "type": "expr",
+     "text": "$$x · sqrt(x)$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(3/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(3/2)$",
+     "level": 3,
+     "explain": "$x · sqrt(x) = x^(3/2)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S37",
+     "type": "expr",
+     "text": "$$frac{x}{x^3}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(-2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(-2)$",
+     "level": 3,
+     "explain": "$frac{x}{x^3} = x^(-2)$",
+     "maxLen": 4,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S38",
+     "type": "expr",
+     "text": "$$frac{sqrt(x)}{x}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(-1/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(-1/2)$",
+     "level": 3,
+     "explain": "$frac{sqrt(x)}{x} = x^(-1/2)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S39",
+     "type": "expr",
+     "text": "$$(x^2)^3 · x$$\nWrite it as $x$ to a single power.",
+     "answer": "x^7",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^7$",
+     "level": 3,
+     "explain": "$(x^2)^3 · x = x^7$",
+     "maxLen": 5,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S40",
+     "type": "expr",
+     "text": "$$frac{x^5 · x}{x^2}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^4",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^4$",
+     "level": 3,
+     "explain": "$frac{x^5 · x}{x^2} = x^4$",
+     "maxLen": 5,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S41",
+     "type": "expr",
+     "text": "$$frac{1}{x^2 · x^3}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(-5)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(-5)$",
+     "level": 3,
+     "explain": "$frac{1}{x^2 · x^3} = x^(-5)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S42",
+     "type": "expr",
+     "text": "$$(sqrt(x))^3$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(3/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(3/2)$",
+     "level": 3,
+     "explain": "$(sqrt(x))^3 = x^(3/2)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S43",
+     "type": "expr",
+     "text": "$$frac{x^3}{x^(-2)}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^5",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^5$",
+     "level": 3,
+     "explain": "$frac{x^3}{x^(-2)} = x^5$",
+     "maxLen": 5,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S44",
+     "type": "expr",
+     "text": "$$sqrt(x^3)$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(3/2)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(3/2)$",
+     "level": 3,
+     "explain": "$sqrt(x^3) = x^(3/2)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S45",
+     "type": "expr",
+     "text": "$$frac{x^(1/2)}{x^(3/2)}$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(-1)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(-1)$",
+     "level": 3,
+     "explain": "$frac{x^(1/2)}{x^(3/2)} = x^(-1)$",
+     "maxLen": 6,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "S46",
+     "type": "expr",
+     "text": "$$cbrt(x) · x^2$$\nWrite it as $x$ to a single power.",
+     "answer": "x^(7/3)",
+     "vars": [
+      "x"
+     ],
+     "label": "$x$ to a power =",
+     "show": "$x^(7/3)$",
+     "level": 3,
+     "explain": "$cbrt(x) · x^2 = x^(7/3)$",
+     "maxLen": 7,
+     "longText": "That is equal, but write it as $x$ to a **single** power."
+    },
+    {
+     "id": "D47",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{x^3 + 2x}{x}$$\n",
+     "answer": "x^2 + 2",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$x^2 + 2$",
+     "level": 3,
+     "explain": "Each term on top gets divided separately: $x^2 + 2$.",
+     "maxLen": 7
+    },
+    {
+     "id": "D48",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{4x^5 - 6x^2}{2x}$$\n",
+     "answer": "2x^4 - 3x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$2x^4 - 3x$",
+     "level": 3,
+     "explain": "Each term on top gets divided separately: $2x^4 - 3x$.",
+     "maxLen": 9
+    },
+    {
+     "id": "D49",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{x^2 + 1}{x}$$\n",
+     "answer": [
+      "x + 1/x",
+      "x + x^(-1)"
+     ],
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$x + 1/x$",
+     "level": 3,
+     "explain": "Each term on top gets divided separately: $x + 1/x$.",
+     "maxLen": 6
+    },
+    {
+     "id": "D50",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{x^4 - x}{x^2}$$\n",
+     "answer": [
+      "x^2 - 1/x",
+      "x^2 - x^(-1)"
+     ],
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$x^2 - 1/x$",
+     "level": 3,
+     "explain": "Each term on top gets divided separately: $x^2 - 1/x$.",
+     "maxLen": 8
+    },
+    {
+     "id": "D51",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{6x^3 + 9x^2}{3x}$$\n",
+     "answer": "2x^2 + 3x",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$2x^2 + 3x$",
+     "level": 3,
+     "explain": "Each term on top gets divided separately: $2x^2 + 3x$.",
+     "maxLen": 9
+    },
+    {
+     "id": "D52",
+     "type": "expr",
+     "text": "A sum on **top** splits up. Divide each term by the bottom and simplify.$$frac{x^5 + x^3}{x^3}$$\n",
+     "answer": "x^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "label": "simplified =",
+     "show": "$x^2 + 1$",
+     "level": 3,
+     "explain": "Each term on top gets divided separately: $x^2 + 1$.",
+     "maxLen": 7
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "match",
+    "text": "Three rules do most of the work. Match each one to what it equals.",
+    "pairs": [
+     [
+      "$x^a · x^b$",
+      "$x^(a + b)$"
+     ],
+     [
+      "$frac{x^a}{x^b}$",
+      "$x^(a - b)$"
+     ],
+     [
+      "$(x^a)^b$",
+      "$x^(ab)$"
+     ]
+    ],
+    "hint": "Try them with small numbers: $x^2 · x^3$ is five $x$’s multiplied together.",
+    "explain": "Multiply: add the exponents. Divide: subtract. A power of a power: multiply."
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "text": "A **negative** exponent means \"one over\".$$x^(-n) = frac{1}{x^n}$$\nSo $frac{1}{x^3} = x^n$. What is $n$?",
+    "answer": -3,
+    "label": "$n$ =",
+    "hint": "Moving a power from the bottom to the top flips the sign of its exponent.",
+    "explain": "$frac{1}{x^3} = x^(-3)$. Nothing became negative: the exponent just says \"bottom\"."
+   },
+   {
+    "id": "L3",
+    "type": "num",
+    "text": "A **fractional** exponent is a root.$$x^(1/2) = sqrt(x)$$\nThe cube root works the same way: $cbrt(x) = x^n$. What is $n$? Use the fraction key.",
+    "answer": 0.333333,
+    "label": "$n$ =",
+    "hint": "Square root is the $frac{1}{2}$ power. Cube root is the …",
+    "explain": "$cbrt(x) = x^(1/3)$. The root goes on the bottom of the fraction."
+   },
+   {
+    "id": "L4",
+    "type": "num",
+    "text": "Both ideas at once.$$frac{1}{sqrt(x)} = x^n$$\nWhat is $n$?",
+    "answer": -0.5,
+    "label": "$n$ =",
+    "hint": "$sqrt(x) = x^(1/2)$, and it sits on the bottom.",
+    "explain": "$frac{1}{sqrt(x)} = x^(-1/2)$"
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "This is why it matters: a messy term becomes one clean power, and one clean power is easy to work with.$$frac{x^2}{sqrt(x)}$$\nWrite it as $x$ to a single power.",
+    "answer": "x^(3/2)",
+    "vars": [
+     "x"
+    ],
+    "label": "$frac{x^2}{sqrt(x)}$ =",
+    "show": "$x^(3/2)$",
+    "hint": "$frac{x^2}{x^(1/2)}$: dividing means subtract the exponents, $2 - frac{1}{2}$.",
+    "explain": "$x^(2 - 1/2) = x^(3/2)$. In February every derivative of a root starts with this rewrite.",
+    "maxLen": 7,
+    "longText": "That is equal, but write it as $x$ to a **single** power."
+   }
+  ]
+ }
+}

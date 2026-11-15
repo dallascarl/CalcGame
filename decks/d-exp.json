@@ -637,7 +637,7 @@
     {
      "id": "F23",
      "type": "expr",
-     "text": "$f(x) = e^(x^2)$. Finish the derivative.",
+     "text": "$$f(x) = e^(x^2)$$\nFinish the derivative.",
      "answer": "2x",
      "vars": [
       "x"
@@ -666,7 +666,7 @@
     {
      "id": "F24",
      "type": "expr",
-     "text": "$f(x) = e^(sin(x))$. Finish the derivative.",
+     "text": "$$f(x) = e^(sin(x))$$\nFinish the derivative.",
      "answer": "cos(x)",
      "vars": [
       "x"
@@ -695,7 +695,7 @@
     {
      "id": "F25",
      "type": "expr",
-     "text": "$f(x) = e^(3x^2 + 1)$. Finish the derivative.",
+     "text": "$$f(x) = e^(3x^2 + 1)$$\nFinish the derivative.",
      "answer": "6x",
      "vars": [
       "x"
@@ -724,7 +724,7 @@
     {
      "id": "F26",
      "type": "expr",
-     "text": "$f(x) = e^(cos(x))$. Finish the derivative.",
+     "text": "$$f(x) = e^(cos(x))$$\nFinish the derivative.",
      "answer": "-sin(x)",
      "vars": [
       "x"
@@ -753,7 +753,7 @@
     {
      "id": "F27",
      "type": "expr",
-     "text": "$f(x) = e^(x^3 - x)$. Finish the derivative.",
+     "text": "$$f(x) = e^(x^3 - x)$$\nFinish the derivative.",
      "answer": "3x^2 - 1",
      "vars": [
       "x"
@@ -782,7 +782,7 @@
     {
      "id": "F28",
      "type": "expr",
-     "text": "$f(x) = e^(sqrt(x))$. Finish the derivative.",
+     "text": "$$f(x) = e^(sqrt(x))$$\nFinish the derivative.",
      "answer": "1/(2sqrt(x))",
      "vars": [
       "x"
@@ -811,7 +811,7 @@
     {
      "id": "F29",
      "type": "expr",
-     "text": "$f(x) = e^(-x^2)$. Finish the derivative.",
+     "text": "$$f(x) = e^(-x^2)$$\nFinish the derivative.",
      "answer": "-2x",
      "vars": [
       "x"
@@ -840,7 +840,7 @@
     {
      "id": "F30",
      "type": "expr",
-     "text": "$f(x) = e^(4x + 1)$. Finish the derivative.",
+     "text": "$$f(x) = e^(4x + 1)$$\nFinish the derivative.",
      "answer": "4",
      "vars": [
       "x"
@@ -869,7 +869,7 @@
     {
      "id": "F31",
      "type": "expr",
-     "text": "$f(x) = e^(x^2 + 5x)$. Finish the derivative.",
+     "text": "$$f(x) = e^(x^2 + 5x)$$\nFinish the derivative.",
      "answer": "2x + 5",
      "vars": [
       "x"
@@ -898,7 +898,7 @@
     {
      "id": "F32",
      "type": "expr",
-     "text": "$f(x) = e^(tan(x))$. Finish the derivative.",
+     "text": "$$f(x) = e^(tan(x))$$\nFinish the derivative.",
      "answer": "sec(x)^2",
      "vars": [
       "x"

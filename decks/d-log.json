@@ -450,7 +450,7 @@
     {
      "id": "F21",
      "type": "expr",
-     "text": "$f(x) = ln(x^2 + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^2 + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "2x",
      "vars": [
       "x"
@@ -477,7 +477,7 @@
     {
      "id": "F22",
      "type": "expr",
-     "text": "$f(x) = ln(sin(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(sin(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "cos(x)",
      "vars": [
       "x"
@@ -504,7 +504,7 @@
     {
      "id": "F23",
      "type": "expr",
-     "text": "$f(x) = ln(3x - 2)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(3x - 2)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "3",
      "vars": [
       "x"
@@ -531,7 +531,7 @@
     {
      "id": "F24",
      "type": "expr",
-     "text": "$f(x) = ln(x^3 + 2x + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^3 + 2x + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "3x^2 + 2",
      "vars": [
       "x"
@@ -558,7 +558,7 @@
     {
      "id": "F25",
      "type": "expr",
-     "text": "$f(x) = ln(cos(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(cos(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "-sin(x)",
      "vars": [
       "x"
@@ -585,7 +585,7 @@
     {
      "id": "F26",
      "type": "expr",
-     "text": "$f(x) = ln(e^x + 1)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(e^x + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "e^x",
      "vars": [
       "x"
@@ -612,7 +612,7 @@
     {
      "id": "F27",
      "type": "expr",
-     "text": "$f(x) = ln(x^4 - x)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^4 - x)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "4x^3 - 1",
      "vars": [
       "x"
@@ -639,7 +639,7 @@
     {
      "id": "F28",
      "type": "expr",
-     "text": "$f(x) = ln(2x^2 + 7)$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(2x^2 + 7)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "4x",
      "vars": [
       "x"
@@ -666,7 +666,7 @@
     {
      "id": "F29",
      "type": "expr",
-     "text": "$f(x) = ln(x + sqrt(x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x + sqrt(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "1 + 1/(2sqrt(x))",
      "vars": [
       "x"
@@ -693,7 +693,7 @@
     {
      "id": "F30",
      "type": "expr",
-     "text": "$f(x) = ln(1 + e^(2x))$. Fill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(1 + e^(2x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
      "answer": "2e^(2x)",
      "vars": [
       "x"
@@ -720,7 +720,7 @@
     {
      "id": "I31",
      "type": "num",
-     "text": "$f(x) = x^3 + x$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "text": "$$f(x) = x^3 + x$$\nFind $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
      "answer": 1,
      "label": "$f^(-1)(2)$ =",
      "level": 2,
@@ -729,7 +729,7 @@
     {
      "id": "I32",
      "type": "num",
-     "text": "$f(x) = x^3 + x$. Find $f^(-1)(10)$: the $x$ with $f(x) = 10$.",
+     "text": "$$f(x) = x^3 + x$$\nFind $f^(-1)(10)$: the $x$ with $f(x) = 10$.",
      "answer": 2,
      "label": "$f^(-1)(10)$ =",
      "level": 2,
@@ -738,7 +738,7 @@
     {
      "id": "I33",
      "type": "num",
-     "text": "$f(x) = 2x + sin(x)$. Find $f^(-1)(0)$: the $x$ with $f(x) = 0$.",
+     "text": "$$f(x) = 2x + sin(x)$$\nFind $f^(-1)(0)$: the $x$ with $f(x) = 0$.",
      "answer": 0,
      "label": "$f^(-1)(0)$ =",
      "level": 2,
@@ -747,7 +747,7 @@
     {
      "id": "I34",
      "type": "num",
-     "text": "$f(x) = x^5 + x$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "text": "$$f(x) = x^5 + x$$\nFind $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
      "answer": 1,
      "label": "$f^(-1)(2)$ =",
      "level": 2,
@@ -756,7 +756,7 @@
     {
      "id": "I35",
      "type": "num",
-     "text": "$f(x) = e^x + x$. Find $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
+     "text": "$$f(x) = e^x + x$$\nFind $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
      "answer": 0,
      "label": "$f^(-1)(1)$ =",
      "level": 2,
@@ -765,7 +765,7 @@
     {
      "id": "I36",
      "type": "num",
-     "text": "$f(x) = x^3 + 2x - 1$. Find $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
+     "text": "$$f(x) = x^3 + 2x - 1$$\nFind $f^(-1)(2)$: the $x$ with $f(x) = 2$.",
      "answer": 1,
      "label": "$f^(-1)(2)$ =",
      "level": 2,
@@ -774,7 +774,7 @@
     {
      "id": "I37",
      "type": "num",
-     "text": "$f(x) = x + ln(x)$. Find $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
+     "text": "$$f(x) = x + ln(x)$$\nFind $f^(-1)(1)$: the $x$ with $f(x) = 1$.",
      "answer": 1,
      "label": "$f^(-1)(1)$ =",
      "level": 2,
@@ -783,7 +783,7 @@
     {
      "id": "V38",
      "type": "steps",
-     "text": "$f(x) = x^3 + x$. Find $(f^(-1))'(2)$.",
+     "text": "$$f(x) = x^3 + x$$\nFind $(f^(-1))'(2)$.",
      "steps": [
       {
        "id": "V38.1",
@@ -816,7 +816,7 @@
     {
      "id": "V39",
      "type": "steps",
-     "text": "$f(x) = x^3 + x$. Find $(f^(-1))'(10)$.",
+     "text": "$$f(x) = x^3 + x$$\nFind $(f^(-1))'(10)$.",
      "steps": [
       {
        "id": "V39.1",
@@ -849,7 +849,7 @@
     {
      "id": "V40",
      "type": "steps",
-     "text": "$f(x) = 2x + sin(x)$. Find $(f^(-1))'(0)$.",
+     "text": "$$f(x) = 2x + sin(x)$$\nFind $(f^(-1))'(0)$.",
      "steps": [
       {
        "id": "V40.1",
@@ -882,7 +882,7 @@
     {
      "id": "V41",
      "type": "steps",
-     "text": "$f(x) = x^5 + x$. Find $(f^(-1))'(2)$.",
+     "text": "$$f(x) = x^5 + x$$\nFind $(f^(-1))'(2)$.",
      "steps": [
       {
        "id": "V41.1",
@@ -915,7 +915,7 @@
     {
      "id": "V42",
      "type": "steps",
-     "text": "$f(x) = e^x + x$. Find $(f^(-1))'(1)$.",
+     "text": "$$f(x) = e^x + x$$\nFind $(f^(-1))'(1)$.",
      "steps": [
       {
        "id": "V42.1",
@@ -948,7 +948,7 @@
     {
      "id": "V43",
      "type": "steps",
-     "text": "$f(x) = x^3 + 2x - 1$. Find $(f^(-1))'(2)$.",
+     "text": "$$f(x) = x^3 + 2x - 1$$\nFind $(f^(-1))'(2)$.",
      "steps": [
       {
        "id": "V43.1",
@@ -981,7 +981,7 @@
     {
      "id": "V44",
      "type": "steps",
-     "text": "$f(x) = x + ln(x)$. Find $(f^(-1))'(1)$.",
+     "text": "$$f(x) = x + ln(x)$$\nFind $(f^(-1))'(1)$.",
      "steps": [
       {
        "id": "V44.1",

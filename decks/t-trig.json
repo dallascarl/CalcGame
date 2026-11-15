@@ -1,0 +1,1017 @@
+{
+ "id": "t-trig",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Trig Identities and Equations",
+ "subtitle": "The other four trig functions, the identities worth knowing, and solving trig equations.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "mc",
+     "text": "$sec(x) =$",
+     "options": [
+      "$frac{1}{cos(x)}$",
+      "$frac{1}{sin(x)}$",
+      "$frac{cos(x)}{sin(x)}$",
+      "$cos(frac{1}{x})$"
+     ],
+     "answer": 0,
+     "explain": "Secant is the reciprocal of cosine."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$1 + tan^2(x) =$",
+     "options": [
+      "$sec^2(x)$",
+      "$csc^2(x)$",
+      "$cos^2(x)$",
+      "1"
+     ],
+     "answer": 0,
+     "explain": "Divide $sin^2(x) + cos^2(x) = 1$ by $cos^2(x)$."
+    },
+    {
+     "id": "T3",
+     "type": "tf",
+     "text": "$sin(2x) = 2sin(x)$",
+     "answer": false,
+     "explain": "A 2 inside the function does not come out. The true identity is $sin(2x) = 2sin(x)cos(x)$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "$sin(-x) =$",
+     "options": [
+      "$-sin(x)$",
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 0,
+     "explain": "Going clockwise instead flips the height: sine is an odd function."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$cos(-x) =$",
+     "options": [
+      "$cos(x)$",
+      "$-cos(x)$",
+      "$sin(x)$",
+      "$-sin(x)$"
+     ],
+     "answer": 0,
+     "explain": "Going clockwise instead leaves the $x$-coordinate alone: cosine is an even function."
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "$sin^(-1)(x)$ means $frac{1}{sin(x)}$.",
+     "answer": false,
+     "explain": "$sin^(-1)(x)$ is the inverse function, arcsine. $frac{1}{sin(x)}$ is $csc(x)$."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "$tan(frac{pi}{2})$ is",
+     "options": [
+      "undefined, because $cos(frac{pi}{2}) = 0$",
+      "0",
+      "1",
+      "$∞$, a very large number"
+     ],
+     "answer": 0,
+     "explain": "$tan = frac{sin}{cos}$, and you cannot divide by 0. That is where the graph of tangent has its vertical asymptotes."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "V1",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{pi}{4})$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$tan(frac{pi}{4})$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "Here $sin = frac{sqrt(2)}{2}$ and $cos = frac{sqrt(2)}{2}$, so $tan(frac{pi}{4}) = 1$."
+    },
+    {
+     "id": "V2",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{pi}{3})$.",
+     "answer": "sqrt(3)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$tan(frac{pi}{3})$ =",
+     "show": "$sqrt(3)$",
+     "level": 1,
+     "explain": "Here $sin = frac{sqrt(3)}{2}$ and $cos = frac{1}{2}$, so $tan(frac{pi}{3}) = sqrt(3)$."
+    },
+    {
+     "id": "V3",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{pi}{6})$.",
+     "answer": "sqrt(3)/3",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$tan(frac{pi}{6})$ =",
+     "show": "$frac{sqrt(3)}{3}$",
+     "level": 1,
+     "explain": "Here $sin = frac{1}{2}$ and $cos = frac{sqrt(3)}{2}$, so $tan(frac{pi}{6}) = frac{sqrt(3)}{3}$."
+    },
+    {
+     "id": "V4",
+     "type": "expr",
+     "text": "Find the exact value of $tan(0)$.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$tan(0)$ =",
+     "show": "$0$",
+     "level": 1,
+     "explain": "Here $sin = 0$ and $cos = 1$, so $tan(0) = 0$."
+    },
+    {
+     "id": "V5",
+     "type": "expr",
+     "text": "Find the exact value of $sec(0)$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sec(0)$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "Here $sin = 0$ and $cos = 1$, so $sec(0) = 1$."
+    },
+    {
+     "id": "V6",
+     "type": "expr",
+     "text": "Find the exact value of $sec(frac{pi}{3})$.",
+     "answer": "2",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sec(frac{pi}{3})$ =",
+     "show": "$2$",
+     "level": 1,
+     "explain": "Here $sin = frac{sqrt(3)}{2}$ and $cos = frac{1}{2}$, so $sec(frac{pi}{3}) = 2$."
+    },
+    {
+     "id": "V7",
+     "type": "expr",
+     "text": "Find the exact value of $csc(frac{pi}{6})$.",
+     "answer": "2",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$csc(frac{pi}{6})$ =",
+     "show": "$2$",
+     "level": 1,
+     "explain": "Here $sin = frac{1}{2}$ and $cos = frac{sqrt(3)}{2}$, so $csc(frac{pi}{6}) = 2$."
+    },
+    {
+     "id": "V8",
+     "type": "expr",
+     "text": "Find the exact value of $csc(frac{pi}{2})$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$csc(frac{pi}{2})$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "Here $sin = 1$ and $cos = 0$, so $csc(frac{pi}{2}) = 1$."
+    },
+    {
+     "id": "V9",
+     "type": "expr",
+     "text": "Find the exact value of $cot(frac{pi}{4})$.",
+     "answer": "1",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$cot(frac{pi}{4})$ =",
+     "show": "$1$",
+     "level": 1,
+     "explain": "Here $sin = frac{sqrt(2)}{2}$ and $cos = frac{sqrt(2)}{2}$, so $cot(frac{pi}{4}) = 1$."
+    },
+    {
+     "id": "V10",
+     "type": "expr",
+     "text": "Find the exact value of $sec(pi)$.",
+     "answer": "-1",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sec(pi)$ =",
+     "show": "$-1$",
+     "level": 1,
+     "explain": "Here $sin = 0$ and $cos = -1$, so $sec(pi) = -1$."
+    },
+    {
+     "id": "V11",
+     "type": "expr",
+     "text": "Find the exact value of $tan(frac{3pi}{4})$.",
+     "answer": "-1",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$tan(frac{3pi}{4})$ =",
+     "show": "$-1$",
+     "level": 1,
+     "explain": "Here $sin = frac{sqrt(2)}{2}$ and $cos = -frac{sqrt(2)}{2}$, so $tan(frac{3pi}{4}) = -1$."
+    },
+    {
+     "id": "V12",
+     "type": "expr",
+     "text": "Find the exact value of $sec(frac{pi}{4})$.",
+     "answer": "sqrt(2)",
+     "vars": [],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "$sec(frac{pi}{4})$ =",
+     "show": "$sqrt(2)$",
+     "level": 1,
+     "explain": "Here $sin = frac{sqrt(2)}{2}$ and $cos = frac{sqrt(2)}{2}$, so $sec(frac{pi}{4}) = sqrt(2)$."
+    },
+    {
+     "id": "W13",
+     "type": "mc",
+     "text": "Rewrite $tan(x)$ using sine and cosine.",
+     "options": [
+      "$frac{sin(x)}{cos(x)}$",
+      "$frac{cos(x)}{sin(x)}$",
+      "$frac{1}{sin(x)}$",
+      "$frac{1}{cos(x)}$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$tan(x) = frac{sin(x)}{cos(x)}$"
+    },
+    {
+     "id": "W14",
+     "type": "mc",
+     "text": "Rewrite $sec(x)$ using sine and cosine.",
+     "options": [
+      "$frac{1}{cos(x)}$",
+      "$frac{1}{sin(x)}$",
+      "$frac{sin(x)}{cos(x)}$",
+      "$cos(frac{1}{x})$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$sec(x) = frac{1}{cos(x)}$"
+    },
+    {
+     "id": "W15",
+     "type": "mc",
+     "text": "Rewrite $csc(x)$ using sine and cosine.",
+     "options": [
+      "$frac{1}{sin(x)}$",
+      "$frac{1}{cos(x)}$",
+      "$frac{cos(x)}{sin(x)}$",
+      "$sin(frac{1}{x})$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$csc(x) = frac{1}{sin(x)}$"
+    },
+    {
+     "id": "W16",
+     "type": "mc",
+     "text": "Rewrite $cot(x)$ using sine and cosine.",
+     "options": [
+      "$frac{cos(x)}{sin(x)}$",
+      "$frac{sin(x)}{cos(x)}$",
+      "$frac{1}{cos(x)}$",
+      "$frac{1}{sin(x)}$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$cot(x) = frac{cos(x)}{sin(x)}$"
+    },
+    {
+     "id": "W17",
+     "type": "mc",
+     "text": "Rewrite $tan(x)cos(x)$ using sine and cosine.",
+     "options": [
+      "$sin(x)$",
+      "$cos(x)$",
+      "$1$",
+      "$sec(x)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$tan(x)cos(x) = sin(x)$"
+    },
+    {
+     "id": "W18",
+     "type": "mc",
+     "text": "Rewrite $frac{1}{sec(x)}$ using sine and cosine.",
+     "options": [
+      "$cos(x)$",
+      "$sin(x)$",
+      "$csc(x)$",
+      "$tan(x)$"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "$frac{1}{sec(x)} = cos(x)$"
+    },
+    {
+     "id": "I19",
+     "type": "mc",
+     "text": "$sin^2(x) + cos^2(x) =$",
+     "options": [
+      "$1$",
+      "$0$",
+      "$sin(2x)$",
+      "$tan^2(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin^2(x) + cos^2(x) = 1$"
+    },
+    {
+     "id": "I20",
+     "type": "mc",
+     "text": "$1 + tan^2(x) =$",
+     "options": [
+      "$sec^2(x)$",
+      "$csc^2(x)$",
+      "$cos^2(x)$",
+      "$sin^2(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$1 + tan^2(x) = sec^2(x)$"
+    },
+    {
+     "id": "I21",
+     "type": "mc",
+     "text": "$1 - cos^2(x) =$",
+     "options": [
+      "$sin^2(x)$",
+      "$-sin^2(x)$",
+      "$tan^2(x)$",
+      "$cos^2(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$1 - cos^2(x) = sin^2(x)$"
+    },
+    {
+     "id": "I22",
+     "type": "mc",
+     "text": "$1 - sin^2(x) =$",
+     "options": [
+      "$cos^2(x)$",
+      "$-cos^2(x)$",
+      "$sin^2(x)$",
+      "$sec^2(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$1 - sin^2(x) = cos^2(x)$"
+    },
+    {
+     "id": "I23",
+     "type": "mc",
+     "text": "$sin(2x) =$",
+     "options": [
+      "$2sin(x)cos(x)$",
+      "$2sin(x)$",
+      "$sin^2(x)$",
+      "$2cos(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin(2x) = 2sin(x)cos(x)$"
+    },
+    {
+     "id": "I24",
+     "type": "mc",
+     "text": "$sec^2(x) - 1 =$",
+     "options": [
+      "$tan^2(x)$",
+      "$cot^2(x)$",
+      "$sin^2(x)$",
+      "$1$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sec^2(x) - 1 = tan^2(x)$"
+    },
+    {
+     "id": "I25",
+     "type": "mc",
+     "text": "$sin(-x) =$",
+     "options": [
+      "$-sin(x)$",
+      "$sin(x)$",
+      "$cos(x)$",
+      "$-cos(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin(-x) = -sin(x)$"
+    },
+    {
+     "id": "I26",
+     "type": "mc",
+     "text": "$cos(-x) =$",
+     "options": [
+      "$cos(x)$",
+      "$-cos(x)$",
+      "$sin(x)$",
+      "$-sin(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$cos(-x) = cos(x)$"
+    },
+    {
+     "id": "I27",
+     "type": "mc",
+     "text": "$sin(x + 2pi) =$",
+     "options": [
+      "$sin(x)$",
+      "$-sin(x)$",
+      "$cos(x)$",
+      "$sin(x) + 2pi$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$sin(x + 2pi) = sin(x)$"
+    },
+    {
+     "id": "I28",
+     "type": "mc",
+     "text": "$frac{sin(x)}{cos(x)} =$",
+     "options": [
+      "$tan(x)$",
+      "$cot(x)$",
+      "$sec(x)$",
+      "$csc(x)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "$frac{sin(x)}{cos(x)} = tan(x)$"
+    },
+    {
+     "id": "P29",
+     "type": "num",
+     "text": "If $sin(theta) = frac{3}{5}$ and $theta$ is in the first quadrant, find $cos(theta)$.",
+     "answer": 0.8,
+     "label": "$cos(theta)$ =",
+     "level": 2,
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $frac{4}{5}$."
+    },
+    {
+     "id": "P30",
+     "type": "num",
+     "text": "If $cos(theta) = frac{5}{13}$ and $theta$ is in the first quadrant, find $sin(theta)$.",
+     "answer": 0.923077,
+     "label": "$sin(theta)$ =",
+     "level": 2,
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $frac{12}{13}$."
+    },
+    {
+     "id": "P31",
+     "type": "num",
+     "text": "If $sin(theta) = frac{4}{5}$ and $theta$ is in the second quadrant, find $cos(theta)$.",
+     "answer": -0.6,
+     "label": "$cos(theta)$ =",
+     "level": 2,
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $-frac{3}{5}$."
+    },
+    {
+     "id": "P32",
+     "type": "num",
+     "text": "If $cos(theta) = -frac{3}{5}$ and $theta$ is in the second quadrant, find $sin(theta)$.",
+     "answer": 0.8,
+     "label": "$sin(theta)$ =",
+     "level": 2,
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $frac{4}{5}$."
+    },
+    {
+     "id": "P33",
+     "type": "num",
+     "text": "If $sin(theta) = -frac{5}{13}$ and $theta$ is in the fourth quadrant, find $cos(theta)$.",
+     "answer": 0.923077,
+     "label": "$cos(theta)$ =",
+     "level": 2,
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $frac{12}{13}$."
+    },
+    {
+     "id": "P34",
+     "type": "num",
+     "text": "If $cos(theta) = frac{8}{17}$ and $theta$ is in the first quadrant, find $sin(theta)$.",
+     "answer": 0.882353,
+     "label": "$sin(theta)$ =",
+     "level": 2,
+     "explain": "Use $sin^2 + cos^2 = 1$ for the size, and the quadrant for the sign: $frac{15}{17}$."
+    },
+    {
+     "id": "S35",
+     "type": "ucircle",
+     "text": "Solve $sin(theta) = frac{sqrt3}{2}$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      3,
+      5
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{pi}{3}$, $frac{2pi}{3}$."
+    },
+    {
+     "id": "S36",
+     "type": "ucircle",
+     "text": "Solve $cos(theta) = -frac{1}{2}$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      5,
+      11
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{2pi}{3}$, $frac{4pi}{3}$."
+    },
+    {
+     "id": "S37",
+     "type": "ucircle",
+     "text": "Solve $tan(theta) = 1$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      2,
+      10
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{pi}{4}$, $frac{5pi}{4}$."
+    },
+    {
+     "id": "S38",
+     "type": "ucircle",
+     "text": "Solve $sin(theta) = 0$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      0,
+      8
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = 0$, $pi$."
+    },
+    {
+     "id": "S39",
+     "type": "ucircle",
+     "text": "Solve $cos(theta) = 0$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      4,
+      12
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{pi}{2}$, $frac{3pi}{2}$."
+    },
+    {
+     "id": "S40",
+     "type": "ucircle",
+     "text": "Solve $2sin(theta) - 1 = 0$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      1,
+      7
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{pi}{6}$, $frac{5pi}{6}$."
+    },
+    {
+     "id": "S41",
+     "type": "ucircle",
+     "text": "Solve $sin(theta) = -1$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      12
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{3pi}{2}$."
+    },
+    {
+     "id": "S42",
+     "type": "ucircle",
+     "text": "Solve $cos(theta) = 1$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      0
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = 0$."
+    },
+    {
+     "id": "S43",
+     "type": "ucircle",
+     "text": "Solve $sin^2(theta) = frac{1}{4}$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      1,
+      7,
+      9,
+      15
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{pi}{6}$, $frac{5pi}{6}$, $frac{7pi}{6}$, $frac{11pi}{6}$."
+    },
+    {
+     "id": "S44",
+     "type": "ucircle",
+     "text": "Solve $2cos(theta) + sqrt3 = 0$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      7,
+      9
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{5pi}{6}$, $frac{7pi}{6}$."
+    },
+    {
+     "id": "S45",
+     "type": "ucircle",
+     "text": "Solve $tan(theta) = -1$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      6,
+      14
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = frac{3pi}{4}$, $frac{7pi}{4}$."
+    },
+    {
+     "id": "S46",
+     "type": "ucircle",
+     "text": "Solve $cos^2(theta) = 1$ on the unit circle: tap **every** angle from 0 to $2pi$ that works.",
+     "ask": "where",
+     "answers": [
+      0,
+      8
+     ],
+     "level": 3,
+     "explain": "The solutions are $theta = 0$, $pi$."
+    },
+    {
+     "id": "Z47",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$tan(x)cos(x)$$\n",
+     "answer": "sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$sin(x)$",
+     "level": 3,
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $sin(x)$.",
+     "maxLen": 3
+    },
+    {
+     "id": "Z48",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$sec(x)cos(x)$$\n",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$1$",
+     "level": 3,
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $1$.",
+     "maxLen": 2
+    },
+    {
+     "id": "Z49",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$frac{1 - cos^2(x)}{sin(x)}$$\n",
+     "answer": "sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$sin(x)$",
+     "level": 3,
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $sin(x)$.",
+     "maxLen": 3
+    },
+    {
+     "id": "Z50",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$frac{sin(x)}{tan(x)}$$\n",
+     "answer": "cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$cos(x)$",
+     "level": 3,
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $cos(x)$.",
+     "maxLen": 3
+    },
+    {
+     "id": "Z51",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$frac{sin^2(x) + cos^2(x)}{cos(x)} · cos(x)$$\n",
+     "answer": "1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$1$",
+     "level": 3,
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $1$.",
+     "maxLen": 2
+    },
+    {
+     "id": "Z52",
+     "type": "expr",
+     "text": "Simplify to a single trig function or a number.$$(1 - sin(x))(1 + sin(x))$$\n",
+     "answer": "cos(x)^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "pi",
+      "sin(",
+      "cos(",
+      "tan("
+     ],
+     "label": "simplified =",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "show": "$cos(x)^2$",
+     "level": 3,
+     "explain": "Rewrite everything with sine and cosine, then cancel or use $sin^2 + cos^2 = 1$: $cos(x)^2$.",
+     "maxLen": 5
+    },
+    {
+     "id": "N53",
+     "type": "expr",
+     "text": "$arcsin(frac{1}{2})$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "pi/6",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arcsin(frac{1}{2})$ =",
+     "show": "$frac{pi}{6}$",
+     "level": 3,
+     "explain": "The angle is $frac{pi}{6}$. Inverse trig functions hand back an **angle**."
+    },
+    {
+     "id": "N54",
+     "type": "expr",
+     "text": "$arccos(0)$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "pi/2",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arccos(0)$ =",
+     "show": "$frac{pi}{2}$",
+     "level": 3,
+     "explain": "The angle is $frac{pi}{2}$. Inverse trig functions hand back an **angle**."
+    },
+    {
+     "id": "N55",
+     "type": "expr",
+     "text": "$arctan(1)$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "pi/4",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arctan(1)$ =",
+     "show": "$frac{pi}{4}$",
+     "level": 3,
+     "explain": "The angle is $frac{pi}{4}$. Inverse trig functions hand back an **angle**."
+    },
+    {
+     "id": "N56",
+     "type": "expr",
+     "text": "$arcsin(1)$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "pi/2",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arcsin(1)$ =",
+     "show": "$frac{pi}{2}$",
+     "level": 3,
+     "explain": "The angle is $frac{pi}{2}$. Inverse trig functions hand back an **angle**."
+    },
+    {
+     "id": "N57",
+     "type": "expr",
+     "text": "$arccos(frac{1}{2})$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "pi/3",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arccos(frac{1}{2})$ =",
+     "show": "$frac{pi}{3}$",
+     "level": 3,
+     "explain": "The angle is $frac{pi}{3}$. Inverse trig functions hand back an **angle**."
+    },
+    {
+     "id": "N58",
+     "type": "expr",
+     "text": "$arctan(0)$ asks: which angle has that sine (or cosine, or tangent)? Give the angle in radians.",
+     "answer": "0",
+     "vars": [],
+     "keys": [
+      "pi"
+     ],
+     "label": "$arctan(0)$ =",
+     "show": "$0$",
+     "level": 3,
+     "explain": "The angle is $0$. Inverse trig functions hand back an **angle**."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "match",
+    "text": "The other four trig functions are all built from sine and cosine. Match each one.",
+    "pairs": [
+     [
+      "$tan(x)$",
+      "$frac{sin(x)}{cos(x)}$"
+     ],
+     [
+      "$sec(x)$",
+      "$frac{1}{cos(x)}$"
+     ],
+     [
+      "$csc(x)$",
+      "$frac{1}{sin(x)}$"
+     ],
+     [
+      "$cot(x)$",
+      "$frac{cos(x)}{sin(x)}$"
+     ]
+    ],
+    "hint": "Secant goes with cosine, cosecant goes with sine. Each pair has exactly one \"co\".",
+    "explain": "So if you know sine and cosine on the unit circle, you know all six."
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "text": "For example:$$tan(frac{pi}{4}) = frac{sin(frac{pi}{4})}{cos(frac{pi}{4})}$$\nAt $frac{pi}{4}$, sine and cosine are both $frac{sqrt2}{2}$. So what is $tan(frac{pi}{4})$?",
+    "answer": 1,
+    "label": "$tan(frac{pi}{4})$ =",
+    "hint": "Anything divided by itself.",
+    "explain": "$tan(frac{pi}{4}) = 1$"
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "The point $(cos(theta), sin(theta))$ is on a circle of radius 1, so the Pythagorean theorem gives the most-used identity of all:$$sin^2(theta) + cos^2(theta) = 1$$\nIf $sin(theta) = frac{3}{5}$ and $theta$ is in the first quadrant, what is $cos(theta)$?",
+    "options": [
+     "$frac{4}{5}$",
+     "$frac{2}{5}$",
+     "$frac{3}{4}$",
+     "$frac{5}{3}$"
+    ],
+    "answer": 0,
+    "hint": "$cos^2(theta) = 1 - frac{9}{25}$",
+    "explain": "$cos^2(theta) = frac{16}{25}$, and cosine is positive in the first quadrant, so $cos(theta) = frac{4}{5}$."
+   },
+   {
+    "id": "L4",
+    "type": "ucircle",
+    "text": "Solving a trig equation means finding points on the circle. Tap **every** angle from 0 to $2pi$ where $sin(theta) = frac{1}{2}$.",
+    "ask": "where",
+    "answers": [
+     1,
+     7
+    ],
+    "hint": "Sine is the height of the point. Which points are at height $frac{1}{2}$?",
+    "explain": "Two answers: $frac{pi}{6}$ and $frac{5pi}{6}$. A trig equation almost always has more than one solution."
+   },
+   {
+    "id": "L5",
+    "type": "mc",
+    "text": "Last, a notation trap. $sin^2(x)$ means",
+    "options": [
+     "$(sin(x))^2$",
+     "$sin(x^2)$",
+     "$sin(sin(x))$",
+     "$2sin(x)$"
+    ],
+    "answer": 0,
+    "hint": "It is how people avoid writing an extra pair of parentheses.",
+    "explain": "$sin^2(x) = (sin(x))^2$: take the sine, then square. But $sin^(-1)(x)$ is the exception: that one means the inverse function, arcsine."
+   }
+  ]
+ }
+}

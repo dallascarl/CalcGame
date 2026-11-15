@@ -362,7 +362,7 @@
     {
      "id": "P10",
      "type": "num",
-     "text": "$f(x) = x^2 + k$ for $x < 2$ and $f(x) = 3x$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{x^2 + k, x < 2; 3x, x >= 2}$$\nWhat $k$ makes $f$ continuous at $x = 2$?",
      "answer": 2,
      "label": "$k$ =",
      "level": 2,
@@ -371,7 +371,7 @@
     {
      "id": "P11",
      "type": "num",
-     "text": "$f(x) = kx + 1$ for $x < 3$ and $f(x) = x^2$ for $x >= 3$. What $k$ makes $f$ continuous at $x = 3$?",
+     "text": "$$f(x) = cases{kx + 1, x < 3; x^2, x >= 3}$$\nWhat $k$ makes $f$ continuous at $x = 3$?",
      "answer": 2.666667,
      "label": "$k$ =",
      "level": 2,
@@ -380,7 +380,7 @@
     {
      "id": "P12",
      "type": "num",
-     "text": "$f(x) = k - x$ for $x < 1$ and $f(x) = 2x + 1$ for $x >= 1$. What $k$ makes $f$ continuous at $x = 1$?",
+     "text": "$$f(x) = cases{k - x, x < 1; 2x + 1, x >= 1}$$\nWhat $k$ makes $f$ continuous at $x = 1$?",
      "answer": 4,
      "label": "$k$ =",
      "level": 2,
@@ -389,7 +389,7 @@
     {
      "id": "P13",
      "type": "num",
-     "text": "$f(x) = kx^2$ for $x < 2$ and $f(x) = x + 6$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{kx^2, x < 2; x + 6, x >= 2}$$\nWhat $k$ makes $f$ continuous at $x = 2$?",
      "answer": 2,
      "label": "$k$ =",
      "level": 2,
@@ -398,7 +398,7 @@
     {
      "id": "P14",
      "type": "num",
-     "text": "$f(x) = x + k$ for $x < 2$ and $f(x) = x^3$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{x + k, x < 2; x^3, x >= 2}$$\nWhat $k$ makes $f$ continuous at $x = 2$?",
      "answer": 6,
      "label": "$k$ =",
      "level": 2,
@@ -407,7 +407,7 @@
     {
      "id": "P15",
      "type": "num",
-     "text": "$f(x) = 2x + k$ for $x < 1$ and $f(x) = 5 - x$ for $x >= 1$. What $k$ makes $f$ continuous at $x = 1$?",
+     "text": "$$f(x) = cases{2x + k, x < 1; 5 - x, x >= 1}$$\nWhat $k$ makes $f$ continuous at $x = 1$?",
      "answer": 2,
      "label": "$k$ =",
      "level": 2,
@@ -416,7 +416,7 @@
     {
      "id": "P16",
      "type": "num",
-     "text": "$f(x) = kx$ for $x < 2$ and $f(x) = x^2 + 4$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{kx, x < 2; x^2 + 4, x >= 2}$$\nWhat $k$ makes $f$ continuous at $x = 2$?",
      "answer": 4,
      "label": "$k$ =",
      "level": 2,
@@ -425,7 +425,7 @@
     {
      "id": "P17",
      "type": "num",
-     "text": "$f(x) = k$ for $x < 9$ and $f(x) = sqrt(x)$ for $x >= 9$. What $k$ makes $f$ continuous at $x = 9$?",
+     "text": "$$f(x) = cases{k, x < 9; sqrt(x), x >= 9}$$\nWhat $k$ makes $f$ continuous at $x = 9$?",
      "answer": 3,
      "label": "$k$ =",
      "level": 2,
@@ -434,7 +434,7 @@
     {
      "id": "C18",
      "type": "mc",
-     "text": "$f(x) = -x^2 + 4$ for $x < 3$ and $f(x) = 4x - 8$ for $x >= 3$. Is $f$ continuous at $x = 3$?",
+     "text": "$$f(x) = cases{-x^2 + 4, x < 3; 4x - 8, x >= 3}$$\nIs $f$ continuous at $x = 3$?",
      "options": [
       "Yes",
       "No"
@@ -447,7 +447,7 @@
     {
      "id": "C19",
      "type": "mc",
-     "text": "$f(x) = x + 1$ for $x < 1$ and $f(x) = x^2 + 1$ for $x >= 1$. Is $f$ continuous at $x = 1$?",
+     "text": "$$f(x) = cases{x + 1, x < 1; x^2 + 1, x >= 1}$$\nIs $f$ continuous at $x = 1$?",
      "options": [
       "Yes",
       "No"
@@ -460,7 +460,7 @@
     {
      "id": "C20",
      "type": "mc",
-     "text": "$f(x) = 2x$ for $x < 2$ and $f(x) = x^2$ for $x >= 2$. Is $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{2x, x < 2; x^2, x >= 2}$$\nIs $f$ continuous at $x = 2$?",
      "options": [
       "Yes",
       "No"
@@ -473,7 +473,7 @@
     {
      "id": "C21",
      "type": "mc",
-     "text": "$f(x) = x^2$ for $x < 2$ and $f(x) = x + 3$ for $x >= 2$. Is $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{x^2, x < 2; x + 3, x >= 2}$$\nIs $f$ continuous at $x = 2$?",
      "options": [
       "Yes",
       "No"
@@ -486,7 +486,7 @@
     {
      "id": "C22",
      "type": "mc",
-     "text": "$f(x) = 3 - x$ for $x < 2$ and $f(x) = x - 1$ for $x >= 2$. Is $f$ continuous at $x = 2$?",
+     "text": "$$f(x) = cases{3 - x, x < 2; x - 1, x >= 2}$$\nIs $f$ continuous at $x = 2$?",
      "options": [
       "Yes",
       "No"
@@ -499,7 +499,7 @@
     {
      "id": "C23",
      "type": "mc",
-     "text": "$f(x) = sqrt(x)$ for $x < 4$ and $f(x) = x - 1$ for $x >= 4$. Is $f$ continuous at $x = 4$?",
+     "text": "$$f(x) = cases{sqrt(x), x < 4; x - 1, x >= 4}$$\nIs $f$ continuous at $x = 4$?",
      "options": [
       "Yes",
       "No"
@@ -596,7 +596,7 @@
     {
      "id": "I30",
      "type": "mc",
-     "text": "$f(x) = x^3 - x^2 - 3x + 1$. $f(0) = 1$ and $f(1) = -2$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
+     "text": "$$f(x) = x^3 - x^2 - 3x + 1$$\n$f(0) = 1$ and $f(1) = -2$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
      "options": [
       "Yes",
       "No"
@@ -609,7 +609,7 @@
     {
      "id": "I31",
      "type": "mc",
-     "text": "$f(x) = x^2 - 2$. $f(1) = -1$ and $f(2) = 2$. Does the Intermediate Value Theorem promise a zero in $(1, 2)$?",
+     "text": "$$f(x) = x^2 - 2$$\n$f(1) = -1$ and $f(2) = 2$. Does the Intermediate Value Theorem promise a zero in $(1, 2)$?",
      "options": [
       "Yes",
       "No"
@@ -622,7 +622,7 @@
     {
      "id": "I32",
      "type": "mc",
-     "text": "$f(x) = x^2 + 1$. $f(-1) = 2$ and $f(1) = 2$. Does the Intermediate Value Theorem promise a zero in $(-1, 1)$?",
+     "text": "$$f(x) = x^2 + 1$$\n$f(-1) = 2$ and $f(1) = 2$. Does the Intermediate Value Theorem promise a zero in $(-1, 1)$?",
      "options": [
       "Yes",
       "No"
@@ -635,7 +635,7 @@
     {
      "id": "I33",
      "type": "mc",
-     "text": "$f(x) = cos(x) - x$. $f(0) = 1$ and $f(1) = -0.459698$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
+     "text": "$$f(x) = cos(x) - x$$\n$f(0) = 1$ and $f(1) = -0.459698$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
      "options": [
       "Yes",
       "No"
@@ -648,7 +648,7 @@
     {
      "id": "I34",
      "type": "mc",
-     "text": "$f(x) = x^3 + x + 1$. $f(-1) = -1$ and $f(0) = 1$. Does the Intermediate Value Theorem promise a zero in $(-1, 0)$?",
+     "text": "$$f(x) = x^3 + x + 1$$\n$f(-1) = -1$ and $f(0) = 1$. Does the Intermediate Value Theorem promise a zero in $(-1, 0)$?",
      "options": [
       "Yes",
       "No"
@@ -661,7 +661,7 @@
     {
      "id": "I35",
      "type": "mc",
-     "text": "$f(x) = x^2 - 4x + 5$. $f(0) = 5$ and $f(3) = 2$. Does the Intermediate Value Theorem promise a zero in $(0, 3)$?",
+     "text": "$$f(x) = x^2 - 4x + 5$$\n$f(0) = 5$ and $f(3) = 2$. Does the Intermediate Value Theorem promise a zero in $(0, 3)$?",
      "options": [
       "Yes",
       "No"
@@ -775,7 +775,7 @@
    {
     "id": "L4",
     "type": "num",
-    "text": "Piecewise functions: $f(x) = x^2 + k$ for $x < 2$ and $f(x) = 3x$ for $x >= 2$. What $k$ makes $f$ continuous at $x = 2$?",
+    "text": "$$f(x) = cases{x^2 + k, x < 2; 3x, x >= 2}$$\nWhat $k$ makes $f$ continuous at $x = 2$?",
     "answer": 2,
     "label": "$k$ =",
     "hint": "Make the two pieces meet at $x = 2$: $4 + k = 6$.",

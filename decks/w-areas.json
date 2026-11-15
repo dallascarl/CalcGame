@@ -5,7 +5,46 @@
  "title": "Areas and Distance",
  "subtitle": "Rectangles that fill in the area under a curve.",
  "version": 2,
- "graphs": {},
+ "graphs": {
+  "L4": {
+   "window": [
+    -0.3,
+    2.3,
+    -0.4,
+    4.4
+   ],
+   "pieces": [
+    {
+     "expr": "x^2",
+     "from": 0,
+     "to": 2
+    }
+   ],
+   "rects": [
+    [
+     0,
+     0.5,
+     0
+    ],
+    [
+     0.5,
+     1,
+     0.25
+    ],
+    [
+     1,
+     1.5,
+     1
+    ],
+    [
+     1.5,
+     2,
+     2.25
+    ]
+   ],
+   "xstep": 0.5
+  }
+ },
  "drills": {
   "theory": {
    "title": "Theory",
@@ -968,7 +1007,7 @@
    {
     "id": "L4",
     "type": "mc",
-    "text": "$f(x) = x^2$ is **increasing** on $[0, 2]$. The left endpoint sum $L_4$ is",
+    "text": "$f(x) = x^2$ is **increasing** on $[0, 2]$. The picture shows the left endpoint sum $L_4$. Compared with the true area under the curve, $L_4$ is",
     "options": [
      "an underestimate",
      "an overestimate",
@@ -977,7 +1016,8 @@
     ],
     "answer": 0,
     "hint": "Each left rectangle uses the lowest height on its piece.",
-    "explain": "For an increasing function, left sums are too small and right sums are too big."
+    "explain": "Every left rectangle stays under the curve, so the gaps are area the sum misses. For an increasing function, left sums are too small and right sums are too big.",
+    "graph": "L4"
    },
    {
     "id": "L5",

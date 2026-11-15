@@ -433,7 +433,7 @@
     {
      "id": "F26",
      "type": "expr",
-     "text": "$f(x) = arctan(x^2)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(x^2)$$\nFill in the derivative of the inside.",
      "answer": "2x",
      "vars": [
       "x"
@@ -461,7 +461,7 @@
     {
      "id": "F27",
      "type": "expr",
-     "text": "$f(x) = arctan(3x)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(3x)$$\nFill in the derivative of the inside.",
      "answer": "3",
      "vars": [
       "x"
@@ -489,7 +489,7 @@
     {
      "id": "F28",
      "type": "expr",
-     "text": "$f(x) = arcsin(2x)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arcsin(2x)$$\nFill in the derivative of the inside.",
      "answer": "2",
      "vars": [
       "x"
@@ -517,7 +517,7 @@
     {
      "id": "F29",
      "type": "expr",
-     "text": "$f(x) = arctan(e^x)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(e^x)$$\nFill in the derivative of the inside.",
      "answer": "e^x",
      "vars": [
       "x"
@@ -545,7 +545,7 @@
     {
      "id": "F30",
      "type": "expr",
-     "text": "$f(x) = arcsin(x^2)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arcsin(x^2)$$\nFill in the derivative of the inside.",
      "answer": "2x",
      "vars": [
       "x"
@@ -573,7 +573,7 @@
     {
      "id": "F31",
      "type": "expr",
-     "text": "$f(x) = arctan(sqrt(x))$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(sqrt(x))$$\nFill in the derivative of the inside.",
      "answer": "1/(2sqrt(x))",
      "vars": [
       "x"
@@ -601,7 +601,7 @@
     {
      "id": "F32",
      "type": "expr",
-     "text": "$f(x) = arccos(3x)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arccos(3x)$$\nFill in the derivative of the inside.",
      "answer": "3",
      "vars": [
       "x"
@@ -629,7 +629,7 @@
     {
      "id": "F33",
      "type": "expr",
-     "text": "$f(x) = arctan(x^3)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(x^3)$$\nFill in the derivative of the inside.",
      "answer": "3x^2",
      "vars": [
       "x"
@@ -657,7 +657,7 @@
     {
      "id": "F34",
      "type": "expr",
-     "text": "$f(x) = arcsin(x/2)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arcsin(x/2)$$\nFill in the derivative of the inside.",
      "answer": "1/2",
      "vars": [
       "x"
@@ -685,7 +685,7 @@
     {
      "id": "F35",
      "type": "expr",
-     "text": "$f(x) = arctan(ln(x))$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(ln(x))$$\nFill in the derivative of the inside.",
      "answer": "1/x",
      "vars": [
       "x"
@@ -713,7 +713,7 @@
     {
      "id": "F36",
      "type": "expr",
-     "text": "$f(x) = arcsin(sqrt(x))$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arcsin(sqrt(x))$$\nFill in the derivative of the inside.",
      "answer": "1/(2sqrt(x))",
      "vars": [
       "x"
@@ -741,7 +741,7 @@
     {
      "id": "F37",
      "type": "expr",
-     "text": "$f(x) = arctan(5x + 1)$. Fill in the derivative of the inside.",
+     "text": "$$f(x) = arctan(5x + 1)$$\nFill in the derivative of the inside.",
      "answer": "5",
      "vars": [
       "x"

@@ -82,7 +82,7 @@
     {
      "id": "T7",
      "type": "mc",
-     "text": "$f(x) = sin(sin(sin(x)))$. When you use the chain rule, how many factors does $f'(x)$ have?",
+     "text": "$$f(x) = sin(sin(sin(x)))$$\nWhen you use the chain rule, how many factors does $f'(x)$ have?",
      "options": [
       "3",
       "1",

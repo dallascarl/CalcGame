@@ -1,0 +1,1126 @@
+{
+ "id": "t-radicals",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Radicals and Conjugates",
+ "subtitle": "Simplifying square roots, and the conjugate trick that clears them.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "$sqrt(x^2 + 16) = x + 4$",
+     "answer": false,
+     "explain": "A root does not split over a sum. Try $x = 3$: $sqrt(25) = 5$, not 7."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "For $x >= 0$, $sqrt(4x) = 2sqrt(x)$",
+     "answer": true,
+     "explain": "A root does split over a product: $sqrt(4) · sqrt(x)$."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "For $x >= 0$, $(sqrt(x))^2 =$",
+     "options": [
+      "$x$",
+      "$x^2$",
+      "$sqrt(x)$",
+      "$2x$"
+     ],
+     "answer": 0,
+     "explain": "Squaring undoes the square root."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "For **any** real number $x$, $sqrt(x^2) =$",
+     "options": [
+      "$|x|$",
+      "$x$",
+      "$-x$",
+      "$x^2$"
+     ],
+     "answer": 0,
+     "explain": "Try $x = -3$: $sqrt(9) = 3$, which is $|-3|$. A square root is never negative."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "The conjugate of $3 + sqrt(x)$ is",
+     "options": [
+      "$3 - sqrt(x)$",
+      "$-3 - sqrt(x)$",
+      "$3 + sqrt(x)$",
+      "$frac{1}{3 + sqrt(x)}$"
+     ],
+     "answer": 0,
+     "explain": "Keep the two terms in place and flip the sign between them."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "Multiplying $sqrt(a) - sqrt(b)$ by its conjugate gives",
+     "options": [
+      "$a - b$",
+      "$a + b$",
+      "$a - 2sqrt(ab) + b$",
+      "$sqrt(a - b)$"
+     ],
+     "answer": 0,
+     "explain": "$(sqrt(a))^2 - (sqrt(b))^2 = a - b$. The cross terms cancel, and that is the whole point."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "A1",
+     "type": "num",
+     "text": "$$sqrt(50) = a sqrt(2)$$\nWhat is $a$?",
+     "answer": 5,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$50 = 25 · 2$, and $sqrt(25) = 5$."
+    },
+    {
+     "id": "A2",
+     "type": "num",
+     "text": "$$sqrt(12) = a sqrt(3)$$\nWhat is $a$?",
+     "answer": 2,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$12 = 4 · 3$, and $sqrt(4) = 2$."
+    },
+    {
+     "id": "A3",
+     "type": "num",
+     "text": "$$sqrt(18) = a sqrt(2)$$\nWhat is $a$?",
+     "answer": 3,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$18 = 9 · 2$, and $sqrt(9) = 3$."
+    },
+    {
+     "id": "A4",
+     "type": "num",
+     "text": "$$sqrt(75) = a sqrt(3)$$\nWhat is $a$?",
+     "answer": 5,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$75 = 25 · 3$, and $sqrt(25) = 5$."
+    },
+    {
+     "id": "A5",
+     "type": "num",
+     "text": "$$sqrt(8) = a sqrt(2)$$\nWhat is $a$?",
+     "answer": 2,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$8 = 4 · 2$, and $sqrt(4) = 2$."
+    },
+    {
+     "id": "A6",
+     "type": "num",
+     "text": "$$sqrt(45) = a sqrt(5)$$\nWhat is $a$?",
+     "answer": 3,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$45 = 9 · 5$, and $sqrt(9) = 3$."
+    },
+    {
+     "id": "A7",
+     "type": "num",
+     "text": "$$sqrt(72) = a sqrt(2)$$\nWhat is $a$?",
+     "answer": 6,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$72 = 36 · 2$, and $sqrt(36) = 6$."
+    },
+    {
+     "id": "A8",
+     "type": "num",
+     "text": "$$sqrt(48) = a sqrt(3)$$\nWhat is $a$?",
+     "answer": 4,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$48 = 16 · 3$, and $sqrt(16) = 4$."
+    },
+    {
+     "id": "A9",
+     "type": "num",
+     "text": "$$sqrt(200) = a sqrt(2)$$\nWhat is $a$?",
+     "answer": 10,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$200 = 100 · 2$, and $sqrt(100) = 10$."
+    },
+    {
+     "id": "A10",
+     "type": "num",
+     "text": "$$sqrt(27) = a sqrt(3)$$\nWhat is $a$?",
+     "answer": 3,
+     "label": "$a$ =",
+     "level": 1,
+     "explain": "$27 = 9 · 3$, and $sqrt(9) = 3$."
+    },
+    {
+     "id": "V11",
+     "type": "num",
+     "text": "$$sqrt(49)$$\nFind the value.",
+     "answer": 7,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(49) = 7$"
+    },
+    {
+     "id": "V12",
+     "type": "num",
+     "text": "$$sqrt(frac{1}{4})$$\nFind the value.",
+     "answer": 0.5,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(frac{1}{4}) = frac{1}{2}$"
+    },
+    {
+     "id": "V13",
+     "type": "num",
+     "text": "$$sqrt(16) · sqrt(9)$$\nFind the value.",
+     "answer": 12,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(16) · sqrt(9) = 12$"
+    },
+    {
+     "id": "V14",
+     "type": "num",
+     "text": "$$sqrt(3) · sqrt(12)$$\nFind the value.",
+     "answer": 6,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(3) · sqrt(12) = 6$"
+    },
+    {
+     "id": "V15",
+     "type": "num",
+     "text": "$$frac{sqrt(50)}{sqrt(2)}$$\nFind the value.",
+     "answer": 5,
+     "label": "value =",
+     "level": 1,
+     "explain": "$frac{sqrt(50)}{sqrt(2)} = 5$"
+    },
+    {
+     "id": "V16",
+     "type": "num",
+     "text": "$$(sqrt(7))^2$$\nFind the value.",
+     "answer": 7,
+     "label": "value =",
+     "level": 1,
+     "explain": "$(sqrt(7))^2 = 7$"
+    },
+    {
+     "id": "V17",
+     "type": "num",
+     "text": "$$sqrt(5^2 + 12^2)$$\nFind the value.",
+     "answer": 13,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(5^2 + 12^2) = 13$"
+    },
+    {
+     "id": "V18",
+     "type": "num",
+     "text": "$$sqrt(9 + 16)$$\nFind the value.",
+     "answer": 5,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(9 + 16) = 5$"
+    },
+    {
+     "id": "V19",
+     "type": "num",
+     "text": "$$sqrt(100 - 36)$$\nFind the value.",
+     "answer": 8,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(100 - 36) = 8$"
+    },
+    {
+     "id": "V20",
+     "type": "num",
+     "text": "$$sqrt(2) · sqrt(8)$$\nFind the value.",
+     "answer": 4,
+     "label": "value =",
+     "level": 1,
+     "explain": "$sqrt(2) · sqrt(8) = 4$"
+    },
+    {
+     "id": "C21",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x) - 3)(sqrt(x) + 3)$$\n",
+     "answer": "x - 9",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x - 9$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $x - 9$.",
+     "maxLen": 5
+    },
+    {
+     "id": "C22",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x) + 5)(sqrt(x) - 5)$$\n",
+     "answer": "x - 25",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x - 25$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $x - 25$.",
+     "maxLen": 5
+    },
+    {
+     "id": "C23",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x + 1) - 2)(sqrt(x + 1) + 2)$$\n",
+     "answer": "x - 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x - 3$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $x - 3$.",
+     "maxLen": 5
+    },
+    {
+     "id": "C24",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(3 - sqrt(x))(3 + sqrt(x))$$\n",
+     "answer": "9 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$9 - x$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $9 - x$.",
+     "maxLen": 5
+    },
+    {
+     "id": "C25",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x + h) - sqrt(x))(sqrt(x + h) + sqrt(x))$$\n",
+     "answer": "h",
+     "vars": [
+      "x",
+      "h"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$h$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $h$.",
+     "maxLen": 3
+    },
+    {
+     "id": "C26",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x + 4) - 2)(sqrt(x + 4) + 2)$$\n",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $x$.",
+     "maxLen": 3
+    },
+    {
+     "id": "C27",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(2x) - 1)(sqrt(2x) + 1)$$\n",
+     "answer": "2x - 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$2x - 1$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $2x - 1$.",
+     "maxLen": 6
+    },
+    {
+     "id": "C28",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$$\n",
+     "answer": "x^2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x^2$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $x^2$.",
+     "maxLen": 5
+    },
+    {
+     "id": "C29",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(1 - sqrt(x))(1 + sqrt(x))$$\n",
+     "answer": "1 - x",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$1 - x$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $1 - x$.",
+     "maxLen": 5
+    },
+    {
+     "id": "C30",
+     "type": "expr",
+     "text": "Multiply out. The roots should disappear.$$(sqrt(x) - sqrt(2))(sqrt(x) + sqrt(2))$$\n",
+     "answer": "x - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt("
+     ],
+     "label": "product =",
+     "show": "$x - 2$",
+     "level": 2,
+     "explain": "$a^2 - b^2$ with the root as $a$: $x - 2$.",
+     "maxLen": 5
+    },
+    {
+     "id": "J31",
+     "type": "mc",
+     "text": "What is the conjugate of $sqrt(x) - 4$?",
+     "options": [
+      "$sqrt(x) + 4$",
+      "$sqrt(x) - 4$",
+      "$-sqrt(x) - 4$",
+      "$sqrt(x + 4)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Same two terms, with the sign between them flipped."
+    },
+    {
+     "id": "J32",
+     "type": "mc",
+     "text": "What is the conjugate of $sqrt(x + 2) + 1$?",
+     "options": [
+      "$sqrt(x + 2) - 1$",
+      "$sqrt(x - 2) + 1$",
+      "$sqrt(x + 2) + 1$",
+      "$sqrt(x - 2) - 1$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Same two terms, with the sign between them flipped."
+    },
+    {
+     "id": "J33",
+     "type": "mc",
+     "text": "What is the conjugate of $5 - sqrt(x)$?",
+     "options": [
+      "$5 + sqrt(x)$",
+      "$-5 - sqrt(x)$",
+      "$5 - sqrt(x)$",
+      "$sqrt(x) - 5$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Same two terms, with the sign between them flipped."
+    },
+    {
+     "id": "J34",
+     "type": "mc",
+     "text": "What is the conjugate of $sqrt(x + h) - sqrt(x)$?",
+     "options": [
+      "$sqrt(x + h) + sqrt(x)$",
+      "$sqrt(x - h) - sqrt(x)$",
+      "$sqrt(x + h) - sqrt(x)$",
+      "$sqrt(x) - sqrt(x + h)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Same two terms, with the sign between them flipped."
+    },
+    {
+     "id": "J35",
+     "type": "mc",
+     "text": "What is the conjugate of $sqrt(x^2 + 1) - x$?",
+     "options": [
+      "$sqrt(x^2 + 1) + x$",
+      "$sqrt(x^2 - 1) - x$",
+      "$sqrt(x^2 + 1) - x$",
+      "$x - sqrt(x^2 + 1)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Same two terms, with the sign between them flipped."
+    },
+    {
+     "id": "R36",
+     "type": "mc",
+     "text": "Which is equal to $frac{1}{sqrt(2)}$, with no root on the bottom?",
+     "options": [
+      "$frac{sqrt(2)}{2}$",
+      "$sqrt(2)$",
+      "$frac{1}{2}$",
+      "$2sqrt(2)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Multiply the top and the bottom by the root: $frac{1}{sqrt(2)} = frac{sqrt(2)}{2}$."
+    },
+    {
+     "id": "R37",
+     "type": "mc",
+     "text": "Which is equal to $frac{3}{sqrt(3)}$, with no root on the bottom?",
+     "options": [
+      "$sqrt(3)$",
+      "$3sqrt(3)$",
+      "$frac{sqrt(3)}{9}$",
+      "$1$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Multiply the top and the bottom by the root: $frac{3}{sqrt(3)} = sqrt(3)$."
+    },
+    {
+     "id": "R38",
+     "type": "mc",
+     "text": "Which is equal to $frac{6}{sqrt(2)}$, with no root on the bottom?",
+     "options": [
+      "$3sqrt(2)$",
+      "$6sqrt(2)$",
+      "$frac{3}{sqrt(2)}$",
+      "$3$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Multiply the top and the bottom by the root: $frac{6}{sqrt(2)} = 3sqrt(2)$."
+    },
+    {
+     "id": "R39",
+     "type": "mc",
+     "text": "Which is equal to $frac{1}{sqrt(5)}$, with no root on the bottom?",
+     "options": [
+      "$frac{sqrt(5)}{5}$",
+      "$sqrt(5)$",
+      "$frac{1}{5}$",
+      "$5sqrt(5)$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Multiply the top and the bottom by the root: $frac{1}{sqrt(5)} = frac{sqrt(5)}{5}$."
+    },
+    {
+     "id": "R40",
+     "type": "mc",
+     "text": "Which is equal to $frac{10}{sqrt(5)}$, with no root on the bottom?",
+     "options": [
+      "$2sqrt(5)$",
+      "$10sqrt(5)$",
+      "$2$",
+      "$frac{sqrt(5)}{2}$"
+     ],
+     "answer": 0,
+     "level": 2,
+     "explain": "Multiply the top and the bottom by the root: $frac{10}{sqrt(5)} = 2sqrt(5)$."
+    },
+    {
+     "id": "X41",
+     "type": "steps",
+     "text": "At $x = 9$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(x) - 3}{x - 9}$$\n",
+     "steps": [
+      {
+       "id": "X41.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x) + 3$. What is the new top?",
+       "answer": "x - 9",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$x - 9$",
+       "work": "top $= x - 9$",
+       "maxLen": 5
+      },
+      {
+       "id": "X41.2",
+       "type": "expr",
+       "text": "The bottom is now $(x - 9)(sqrt(x) + 3)$. Cancel, and write what is left.",
+       "answer": "1/(sqrt(x) + 3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         10.5,
+         13
+        ]
+       },
+       "show": "$frac{1}{sqrt(x) + 3}$",
+       "work": "$= frac{1}{sqrt(x) + 3}$",
+       "maxLen": 6
+      },
+      {
+       "id": "X41.3",
+       "type": "num",
+       "text": "Now plug in $x = 9$.",
+       "answer": 0.166667,
+       "label": "value =",
+       "work": "at $x = 9$: $frac{1}{6}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{1}{sqrt(x) + 3}$, which is $frac{1}{6}$ at $x = 9$."
+    },
+    {
+     "id": "X42",
+     "type": "steps",
+     "text": "At $x = 4$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(x) - 2}{x - 4}$$\n",
+     "steps": [
+      {
+       "id": "X42.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x) + 2$. What is the new top?",
+       "answer": "x - 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$x - 4$",
+       "work": "top $= x - 4$",
+       "maxLen": 5
+      },
+      {
+       "id": "X42.2",
+       "type": "expr",
+       "text": "The bottom is now $(x - 4)(sqrt(x) + 2)$. Cancel, and write what is left.",
+       "answer": "1/(sqrt(x) + 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         5.5,
+         8
+        ]
+       },
+       "show": "$frac{1}{sqrt(x) + 2}$",
+       "work": "$= frac{1}{sqrt(x) + 2}$",
+       "maxLen": 6
+      },
+      {
+       "id": "X42.3",
+       "type": "num",
+       "text": "Now plug in $x = 4$.",
+       "answer": 0.25,
+       "label": "value =",
+       "work": "at $x = 4$: $frac{1}{4}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{1}{sqrt(x) + 2}$, which is $frac{1}{4}$ at $x = 4$."
+    },
+    {
+     "id": "X43",
+     "type": "steps",
+     "text": "At $x = 3$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(x + 1) - 2}{x - 3}$$\n",
+     "steps": [
+      {
+       "id": "X43.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x + 1) + 2$. What is the new top?",
+       "answer": "x - 3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$x - 3$",
+       "work": "top $= x - 3$",
+       "maxLen": 5
+      },
+      {
+       "id": "X43.2",
+       "type": "expr",
+       "text": "The bottom is now $(x - 3)(sqrt(x + 1) + 2)$. Cancel, and write what is left.",
+       "answer": "1/(sqrt(x + 1) + 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         4.5,
+         7
+        ]
+       },
+       "show": "$frac{1}{sqrt(x + 1) + 2}$",
+       "work": "$= frac{1}{sqrt(x + 1) + 2}$",
+       "maxLen": 8
+      },
+      {
+       "id": "X43.3",
+       "type": "num",
+       "text": "Now plug in $x = 3$.",
+       "answer": 0.25,
+       "label": "value =",
+       "work": "at $x = 3$: $frac{1}{4}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{1}{sqrt(x + 1) + 2}$, which is $frac{1}{4}$ at $x = 3$."
+    },
+    {
+     "id": "X44",
+     "type": "steps",
+     "text": "At $x = 0$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(x + 4) - 2}{x}$$\n",
+     "steps": [
+      {
+       "id": "X44.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x + 4) + 2$. What is the new top?",
+       "answer": "x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$x$",
+       "work": "top $= x$",
+       "maxLen": 3
+      },
+      {
+       "id": "X44.2",
+       "type": "expr",
+       "text": "The bottom is now $(x)(sqrt(x + 4) + 2)$. Cancel, and write what is left.",
+       "answer": "1/(sqrt(x + 4) + 2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         1.5,
+         4
+        ]
+       },
+       "show": "$frac{1}{sqrt(x + 4) + 2}$",
+       "work": "$= frac{1}{sqrt(x + 4) + 2}$"
+      },
+      {
+       "id": "X44.3",
+       "type": "num",
+       "text": "Now plug in $x = 0$.",
+       "answer": 0.25,
+       "label": "value =",
+       "work": "at $x = 0$: $frac{1}{4}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{1}{sqrt(x + 4) + 2}$, which is $frac{1}{4}$ at $x = 0$."
+    },
+    {
+     "id": "X45",
+     "type": "steps",
+     "text": "At $x = 25$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(x) - 5}{x - 25}$$\n",
+     "steps": [
+      {
+       "id": "X45.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x) + 5$. What is the new top?",
+       "answer": "x - 25",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$x - 25$",
+       "work": "top $= x - 25$",
+       "maxLen": 5
+      },
+      {
+       "id": "X45.2",
+       "type": "expr",
+       "text": "The bottom is now $(x - 25)(sqrt(x) + 5)$. Cancel, and write what is left.",
+       "answer": "1/(sqrt(x) + 5)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         26.5,
+         29
+        ]
+       },
+       "show": "$frac{1}{sqrt(x) + 5}$",
+       "work": "$= frac{1}{sqrt(x) + 5}$",
+       "maxLen": 6
+      },
+      {
+       "id": "X45.3",
+       "type": "num",
+       "text": "Now plug in $x = 25$.",
+       "answer": 0.1,
+       "label": "value =",
+       "work": "at $x = 25$: $frac{1}{10}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{1}{sqrt(x) + 5}$, which is $frac{1}{10}$ at $x = 25$."
+    },
+    {
+     "id": "X46",
+     "type": "steps",
+     "text": "At $x = 4$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(x + 5) - 3}{x - 4}$$\n",
+     "steps": [
+      {
+       "id": "X46.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x + 5) + 3$. What is the new top?",
+       "answer": "x - 4",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$x - 4$",
+       "work": "top $= x - 4$",
+       "maxLen": 5
+      },
+      {
+       "id": "X46.2",
+       "type": "expr",
+       "text": "The bottom is now $(x - 4)(sqrt(x + 5) + 3)$. Cancel, and write what is left.",
+       "answer": "1/(sqrt(x + 5) + 3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         5.5,
+         8
+        ]
+       },
+       "show": "$frac{1}{sqrt(x + 5) + 3}$",
+       "work": "$= frac{1}{sqrt(x + 5) + 3}$",
+       "maxLen": 8
+      },
+      {
+       "id": "X46.3",
+       "type": "num",
+       "text": "Now plug in $x = 4$.",
+       "answer": 0.166667,
+       "label": "value =",
+       "work": "at $x = 4$: $frac{1}{6}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{1}{sqrt(x + 5) + 3}$, which is $frac{1}{6}$ at $x = 4$."
+    },
+    {
+     "id": "X47",
+     "type": "steps",
+     "text": "At $x = 4$ this fraction is $frac{0}{0}$. Use the conjugate to find what it is heading toward.$$frac{sqrt(2x + 1) - 3}{x - 4}$$\n",
+     "steps": [
+      {
+       "id": "X47.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(2x + 1) + 3$. What is the new top?",
+       "answer": "2x - 8",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$2x - 8$",
+       "work": "top $= 2x - 8$",
+       "maxLen": 6
+      },
+      {
+       "id": "X47.2",
+       "type": "expr",
+       "text": "The bottom is now $(x - 4)(sqrt(2x + 1) + 3)$. Cancel, and write what is left.",
+       "answer": "2/(sqrt(2x + 1) + 3)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "ranges": {
+        "x": [
+         5.5,
+         8
+        ]
+       },
+       "show": "$frac{2}{sqrt(2x + 1) + 3}$",
+       "work": "$= frac{2}{sqrt(2x + 1) + 3}$",
+       "maxLen": 9
+      },
+      {
+       "id": "X47.3",
+       "type": "num",
+       "text": "Now plug in $x = 4$.",
+       "answer": 0.333333,
+       "label": "value =",
+       "work": "at $x = 4$: $frac{1}{3}$"
+      }
+     ],
+     "level": 3,
+     "explain": "After the conjugate, the fraction is $frac{2}{sqrt(2x + 1) + 3}$, which is $frac{1}{3}$ at $x = 4$."
+    },
+    {
+     "id": "X48",
+     "type": "steps",
+     "text": "This is the difference quotient for $f(x) = sqrt(x)$. At $h = 0$ it is $frac{0}{0}$. Clear the roots with the conjugate.$$frac{sqrt(x + h) - sqrt(x)}{h}$$\n",
+     "steps": [
+      {
+       "id": "X48.1",
+       "type": "expr",
+       "text": "Multiply the top by its conjugate, $sqrt(x + h) + sqrt(x)$. What is the new top?",
+       "answer": "h",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "new top =",
+       "show": "$h$",
+       "work": "top $= h$",
+       "maxLen": 3
+      },
+      {
+       "id": "X48.2",
+       "type": "expr",
+       "text": "The $h$ on top cancels the $h$ on the bottom. Write what is left.",
+       "answer": "1/(sqrt(x + h) + sqrt(x))",
+       "vars": [
+        "x",
+        "h"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "simplified =",
+       "show": "$frac{1}{sqrt(x + h) + sqrt(x)}$",
+       "work": "$= frac{1}{sqrt(x + h) + sqrt(x)}$"
+      },
+      {
+       "id": "X48.3",
+       "type": "expr",
+       "text": "Now let $h = 0$.",
+       "answer": "1/(2sqrt(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sqrt("
+       ],
+       "label": "at $h = 0$:",
+       "show": "$frac{1}{2sqrt(x)}$",
+       "work": "$= frac{1}{2sqrt(x)}$"
+      }
+     ],
+     "level": 3,
+     "explain": "You just found the derivative of $sqrt(x)$: it is $frac{1}{2sqrt(x)}$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Square roots split over **multiplication**:$$sqrt(ab) = sqrt(a) · sqrt(b)$$\nSo $sqrt(50) = sqrt(25 · 2)$ is",
+    "options": [
+     "$5sqrt(2)$",
+     "$25sqrt(2)$",
+     "$2sqrt(5)$",
+     "10"
+    ],
+    "answer": 0,
+    "hint": "$sqrt(25) = 5$, and the $sqrt(2)$ stays.",
+    "explain": "Pull out the perfect square: $sqrt(25) · sqrt(2) = 5sqrt(2)$."
+   },
+   {
+    "id": "L2",
+    "type": "tf",
+    "text": "They do **not** split over addition. True or false: $sqrt(9 + 16) = sqrt(9) + sqrt(16)$",
+    "answer": false,
+    "hint": "Work out both sides.",
+    "explain": "$sqrt(25) = 5$, but $3 + 4 = 7$. This is the most common algebra mistake in calculus. A root of a sum stays as it is."
+   },
+   {
+    "id": "L3",
+    "type": "expr",
+    "text": "So how do you get rid of a root that is stuck in a sum? With the difference of squares.$$(a - b)(a + b) = a^2 - b^2$$\nMultiply out $(sqrt(x) - 3)(sqrt(x) + 3)$.",
+    "answer": "x - 9",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sqrt("
+    ],
+    "label": "product =",
+    "show": "$x - 9$",
+    "hint": "Here $a = sqrt(x)$ and $b = 3$, and $(sqrt(x))^2 = x$.",
+    "explain": "The root is gone. $sqrt(x) + 3$ is called the **conjugate** of $sqrt(x) - 3$: same two terms, opposite sign in the middle.",
+    "maxLen": 5
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "What is the conjugate of $sqrt(x + 1) - 2$?",
+    "options": [
+     "$sqrt(x + 1) + 2$",
+     "$sqrt(x - 1) - 2$",
+     "$-sqrt(x + 1) - 2$",
+     "$sqrt(x + 1) - 2$"
+    ],
+    "answer": 0,
+    "hint": "Only the sign between the two terms changes.",
+    "explain": "Nothing inside the root changes. Only the middle sign flips."
+   },
+   {
+    "id": "L5",
+    "type": "steps",
+    "text": "Here is the payoff. At $x = 9$ this fraction is $frac{0}{0}$. Multiply the top and the bottom by the conjugate of the top.$$frac{sqrt(x) - 3}{x - 9}$$\n",
+    "steps": [
+     {
+      "id": "L5.1",
+      "type": "expr",
+      "text": "The new top is $(sqrt(x) - 3)(sqrt(x) + 3)$. Multiply it out.",
+      "answer": "x - 9",
+      "vars": [
+       "x"
+      ],
+      "keys": [
+       "sqrt("
+      ],
+      "label": "top =",
+      "show": "$x - 9$",
+      "hint": "$a^2 - b^2$",
+      "work": "top $= x - 9$",
+      "maxLen": 5
+     },
+     {
+      "id": "L5.2",
+      "type": "mc",
+      "text": "So the fraction is now $frac{x - 9}{(x - 9)(sqrt(x) + 3)}$. Cancel.",
+      "options": [
+       "$frac{1}{sqrt(x) + 3}$",
+       "$sqrt(x) + 3$",
+       "$frac{1}{sqrt(x) - 3}$",
+       "$frac{x - 9}{sqrt(x) + 3}$"
+      ],
+      "answer": 0,
+      "hint": "$x - 9$ is a factor of the top and of the bottom.",
+      "work": "$= frac{1}{sqrt(x) + 3}$"
+     },
+     {
+      "id": "L5.3",
+      "type": "num",
+      "text": "Now $x = 9$ causes no trouble. Plug it in.",
+      "answer": 0.166667,
+      "label": "value =",
+      "hint": "$frac{1}{sqrt(9) + 3}$",
+      "work": "at $x = 9$: $frac{1}{6}$"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -131,12 +131,25 @@ const keyRow=(ks,cls)=>ks.map(k=>k==null?'<span></span>':'<button class="key'+(c
 function mountExpr(q,ix,onChange){
   const vars=q.vars||['x'],answers=[].concat(q.answer); let toks=[],locked=false;
   const top=[...vars,...(q.keys||[])];
-  ix.innerHTML='<div class="ans xans"><span>'+fmt(q.label||'Answer =')+'</span><output class="ans-box xbox empty" aria-live="polite">?</output>'+(q.post?'<span>'+fmt(q.post)+'</span>':'')+'</div><p class="tiny xerr" hidden></p>'+
+  /* "template": "f([]) = ([])^2 - 3([])" shows the formula with a box for every [], and whatever the student types appears in all of them */
+  const tparts=q.template?String(q.template).split('[]'):null;
+  /* "maxLen": the answer must also be about as short as the key (so retyping the unsimplified expression does not count) */
+  /* "form": "product": the typed answer must be a product (no + or - outside parentheses) with at least "factors" letter-or-bracket factors */
+  const shape=str0=>{let d=0,sum=false,n=0,T;try{T=xtokens(str0,vars);}catch(e){return {sum:false,n:99};}
+    T.forEach((t,k)=>{if(t.t==='(')d++;else if(t.t===')')d--;
+      if(d===0&&(t.t==='+'||t.t==='-')&&k>0&&T[k-1].t!=='^')sum=true;
+      if((d===1&&t.t==='('&&!(k>0&&T[k-1].t==='f')&&!(k>0&&T[k-1].t==='^'))||(d===0&&t.t==='v'&&!(k>0&&T[k-1].t==='^')))n++;
+      if(d===0&&t.t==='^'&&T[k+1]&&T[k+1].t==='n'&&Number.isInteger(T[k+1].v)&&T[k+1].v>1)n+=T[k+1].v-1;});
+    return {sum,n};}; let unfact='';
+  const size=str0=>{try{return xtokens(str0,vars).filter(t=>t.t!=='('&&t.t!==')').length;}catch(e){return 0;}}; let long=false;
+  ix.innerHTML=(tparts?'<div class="tmpl" aria-live="polite"></div>':'')+'<div class="ans xans"><span>'+fmt(q.label||'Answer =')+'</span><output class="ans-box xbox empty" aria-live="polite">?</output>'+(q.post?'<span>'+fmt(q.post)+'</span>':'')+'</div><p class="tiny xerr" hidden></p>'+
     '<div class="xkeys">'+keyRow(top,' xk')+'</div>'+
     '<div class="pad pad6">'+keyRow(['7','8','9','(',')','back','4','5','6','*','/','^','1','2','3','+','-','^2','0','.','clear'])+'</div>';
   const box=$('.xbox',ix),err=$('.xerr',ix),str=()=>closeParens(toks.join(''));
   const ok=()=>{try{xcompile(str(),vars);return true;}catch(e){return false;}};
   const show=()=>{box.innerHTML=toks.length?'<span>'+texprHTML(toks)+'</span>':'?';box.classList.toggle('empty',!toks.length);
+    if(tparts){const b='<span class="tbox'+(toks.length?'':' empty')+'">'+(toks.length?texprHTML(toks):'&nbsp;')+'</span>';
+      $('.tmpl',ix).innerHTML='<span class="math">'+tparts.map(t=>mpart(t)).join(b)+'</span>';}
     let m='';if(toks.length)try{xcompile(str(),vars);}catch(e){m=e.message;} err.hidden=!m||!toks.length; err.textContent=m?'Not finished yet: '+m+'.':'';};
   const press=k=>{ if(locked)return;
     if(k==='back')toks.pop(); else if(k==='clear')toks=[]; else toks.push(k);
@@ -147,7 +160,14 @@ function mountExpr(q,ix,onChange){
   SINK=v=>{if(locked)return;String(v).split('').forEach(c=>toks.push(c));show();onChange();};
   show();
   return {kind:'q',canGo:()=>toks.length>0&&ok(),
-    check:()=>answers.some(a=>xequiv(str(),a,vars,q.ranges,q.upToC)),
+    check:()=>{const eq=answers.some(a=>xequiv(str(),a,vars,q.ranges,q.upToC));long=eq&&!!q.maxLen&&size(str())>q.maxLen;unfact='';
+      if(eq&&q.form==='single'&&shape(str()).sum)unfact='That is equal, but it is still more than one piece. Write it as **one** fraction.';
+      if(eq&&q.form==='product'){const sh=shape(str());
+        if(sh.sum)unfact='That is equal, but it is still a sum. Write it as a product, like (x + 1)(x - 4).';
+        else if(sh.n<(q.factors||2))unfact='That is equal, but it can be factored further.';}
+      return eq&&!long&&!unfact;},
+    why:()=>unfact||(long?(q.longText||'That is equal to the answer, but it is not simplified yet. Keep going.'):''),
+    summary:()=>unfact||(long?(q.longText||'What you typed is equal to the answer, but it is not simplified.'):''),
     lock(r,good){locked=true;box.classList.add(good?'is-right':'is-wrong');},
     reset(){locked=false;toks=[];box.classList.remove('is-right','is-wrong');show();onChange();}};
 }
@@ -246,14 +266,14 @@ function mountSteps(it,ix,onChange){
       const nx=ol.lastElementChild; if(nx&&nx!==li)nx.scrollIntoView({block:'nearest',behavior:'smooth'});};
     const reveal=()=>{C.lock(true,false);res[at]=false;
       const a=answerText(st);
-      feedback(fb,false,(a?'Answer: '+a+'\n':'')+(st.explain||''));phase='next';btn.textContent=last?'Finish':'Next part';btn.disabled=false;};
+      feedback(fb,false,((C.why&&C.why())?C.why()+'\n':'')+(a?'Answer: '+a+'\n':'')+(st.explain||''));phase='next';btn.textContent=last?'Finish':'Next part';btn.disabled=false;};
     btn.onclick=()=>{
       if(C.kind==='pass'){if(C.canGo()){res[at]=true;next();}return;}
       if(phase==='next')return next();
       if(phase==='retry'){phase='answer';fb.hidden=true;C.reset();upd();return;}
       const ok=C.check(); tries++;
       if(ok){C.lock(true,true);if(res[at]==null)res[at]=true;feedback(fb,true,st.explain||'');phase='next';btn.textContent=last?'Finish':'Next part';}
-      else if(CTX==='lesson'&&tries<2){C.lock(false,false);res[at]=false;feedback(fb,false,st.hint||'Not quite. Give it another try.');phase='retry';btn.textContent='Try again';}
+      else if(CTX==='lesson'&&tries<2){C.lock(false,false);res[at]=false;feedback(fb,false,(C.why&&C.why())||st.hint||'Not quite. Give it another try.');phase='retry';btn.textContent='Try again';}
       else reveal();
     };
     stepEnter=()=>{if(!btn.disabled)btn.click();};

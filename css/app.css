@@ -595,3 +595,70 @@ body{margin:0}
 .rm-r.neg{fill:var(--curve);stroke:var(--curve)}
 .rm-ctl{display:flex;gap:8px;flex-wrap:wrap}
 .rm-ctl .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* ---------- World 0 additions ---------- */
+/* a formula on its own line, in a box ($$...$$), so the question about it sits apart */
+.dmath{display:block;margin:8px 0;padding:10px 12px;border:1.5px solid var(--rule);border-radius:12px;background:var(--card);text-align:center;font-size:1.08em;overflow-x:auto}
+.dmath:first-child{margin-top:0}
+.dmath .math{white-space:nowrap}
+/* piecewise functions: cases{expr, condition; expr, condition} */
+.cases{display:inline-flex;align-items:stretch;vertical-align:middle;gap:3px;margin-left:2px}
+.cs-b{width:11px;flex:none;height:auto;overflow:visible}
+.cs-b path{fill:none;stroke:currentColor;stroke-width:1.5;vector-effect:non-scaling-stroke}
+.cs-rows{display:inline-grid;grid-template-columns:auto auto;column-gap:18px;row-gap:5px;text-align:left;padding-block:3px}
+.cs-r{display:contents}
+.cs-c{color:var(--muted)}
+/* small tables of values: {{table: x | f(x) ;; 1.9 | 3.61}} */
+.vtab{display:table;margin:8px auto;border-collapse:collapse;border:1.5px solid var(--rule);border-radius:10px;background:var(--card);font-variant-numeric:tabular-nums;overflow:hidden}
+.vt-r{display:table-row}
+.vt-r>span{display:table-cell;padding:5px 20px;border-top:1px solid var(--grid);text-align:right}
+.vt-r>span:first-child{border-right:1.5px solid var(--rule)}
+.vt-h>span{border-top:0;text-align:center;font-weight:600;background:var(--paper)}
+.vt-hi>span{background:var(--gold-bg);font-weight:600}
+/* rectangles on a graph (Riemann sums) and dashed target curves */
+.g-rect{fill:var(--teal);fill-opacity:.2;stroke:var(--teal);stroke-width:1.2}
+.g-dash{stroke:var(--muted);stroke-dasharray:6 5;stroke-width:2.2}
+/* a formula with boxes that fill in as the student types ("template") */
+.tmpl{padding:10px 12px;border:1.5px dashed var(--rule);border-radius:12px;background:var(--card);text-align:center;font-size:20px;overflow-x:auto}
+.tbox{display:inline-block;min-width:26px;padding:0 5px;margin-inline:1px;border:1.5px solid var(--teal);border-radius:6px;background:var(--paper);color:var(--teal);font-weight:600}
+.tbox.empty{border-style:dashed}
+/* cancel: a fraction made of tappable pieces */
+.cfrac{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 10px;border:1.5px solid var(--rule);border-radius:14px;background:var(--card)}
+.cfrac.is-right{border-color:var(--good)} .cfrac.is-wrong{border-color:var(--bad)}
+.cside{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px}
+.cbar{align-self:stretch;height:2px;background:var(--ink);border-radius:1px;margin-inline:6px}
+.cdot{font:600 20px var(--math);color:var(--muted)}
+.cchip{position:relative;padding:8px 12px;border-radius:10px;border:1.5px solid var(--rule);background:var(--paper);font-size:20px;line-height:1.2}
+.cchip.on{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.cchip:disabled{cursor:default;color:var(--ink)}
+.cchip.cut{color:var(--muted);border-style:dashed}
+.cchip.cut::after{content:"";position:absolute;left:6px;right:6px;top:50%;height:2.5px;border-radius:2px;background:var(--curve);transform:rotate(-18deg)}
+.cchip.cut.c1::after{background:var(--teal)} .cchip.cut.c2::after{background:var(--gold)} .cchip.cut.c3::after{background:var(--ink)}
+.cres{padding:10px 12px;border-radius:12px;background:var(--paper);border:1.5px solid var(--rule);font-size:18px;text-align:center}
+/* transform: move a graph onto its target */
+.tread{font-size:19px;text-align:center}
+.tctl{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:center}
+.tgrp{display:flex;flex-direction:column;align-items:center;gap:4px}
+.tgrp>div{display:flex;gap:6px}
+.tkey{min-width:56px;padding-inline:12px;font-size:20px}
+.tkey:disabled{opacity:.45;cursor:default}
+.g-curve.tf-ok{stroke:var(--good)} .g-curve.tf-no{stroke:var(--bad)}
+/* the unit circle */
+.ucw{max-width:340px;margin-inline:auto;width:100%}
+.uc-c{fill:none;stroke:var(--ink);stroke-width:1.6}
+.uc-hit{fill:transparent}
+.uc-dot{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.uc-pt{cursor:pointer}
+.uc-pt:focus-visible{outline:none} .uc-pt:focus-visible .uc-dot{stroke:var(--teal);stroke-width:4}
+.uc-pt.seen .uc-dot{fill:var(--grid)}
+.uc-pt.on .uc-dot{fill:var(--curve);stroke:var(--curve-deep)}
+.uc-pt.ok .uc-dot{fill:var(--good);stroke:var(--good)}
+.uc-pt.no .uc-dot{fill:var(--bad);stroke:var(--bad)}
+.uc-pt.miss .uc-dot{fill:var(--good-bg);stroke:var(--good);stroke-dasharray:3 2}
+.uc-r{stroke:var(--ink);stroke-width:2}
+.uc-cos{stroke:var(--teal);stroke-width:4;stroke-linecap:round}
+.uc-sin{stroke:var(--gold);stroke-width:4;stroke-linecap:round}
+.uc-arc{fill:none;stroke:var(--curve);stroke-width:2}
+.uc-lab{font:600 11px var(--body);fill:var(--muted)}
+.ucread{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;align-items:center;font-size:19px;min-height:44px}
+.uc-cs .math{color:var(--teal)} .uc-sn .math{color:var(--gold)}

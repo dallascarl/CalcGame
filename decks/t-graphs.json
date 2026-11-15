@@ -1,0 +1,1416 @@
+{
+ "id": "t-graphs",
+ "course": "Calculus 1",
+ "unit": "The Toolkit",
+ "title": "Graphs and Shifts",
+ "subtitle": "The basic graphs by sight, and what shifting, flipping and stretching do to them.",
+ "version": 2,
+ "graphs": {
+  "sq": {
+   "window": [
+    -4,
+    4,
+    -2,
+    8
+   ],
+   "pieces": [
+    {
+     "expr": "x^2",
+     "from": -2.8,
+     "to": 2.8
+    }
+   ]
+  },
+  "cube": {
+   "window": [
+    -3,
+    3,
+    -6,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "x^3",
+     "from": -1.8,
+     "to": 1.8
+    }
+   ]
+  },
+  "root": {
+   "window": [
+    -2,
+    8,
+    -2,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(x)",
+     "from": 0,
+     "to": 8
+    }
+   ]
+  },
+  "abs": {
+   "window": [
+    -5,
+    5,
+    -2,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "abs(x)",
+     "from": -5,
+     "to": 5
+    }
+   ]
+  },
+  "line": {
+   "window": [
+    -5,
+    5,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x",
+     "from": -5,
+     "to": 5
+    }
+   ]
+  },
+  "recip": {
+   "window": [
+    -5,
+    5,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "1/x",
+     "from": -5,
+     "to": -0.2
+    },
+    {
+     "expr": "1/x",
+     "from": 0.2,
+     "to": 5
+    }
+   ]
+  },
+  "S1": {
+   "window": [
+    -6,
+    6,
+    -6,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "(x - 2)^2 + 1",
+     "from": -6,
+     "to": 6
+    }
+   ]
+  },
+  "S2": {
+   "window": [
+    -6,
+    6,
+    -6,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "(x + 1)^2 - 3",
+     "from": -6,
+     "to": 6
+    }
+   ]
+  },
+  "S3": {
+   "window": [
+    -6,
+    6,
+    -6,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "abs(x - 2) - 2",
+     "from": -6,
+     "to": 6
+    }
+   ]
+  },
+  "S4": {
+   "window": [
+    -6,
+    6,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(x + 3)",
+     "from": -3,
+     "to": 6
+    }
+   ]
+  },
+  "S5": {
+   "window": [
+    -6,
+    6,
+    -6,
+    6
+   ],
+   "pieces": [
+    {
+     "expr": "abs(x + 1) + 2",
+     "from": -6,
+     "to": 6
+    }
+   ]
+  },
+  "S6": {
+   "window": [
+    -6,
+    6,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "sqrt(x - 1) + 1",
+     "from": 1,
+     "to": 6
+    }
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "match",
+     "text": "Match each description to its function.",
+     "pairs": [
+      [
+       "a U shape (a parabola)",
+       "$x^2$"
+      ],
+      [
+       "a V shape",
+       "$|x|$"
+      ],
+      [
+       "starts at the origin, rises, then flattens",
+       "$sqrt(x)$"
+      ],
+      [
+       "two separate branches that never touch the axes",
+       "$frac{1}{x}$"
+      ],
+      [
+       "an S shape through the origin",
+       "$x^3$"
+      ]
+     ],
+     "explain": "These five, plus straight lines, are the starting point for most graphs in this course."
+    },
+    {
+     "id": "T2",
+     "type": "mc",
+     "text": "$y = f(x) - 5$ moves the graph of $f$",
+     "options": [
+      "down 5",
+      "up 5",
+      "left 5",
+      "right 5"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "explain": "Outside the function: it changes the outputs, so it is vertical, and it does what it says."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "$y = f(x + 1)$ moves the graph of $f$",
+     "options": [
+      "left 1",
+      "right 1",
+      "up 1",
+      "down 1"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "explain": "Inside the function: sideways, and backwards from what the sign suggests."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "$y = -f(x)$",
+     "options": [
+      "flips the graph over the $x$-axis",
+      "flips the graph over the $y$-axis",
+      "moves the graph down",
+      "does not change the graph"
+     ],
+     "answer": 0,
+     "explain": "Every height becomes its opposite, so the picture turns upside down."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "$y = 2f(x)$",
+     "options": [
+      "doubles every height (a vertical stretch)",
+      "moves the graph up 2",
+      "moves the graph right 2",
+      "makes the graph twice as wide"
+     ],
+     "answer": 0,
+     "explain": "Each output is multiplied by 2. Points on the $x$-axis stay put."
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "The lowest point of $y = (x - 3)^2 + 2$ is at $(3, 2)$.",
+     "answer": true,
+     "explain": "$y = x^2$ has its lowest point at $(0, 0)$. Right 3 and up 2 moves it to $(3, 2)$."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "id": "P1",
+     "type": "mc",
+     "text": "Which function is this?",
+     "options": [
+      "$x^2$",
+      "$x^3$",
+      "$|x|$",
+      "$x$"
+     ],
+     "answer": 0,
+     "graph": "sq",
+     "level": 1,
+     "explain": "This is the graph of $x^2$."
+    },
+    {
+     "id": "P2",
+     "type": "mc",
+     "text": "Which function is this?",
+     "options": [
+      "$x^3$",
+      "$frac{1}{x}$",
+      "$x$",
+      "$|x|$"
+     ],
+     "answer": 0,
+     "graph": "cube",
+     "level": 1,
+     "explain": "This is the graph of $x^3$."
+    },
+    {
+     "id": "P3",
+     "type": "mc",
+     "text": "Which function is this?",
+     "options": [
+      "$sqrt(x)$",
+      "$x^2$",
+      "$|x|$",
+      "$frac{1}{x}$"
+     ],
+     "answer": 0,
+     "graph": "root",
+     "level": 1,
+     "explain": "This is the graph of $sqrt(x)$."
+    },
+    {
+     "id": "P4",
+     "type": "mc",
+     "text": "Which function is this?",
+     "options": [
+      "$|x|$",
+      "$x$",
+      "$frac{1}{x}$",
+      "$x^2$"
+     ],
+     "answer": 0,
+     "graph": "abs",
+     "level": 1,
+     "explain": "This is the graph of $|x|$."
+    },
+    {
+     "id": "P5",
+     "type": "mc",
+     "text": "Which function is this?",
+     "options": [
+      "$x$",
+      "$x^2$",
+      "$sqrt(x)$",
+      "$x^3$"
+     ],
+     "answer": 0,
+     "graph": "line",
+     "level": 1,
+     "explain": "This is the graph of $x$."
+    },
+    {
+     "id": "P6",
+     "type": "mc",
+     "text": "Which function is this?",
+     "options": [
+      "$frac{1}{x}$",
+      "$x^2$",
+      "$sqrt(x)$",
+      "$|x|$"
+     ],
+     "answer": 0,
+     "graph": "recip",
+     "level": 1,
+     "explain": "This is the graph of $frac{1}{x}$."
+    },
+    {
+     "id": "W7",
+     "type": "mc",
+     "text": "The graph of $y = (x - 2)^2 + 3$ is the graph of $y = x^2$ moved",
+     "options": [
+      "right 2 and up 3",
+      "left 2 and up 3",
+      "right 3 and up 2",
+      "left 2 and down 3"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W8",
+     "type": "mc",
+     "text": "The graph of $y = (x + 1)^2 - 4$ is the graph of $y = x^2$ moved",
+     "options": [
+      "left 1 and down 4",
+      "right 1 and down 4",
+      "left 4 and down 1",
+      "right 1 and up 4"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W9",
+     "type": "mc",
+     "text": "The graph of $y = |x - 3|$ is the graph of $y = |x|$ moved",
+     "options": [
+      "right 3",
+      "left 3",
+      "up 3",
+      "down 3"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W10",
+     "type": "mc",
+     "text": "The graph of $y = sqrt(x + 2) + 1$ is the graph of $y = sqrt(x)$ moved",
+     "options": [
+      "left 2 and up 1",
+      "right 2 and up 1",
+      "right 1 and down 2",
+      "right 2 and down 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W11",
+     "type": "mc",
+     "text": "The graph of $y = x^3 - 2$ is the graph of $y = x^3$ moved",
+     "options": [
+      "down 2",
+      "left 2",
+      "up 2",
+      "right 2"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W12",
+     "type": "mc",
+     "text": "The graph of $y = (x + 3)^2 + 2$ is the graph of $y = x^2$ moved",
+     "options": [
+      "left 3 and up 2",
+      "right 3 and up 2",
+      "right 2 and down 3",
+      "right 3 and down 2"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W13",
+     "type": "mc",
+     "text": "The graph of $y = |x + 2| - 3$ is the graph of $y = |x|$ moved",
+     "options": [
+      "left 2 and down 3",
+      "right 2 and down 3",
+      "left 3 and down 2",
+      "right 2 and up 3"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W14",
+     "type": "mc",
+     "text": "The graph of $y = sqrt(x - 4)$ is the graph of $y = sqrt(x)$ moved",
+     "options": [
+      "right 4",
+      "left 4",
+      "up 4",
+      "down 4"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W15",
+     "type": "mc",
+     "text": "The graph of $y = (x - 1)^3 + 1$ is the graph of $y = x^3$ moved",
+     "options": [
+      "right 1 and up 1",
+      "left 1 and up 1",
+      "right 1 and down 1",
+      "left 1 and down 1"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "W16",
+     "type": "mc",
+     "text": "The graph of $y = |x| + 4$ is the graph of $y = |x|$ moved",
+     "options": [
+      "up 4",
+      "right 4",
+      "down 4",
+      "left 4"
+     ],
+     "answer": 0,
+     "level": 1,
+     "explain": "Inside the function: sideways and backwards. Outside: up or down, as written."
+    },
+    {
+     "id": "T20",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. Move your graph onto the dashed target.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 2,
+      "k": 3
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = (x - 2)^2 + 3$: right 2 and up 3."
+    },
+    {
+     "id": "T21",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. Move your graph onto the dashed target.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -3,
+      "k": -2
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = (x + 3)^2 - 2$: left 3 and down 2."
+    },
+    {
+     "id": "T22",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. Move your graph onto the dashed target.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 1,
+      "k": -3
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = |x - 1| - 3$: right 1 and down 3."
+    },
+    {
+     "id": "T23",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. Move your graph onto the dashed target.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -2,
+      "k": 2
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = |x + 2| + 2$: left 2 and up 2."
+    },
+    {
+     "id": "T24",
+     "type": "transform",
+     "text": "Here $f(x) = sqrt(x)$. Move your graph onto the dashed target.",
+     "base": "sqrt(x)",
+     "window": [
+      -6,
+      6,
+      -5,
+      5
+     ],
+     "target": {
+      "h": -3,
+      "k": 1
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = sqrt(x + 3) + 1$: left 3 and up 1."
+    },
+    {
+     "id": "T25",
+     "type": "transform",
+     "text": "Here $f(x) = sqrt(x)$. Move your graph onto the dashed target.",
+     "base": "sqrt(x)",
+     "window": [
+      -6,
+      6,
+      -5,
+      5
+     ],
+     "target": {
+      "h": 2,
+      "k": -2
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = sqrt(x - 2) - 2$: right 2 and down 2."
+    },
+    {
+     "id": "T26",
+     "type": "transform",
+     "text": "Here $f(x) = x^3$. Move your graph onto the dashed target.",
+     "base": "x^3",
+     "window": [
+      -5,
+      5,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 1,
+      "k": 2
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = (x - 1)^3 + 2$: right 1 and up 2."
+    },
+    {
+     "id": "T27",
+     "type": "transform",
+     "text": "Here $f(x) = x^3$. Move your graph onto the dashed target.",
+     "base": "x^3",
+     "window": [
+      -5,
+      5,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -2,
+      "k": -1
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = (x + 2)^3 - 1$: left 2 and down 1."
+    },
+    {
+     "id": "T28",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. Move your graph onto the dashed target.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 0,
+      "k": -4
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = x^2 - 4$: down 4."
+    },
+    {
+     "id": "T29",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. Move your graph onto the dashed target.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 3,
+      "k": 0
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = |x - 3|$: right 3."
+    },
+    {
+     "id": "T30",
+     "type": "transform",
+     "text": "Here $f(x) = sqrt(x)$. Move your graph onto the dashed target.",
+     "base": "sqrt(x)",
+     "window": [
+      -6,
+      6,
+      -5,
+      5
+     ],
+     "target": {
+      "h": -4,
+      "k": -3
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = sqrt(x + 4) - 3$: left 4 and down 3."
+    },
+    {
+     "id": "T31",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. Move your graph onto the dashed target.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 4,
+      "k": 1
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = (x - 4)^2 + 1$: right 4 and up 1."
+    },
+    {
+     "id": "T32",
+     "type": "transform",
+     "text": "Here $f(x) = x^3$. Move your graph onto the dashed target.",
+     "base": "x^3",
+     "window": [
+      -5,
+      5,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 0,
+      "k": 3
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = x^3 + 3$: up 3."
+    },
+    {
+     "id": "T33",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. Move your graph onto the dashed target.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -3,
+      "k": -1
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = |x + 3| - 1$: left 3 and down 1."
+    },
+    {
+     "id": "T34",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. Move your graph onto the dashed target.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -2,
+      "k": 4
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = (x + 2)^2 + 4$: left 2 and up 4."
+    },
+    {
+     "id": "T35",
+     "type": "transform",
+     "text": "Here $f(x) = sqrt(x)$. Move your graph onto the dashed target.",
+     "base": "sqrt(x)",
+     "window": [
+      -6,
+      6,
+      -5,
+      5
+     ],
+     "target": {
+      "h": 1,
+      "k": 2
+     },
+     "controls": [
+      "h",
+      "k"
+     ],
+     "level": 2,
+     "explain": "The target is $y = sqrt(x - 1) + 2$: right 1 and up 2."
+    },
+    {
+     "id": "F36",
+     "type": "expr",
+     "text": "This is the graph of $y = x^2$, moved. Write its formula.",
+     "answer": "(x - 2)^2 + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       2.5,
+       5
+      ]
+     },
+     "show": "$(x - 2)^2 + 1$",
+     "level": 2,
+     "explain": "It was moved right 2 and up 1: $y = (x - 2)^2 + 1$.",
+     "graph": "S1"
+    },
+    {
+     "id": "F37",
+     "type": "expr",
+     "text": "This is the graph of $y = x^2$, moved. Write its formula.",
+     "answer": "(x + 1)^2 - 3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       3
+      ]
+     },
+     "show": "$(x + 1)^2 - 3$",
+     "level": 2,
+     "explain": "It was moved left 1 and down 3: $y = (x + 1)^2 - 3$.",
+     "graph": "S2"
+    },
+    {
+     "id": "F38",
+     "type": "expr",
+     "text": "This is the graph of $y = |x|$, moved. Write its formula.",
+     "answer": "abs(x - 2) - 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       2.5,
+       5
+      ]
+     },
+     "show": "$abs(x - 2) - 2$",
+     "level": 2,
+     "explain": "It was moved right 2 and down 2: $y = |x - 2| - 2$.",
+     "graph": "S3"
+    },
+    {
+     "id": "F39",
+     "type": "expr",
+     "text": "This is the graph of $y = sqrt(x)$, moved. Write its formula.",
+     "answer": "sqrt(x + 3)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       3
+      ]
+     },
+     "show": "$sqrt(x + 3)$",
+     "level": 2,
+     "explain": "It was moved left 3: $y = sqrt(x + 3)$.",
+     "graph": "S4"
+    },
+    {
+     "id": "F40",
+     "type": "expr",
+     "text": "This is the graph of $y = |x|$, moved. Write its formula.",
+     "answer": "abs(x + 1) + 2",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       0.5,
+       3
+      ]
+     },
+     "show": "$abs(x + 1) + 2$",
+     "level": 2,
+     "explain": "It was moved left 1 and up 2: $y = |x + 1| + 2$.",
+     "graph": "S5"
+    },
+    {
+     "id": "F41",
+     "type": "expr",
+     "text": "This is the graph of $y = sqrt(x)$, moved. Write its formula.",
+     "answer": "sqrt(x - 1) + 1",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sqrt(",
+      "abs("
+     ],
+     "label": "$y$ =",
+     "ranges": {
+      "x": [
+       1.5,
+       4
+      ]
+     },
+     "show": "$sqrt(x - 1) + 1$",
+     "level": 2,
+     "explain": "It was moved right 1 and up 1: $y = sqrt(x - 1) + 1$.",
+     "graph": "S6"
+    },
+    {
+     "id": "H42",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. This target has been flipped as well as moved. Match it.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 1,
+      "k": 4,
+      "a": -1
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip"
+     ],
+     "level": 3,
+     "explain": "The target is $y = -(x - 1)^2 + 4$."
+    },
+    {
+     "id": "H43",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. This target has been flipped as well as moved. Match it.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -2,
+      "k": 3,
+      "a": -1
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip"
+     ],
+     "level": 3,
+     "explain": "The target is $y = -(x + 2)^2 + 3$."
+    },
+    {
+     "id": "H44",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. This target has been flipped as well as moved. Match it.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 2,
+      "k": 3,
+      "a": -1
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip"
+     ],
+     "level": 3,
+     "explain": "The target is $y = -|x - 2| + 3$."
+    },
+    {
+     "id": "H45",
+     "type": "transform",
+     "text": "Here $f(x) = sqrt(x)$. This target has been flipped as well as moved. Match it.",
+     "base": "sqrt(x)",
+     "window": [
+      -6,
+      6,
+      -5,
+      5
+     ],
+     "target": {
+      "h": -3,
+      "k": 2,
+      "a": -1
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip"
+     ],
+     "level": 3,
+     "explain": "The target is $y = -sqrt(x + 3) + 2$."
+    },
+    {
+     "id": "H46",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. This target has been stretched as well as moved. Match it.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 0,
+      "k": -4,
+      "a": 2
+     },
+     "controls": [
+      "h",
+      "k",
+      "stretch"
+     ],
+     "level": 3,
+     "explain": "The target is $y = 2x^2 - 4$."
+    },
+    {
+     "id": "H47",
+     "type": "transform",
+     "text": "Here $f(x) = |x|$. This target has been stretched as well as moved. Match it.",
+     "base": "abs(x)",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": -1,
+      "k": -3,
+      "a": 2
+     },
+     "controls": [
+      "h",
+      "k",
+      "stretch"
+     ],
+     "level": 3,
+     "explain": "The target is $y = 2|x + 1| - 3$."
+    },
+    {
+     "id": "H48",
+     "type": "transform",
+     "text": "Here $f(x) = x^3$. This target has been flipped as well as moved. Match it.",
+     "base": "x^3",
+     "window": [
+      -5,
+      5,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 1,
+      "k": 0,
+      "a": -1
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip"
+     ],
+     "level": 3,
+     "explain": "The target is $y = -(x - 1)^3$."
+    },
+    {
+     "id": "H49",
+     "type": "transform",
+     "text": "Here $f(x) = x^2$. This target has been flipped and stretched as well as moved. Match it.",
+     "base": "x^2",
+     "window": [
+      -6,
+      6,
+      -6,
+      6
+     ],
+     "target": {
+      "h": 2,
+      "k": 5,
+      "a": -2
+     },
+     "controls": [
+      "h",
+      "k",
+      "flip",
+      "stretch"
+     ],
+     "level": 3,
+     "explain": "The target is $y = -2(x - 2)^2 + 5$."
+    },
+    {
+     "id": "V50",
+     "type": "mc",
+     "text": "Without graphing: where is the lowest point of $y = (x + 1)^2 - 4$?",
+     "options": [
+      "$(-1, -4)$",
+      "$(1, -4)$",
+      "$(-1, 4)$",
+      "$(-4, -1)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(-1, -4)$."
+    },
+    {
+     "id": "V51",
+     "type": "mc",
+     "text": "Without graphing: where is the lowest point of $y = (x - 5)^2 + 2$?",
+     "options": [
+      "$(5, 2)$",
+      "$(-5, 2)$",
+      "$(5, -2)$",
+      "$(2, 5)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(5, 2)$."
+    },
+    {
+     "id": "V52",
+     "type": "mc",
+     "text": "Without graphing: where is the highest point of $y = -(x - 2)^2 + 6$?",
+     "options": [
+      "$(2, 6)$",
+      "$(-2, 6)$",
+      "$(2, -6)$",
+      "$(6, 2)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(2, 6)$."
+    },
+    {
+     "id": "V53",
+     "type": "mc",
+     "text": "Without graphing: where is the starting point of $y = sqrt(x - 3) + 1$?",
+     "options": [
+      "$(3, 1)$",
+      "$(-3, 1)$",
+      "$(3, -1)$",
+      "$(1, 3)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(3, 1)$."
+    },
+    {
+     "id": "V54",
+     "type": "mc",
+     "text": "Without graphing: where is the corner of $y = |x + 4|$?",
+     "options": [
+      "$(-4, 0)$",
+      "$(4, 0)$",
+      "$(0, -4)$",
+      "$(0, 4)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(-4, 0)$."
+    },
+    {
+     "id": "V55",
+     "type": "mc",
+     "text": "Without graphing: where is the starting point of $y = sqrt(x + 2) - 5$?",
+     "options": [
+      "$(-2, -5)$",
+      "$(2, -5)$",
+      "$(-2, 5)$",
+      "$(-5, -2)$"
+     ],
+     "answer": 0,
+     "level": 3,
+     "explain": "The basic graph has that point at the origin. The shifts move it to $(-2, -5)$."
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "A handful of graphs come up all year. You should know each one on sight. Which function is this?",
+    "options": [
+     "$sqrt(x)$",
+     "$x^2$",
+     "$|x|$",
+     "$frac{1}{x}$"
+    ],
+    "answer": 0,
+    "graph": "root",
+    "hint": "It starts at the origin and only exists for $x >= 0$.",
+    "explain": "$sqrt(x)$: it starts at $(0, 0)$, rises quickly, then flattens out."
+   },
+   {
+    "id": "L2",
+    "type": "transform",
+    "text": "The dashed curve is $f(x) = x^2$ moved **up 3**. Move your graph onto it, and watch the formula change as you go.",
+    "base": "x^2",
+    "window": [
+     -6,
+     6,
+     -6,
+     6
+    ],
+    "target": {
+     "h": 0,
+     "k": 3
+    },
+    "controls": [
+     "k"
+    ],
+    "hint": "Tap ↑ until your curve sits on the dashed one.",
+    "explain": "Adding 3 **outside** the function raises every output by 3: $y = f(x) + 3$."
+   },
+   {
+    "id": "L3",
+    "type": "transform",
+    "text": "Now the dashed curve is $f(x) = x^2$ moved **right 2**. Move yours, and look closely at the sign in the formula.",
+    "base": "x^2",
+    "window": [
+     -6,
+     6,
+     -6,
+     6
+    ],
+    "target": {
+     "h": 2,
+     "k": 0
+    },
+    "controls": [
+     "h"
+    ],
+    "hint": "Tap → twice.",
+    "explain": "Right 2 is $f(x - 2)$, with a **minus**. A change inside the parentheses acts on $x$, and it acts backwards."
+   },
+   {
+    "id": "L4",
+    "type": "mc",
+    "text": "So the graph of $y = (x + 4)^2$ is the graph of $y = x^2$ moved",
+    "options": [
+     "left 4",
+     "right 4",
+     "up 4",
+     "down 4"
+    ],
+    "answer": 0,
+    "fixed": true,
+    "hint": "It is inside the parentheses, so it is sideways, and backwards.",
+    "explain": "$(x + 4)^2$ is zero when $x = -4$, so the bottom of the parabola moved to $x = -4$: left 4."
+   },
+   {
+    "id": "L5",
+    "type": "transform",
+    "text": "A minus sign in front flips the graph over the $x$-axis. This target has been flipped **and** moved. Match it.",
+    "base": "x^2",
+    "window": [
+     -6,
+     6,
+     -6,
+     6
+    ],
+    "target": {
+     "h": 1,
+     "k": 4,
+     "a": -1
+    },
+    "controls": [
+     "h",
+     "k",
+     "flip"
+    ],
+    "hint": "Flip first. Then find where the top of the dashed curve is.",
+    "explain": "$y = -f(x - 1) + 4$: flipped, right 1, up 4."
+   },
+   {
+    "id": "L6",
+    "type": "mc",
+    "text": "Now read it straight from a formula. $y = -sqrt(x - 3) + 1$ is the graph of $y = sqrt(x)$",
+    "options": [
+     "flipped, moved right 3 and up 1",
+     "flipped, moved left 3 and up 1",
+     "moved right 3 and down 1",
+     "flipped, moved right 1 and up 3"
+    ],
+    "answer": 0,
+    "hint": "Inside the root: sideways and backwards. Outside: up and down. In front: flip.",
+    "explain": "$-$ in front: flipped. $x - 3$ inside: right 3. $+ 1$ outside: up 1."
+   }
+  ]
+ }
+}

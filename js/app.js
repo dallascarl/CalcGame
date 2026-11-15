@@ -227,7 +227,7 @@ const nodeById=id=>MAP.nodes.find(n=>n.id===id);
 
 /* ---------- saved progress (this browser only for now) ---------- */
 let KEY='calcgame.v1';   /* signed-in students use 'calcgame.v1.<id>' (account.js) */
-const fresh=()=>({world:'',pos:{},decks:{},streak:0,plays:0,points:0,day:'',playsToday:0,setDay:{},game:null,preview:false});
+const fresh=()=>({world:'',pos:{},decks:{},streak:0,plays:0,points:0,day:'',playsToday:0,setDay:{},game:null,preview:false,sid:null});
 let S=fresh();
 try{const raw=localStorage.getItem(KEY); if(raw)S=Object.assign(fresh(),JSON.parse(raw));}catch(e){}
 const save=()=>{S.savedAt=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} if(typeof ACCT!=='undefined')ACCT.saved();};
@@ -271,7 +271,9 @@ function deckCleared(d){
   return drillKinds(d).length?drillKinds(d).every(k=>drillPassed(d,k)):lessonsDone(d);
 }
 function nodeCleared(n){return n.kind==='start'||(!!n.deck&&deckCleared(DECKS[n.deck]));}
-function nodeOpen(n){return S.preview||(n.requires||[]).every(id=>{const r=nodeById(id);return r&&nodeCleared(r);});}
+/* Every stop is open. Progress lives only in this browser, so a lock would mostly punish a student who lost
+   their data; the class calendar sets the pace. The lines on the map are a suggested path. */
+function nodeOpen(n){return true;}
 
 /* A correct answer builds the streak only on questions not yet mastered. kind = the drill, for the mastery history. */
 function record(q,ok,kind){
@@ -315,7 +317,10 @@ function enterKey(btn){
   };
 }
 /* the deck test and preview mode are for the instructor (or when no server is set up, for local editing) */
-const isInstructor=()=>!BACK||BACK.kind==='mock'||!!(ACCT.profile&&ACCT.profile.is_instructor);
+/* With no server, instructor tools (deck test, answer keys, preview mode) show only where the page sets
+   window.CALCGAME_INSTRUCTOR, or after opening the game once with ?instructor in the address on that browser. */
+const INSTR=(()=>{try{if(/[?&]instructor\b/.test(location.search))localStorage.setItem('calcgame.instructor','1');return localStorage.getItem('calcgame.instructor')==='1';}catch(e){return false;}})();
+const isInstructor=()=>BACK?(BACK.kind==='mock'||!!(ACCT.profile&&ACCT.profile.is_instructor)):(!!window.CALCGAME_INSTRUCTOR||INSTR);
 function go(name){
   if((name==='test'||name==='key')&&!isInstructor())name='home';
   if(name.indexOf('drill:')===0)return drill(name.slice(6));
@@ -1038,12 +1043,12 @@ function home(){
     return '<button class="node k-'+n.kind+(open?'':' locked')+(done?' done':'')+ACCT.dueDot(MAP,n)+'" data-n="'+n.id+'" style="left:'+n.x+'%;top:'+(100*n.y/H)+'%" aria-label="'+esc(n.title)+(open?'':', locked')+(done?', cleared':'')+'"><span class="sq">'+(n.kind==='main'?lvl[n.id]:MARK[n.kind])+'</span><span class="nl">'+esc(n.label||n.title)+'</span></button>';}).join('');
   const left=RULES.streak-S.streak;
   screen({
-    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-r"><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div>'+(BACK?'<button class="me-b" data-me aria-label="Your account">'+avatarSVG(ACCT.avatar())+'</button>':'')+'</div></div>'+
+    top:'<header class="hud"><div class="hud-a"><div><p class="eyebrow">'+esc(MAP.course)+' · World '+MAP.world+'</p><h1>'+esc(MAP.title)+'</h1></div><div class="hud-r"><div class="hud-p"><b>'+S.points+'</b><span class="kick">game points</span></div>'+(BACK?'<button class="me-b" data-me aria-label="Your account">'+avatarSVG(ACCT.avatar())+'</button>':'<button class="code-b'+(S.sid==null?' need':'')+'" data-appcode>App code</button>')+'</div></div>'+
       '<nav class="worlds" aria-label="Worlds">'+WORLDS.map(w=>'<button class="wt'+(w===MAP?' on':'')+'" data-world="'+w.id+'" aria-pressed="'+(w===MAP)+'"><b>'+w.world+'</b><span>'+esc(w.short||w.title)+'</span></button>').join('')+'</nav>'+
       '<div class="hud-b">'+pips()+'<span class="tiny">'+left+' more new '+(left===1?'answer':'answers')+' for a play</span><button class="mb" data-go="game">Match Board'+(S.plays?' · '+S.plays:'')+'</button></div></header>',
     body:(S.preview?'<p class="banner">Preview mode is on. Every stop is open and nothing is recorded.</p>':'')+
       '<div class="map" style="aspect-ratio:100/'+H+'">'+svg+tiles+'<div class="hero-ch" id="ch">'+avatarSVG(ACCT.avatar(),'av hero')+'</div></div>'+
-      (isInstructor()?'<p class="tiny"><button class="link" data-go="test">Instructor: deck test</button> · <a class="link" href="instructor.html">Instructor page</a></p>':''),
+      (isInstructor()?'<p class="tiny"><button class="link" data-go="test">Instructor: deck test</button> · <a class="link" href="'+(BACK?'instructor.html':'codes.html')+'">'+(BACK?'Instructor page':'Code decoder')+'</a></p>':''),
     foot:'<div class="stop" id="stop"></div>'});
   const ch=$('#ch');
   const place=n=>{ch.style.left=n.x+'%';ch.style.top=(100*n.y/H)+'%';};
@@ -1759,7 +1764,9 @@ async function boot(){
   catch(e){app.innerHTML='<main class="body"><p class="verdict bad">'+esc(e.message)+'</p><p class="tiny">If you opened index.html straight from a folder, it cannot read the map and deck files. Open the GitHub Pages address instead.</p></main>';return;}
   const ids=[...new Set([].concat(...WORLDS.map(w=>w.nodes)).map(n=>n.deck).filter(Boolean))];
   await Promise.all(ids.map(async id=>{try{DECKS[id]=await getJSON('decks/'+id+'.json');}catch(e){DECKS[id]={error:e.message};}}));
+  try{APPCODE.setRegistry((await getJSON('stops.json')).v1);}catch(e){}
   await ACCT.start();
+  await APPCODE.welcome();
   if(!isInstructor()&&S.preview){S.preview=false;save();}
   MAP=WORLDS.find(w=>w.id===S.world)||MAP; S.world=MAP.id;
   home();

@@ -662,3 +662,13 @@ body{margin:0}
 .uc-lab{font:600 11px var(--body);fill:var(--muted)}
 .ucread{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;align-items:center;font-size:19px;min-height:44px}
 .uc-cs .math{color:var(--teal)} .uc-sn .math{color:var(--gold)}
+
+/* ---------- app codes (js/appcode.js) ---------- */
+.code-b{position:relative;flex:none;border:2px solid var(--ink);background:var(--card);border-radius:999px;padding:8px 12px;font:700 14px var(--display);box-shadow:0 2px 0 var(--ink)}
+.code-b.need::after{content:"";position:absolute;top:-3px;right:-3px;width:12px;height:12px;border-radius:50%;background:var(--curve);border:2px solid var(--paper)}
+.acode{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px;margin:10px 0;padding:14px 10px;border:2px dashed var(--rule);border-radius:14px;background:var(--card);
+  font:700 21px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.06em;user-select:all;-webkit-user-select:all}
+.acode:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.ac-more{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px}
+.ac-more summary{cursor:pointer;font-weight:600}
+#ac-in{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.04em;text-transform:uppercase}

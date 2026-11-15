@@ -194,3 +194,32 @@ Graphs can draw rectangles (`"rects": [[x0, x1, height], ...]`) and a dashed pie
 
 `tools/fix/layout.py` is the one-time pass that moved formulas into boxes and piecewise functions into
 brace notation across the older decks (from the October 2026 review notes).
+
+## App codes (no server, Spring 2027)
+
+Student data may not be stored on servers UVU does not own, so the Supabase account system is switched
+off (`js/config.js` has no server address) and progress stays in each student's browser. Students hand
+in an **app code** instead (`js/appcode.js`):
+
+- On first launch the app asks for the 4-digit student number the instructor assigned. A student who
+  has played on another device can restore from a code instead.
+- **App code** (top right of the map) shows the code, with Copy, change number, and Restore.
+- The code is cumulative: student number, every stop finished, and Match Board points, plus a check,
+  scrambled so that changing one stop changes the whole code. 28 characters, shown as 7 groups of 4.
+  Typing slips (O for 0, I or L for 1, lower case, missing dashes) are forgiven; any other typo is caught.
+- The same code restores progress: entering it marks those stops finished and brings back the points.
+  It never takes progress away, and it refuses a code made for a different student number.
+- It is scrambled, not secure. The key is in the source, so it stops code sharing, not a determined forger.
+- Every stop is open; the lines on the map are a suggested path.
+
+**stops.json** gives each stop its bit. It is append-only: after adding a stop to a map, run
+`python3 tools/stops.py`, which adds new stops at the end and never reorders or removes one.
+Version 1 codes hold up to 88 stops (70 are used).
+
+**codes.html** is the instructor's decoder. Paste a Canvas quiz export (or any text with codes in it);
+add an optional roster (number and name per line) to see who has no code; check the stops that were
+due; then copy the table or download a CSV. It also shows a Match Board leaderboard and can make a
+code by hand. Everything it is given stays in that browser.
+
+Instructor tools in the game (deck test, answer keys, preview) are hidden from students. Open the game
+once with `?instructor` at the end of the address to turn them on in that browser.

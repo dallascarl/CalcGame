@@ -1,5 +1,5 @@
 {
- "about": "App-code stop registry. Each stop's position here is its bit in every app code, so this list is APPEND-ONLY: add new stops at the end, never reorder, rename or delete (retire a stop by leaving its key in place). Version 1 codes hold up to 88 stops.",
+ "about": "App-code stop registry. Each stop's position here is its digit in every app code, so this list is APPEND-ONLY: add new stops at the end, never reorder, rename or delete (retire a stop by leaving its key in place). Codes hold up to 88 stops.",
  "v1": [
   "toolkit:notation",
   "toolkit:domain",

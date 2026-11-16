@@ -1,22 +1,24 @@
 /* App codes. Students keep their progress in their own browser only (no server; UVU rules), so the app
-   turns that progress into one short code. The code is CUMULATIVE: it holds every stop the student has
-   finished and their Match Board points, so the same code does two jobs:
+   turns that progress into one short code. The code is CUMULATIVE: for every stop it holds whether the
+   student has done nothing, done the before-class work (lessons and theory), or cleared it; plus their
+   Match Board points. So the same code does two jobs:
      - the student pastes it into the pre-class quiz on Canvas, and the instructor decodes it (codes.html);
      - if the browser ever loses its data, entering the latest code restores everything up to that point.
 
-   Layout of a version 1 code, 140 bits = 28 characters, shown as 7 groups of 4:
-     version 3 bits | student number 14 bits (0000-9999) | points ÷ 10, 15 bits | stops 88 bits | check 20 bits
-   Stop k is bit k of the stop field, in the order of stops.json (append-only).
+   Layout of a version 2 code, 200 bits = 40 characters, shown as 8 groups of 5:
+     version 3 | student number 14 (0000-9999) | points ÷ 10, 15 | stops 140 | check 28
+   The stop field is one base-3 number: stop k (in stops.json order, append-only) is digit k,
+   0 = not started, 1 = before-class work done, 2 = cleared. 3^88 < 2^140, so 88 stops fit.
    The check is a keyed hash of everything before it. The whole thing is then run through a 6-round Feistel
    network, so changing one stop changes the whole code and the layout is not visible from outside.
    This is scrambling, not security: the key is in this file. It stops casual sharing, since a code only
    counts for the student number inside it; it does not stop someone who reads the source.
 
-   Loaded by index.html (before app.js) and by codes.html. The functions at the bottom (welcome, panel)
+   Loaded by index.html (before app.js) and by codes.html. The functions further down (welcome, panel)
    use the game's globals and only run inside the game. */
 const APPCODE=(()=>{
   const ALPH='0123456789ABCDEFGHJKMNPQRSTVWXYZ';            /* Crockford base 32: no I, L, O or U */
-  const W={ver:3,sid:14,pts:15,stops:88,chk:20},NB=140,LEN=28,VER=1,ROUNDS=6;
+  const W={ver:3,sid:14,pts:15,stops:140,chk:28},NB=200,LEN=40,GROUP=5,VER=2,ROUNDS=6,MAXSTOPS=88;
   const KEY='calcgame|e902d6d64ca33f943ea2cc7d';
   let REG=[];
 
@@ -36,66 +38,79 @@ const APPCODE=(()=>{
   const xor=(a,b)=>a.map((v,i)=>v^b[i]);
   function scramble(bits){let L=bits.slice(0,NB/2),R=bits.slice(NB/2);for(let r=0;r<ROUNDS;r++){const t=xor(L,F(R,r));L=R;R=t;}return L.concat(R);}
   function unscramble(bits){let L=bits.slice(0,NB/2),R=bits.slice(NB/2);for(let r=ROUNDS-1;r>=0;r--){const t=xor(R,F(L,r));R=L;L=t;}return L.concat(R);}
-  const put=(out,v,w)=>{for(let k=w-1;k>=0;k--)out.push(Math.floor(v/2**k)%2);};
-  const take=(b,i,w)=>{let v=0;for(let k=0;k<w;k++)v=v*2+b[i+k];return v;};
-  const check=bits=>h32(KEY+'|chk|'+bits.join(''),7)%(2**W.chk);
+  const put=(out,v,w)=>{v=BigInt(v);for(let k=w-1;k>=0;k--)out.push(Number((v>>BigInt(k))&1n));};
+  const take=(b,i,w)=>{let v=0n;for(let k=0;k<w;k++)v=v*2n+BigInt(b[i+k]);return v;};
+  const check=bits=>(h32(KEY+'|chk|'+bits.join(''),7)>>>8)*16+(h32(KEY+'|chk2|'+bits.join(''),11)&15);   /* 24 + 4 = 28 bits */
 
   /* the stop keys ("world:node") in code order */
-  function setRegistry(list){REG=Array.isArray(list)?list.slice(0,W.stops):[];}
+  function setRegistry(list){REG=Array.isArray(list)?list.slice(0,MAXSTOPS):[];}
   const registry=()=>REG.slice();
 
-  /* {sid: 0-9999, points, done: ['toolkit:notation', ...]} -> "K7Q2-M9XP-..." */
+  /* {sid: 0-9999, points, state: {'toolkit:notation': 2, 'toolkit:domain': 1, ...}}
+     (or done: [keys] for cleared stops and prep: [keys] for before-class work) -> "K7Q2M-9XP4D-..." */
   function encode(o){
     const sid=Math.max(0,Math.min(9999,Math.floor(+o.sid||0))),pts=Math.max(0,Math.min(2**W.pts-1,Math.floor((+o.points||0)/10)));
-    const want=new Set(o.done||[]),b=[];
-    put(b,VER,W.ver);put(b,sid,W.sid);put(b,pts,W.pts);
-    for(let k=0;k<W.stops;k++)b.push(k<REG.length&&want.has(REG[k])?1:0);
+    const st=Object.assign({},...(o.prep||[]).map(k=>({[k]:1})),...(o.done||[]).map(k=>({[k]:2})),o.state||{});
+    let V=0n;for(let k=REG.length-1;k>=0;k--)V=V*3n+BigInt(Math.max(0,Math.min(2,st[REG[k]]|0)));
+    const b=[];put(b,VER,W.ver);put(b,sid,W.sid);put(b,pts,W.pts);put(b,V,W.stops);
     put(b,check(b),W.chk);
     const s=scramble(b);let str='';
-    for(let i=0;i<NB;i+=5)str+=ALPH[take(s,i,5)];
-    return str.match(/.{4}/g).join('-');
+    for(let i=0;i<NB;i+=5)str+=ALPH[Number(take(s,i,5))];
+    return str.match(new RegExp('.{'+GROUP+'}','g')).join('-');
   }
   /* tidy what a student typed: case, separators, and the letters people confuse with digits */
   const clean=s=>String(s||'').toUpperCase().replace(/[^0-9A-Z]/g,'').replace(/O/g,'0').replace(/[IL]/g,'1').replace(/U/g,'V');
-  /* -> {ok:true, sid, sidText, points, done:[keys], stops:[indexes]} or {ok:false, why} */
+  /* -> {ok:true, sid, sidText, points, state:{key: 1|2}, done:[cleared keys], prep:[before-class-only keys]}
+        or {ok:false, why} */
   function decode(str){
     const c=clean(str);
-    if(c.length!==LEN)return {ok:false,why:'An app code has 28 letters and numbers; this one has '+c.length+'.'};
+    if(c.length!==LEN)return {ok:false,why:'An app code has '+LEN+' letters and numbers; this one has '+c.length+'.'};
     const s=[];for(const ch of c)put(s,ALPH.indexOf(ch),5);
     const b=unscramble(s),body=b.slice(0,NB-W.chk);
-    if(take(b,NB-W.chk,W.chk)!==check(body))return {ok:false,why:'That code does not check out. Look for a typo.'};
-    let i=0;const ver=take(b,i,W.ver);i+=W.ver;
+    if(Number(take(b,NB-W.chk,W.chk))!==check(body))return {ok:false,why:'That code does not check out. Look for a typo.'};
+    let i=0;const ver=Number(take(b,i,W.ver));i+=W.ver;
     if(ver!==VER)return {ok:false,why:'That code is from a different version of the app.'};
-    const sid=take(b,i,W.sid);i+=W.sid;const points=10*take(b,i,W.pts);i+=W.pts;
-    const stops=[],done=[];for(let k=0;k<W.stops;k++)if(b[i+k]){stops.push(k);if(k<REG.length)done.push(REG[k]);}
-    if(sid>9999)return {ok:false,why:'That code does not check out.'};
-    return {ok:true,sid,sidText:String(sid).padStart(4,'0'),points,done,stops,canon:c.match(/.{4}/g).join('-')};
+    const sid=Number(take(b,i,W.sid));i+=W.sid;const points=10*Number(take(b,i,W.pts));i+=W.pts;
+    let V=take(b,i,W.stops);
+    if(sid>9999||V>=3n**BigInt(MAXSTOPS))return {ok:false,why:'That code does not check out.'};
+    const state={},done=[],prep=[];
+    for(let k=0;k<MAXSTOPS;k++){const d=Number(V%3n);V/=3n;if(d&&k<REG.length){state[REG[k]]=d;(d===2?done:prep).push(REG[k]);}}
+    return {ok:true,sid,sidText:String(sid).padStart(4,'0'),points,state,done,prep,canon:c.match(new RegExp('.{'+GROUP+'}','g')).join('-')};
   }
   /* finds every code-shaped string in pasted text (a Canvas export, an email, a list) */
-  function find(text){return (String(text||'').match(/[0-9A-Za-z]{4}(?:[- ]?[0-9A-Za-z]{4}){6}(?![0-9A-Za-z])/g)||[]);}
+  function find(text){return (String(text||'').match(/[0-9A-Za-z]{5}(?:[- ]?[0-9A-Za-z]{5}){7}(?![0-9A-Za-z])/g)||[]);}
 
-  return {encode,decode,find,clean,setRegistry,registry,LEN,MAXSTOPS:W.stops};
+  return {encode,decode,find,clean,setRegistry,registry,LEN,MAXSTOPS};
 })();
 
 /* ===================================================================== in the game */
-/* the stops this browser has finished, as registry keys */
-APPCODE.doneKeys=function(){
-  const out=[];
-  for(const w of WORLDS)for(const n of w.nodes)if(n.deck&&DECKS[n.deck]&&deckCleared(DECKS[n.deck]))out.push(w.id+':'+n.id);
+/* the parts done before class; everything else (practice) is after class */
+APPCODE.BEFORE=['theory'];
+/* 0 = not started, 1 = before-class work done (every lesson and the theory set), 2 = cleared */
+APPCODE.stateOf=function(d){
+  if(deckCleared(d))return 2;
+  const L=lessonsOf(d),B=drillKinds(d).filter(k=>APPCODE.BEFORE.includes(k));
+  if(!L.length&&!B.length)return 0;
+  return L.every(l=>lp(d,l.id).done)&&B.every(k=>drillPassed(d,k))?1:0;
+};
+APPCODE.states=function(){
+  const out={};
+  for(const w of WORLDS)for(const n of w.nodes){const d=n.deck&&DECKS[n.deck];if(d&&!d.error){const v=APPCODE.stateOf(d);if(v)out[w.id+':'+n.id]=v;}}
   return out;
 };
-APPCODE.mine=function(){return S.sid==null?'':APPCODE.encode({sid:S.sid,points:S.points,done:APPCODE.doneKeys()});};
+APPCODE.doneKeys=function(){const s=APPCODE.states();return Object.keys(s).filter(k=>s[k]===2);};
+APPCODE.mine=function(){return S.sid==null?'':APPCODE.encode({sid:S.sid,points:S.points,state:APPCODE.states()});};
 APPCODE.total=()=>APPCODE.registry().filter(k=>{const [w,n]=k.split(':');const W=WORLDS.find(x=>x.id===w);return W&&W.nodes.some(x=>x.id===n&&x.deck);}).length;
 
 /* put a decoded code's progress into this browser. Never takes anything away. */
 APPCODE.restore=function(r){
   let n=0;
-  for(const key of r.done){
+  for(const [key,v] of Object.entries(r.state)){
     const [wid,nid]=key.split(':'),w=WORLDS.find(x=>x.id===wid),node=w&&w.nodes.find(x=>x.id===nid),d=node&&DECKS[node.deck];
-    if(!d||d.error)continue;
-    if(!deckCleared(d))n++;
+    if(!d||d.error||APPCODE.stateOf(d)>=v)continue;
+    n++;
     const p=ds(d.id);p.v2=true;p.pass=p.pass||{};
-    drillKinds(d).forEach(k=>{p.pass[k]=true;});
+    drillKinds(d).forEach(k=>{if(v===2||APPCODE.BEFORE.includes(k))p.pass[k]=true;});
     lessonsOf(d).forEach(l=>{lp(d,l.id).done=true;});
   }
   S.points=Math.max(S.points||0,r.points);
@@ -107,7 +122,7 @@ const sidOk=v=>/^\d{4}$/.test(String(v).trim());
 
 /* the restore form, used on the welcome screen and in the code panel */
 function restoreForm(){
-  return '<label class="fld" for="ac-in"><span>Your latest app code</span><input id="ac-in" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX"></label>'+
+  return '<label class="fld" for="ac-in"><span>Your latest app code</span><input id="ac-in" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"></label>'+
     '<div class="row"><button class="btn" id="ac-rs">Restore</button></div><div class="fb" id="ac-fb" hidden></div>';
 }
 function wireRestore(m,after){
@@ -117,7 +132,7 @@ function wireRestore(m,after){
     if(!r.ok)return say(false,r.why);
     if(S.sid!=null&&S.sid!==r.sid)return say(false,'That code belongs to student number **'+r.sidText+'**, but this app is set to **'+String(S.sid).padStart(4,'0')+'**. If '+r.sidText+' is yours, change your number first.');
     const n=APPCODE.restore(r);
-    say(true,n?'Restored: '+n+(n===1?' stop':' stops')+' marked finished, and '+r.points+' game points.':'Nothing to restore: this browser already has everything in that code.');
+    say(true,n?'Restored: progress on '+n+(n===1?' stop':' stops')+', and '+r.points+' game points.':'Nothing to restore: this browser already has everything in that code.');
     if(after)setTimeout(after,n?1400:2200);
   };
 }
@@ -149,13 +164,13 @@ APPCODE.panel=function(){
   const sidForm=(v)=>'<label class="fld" for="ac-sid"><span>Student number (4 digits, from your instructor)</span><input id="ac-sid" inputmode="numeric" maxlength="4" autocomplete="off" value="'+(v==null?'':String(v).padStart(4,'0'))+'"></label>'+
     '<div class="row"><button class="btn" id="ac-save">Save</button></div><div class="fb bad" id="ac-err" hidden></div>';
   const draw=(editing)=>{
-    const has=S.sid!=null,code=has?APPCODE.mine():'',nd=APPCODE.doneKeys().length,tot=APPCODE.total();
+    const has=S.sid!=null,code=has?APPCODE.mine():'',stt=APPCODE.states(),nd=Object.values(stt).filter(v=>v===2).length,np=Object.values(stt).filter(v=>v===1).length,tot=APPCODE.total();
     modal('<h2>Your app code</h2>'+
       (has&&!editing?
         '<p class="tiny">Student number <b>'+String(S.sid).padStart(4,'0')+'</b> · <button class="link" id="ac-chg">change</button></p>'+
         '<div class="acode" id="ac-code" tabindex="0" aria-label="App code">'+code.split('-').map(g=>'<span>'+g+'</span>').join('')+'</div>'+
         '<div class="row"><button class="btn" id="ac-copy">Copy code</button></div>'+
-        '<p class="txt">It holds the <b>'+nd+' of '+tot+'</b> stops you have finished and your <b>'+(S.points||0)+'</b> game points. Paste it into the pre-class quiz.</p>'+
+        '<p class="txt">It holds the <b>'+nd+' of '+tot+'</b> stops you have cleared'+(np?', <b>'+np+'</b> more with the before-class work done,':'')+' and your <b>'+(S.points||0)+'</b> game points. Paste it into the pre-class quiz.</p>'+
         '<p class="tiny">It is also your backup. If this browser ever loses your progress, enter your latest code below and everything comes back.</p>'
        :'<p class="txt">'+(has?'Change':'Enter')+' the 4-digit student number your instructor gave you. Your code is made from it.</p>'+sidForm(S.sid))+
       (S.preview?'<p class="banner">Preview mode is on: practice in preview is not recorded, so it is not in the code.</p>':'')+

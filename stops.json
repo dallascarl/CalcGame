@@ -74,6 +74,7 @@
   "applications:related2",
   "applications:incdec",
   "applications:concavity",
-  "applications:opt2"
+  "applications:opt2",
+  "integration:ftc2"
  ]
 }

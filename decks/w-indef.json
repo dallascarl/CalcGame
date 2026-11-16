@@ -2,8 +2,8 @@
  "id": "w-indef",
  "course": "Calculus 1",
  "unit": "Integration",
- "title": "Indefinite Integrals and Net Change",
- "subtitle": "Antiderivatives as integrals, and what a rate adds up to.",
+ "title": "Indefinite Integrals",
+ "subtitle": "Antiderivatives with + C.",
  "version": 2,
  "graphs": {},
  "drills": {
@@ -11,45 +11,6 @@
    "title": "Theory",
    "mode": "all",
    "questions": [
-    {
-     "id": "T1",
-     "type": "mc",
-     "text": "$$int[a,b] F'(x) dx =$$",
-     "options": [
-      "$F(b) - F(a)$",
-      "$F'(b) - F'(a)$",
-      "$F(a) - F(b)$",
-      "$F(b)$"
-     ],
-     "answer": 0,
-     "explain": "The net change theorem."
-    },
-    {
-     "id": "T2",
-     "type": "mc",
-     "text": "Velocity $v(t)$ is negative for part of a trip. Then $int[a,b] v(t) dt$ gives",
-     "options": [
-      "the displacement, with backward motion subtracted",
-      "the total distance",
-      "the top speed",
-      "the time traveled"
-     ],
-     "answer": 0,
-     "explain": "For total distance, integrate $|v(t)|$."
-    },
-    {
-     "id": "T3",
-     "type": "mc",
-     "text": "If $r(t)$ is the rate oil leaks from a tank (gallons per hour), then $int[0,5] r(t) dt$ is",
-     "options": [
-      "the gallons that leak out in the first 5 hours",
-      "the leak rate at hour 5",
-      "the gallons left in the tank",
-      "how fast the leak speeds up"
-     ],
-     "answer": 0,
-     "explain": "Integrating a rate gives the total amount."
-    },
     {
      "id": "T4",
      "type": "tf",
@@ -69,6 +30,64 @@
      ],
      "answer": 0,
      "explain": "$(tan(x))' = sec^2(x)$"
+    },
+    {
+     "id": "T6",
+     "type": "tf",
+     "text": "Two antiderivatives of the same function can differ only by a constant.",
+     "answer": true,
+     "hint": "That is what the $+ C$ is for.",
+     "explain": "If $F' = G'$ on an interval, then $F - G$ is constant there."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "For $n ≠ -1$,\n$$int x^n dx =$$",
+     "options": [
+      "$frac{x^(n+1)}{n+1} + C$",
+      "$n x^(n-1) + C$",
+      "$frac{x^n}{n} + C$",
+      "$x^(n+1) + C$"
+     ],
+     "answer": 0,
+     "hint": "Run the power rule backwards.",
+     "explain": "Raise the power by one, then divide by the new power."
+    },
+    {
+     "id": "T8",
+     "type": "mc",
+     "text": "$$int frac{1}{x} dx =$$",
+     "options": [
+      "$ln|x| + C$",
+      "$-frac{1}{x^2} + C$",
+      "$frac{x^0}{0} + C$",
+      "$x + C$"
+     ],
+     "answer": 0,
+     "hint": "This is the one power the power rule cannot handle.",
+     "explain": "The derivative of $ln|x|$ is $frac{1}{x}$."
+    },
+    {
+     "id": "T9",
+     "type": "tf",
+     "text": "$$int f(x)g(x) dx = int f(x) dx · int g(x) dx$$",
+     "answer": false,
+     "hint": "Try $f(x) = g(x) = x$.",
+     "explain": "With $f = g = x$ the left side is $frac{x^3}{3} + C$ and the right side is about $frac{x^4}{4}$. Integrals split over sums, not products."
+    },
+    {
+     "id": "T10",
+     "type": "mc",
+     "text": "$$int e^x dx =$$",
+     "options": [
+      "$e^x + C$",
+      "$frac{e^(x+1)}{x+1} + C$",
+      "$x e^(x-1) + C$",
+      "$ln(x) + C$"
+     ],
+     "answer": 0,
+     "hint": "Which function is its own derivative?",
+     "explain": "$e^x$ is its own derivative, so it is its own antiderivative."
     }
    ]
   },
@@ -259,7 +278,7 @@
      },
      "upToC": true,
      "show": "$sin(x) - x^2/2$",
-     "level": 1,
+     "level": 2,
      "explain": "$sin(x) - x^2/2 + C$"
     },
     {
@@ -321,7 +340,7 @@
      },
      "upToC": true,
      "show": "$x^3 - x^2 + 5x$",
-     "level": 1,
+     "level": 2,
      "explain": "$x^3 - x^2 + 5x + C$"
     },
     {
@@ -476,7 +495,7 @@
      },
      "upToC": true,
      "show": "$5x$",
-     "level": 2,
+     "level": 1,
      "explain": "$5x + C$"
     },
     {
@@ -507,7 +526,7 @@
      },
      "upToC": true,
      "show": "$arctan(x)$",
-     "level": 2,
+     "level": 1,
      "explain": "$arctan(x) + C$"
     },
     {
@@ -569,7 +588,7 @@
      },
      "upToC": true,
      "show": "$2sqrt(x)$",
-     "level": 2,
+     "level": 1,
      "explain": "$2sqrt(x) + C$"
     },
     {
@@ -600,7 +619,7 @@
      },
      "upToC": true,
      "show": "$x^6 - x^4$",
-     "level": 2,
+     "level": 1,
      "explain": "$x^6 - x^4 + C$"
     },
     {
@@ -693,258 +712,8 @@
      },
      "upToC": true,
      "show": "$x^8$",
-     "level": 2,
+     "level": 1,
      "explain": "$x^8 + C$"
-    },
-    {
-     "id": "N21",
-     "type": "num",
-     "text": "Water flows into a tank at $r(t) = 3t^2$ L/min. How many liters flow in from $t = 0$ to $t = 2$?",
-     "answer": 8,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,2] 3t^2 dt = 8$."
-    },
-    {
-     "id": "N22",
-     "type": "num",
-     "text": "A population grows at $P'(t) = 20t$ people per year. By how much does it grow from $t = 1$ to $t = 3$?",
-     "answer": 80,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[1,3] 20t dt = 80$."
-    },
-    {
-     "id": "N23",
-     "type": "num",
-     "text": "Oil leaks at $r(t) = 6 - t$ gallons per hour. How much leaks in the first 4 hours?",
-     "answer": 16,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,4] 6 - t dt = 16$."
-    },
-    {
-     "id": "N24",
-     "type": "num",
-     "text": "A car accelerates with $v(t) = 4t + 10$ ft/s. How far does it go from $t = 0$ to $t = 5$?",
-     "answer": 100,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,5] 4t + 10 dt = 100$."
-    },
-    {
-     "id": "N25",
-     "type": "num",
-     "text": "A town uses electricity at $E(t) = 2 + sin(t)$ (in megawatts). How much energy (megawatt-hours) is used from $t = 0$ to $t = pi$?",
-     "answer": 8.283185,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,pi] 2 + sin(t) dt = 8.283185$."
-    },
-    {
-     "id": "N26",
-     "type": "num",
-     "text": "A snowball melts at $V'(t) = -2t$ cm³/min. How much does its volume change from $t = 0$ to $t = 3$?",
-     "answer": -9,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,3] -2t dt = -9$."
-    },
-    {
-     "id": "N27",
-     "type": "num",
-     "text": "A runner's velocity is $v(t) = 3sqrt(t)$ m/s. How far does she run from $t = 0$ to $t = 4$?",
-     "answer": 16,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,4] 3sqrt(t) dt = 16$."
-    },
-    {
-     "id": "N28",
-     "type": "num",
-     "text": "Revenue comes in at $R'(t) = 100e^t$ dollars per day. How much comes in from $t = 0$ to $t = 1$? (A decimal is fine.)",
-     "answer": 171.828183,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,1] 100e^t dt = 171.828183$."
-    },
-    {
-     "id": "N29",
-     "type": "num",
-     "text": "Sand pours onto a pile at $12 - 2t$ kg/min. How much sand lands from $t = 0$ to $t = 6$?",
-     "answer": 36,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,6] 12 - 2t dt = 36$."
-    },
-    {
-     "id": "N30",
-     "type": "num",
-     "text": "A balloon rises at $v(t) = 6t - t^2$ m/s. How much higher is it at $t = 3$ than at $t = 0$?",
-     "answer": 18,
-     "label": "total =",
-     "tol": 0.01,
-     "level": 2,
-     "explain": "Integrate the rate: $int[0,3] 6t - t^2 dt = 18$."
-    },
-    {
-     "id": "T31",
-     "type": "steps",
-     "text": "A particle has velocity $v(t) = t^2 - 4t$ m/s for $0 <= t <= 6$. It changes direction at $t = 4$.",
-     "steps": [
-      {
-       "id": "T31.1",
-       "type": "num",
-       "text": "Displacement:\n$$int[0,6] v(t) dt$$",
-       "answer": 0,
-       "label": "displacement =",
-       "work": "displacement $= 0$"
-      },
-      {
-       "id": "T31.2",
-       "type": "num",
-       "text": "Total distance: add the size of each part, $|int[0,4] v| + |int[4,6] v|$.",
-       "answer": 21.333333,
-       "label": "distance =",
-       "work": "distance $= 64/3$"
-      }
-     ],
-     "level": 3,
-     "explain": "Displacement 0 m, distance 64/3 m."
-    },
-    {
-     "id": "T32",
-     "type": "steps",
-     "text": "A particle has velocity $v(t) = t - 2$ m/s for $0 <= t <= 4$. It changes direction at $t = 2$.",
-     "steps": [
-      {
-       "id": "T32.1",
-       "type": "num",
-       "text": "Displacement:\n$$int[0,4] v(t) dt$$",
-       "answer": 0,
-       "label": "displacement =",
-       "work": "displacement $= 0$"
-      },
-      {
-       "id": "T32.2",
-       "type": "num",
-       "text": "Total distance: add the size of each part, $|int[0,2] v| + |int[2,4] v|$.",
-       "answer": 4,
-       "label": "distance =",
-       "work": "distance $= 4$"
-      }
-     ],
-     "level": 3,
-     "explain": "Displacement 0 m, distance 4 m."
-    },
-    {
-     "id": "T33",
-     "type": "steps",
-     "text": "A particle has velocity $v(t) = 3t^2 - 12$ m/s for $0 <= t <= 3$. It changes direction at $t = 2$.",
-     "steps": [
-      {
-       "id": "T33.1",
-       "type": "num",
-       "text": "Displacement:\n$$int[0,3] v(t) dt$$",
-       "answer": -9,
-       "label": "displacement =",
-       "work": "displacement $= -9$"
-      },
-      {
-       "id": "T33.2",
-       "type": "num",
-       "text": "Total distance: add the size of each part, $|int[0,2] v| + |int[2,3] v|$.",
-       "answer": 23,
-       "label": "distance =",
-       "work": "distance $= 23$"
-      }
-     ],
-     "level": 3,
-     "explain": "Displacement -9 m, distance 23 m."
-    },
-    {
-     "id": "T34",
-     "type": "steps",
-     "text": "A particle has velocity $v(t) = 2t - 6$ m/s for $0 <= t <= 5$. It changes direction at $t = 3$.",
-     "steps": [
-      {
-       "id": "T34.1",
-       "type": "num",
-       "text": "Displacement:\n$$int[0,5] v(t) dt$$",
-       "answer": -5,
-       "label": "displacement =",
-       "work": "displacement $= -5$"
-      },
-      {
-       "id": "T34.2",
-       "type": "num",
-       "text": "Total distance: add the size of each part, $|int[0,3] v| + |int[3,5] v|$.",
-       "answer": 13,
-       "label": "distance =",
-       "work": "distance $= 13$"
-      }
-     ],
-     "level": 3,
-     "explain": "Displacement -5 m, distance 13 m."
-    },
-    {
-     "id": "T35",
-     "type": "steps",
-     "text": "A particle has velocity $v(t) = t^2 - 1$ m/s for $0 <= t <= 2$. It changes direction at $t = 1$.",
-     "steps": [
-      {
-       "id": "T35.1",
-       "type": "num",
-       "text": "Displacement:\n$$int[0,2] v(t) dt$$",
-       "answer": 0.666667,
-       "label": "displacement =",
-       "work": "displacement $= 2/3$"
-      },
-      {
-       "id": "T35.2",
-       "type": "num",
-       "text": "Total distance: add the size of each part, $|int[0,1] v| + |int[1,2] v|$.",
-       "answer": 2,
-       "label": "distance =",
-       "work": "distance $= 2$"
-      }
-     ],
-     "level": 3,
-     "explain": "Displacement 2/3 m, distance 2 m."
-    },
-    {
-     "id": "T36",
-     "type": "steps",
-     "text": "A particle has velocity $v(t) = 4 - 2t$ m/s for $0 <= t <= 3$. It changes direction at $t = 2$.",
-     "steps": [
-      {
-       "id": "T36.1",
-       "type": "num",
-       "text": "Displacement:\n$$int[0,3] v(t) dt$$",
-       "answer": 3,
-       "label": "displacement =",
-       "work": "displacement $= 3$"
-      },
-      {
-       "id": "T36.2",
-       "type": "num",
-       "text": "Total distance: add the size of each part, $|int[0,2] v| + |int[2,3] v|$.",
-       "answer": 5,
-       "label": "distance =",
-       "work": "distance $= 5$"
-      }
-     ],
-     "level": 3,
-     "explain": "Displacement 3 m, distance 5 m."
     }
    ]
   }
@@ -968,7 +737,7 @@
    {
     "id": "L2",
     "type": "expr",
-    "text": "Game time from class! Find $int (x^5 + 2) dx$.",
+    "text": "Find $int (x^5 + 2) dx$.",
     "answer": "x^6/6 + 2x",
     "vars": [
      "x"
@@ -991,50 +760,58 @@
    {
     "id": "L3",
     "type": "mc",
-    "text": "**Net change theorem:**\n$$int[a,b] F'(x) dx = F(b) - F(a)$$\nIntegrating a rate gives the total change. If $v(t)$ is velocity, $int[0,3] v(t) dt$ is the",
+    "text": "Why the $+ C$?\n$$frac{d}{dx}(x^2 + 7) = 2x ;; frac{d}{dx}(x^2 - 3) = 2x$$\nSo $int 2x dx$ is",
     "options": [
-     "displacement (change in position)",
-     "acceleration",
-     "speed at $t = 3$",
-     "average velocity"
+     "$x^2 + C$: every one of them at once",
+     "$x^2$ only",
+     "$x^2 + 7$",
+     "2"
     ],
     "answer": 0,
-    "hint": "Velocity is the rate of change of position.",
-    "explain": "Total change in position from $t = 0$ to $t = 3$."
+    "hint": "How many functions have derivative $2x$?",
+    "explain": "A constant disappears when you differentiate, so the indefinite integral has to allow any constant."
    },
    {
     "id": "L4",
-    "type": "steps",
-    "text": "A particle moves with velocity $v(t) = t^2 - 4t$ (m/s) for $0 <= t <= 6$.",
-    "steps": [
-     {
-      "id": "L4.1",
-      "type": "num",
-      "text": "Displacement:\n$$int[0,6] (t^2 - 4t) dt$$",
-      "answer": 0,
-      "label": "displacement =",
-      "hint": "$frac{t^3}{3} - 2t^2$ from 0 to 6: $72 - 72$.",
-      "work": "displacement $= 0$ m"
-     },
-     {
-      "id": "L4.2",
-      "type": "num",
-      "text": "Total distance: it moves backward for $0 < t < 4$ (where $v < 0$) and forward after. Add\n$$|int[0,4] v dt| + int[4,6] v dt$$",
-      "answer": 21.333333,
-      "label": "distance =",
-      "hint": "$int[0,4] v = -frac{32}{3}$ and $int[4,6] v = frac{32}{3}$.",
-      "work": "distance $= frac{64}{3}$ m"
-     }
-    ]
+    "type": "expr",
+    "text": "Constants and sums come along for the ride, just as with derivatives. Find\n$$int (6x^2 - 4sin(x)) dx$$",
+    "answer": "2x^3 + 4cos(x)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sin(",
+     "cos(",
+     "tan(",
+     "sqrt(",
+     "e^(",
+     "ln("
+    ],
+    "label": "$int (6x^2 - 4sin(x)) dx$ =",
+    "show": "$2x^3 + 4cos(x)$",
+    "ranges": {
+     "x": [
+      0.3,
+      1.2
+     ]
+    },
+    "post": "$+ C$",
+    "upToC": true,
+    "hint": "Term by term. An antiderivative of $sin(x)$ is $-cos(x)$.",
+    "explain": "$2x^3 + 4cos(x) + C$"
    },
    {
     "id": "L5",
-    "type": "num",
-    "text": "Water flows into a tank at $r(t) = 3t^2$ liters per minute. How much water flows in during the first 2 minutes?",
-    "answer": 8,
-    "label": "liters =",
-    "hint": "$int[0,2] 3t^2 dt$",
-    "explain": "$t^3$ from 0 to 2: 8 liters."
+    "type": "mc",
+    "text": "You can always check an integral by differentiating the answer. A student writes\n$$int x cos(x) dx = frac{x^2}{2} sin(x) + C$$\nDifferentiate the right side. Is the student correct?",
+    "options": [
+     "No. The product rule gives $x sin(x) + frac{x^2}{2} cos(x)$, not $x cos(x)$",
+     "Yes"
+    ],
+    "answer": 0,
+    "fixed": true,
+    "hint": "The right side is a product.",
+    "explain": "There is no product rule for integrals: you cannot integrate each factor separately. When in doubt, differentiate your answer."
    }
   ]
  }

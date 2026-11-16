@@ -2,10 +2,168 @@
  "id": "w-ftc",
  "course": "Calculus 1",
  "unit": "Integration",
- "title": "The Fundamental Theorem of Calculus",
- "subtitle": "Areas from antiderivatives, and derivatives of areas.",
- "version": 2,
- "graphs": {},
+ "title": "The Fundamental Theorem, Part 1",
+ "subtitle": "The derivative of an area function is the function you started with.",
+ "version": 3,
+ "graphs": {
+  "flat": {
+   "window": [
+    -0.5,
+    4.5,
+    -0.5,
+    3.5
+   ],
+   "pieces": [
+    {
+     "expr": "2",
+     "from": -0.5,
+     "to": 4.5
+    }
+   ],
+   "rects": [
+    [
+     0,
+     3,
+     2
+    ]
+   ]
+  },
+  "tri": {
+   "window": [
+    -0.5,
+    4.5,
+    -0.5,
+    4.5
+   ],
+   "pieces": [
+    {
+     "expr": "x",
+     "from": -0.5,
+     "to": 4.5
+    }
+   ],
+   "vlines": [
+    3
+   ],
+   "labels": [
+    [
+     3,
+     3,
+     "x"
+    ]
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "num",
+    "graph": "flat",
+    "text": "An **area function** adds up area from a fixed start to a moving end.\n$$A(x) = int[0,x] 2 dt$$\nThe graph of $f(t) = 2$ is a flat line, so the area is a rectangle.",
+    "answer": 6,
+    "label": "$A(3)$ =",
+    "hint": "The rectangle is 3 wide and 2 tall.",
+    "explain": "Width 3 times height 2."
+   },
+   {
+    "id": "L2",
+    "type": "expr",
+    "text": "$$A(x) = int[0,x] 2 dt$$\nNow let the right edge be $x$ instead of 3. The rectangle is $x$ wide and 2 tall.",
+    "answer": "2x",
+    "vars": [
+     "x"
+    ],
+    "keys": [],
+    "label": "$A(x)$ =",
+    "show": "$2x$",
+    "ranges": {
+     "x": [
+      0.3,
+      1.2
+     ]
+    },
+    "hint": "Width times height.",
+    "explain": "$A(x) = 2x$."
+   },
+   {
+    "id": "L3",
+    "type": "mc",
+    "text": "$A(x) = 2x$, so $A'(x) = 2$. Where have you seen that 2 before?",
+    "options": [
+     "It is the height of the function being integrated, $f(t) = 2$",
+     "It is the left endpoint",
+     "Nowhere. It is a coincidence"
+    ],
+    "answer": 0,
+    "hint": "Look inside the integral.",
+    "explain": "The area grows at a rate equal to the height at the moving edge. That is the whole theorem."
+   },
+   {
+    "id": "L4",
+    "type": "expr",
+    "text": "Try a slanted one. Under $f(t) = t$, the area from 0 to $x$ is a triangle, $x$ wide and $x$ tall.\n$$A(x) = int[0,x] t dt$$",
+    "answer": "x^2/2",
+    "vars": [
+     "x"
+    ],
+    "keys": [],
+    "label": "$A(x)$ =",
+    "show": "$frac{x^2}{2}$",
+    "ranges": {
+     "x": [
+      0.3,
+      1.2
+     ]
+    },
+    "graph": "tri",
+    "hint": "Half of base times height.",
+    "explain": "$A(x) = frac{x^2}{2}$, and its derivative is $x$: again the height of $f$ at the moving edge."
+   },
+   {
+    "id": "L5",
+    "type": "expr",
+    "text": "**The Fundamental Theorem, Part 1.** It works for every continuous $f$:\n$$frac{d}{dx} int[a,x] f(t) dt = f(x)$$\nThe derivative of the area function is the function. Find\n$$frac{d}{dx} int[1,x] t^3 dt$$",
+    "answer": "x^3",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sin(",
+     "cos(",
+     "tan(",
+     "sqrt(",
+     "e^(",
+     "ln("
+    ],
+    "label": "derivative =",
+    "show": "$x^3$",
+    "hint": "Put $x$ in for $t$.",
+    "explain": "$x^3$"
+   },
+   {
+    "id": "L6",
+    "type": "expr",
+    "text": "With the chain rule:\n$$frac{d}{dx} int[a,g(x)] f(t) dt = f(g(x))·g'(x)$$\nFind\n$$frac{d}{dx} int[0,x^2] sin(t) dt$$",
+    "answer": "sin(x^2)(2x)",
+    "vars": [
+     "x"
+    ],
+    "keys": [
+     "sin(",
+     "cos(",
+     "tan(",
+     "sqrt(",
+     "e^(",
+     "ln("
+    ],
+    "label": "derivative =",
+    "show": "$sin(x^2)(2x)$",
+    "hint": "Put $x^2$ in for $t$, then multiply by the derivative of $x^2$.",
+    "explain": "$sin(x^2)·2x$"
+   }
+  ]
+ },
  "drills": {
   "theory": {
    "title": "Theory",
@@ -13,29 +171,42 @@
    "questions": [
     {
      "id": "T1",
-     "type": "match",
-     "text": "Match each part of the Fundamental Theorem.",
-     "pairs": [
-      [
-       "Part 1",
-       "$frac{d}{dx} int[a,x] f(t) dt = f(x)$"
-      ],
-      [
-       "Part 2",
-       "$int[a,b] f(x) dx = F(b) - F(a)$"
-      ]
+     "type": "mc",
+     "text": "$$A(x) = int[2,x] f(t) dt$$\nWhat is $A(2)$?",
+     "options": [
+      "0",
+      "$f(2)$",
+      "2",
+      "It depends on $f$"
      ],
-     "explain": "Part 1: differentiating undoes integrating. Part 2: compute areas with antiderivatives."
+     "answer": 0,
+     "hint": "How wide is the region from 2 to 2?",
+     "explain": "No width, so no area."
     },
     {
      "id": "T2",
-     "type": "tf",
-     "text": "In $F(b) - F(a)$, it does not matter which antiderivative $F$ you use.",
-     "answer": true,
-     "explain": "$(F(b) + C) - (F(a) + C) = F(b) - F(a)$. The $C$ cancels."
+     "type": "mc",
+     "text": "$$frac{d}{dx} int[1,x] cos(t^2) dt =$$",
+     "options": [
+      "$cos(x^2)$",
+      "$-2x sin(x^2)$",
+      "$cos(x^2) - cos(1)$",
+      "$sin(x^2)$"
+     ],
+     "answer": 0,
+     "hint": "You do not need an antiderivative of $cos(t^2)$. (Nobody has a formula for one.)",
+     "explain": "Part 1: the derivative of the area function is the integrand, with $x$ in place of $t$."
     },
     {
      "id": "T3",
+     "type": "tf",
+     "text": "Changing the lower limit from 1 to 5 changes the value of\n$$frac{d}{dx} int[1,x] f(t) dt$$",
+     "answer": false,
+     "hint": "What does moving the starting point do to the area function?",
+     "explain": "A different start shifts the area by a constant, and the derivative of a constant is 0. The answer is $f(x)$ either way."
+    },
+    {
+     "id": "T4",
      "type": "mc",
      "text": "$$frac{d}{dx} int[a,g(x)] f(t) dt =$$",
      "options": [
@@ -48,43 +219,26 @@
      "explain": "Part 1 plus the chain rule."
     },
     {
-     "id": "T4",
-     "type": "mc",
-     "text": "The average value of $f$ on $[a, b]$ is",
-     "options": [
-      "$frac{1}{b - a} int[a,b] f(x) dx$",
-      "$frac{f(a) + f(b)}{2}$",
-      "$int[a,b] f(x) dx$",
-      "$frac{f(b) - f(a)}{b - a}$"
-     ],
-     "answer": 0,
-     "explain": "Total area divided by the width."
-    },
-    {
      "id": "T5",
      "type": "mc",
-     "text": "What is\n$$int[-pi,pi] sin(x) dx$$",
+     "text": "$$frac{d}{dx} int[x,3] f(t) dt =$$",
      "options": [
-      "0",
-      "2",
-      "$-2$",
-      "$2pi$"
+      "$-f(x)$",
+      "$f(x)$",
+      "$f(3)$",
+      "0"
      ],
      "answer": 0,
-     "explain": "$-cos(pi) - (-cos(-pi)) = 1 - 1 = 0$"
+     "hint": "Part 1 needs $x$ on top. What does swapping the limits do?",
+     "explain": "Swap the limits first: $int[x,3] f(t) dt = -int[3,x] f(t) dt$."
     },
     {
      "id": "T6",
-     "type": "mc",
-     "text": "$int[a,b] f(x) dx$ is a",
-     "options": [
-      "number",
-      "function of $x$",
-      "function of $t$",
-      "family of functions"
-     ],
-     "answer": 0,
-     "explain": "Definite integrals are numbers."
+     "type": "tf",
+     "text": "Part 1 says that every continuous function has an antiderivative.",
+     "answer": true,
+     "hint": "What is the derivative of $A(x) = int[a,x] f(t) dt$?",
+     "explain": "The area function $A(x) = int[a,x] f(t) dt$ is one: its derivative is $f(x)$."
     }
    ]
   },
@@ -92,106 +246,6 @@
    "title": "Practice",
    "mode": "pool",
    "questions": [
-    {
-     "id": "F1",
-     "type": "num",
-     "text": "$F(x) = x^3/3$ is an antiderivative of $f$. Find $F(3) - F(0)$.",
-     "answer": 9,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$9$"
-    },
-    {
-     "id": "F2",
-     "type": "num",
-     "text": "$F(x) = x^2 + x$ is an antiderivative of $f$. Find $F(2) - F(1)$.",
-     "answer": 4,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$4$"
-    },
-    {
-     "id": "F3",
-     "type": "num",
-     "text": "$F(x) = sin(x)$ is an antiderivative of $f$. Find\n$$F(frac{pi}{2}) - F(0)$$",
-     "answer": 1,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$1$"
-    },
-    {
-     "id": "F4",
-     "type": "num",
-     "text": "$F(x) = e^x$ is an antiderivative of $f$. Find $F(1) - F(0)$.",
-     "answer": 1.718282,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$1.718282$"
-    },
-    {
-     "id": "F5",
-     "type": "num",
-     "text": "$F(x) = ln(x)$ is an antiderivative of $f$. Find $F(e) - F(1)$.",
-     "answer": 1,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$1$"
-    },
-    {
-     "id": "F6",
-     "type": "num",
-     "text": "$F(x) = x^4$ is an antiderivative of $f$. Find $F(1) - F(-1)$.",
-     "answer": 0,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$0$"
-    },
-    {
-     "id": "F7",
-     "type": "num",
-     "text": "$F(x) = 2x^3 - x$ is an antiderivative of $f$. Find $F(2) - F(0)$.",
-     "answer": 14,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$14$"
-    },
-    {
-     "id": "F8",
-     "type": "num",
-     "text": "$F(x) = -cos(x)$ is an antiderivative of $f$. Find $F(pi) - F(0)$.",
-     "answer": 2,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$2$"
-    },
-    {
-     "id": "F9",
-     "type": "num",
-     "text": "$F(x) = sqrt(x)$ is an antiderivative of $f$. Find $F(9) - F(1)$.",
-     "answer": 2,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$2$"
-    },
-    {
-     "id": "F10",
-     "type": "num",
-     "text": "$F(x) = x^5/5$ is an antiderivative of $f$. Find $F(1) - F(0)$.",
-     "answer": 0.2,
-     "label": "value =",
-     "tol": 0.005,
-     "level": 1,
-     "explain": "$1/5$"
-    },
     {
      "id": "P11",
      "type": "expr",
@@ -577,697 +631,265 @@
      "explain": "$f(g(x))·g'(x) = xe^x$"
     },
     {
-     "id": "D27",
+     "id": "G1",
      "type": "num",
-     "text": "Evaluate\n$$int[0,2] x^2 dx$$",
-     "answer": 2.666667,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = x^3/3$, and $F(2) - F(0) = 8/3$."
+     "level": 1,
+     "text": "$$A(x) = int[0,x] (2t + 1) dt$$",
+     "answer": 5,
+     "label": "$A'(2)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = 2x + 1$, so $A'(2) = 5$."
     },
     {
-     "id": "W28",
-     "type": "steps",
-     "text": "Evaluate $int[0,2] x^2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W28.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "x^3/3",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$frac{x^3}{3}$",
-       "work": "$F(x) = x^3/3$"
-      },
-      {
-       "id": "W28.2",
-       "type": "num",
-       "text": "$F(2) - F(0)$ (a decimal is fine).",
-       "answer": 2.666667,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 8/3$"
-      }
-     ],
-     "level": 3,
-     "explain": "8/3"
-    },
-    {
-     "id": "D29",
+     "id": "G2",
      "type": "num",
-     "text": "Evaluate\n$$int[0,2] x + 2 dx$$",
-     "answer": 6,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = x^2/2 + 2x$, and $F(2) - F(0) = 6$."
+     "level": 1,
+     "text": "$$A(x) = int[1,x] (t^2 - 3) dt$$",
+     "answer": -2,
+     "label": "$A'(1)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = x^2 - 3$, so $A'(1) = −2$."
     },
     {
-     "id": "W30",
-     "type": "steps",
-     "text": "Evaluate $int[0,2] x + 2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W30.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "x^2/2 + 2x",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$x^2/2 + 2x$",
-       "work": "$F(x) = x^2/2 + 2x$"
-      },
-      {
-       "id": "W30.2",
-       "type": "num",
-       "text": "$F(2) - F(0)$ (a decimal is fine).",
-       "answer": 6,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 6$"
-      }
-     ],
-     "level": 3,
-     "explain": "6"
-    },
-    {
-     "id": "D31",
+     "id": "G3",
      "type": "num",
-     "text": "Evaluate\n$$int[1,2] 3x^2 dx$$",
-     "answer": 7,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = x^3$, and $F(2) - F(1) = 7$."
-    },
-    {
-     "id": "W32",
-     "type": "steps",
-     "text": "Evaluate $int[1,2] 3x^2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W32.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "x^3",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$x^3$",
-       "work": "$F(x) = x^3$"
-      },
-      {
-       "id": "W32.2",
-       "type": "num",
-       "text": "$F(2) - F(1)$ (a decimal is fine).",
-       "answer": 7,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 7$"
-      }
-     ],
-     "level": 3,
-     "explain": "7"
-    },
-    {
-     "id": "D33",
-     "type": "num",
-     "text": "Evaluate\n$$int[0,4] 2x + 1 dx$$",
-     "answer": 20,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = x^2 + x$, and $F(4) - F(0) = 20$."
-    },
-    {
-     "id": "W34",
-     "type": "steps",
-     "text": "Evaluate $int[0,4] 2x + 1 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W34.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "x^2 + x",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$x^2 + x$",
-       "work": "$F(x) = x^2 + x$"
-      },
-      {
-       "id": "W34.2",
-       "type": "num",
-       "text": "$F(4) - F(0)$ (a decimal is fine).",
-       "answer": 20,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 20$"
-      }
-     ],
-     "level": 3,
-     "explain": "20"
-    },
-    {
-     "id": "D35",
-     "type": "num",
-     "text": "Evaluate\n$$int[0,2] x^3 dx$$",
+     "level": 1,
+     "text": "$$A(x) = int[0,x] (3t^2 + t) dt$$",
      "answer": 4,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = x^4/4$, and $F(2) - F(0) = 4$."
+     "label": "$A'(1)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = 3x^2 + x$, so $A'(1) = 4$."
     },
     {
-     "id": "W36",
-     "type": "steps",
-     "text": "Evaluate $int[0,2] x^3 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W36.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "x^4/4",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$frac{x^4}{4}$",
-       "work": "$F(x) = x^4/4$"
-      },
-      {
-       "id": "W36.2",
-       "type": "num",
-       "text": "$F(2) - F(0)$ (a decimal is fine).",
-       "answer": 4,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 4$"
-      }
-     ],
-     "level": 3,
-     "explain": "4"
-    },
-    {
-     "id": "D37",
+     "id": "G4",
      "type": "num",
-     "text": "Evaluate\n$$int[0,4] 4x - x^2 dx$$",
-     "answer": 10.666667,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = -x^3/3 + 2x^2$, and $F(4) - F(0) = 32/3$."
-    },
-    {
-     "id": "W38",
-     "type": "steps",
-     "text": "Evaluate $int[0,4] 4x - x^2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W38.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "-x^3/3 + 2x^2",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$-x^3/3 + 2x^2$",
-       "work": "$F(x) = -x^3/3 + 2x^2$"
-      },
-      {
-       "id": "W38.2",
-       "type": "num",
-       "text": "$F(4) - F(0)$ (a decimal is fine).",
-       "answer": 10.666667,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 32/3$"
-      }
-     ],
-     "level": 3,
-     "explain": "32/3"
-    },
-    {
-     "id": "D39",
-     "type": "num",
-     "text": "Evaluate\n$$int[0,frac{pi}{2}] cos(x) dx$$",
-     "answer": 1,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = sin(x)$, and $F(frac{pi}{2}) - F(0) = 1$."
-    },
-    {
-     "id": "W40",
-     "type": "steps",
-     "text": "Evaluate $int[0,frac{pi}{2}] cos(x) dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W40.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "sin(x)",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$sin(x)$",
-       "work": "$F(x) = sin(x)$"
-      },
-      {
-       "id": "W40.2",
-       "type": "num",
-       "text": "$F(frac{pi}{2}) - F(0)$ (a decimal is fine).",
-       "answer": 1,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1$"
-      }
-     ],
-     "level": 3,
-     "explain": "1"
-    },
-    {
-     "id": "D41",
-     "type": "num",
-     "text": "Evaluate\n$$int[0,pi] sin(x) dx$$",
+     "level": 1,
+     "text": "$$A(x) = int[2,x] (5 - t) dt$$",
      "answer": 2,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = -cos(x)$, and $F(pi) - F(0) = 2$."
+     "label": "$A'(3)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = 5 - x$, so $A'(3) = 2$."
     },
     {
-     "id": "W42",
-     "type": "steps",
-     "text": "Evaluate $int[0,pi] sin(x) dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W42.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "-cos(x)",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$-cos(x)$",
-       "work": "$F(x) = -cos(x)$"
-      },
-      {
-       "id": "W42.2",
-       "type": "num",
-       "text": "$F(pi) - F(0)$ (a decimal is fine).",
-       "answer": 2,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 2$"
-      }
-     ],
-     "level": 3,
-     "explain": "2"
-    },
-    {
-     "id": "D43",
+     "id": "G5",
      "type": "num",
-     "text": "Evaluate\n$$int[0,1] e^x dx$$",
-     "answer": 1.718282,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = e^x$, and $F(1) - F(0) = 1.718282$."
-    },
-    {
-     "id": "W44",
-     "type": "steps",
-     "text": "Evaluate $int[0,1] e^x dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W44.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "e^x",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$e^x$",
-       "work": "$F(x) = e^x$"
-      },
-      {
-       "id": "W44.2",
-       "type": "num",
-       "text": "$F(1) - F(0)$ (a decimal is fine).",
-       "answer": 1.718282,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1.718282$"
-      }
-     ],
-     "level": 3,
-     "explain": "1.718282"
-    },
-    {
-     "id": "D45",
-     "type": "num",
-     "text": "Evaluate\n$$int[1,e] 1/x dx$$",
+     "level": 1,
+     "text": "$$A(x) = int[0,x] (t^3) dt$$",
      "answer": 1,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = ln(x)$, and $F(e) - F(1) = 1$."
+     "label": "$A'(1)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = x^3$, so $A'(1) = 1$."
     },
     {
-     "id": "W46",
-     "type": "steps",
-     "text": "Evaluate $int[1,e] 1/x dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W46.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "ln(x)",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$ln(x)$",
-       "work": "$F(x) = ln(x)$"
-      },
-      {
-       "id": "W46.2",
-       "type": "num",
-       "text": "$F(e) - F(1)$ (a decimal is fine).",
-       "answer": 1,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1$"
-      }
-     ],
-     "level": 3,
-     "explain": "1"
-    },
-    {
-     "id": "D47",
+     "id": "G6",
      "type": "num",
-     "text": "Evaluate\n$$int[0,4] sqrt(x) dx$$",
-     "answer": 5.333333,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = 2x^(3/2)/3$, and $F(4) - F(0) = 16/3$."
+     "level": 1,
+     "text": "$$A(x) = int[2,x] (4t - t^2) dt$$",
+     "answer": 4,
+     "label": "$A'(2)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = 4x - x^2$, so $A'(2) = 4$."
     },
     {
-     "id": "W48",
-     "type": "steps",
-     "text": "Evaluate $int[0,4] sqrt(x) dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W48.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "2x^(3/2)/3",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$frac{2x^(3/2)}{3}$",
-       "work": "$F(x) = 2x^(3/2)/3$"
-      },
-      {
-       "id": "W48.2",
-       "type": "num",
-       "text": "$F(4) - F(0)$ (a decimal is fine).",
-       "answer": 5.333333,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 16/3$"
-      }
-     ],
-     "level": 3,
-     "explain": "16/3"
-    },
-    {
-     "id": "D49",
+     "id": "G7",
      "type": "num",
-     "text": "Evaluate\n$$int[0,1] x^2 + 2 dx$$",
-     "answer": 2.333333,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = x^3/3 + 2x$, and $F(1) - F(0) = 7/3$."
+     "level": 1,
+     "text": "$$A(x) = int[1,x] (t^2 + 2t) dt$$",
+     "answer": 15,
+     "label": "$A'(3)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = x^2 + 2x$, so $A'(3) = 15$."
     },
     {
-     "id": "W50",
-     "type": "steps",
-     "text": "Evaluate $int[0,1] x^2 + 2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W50.1",
-       "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "x^3/3 + 2x",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "$F(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$x^3/3 + 2x$",
-       "work": "$F(x) = x^3/3 + 2x$"
-      },
-      {
-       "id": "W50.2",
-       "type": "num",
-       "text": "$F(1) - F(0)$ (a decimal is fine).",
-       "answer": 2.333333,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 7/3$"
-      }
-     ],
-     "level": 3,
-     "explain": "7/3"
-    },
-    {
-     "id": "D51",
+     "id": "G8",
      "type": "num",
-     "text": "Evaluate\n$$int[1,3] 6x^2 - 2x dx$$",
-     "answer": 44,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = 2x^3 - x^2$, and $F(3) - F(1) = 44$."
+     "level": 1,
+     "text": "$$A(x) = int[2,x] (6 - 2t) dt$$",
+     "answer": 2,
+     "label": "$A'(2)$ =",
+     "hint": "$A'(x)$ is the integrand with $x$ in place of $t$.",
+     "explain": "$A'(x) = 6 - 2x$, so $A'(2) = 2$."
     },
     {
-     "id": "W52",
+     "id": "R1",
+     "type": "expr",
+     "text": "Find\n$$frac{d}{dx} int[x,5] (t^2 + 1) dt$$",
+     "answer": "-(x^2 + 1)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "show": "$-(x^2 + 1)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "level": 2,
+     "hint": "Swap the limits so that $x$ is on top. That costs a minus sign.",
+     "explain": "$int[x,5] = -int[5,x]$, so the derivative is $-(x^2 + 1)$."
+    },
+    {
+     "id": "R2",
+     "type": "expr",
+     "text": "Find\n$$frac{d}{dx} int[x,2] sin(t) dt$$",
+     "answer": "-sin(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "show": "$-sin(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "level": 2,
+     "hint": "Swap the limits so that $x$ is on top. That costs a minus sign.",
+     "explain": "$int[x,2] = -int[2,x]$, so the derivative is $-sin(x)$."
+    },
+    {
+     "id": "R3",
+     "type": "expr",
+     "text": "Find\n$$frac{d}{dx} int[x,0] e^t dt$$",
+     "answer": "-e^(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "show": "$-e^x$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "level": 2,
+     "hint": "Swap the limits so that $x$ is on top. That costs a minus sign.",
+     "explain": "$int[x,0] = -int[0,x]$, so the derivative is $-e^x$."
+    },
+    {
+     "id": "R4",
+     "type": "expr",
+     "text": "Find\n$$frac{d}{dx} int[x,4] sqrt(t) dt$$",
+     "answer": "-sqrt(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "show": "$-sqrt(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "level": 2,
+     "hint": "Swap the limits so that $x$ is on top. That costs a minus sign.",
+     "explain": "$int[x,4] = -int[4,x]$, so the derivative is $-sqrt(x)$."
+    },
+    {
+     "id": "R5",
+     "type": "expr",
+     "text": "Find\n$$frac{d}{dx} int[x,1] cos(t) dt$$",
+     "answer": "-cos(x)",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "show": "$-cos(x)$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "level": 2,
+     "hint": "Swap the limits so that $x$ is on top. That costs a minus sign.",
+     "explain": "$int[x,1] = -int[1,x]$, so the derivative is $-cos(x)$."
+    },
+    {
+     "id": "R6",
+     "type": "expr",
+     "text": "Find\n$$frac{d}{dx} int[x,3] t^3 dt$$",
+     "answer": "-x^3",
+     "vars": [
+      "x"
+     ],
+     "keys": [
+      "sin(",
+      "cos(",
+      "tan(",
+      "sqrt(",
+      "e^(",
+      "ln("
+     ],
+     "label": "derivative =",
+     "show": "$-x^3$",
+     "ranges": {
+      "x": [
+       0.3,
+       1.2
+      ]
+     },
+     "level": 2,
+     "hint": "Swap the limits so that $x$ is on top. That costs a minus sign.",
+     "explain": "$int[x,3] = -int[3,x]$, so the derivative is $-x^3$."
+    },
+    {
+     "id": "S1",
      "type": "steps",
-     "text": "Evaluate $int[1,3] 6x^2 - 2x dx$ with the Fundamental Theorem.",
+     "level": 3,
+     "title": "Part 1 with the chain rule",
+     "text": "Find\n$$frac{d}{dx} int[0,x^3] cos(t) dt$$",
      "steps": [
       {
-       "id": "W52.1",
+       "id": "S1.1",
        "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "2x^3 - x^2",
+       "text": "The upper limit is the inside function, $g(x) = x^3$. Find its derivative.",
+       "answer": "3x^2",
        "vars": [
         "x"
        ],
@@ -1277,53 +899,24 @@
         "tan(",
         "sqrt(",
         "e^(",
-        "ln(",
-        "arctan("
+        "ln("
        ],
-       "label": "$F(x)$ =",
+       "label": "$g'(x)$ =",
+       "show": "$3x^2$",
        "ranges": {
         "x": [
          0.3,
          1.2
         ]
        },
-       "upToC": true,
-       "show": "$2x^3 - x^2$",
-       "work": "$F(x) = 2x^3 - x^2$"
+       "hint": "An ordinary derivative.",
+       "work": "$g'(x) = 3x^2$"
       },
       {
-       "id": "W52.2",
-       "type": "num",
-       "text": "$F(3) - F(1)$ (a decimal is fine).",
-       "answer": 44,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 44$"
-      }
-     ],
-     "level": 3,
-     "explain": "44"
-    },
-    {
-     "id": "D53",
-     "type": "num",
-     "text": "Evaluate\n$$int[1,2] 1/x^2 dx$$",
-     "answer": 0.5,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = -1/x$, and $F(2) - F(1) = 1/2$."
-    },
-    {
-     "id": "W54",
-     "type": "steps",
-     "text": "Evaluate $int[1,2] 1/x^2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W54.1",
+       "id": "S1.2",
        "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "-1/x",
+       "text": "Put the upper limit into the integrand: replace $t$ with $x^3$.",
+       "answer": "cos(x^3)",
        "vars": [
         "x"
        ],
@@ -1333,53 +926,24 @@
         "tan(",
         "sqrt(",
         "e^(",
-        "ln(",
-        "arctan("
+        "ln("
        ],
-       "label": "$F(x)$ =",
+       "label": "$f(g(x))$ =",
+       "show": "$cos(x^3)$",
        "ranges": {
         "x": [
          0.3,
          1.2
         ]
        },
-       "upToC": true,
-       "show": "$-frac{1}{x}$",
-       "work": "$F(x) = -1/x$"
+       "hint": "The integrand is $cos(t)$.",
+       "work": "$f(g(x)) = cos(x^3)$"
       },
       {
-       "id": "W54.2",
-       "type": "num",
-       "text": "$F(2) - F(1)$ (a decimal is fine).",
-       "answer": 0.5,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1/2$"
-      }
-     ],
-     "level": 3,
-     "explain": "1/2"
-    },
-    {
-     "id": "D55",
-     "type": "num",
-     "text": "Evaluate\n$$int[0,frac{pi}{4}] sec(x)^2 dx$$",
-     "answer": 1,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = tan(x)$, and $F(frac{pi}{4}) - F(0) = 1$."
-    },
-    {
-     "id": "W56",
-     "type": "steps",
-     "text": "Evaluate $int[0,frac{pi}{4}] sec(x)^2 dx$ with the Fundamental Theorem.",
-     "steps": [
-      {
-       "id": "W56.1",
+       "id": "S1.3",
        "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "tan(x)",
+       "text": "Multiply the two.",
+       "answer": "cos(x^3)(3x^2)",
        "vars": [
         "x"
        ],
@@ -1389,53 +953,33 @@
         "tan(",
         "sqrt(",
         "e^(",
-        "ln(",
-        "arctan("
+        "ln("
        ],
-       "label": "$F(x)$ =",
+       "label": "derivative =",
+       "show": "$cos(x^3)(3x^2)$",
        "ranges": {
         "x": [
          0.3,
          1.2
         ]
        },
-       "upToC": true,
-       "show": "$tan(x)$",
-       "work": "$F(x) = tan(x)$"
-      },
-      {
-       "id": "W56.2",
-       "type": "num",
-       "text": "$F(frac{pi}{4}) - F(0)$ (a decimal is fine).",
-       "answer": 1,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1$"
+       "hint": "$f(g(x))·g'(x)$",
+       "work": "$= cos(x^3)(3x^2)$"
       }
-     ],
-     "level": 3,
-     "explain": "1"
+     ]
     },
     {
-     "id": "D57",
-     "type": "num",
-     "text": "Evaluate\n$$int[0,1] 2/(1 + x^2) dx$$",
-     "answer": 1.570796,
-     "label": "integral =",
-     "tol": 0.005,
-     "level": 2,
-     "explain": "$F(x) = 2arctan(x)$, and $F(1) - F(0) = 1.570796$."
-    },
-    {
-     "id": "W58",
+     "id": "S2",
      "type": "steps",
-     "text": "Evaluate $int[0,1] 2/(1 + x^2) dx$ with the Fundamental Theorem.",
+     "level": 3,
+     "title": "Part 1 with the chain rule",
+     "text": "Find\n$$frac{d}{dx} int[1,2x] (t^2 + 1) dt$$",
      "steps": [
       {
-       "id": "W58.1",
+       "id": "S2.1",
        "type": "expr",
-       "text": "Find an antiderivative.",
-       "answer": "2arctan(x)",
+       "text": "The upper limit is the inside function, $g(x) = 2x$. Find its derivative.",
+       "answer": "2",
        "vars": [
         "x"
        ],
@@ -1445,274 +989,436 @@
         "tan(",
         "sqrt(",
         "e^(",
-        "ln(",
-        "arctan("
+        "ln("
        ],
-       "label": "$F(x)$ =",
+       "label": "$g'(x)$ =",
+       "show": "$2$",
        "ranges": {
         "x": [
          0.3,
          1.2
         ]
        },
-       "upToC": true,
-       "show": "$2arctan(x)$",
-       "work": "$F(x) = 2arctan(x)$"
+       "hint": "An ordinary derivative.",
+       "work": "$g'(x) = 2$"
       },
       {
-       "id": "W58.2",
-       "type": "num",
-       "text": "$F(1) - F(0)$ (a decimal is fine).",
-       "answer": 1.570796,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1.570796$"
+       "id": "S2.2",
+       "type": "expr",
+       "text": "Put the upper limit into the integrand: replace $t$ with $2x$.",
+       "answer": "4x^2 + 1",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(g(x))$ =",
+       "show": "$4x^2 + 1$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "The integrand is $t^2 + 1$.",
+       "work": "$f(g(x)) = 4x^2 + 1$"
+      },
+      {
+       "id": "S2.3",
+       "type": "expr",
+       "text": "Multiply the two.",
+       "answer": "2(4x^2 + 1)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "derivative =",
+       "show": "$2(4x^2 + 1)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "$f(g(x))·g'(x)$",
+       "work": "$= 2(4x^2 + 1)$"
       }
-     ],
-     "level": 3,
-     "explain": "1.570796"
+     ]
     },
     {
-     "id": "A59",
+     "id": "S3",
      "type": "steps",
-     "text": "Find the average value of $f(x) = x^2 + 2$ on $[0, 1]$.",
+     "level": 3,
+     "title": "Part 1 with the chain rule",
+     "text": "Find\n$$frac{d}{dx} int[0,x^2] e^t dt$$",
      "steps": [
       {
-       "id": "A59.1",
-       "type": "num",
-       "text": "First the integral\n$$int[0,1] x^2 + 2 dx$$",
-       "answer": 2.333333,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 7/3$"
+       "id": "S3.1",
+       "type": "expr",
+       "text": "The upper limit is the inside function, $g(x) = x^2$. Find its derivative.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$g'(x)$ =",
+       "show": "$2x$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "An ordinary derivative.",
+       "work": "$g'(x) = 2x$"
       },
       {
-       "id": "A59.2",
-       "type": "num",
-       "text": "Divide by the width $b - a$.",
-       "answer": 2.333333,
-       "label": "average =",
-       "tol": 0.005,
-       "work": "average $= 7/3$"
+       "id": "S3.2",
+       "type": "expr",
+       "text": "Put the upper limit into the integrand: replace $t$ with $x^2$.",
+       "answer": "e^(x^2)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(g(x))$ =",
+       "show": "$e^(x^2)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "The integrand is $e^t$.",
+       "work": "$f(g(x)) = e^(x^2)$"
+      },
+      {
+       "id": "S3.3",
+       "type": "expr",
+       "text": "Multiply the two.",
+       "answer": "e^(x^2)(2x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "derivative =",
+       "show": "$e^(x^2)(2x)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "$f(g(x))·g'(x)$",
+       "work": "$= e^(x^2)(2x)$"
       }
-     ],
-     "level": 3,
-     "explain": "7/3"
+     ]
     },
     {
-     "id": "A60",
+     "id": "S4",
      "type": "steps",
-     "text": "Find the average value of $f(x) = x + 1$ on $[2, 5]$.",
+     "level": 3,
+     "title": "Part 1 with the chain rule",
+     "text": "Find\n$$frac{d}{dx} int[0,sin(x)] t^2 dt$$",
      "steps": [
       {
-       "id": "A60.1",
-       "type": "num",
-       "text": "First the integral\n$$int[2,5] x + 1 dx$$",
-       "answer": 13.5,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 27/2$"
+       "id": "S4.1",
+       "type": "expr",
+       "text": "The upper limit is the inside function, $g(x) = sin(x)$. Find its derivative.",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$g'(x)$ =",
+       "show": "$cos(x)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "An ordinary derivative.",
+       "work": "$g'(x) = cos(x)$"
       },
       {
-       "id": "A60.2",
-       "type": "num",
-       "text": "Divide by the width $b - a$.",
-       "answer": 4.5,
-       "label": "average =",
-       "tol": 0.005,
-       "work": "average $= 9/2$"
+       "id": "S4.2",
+       "type": "expr",
+       "text": "Put the upper limit into the integrand: replace $t$ with $sin(x)$.",
+       "answer": "sin(x)^2",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(g(x))$ =",
+       "show": "$sin^2(x)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "The integrand is $t^2$.",
+       "work": "$f(g(x)) = sin^2(x)$"
+      },
+      {
+       "id": "S4.3",
+       "type": "expr",
+       "text": "Multiply the two.",
+       "answer": "(sin(x)^2)(cos(x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "derivative =",
+       "show": "$(sin^2(x))(cos(x))$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "$f(g(x))·g'(x)$",
+       "work": "$= (sin^2(x))(cos(x))$"
       }
-     ],
-     "level": 3,
-     "explain": "9/2"
+     ]
     },
     {
-     "id": "A61",
+     "id": "S5",
      "type": "steps",
-     "text": "Find the average value of $f(x) = x^2$ on $[0, 3]$.",
+     "level": 3,
+     "title": "Part 1 with the chain rule",
+     "text": "Find\n$$frac{d}{dx} int[1,3x] sqrt(t) dt$$",
      "steps": [
       {
-       "id": "A61.1",
-       "type": "num",
-       "text": "First the integral\n$$int[0,3] x^2 dx$$",
-       "answer": 9,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 9$"
+       "id": "S5.1",
+       "type": "expr",
+       "text": "The upper limit is the inside function, $g(x) = 3x$. Find its derivative.",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$g'(x)$ =",
+       "show": "$3$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "An ordinary derivative.",
+       "work": "$g'(x) = 3$"
       },
       {
-       "id": "A61.2",
-       "type": "num",
-       "text": "Divide by the width $b - a$.",
-       "answer": 3,
-       "label": "average =",
-       "tol": 0.005,
-       "work": "average $= 3$"
+       "id": "S5.2",
+       "type": "expr",
+       "text": "Put the upper limit into the integrand: replace $t$ with $3x$.",
+       "answer": "sqrt(3x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(g(x))$ =",
+       "show": "$sqrt(3x)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "The integrand is $sqrt(t)$.",
+       "work": "$f(g(x)) = sqrt(3x)$"
+      },
+      {
+       "id": "S5.3",
+       "type": "expr",
+       "text": "Multiply the two.",
+       "answer": "3(sqrt(3x))",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "derivative =",
+       "show": "$3(sqrt(3x))$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "$f(g(x))·g'(x)$",
+       "work": "$= 3(sqrt(3x))$"
       }
-     ],
-     "level": 3,
-     "explain": "3"
+     ]
     },
     {
-     "id": "A62",
+     "id": "S6",
      "type": "steps",
-     "text": "Find the average value of $f(x) = sin(x)$ on $[0, pi]$.",
+     "level": 3,
+     "title": "Part 1 with the chain rule",
+     "text": "Find\n$$frac{d}{dx} int[2,x^2] t^3 dt$$",
      "steps": [
       {
-       "id": "A62.1",
-       "type": "num",
-       "text": "First the integral\n$$int[0,pi] sin(x) dx$$",
-       "answer": 2,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 2$"
+       "id": "S6.1",
+       "type": "expr",
+       "text": "The upper limit is the inside function, $g(x) = x^2$. Find its derivative.",
+       "answer": "2x",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$g'(x)$ =",
+       "show": "$2x$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "An ordinary derivative.",
+       "work": "$g'(x) = 2x$"
       },
       {
-       "id": "A62.2",
-       "type": "num",
-       "text": "Divide by the width $b - a$.",
-       "answer": 0.63662,
-       "label": "average =",
-       "tol": 0.005,
-       "work": "average $= 0.63662$"
-      }
-     ],
-     "level": 3,
-     "explain": "0.63662"
-    },
-    {
-     "id": "A63",
-     "type": "steps",
-     "text": "Find the average value of $f(x) = 3x^2$ on $[0, 2]$.",
-     "steps": [
-      {
-       "id": "A63.1",
-       "type": "num",
-       "text": "First the integral\n$$int[0,2] 3x^2 dx$$",
-       "answer": 8,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 8$"
+       "id": "S6.2",
+       "type": "expr",
+       "text": "Put the upper limit into the integrand: replace $t$ with $x^2$.",
+       "answer": "x^6",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "$f(g(x))$ =",
+       "show": "$x^6$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "The integrand is $t^3$.",
+       "work": "$f(g(x)) = x^6$"
       },
       {
-       "id": "A63.2",
-       "type": "num",
-       "text": "Divide by the width $b - a$.",
-       "answer": 4,
-       "label": "average =",
-       "tol": 0.005,
-       "work": "average $= 4$"
+       "id": "S6.3",
+       "type": "expr",
+       "text": "Multiply the two.",
+       "answer": "x^6(2x)",
+       "vars": [
+        "x"
+       ],
+       "keys": [
+        "sin(",
+        "cos(",
+        "tan(",
+        "sqrt(",
+        "e^(",
+        "ln("
+       ],
+       "label": "derivative =",
+       "show": "$x^6(2x)$",
+       "ranges": {
+        "x": [
+         0.3,
+         1.2
+        ]
+       },
+       "hint": "$f(g(x))·g'(x)$",
+       "work": "$= x^6(2x)$"
       }
-     ],
-     "level": 3,
-     "explain": "4"
-    },
-    {
-     "id": "A64",
-     "type": "steps",
-     "text": "Find the average value of $f(x) = e^x$ on $[0, 1]$.",
-     "steps": [
-      {
-       "id": "A64.1",
-       "type": "num",
-       "text": "First the integral\n$$int[0,1] e^x dx$$",
-       "answer": 1.718282,
-       "label": "integral =",
-       "tol": 0.005,
-       "work": "integral $= 1.718282$"
-      },
-      {
-       "id": "A64.2",
-       "type": "num",
-       "text": "Divide by the width $b - a$.",
-       "answer": 1.718282,
-       "label": "average =",
-       "tol": 0.005,
-       "work": "average $= 1.718282$"
-      }
-     ],
-     "level": 3,
-     "explain": "1.718282"
+     ]
     }
    ]
   }
- },
- "lesson": {
-  "slides": [
-   {
-    "id": "L1",
-    "type": "mc",
-    "text": "**FTC, part 2:** if $F$ is any antiderivative of $f$, then $int[a,b] f(x) dx = F(b) - F(a)$. No more rectangles! For $int[0,2] x^2 dx$, which $F$ can you use?",
-    "options": [
-     "$F(x) = frac{x^3}{3}$",
-     "$F(x) = 2x$",
-     "$F(x) = x^2$",
-     "$F(x) = frac{x^2}{2}$"
-    ],
-    "answer": 0,
-    "hint": "We need $F' = x^2$.",
-    "explain": "$frac{x^3}{3}$ (or $frac{x^3}{3} + C$; the $C$ cancels)."
-   },
-   {
-    "id": "L2",
-    "type": "num",
-    "text": "So $int[0,2] x^2 dx = F(2) - F(0) = frac{8}{3} - 0$. Enter it.",
-    "answer": 2.666667,
-    "label": "integral =",
-    "hint": "Use the fraction key, or 2.667.",
-    "explain": "$frac{8}{3}$, exactly what the rectangles were closing in on."
-   },
-   {
-    "id": "L3",
-    "type": "expr",
-    "text": "**FTC, part 1:**\n$$frac{d}{dx} int[a,x] f(t) dt = f(x)$$\nThe derivative of the area function is the function. Find\n$$frac{d}{dx} int[1,x] t^3 dt$$",
-    "answer": "x^3",
-    "vars": [
-     "x"
-    ],
-    "keys": [
-     "sin(",
-     "cos(",
-     "tan(",
-     "sqrt(",
-     "e^(",
-     "ln("
-    ],
-    "label": "derivative =",
-    "show": "$x^3$",
-    "hint": "Put $x$ in for $t$.",
-    "explain": "$x^3$"
-   },
-   {
-    "id": "L4",
-    "type": "expr",
-    "text": "With the chain rule:\n$$frac{d}{dx} int[a,g(x)] f(t) dt = f(g(x))·g'(x)$$\nFind\n$$frac{d}{dx} int[0,x^2] sin(t) dt$$",
-    "answer": "sin(x^2)(2x)",
-    "vars": [
-     "x"
-    ],
-    "keys": [
-     "sin(",
-     "cos(",
-     "tan(",
-     "sqrt(",
-     "e^(",
-     "ln("
-    ],
-    "label": "derivative =",
-    "show": "$sin(x^2)(2x)$",
-    "hint": "Put $x^2$ in for $t$, then multiply by the derivative of $x^2$.",
-    "explain": "$sin(x^2)·2x$"
-   },
-   {
-    "id": "L5",
-    "type": "num",
-    "text": "The **average value** of $f$ on $[a, b]$ is $frac{1}{b - a} int[a,b] f(x) dx$. Find the average of $f(x) = x^2 + 2$ on $[0, 1]$.",
-    "answer": 2.333333,
-    "label": "average =",
-    "hint": "$int[0,1] (x^2 + 2) dx = frac{1}{3} + 2$, and $b - a = 1$.",
-    "explain": "$frac{7}{3}$"
-   }
-  ]
  }
 }

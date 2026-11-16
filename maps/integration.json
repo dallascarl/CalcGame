@@ -3,7 +3,7 @@
  "world": 4,
  "id": "integration",
  "title": "Integration",
- "height": 287,
+ "height": 332,
  "nodes": [
   {
    "id": "start",
@@ -30,15 +30,14 @@
   {
    "id": "indef",
    "kind": "main",
-   "title": "Indefinite Integral and Net Change Theorem",
-   "label": "Indefinite integral",
+   "title": "Indefinite Integrals",
    "x": 74,
    "y": 44,
    "deck": "w-indef",
    "requires": [
     "anti"
    ],
-   "blurb": "Antiderivatives with +C, and total change from a rate."
+   "blurb": "Antiderivatives with + C."
   },
   {
    "id": "sumnot",
@@ -79,15 +78,15 @@
   {
    "id": "ftc",
    "kind": "main",
-   "title": "Fundamental Theorem of Calculus",
-   "label": "Fundamental Theorem",
+   "title": "The Fundamental Theorem, Part 1",
+   "label": "FTC Part 1",
    "x": 26,
    "y": 179,
    "deck": "w-ftc",
    "requires": [
     "definite"
    ],
-   "blurb": "The link between derivatives and integrals."
+   "blurb": "The derivative of an area function is the function you started with."
   },
   {
    "id": "proof",
@@ -103,14 +102,27 @@
    "blurb": "Optional: why the Fundamental Theorem is true."
   },
   {
+   "id": "ftc2",
+   "kind": "main",
+   "title": "The Fundamental Theorem, Part 2, and Net Change",
+   "label": "FTC Part 2",
+   "x": 50,
+   "y": 224,
+   "deck": "w-ftc2",
+   "requires": [
+    "ftc"
+   ],
+   "blurb": "Exact areas from antiderivatives, and total change from a rate."
+  },
+  {
    "id": "subst",
    "kind": "main",
    "title": "Substitution",
    "x": 50,
-   "y": 224,
+   "y": 269,
    "deck": "w-subst",
    "requires": [
-    "ftc"
+    "ftc2"
    ],
    "blurb": "Undoing the chain rule."
   },
@@ -119,7 +131,7 @@
    "kind": "boss",
    "title": "Chapter Review",
    "x": 50,
-   "y": 265,
+   "y": 310,
    "deck": "review4",
    "requires": [
     "subst"
@@ -151,16 +163,23 @@
    "h": 39
   },
   {
-   "label": "Days 36 and 37",
+   "label": "Day 36",
    "x": 3,
    "y": 159,
    "w": 94,
    "h": 39
   },
   {
-   "label": "Days 38 and 39",
+   "label": "Day 37",
    "x": 3,
    "y": 204,
+   "w": 94,
+   "h": 39
+  },
+  {
+   "label": "Days 38 and 39",
+   "x": 3,
+   "y": 249,
    "w": 94,
    "h": 39
   }

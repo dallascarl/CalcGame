@@ -25,7 +25,8 @@ DAYS = {
         ('Day 33', [[('anti', L), ('indef', R)]]),
         ('Day 34', [[('sumnot', L), ('areas', R)]]),
         ('Day 35', [[('definite', C)]]),
-        ('Days 36 and 37', [[('ftc', L), ('proof', R)]]),
+        ('Day 36', [[('ftc', L), ('proof', R)]]),
+        ('Day 37', [[('ftc2', C)]]),
         ('Days 38 and 39', [[('subst', C)]]),
     ], [('review', C)]),
 }

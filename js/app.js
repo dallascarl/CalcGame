@@ -1059,7 +1059,9 @@ function home(){
     foot:'<div class="stop" id="stop"></div>'});
   const ch=$('#ch');
   const place=n=>{ch.style.left=n.x+'%';ch.style.top=(100*n.y/H)+'%';};
-  const act=(to,name,status,off)=>'<button class="act" data-go="'+to+'"'+(off?' disabled':'')+'><b>'+esc(name)+'</b><span>'+status+'</span></button>';
+  /* the class rhythm: the lesson and the theory set before class, practice after it */
+  const WHEN={lesson:'Before class',theory:'Before class',practice:'After class'};
+  const act=(to,name,status,off,when)=>'<button class="act" data-go="'+to+'"'+(off?' disabled':'')+'>'+(when?'<i class="when'+(when==='After class'?' aft':'')+'">'+when+'</i>':'')+'<b>'+esc(name)+'</b><span>'+status+'</span></button>';
   const stopHTML=n=>{
     const open=nodeOpen(n),d=n.deck?DECKS[n.deck]:null;
     let h='<div class="stop-h"><span class="badge k-'+n.kind+'">'+(n.kind==='main'?'Level '+lvl[n.id]:KIND[n.kind])+'</span><h2>'+esc(n.title)+'</h2>'+(nodeCleared(n)&&n.kind!=='start'?'<span class="clr">Cleared ✓</span>':'')+'</div>';
@@ -1073,13 +1075,13 @@ function home(){
     const dAct=k=>{const dr=d.drills[k],M=drillMastery(d,k),ps=drillPassed(d,k),run=(p.run||{})[k];
       const live=run&&run.v===3&&!run.over,qn=dr.questions.length,ss=Math.min(dr.setSize||RULES.poolSet,qn);
       const st=dr.mode==='all'?(ps?'Done ✓':live?'In progress · '+(run.ids.length-run.i)+' left':'All '+qn+' required')
-        :dr.mode==='pool'?(M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):live?'In progress · '+run.i+' of '+run.ids.length+' done':ss+' at random from '+qn+' · '+Math.round(100*RULES.passPct)+'% to pass')
+        :dr.mode==='pool'?(M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):live?'In progress · '+run.i+' of '+run.ids.length+' done':ss+' questions · '+Math.round(100*RULES.passPct)+'% to pass')
         :M.mastered?'Mastered ★':ps?'Passed ✓'+(M.n?' · '+M.ok+'/'+M.n+' recent':''):live?'In progress · question '+(run.i+1):dr.exam?'Finish it to pass':dr.stages?'3 in a row skips ahead':RULES.passRun+' in a row to pass';
-      a+=act('drill:'+k,dr.title,st);};
+      a+=act('drill:'+k,dr.title,st,false,WHEN[k]);};
     L.forEach((l,i)=>{const st=lp(d,l.id);
       const pre=(d.lessonOptional?'Optional · ':'')+(L.length>1&&l.title?l.title+' · ':'');
       const sug=!st.done&&!st.at&&(i>0&&!lp(d,L[i-1].id).done?'best after '+lname(d,i-1):(l.needs||[]).some(k=>d.drills[k]&&!drillPassed(d,k))?'best after '+(l.needs||[]).map(k=>d.drills[k]?d.drills[k].title:k).join(' and '):'');
-      a+=act('lesson:'+l.id,lname(d,i),pre+(st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:sug||l.slides.length+' steps'));
+      a+=act('lesson:'+l.id,lname(d,i),pre+(st.done?'done ✓':st.at>0?'step '+(st.at+1)+' of '+l.slides.length:sug||l.slides.length+' steps'),false,WHEN.lesson);
       drillKinds(d).filter(k=>d.drills[k].after===l.id).forEach(dAct);});
     drillKinds(d).filter(k=>!d.drills[k].after||!L.some(l=>l.id===d.drills[k].after)).forEach(dAct);
     return h+'<div class="acts">'+a+'</div>'+(isInstructor()?'<p class="tiny"><button class="link" data-go="key">Answer key: every question at a glance</button></p>':'')+ACCT.codeHTML(MAP,n);

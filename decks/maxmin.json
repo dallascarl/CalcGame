@@ -699,7 +699,7 @@
     {
      "id": "c21",
      "type": "crit",
-     "text": "Find the critical points of $f(x) = x^4 - 2x^2$.\n\nIts derivative is $f'(x) = 4x^3 - 4x = 4x(x - 1)(x + 1)$.",
+     "text": "Find the critical points of $f(x) = x^4 - 2x^2$.\n\nIts derivative is\n$$f'(x) = 4x^3 - 4x = 4x(x - 1)(x + 1)$$",
      "answers": [
       -1,
       0,
@@ -752,7 +752,7 @@
     {
      "id": "c24",
      "type": "crit",
-     "text": "Find the critical points of $f(x) = x^(2/3)$.\n\nIts derivative is $f'(x) = 2 / (3x^(1/3))$.",
+     "text": "Find the critical points of $f(x) = x^(2/3)$.\n\nIts derivative is\n$$f'(x) = 2 / (3x^(1/3))$$",
      "answers": [
       0
      ],
@@ -769,7 +769,7 @@
     {
      "id": "c25",
      "type": "crit",
-     "text": "Find the critical points of $f(x) = x^3 - 6x^2 + 9x$.\n\nIts derivative is $f'(x) = 3x^2 - 12x + 9$.",
+     "text": "Find the critical points of\n$$f(x) = x^3 - 6x^2 + 9x$$\n\nIts derivative is\n$$f'(x) = 3x^2 - 12x + 9$$",
      "answers": [
       1,
       3
@@ -788,7 +788,7 @@
     {
      "id": "c26",
      "type": "crit",
-     "text": "Find the critical points of $f(x) = x / (1 + x^2)$.\n\nIts derivative is $f'(x) = (1 - x^2) / (1 + x^2)^2$.",
+     "text": "Find the critical points of $f(x) = x / (1 + x^2)$.\n\nIts derivative is\n$$f'(x) = (1 - x^2) / (1 + x^2)^2$$",
      "answers": [
       -1,
       1
@@ -1188,7 +1188,7 @@
     {
      "id": "s44",
      "type": "crit",
-     "text": "Find the critical points of $f(x) = x^3 - 3x^2 + 1$.\n\nIts derivative is $f'(x) = 3x^2 - 6x = 3x(x - 2)$.",
+     "text": "Find the critical points of $f(x) = x^3 - 3x^2 + 1$.\n\nIts derivative is\n$$f'(x) = 3x^2 - 6x = 3x(x - 2)$$",
      "answers": [
       0,
       2

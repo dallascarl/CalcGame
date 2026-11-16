@@ -1136,7 +1136,7 @@
     {
      "id": "S42",
      "type": "steps",
-     "text": "Use substitution: $int 3x^2(x^3 - 3)^2 dx$.",
+     "text": "Use substitution:\n$$int 3x^2(x^3 - 3)^2 dx$$",
      "steps": [
       {
        "id": "S42.1",
@@ -1316,7 +1316,7 @@
     {
      "id": "S44",
      "type": "steps",
-     "text": "Use substitution: $int cos(x) sin^3(x) dx$.",
+     "text": "Use substitution:\n$$int cos(x) sin^3(x) dx$$",
      "steps": [
       {
        "id": "S44.1",
@@ -1496,7 +1496,7 @@
     {
      "id": "S46",
      "type": "steps",
-     "text": "Use substitution: $int frac{2x}{x^2 + 1} dx$.",
+     "text": "Use substitution:\n$$int frac{2x}{x^2 + 1} dx$$",
      "steps": [
       {
        "id": "S46.1",
@@ -1676,7 +1676,7 @@
     {
      "id": "S48",
      "type": "steps",
-     "text": "Use substitution: $int 2x sqrt(x^2 + 5) dx$.",
+     "text": "Use substitution:\n$$int 2x sqrt(x^2 + 5) dx$$",
      "steps": [
       {
        "id": "S48.1",
@@ -1766,7 +1766,7 @@
     {
      "id": "S49",
      "type": "steps",
-     "text": "Use substitution: $int -sin(x) cos^2(x) dx$.",
+     "text": "Use substitution:\n$$int -sin(x) cos^2(x) dx$$",
      "steps": [
       {
        "id": "S49.1",
@@ -1946,7 +1946,7 @@
     {
      "id": "S51",
      "type": "steps",
-     "text": "Use substitution: $int frac{3x^2}{x^3 + 2} dx$.",
+     "text": "Use substitution:\n$$int frac{3x^2}{x^3 + 2} dx$$",
      "steps": [
       {
        "id": "S51.1",
@@ -2036,7 +2036,7 @@
     {
      "id": "S52",
      "type": "steps",
-     "text": "Use substitution: $int 4x^3(x^4 + 1)^2 dx$.",
+     "text": "Use substitution:\n$$int 4x^3(x^4 + 1)^2 dx$$",
      "steps": [
       {
        "id": "S52.1",
@@ -2126,7 +2126,7 @@
     {
      "id": "S53",
      "type": "steps",
-     "text": "Use substitution: $int frac{e^x}{e^x + 1} dx$.",
+     "text": "Use substitution:\n$$int frac{e^x}{e^x + 1} dx$$",
      "steps": [
       {
        "id": "S53.1",
@@ -2216,7 +2216,7 @@
     {
      "id": "S54",
      "type": "steps",
-     "text": "Use substitution: $int frac{arctan(x)}{1 + x^2} dx$.",
+     "text": "Use substitution:\n$$int frac{arctan(x)}{1 + x^2} dx$$",
      "steps": [
       {
        "id": "S54.1",
@@ -2329,7 +2329,7 @@
       {
        "id": "D55.3",
        "type": "num",
-       "text": "The integral is $int[1,2] u^3 du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[1,2] u^3 du$$\nEvaluate it (a decimal is fine).",
        "answer": 3.75,
        "label": "integral =",
        "tol": 0.01,
@@ -2365,7 +2365,7 @@
       {
        "id": "D56.3",
        "type": "num",
-       "text": "The integral is $int[3,7] e^u/8 du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[3,7] e^u/8 du$$\nEvaluate it (a decimal is fine).",
        "answer": 134.568453,
        "label": "integral =",
        "tol": 0.01,
@@ -2401,7 +2401,7 @@
       {
        "id": "D57.3",
        "type": "num",
-       "text": "The integral is $int[0,frac{pi}{4}] u du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[0,frac{pi}{4}] u du$$\nEvaluate it (a decimal is fine).",
        "answer": 0.308425,
        "label": "integral =",
        "tol": 0.01,
@@ -2437,7 +2437,7 @@
       {
        "id": "D58.3",
        "type": "num",
-       "text": "The integral is $int[1,3] u^5/6 du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[1,3] u^5/6 du$$\nEvaluate it (a decimal is fine).",
        "answer": 20.222222,
        "label": "integral =",
        "tol": 0.01,
@@ -2473,7 +2473,7 @@
       {
        "id": "D59.3",
        "type": "num",
-       "text": "The integral is $int[0,pi] cos(u) du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[0,pi] cos(u) du$$\nEvaluate it (a decimal is fine).",
        "answer": 0,
        "label": "integral =",
        "tol": 0.01,
@@ -2509,7 +2509,7 @@
       {
        "id": "D60.3",
        "type": "num",
-       "text": "The integral is $int[1,5] 1/u du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[1,5] 1/u du$$\nEvaluate it (a decimal is fine).",
        "answer": 1.609438,
        "label": "integral =",
        "tol": 0.01,
@@ -2614,7 +2614,7 @@
    {
     "id": "L3",
     "type": "expr",
-    "text": "Your turn: $int 3x^2(x^3 - 3)^2 dx$. (Let $u = x^3 - 3$.)",
+    "text": "Your turn:\n$$int 3x^2(x^3 - 3)^2 dx$$\n(Let $u = x^3 - 3$.)",
     "answer": "(x^3 - 3)^3/3",
     "vars": [
      "x"

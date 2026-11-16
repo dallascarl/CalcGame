@@ -830,7 +830,7 @@
    {
     "id": "L1",
     "type": "num",
-    "text": "An inverse function **undoes** $f$: it takes each output back to the input it came from.$$f(2) = 7$$\nSo what is $f^(-1)(7)$?",
+    "text": "An inverse function **undoes** $f$: it takes each output back to the input it came from.\n$$f(2) = 7$$",
     "answer": 2,
     "label": "$f^(-1)(7)$ =",
     "hint": "$f$ sent 2 to 7. The inverse sends 7 back.",
@@ -841,7 +841,6 @@
     "type": "order",
     "text": "To find a formula for an inverse, undo each step in reverse order. $f(x) = 2x + 3$ doubles, then adds 3. Put the steps of $f^(-1)$ in order.",
     "items": [
-     "Start with $x$",
      "Subtract 3",
      "Divide by 2"
     ],
@@ -878,17 +877,20 @@
    },
    {
     "id": "L5",
-    "type": "mc",
-    "text": "One warning about the notation. Which statement is true?",
+    "type": "pick",
+    "text": "One warning about the notation. Select every statement that is **false**.",
     "options": [
-     "$f^(-1)(x)$ is the inverse function, not $frac{1}{f(x)}$",
      "$f^(-1)(x)$ always equals $frac{1}{f(x)}$",
      "$f^(-1)(x)$ equals $-f(x)$",
      "$f^(-1)(x)$ equals $f(-x)$"
     ],
-    "answer": 0,
-    "hint": "For $f(x) = 2x + 3$ you just found $f^(-1)(x) = frac{x - 3}{2}$. Is that $frac{1}{2x + 3}$?",
-    "explain": "The $-1$ is not an exponent here. It means \"inverse\". The reciprocal is written $(f(x))^(-1)$ or $frac{1}{f(x)}$."
+    "answers": [
+     0,
+     1,
+     2
+    ],
+    "hint": "For $f(x) = 2x + 3$ you just found $f^(-1)(x) = frac{x - 3}{2}$. Compare it with each one.",
+    "explain": "All three are false. The $-1$ is not an exponent here and has nothing to do with a minus sign: it means “inverse”. The reciprocal is written $(f(x))^(-1)$ or $frac{1}{f(x)}$."
    }
   ]
  }

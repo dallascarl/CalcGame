@@ -14,7 +14,7 @@
     {
      "id": "T1",
      "type": "mc",
-     "text": "Plugging in gives $frac{0}{0}$. A good first move is",
+     "text": "Plugging in gives\n$$frac{0}{0}$$\nA good first move is",
      "options": [
       "factor the top and bottom and cancel",
       "say the limit is 0",
@@ -41,7 +41,7 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "After canceling, you plug in and get $frac{3}{0}$. The limit is",
+     "text": "After canceling, you plug in and get\n$$frac{3}{0}$$\nThe limit is",
      "options": [
       "$infty$, $-infty$ or DNE",
       "3",
@@ -573,7 +573,7 @@
     {
      "id": "W31",
      "type": "steps",
-     "text": "Find $lim[x->1] frac{x^2 - 1}{x - 1}$.",
+     "text": "Find\n$$lim[x->1] frac{x^2 - 1}{x - 1}$$",
      "steps": [
       {
        "id": "W31.1",
@@ -610,7 +610,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 2,
-       "label": "limit =",
+       "label": "$lim[x->1] frac{x^2 - 1}{x - 1}$ =",
        "work": "limit $= 2$"
       }
      ],
@@ -620,7 +620,7 @@
     {
      "id": "W32",
      "type": "steps",
-     "text": "Find $lim[x->2] frac{x^2 - 4}{x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 - 4}{x - 2}$$",
      "steps": [
       {
        "id": "W32.1",
@@ -657,7 +657,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 4,
-       "label": "limit =",
+       "label": "$lim[x->2] frac{x^2 - 4}{x - 2}$ =",
        "work": "limit $= 4$"
       }
      ],
@@ -667,7 +667,7 @@
     {
      "id": "W33",
      "type": "steps",
-     "text": "Find $lim[x->1] frac{x - 1}{x^2 + x - 2}$.",
+     "text": "Find\n$$lim[x->1] frac{x - 1}{x^2 + x - 2}$$",
      "steps": [
       {
        "id": "W33.1",
@@ -704,7 +704,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 0.333333,
-       "label": "limit =",
+       "label": "$lim[x->1] frac{x - 1}{x^2 + x - 2}$ =",
        "work": "limit $= 1/3$"
       }
      ],
@@ -714,7 +714,7 @@
     {
      "id": "W34",
      "type": "steps",
-     "text": "Find $lim[x->2] frac{x^2 - 5x + 6}{x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 - 5x + 6}{x - 2}$$",
      "steps": [
       {
        "id": "W34.1",
@@ -751,7 +751,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": -1,
-       "label": "limit =",
+       "label": "$lim[x->2] frac{x^2 - 5x + 6}{x - 2}$ =",
        "work": "limit $= -1$"
       }
      ],
@@ -761,7 +761,7 @@
     {
      "id": "W35",
      "type": "steps",
-     "text": "Find $lim[x->2] frac{x^2 + 2x - 8}{x^2 - 4}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 + 2x - 8}{x^2 - 4}$$",
      "steps": [
       {
        "id": "W35.1",
@@ -798,7 +798,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 1.5,
-       "label": "limit =",
+       "label": "$lim[x->2] frac{x^2 + 2x - 8}{x^2 - 4}$ =",
        "work": "limit $= 3/2$"
       }
      ],
@@ -808,7 +808,7 @@
     {
      "id": "W36",
      "type": "steps",
-     "text": "Find $lim[x->3] frac{x^2 - x - 6}{x - 3}$.",
+     "text": "Find\n$$lim[x->3] frac{x^2 - x - 6}{x - 3}$$",
      "steps": [
       {
        "id": "W36.1",
@@ -845,7 +845,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 5,
-       "label": "limit =",
+       "label": "$lim[x->3] frac{x^2 - x - 6}{x - 3}$ =",
        "work": "limit $= 5$"
       }
      ],
@@ -855,7 +855,7 @@
     {
      "id": "W37",
      "type": "steps",
-     "text": "Find $lim[x->2] frac{x^3 - 8}{x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{x^3 - 8}{x - 2}$$",
      "steps": [
       {
        "id": "W37.1",
@@ -892,7 +892,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 12,
-       "label": "limit =",
+       "label": "$lim[x->2] frac{x^3 - 8}{x - 2}$ =",
        "work": "limit $= 12$"
       }
      ],
@@ -902,7 +902,7 @@
     {
      "id": "W38",
      "type": "steps",
-     "text": "Find $lim[x->-4] frac{x^2 - 16}{x + 4}$.",
+     "text": "Find\n$$lim[x->-4] frac{x^2 - 16}{x + 4}$$",
      "steps": [
       {
        "id": "W38.1",
@@ -939,7 +939,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": -8,
-       "label": "limit =",
+       "label": "$lim[x->-4] frac{x^2 - 16}{x + 4}$ =",
        "work": "limit $= -8$"
       }
      ],
@@ -949,7 +949,7 @@
     {
      "id": "W39",
      "type": "steps",
-     "text": "Find $lim[x->1] frac{2x^2 - 2x}{x - 1}$.",
+     "text": "Find\n$$lim[x->1] frac{2x^2 - 2x}{x - 1}$$",
      "steps": [
       {
        "id": "W39.1",
@@ -986,7 +986,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 2,
-       "label": "limit =",
+       "label": "$lim[x->1] frac{2x^2 - 2x}{x - 1}$ =",
        "work": "limit $= 2$"
       }
      ],
@@ -996,7 +996,7 @@
     {
      "id": "W40",
      "type": "steps",
-     "text": "Find $lim[x->-1] frac{x^2 + 5x + 4}{x^2 - 1}$.",
+     "text": "Find\n$$lim[x->-1] frac{x^2 + 5x + 4}{x^2 - 1}$$",
      "steps": [
       {
        "id": "W40.1",
@@ -1033,7 +1033,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": -1.5,
-       "label": "limit =",
+       "label": "$lim[x->-1] frac{x^2 + 5x + 4}{x^2 - 1}$ =",
        "work": "limit $= -3/2$"
       }
      ],
@@ -1043,7 +1043,7 @@
     {
      "id": "W41",
      "type": "steps",
-     "text": "Find $lim[x->3] frac{x^2 - 9}{x^2 - 2x - 3}$.",
+     "text": "Find\n$$lim[x->3] frac{x^2 - 9}{x^2 - 2x - 3}$$",
      "steps": [
       {
        "id": "W41.1",
@@ -1080,7 +1080,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 1.5,
-       "label": "limit =",
+       "label": "$lim[x->3] frac{x^2 - 9}{x^2 - 2x - 3}$ =",
        "work": "limit $= 3/2$"
       }
      ],
@@ -1090,7 +1090,7 @@
     {
      "id": "W42",
      "type": "steps",
-     "text": "Find $lim[x->1] frac{x^3 - x}{x - 1}$.",
+     "text": "Find\n$$lim[x->1] frac{x^3 - x}{x - 1}$$",
      "steps": [
       {
        "id": "W42.1",
@@ -1127,7 +1127,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 2,
-       "label": "limit =",
+       "label": "$lim[x->1] frac{x^3 - x}{x - 1}$ =",
        "work": "limit $= 2$"
       }
      ],
@@ -1137,7 +1137,7 @@
     {
      "id": "W43",
      "type": "steps",
-     "text": "Find $lim[x->5] frac{x^2 - 2x - 15}{x - 5}$.",
+     "text": "Find\n$$lim[x->5] frac{x^2 - 2x - 15}{x - 5}$$",
      "steps": [
       {
        "id": "W43.1",
@@ -1174,7 +1174,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 8,
-       "label": "limit =",
+       "label": "$lim[x->5] frac{x^2 - 2x - 15}{x - 5}$ =",
        "work": "limit $= 8$"
       }
      ],
@@ -1184,7 +1184,7 @@
     {
      "id": "W44",
      "type": "steps",
-     "text": "Find $lim[x->-1] frac{x^3 + 1}{x + 1}$.",
+     "text": "Find\n$$lim[x->-1] frac{x^3 + 1}{x + 1}$$",
      "steps": [
       {
        "id": "W44.1",
@@ -1221,7 +1221,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 3,
-       "label": "limit =",
+       "label": "$lim[x->-1] frac{x^3 + 1}{x + 1}$ =",
        "work": "limit $= 3$"
       }
      ],
@@ -1231,7 +1231,7 @@
     {
      "id": "W45",
      "type": "steps",
-     "text": "Find $lim[x->2] frac{x^2 - 4}{x^2 - 5x + 6}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 - 4}{x^2 - 5x + 6}$$",
      "steps": [
       {
        "id": "W45.1",
@@ -1268,7 +1268,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": -4,
-       "label": "limit =",
+       "label": "$lim[x->2] frac{x^2 - 4}{x^2 - 5x + 6}$ =",
        "work": "limit $= -4$"
       }
      ],
@@ -1278,7 +1278,7 @@
     {
      "id": "W46",
      "type": "steps",
-     "text": "Find $lim[x->0] frac{x^2 + 3x}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{x^2 + 3x}{x}$$",
      "steps": [
       {
        "id": "W46.1",
@@ -1315,7 +1315,7 @@
        "type": "lim",
        "text": "Plug in.",
        "answer": 3,
-       "label": "limit =",
+       "label": "$lim[x->0] frac{x^2 + 3x}{x}$ =",
        "work": "limit $= 3$"
       }
      ],
@@ -1325,7 +1325,7 @@
     {
      "id": "X47",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{x - 2}{x^2 - 4x + 4}$. (After canceling, check what is left.)",
+     "text": "Find\n$$lim[x->2] frac{x - 2}{x^2 - 4x + 4}$$\n(After canceling, check what is left.)",
      "answer": "DNE",
      "label": "limit =",
      "level": 3,
@@ -1334,7 +1334,7 @@
     {
      "id": "X48",
      "type": "lim",
-     "text": "Find $lim[x->-1] frac{x + 1}{x^2 + 2x + 1}$. (After canceling, check what is left.)",
+     "text": "Find\n$$lim[x->-1] frac{x + 1}{x^2 + 2x + 1}$$\n(After canceling, check what is left.)",
      "answer": "DNE",
      "label": "limit =",
      "level": 3,
@@ -1343,7 +1343,7 @@
     {
      "id": "X49",
      "type": "lim",
-     "text": "Find $lim[x->1] frac{x^2 - 1}{(x - 1)^3}$. (After canceling, check what is left.)",
+     "text": "Find\n$$lim[x->1] frac{x^2 - 1}{(x - 1)^3}$$\n(After canceling, check what is left.)",
      "answer": "inf",
      "label": "limit =",
      "level": 3,
@@ -1352,7 +1352,7 @@
     {
      "id": "X50",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{x}{x^3}$. (After canceling, check what is left.)",
+     "text": "Find\n$$lim[x->0] frac{x}{x^3}$$\n(After canceling, check what is left.)",
      "answer": "inf",
      "label": "limit =",
      "level": 3,
@@ -1366,7 +1366,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "Find $lim[x->1] frac{x^2 - 1}{x - 1}$. Plugging in gives $frac{0}{0}$. Both are 0 at $x = 1$, so both have a factor of",
+    "text": "Find\n$$lim[x->1] frac{x^2 - 1}{x - 1}$$\nPlugging in gives\n$$frac{0}{0}$$\nBoth are 0 at $x = 1$, so both have a factor of",
     "options": [
      "$(x - 1)$",
      "$(x + 1)$",
@@ -1380,7 +1380,7 @@
    {
     "id": "L2",
     "type": "steps",
-    "text": "Finish $lim[x->1] frac{x^2 - 1}{x - 1}$.",
+    "text": "Finish\n$$lim[x->1] frac{x^2 - 1}{x - 1}$$",
     "steps": [
      {
       "id": "L2.1",
@@ -1423,7 +1423,7 @@
    {
     "id": "L3",
     "type": "lim",
-    "text": "Your turn (from class): $lim[x->1] frac{x - 1}{x^2 + x - 2}$. Factor the bottom.",
+    "text": "Your turn (from class):\n$$lim[x->1] frac{x - 1}{x^2 + x - 2}$$\nFactor the bottom.",
     "answer": 0.333333,
     "label": "limit =",
     "hint": "$x^2 + x - 2 = (x - 1)(x + 2)$",

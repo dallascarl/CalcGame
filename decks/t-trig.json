@@ -100,7 +100,7 @@
     {
      "id": "V1",
      "type": "expr",
-     "text": "Find the exact value of $tan(frac{pi}{4})$.",
+     "text": "Find the exact value of\n$$tan(frac{pi}{4})$$",
      "answer": "1",
      "vars": [],
      "keys": [
@@ -114,7 +114,7 @@
     {
      "id": "V2",
      "type": "expr",
-     "text": "Find the exact value of $tan(frac{pi}{3})$.",
+     "text": "Find the exact value of\n$$tan(frac{pi}{3})$$",
      "answer": "sqrt(3)",
      "vars": [],
      "keys": [
@@ -128,7 +128,7 @@
     {
      "id": "V3",
      "type": "expr",
-     "text": "Find the exact value of $tan(frac{pi}{6})$.",
+     "text": "Find the exact value of\n$$tan(frac{pi}{6})$$",
      "answer": "sqrt(3)/3",
      "vars": [],
      "keys": [
@@ -170,7 +170,7 @@
     {
      "id": "V6",
      "type": "expr",
-     "text": "Find the exact value of $sec(frac{pi}{3})$.",
+     "text": "Find the exact value of\n$$sec(frac{pi}{3})$$",
      "answer": "2",
      "vars": [],
      "keys": [
@@ -184,7 +184,7 @@
     {
      "id": "V7",
      "type": "expr",
-     "text": "Find the exact value of $csc(frac{pi}{6})$.",
+     "text": "Find the exact value of\n$$csc(frac{pi}{6})$$",
      "answer": "2",
      "vars": [],
      "keys": [
@@ -198,7 +198,7 @@
     {
      "id": "V8",
      "type": "expr",
-     "text": "Find the exact value of $csc(frac{pi}{2})$.",
+     "text": "Find the exact value of\n$$csc(frac{pi}{2})$$",
      "answer": "1",
      "vars": [],
      "keys": [
@@ -212,7 +212,7 @@
     {
      "id": "V9",
      "type": "expr",
-     "text": "Find the exact value of $cot(frac{pi}{4})$.",
+     "text": "Find the exact value of\n$$cot(frac{pi}{4})$$",
      "answer": "1",
      "vars": [],
      "keys": [
@@ -240,7 +240,7 @@
     {
      "id": "V11",
      "type": "expr",
-     "text": "Find the exact value of $tan(frac{3pi}{4})$.",
+     "text": "Find the exact value of\n$$tan(frac{3pi}{4})$$",
      "answer": "-1",
      "vars": [],
      "keys": [
@@ -254,7 +254,7 @@
     {
      "id": "V12",
      "type": "expr",
-     "text": "Find the exact value of $sec(frac{pi}{4})$.",
+     "text": "Find the exact value of\n$$sec(frac{pi}{4})$$",
      "answer": "sqrt(2)",
      "vars": [],
      "keys": [
@@ -478,7 +478,7 @@
     {
      "id": "I28",
      "type": "mc",
-     "text": "$frac{sin(x)}{cos(x)} =$",
+     "text": "$$frac{sin(x)}{cos(x)} =$$",
      "options": [
       "$tan(x)$",
       "$cot(x)$",
@@ -966,7 +966,7 @@
    {
     "id": "L2",
     "type": "num",
-    "text": "For example:$$tan(frac{pi}{4}) = frac{sin(frac{pi}{4})}{cos(frac{pi}{4})}$$\nAt $frac{pi}{4}$, sine and cosine are both $frac{sqrt2}{2}$. So what is $tan(frac{pi}{4})$?",
+    "text": "For example:$$tan(frac{pi}{4}) = frac{sin(frac{pi}{4})}{cos(frac{pi}{4})}$$\nAt $frac{pi}{4}$, sine and cosine are both $frac{sqrt2}{2}$. So what is\n$$tan(frac{pi}{4})$$",
     "answer": 1,
     "label": "$tan(frac{pi}{4})$ =",
     "hint": "Anything divided by itself.",

@@ -54,7 +54,7 @@
     {
      "id": "T4",
      "type": "tf",
-     "text": "$sin(frac{pi}{2}) = 1$",
+     "text": "$$sin(frac{pi}{2}) = 1$$",
      "answer": true,
      "explain": "A quarter turn puts the point at the top of the circle, $(0, 1)$."
     },
@@ -316,7 +316,7 @@
     {
      "id": "A19",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{pi}{6}$.",
+     "text": "Tap the point at\n$$theta = frac{pi}{6}$$",
      "ask": "angle",
      "answer": 1,
      "level": 1,
@@ -325,7 +325,7 @@
     {
      "id": "A20",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{pi}{3}$.",
+     "text": "Tap the point at\n$$theta = frac{pi}{3}$$",
      "ask": "angle",
      "answer": 3,
      "level": 1,
@@ -334,7 +334,7 @@
     {
      "id": "A21",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{2pi}{3}$.",
+     "text": "Tap the point at\n$$theta = frac{2pi}{3}$$",
      "ask": "angle",
      "answer": 5,
      "level": 1,
@@ -343,7 +343,7 @@
     {
      "id": "A22",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{3pi}{4}$.",
+     "text": "Tap the point at\n$$theta = frac{3pi}{4}$$",
      "ask": "angle",
      "answer": 6,
      "level": 1,
@@ -352,7 +352,7 @@
     {
      "id": "A23",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{5pi}{6}$.",
+     "text": "Tap the point at\n$$theta = frac{5pi}{6}$$",
      "ask": "angle",
      "answer": 7,
      "level": 1,
@@ -361,7 +361,7 @@
     {
      "id": "A24",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{7pi}{6}$.",
+     "text": "Tap the point at\n$$theta = frac{7pi}{6}$$",
      "ask": "angle",
      "answer": 9,
      "level": 1,
@@ -370,7 +370,7 @@
     {
      "id": "A25",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{5pi}{4}$.",
+     "text": "Tap the point at\n$$theta = frac{5pi}{4}$$",
      "ask": "angle",
      "answer": 10,
      "level": 1,
@@ -379,7 +379,7 @@
     {
      "id": "A26",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{4pi}{3}$.",
+     "text": "Tap the point at\n$$theta = frac{4pi}{3}$$",
      "ask": "angle",
      "answer": 11,
      "level": 1,
@@ -388,7 +388,7 @@
     {
      "id": "A27",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{5pi}{3}$.",
+     "text": "Tap the point at\n$$theta = frac{5pi}{3}$$",
      "ask": "angle",
      "answer": 13,
      "level": 1,
@@ -397,7 +397,7 @@
     {
      "id": "A28",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{7pi}{4}$.",
+     "text": "Tap the point at\n$$theta = frac{7pi}{4}$$",
      "ask": "angle",
      "answer": 14,
      "level": 1,
@@ -406,7 +406,7 @@
     {
      "id": "A29",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{11pi}{6}$.",
+     "text": "Tap the point at\n$$theta = frac{11pi}{6}$$",
      "ask": "angle",
      "answer": 15,
      "level": 1,
@@ -415,7 +415,7 @@
     {
      "id": "A30",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{pi}{2}$.",
+     "text": "Tap the point at\n$$theta = frac{pi}{2}$$",
      "ask": "angle",
      "answer": 4,
      "level": 1,
@@ -424,7 +424,7 @@
     {
      "id": "A31",
      "type": "ucircle",
-     "text": "Tap the point at $theta = frac{3pi}{2}$.",
+     "text": "Tap the point at\n$$theta = frac{3pi}{2}$$",
      "ask": "angle",
      "answer": 12,
      "level": 1,
@@ -457,7 +457,7 @@
     {
      "id": "F34",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{pi}{6})$.",
+     "text": "Find the exact value of\n$$sin(frac{pi}{6})$$",
      "answer": "1/2",
      "vars": [],
      "keys": [
@@ -472,7 +472,7 @@
     {
      "id": "F35",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{pi}{4})$.",
+     "text": "Find the exact value of\n$$sin(frac{pi}{4})$$",
      "answer": "sqrt(2)/2",
      "vars": [],
      "keys": [
@@ -487,7 +487,7 @@
     {
      "id": "F36",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{pi}{3})$.",
+     "text": "Find the exact value of\n$$sin(frac{pi}{3})$$",
      "answer": "sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -502,7 +502,7 @@
     {
      "id": "F37",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{pi}{2})$.",
+     "text": "Find the exact value of\n$$sin(frac{pi}{2})$$",
      "answer": "1",
      "vars": [],
      "keys": [
@@ -532,7 +532,7 @@
     {
      "id": "F39",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{3pi}{2})$.",
+     "text": "Find the exact value of\n$$sin(frac{3pi}{2})$$",
      "answer": "-1",
      "vars": [],
      "keys": [
@@ -562,7 +562,7 @@
     {
      "id": "F41",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{pi}{6})$.",
+     "text": "Find the exact value of\n$$cos(frac{pi}{6})$$",
      "answer": "sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -577,7 +577,7 @@
     {
      "id": "F42",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{pi}{4})$.",
+     "text": "Find the exact value of\n$$cos(frac{pi}{4})$$",
      "answer": "sqrt(2)/2",
      "vars": [],
      "keys": [
@@ -592,7 +592,7 @@
     {
      "id": "F43",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{pi}{3})$.",
+     "text": "Find the exact value of\n$$cos(frac{pi}{3})$$",
      "answer": "1/2",
      "vars": [],
      "keys": [
@@ -607,7 +607,7 @@
     {
      "id": "F44",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{pi}{2})$.",
+     "text": "Find the exact value of\n$$cos(frac{pi}{2})$$",
      "answer": "0",
      "vars": [],
      "keys": [
@@ -637,7 +637,7 @@
     {
      "id": "F46",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{3pi}{2})$.",
+     "text": "Find the exact value of\n$$cos(frac{3pi}{2})$$",
      "answer": "0",
      "vars": [],
      "keys": [
@@ -652,7 +652,7 @@
     {
      "id": "G47",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{2pi}{3})$.",
+     "text": "Find the exact value of\n$$sin(frac{2pi}{3})$$",
      "answer": "sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -667,7 +667,7 @@
     {
      "id": "G48",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{5pi}{6})$.",
+     "text": "Find the exact value of\n$$sin(frac{5pi}{6})$$",
      "answer": "1/2",
      "vars": [],
      "keys": [
@@ -682,7 +682,7 @@
     {
      "id": "G49",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{7pi}{6})$.",
+     "text": "Find the exact value of\n$$sin(frac{7pi}{6})$$",
      "answer": "-1/2",
      "vars": [],
      "keys": [
@@ -697,7 +697,7 @@
     {
      "id": "G50",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{5pi}{4})$.",
+     "text": "Find the exact value of\n$$sin(frac{5pi}{4})$$",
      "answer": "-sqrt(2)/2",
      "vars": [],
      "keys": [
@@ -712,7 +712,7 @@
     {
      "id": "G51",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{4pi}{3})$.",
+     "text": "Find the exact value of\n$$sin(frac{4pi}{3})$$",
      "answer": "-sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -727,7 +727,7 @@
     {
      "id": "G52",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{7pi}{4})$.",
+     "text": "Find the exact value of\n$$sin(frac{7pi}{4})$$",
      "answer": "-sqrt(2)/2",
      "vars": [],
      "keys": [
@@ -742,7 +742,7 @@
     {
      "id": "G53",
      "type": "expr",
-     "text": "Find the exact value of $sin(frac{11pi}{6})$.",
+     "text": "Find the exact value of\n$$sin(frac{11pi}{6})$$",
      "answer": "-1/2",
      "vars": [],
      "keys": [
@@ -757,7 +757,7 @@
     {
      "id": "G54",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{3pi}{4})$.",
+     "text": "Find the exact value of\n$$cos(frac{3pi}{4})$$",
      "answer": "-sqrt(2)/2",
      "vars": [],
      "keys": [
@@ -772,7 +772,7 @@
     {
      "id": "G55",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{5pi}{6})$.",
+     "text": "Find the exact value of\n$$cos(frac{5pi}{6})$$",
      "answer": "-sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -787,7 +787,7 @@
     {
      "id": "G56",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{7pi}{6})$.",
+     "text": "Find the exact value of\n$$cos(frac{7pi}{6})$$",
      "answer": "-sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -802,7 +802,7 @@
     {
      "id": "G57",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{4pi}{3})$.",
+     "text": "Find the exact value of\n$$cos(frac{4pi}{3})$$",
      "answer": "-1/2",
      "vars": [],
      "keys": [
@@ -817,7 +817,7 @@
     {
      "id": "G58",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{5pi}{3})$.",
+     "text": "Find the exact value of\n$$cos(frac{5pi}{3})$$",
      "answer": "1/2",
      "vars": [],
      "keys": [
@@ -832,7 +832,7 @@
     {
      "id": "G59",
      "type": "expr",
-     "text": "Find the exact value of $cos(frac{11pi}{6})$.",
+     "text": "Find the exact value of\n$$cos(frac{11pi}{6})$$",
      "answer": "sqrt(3)/2",
      "vars": [],
      "keys": [
@@ -847,7 +847,7 @@
     {
      "id": "W60",
      "type": "ucircle",
-     "text": "Tap **every** point where $sin(theta) = frac{1}{2}$.",
+     "text": "Tap **every** point where\n$$sin(theta) = frac{1}{2}$$",
      "ask": "where",
      "answers": [
       1,
@@ -859,7 +859,7 @@
     {
      "id": "W61",
      "type": "ucircle",
-     "text": "Tap **every** point where $cos(theta) = frac{1}{2}$.",
+     "text": "Tap **every** point where\n$$cos(theta) = frac{1}{2}$$",
      "ask": "where",
      "answers": [
       3,
@@ -871,7 +871,7 @@
     {
      "id": "W62",
      "type": "ucircle",
-     "text": "Tap **every** point where $sin(theta) = -frac{sqrt(2)}{2}$.",
+     "text": "Tap **every** point where\n$$sin(theta) = -frac{sqrt(2)}{2}$$",
      "ask": "where",
      "answers": [
       10,
@@ -883,7 +883,7 @@
     {
      "id": "W63",
      "type": "ucircle",
-     "text": "Tap **every** point where $cos(theta) = -frac{sqrt(3)}{2}$.",
+     "text": "Tap **every** point where\n$$cos(theta) = -frac{sqrt(3)}{2}$$",
      "ask": "where",
      "answers": [
       7,
@@ -919,7 +919,7 @@
     {
      "id": "W66",
      "type": "ucircle",
-     "text": "Tap **every** point where $sin(theta) = frac{sqrt(3)}{2}$.",
+     "text": "Tap **every** point where\n$$sin(theta) = frac{sqrt(3)}{2}$$",
      "ask": "where",
      "answers": [
       3,
@@ -931,7 +931,7 @@
     {
      "id": "W67",
      "type": "ucircle",
-     "text": "Tap **every** point where $cos(theta) = frac{sqrt(2)}{2}$.",
+     "text": "Tap **every** point where\n$$cos(theta) = frac{sqrt(2)}{2}$$",
      "ask": "where",
      "answers": [
       2,
@@ -954,7 +954,7 @@
     {
      "id": "W69",
      "type": "ucircle",
-     "text": "Tap **every** point where $cos(theta) = -frac{1}{2}$.",
+     "text": "Tap **every** point where\n$$cos(theta) = -frac{1}{2}$$",
      "ask": "where",
      "answers": [
       5,
@@ -971,7 +971,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "Calculus measures angles in **radians**. A full turn is $2pi$, so half a turn is $pi$, which is 180°. How many degrees is $frac{pi}{2}$?",
+    "text": "Calculus measures angles in **radians**. A full turn is $2pi$, so half a turn is $pi$, which is 180°. How many degrees is\n$$frac{pi}{2}$$",
     "options": [
      "90°",
      "45°",
@@ -1024,9 +1024,34 @@
     "after": "Left of the $y$-axis, cosine is negative. Below the $x$-axis, sine is negative. That is all there is to it."
    },
    {
+    "id": "L4b",
+    "type": "match",
+    "text": "A way to remember the signs: **A**ll **S**tudents **T**ake **C**alculus, going around quadrants I, II, III, IV. Match each quadrant with what is **positive** there.",
+    "pairs": [
+     [
+      "Quadrant I",
+      "**A**ll of them"
+     ],
+     [
+      "Quadrant II",
+      "**S**ine only"
+     ],
+     [
+      "Quadrant III",
+      "**T**angent only"
+     ],
+     [
+      "Quadrant IV",
+      "**C**osine only"
+     ]
+    ],
+    "hint": "Sine is the height and cosine is the left-right position. Tangent is positive when those two have the same sign.",
+    "explain": "A, S, T, C: all, sine, tangent, cosine. Everything else in that quadrant is negative."
+   },
+   {
     "id": "L5",
     "type": "ucircle",
-    "text": "Now with no labels. Tap the point at $theta = frac{2pi}{3}$.",
+    "text": "Now with no labels. Tap the point at\n$$theta = frac{2pi}{3}$$",
     "ask": "angle",
     "answer": 5,
     "hint": "$frac{pi}{3}$ is 60°, so $frac{2pi}{3}$ is 120°: a little past straight up.",

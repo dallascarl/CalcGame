@@ -54,14 +54,14 @@
     {
      "id": "T3",
      "type": "tf",
-     "text": "$frac{d}{dx} cos(x) = sin(x)$",
+     "text": "$$frac{d}{dx} cos(x) = sin(x)$$",
      "answer": false,
      "explain": "It is $-sin(x)$: cosine starts falling right after $x = 0$."
     },
     {
      "id": "T4",
      "type": "mc",
-     "text": "Which limit is the key fact behind $frac{d}{dx} sin(x) = cos(x)$?",
+     "text": "Which limit is the key fact behind\n$$frac{d}{dx} sin(x) = cos(x)$$",
      "options": [
       "$lim[x->0] frac{sin(x)}{x} = 1$",
       "$lim[x->0] sin(x) = 1$",
@@ -74,7 +74,7 @@
     {
      "id": "T5",
      "type": "mc",
-     "text": "What is $frac{d^47}{dx^47} cos(x)$?",
+     "text": "What is\n$$frac{d^47}{dx^47} cos(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -214,7 +214,7 @@
     {
      "id": "B5",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = 4sin(x) - cos(x)$.",
+     "text": "Find the derivative of\n$$f(x) = 4sin(x) - cos(x)$$",
      "answer": "4cos(x) + sin(x)",
      "vars": [
       "x"
@@ -349,7 +349,7 @@
     {
      "id": "B10",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = tan(x) + sec(x)$.",
+     "text": "Find the derivative of\n$$f(x) = tan(x) + sec(x)$$",
      "answer": "sec(x)^2 + sec(x)tan(x)",
      "vars": [
       "x"
@@ -430,7 +430,7 @@
     {
      "id": "B13",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = sin(x) + cos(x)$.",
+     "text": "Find the derivative of\n$$f(x) = sin(x) + cos(x)$$",
      "answer": "cos(x) - sin(x)",
      "vars": [
       "x"
@@ -746,7 +746,7 @@
     {
      "id": "C29",
      "type": "mc",
-     "text": "What is $frac{d^2}{dx^2} sin(x)$?",
+     "text": "What is\n$$frac{d^2}{dx^2} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -761,7 +761,7 @@
     {
      "id": "C30",
      "type": "mc",
-     "text": "What is $frac{d^3}{dx^3} sin(x)$?",
+     "text": "What is\n$$frac{d^3}{dx^3} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -776,7 +776,7 @@
     {
      "id": "C31",
      "type": "mc",
-     "text": "What is $frac{d^4}{dx^4} cos(x)$?",
+     "text": "What is\n$$frac{d^4}{dx^4} cos(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -791,7 +791,7 @@
     {
      "id": "C32",
      "type": "mc",
-     "text": "What is $frac{d^5}{dx^5} cos(x)$?",
+     "text": "What is\n$$frac{d^5}{dx^5} cos(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -806,7 +806,7 @@
     {
      "id": "C33",
      "type": "mc",
-     "text": "What is $frac{d^6}{dx^6} sin(x)$?",
+     "text": "What is\n$$frac{d^6}{dx^6} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -821,7 +821,7 @@
     {
      "id": "C34",
      "type": "mc",
-     "text": "What is $frac{d^47}{dx^47} cos(x)$?",
+     "text": "What is\n$$frac{d^47}{dx^47} cos(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -836,7 +836,7 @@
     {
      "id": "C35",
      "type": "mc",
-     "text": "What is $frac{d^10}{dx^10} sin(x)$?",
+     "text": "What is\n$$frac{d^10}{dx^10} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -851,7 +851,7 @@
     {
      "id": "C36",
      "type": "mc",
-     "text": "What is $frac{d^101}{dx^101} sin(x)$?",
+     "text": "What is\n$$frac{d^101}{dx^101} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -866,7 +866,7 @@
     {
      "id": "Q37",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{cos(x)}{2x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{cos(x)}{2x}$$",
      "steps": [
       {
        "id": "Q37.1",
@@ -945,7 +945,7 @@
     {
      "id": "Q38",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{sin(x)}{x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{sin(x)}{x}$$",
      "steps": [
       {
        "id": "Q38.1",
@@ -1024,7 +1024,7 @@
     {
      "id": "Q39",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{cos(x)}{x^2 + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{cos(x)}{x^2 + 1}$$",
      "steps": [
       {
        "id": "Q39.1",
@@ -1103,7 +1103,7 @@
     {
      "id": "Q40",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x}{cos(x)}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x}{cos(x)}$$",
      "steps": [
       {
        "id": "Q40.1",
@@ -1182,7 +1182,7 @@
     {
      "id": "Q41",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{sin(x)}{1 + cos(x)}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{sin(x)}{1 + cos(x)}$$",
      "steps": [
       {
        "id": "Q41.1",
@@ -1261,7 +1261,7 @@
     {
      "id": "Q42",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x^2}{sin(x)}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x^2}{sin(x)}$$",
      "steps": [
       {
        "id": "Q42.1",
@@ -2314,7 +2314,7 @@
    {
     "id": "L5",
     "type": "mc",
-    "text": "Derivatives of sine go around a cycle of four: $sin -> cos -> -sin -> -cos -> sin$. What is $frac{d^4}{dx^4} sin(x)$?",
+    "text": "Derivatives of sine go around a cycle of four:\n$$sin -> cos -> -sin -> -cos -> sin$$\nWhat is\n$$frac{d^4}{dx^4} sin(x)$$",
     "options": [
      "$sin(x)$",
      "$cos(x)$",

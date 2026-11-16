@@ -34,7 +34,8 @@ function mountCancel(q,ix,onChange){
   const box=$('.cfrac',ix),nb=$('.cnone',ix),res=$('.cres',ix);
   const side=(s,name)=>'<div class="cside c'+s.op.charCodeAt(0)+'">'+s.parts.map((p,i)=>{
       const use=shown||pairs,k=use.findIndex(pr=>pr[name==='t'?0:1]===i);
-      return (s.op==='*'&&i?'<span class="cdot" aria-hidden="true">·</span>':'')+'<button class="cchip'+(k>=0?' cut c'+(k%4):'')+(pick&&pick.s===name&&pick.i===i?' on':'')+'" data-s="'+name+'" data-i="'+i+'"'+(locked?' disabled':'')+
+      const sg=s.op!=='*'&&i?/^\s*([+\-−])\s*(.+)$/.exec(p):null; if(sg)p=sg[2];
+      return (s.op==='*'&&i?'<span class="cdot" aria-hidden="true">·</span>':sg?'<span class="cdot" aria-hidden="true">'+(sg[1]==='+'?'+':'−')+'</span>':'')+'<button class="cchip'+(k>=0?' cut c'+(k%4):'')+(pick&&pick.s===name&&pick.i===i?' on':'')+'" data-s="'+name+'" data-i="'+i+'"'+(locked?' disabled':'')+
         ' aria-pressed="'+(k>=0)+'">'+math(p)+'</button>';}).join('')+'</div>';
   const draw=()=>{box.innerHTML=side(q.top,'t')+'<div class="cbar"></div>'+side(q.bot,'b');nb.setAttribute('aria-pressed',none);nb.disabled=locked;};
   box.addEventListener('click',e=>{

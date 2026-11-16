@@ -86,7 +86,7 @@
     {
      "id": "W1",
      "type": "mc",
-     "text": "What is the best first move for $int[0,4] sqrt(16 - x^2) dx$?",
+     "text": "What is the best first move for\n$$int[0,4] sqrt(16 - x^2) dx$$",
      "options": [
       "Geometry (a known shape)",
       "Substitution",
@@ -131,7 +131,7 @@
     {
      "id": "W4",
      "type": "mc",
-     "text": "What is the best first move for $frac{d}{dx} int[1,x] t^3 dt$?",
+     "text": "What is the best first move for\n$$frac{d}{dx} int[1,x] t^3 dt$$",
      "options": [
       "FTC part 1",
       "Geometry (a known shape)",
@@ -146,7 +146,7 @@
     {
      "id": "W5",
      "type": "mc",
-     "text": "What is the best first move for $int[0,2] x^2 dx$?",
+     "text": "What is the best first move for\n$$int[0,2] x^2 dx$$",
      "options": [
       "FTC part 2 (antiderivative, then F(b) − F(a))",
       "Geometry (a known shape)",
@@ -176,7 +176,7 @@
     {
      "id": "W7",
      "type": "mc",
-     "text": "What is the best first move for $int[-3,3] 2x dx$?",
+     "text": "What is the best first move for\n$$int[-3,3] 2x dx$$",
      "options": [
       "Geometry (a known shape)",
       "Substitution",
@@ -206,7 +206,7 @@
     {
      "id": "W9",
      "type": "mc",
-     "text": "What is the best first move for $frac{d}{dx} int[0,x^2] sin(t) dt$?",
+     "text": "What is the best first move for\n$$frac{d}{dx} int[0,x^2] sin(t) dt$$",
      "options": [
       "FTC part 1",
       "Geometry (a known shape)",
@@ -221,7 +221,7 @@
     {
      "id": "W10",
      "type": "mc",
-     "text": "What is the best first move for $int[1,e] frac{1}{x} dx$?",
+     "text": "What is the best first move for\n$$int[1,e] frac{1}{x} dx$$",
      "options": [
       "FTC part 2 (antiderivative, then F(b) − F(a))",
       "Geometry (a known shape)",
@@ -236,7 +236,7 @@
     {
      "id": "W11",
      "type": "mc",
-     "text": "What is the best first move for $int frac{e^x}{e^x + 1} dx$?",
+     "text": "What is the best first move for\n$$int frac{e^x}{e^x + 1} dx$$",
      "options": [
       "Substitution",
       "Geometry (a known shape)",
@@ -251,7 +251,7 @@
     {
      "id": "W12",
      "type": "mc",
-     "text": "What is the best first move for $int (3x^2 - 2x + 5) dx$?",
+     "text": "What is the best first move for\n$$int (3x^2 - 2x + 5) dx$$",
      "options": [
       "Antiderivative rules (term by term)",
       "Geometry (a known shape)",
@@ -266,7 +266,7 @@
     {
      "id": "W13",
      "type": "mc",
-     "text": "What is the best first move for $int[0,4] (2x + 1) dx$?",
+     "text": "What is the best first move for\n$$int[0,4] (2x + 1) dx$$",
      "options": [
       "Geometry (a known shape)",
       "Substitution",
@@ -281,7 +281,7 @@
     {
      "id": "W14",
      "type": "mc",
-     "text": "What is the best first move for $int x sqrt(x^2 + 5) dx$?",
+     "text": "What is the best first move for\n$$int x sqrt(x^2 + 5) dx$$",
      "options": [
       "Substitution",
       "Geometry (a known shape)",
@@ -296,7 +296,7 @@
     {
      "id": "W15",
      "type": "mc",
-     "text": "What is the best first move for $frac{d}{dx} int[2,x] e^(t^2) dt$?",
+     "text": "What is the best first move for\n$$frac{d}{dx} int[2,x] e^(t^2) dt$$",
      "options": [
       "FTC part 1",
       "Geometry (a known shape)",
@@ -311,7 +311,7 @@
     {
      "id": "W16",
      "type": "mc",
-     "text": "What is the best first move for $int[0,pi] sin(x) dx$?",
+     "text": "What is the best first move for\n$$int[0,pi] sin(x) dx$$",
      "options": [
       "FTC part 2 (antiderivative, then F(b) − F(a))",
       "Geometry (a known shape)",
@@ -326,7 +326,7 @@
     {
      "id": "W17",
      "type": "mc",
-     "text": "What is the best first move for $int frac{4}{x^3} dx$?",
+     "text": "What is the best first move for\n$$int frac{4}{x^3} dx$$",
      "options": [
       "Antiderivative rules (term by term)",
       "Geometry (a known shape)",
@@ -507,7 +507,7 @@
     {
      "id": "DEFG16",
      "type": "num",
-     "text": "Use the graph of $f$ (straight-line pieces). Find $int[0,6] f(x) dx$. Area below the axis counts as negative.",
+     "text": "Use the graph of $f$ (straight-line pieces). Find\n$$int[0,6] f(x) dx$$\nArea below the axis counts as negative.",
      "answer": 4,
      "label": "integral =",
      "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
@@ -517,7 +517,7 @@
     {
      "id": "DEFG15",
      "type": "num",
-     "text": "Use the graph of $f$ (straight-line pieces). Find $int[2,6] f(x) dx$. Area below the axis counts as negative.",
+     "text": "Use the graph of $f$ (straight-line pieces). Find\n$$int[2,6] f(x) dx$$\nArea below the axis counts as negative.",
      "answer": 4,
      "label": "integral =",
      "explain": "Add the triangles and rectangles, with a minus sign below the axis: 4.",
@@ -537,7 +537,7 @@
     {
      "id": "DEFC22",
      "type": "num",
-     "text": "Find $int[0,3] sqrt(9 - x^2) dx$. (It is a quarter of a circle of radius 3. A decimal is fine.)",
+     "text": "Find\n$$int[0,3] sqrt(9 - x^2) dx$$\n(It is a quarter of a circle of radius 3. A decimal is fine.)",
      "answer": 7.068583,
      "label": "integral =",
      "tol": 0.01,
@@ -548,7 +548,7 @@
     {
      "id": "DEFP34",
      "type": "num",
-     "text": "Given $int[-2,2] f = 6$ and $int[0,2] f = 1$. Find $int[-2,0] f(x) dx$.",
+     "text": "Given $int[-2,2] f = 6$ and $int[0,2] f = 1$. Find\n$$int[-2,0] f(x) dx$$",
      "answer": 5,
      "label": "integral =",
      "explain": "Use the properties of integrals: 5.",
@@ -910,7 +910,7 @@
     {
      "id": "ANTB36",
      "type": "expr",
-     "text": "Find $int 1/sqrt(1 - x^2) dx$.",
+     "text": "Find\n$$int 1/sqrt(1 - x^2) dx$$",
      "answer": "arcsin(x)",
      "vars": [
       "x"
@@ -1107,7 +1107,7 @@
     {
      "id": "FTCC23",
      "type": "expr",
-     "text": "Find $frac{d}{dx} int[0,sin(x)] e^t dt$.",
+     "text": "Find\n$$frac{d}{dx} int[0,sin(x)] e^t dt$$",
      "answer": "e^(sin(x))cos(x)",
      "vars": [
       "x"
@@ -1180,7 +1180,7 @@
     {
      "id": "FTCD53",
      "type": "num",
-     "text": "Evaluate $int[1,2] 1/x^2 dx$.",
+     "text": "Evaluate\n$$int[1,2] 1/x^2 dx$$",
      "answer": 0.5,
      "label": "integral =",
      "tol": 0.005,
@@ -1190,7 +1190,7 @@
     {
      "id": "FTCC20",
      "type": "expr",
-     "text": "Find $frac{d}{dx} int[0,2x] t^3 dt$.",
+     "text": "Find\n$$frac{d}{dx} int[0,2x] t^3 dt$$",
      "answer": "(2x)^3(2)",
      "vars": [
       "x"
@@ -1217,7 +1217,7 @@
     {
      "id": "FTCD27",
      "type": "num",
-     "text": "Evaluate $int[0,2] x^2 dx$.",
+     "text": "Evaluate\n$$int[0,2] x^2 dx$$",
      "answer": 2.666667,
      "label": "integral =",
      "tol": 0.005,
@@ -1273,7 +1273,7 @@
     {
      "id": "FTCD47",
      "type": "num",
-     "text": "Evaluate $int[0,4] sqrt(x) dx$.",
+     "text": "Evaluate\n$$int[0,4] sqrt(x) dx$$",
      "answer": 5.333333,
      "label": "integral =",
      "tol": 0.005,
@@ -1314,7 +1314,7 @@
     {
      "id": "INDI19",
      "type": "expr",
-     "text": "Find $int (1 - x)/sqrt(x) dx$.",
+     "text": "Find\n$$int (1 - x)/sqrt(x) dx$$",
      "answer": "2sqrt(x) - (2/3)x^(3/2)",
      "vars": [
       "x"
@@ -1360,7 +1360,7 @@
       {
        "id": "INDT36.1",
        "type": "num",
-       "text": "Displacement: $int[0,3] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,3] v(t) dt$$",
        "answer": 3,
        "label": "displacement =",
        "work": "displacement $= 3$"
@@ -1740,7 +1740,7 @@
     {
      "id": "SUBS44",
      "type": "steps",
-     "text": "Use substitution: $int cos(x) sin^3(x) dx$.",
+     "text": "Use substitution:\n$$int cos(x) sin^3(x) dx$$",
      "steps": [
       {
        "id": "SUBS44.1",
@@ -1830,7 +1830,7 @@
     {
      "id": "SUBS51",
      "type": "steps",
-     "text": "Use substitution: $int frac{3x^2}{x^3 + 2} dx$.",
+     "text": "Use substitution:\n$$int frac{3x^2}{x^3 + 2} dx$$",
      "steps": [
       {
        "id": "SUBS51.1",
@@ -1920,7 +1920,7 @@
     {
      "id": "SUBS52",
      "type": "steps",
-     "text": "Use substitution: $int 4x^3(x^4 + 1)^2 dx$.",
+     "text": "Use substitution:\n$$int 4x^3(x^4 + 1)^2 dx$$",
      "steps": [
       {
        "id": "SUBS52.1",
@@ -2033,7 +2033,7 @@
       {
        "id": "SUBD59.3",
        "type": "num",
-       "text": "The integral is $int[0,pi] cos(u) du$. Evaluate it (a decimal is fine).",
+       "text": "The integral is\n$$int[0,pi] cos(u) du$$\nEvaluate it (a decimal is fine).",
        "answer": 0,
        "label": "integral =",
        "tol": 0.01,

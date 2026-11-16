@@ -27,14 +27,14 @@
     {
      "id": "T2",
      "type": "tf",
-     "text": "$frac{d}{dx}(y^3) = 3y^2$",
+     "text": "$$frac{d}{dx}(y^3) = 3y^2$$",
      "answer": false,
      "explain": "$3y^2·y'$. Never forget the $y'$."
     },
     {
      "id": "T3",
      "type": "mc",
-     "text": "$frac{d}{dx}(sin(y)) =$",
+     "text": "$$frac{d}{dx}(sin(y)) =$$",
      "options": [
       "$cos(y)·y'$",
       "$cos(y)$",
@@ -47,7 +47,7 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "$frac{d}{dx}(x^2 y) =$",
+     "text": "$$frac{d}{dx}(x^2 y) =$$",
      "options": [
       "$2xy + x^2 y'$",
       "$2xy'$",
@@ -98,7 +98,7 @@
     {
      "id": "B1",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^2)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(y^2)$$",
      "answer": "2yy'",
      "vars": [
       "x",
@@ -130,7 +130,7 @@
     {
      "id": "B2",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^3)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(y^3)$$",
      "answer": "3y^2y'",
      "vars": [
       "x",
@@ -162,7 +162,7 @@
     {
      "id": "B3",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^4)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(y^4)$$",
      "answer": "4y^3y'",
      "vars": [
       "x",
@@ -194,7 +194,7 @@
     {
      "id": "B4",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(3y^2)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(3y^2)$$",
      "answer": "6yy'",
      "vars": [
       "x",
@@ -226,7 +226,7 @@
     {
      "id": "B5",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(y^5)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(y^5)$$",
      "answer": "5y^4y'",
      "vars": [
       "x",
@@ -258,7 +258,7 @@
     {
      "id": "B6",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(sin(y))$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(sin(y))$$",
      "answer": "cos(y)y'",
      "vars": [
       "x",
@@ -290,7 +290,7 @@
     {
      "id": "B7",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(cos(y))$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(cos(y))$$",
      "answer": "-sin(y)y'",
      "vars": [
       "x",
@@ -322,7 +322,7 @@
     {
      "id": "B8",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(tan(y))$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(tan(y))$$",
      "answer": "sec(y)^2y'",
      "vars": [
       "x",
@@ -355,7 +355,7 @@
     {
      "id": "B9",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(sqrt(y))$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(sqrt(y))$$",
      "answer": "y'/(2sqrt(y))",
      "vars": [
       "x",
@@ -387,7 +387,7 @@
     {
      "id": "B10",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(xy)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(xy)$$",
      "answer": "xy' + y",
      "vars": [
       "x",
@@ -419,7 +419,7 @@
     {
      "id": "B11",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(x^2y)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(x^2y)$$",
      "answer": "x^2y' + 2xy",
      "vars": [
       "x",
@@ -451,7 +451,7 @@
     {
      "id": "B12",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(xy^2)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(xy^2)$$",
      "answer": "2xyy' + y^2",
      "vars": [
       "x",
@@ -483,7 +483,7 @@
     {
      "id": "B13",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(1/y)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(1/y)$$",
      "answer": "-y'/y^2",
      "vars": [
       "x",
@@ -515,7 +515,7 @@
     {
      "id": "B14",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(2y^3 + x)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(2y^3 + x)$$",
      "answer": "6y^2y' + 1",
      "vars": [
       "x",
@@ -547,7 +547,7 @@
     {
      "id": "B15",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(x^3 + y^3)$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(x^3 + y^3)$$",
      "answer": "3x^2 + 3y^2y'",
      "vars": [
       "x",
@@ -579,7 +579,7 @@
     {
      "id": "B16",
      "type": "expr",
-     "text": "$y$ is a function of $x$. Find $frac{d}{dx}(xsin(y))$.",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(xsin(y))$$",
      "answer": "xy'cos(y) + sin(y)",
      "vars": [
       "x",
@@ -611,7 +611,7 @@
     {
      "id": "P17",
      "type": "expr",
-     "text": "Find $frac{d}{dx} x^(2/3)$.",
+     "text": "Find\n$$frac{d}{dx} x^(2/3)$$",
      "answer": "(2/3)x^(-1/3)",
      "vars": [
       "x"
@@ -624,7 +624,7 @@
     {
      "id": "P18",
      "type": "expr",
-     "text": "Find $frac{d}{dx} x^(1/3)$.",
+     "text": "Find\n$$frac{d}{dx} x^(1/3)$$",
      "answer": "(1/3)x^(-2/3)",
      "vars": [
       "x"
@@ -637,7 +637,7 @@
     {
      "id": "P19",
      "type": "expr",
-     "text": "Find $frac{d}{dx} x^(3/4)$.",
+     "text": "Find\n$$frac{d}{dx} x^(3/4)$$",
      "answer": "(3/4)x^(-1/4)",
      "vars": [
       "x"
@@ -650,7 +650,7 @@
     {
      "id": "P20",
      "type": "expr",
-     "text": "Find $frac{d}{dx} x^(5/2)$.",
+     "text": "Find\n$$frac{d}{dx} x^(5/2)$$",
      "answer": "(5/2)x^(3/2)",
      "vars": [
       "x"
@@ -663,7 +663,7 @@
     {
      "id": "P21",
      "type": "expr",
-     "text": "Find $frac{d}{dx} x^(-1/3)$.",
+     "text": "Find\n$$frac{d}{dx} x^(-1/3)$$",
      "answer": "(-1/3)x^(-4/3)",
      "vars": [
       "x"
@@ -676,7 +676,7 @@
     {
      "id": "P22",
      "type": "expr",
-     "text": "Find $frac{d}{dx} x^(4/3)$.",
+     "text": "Find\n$$frac{d}{dx} x^(4/3)$$",
      "answer": "(4/3)x^(1/3)",
      "vars": [
       "x"
@@ -1013,7 +1013,7 @@
     {
      "id": "V35",
      "type": "num",
-     "text": "$y' = -frac{x}{y}$. Find the slope at the point $(3, 4)$.",
+     "text": "$$y' = -frac{x}{y}$$\nFind the slope at the point $(3, 4)$.",
      "answer": -0.75,
      "label": "slope =",
      "level": 2,
@@ -1022,7 +1022,7 @@
     {
      "id": "V36",
      "type": "num",
-     "text": "$y' = -frac{x}{y}$. Find the slope at the point $(-5, 12)$.",
+     "text": "$$y' = -frac{x}{y}$$\nFind the slope at the point $(-5, 12)$.",
      "answer": 0.416667,
      "label": "slope =",
      "level": 2,
@@ -1031,7 +1031,7 @@
     {
      "id": "V37",
      "type": "num",
-     "text": "$y' = -frac{y}{x}$. Find the slope at the point $(2, 3)$.",
+     "text": "$$y' = -frac{y}{x}$$\nFind the slope at the point $(2, 3)$.",
      "answer": -1.5,
      "label": "slope =",
      "level": 2,
@@ -1040,7 +1040,7 @@
     {
      "id": "V38",
      "type": "num",
-     "text": "$y' = -frac{x^2}{y^2}$. Find the slope at the point $(1, 2)$.",
+     "text": "$$y' = -frac{x^2}{y^2}$$\nFind the slope at the point $(1, 2)$.",
      "answer": -0.25,
      "label": "slope =",
      "level": 2,
@@ -1049,7 +1049,7 @@
     {
      "id": "V39",
      "type": "num",
-     "text": "$y' = -frac{2y}{x}$. Find the slope at the point $(2, 1)$.",
+     "text": "$$y' = -frac{2y}{x}$$\nFind the slope at the point $(2, 1)$.",
      "answer": -1,
      "label": "slope =",
      "level": 2,
@@ -1058,7 +1058,7 @@
     {
      "id": "V40",
      "type": "num",
-     "text": "$y' = frac{x}{y}$. Find the slope at the point $(2, 1)$.",
+     "text": "$$y' = frac{x}{y}$$\nFind the slope at the point $(2, 1)$.",
      "answer": 2,
      "label": "slope =",
      "level": 2,
@@ -1067,7 +1067,7 @@
     {
      "id": "V41",
      "type": "num",
-     "text": "$y' = -frac{2x}{y}$. Find the slope at the point $(1, 2)$.",
+     "text": "$$y' = -frac{2x}{y}$$\nFind the slope at the point $(1, 2)$.",
      "answer": -1,
      "label": "slope =",
      "level": 2,
@@ -1076,7 +1076,7 @@
     {
      "id": "V42",
      "type": "num",
-     "text": "$y' = frac{3}{2y}$. Find the slope at the point $(1, 3)$.",
+     "text": "$$y' = frac{3}{2y}$$\nFind the slope at the point $(1, 3)$.",
      "answer": 0.5,
      "label": "slope =",
      "level": 2,
@@ -2418,7 +2418,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "$x^2 + y^2 = 1$ is a circle, not a function. We can still find slopes: take $frac{d}{dx}$ of **both sides**, treating $y$ as a function of $x$. Then $frac{d}{dx}(y^2) =$",
+    "text": "$x^2 + y^2 = 1$ is a circle, not a function. We can still find slopes: take $frac{d}{dx}$ of **both sides**, treating $y$ as a function of $x$. Then\n$$frac{d}{dx}(y^2) =$$",
     "options": [
      "$2y·y'$",
      "$2y$",
@@ -2480,7 +2480,7 @@
    {
     "id": "L3",
     "type": "expr",
-    "text": "Products with $y$ need the product rule. Find $frac{d}{dx}(xy)$.",
+    "text": "Products with $y$ need the product rule. Find\n$$frac{d}{dx}(xy)$$",
     "answer": "y + xy'",
     "vars": [
      "x",
@@ -2568,7 +2568,7 @@
    {
     "id": "L5",
     "type": "mc",
-    "text": "Implicit differentiation also proves the power rule for fractional powers. What is $frac{d}{dx} x^(2/3)$?",
+    "text": "Implicit differentiation also proves the power rule for fractional powers. What is\n$$frac{d}{dx} x^(2/3)$$",
     "options": [
      "$frac{2}{3}x^(-1/3)$",
      "$frac{2}{3}x^(1/3)$",

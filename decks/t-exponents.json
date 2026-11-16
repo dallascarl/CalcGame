@@ -619,7 +619,7 @@
      "label": "simplified =",
      "show": "$x^2 + 2$",
      "level": 3,
-     "explain": "Each term on top gets divided separately: $x^2 + 2$.",
+     "explain": "Each term on top gets divided separately: $x^2 + 2$. This holds for $x ≠ 0$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 7
     },
     {
@@ -633,7 +633,7 @@
      "label": "simplified =",
      "show": "$2x^4 - 3x$",
      "level": 3,
-     "explain": "Each term on top gets divided separately: $2x^4 - 3x$.",
+     "explain": "Each term on top gets divided separately: $2x^4 - 3x$. This holds for $x ≠ 0$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 9
     },
     {
@@ -681,7 +681,7 @@
      "label": "simplified =",
      "show": "$2x^2 + 3x$",
      "level": 3,
-     "explain": "Each term on top gets divided separately: $2x^2 + 3x$.",
+     "explain": "Each term on top gets divided separately: $2x^2 + 3x$. This holds for $x ≠ 0$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 9
     },
     {
@@ -695,7 +695,7 @@
      "label": "simplified =",
      "show": "$x^2 + 1$",
      "level": 3,
-     "explain": "Each term on top gets divided separately: $x^2 + 1$.",
+     "explain": "Each term on top gets divided separately: $x^2 + 1$. This holds for $x ≠ 0$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 7
     }
    ]
@@ -762,7 +762,7 @@
     "label": "$frac{x^2}{sqrt(x)}$ =",
     "show": "$x^(3/2)$",
     "hint": "$frac{x^2}{x^(1/2)}$: dividing means subtract the exponents, $2 - frac{1}{2}$.",
-    "explain": "$x^(2 - 1/2) = x^(3/2)$. In February every derivative of a root starts with this rewrite.",
+    "explain": "$x^(2 - 1/2) = x^(3/2)$.",
     "maxLen": 7,
     "longText": "That is equal, but write it as $x$ to a **single** power."
    }

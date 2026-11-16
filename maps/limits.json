@@ -1,243 +1,256 @@
 {
-  "course": "Calculus 1",
-  "world": 1,
-  "title": "Limits",
-  "height": 212,
-  "regions": [
-    {
-      "label": "Techniques for limits",
-      "x": 3,
-      "y": 55,
-      "w": 94,
-      "h": 75
-    }
-  ],
-  "nodes": [
-    {
-      "id": "start",
-      "kind": "start",
-      "title": "Start",
-      "x": 14,
-      "y": 12,
-      "blurb": "Tap a stop on the map to walk there."
-    },
-    {
-      "id": "limits",
-      "kind": "main",
-      "title": "Limits",
-      "x": 50,
-      "y": 12,
-      "deck": "limits-intro",
-      "requires": [
-        "start"
-      ],
-      "blurb": "What a limit is, read from a graph. One-sided limits and when a limit does not exist."
-    },
-    {
-      "id": "infinite",
-      "kind": "main",
-      "title": "Infinite Limits",
-      "x": 86,
-      "y": 12,
-      "deck": "l-infinite",
-      "requires": [
-        "limits"
-      ],
-      "blurb": "Limits that grow without bound, and how they show up as vertical asymptotes."
-    },
-    {
-      "id": "laws",
-      "kind": "main",
-      "title": "Limit Laws",
-      "x": 86,
-      "y": 38,
-      "deck": "l-laws",
-      "requires": [
-        "infinite"
-      ],
-      "blurb": "Sums, products, quotients and powers of limits, and direct substitution."
-    },
-    {
-      "id": "factor",
-      "kind": "main",
-      "title": "Factor",
-      "label": "Factor",
-      "x": 50,
-      "y": 66,
-      "deck": "l-factor",
-      "requires": [
-        "laws"
-      ],
-      "blurb": "Limits of the form 0/0 that you fix by factoring and cancelling."
-    },
-    {
-      "id": "squeeze",
-      "kind": "main",
-      "title": "Squeeze Theorem",
-      "x": 50,
-      "y": 88,
-      "deck": "l-squeeze",
-      "requires": [
-        "factor"
-      ],
-      "blurb": "Trapping a function between two others that share a limit."
-    },
-    {
-      "id": "trig",
-      "kind": "main",
-      "title": "Trig Limits",
-      "x": 50,
-      "y": 112,
-      "deck": "l-trig",
-      "requires": [
-        "squeeze"
-      ],
-      "blurb": "The limit of sin(x)/x and the limits built from it."
-    },
-    {
-      "id": "sqrtlim",
-      "kind": "main",
-      "title": "Limits with Square Roots",
-      "label": "Square root limits",
-      "x": 16,
-      "y": 90,
-      "deck": "l-sqrt",
-      "requires": [
-        "factor"
-      ],
-      "blurb": "Limits you fix by multiplying by the conjugate."
-    },
-    {
-      "id": "complex",
-      "kind": "main",
-      "title": "Limits with Complex Fractions",
-      "label": "Complex fractions",
-      "x": 84,
-      "y": 90,
-      "deck": "l-complex",
-      "requires": [
-        "factor"
-      ],
-      "blurb": "Limits you fix by combining a fraction inside a fraction."
-    },
-    {
-      "id": "combo",
-      "kind": "main",
-      "title": "Combo Limits",
-      "x": 50,
-      "y": 142,
-      "deck": "l-combo",
-      "requires": [
-        "trig",
-        "sqrtlim",
-        "complex"
-      ],
-      "blurb": "Mixed problems where you choose the technique yourself."
-    },
-    {
-      "id": "continuity",
-      "kind": "main",
-      "title": "Continuity",
-      "x": 30,
-      "y": 168,
-      "deck": "l-cont",
-      "requires": [
-        "combo"
-      ],
-      "blurb": "When a limit equals the function value, and the ways that can fail."
-    },
-    {
-      "id": "infinity",
-      "kind": "main",
-      "title": "Limits at Infinity",
-      "x": 70,
-      "y": 168,
-      "deck": "l-atinf",
-      "requires": [
-        "combo"
-      ],
-      "blurb": "What happens to a function as x grows without bound, and horizontal asymptotes."
-    },
-    {
-      "id": "review",
-      "kind": "boss",
-      "title": "Chapter Review",
-      "x": 50,
-      "y": 196,
-      "deck": "review1",
-      "requires": [
-        "continuity",
-        "infinity"
-      ],
-      "blurb": "Questions from every stop in this world."
-    },
-    {
-      "id": "evaluate",
-      "kind": "review",
-      "title": "Evaluate Functions",
-      "x": 14,
-      "y": 36,
-      "deck": "l-evaluate",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Review: plugging numbers into functions and reading values from graphs."
-    },
-    {
-      "id": "vasym",
-      "kind": "review",
-      "title": "Vertical Asymptotes",
-      "x": 50,
-      "y": 36,
-      "deck": "l-vasym",
-      "requires": [
-        "limits"
-      ],
-      "blurb": "Review: finding vertical asymptotes of rational functions."
-    },
-    {
-      "id": "sqroots",
-      "kind": "review",
-      "title": "Square Roots",
-      "x": 16,
-      "y": 114,
-      "deck": "l-sqroots",
-      "requires": [
-        "factor"
-      ],
-      "from": [
-        "sqrtlim"
-      ],
-      "blurb": "Review: simplifying square roots and using conjugates."
-    },
-    {
-      "id": "fractions",
-      "kind": "review",
-      "title": "Reducing Fractions",
-      "x": 84,
-      "y": 114,
-      "deck": "l-fractions",
-      "requires": [
-        "factor"
-      ],
-      "from": [
-        "complex"
-      ],
-      "blurb": "Review: common denominators and cancelling factors."
-    },
-    {
-      "id": "precise",
-      "kind": "extra",
-      "title": "Precise Definition",
-      "x": 84,
-      "y": 142,
-      "deck": "l-precise",
-      "requires": [
-        "combo"
-      ],
-      "blurb": "Optional: the epsilon-delta definition of a limit."
-    }
-  ],
-  "id": "limits",
-  "short": "Limits"
+ "course": "Calculus 1",
+ "world": 1,
+ "title": "Limits",
+ "height": 386,
+ "regions": [
+  {
+   "label": "Day 8",
+   "x": 3,
+   "y": 24,
+   "w": 94,
+   "h": 75
+  },
+  {
+   "label": "Day 9",
+   "x": 3,
+   "y": 105,
+   "w": 94,
+   "h": 111
+  },
+  {
+   "label": "Day 10",
+   "x": 3,
+   "y": 222,
+   "w": 94,
+   "h": 75
+  },
+  {
+   "label": "Day 11",
+   "x": 3,
+   "y": 303,
+   "w": 94,
+   "h": 39
+  }
+ ],
+ "nodes": [
+  {
+   "id": "start",
+   "kind": "start",
+   "title": "Start",
+   "x": 50,
+   "y": 10,
+   "blurb": "Tap a stop on the map to walk there.",
+   "requires": []
+  },
+  {
+   "id": "limits",
+   "kind": "main",
+   "title": "Limits",
+   "x": 26,
+   "y": 44,
+   "deck": "limits-intro",
+   "requires": [
+    "start"
+   ],
+   "blurb": "What a limit is, read from a graph. One-sided limits and when a limit does not exist."
+  },
+  {
+   "id": "infinite",
+   "kind": "main",
+   "title": "Infinite Limits",
+   "x": 74,
+   "y": 44,
+   "deck": "l-infinite",
+   "requires": [
+    "limits"
+   ],
+   "blurb": "Limits that grow without bound, and how they show up as vertical asymptotes."
+  },
+  {
+   "id": "evaluate",
+   "kind": "review",
+   "title": "Evaluate Functions",
+   "x": 26,
+   "y": 80,
+   "deck": "l-evaluate",
+   "requires": [
+    "limits"
+   ],
+   "blurb": "Review: plugging numbers into functions and reading values from graphs."
+  },
+  {
+   "id": "vasym",
+   "kind": "review",
+   "title": "Vertical Asymptotes",
+   "x": 74,
+   "y": 80,
+   "deck": "l-vasym",
+   "requires": [
+    "infinite"
+   ],
+   "blurb": "Review: finding vertical asymptotes of rational functions."
+  },
+  {
+   "id": "laws",
+   "kind": "main",
+   "title": "Limit Laws",
+   "x": 26,
+   "y": 125,
+   "deck": "l-laws",
+   "requires": [
+    "infinite"
+   ],
+   "blurb": "Sums, products, quotients and powers of limits, and direct substitution."
+  },
+  {
+   "id": "factor",
+   "kind": "main",
+   "title": "Factor",
+   "label": "Factor",
+   "x": 74,
+   "y": 125,
+   "deck": "l-factor",
+   "requires": [
+    "laws"
+   ],
+   "blurb": "Limits of the form 0/0 that you fix by factoring and cancelling."
+  },
+  {
+   "id": "sqrtlim",
+   "kind": "main",
+   "title": "Limits with Square Roots",
+   "label": "Square root limits",
+   "x": 26,
+   "y": 161,
+   "deck": "l-sqrt",
+   "requires": [
+    "factor"
+   ],
+   "blurb": "Limits you fix by multiplying by the conjugate."
+  },
+  {
+   "id": "complex",
+   "kind": "main",
+   "title": "Limits with Complex Fractions",
+   "label": "Complex fractions",
+   "x": 74,
+   "y": 161,
+   "deck": "l-complex",
+   "requires": [
+    "sqrtlim"
+   ],
+   "blurb": "Limits you fix by combining a fraction inside a fraction."
+  },
+  {
+   "id": "sqroots",
+   "kind": "review",
+   "title": "Square Roots",
+   "x": 26,
+   "y": 197,
+   "deck": "l-sqroots",
+   "requires": [
+    "sqrtlim"
+   ],
+   "blurb": "Review: simplifying square roots and using conjugates."
+  },
+  {
+   "id": "fractions",
+   "kind": "review",
+   "title": "Reducing Fractions",
+   "x": 74,
+   "y": 197,
+   "deck": "l-fractions",
+   "requires": [
+    "complex"
+   ],
+   "blurb": "Review: common denominators and cancelling factors."
+  },
+  {
+   "id": "infinity",
+   "kind": "main",
+   "title": "Limits at Infinity",
+   "x": 50,
+   "y": 242,
+   "deck": "l-atinf",
+   "requires": [
+    "complex"
+   ],
+   "blurb": "What happens to a function as x grows without bound, and horizontal asymptotes."
+  },
+  {
+   "id": "squeeze",
+   "kind": "main",
+   "title": "Squeeze Theorem",
+   "x": 26,
+   "y": 278,
+   "deck": "l-squeeze",
+   "requires": [
+    "infinity"
+   ],
+   "blurb": "Trapping a function between two others that share a limit."
+  },
+  {
+   "id": "trig",
+   "kind": "main",
+   "title": "Trig Limits",
+   "x": 74,
+   "y": 278,
+   "deck": "l-trig",
+   "requires": [
+    "squeeze"
+   ],
+   "blurb": "The limit of sin(x)/x and the limits built from it."
+  },
+  {
+   "id": "continuity",
+   "kind": "main",
+   "title": "Continuity",
+   "x": 26,
+   "y": 323,
+   "deck": "l-cont",
+   "requires": [
+    "trig"
+   ],
+   "blurb": "When a limit equals the function value, and the ways that can fail."
+  },
+  {
+   "id": "combo",
+   "kind": "main",
+   "title": "Combo Limits",
+   "x": 74,
+   "y": 323,
+   "deck": "l-combo",
+   "requires": [
+    "continuity"
+   ],
+   "blurb": "Mixed problems where you choose the technique yourself."
+  },
+  {
+   "id": "precise",
+   "kind": "extra",
+   "title": "Precise Definition",
+   "x": 26,
+   "y": 364,
+   "deck": "l-precise",
+   "requires": [
+    "combo"
+   ],
+   "blurb": "Optional: the epsilon-delta definition of a limit."
+  },
+  {
+   "id": "review",
+   "kind": "boss",
+   "title": "Chapter Review",
+   "x": 74,
+   "y": 364,
+   "deck": "review1",
+   "requires": [
+    "combo"
+   ],
+   "blurb": "Questions from every stop in this world."
+  }
+ ],
+ "id": "limits",
+ "short": "Limits"
 }

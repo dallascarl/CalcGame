@@ -238,7 +238,7 @@
     {
      "id": "C17",
      "type": "expr",
-     "text": "Multiply out $(sqrt(x) - 3)(sqrt(x) + 3)$.",
+     "text": "Multiply out\n$$(sqrt(x) - 3)(sqrt(x) + 3)$$",
      "answer": "x - 9",
      "vars": [
       "x"
@@ -260,7 +260,7 @@
     {
      "id": "C18",
      "type": "expr",
-     "text": "Multiply out $(sqrt(x + 2) - 1)(sqrt(x + 2) + 1)$.",
+     "text": "Multiply out\n$$(sqrt(x + 2) - 1)(sqrt(x + 2) + 1)$$",
      "answer": "x + 1",
      "vars": [
       "x"
@@ -282,7 +282,7 @@
     {
      "id": "C19",
      "type": "expr",
-     "text": "Multiply out $(sqrt(x) - 5)(sqrt(x) + 5)$.",
+     "text": "Multiply out\n$$(sqrt(x) - 5)(sqrt(x) + 5)$$",
      "answer": "x - 25",
      "vars": [
       "x"
@@ -304,7 +304,7 @@
     {
      "id": "C20",
      "type": "expr",
-     "text": "Multiply out $(sqrt(x + 5) - 3)(sqrt(x + 5) + 3)$.",
+     "text": "Multiply out\n$$(sqrt(x + 5) - 3)(sqrt(x + 5) + 3)$$",
      "answer": "x - 4",
      "vars": [
       "x"
@@ -326,7 +326,7 @@
     {
      "id": "C21",
      "type": "expr",
-     "text": "Multiply out $(sqrt(2x + 1) - 3)(sqrt(2x + 1) + 3)$.",
+     "text": "Multiply out\n$$(sqrt(2x + 1) - 3)(sqrt(2x + 1) + 3)$$",
      "answer": "2x - 8",
      "vars": [
       "x"
@@ -348,7 +348,7 @@
     {
      "id": "C22",
      "type": "expr",
-     "text": "Multiply out $(2 - sqrt(x + 3))(2 + sqrt(x + 3))$.",
+     "text": "Multiply out\n$$(2 - sqrt(x + 3))(2 + sqrt(x + 3))$$",
      "answer": "1 - x",
      "vars": [
       "x"
@@ -370,7 +370,7 @@
     {
      "id": "C23",
      "type": "expr",
-     "text": "Multiply out $(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$.",
+     "text": "Multiply out\n$$(sqrt(x^2 + 9) - 3)(sqrt(x^2 + 9) + 3)$$",
      "answer": "x^2",
      "vars": [
       "x"
@@ -392,7 +392,7 @@
     {
      "id": "C24",
      "type": "expr",
-     "text": "Multiply out $(sqrt(x) - sqrt(2))(sqrt(x) + sqrt(2))$.",
+     "text": "Multiply out\n$$(sqrt(x) - sqrt(2))(sqrt(x) + sqrt(2))$$",
      "answer": "x - 2",
      "vars": [
       "x"
@@ -487,7 +487,7 @@
    {
     "id": "L1",
     "type": "expr",
-    "text": "Pull perfect squares out of a root: $sqrt(50) = sqrt(25·2) = 5sqrt(2)$. Simplify $sqrt(12)$.",
+    "text": "Pull perfect squares out of a root:\n$$sqrt(50) = sqrt(25·2) = 5sqrt(2)$$\nSimplify $sqrt(12)$.",
     "answer": "2sqrt(3)",
     "vars": [],
     "keys": [
@@ -501,7 +501,7 @@
    {
     "id": "L2",
     "type": "expr",
-    "text": "Conjugates: $(a - b)(a + b) = a^2 - b^2$, and the root disappears. Multiply out $(sqrt(x) - 3)(sqrt(x) + 3)$.",
+    "text": "Conjugates: $(a - b)(a + b) = a^2 - b^2$, and the root disappears. Multiply out\n$$(sqrt(x) - 3)(sqrt(x) + 3)$$",
     "answer": "x - 9",
     "vars": [
      "x"

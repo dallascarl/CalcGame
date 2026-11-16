@@ -54,7 +54,7 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "$frac{d}{dx} arctan(g(x)) =$",
+     "text": "$$frac{d}{dx} arctan(g(x)) =$$",
      "options": [
       "$frac{g'(x)}{1 + g(x)^2}$",
       "$frac{1}{1 + g'(x)^2}$",
@@ -80,7 +80,7 @@
     {
      "id": "T6",
      "type": "mc",
-     "text": "$frac{d}{dx} sec^(-1)(x) =$",
+     "text": "$$frac{d}{dx} sec^(-1)(x) =$$",
      "options": [
       "$frac{1}{|x| sqrt(x^2 - 1)}$",
       "$sec(x)tan(x)$",
@@ -124,7 +124,7 @@
     {
      "id": "B2",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = arctan(x) + x^2$.",
+     "text": "Find the derivative of\n$$f(x) = arctan(x) + x^2$$",
      "answer": "1/(1 + x^2) + 2x",
      "vars": [
       "x"
@@ -199,7 +199,7 @@
     {
      "id": "B5",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = arcsin(x) + arccos(x)$.",
+     "text": "Find the derivative of\n$$f(x) = arcsin(x) + arccos(x)$$",
      "answer": "0",
      "vars": [
       "x"
@@ -299,7 +299,7 @@
     {
      "id": "B9",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = arcsin(x) + x^3$.",
+     "text": "Find the derivative of\n$$f(x) = arcsin(x) + x^3$$",
      "answer": "1/sqrt(1 - x^2) + 3x^2",
      "vars": [
       "x"
@@ -1189,7 +1189,7 @@
     {
      "id": "W43",
      "type": "steps",
-     "text": "Find the derivative of $f(x) = arctan(sqrt(x))$.",
+     "text": "Find the derivative of\n$$f(x) = arctan(sqrt(x))$$",
      "steps": [
       {
        "id": "W43.1",
@@ -1855,7 +1855,7 @@
     {
      "id": "G59",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = arcsin(sqrt(x))$.",
+     "text": "Find the derivative of\n$$f(x) = arcsin(sqrt(x))$$",
      "answer": "1/(2sqrt(x)sqrt(1 - x))",
      "vars": [
       "x"
@@ -2047,7 +2047,7 @@
    {
     "id": "L3",
     "type": "expr",
-    "text": "Chain rule as always: $frac{d}{dx} arctan(g) = frac{g'}{1 + g^2}$. Find the derivative of $f(x) = arctan(x^2)$.",
+    "text": "Chain rule as always:\n$$frac{d}{dx} arctan(g) = frac{g'}{1 + g^2}$$\nFind the derivative of $f(x) = arctan(x^2)$.",
     "answer": "2x/(1 + x^4)",
     "vars": [
      "x"

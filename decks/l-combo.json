@@ -47,13 +47,6 @@
      "explain": "The bottom goes to $9 - 6 - 4 = -1 ≠ 0$, so the quotient law applies."
     },
     {
-     "id": "T6",
-     "type": "tf",
-     "text": "$lim[x->2] sin(g(x)) = sin(lim[x->2] g(x))$, if $lim[x->2] g(x)$ exists.",
-     "answer": true,
-     "explain": "Sine is continuous, so the limit passes inside."
-    },
-    {
      "id": "T7",
      "type": "tf",
      "text": "If you plug in and get $frac{a}{0}$, this is an \"indeterminate form\" and could be any number.",
@@ -63,7 +56,7 @@
     {
      "id": "T8",
      "type": "tf",
-     "text": "$lim[x->0] frac{1 - cos(x)}{x} = 1$",
+     "text": "$$lim[x->0] frac{1 - cos(x)}{x} = 1$$",
      "answer": false,
      "explain": "It is 0."
     }
@@ -76,7 +69,7 @@
     {
      "id": "W1",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->1] frac{x^2 + 1}{x + 2}$?",
+     "text": "What is the best tool for\n$$lim[x->1] frac{x^2 + 1}{x + 2}$$",
      "options": [
       "Plug in (it is just a number)",
       "Factor and cancel",
@@ -90,7 +83,7 @@
     {
      "id": "W2",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->3] frac{x^2 - 9}{x - 3}$?",
+     "text": "What is the best tool for\n$$lim[x->3] frac{x^2 - 9}{x - 3}$$",
      "options": [
       "Factor and cancel",
       "Special trig limit",
@@ -104,7 +97,7 @@
     {
      "id": "W3",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->4] frac{sqrt(x) - 2}{x - 4}$?",
+     "text": "What is the best tool for\n$$lim[x->4] frac{sqrt(x) - 2}{x - 4}$$",
      "options": [
       "Multiply by the conjugate",
       "Plug in (it is just a number)",
@@ -118,7 +111,7 @@
     {
      "id": "W4",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->2] frac{frac{1}{x} - frac{1}{2}}{x - 2}$?",
+     "text": "What is the best tool for\n$$lim[x->2] frac{frac{1}{x} - frac{1}{2}}{x - 2}$$",
      "options": [
       "Combine fractions",
       "Factor and cancel",
@@ -132,7 +125,7 @@
     {
      "id": "W5",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] x^2 cos(frac{1}{x})$?",
+     "text": "What is the best tool for\n$$lim[x->0] x^2 cos(frac{1}{x})$$",
      "options": [
       "Squeeze Theorem",
       "Infinite limit: check the signs",
@@ -146,7 +139,7 @@
     {
      "id": "W6",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] frac{sin(3x)}{x}$?",
+     "text": "What is the best tool for\n$$lim[x->0] frac{sin(3x)}{x}$$",
      "options": [
       "Special trig limit",
       "Squeeze Theorem",
@@ -160,7 +153,7 @@
     {
      "id": "W7",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->2] frac{x + 1}{(x - 2)^2}$?",
+     "text": "What is the best tool for\n$$lim[x->2] frac{x + 1}{(x - 2)^2}$$",
      "options": [
       "Infinite limit: check the signs",
       "Squeeze Theorem",
@@ -174,7 +167,7 @@
     {
      "id": "W8",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->2] frac{x^2 + x - 6}{x - 2}$?",
+     "text": "What is the best tool for\n$$lim[x->2] frac{x^2 + x - 6}{x - 2}$$",
      "options": [
       "Factor and cancel",
       "Infinite limit: check the signs",
@@ -188,7 +181,7 @@
     {
      "id": "W9",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] frac{x}{sqrt(x + 1) - 1}$?",
+     "text": "What is the best tool for\n$$lim[x->0] frac{x}{sqrt(x + 1) - 1}$$",
      "options": [
       "Multiply by the conjugate",
       "Squeeze Theorem",
@@ -202,7 +195,7 @@
     {
      "id": "W10",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] frac{1}{x} - frac{1}{x^2 + x}$?",
+     "text": "What is the best tool for\n$$lim[x->0] frac{1}{x} - frac{1}{x^2 + x}$$",
      "options": [
       "Combine fractions",
       "Infinite limit: check the signs",
@@ -216,7 +209,7 @@
     {
      "id": "W11",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->5] frac{3x - 1}{x - 5}$?",
+     "text": "What is the best tool for\n$$lim[x->5] frac{3x - 1}{x - 5}$$",
      "options": [
       "Infinite limit: check the signs",
       "Factor and cancel",
@@ -230,7 +223,7 @@
     {
      "id": "W12",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->3] sqrt(x^2 + 7)$?",
+     "text": "What is the best tool for\n$$lim[x->3] sqrt(x^2 + 7)$$",
      "options": [
       "Plug in (it is just a number)",
       "Multiply by the conjugate",
@@ -244,7 +237,7 @@
     {
      "id": "W13",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] frac{tan(x)}{2x}$?",
+     "text": "What is the best tool for\n$$lim[x->0] frac{tan(x)}{2x}$$",
      "options": [
       "Special trig limit",
       "Plug in (it is just a number)",
@@ -258,7 +251,7 @@
     {
      "id": "W14",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] x sin(frac{1}{x})$?",
+     "text": "What is the best tool for\n$$lim[x->0] x sin(frac{1}{x})$$",
      "options": [
       "Squeeze Theorem",
       "Factor and cancel",
@@ -272,7 +265,7 @@
     {
      "id": "W15",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->1] frac{x^3 - 1}{x - 1}$?",
+     "text": "What is the best tool for\n$$lim[x->1] frac{x^3 - 1}{x - 1}$$",
      "options": [
       "Factor and cancel",
       "Squeeze Theorem",
@@ -286,7 +279,7 @@
     {
      "id": "W16",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->9] frac{3 - sqrt(x)}{9 - x}$?",
+     "text": "What is the best tool for\n$$lim[x->9] frac{3 - sqrt(x)}{9 - x}$$",
      "options": [
       "Multiply by the conjugate",
       "Plug in (it is just a number)",
@@ -300,7 +293,7 @@
     {
      "id": "W17",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] cos(x) + x^3$?",
+     "text": "What is the best tool for\n$$lim[x->0] cos(x) + x^3$$",
      "options": [
       "Plug in (it is just a number)",
       "Multiply by the conjugate",
@@ -314,7 +307,7 @@
     {
      "id": "W18",
      "type": "mc",
-     "text": "What is the best tool for $lim[x->0] frac{1 - cos(x)}{x}$?",
+     "text": "What is the best tool for\n$$lim[x->0] frac{1 - cos(x)}{x}$$",
      "options": [
       "Special trig limit",
       "Infinite limit: check the signs",
@@ -328,7 +321,7 @@
     {
      "id": "M19",
      "type": "lim",
-     "text": "Find $lim[x->3] frac{x^2 - 9}{x - 3}$.",
+     "text": "Find\n$$lim[x->3] frac{x^2 - 9}{x - 3}$$",
      "answer": 6,
      "label": "limit =",
      "level": 3,
@@ -337,7 +330,7 @@
     {
      "id": "M20",
      "type": "lim",
-     "text": "Find $lim[x->4] frac{sqrt(x) - 2}{x - 4}$.",
+     "text": "Find\n$$lim[x->4] frac{sqrt(x) - 2}{x - 4}$$",
      "answer": 0.25,
      "label": "limit =",
      "level": 2,
@@ -346,7 +339,7 @@
     {
      "id": "M21",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{1/x - 1/2}{x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{1/x - 1/2}{x - 2}$$",
      "answer": -0.25,
      "label": "limit =",
      "level": 2,
@@ -355,7 +348,7 @@
     {
      "id": "M22",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(3x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(3x)}{x}$$",
      "answer": 3,
      "label": "limit =",
      "level": 2,
@@ -364,7 +357,7 @@
     {
      "id": "M23",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{x + 1}{(x - 2)^2}$.",
+     "text": "Find\n$$lim[x->2] frac{x + 1}{(x - 2)^2}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 2,
@@ -373,7 +366,7 @@
     {
      "id": "M24",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{x^2 + x - 6}{x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 + x - 6}{x - 2}$$",
      "answer": 5,
      "label": "limit =",
      "level": 3,
@@ -382,7 +375,7 @@
     {
      "id": "M25",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{x}{sqrt(x + 1) - 1}$.",
+     "text": "Find\n$$lim[x->0] frac{x}{sqrt(x + 1) - 1}$$",
      "answer": 2,
      "label": "limit =",
      "level": 3,
@@ -391,7 +384,7 @@
     {
      "id": "M26",
      "type": "lim",
-     "text": "Find $lim[x->5] frac{3x - 1}{x - 5}$.",
+     "text": "Find\n$$lim[x->5] frac{3x - 1}{x - 5}$$",
      "answer": "DNE",
      "label": "limit =",
      "level": 2,
@@ -400,7 +393,7 @@
     {
      "id": "O27",
      "type": "lim",
-     "text": "Find $lim[x->5^-] frac{3x - 1}{x - 5}$.",
+     "text": "Find\n$$lim[x->5^-] frac{3x - 1}{x - 5}$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 3,
@@ -409,7 +402,7 @@
     {
      "id": "O28",
      "type": "lim",
-     "text": "Find $lim[x->5^+] frac{3x - 1}{x - 5}$.",
+     "text": "Find\n$$lim[x->5^+] frac{3x - 1}{x - 5}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 3,
@@ -418,7 +411,7 @@
     {
      "id": "M29",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(x)}{2x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(x)}{2x}$$",
      "answer": 0.5,
      "label": "limit =",
      "level": 3,
@@ -427,7 +420,7 @@
     {
      "id": "M30",
      "type": "lim",
-     "text": "Find $lim[x->1] frac{x^3 - 1}{x - 1}$.",
+     "text": "Find\n$$lim[x->1] frac{x^3 - 1}{x - 1}$$",
      "answer": 3,
      "label": "limit =",
      "level": 2,
@@ -436,7 +429,7 @@
     {
      "id": "M31",
      "type": "lim",
-     "text": "Find $lim[x->9] frac{3 - sqrt(x)}{9 - x}$.",
+     "text": "Find\n$$lim[x->9] frac{3 - sqrt(x)}{9 - x}$$",
      "answer": 0.166667,
      "label": "limit =",
      "level": 3,
@@ -445,7 +438,7 @@
     {
      "id": "M32",
      "type": "lim",
-     "text": "Find $lim[x->1] frac{x^2 + 2}{x - 1}$.",
+     "text": "Find\n$$lim[x->1] frac{x^2 + 2}{x - 1}$$",
      "answer": "DNE",
      "label": "limit =",
      "level": 3,
@@ -454,7 +447,7 @@
     {
      "id": "O33",
      "type": "lim",
-     "text": "Find $lim[x->1^-] frac{x^2 + 2}{x - 1}$.",
+     "text": "Find\n$$lim[x->1^-] frac{x^2 + 2}{x - 1}$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 3,
@@ -463,7 +456,7 @@
     {
      "id": "O34",
      "type": "lim",
-     "text": "Find $lim[x->1^+] frac{x^2 + 2}{x - 1}$.",
+     "text": "Find\n$$lim[x->1^+] frac{x^2 + 2}{x - 1}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 3,
@@ -472,7 +465,7 @@
     {
      "id": "M35",
      "type": "lim",
-     "text": "Find $lim[x->pi] frac{cos(x)}{|pi - x|}$.",
+     "text": "Find\n$$lim[x->pi] frac{cos(x)}{|pi - x|}$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 3,
@@ -481,7 +474,7 @@
     {
      "id": "M36",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{x^2 - 4}{x^2 - 5x + 6}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 - 4}{x^2 - 5x + 6}$$",
      "answer": -4,
      "label": "limit =",
      "level": 2,
@@ -490,7 +483,7 @@
     {
      "id": "M37",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sqrt(x^2 + 9) - 3}{x^2}$.",
+     "text": "Find\n$$lim[x->0] frac{sqrt(x^2 + 9) - 3}{x^2}$$",
      "answer": 0.166667,
      "label": "limit =",
      "level": 3,
@@ -499,7 +492,7 @@
     {
      "id": "M38",
      "type": "lim",
-     "text": "Find $lim[x->3] frac{x - 3}{x^2 - 2x - 4}$.",
+     "text": "Find\n$$lim[x->3] frac{x - 3}{x^2 - 2x - 4}$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -508,7 +501,7 @@
     {
      "id": "M39",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{1 - cos(x)}{sin(x)}$.",
+     "text": "Find\n$$lim[x->0] frac{1 - cos(x)}{sin(x)}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -517,7 +510,7 @@
     {
      "id": "M40",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{x^2 + 4}{(x - 2)^2}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 + 4}{(x - 2)^2}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 2,
@@ -526,7 +519,7 @@
     {
      "id": "M41",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{x^2 - 4}{x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{x^2 - 4}{x - 2}$$",
      "answer": 4,
      "label": "limit =",
      "level": 3,
@@ -535,7 +528,7 @@
     {
      "id": "M42",
      "type": "lim",
-     "text": "Find $lim[x->0] sin(x^2 + frac{pi}{2})$.",
+     "text": "Find\n$$lim[x->0] sin(x^2 + frac{pi}{2})$$",
      "answer": 1,
      "label": "limit =",
      "level": 3,
@@ -544,7 +537,7 @@
     {
      "id": "M43",
      "type": "lim",
-     "text": "Find $lim[x->2] frac{2x + 1}{-x - 2}$.",
+     "text": "Find\n$$lim[x->2] frac{2x + 1}{-x - 2}$$",
      "answer": -1.25,
      "label": "limit =",
      "level": 3,
@@ -553,7 +546,7 @@
     {
      "id": "M44",
      "type": "lim",
-     "text": "Find $lim[x->1] frac{x^2 + 2x + 1}{(x - 1)^2}$.",
+     "text": "Find\n$$lim[x->1] frac{x^2 + 2x + 1}{(x - 1)^2}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 3,
@@ -562,7 +555,7 @@
     {
      "id": "M45",
      "type": "lim",
-     "text": "Find $lim[x->3] frac{5 - 2x}{x - 3}$.",
+     "text": "Find\n$$lim[x->3] frac{5 - 2x}{x - 3}$$",
      "answer": "DNE",
      "label": "limit =",
      "level": 3,
@@ -571,7 +564,7 @@
     {
      "id": "O46",
      "type": "lim",
-     "text": "Find $lim[x->3^-] frac{5 - 2x}{x - 3}$.",
+     "text": "Find\n$$lim[x->3^-] frac{5 - 2x}{x - 3}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 3,
@@ -580,7 +573,7 @@
     {
      "id": "O47",
      "type": "lim",
-     "text": "Find $lim[x->3^+] frac{5 - 2x}{x - 3}$.",
+     "text": "Find\n$$lim[x->3^+] frac{5 - 2x}{x - 3}$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 3,
@@ -589,7 +582,7 @@
     {
      "id": "M48",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(5x)}{sin(2x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(5x)}{sin(2x)}$$",
      "answer": 2.5,
      "label": "limit =",
      "level": 3,
@@ -617,7 +610,7 @@
    {
     "id": "L2",
     "type": "mc",
-    "text": "Plugging in gives $frac{0}{0}$. Match the clue to the trick: the expression has a **square root**.",
+    "text": "Plugging in gives\n$$frac{0}{0}$$\nMatch the clue to the trick: the expression has a **square root**.",
     "options": [
      "Multiply by the conjugate",
      "Factor and cancel",

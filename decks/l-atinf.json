@@ -69,7 +69,7 @@
     {
      "id": "T3",
      "type": "lim",
-     "text": "Find $lim[x->infty] sin(x)$.",
+     "text": "Find\n$$lim[x->infty] sin(x)$$",
      "answer": "DNE",
      "label": "limit =",
      "explain": "Sine keeps waving between −1 and 1 forever, so it never settles."
@@ -77,7 +77,7 @@
     {
      "id": "T4",
      "type": "lim",
-     "text": "Find $lim[x->-infty] e^x$.",
+     "text": "Find\n$$lim[x->-infty] e^x$$",
      "answer": 0,
      "label": "limit =",
      "explain": "$e^x$ shrinks toward 0 on the left."
@@ -85,7 +85,7 @@
     {
      "id": "T5",
      "type": "lim",
-     "text": "Find $lim[x->infty] ln(x)$.",
+     "text": "Find\n$$lim[x->infty] ln(x)$$",
      "answer": "inf",
      "label": "limit =",
      "explain": "Slowly, but it grows without bound."
@@ -112,7 +112,7 @@
     {
      "id": "P1",
      "type": "lim",
-     "text": "Find $lim[x->infty] (-x^4)$.",
+     "text": "Find\n$$lim[x->infty] (-x^4)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -121,7 +121,7 @@
     {
      "id": "P2",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (-x^4)$.",
+     "text": "Find\n$$lim[x->-infty] (-x^4)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -130,7 +130,7 @@
     {
      "id": "P3",
      "type": "lim",
-     "text": "Find $lim[x->infty] (2x^3)$.",
+     "text": "Find\n$$lim[x->infty] (2x^3)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -139,7 +139,7 @@
     {
      "id": "P4",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (2x^3)$.",
+     "text": "Find\n$$lim[x->-infty] (2x^3)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -148,7 +148,7 @@
     {
      "id": "P5",
      "type": "lim",
-     "text": "Find $lim[x->infty] (-x^5/2)$.",
+     "text": "Find\n$$lim[x->infty] (-x^5/2)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -157,7 +157,7 @@
     {
      "id": "P6",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (-x^5/2)$.",
+     "text": "Find\n$$lim[x->-infty] (-x^5/2)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -166,7 +166,7 @@
     {
      "id": "P7",
      "type": "lim",
-     "text": "Find $lim[x->infty] (x^3 + 2x - 1)$.",
+     "text": "Find\n$$lim[x->infty] (x^3 + 2x - 1)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -175,7 +175,7 @@
     {
      "id": "P8",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (x^3 + 2x - 1)$.",
+     "text": "Find\n$$lim[x->-infty] (x^3 + 2x - 1)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -184,7 +184,7 @@
     {
      "id": "P9",
      "type": "lim",
-     "text": "Find $lim[x->infty] (2x^8 + 32x^2 - x - 4)$.",
+     "text": "Find\n$$lim[x->infty] (2x^8 + 32x^2 - x - 4)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -193,7 +193,7 @@
     {
      "id": "P10",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (2x^8 + 32x^2 - x - 4)$.",
+     "text": "Find\n$$lim[x->-infty] (2x^8 + 32x^2 - x - 4)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -202,7 +202,7 @@
     {
      "id": "P11",
      "type": "lim",
-     "text": "Find $lim[x->infty] (2x^4 - x - 100)$.",
+     "text": "Find\n$$lim[x->infty] (2x^4 - x - 100)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -211,7 +211,7 @@
     {
      "id": "P12",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (2x^4 - x - 100)$.",
+     "text": "Find\n$$lim[x->-infty] (2x^4 - x - 100)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -220,7 +220,7 @@
     {
      "id": "P13",
      "type": "lim",
-     "text": "Find $lim[x->infty] (5x^3 - 3x^2 + 4)$.",
+     "text": "Find\n$$lim[x->infty] (5x^3 - 3x^2 + 4)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -229,7 +229,7 @@
     {
      "id": "P14",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (5x^3 - 3x^2 + 4)$.",
+     "text": "Find\n$$lim[x->-infty] (5x^3 - 3x^2 + 4)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -238,7 +238,7 @@
     {
      "id": "P15",
      "type": "lim",
-     "text": "Find $lim[x->infty] (-3x^2 + x)$.",
+     "text": "Find\n$$lim[x->infty] (-3x^2 + x)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -247,7 +247,7 @@
     {
      "id": "P16",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (-3x^2 + x)$.",
+     "text": "Find\n$$lim[x->-infty] (-3x^2 + x)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -256,7 +256,7 @@
     {
      "id": "P17",
      "type": "lim",
-     "text": "Find $lim[x->infty] (7 - x^3)$.",
+     "text": "Find\n$$lim[x->infty] (7 - x^3)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -265,7 +265,7 @@
     {
      "id": "P18",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (7 - x^3)$.",
+     "text": "Find\n$$lim[x->-infty] (7 - x^3)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -274,7 +274,7 @@
     {
      "id": "P19",
      "type": "lim",
-     "text": "Find $lim[x->infty] (x^6 - x^7)$.",
+     "text": "Find\n$$lim[x->infty] (x^6 - x^7)$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 1,
@@ -283,7 +283,7 @@
     {
      "id": "P20",
      "type": "lim",
-     "text": "Find $lim[x->-infty] (x^6 - x^7)$.",
+     "text": "Find\n$$lim[x->-infty] (x^6 - x^7)$$",
      "answer": "inf",
      "label": "limit =",
      "level": 1,
@@ -292,7 +292,7 @@
     {
      "id": "R21",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$.",
+     "text": "Find\n$$lim[x->infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -301,7 +301,7 @@
     {
      "id": "R22",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$.",
+     "text": "Find\n$$lim[x->-infty] frac{3x^2 + x - 1}{x^4 + 2x - 2}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -310,7 +310,7 @@
     {
      "id": "R23",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{3x^3 + x - 1}{x^4 + 2x - 2}$.",
+     "text": "Find\n$$lim[x->infty] frac{3x^3 + x - 1}{x^4 + 2x - 2}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -319,7 +319,7 @@
     {
      "id": "R24",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{3x^3 + x - 1}{x^4 + 2x - 2}$.",
+     "text": "Find\n$$lim[x->-infty] frac{3x^3 + x - 1}{x^4 + 2x - 2}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -328,7 +328,7 @@
     {
      "id": "R25",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{3x^5 + x - 1}{x^4 + 2x - 2}$.",
+     "text": "Find\n$$lim[x->infty] frac{3x^5 + x - 1}{x^4 + 2x - 2}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 2,
@@ -337,7 +337,7 @@
     {
      "id": "R26",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{3x^5 + x - 1}{x^4 + 2x - 2}$.",
+     "text": "Find\n$$lim[x->-infty] frac{3x^5 + x - 1}{x^4 + 2x - 2}$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 2,
@@ -346,7 +346,7 @@
     {
      "id": "R27",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{2x^6 - 1}{3x^3 + x - 7}$.",
+     "text": "Find\n$$lim[x->infty] frac{2x^6 - 1}{3x^3 + x - 7}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 2,
@@ -355,7 +355,7 @@
     {
      "id": "R28",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{2x^6 - 1}{3x^3 + x - 7}$.",
+     "text": "Find\n$$lim[x->-infty] frac{2x^6 - 1}{3x^3 + x - 7}$$",
      "answer": "-inf",
      "label": "limit =",
      "level": 2,
@@ -364,7 +364,7 @@
     {
      "id": "R29",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{-3x^4 - 2}{3x^4 + x}$.",
+     "text": "Find\n$$lim[x->infty] frac{-3x^4 - 2}{3x^4 + x}$$",
      "answer": -1,
      "label": "limit =",
      "level": 2,
@@ -373,7 +373,7 @@
     {
      "id": "R30",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{-3x^4 - 2}{3x^4 + x}$.",
+     "text": "Find\n$$lim[x->-infty] frac{-3x^4 - 2}{3x^4 + x}$$",
      "answer": -1,
      "label": "limit =",
      "level": 2,
@@ -382,7 +382,7 @@
     {
      "id": "R31",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{-x^4 - 2x - 1}{3x^7 + x}$.",
+     "text": "Find\n$$lim[x->infty] frac{-x^4 - 2x - 1}{3x^7 + x}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -391,7 +391,7 @@
     {
      "id": "R32",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{-x^4 - 2x - 1}{3x^7 + x}$.",
+     "text": "Find\n$$lim[x->-infty] frac{-x^4 - 2x - 1}{3x^7 + x}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -400,7 +400,7 @@
     {
      "id": "R33",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{4x^2 + 1}{2x^2 - 5}$.",
+     "text": "Find\n$$lim[x->infty] frac{4x^2 + 1}{2x^2 - 5}$$",
      "answer": 2,
      "label": "limit =",
      "level": 2,
@@ -409,7 +409,7 @@
     {
      "id": "R34",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{4x^2 + 1}{2x^2 - 5}$.",
+     "text": "Find\n$$lim[x->-infty] frac{4x^2 + 1}{2x^2 - 5}$$",
      "answer": 2,
      "label": "limit =",
      "level": 2,
@@ -418,7 +418,7 @@
     {
      "id": "R35",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{5x - 3}{x + 1}$.",
+     "text": "Find\n$$lim[x->infty] frac{5x - 3}{x + 1}$$",
      "answer": 5,
      "label": "limit =",
      "level": 2,
@@ -427,7 +427,7 @@
     {
      "id": "R36",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{5x - 3}{x + 1}$.",
+     "text": "Find\n$$lim[x->-infty] frac{5x - 3}{x + 1}$$",
      "answer": 5,
      "label": "limit =",
      "level": 2,
@@ -436,7 +436,7 @@
     {
      "id": "R37",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{x^3 + 1}{2x - 1}$.",
+     "text": "Find\n$$lim[x->infty] frac{x^3 + 1}{2x - 1}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 2,
@@ -445,7 +445,7 @@
     {
      "id": "R38",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{x^3 + 1}{2x - 1}$.",
+     "text": "Find\n$$lim[x->-infty] frac{x^3 + 1}{2x - 1}$$",
      "answer": "inf",
      "label": "limit =",
      "level": 2,
@@ -454,7 +454,7 @@
     {
      "id": "R39",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{7x}{x^2 + 1}$.",
+     "text": "Find\n$$lim[x->infty] frac{7x}{x^2 + 1}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -463,7 +463,7 @@
     {
      "id": "R40",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{7x}{x^2 + 1}$.",
+     "text": "Find\n$$lim[x->-infty] frac{7x}{x^2 + 1}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -472,7 +472,7 @@
     {
      "id": "R41",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{3e^x + 4x - 1}{-5e^x - 2}$.",
+     "text": "Find\n$$lim[x->infty] frac{3e^x + 4x - 1}{-5e^x - 2}$$",
      "answer": -0.6,
      "label": "limit =",
      "level": 2,
@@ -481,7 +481,7 @@
     {
      "id": "R42",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{1 - x^2}{x^2 + x}$.",
+     "text": "Find\n$$lim[x->infty] frac{1 - x^2}{x^2 + x}$$",
      "answer": -1,
      "label": "limit =",
      "level": 2,
@@ -490,7 +490,7 @@
     {
      "id": "R43",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{1 - x^2}{x^2 + x}$.",
+     "text": "Find\n$$lim[x->-infty] frac{1 - x^2}{x^2 + x}$$",
      "answer": -1,
      "label": "limit =",
      "level": 2,
@@ -499,7 +499,7 @@
     {
      "id": "Q44",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{sqrt(3x^6 + x - 1)}{x^4 + 2x - 2}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->infty] frac{sqrt(3x^6 + x - 1)}{x^4 + 2x - 2}$$\n(A decimal is fine.)",
      "answer": 0,
      "label": "limit =",
      "tol": 0.01,
@@ -509,7 +509,7 @@
     {
      "id": "Q45",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{sqrt(3x^6 + x - 1)}{x^4 + 2x - 2}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->-infty] frac{sqrt(3x^6 + x - 1)}{x^4 + 2x - 2}$$\n(A decimal is fine.)",
      "answer": 0,
      "label": "limit =",
      "tol": 0.01,
@@ -519,7 +519,7 @@
     {
      "id": "Q46",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{sqrt(3x^6 + x - 1)}{x^2 + 2x - 2}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->infty] frac{sqrt(3x^6 + x - 1)}{x^2 + 2x - 2}$$\n(A decimal is fine.)",
      "answer": "inf",
      "label": "limit =",
      "tol": 0.01,
@@ -529,7 +529,7 @@
     {
      "id": "Q47",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{sqrt(3x^6 + x - 1)}{x^2 + 2x - 2}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->-infty] frac{sqrt(3x^6 + x - 1)}{x^2 + 2x - 2}$$\n(A decimal is fine.)",
      "answer": "inf",
      "label": "limit =",
      "tol": 0.01,
@@ -539,7 +539,7 @@
     {
      "id": "Q48",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{sqrt(3x - 1)}{x^2 + 2x - 2}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->infty] frac{sqrt(3x - 1)}{x^2 + 2x - 2}$$\n(A decimal is fine.)",
      "answer": 0,
      "label": "limit =",
      "tol": 0.01,
@@ -549,7 +549,7 @@
     {
      "id": "Q49",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{sqrt(3x^2 + 4)}{x + 6}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->infty] frac{sqrt(3x^2 + 4)}{x + 6}$$\n(A decimal is fine.)",
      "answer": 1.732051,
      "label": "limit =",
      "tol": 0.01,
@@ -559,7 +559,7 @@
     {
      "id": "Q50",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{sqrt(3x^2 + 4)}{x + 6}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->-infty] frac{sqrt(3x^2 + 4)}{x + 6}$$\n(A decimal is fine.)",
      "answer": -1.732051,
      "label": "limit =",
      "tol": 0.01,
@@ -569,7 +569,7 @@
     {
      "id": "Q51",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{sqrt(4x^2 + 1)}{2x - 3}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->infty] frac{sqrt(4x^2 + 1)}{2x - 3}$$\n(A decimal is fine.)",
      "answer": 1,
      "label": "limit =",
      "tol": 0.01,
@@ -579,7 +579,7 @@
     {
      "id": "Q52",
      "type": "lim",
-     "text": "Find $lim[x->-infty] frac{sqrt(4x^2 + 1)}{2x - 3}$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->-infty] frac{sqrt(4x^2 + 1)}{2x - 3}$$\n(A decimal is fine.)",
      "answer": -1,
      "label": "limit =",
      "tol": 0.01,
@@ -589,7 +589,7 @@
     {
      "id": "E53",
      "type": "lim",
-     "text": "Find $lim[x->infty] e^x$.",
+     "text": "Find\n$$lim[x->infty] e^x$$",
      "answer": "inf",
      "label": "limit =",
      "tol": 0.01,
@@ -599,7 +599,7 @@
     {
      "id": "E54",
      "type": "lim",
-     "text": "Find $lim[x->-infty] e^x$.",
+     "text": "Find\n$$lim[x->-infty] e^x$$",
      "answer": 0,
      "label": "limit =",
      "tol": 0.01,
@@ -609,7 +609,7 @@
     {
      "id": "E55",
      "type": "lim",
-     "text": "Find $lim[x->infty] e^(-x)$.",
+     "text": "Find\n$$lim[x->infty] e^(-x)$$",
      "answer": 0,
      "label": "limit =",
      "tol": 0.01,
@@ -619,7 +619,7 @@
     {
      "id": "E56",
      "type": "lim",
-     "text": "Find $lim[x->infty] ln(x)$.",
+     "text": "Find\n$$lim[x->infty] ln(x)$$",
      "answer": "inf",
      "label": "limit =",
      "tol": 0.01,
@@ -629,7 +629,7 @@
     {
      "id": "E57",
      "type": "lim",
-     "text": "Find $lim[x->infty] arctan(x)$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->infty] arctan(x)$$\n(A decimal is fine.)",
      "answer": 1.570796,
      "label": "limit =",
      "tol": 0.01,
@@ -639,7 +639,7 @@
     {
      "id": "E58",
      "type": "lim",
-     "text": "Find $lim[x->-infty] arctan(x)$. (A decimal is fine.)",
+     "text": "Find\n$$lim[x->-infty] arctan(x)$$\n(A decimal is fine.)",
      "answer": -1.570796,
      "label": "limit =",
      "tol": 0.01,
@@ -649,7 +649,7 @@
     {
      "id": "E59",
      "type": "lim",
-     "text": "Find $lim[x->infty] sin(x)$.",
+     "text": "Find\n$$lim[x->infty] sin(x)$$",
      "answer": "DNE",
      "label": "limit =",
      "tol": 0.01,
@@ -659,7 +659,7 @@
     {
      "id": "E60",
      "type": "lim",
-     "text": "Find $lim[x->-infty] cos(x)$.",
+     "text": "Find\n$$lim[x->-infty] cos(x)$$",
      "answer": "DNE",
      "label": "limit =",
      "tol": 0.01,
@@ -669,7 +669,7 @@
     {
      "id": "E61",
      "type": "lim",
-     "text": "Find $lim[x->infty] frac{sin(x)}{x}$.",
+     "text": "Find\n$$lim[x->infty] frac{sin(x)}{x}$$",
      "answer": 0,
      "label": "limit =",
      "tol": 0.01,
@@ -679,7 +679,7 @@
     {
      "id": "E62",
      "type": "lim",
-     "text": "Find $lim[x->-infty] 2 + frac{1}{x}$.",
+     "text": "Find\n$$lim[x->-infty] 2 + frac{1}{x}$$",
      "answer": 2,
      "label": "limit =",
      "tol": 0.01,
@@ -694,7 +694,7 @@
    {
     "id": "L1",
     "type": "lim",
-    "text": "$$f(x) = 2 + frac{1}{x}$$\nAs $x$ gets huge (10, 100, 1000…), $f(x)$ is 2.1, 2.01, 2.001… Find $lim[x->infty] f(x)$.",
+    "text": "$$f(x) = 2 + frac{1}{x}$$\n{{table: x | 10 | 100 | 1000 ;; f(x) | 2.1 | 2.01 | 2.001}}",
     "answer": 2,
     "label": "$lim[x->infty] f(x)$ =",
     "hint": "What are the values closing in on?",
@@ -704,7 +704,7 @@
    {
     "id": "L2",
     "type": "lim",
-    "text": "Polynomials never level off: they go to $infty$ or $-infty$, and only the **leading term** matters. Find $lim[x->-infty] (x^3 + 2x - 1)$.",
+    "text": "Polynomials never level off: they go to $infty$ or $-infty$, and only the **leading term** matters. Find\n$$lim[x->-infty] (x^3 + 2x - 1)$$",
     "answer": "-inf",
     "label": "limit =",
     "hint": "$x^3$ for a huge negative $x$ is a huge negative number.",

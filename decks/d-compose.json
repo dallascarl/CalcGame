@@ -14,7 +14,7 @@
     {
      "id": "E1",
      "type": "steps",
-     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Find $f(g(2))$.",
+     "text": "$$f(x) = x^2 ;; g(x) = x + 3$$\nFind $f(g(2))$.",
      "steps": [
       {
        "id": "E1.1",
@@ -39,7 +39,7 @@
     {
      "id": "V2",
      "type": "num",
-     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Find $g(f(3))$.",
+     "text": "$$f(x) = x^2 ;; g(x) = x + 3$$\nFind $g(f(3))$.",
      "answer": 12,
      "label": "$g(f(3))$ =",
      "level": 1,
@@ -48,7 +48,7 @@
     {
      "id": "E3",
      "type": "steps",
-     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Find $f(g(1))$.",
+     "text": "$$f(x) = 2x + 1 ;; g(x) = x^2$$\nFind $f(g(1))$.",
      "steps": [
       {
        "id": "E3.1",
@@ -73,7 +73,7 @@
     {
      "id": "V4",
      "type": "num",
-     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Find $g(f(2))$.",
+     "text": "$$f(x) = 2x + 1 ;; g(x) = x^2$$\nFind $g(f(2))$.",
      "answer": 25,
      "label": "$g(f(2))$ =",
      "level": 1,
@@ -82,7 +82,7 @@
     {
      "id": "E5",
      "type": "steps",
-     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Find $f(g(2))$.",
+     "text": "$$f(x) = sqrt(x) ;; g(x) = x + 7$$\nFind $f(g(2))$.",
      "steps": [
       {
        "id": "E5.1",
@@ -107,7 +107,7 @@
     {
      "id": "V6",
      "type": "num",
-     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Find $g(f(3))$.",
+     "text": "$$f(x) = sqrt(x) ;; g(x) = x + 7$$\nFind $g(f(3))$.",
      "answer": 8.732051,
      "label": "$g(f(3))$ =",
      "level": 1,
@@ -116,7 +116,7 @@
     {
      "id": "E7",
      "type": "steps",
-     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Find $f(g(3))$.",
+     "text": "$$f(x) = 3x - 4 ;; g(x) = 2x + 5$$\nFind $f(g(3))$.",
      "steps": [
       {
        "id": "E7.1",
@@ -141,7 +141,7 @@
     {
      "id": "V8",
      "type": "num",
-     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Find $g(f(4))$.",
+     "text": "$$f(x) = 3x - 4 ;; g(x) = 2x + 5$$\nFind $g(f(4))$.",
      "answer": 21,
      "label": "$g(f(4))$ =",
      "level": 1,
@@ -150,7 +150,7 @@
     {
      "id": "E9",
      "type": "steps",
-     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Find $f(g(4))$.",
+     "text": "$$f(x) = x^2 + 1 ;; g(x) = x - 2$$\nFind $f(g(4))$.",
      "steps": [
       {
        "id": "E9.1",
@@ -175,7 +175,7 @@
     {
      "id": "V10",
      "type": "num",
-     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Find $g(f(5))$.",
+     "text": "$$f(x) = x^2 + 1 ;; g(x) = x - 2$$\nFind $g(f(5))$.",
      "answer": 24,
      "label": "$g(f(5))$ =",
      "level": 1,
@@ -184,7 +184,7 @@
     {
      "id": "E11",
      "type": "steps",
-     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Find $f(g(1))$.",
+     "text": "$$f(x) = frac{1}{x} ;; g(x) = x + 1$$\nFind $f(g(1))$.",
      "steps": [
       {
        "id": "E11.1",
@@ -209,7 +209,7 @@
     {
      "id": "V12",
      "type": "num",
-     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Find $g(f(2))$.",
+     "text": "$$f(x) = frac{1}{x} ;; g(x) = x + 1$$\nFind $g(f(2))$.",
      "answer": 1.5,
      "label": "$g(f(2))$ =",
      "level": 1,
@@ -218,7 +218,7 @@
     {
      "id": "E13",
      "type": "steps",
-     "text": "$f(x) = x^3$ and $g(x) = 2x$. Find $f(g(1))$.",
+     "text": "$$f(x) = x^3 ;; g(x) = 2x$$\nFind $f(g(1))$.",
      "steps": [
       {
        "id": "E13.1",
@@ -243,7 +243,7 @@
     {
      "id": "V14",
      "type": "num",
-     "text": "$f(x) = x^3$ and $g(x) = 2x$. Find $g(f(2))$.",
+     "text": "$$f(x) = x^3 ;; g(x) = 2x$$\nFind $g(f(2))$.",
      "answer": 16,
      "label": "$g(f(2))$ =",
      "level": 1,
@@ -252,7 +252,7 @@
     {
      "id": "E15",
      "type": "steps",
-     "text": "$f(x) = 5 - x$ and $g(x) = x^2 + 2$. Find $f(g(0))$.",
+     "text": "$$f(x) = 5 - x ;; g(x) = x^2 + 2$$\nFind $f(g(0))$.",
      "steps": [
       {
        "id": "E15.1",
@@ -277,7 +277,7 @@
     {
      "id": "V16",
      "type": "num",
-     "text": "$f(x) = 5 - x$ and $g(x) = x^2 + 2$. Find $g(f(1))$.",
+     "text": "$$f(x) = 5 - x ;; g(x) = x^2 + 2$$\nFind $g(f(1))$.",
      "answer": 18,
      "label": "$g(f(1))$ =",
      "level": 1,
@@ -358,7 +358,7 @@
     {
      "id": "B28",
      "type": "expr",
-     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Write $f(g(x))$.",
+     "text": "$$f(x) = x^2 ;; g(x) = x + 3$$\nWrite $f(g(x))$.",
      "answer": "(x + 3)^2",
      "vars": [
       "x"
@@ -376,7 +376,7 @@
     {
      "id": "B29",
      "type": "expr",
-     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Write $f(g(x))$.",
+     "text": "$$f(x) = 2x + 1 ;; g(x) = x^2$$\nWrite $f(g(x))$.",
      "answer": "2(x^2) + 1",
      "vars": [
       "x"
@@ -394,7 +394,7 @@
     {
      "id": "B30",
      "type": "expr",
-     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Write $f(g(x))$.",
+     "text": "$$f(x) = sqrt(x) ;; g(x) = x + 7$$\nWrite $f(g(x))$.",
      "answer": "sqrt(x + 7)",
      "vars": [
       "x"
@@ -412,7 +412,7 @@
     {
      "id": "B31",
      "type": "expr",
-     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Write $f(g(x))$.",
+     "text": "$$f(x) = 3x - 4 ;; g(x) = 2x + 5$$\nWrite $f(g(x))$.",
      "answer": "3(2x + 5) - 4",
      "vars": [
       "x"
@@ -430,7 +430,7 @@
     {
      "id": "B32",
      "type": "expr",
-     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Write $f(g(x))$.",
+     "text": "$$f(x) = x^2 + 1 ;; g(x) = x - 2$$\nWrite $f(g(x))$.",
      "answer": "(x - 2)^2 + 1",
      "vars": [
       "x"
@@ -448,7 +448,7 @@
     {
      "id": "B33",
      "type": "expr",
-     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Write $f(g(x))$.",
+     "text": "$$f(x) = frac{1}{x} ;; g(x) = x + 1$$\nWrite $f(g(x))$.",
      "answer": "1/(x + 1)",
      "vars": [
       "x"
@@ -466,7 +466,7 @@
     {
      "id": "B34",
      "type": "expr",
-     "text": "$f(x) = x^3$ and $g(x) = 2x$. Write $f(g(x))$.",
+     "text": "$$f(x) = x^3 ;; g(x) = 2x$$\nWrite $f(g(x))$.",
      "answer": "(2x)^3",
      "vars": [
       "x"
@@ -484,7 +484,7 @@
     {
      "id": "B35",
      "type": "expr",
-     "text": "$f(x) = 5 - x$ and $g(x) = x^2 + 2$. Write $f(g(x))$.",
+     "text": "$$f(x) = 5 - x ;; g(x) = x^2 + 2$$\nWrite $f(g(x))$.",
      "answer": "5 - (x^2 + 2)",
      "vars": [
       "x"
@@ -502,7 +502,7 @@
     {
      "id": "C36",
      "type": "expr",
-     "text": "$f(x) = x^2$ and $g(x) = x + 3$. Write $g(f(x))$.",
+     "text": "$$f(x) = x^2 ;; g(x) = x + 3$$\nWrite $g(f(x))$.",
      "answer": "(x^2) + 3",
      "vars": [
       "x"
@@ -520,7 +520,7 @@
     {
      "id": "C37",
      "type": "expr",
-     "text": "$f(x) = 2x + 1$ and $g(x) = x^2$. Write $g(f(x))$.",
+     "text": "$$f(x) = 2x + 1 ;; g(x) = x^2$$\nWrite $g(f(x))$.",
      "answer": "(2x + 1)^2",
      "vars": [
       "x"
@@ -538,7 +538,7 @@
     {
      "id": "C38",
      "type": "expr",
-     "text": "$f(x) = sqrt(x)$ and $g(x) = x + 7$. Write $g(f(x))$.",
+     "text": "$$f(x) = sqrt(x) ;; g(x) = x + 7$$\nWrite $g(f(x))$.",
      "answer": "sqrt(x) + 7",
      "vars": [
       "x"
@@ -556,7 +556,7 @@
     {
      "id": "C39",
      "type": "expr",
-     "text": "$f(x) = 3x - 4$ and $g(x) = 2x + 5$. Write $g(f(x))$.",
+     "text": "$$f(x) = 3x - 4 ;; g(x) = 2x + 5$$\nWrite $g(f(x))$.",
      "answer": "2(3x - 4) + 5",
      "vars": [
       "x"
@@ -574,7 +574,7 @@
     {
      "id": "C40",
      "type": "expr",
-     "text": "$f(x) = x^2 + 1$ and $g(x) = x - 2$. Write $g(f(x))$.",
+     "text": "$$f(x) = x^2 + 1 ;; g(x) = x - 2$$\nWrite $g(f(x))$.",
      "answer": "(x^2 + 1) - 2",
      "vars": [
       "x"
@@ -592,7 +592,7 @@
     {
      "id": "C41",
      "type": "expr",
-     "text": "$f(x) = frac{1}{x}$ and $g(x) = x + 1$. Write $g(f(x))$.",
+     "text": "$$f(x) = frac{1}{x} ;; g(x) = x + 1$$\nWrite $g(f(x))$.",
      "answer": "(1/x) + 1",
      "vars": [
       "x"
@@ -1014,7 +1014,7 @@
    {
     "id": "L2",
     "type": "expr",
-    "text": "As a formula: $f(x) = x^2$ and $g(x) = x + 3$. Then $f(g(x)) = f(x + 3)$. Write it out.",
+    "text": "As a formula:\n$$f(x) = x^2 ;; g(x) = x + 3$$\nThen $f(g(x)) = f(x + 3)$. Write it out.",
     "answer": "(x + 3)^2",
     "vars": [
      "x"

@@ -47,15 +47,16 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "The Squeeze Theorem is most useful for functions like",
+     "text": "Near 0 it can be shown that\n$$cos(x) <= frac{sin(x)}{x} <= 1$$\nAs $x -> 0$, $cos(x) -> 1$. So the Squeeze Theorem says $lim[x->0] frac{sin(x)}{x}$ is",
      "options": [
-      "$x^2 sin(frac{1}{x})$ that wiggle and cannot be plugged in",
-      "polynomials",
-      "$frac{x^2 - 1}{x - 1}$",
-      "$frac{1}{x}$"
+      "1",
+      "0",
+      "$infty$",
+      "impossible to tell"
      ],
      "answer": 0,
-     "explain": "Wiggly pieces with known bounds."
+     "hint": "Where do the two outside functions head?",
+     "explain": "Both outside functions head to 1, so the one trapped between them must too. This is how the famous sine limit is proved."
     }
    ]
   },
@@ -67,7 +68,7 @@
     {
      "id": "W1",
      "type": "lim",
-     "text": "For $x$ near 4, $4x - 9 <= g(x) <= x^2 - 4x + 7$. Find $lim[x->4] g(x)$.",
+     "text": "For $x$ near 4, $4x - 9 <= g(x) <= x^2 - 4x + 7$. Find\n$$lim[x->4] g(x)$$",
      "answer": 7,
      "label": "$lim[x->4] g(x)$ =",
      "level": 2,
@@ -76,7 +77,7 @@
     {
      "id": "W2",
      "type": "lim",
-     "text": "For $x$ near 1, $2x <= g(x) <= x^4 - x^2 + 2$. Find $lim[x->1] g(x)$.",
+     "text": "For $x$ near 1, $2x <= g(x) <= x^4 - x^2 + 2$. Find\n$$lim[x->1] g(x)$$",
      "answer": 2,
      "label": "$lim[x->1] g(x)$ =",
      "level": 2,
@@ -85,7 +86,7 @@
     {
      "id": "W3",
      "type": "lim",
-     "text": "For $x$ near 0, $1 - x^2 <= g(x) <= 1 + x^2$. Find $lim[x->0] g(x)$.",
+     "text": "For $x$ near 0, $1 - x^2 <= g(x) <= 1 + x^2$. Find\n$$lim[x->0] g(x)$$",
      "answer": 1,
      "label": "$lim[x->0] g(x)$ =",
      "level": 2,
@@ -94,7 +95,7 @@
     {
      "id": "W4",
      "type": "lim",
-     "text": "For $x$ near 1, $3x - 2 <= g(x) <= x^3$. Find $lim[x->1] g(x)$.",
+     "text": "For $x$ near 1, $3x - 2 <= g(x) <= x^3$. Find\n$$lim[x->1] g(x)$$",
      "answer": 1,
      "label": "$lim[x->1] g(x)$ =",
      "level": 2,
@@ -103,7 +104,7 @@
     {
      "id": "W5",
      "type": "lim",
-     "text": "For $x$ near 0, $cos(x) <= g(x) <= 1 + x^2$. Find $lim[x->0] g(x)$.",
+     "text": "For $x$ near 0, $cos(x) <= g(x) <= 1 + x^2$. Find\n$$lim[x->0] g(x)$$",
      "answer": 1,
      "label": "$lim[x->0] g(x)$ =",
      "level": 2,
@@ -112,7 +113,7 @@
     {
      "id": "W6",
      "type": "lim",
-     "text": "For $x$ near 3, $-x^2 + 6x <= g(x) <= x^2 - 6x + 18$. Find $lim[x->3] g(x)$.",
+     "text": "For $x$ near 3, $-x^2 + 6x <= g(x) <= x^2 - 6x + 18$. Find\n$$lim[x->3] g(x)$$",
      "answer": 9,
      "label": "$lim[x->3] g(x)$ =",
      "level": 2,
@@ -121,7 +122,7 @@
     {
      "id": "W7",
      "type": "lim",
-     "text": "For $x$ near 0, $cos(x) <= g(x) <= 1$. Find $lim[x->0] g(x)$.",
+     "text": "For $x$ near 0, $cos(x) <= g(x) <= 1$. Find\n$$lim[x->0] g(x)$$",
      "answer": 1,
      "label": "$lim[x->0] g(x)$ =",
      "level": 2,
@@ -130,7 +131,7 @@
     {
      "id": "W8",
      "type": "lim",
-     "text": "For $x$ near 0, $2 - x^2 <= g(x) <= 2 + x^2$. Find $lim[x->0] g(x)$.",
+     "text": "For $x$ near 0, $2 - x^2 <= g(x) <= 2 + x^2$. Find\n$$lim[x->0] g(x)$$",
      "answer": 2,
      "label": "$lim[x->0] g(x)$ =",
      "level": 2,
@@ -139,7 +140,7 @@
     {
      "id": "N9",
      "type": "mc",
-     "text": "For $x$ near 0, $x <= g(x) <= x + 2$. What can you say about $lim[x->0] g(x)$?",
+     "text": "For $x$ near 0, $x <= g(x) <= x + 2$. What can you say about\n$$lim[x->0] g(x)$$",
      "options": [
       "Nothing: the walls go to different limits",
       "It is 0",
@@ -153,7 +154,7 @@
     {
      "id": "N10",
      "type": "mc",
-     "text": "For $x$ near 2, $1 <= g(x) <= 3$. What can you say about $lim[x->2] g(x)$?",
+     "text": "For $x$ near 2, $1 <= g(x) <= 3$. What can you say about\n$$lim[x->2] g(x)$$",
      "options": [
       "Nothing: the walls go to different limits",
       "It is 1",
@@ -167,7 +168,7 @@
     {
      "id": "N11",
      "type": "mc",
-     "text": "For $x$ near 0, $x^2 <= g(x) <= 2x^2 + 1$. What can you say about $lim[x->0] g(x)$?",
+     "text": "For $x$ near 0, $x^2 <= g(x) <= 2x^2 + 1$. What can you say about\n$$lim[x->0] g(x)$$",
      "options": [
       "Nothing: the walls go to different limits",
       "It is 0",
@@ -181,7 +182,7 @@
     {
      "id": "N12",
      "type": "mc",
-     "text": "For $x$ near 0, $-1 <= g(x) <= 1$. What can you say about $lim[x->0] g(x)$?",
+     "text": "For $x$ near 0, $-1 <= g(x) <= 1$. What can you say about\n$$lim[x->0] g(x)$$",
      "options": [
       "Nothing: the walls go to different limits",
       "It is -1",
@@ -195,7 +196,7 @@
     {
      "id": "S13",
      "type": "lim",
-     "text": "Find $lim[x->0] x^2 sin(frac{1}{x})$.",
+     "text": "Find\n$$lim[x->0] x^2 sin(frac{1}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -218,7 +219,7 @@
     {
      "id": "S15",
      "type": "lim",
-     "text": "Find $lim[x->0] x cos(frac{1}{x})$.",
+     "text": "Find\n$$lim[x->0] x cos(frac{1}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -241,7 +242,7 @@
     {
      "id": "S17",
      "type": "lim",
-     "text": "Find $lim[x->0] x^4 sin(frac{2}{x})$.",
+     "text": "Find\n$$lim[x->0] x^4 sin(frac{2}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -264,7 +265,7 @@
     {
      "id": "S19",
      "type": "lim",
-     "text": "Find $lim[x->0] x^2 cos(frac{3}{x})$.",
+     "text": "Find\n$$lim[x->0] x^2 cos(frac{3}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -287,7 +288,7 @@
     {
      "id": "S21",
      "type": "lim",
-     "text": "Find $lim[x->0] x sin(frac{1}{x^2})$.",
+     "text": "Find\n$$lim[x->0] x sin(frac{1}{x^2})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -310,7 +311,7 @@
     {
      "id": "S23",
      "type": "lim",
-     "text": "Find $lim[x->0] x^3 cos(frac{1}{x})$.",
+     "text": "Find\n$$lim[x->0] x^3 cos(frac{1}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -333,7 +334,7 @@
     {
      "id": "S25",
      "type": "lim",
-     "text": "Find $lim[x->0^+] sqrt(x) sin(frac{1}{x})$.",
+     "text": "Find\n$$lim[x->0^+] sqrt(x) sin(frac{1}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -356,7 +357,7 @@
     {
      "id": "S27",
      "type": "lim",
-     "text": "Find $lim[x->0] x^2 sin^2(frac{1}{x})$.",
+     "text": "Find\n$$lim[x->0] x^2 sin^2(frac{1}{x})$$",
      "answer": 0,
      "label": "limit =",
      "level": 3,
@@ -379,7 +380,7 @@
     {
      "id": "M29",
      "type": "mc",
-     "text": "$-1 <= sin(frac{1}{x}) <= 1$. Multiply by $x^2$:",
+     "text": "$$-1 <= sin(frac{1}{x}) <= 1$$\nMultiply by $x^2$:",
      "options": [
       "$-x^2 <= x^2 sin(frac{1}{x}) <= x^2$",
       "$-1 <= x^2 sin(frac{1}{x}) <= 1$",
@@ -424,9 +425,22 @@
  "lesson": {
   "slides": [
    {
+    "id": "L0",
+    "type": "mc",
+    "text": "$$lim[x->0] x^2 sin(frac{1}{x})$$\nWhy can we not just plug in $x = 0$?",
+    "options": [
+     "$sin(frac{1}{x})$ is undefined at 0, and it wiggles forever near 0",
+     "We can: plugging in gives 0",
+     "The answer would be too big to write"
+    ],
+    "answer": 0,
+    "hint": "What is $frac{1}{0}$?",
+    "explain": "There is no value to plug in, and no algebra will tame the wiggle. We need another idea: trap it."
+   },
+   {
     "id": "L1",
     "type": "mc",
-    "text": "What is $lim[x->0] x^2 sin(frac{1}{x})$? The $sin(frac{1}{x})$ wiggles forever, so we cannot plug in. But sine is always between −1 and 1:\n$-1 <= sin(frac{1}{x}) <= 1$\nMultiply everything by $x^2$ (which is never negative):",
+    "text": "Sine always stays between −1 and 1:\n$$-1 <= sin(frac{1}{x}) <= 1$$\nMultiply all three parts by $x^2$ (which is never negative).",
     "options": [
      "$-x^2 <= x^2 sin(frac{1}{x}) <= x^2$",
      "$-1 <= x^2 sin(frac{1}{x}) <= 1$",

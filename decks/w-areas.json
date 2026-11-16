@@ -987,7 +987,7 @@
      {
       "id": "L3.3",
       "type": "num",
-      "text": "Add up the heights: $f(0.5) + f(1) + f(1.5) + f(2)$.",
+      "text": "Add up the heights:\n$$f(0.5) + f(1) + f(1.5) + f(2)$$",
       "answer": 7.5,
       "label": "sum of heights =",
       "hint": "0.25 + 1 + 2.25 + 4",

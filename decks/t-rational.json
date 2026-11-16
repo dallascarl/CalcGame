@@ -34,7 +34,7 @@
     {
      "id": "T3",
      "type": "mc",
-     "text": "$frac{1}{a} + frac{1}{b} =$",
+     "text": "$$frac{1}{a} + frac{1}{b} =$$",
      "options": [
       "$frac{a + b}{ab}$",
       "$frac{2}{a + b}$",
@@ -63,14 +63,14 @@
     {
      "id": "T5",
      "type": "tf",
-     "text": "$frac{a + b}{c} = frac{a}{c} + frac{b}{c}$",
+     "text": "$$frac{a + b}{c} = frac{a}{c} + frac{b}{c}$$",
      "answer": true,
      "explain": "A sum on **top** splits up. This is just adding fractions, read backwards."
     },
     {
      "id": "T6",
      "type": "tf",
-     "text": "$frac{c}{a + b} = frac{c}{a} + frac{c}{b}$",
+     "text": "$$frac{c}{a + b} = frac{c}{a} + frac{c}{b}$$",
      "answer": false,
      "explain": "A sum on the **bottom** does not split. Try $a = b = c = 1$: $frac{1}{2}$ is not $1 + 1$."
     },
@@ -112,7 +112,8 @@
        "(x + 2)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K2",
@@ -132,7 +133,8 @@
        "(x + 4)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K3",
@@ -152,7 +154,8 @@
        "(x - 2)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K4",
@@ -172,7 +175,8 @@
        "(x - 3)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K5",
@@ -192,7 +196,8 @@
        "+ 4"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K6",
@@ -213,7 +218,8 @@
        "(x + 1)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K7",
@@ -233,7 +239,8 @@
        "+ 5"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K8",
@@ -252,7 +259,8 @@
        "(x - 2)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K9",
@@ -272,7 +280,8 @@
        "x"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K10",
@@ -292,7 +301,8 @@
        "(x + 1)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K11",
@@ -312,7 +322,8 @@
        "+ 3"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K12",
@@ -331,7 +342,8 @@
        "(x + 5)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K13",
@@ -351,7 +363,8 @@
        "+ 4"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K14",
@@ -371,7 +384,8 @@
        "(x + 1)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K15",
@@ -392,7 +406,8 @@
        "(x + 1)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "K16",
@@ -413,7 +428,8 @@
        "(x + 2)"
       ]
      },
-     "level": 1
+     "level": 1,
+     "explain": " The result equals the original only where the crossed-out factor is not 0: cancelling changes the domain."
     },
     {
      "id": "F17",
@@ -432,7 +448,7 @@
      },
      "show": "$frac{x}{x - 3}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x}{x - 3}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x}{x - 3}$. This holds for $x ≠ −3$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 7
     },
     {
@@ -452,7 +468,7 @@
      },
      "show": "$x + 2$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 2$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 2$. This holds for $x ≠ 2$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 5
     },
     {
@@ -472,7 +488,7 @@
      },
      "show": "$frac{x - 1}{x}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x - 1}{x}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x - 1}{x}$. This holds for $x ≠ −1$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 7
     },
     {
@@ -492,7 +508,7 @@
      },
      "show": "$frac{2}{x}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{2}{x}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{2}{x}$. This holds for $x ≠ −3$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 5
     },
     {
@@ -512,7 +528,7 @@
      },
      "show": "$x + 3$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 3$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 3$. This holds for $x ≠ −2$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 5
     },
     {
@@ -532,7 +548,7 @@
      },
      "show": "$frac{x + 2}{x + 3}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 2}{x + 3}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 2}{x + 3}$. This holds for $x ≠ 3$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 9
     },
     {
@@ -552,7 +568,7 @@
      },
      "show": "$frac{x - 5}{x}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x - 5}{x}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x - 5}{x}$. This holds for $x ≠ −5$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 7
     },
     {
@@ -572,7 +588,7 @@
      },
      "show": "$3x$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $3x$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $3x$. This holds for $x ≠ 1$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 4
     },
     {
@@ -592,7 +608,7 @@
      },
      "show": "$frac{x + 1}{x - 1}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 1}{x - 1}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 1}{x - 1}$. This holds for $x ≠ −1$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 9
     },
     {
@@ -612,7 +628,7 @@
      },
      "show": "$frac{x + 4}{x}$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 4}{x}$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $frac{x + 4}{x}$. This holds for $x ≠ 4$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 7
     },
     {
@@ -632,7 +648,7 @@
      },
      "show": "$x + 1$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 1$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x + 1$. This holds for $x ≠ 1$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 5
     },
     {
@@ -652,7 +668,7 @@
      },
      "show": "$x - 3$",
      "level": 2,
-     "explain": "Factor the top and the bottom, then cancel the factor they share: $x - 3$.",
+     "explain": "Factor the top and the bottom, then cancel the factor they share: $x - 3$. This holds for $x ≠ 3$, where the original is undefined: cancelling changes the domain.",
      "maxLen": 5
     },
     {
@@ -1394,6 +1410,20 @@
     "explain": "Test it with $x = 3$: the fraction is $frac{6}{3} = 2$, but crossing out the $x$’s leaves 3. On top, $x$ is a **term**, not a factor of the whole top."
    },
    {
+    "id": "L2b",
+    "type": "mc",
+    "text": "One catch, even when cancelling is legal.\n$$frac{x(x + 3)}{x} ;; x + 3$$\nAre these the same function?",
+    "options": [
+     "Equal for every $x$ except 0, where the fraction is undefined",
+     "Yes, exactly the same",
+     "No, they never agree"
+    ],
+    "answer": 0,
+    "fixed": true,
+    "hint": "Try $x = 0$ in each one.",
+    "explain": "Cancelling the $x$ divides top and bottom by $x$, which is only allowed when $x ≠ 0$. So we write $frac{x(x + 3)}{x} = x + 3$ **for $x ≠ 0$**. The two are equal on their common domain, and the domain changed when we cancelled."
+   },
+   {
     "id": "L3",
     "type": "steps",
     "text": "So when you see a sum, **factor first**. Then cancel.$$frac{x^2 + 3x}{x^2 - 9}$$\n",
@@ -1486,7 +1516,7 @@
      {
       "id": "L5.2",
       "type": "mc",
-      "text": "Dividing by $x - 3$ is multiplying by $frac{1}{x - 3}$. And $3 - x = -(x - 3)$. What is left after cancelling?",
+      "text": "Dividing by $x - 3$ is multiplying by $frac{1}{x - 3}$, and $3 - x = -(x - 3)$:\n$$frac{3 - x}{3x} · frac{1}{x - 3} = frac{-(x - 3)}{3x(x - 3)}$$\nCancel the $x - 3$ (allowed for $x ≠ 3$). What is left?",
       "options": [
        "$-frac{1}{3x}$",
        "$frac{1}{3x}$",
@@ -1495,7 +1525,7 @@
       ],
       "answer": 0,
       "hint": "$frac{-(x - 3)}{3x} · frac{1}{x - 3}$",
-      "work": "$= -frac{1}{3x}$"
+      "work": "$= -frac{1}{3x}$, for $x ≠ 3$"
      }
     ]
    }

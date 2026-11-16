@@ -52,7 +52,7 @@
     },
     {
      "type": "mc",
-     "text": "$f'(2) = 0$ and $f''(2) = -7$. At $x$ = 2, $f$ has…",
+     "text": "$$f'(2) = 0 ;; f''(2) = -7$$\nAt $x$ = 2, $f$ has…",
      "options": [
       "an inflection point",
       "a local min",
@@ -64,7 +64,7 @@
     },
     {
      "type": "mc",
-     "text": "$f'(0) = 0$ and $f''(0) = 3$. At $x$ = 0, $f$ has…",
+     "text": "$$f'(0) = 0 ;; f''(0) = 3$$\nAt $x$ = 0, $f$ has…",
      "options": [
       "no extreme",
       "a local max",
@@ -76,7 +76,7 @@
     },
     {
      "type": "mc",
-     "text": "$f'(1) = 0$ and $f''(1) = 0$. What does the second derivative test say?",
+     "text": "$$f'(1) = 0 ;; f''(1) = 0$$\nWhat does the second derivative test say?",
      "options": [
       "Local min",
       "Inflection point",
@@ -286,7 +286,7 @@
     {
      "id": "G1",
      "type": "mc",
-     "text": "$f'(1) = 0$ and $f''(1) = −4$. At $x$ = 1, $f$ has…",
+     "text": "$$f'(1) = 0 ;; f''(1) = −4$$\nAt $x$ = 1, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -301,7 +301,7 @@
     {
      "id": "G2",
      "type": "mc",
-     "text": "$f'(3) = 0$ and $f''(3) = 5$. At $x$ = 3, $f$ has…",
+     "text": "$$f'(3) = 0 ;; f''(3) = 5$$\nAt $x$ = 3, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -316,7 +316,7 @@
     {
      "id": "G3",
      "type": "mc",
-     "text": "$f'(-2) = 0$ and $f''(-2) = 12$. At $x$ = −2, $f$ has…",
+     "text": "$$f'(-2) = 0 ;; f''(-2) = 12$$\nAt $x$ = −2, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -331,7 +331,7 @@
     {
      "id": "G4",
      "type": "mc",
-     "text": "$f'(0) = 0$ and $f''(0) = −9$. At $x$ = 0, $f$ has…",
+     "text": "$$f'(0) = 0 ;; f''(0) = −9$$\nAt $x$ = 0, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -346,7 +346,7 @@
     {
      "id": "G5",
      "type": "mc",
-     "text": "$f'(4) = 0$ and $f''(4) = 0$. At $x$ = 4, $f$ has…",
+     "text": "$$f'(4) = 0 ;; f''(4) = 0$$\nAt $x$ = 4, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -361,7 +361,7 @@
     {
      "id": "G6",
      "type": "mc",
-     "text": "$f'(-1) = 0$ and $f''(-1) = 2$. At $x$ = −1, $f$ has…",
+     "text": "$$f'(-1) = 0 ;; f''(-1) = 2$$\nAt $x$ = −1, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -376,7 +376,7 @@
     {
      "id": "G7",
      "type": "mc",
-     "text": "$f'(5) = 0$ and $f''(5) = −1$. At $x$ = 5, $f$ has…",
+     "text": "$$f'(5) = 0 ;; f''(5) = −1$$\nAt $x$ = 5, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -391,7 +391,7 @@
     {
      "id": "G8",
      "type": "mc",
-     "text": "$f'(2) = 0$ and $f''(2) = 0$. At $x$ = 2, $f$ has…",
+     "text": "$$f'(2) = 0 ;; f''(2) = 0$$\nAt $x$ = 2, $f$ has…",
      "options": [
       "a local max",
       "a local min",
@@ -1154,7 +1154,7 @@
     ],
     "ystep": 5,
     "title": "What the bend tells you",
-    "text": "Now slide along $f(x) = x^3 - 6x^2 + 9x + 30$. The curve is **gold** where it bends up like a cup and **teal** where it bends down like a frown. Visit both.",
+    "text": "Now slide along\n$$f(x) = x^3 - 6x^2 + 9x + 30$$\nThe curve is **gold** where it bends up like a cup and **teal** where it bends down like a frown. Visit both.",
     "regions": [
      [
       -1,
@@ -1233,7 +1233,7 @@
    },
    {
     "type": "steps",
-    "text": "Use the second derivative test on $f(x) = x^3 - frac{3}{2}x^2 - 18x$. The critical numbers are $c$ = 3 and $c$ = −2.",
+    "text": "Use the second derivative test on\n$$f(x) = x^3 - frac{3}{2}x^2 - 18x$$\nThe critical numbers are $c$ = 3 and $c$ = −2.",
     "steps": [
      {
       "type": "expr",

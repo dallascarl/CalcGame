@@ -596,7 +596,7 @@
     {
      "id": "I30",
      "type": "mc",
-     "text": "$$f(x) = x^3 - x^2 - 3x + 1$$\n$f(0) = 1$ and $f(1) = -2$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
+     "text": "$$f(x) = x^3 - x^2 - 3x + 1$$\n$$f(0) = 1 ;; f(1) = -2$$\nDoes the Intermediate Value Theorem promise a zero in $(0, 1)$?",
      "options": [
       "Yes",
       "No"
@@ -609,7 +609,7 @@
     {
      "id": "I31",
      "type": "mc",
-     "text": "$$f(x) = x^2 - 2$$\n$f(1) = -1$ and $f(2) = 2$. Does the Intermediate Value Theorem promise a zero in $(1, 2)$?",
+     "text": "$$f(x) = x^2 - 2$$\n$$f(1) = -1 ;; f(2) = 2$$\nDoes the Intermediate Value Theorem promise a zero in $(1, 2)$?",
      "options": [
       "Yes",
       "No"
@@ -622,7 +622,7 @@
     {
      "id": "I32",
      "type": "mc",
-     "text": "$$f(x) = x^2 + 1$$\n$f(-1) = 2$ and $f(1) = 2$. Does the Intermediate Value Theorem promise a zero in $(-1, 1)$?",
+     "text": "$$f(x) = x^2 + 1$$\n$$f(-1) = 2 ;; f(1) = 2$$\nDoes the Intermediate Value Theorem promise a zero in $(-1, 1)$?",
      "options": [
       "Yes",
       "No"
@@ -635,7 +635,7 @@
     {
      "id": "I33",
      "type": "mc",
-     "text": "$$f(x) = cos(x) - x$$\n$f(0) = 1$ and $f(1) = -0.459698$. Does the Intermediate Value Theorem promise a zero in $(0, 1)$?",
+     "text": "$$f(x) = cos(x) - x$$\n$$f(0) = 1 ;; f(1) = -0.459698$$\nDoes the Intermediate Value Theorem promise a zero in $(0, 1)$?",
      "options": [
       "Yes",
       "No"
@@ -648,7 +648,7 @@
     {
      "id": "I34",
      "type": "mc",
-     "text": "$$f(x) = x^3 + x + 1$$\n$f(-1) = -1$ and $f(0) = 1$. Does the Intermediate Value Theorem promise a zero in $(-1, 0)$?",
+     "text": "$$f(x) = x^3 + x + 1$$\n$$f(-1) = -1 ;; f(0) = 1$$\nDoes the Intermediate Value Theorem promise a zero in $(-1, 0)$?",
      "options": [
       "Yes",
       "No"
@@ -661,7 +661,7 @@
     {
      "id": "I35",
      "type": "mc",
-     "text": "$$f(x) = x^2 - 4x + 5$$\n$f(0) = 5$ and $f(3) = 2$. Does the Intermediate Value Theorem promise a zero in $(0, 3)$?",
+     "text": "$$f(x) = x^2 - 4x + 5$$\n$$f(0) = 5 ;; f(3) = 2$$\nDoes the Intermediate Value Theorem promise a zero in $(0, 3)$?",
      "options": [
       "Yes",
       "No"
@@ -674,7 +674,7 @@
     {
      "id": "V36",
      "type": "lim",
-     "text": "This function is continuous at $x = 0$. Find $lim[x->0] sin(x^2 + frac{pi}{2})$.",
+     "text": "This function is continuous at $x = 0$. Find\n$$lim[x->0] sin(x^2 + frac{pi}{2})$$",
      "answer": 1,
      "label": "limit =",
      "level": 1,
@@ -683,7 +683,7 @@
     {
      "id": "V37",
      "type": "lim",
-     "text": "This function is continuous at $x = 1$. Find $lim[x->1] cos(frac{pi x}{3})$.",
+     "text": "This function is continuous at $x = 1$. Find\n$$lim[x->1] cos(frac{pi x}{3})$$",
      "answer": 0.5,
      "label": "limit =",
      "level": 1,
@@ -692,7 +692,7 @@
     {
      "id": "V38",
      "type": "lim",
-     "text": "This function is continuous at $x = 3$. Find $lim[x->3] sqrt(x^2 + 16)$.",
+     "text": "This function is continuous at $x = 3$. Find\n$$lim[x->3] sqrt(x^2 + 16)$$",
      "answer": 5,
      "label": "limit =",
      "level": 1,
@@ -701,7 +701,7 @@
     {
      "id": "V39",
      "type": "lim",
-     "text": "This function is continuous at $x = 1$. Find $lim[x->1] e^(x - 1)$.",
+     "text": "This function is continuous at $x = 1$. Find\n$$lim[x->1] e^(x - 1)$$",
      "answer": 1,
      "label": "limit =",
      "level": 1,
@@ -710,7 +710,7 @@
     {
      "id": "V40",
      "type": "lim",
-     "text": "This function is continuous at $x = 0$. Find $lim[x->0] ln(x^2 + 1)$.",
+     "text": "This function is continuous at $x = 0$. Find\n$$lim[x->0] ln(x^2 + 1)$$",
      "answer": 0,
      "label": "limit =",
      "level": 1,
@@ -719,7 +719,7 @@
     {
      "id": "V41",
      "type": "lim",
-     "text": "This function is continuous at $x = 1$. Find $lim[x->1] frac{x^2 + 1}{x + 1}$.",
+     "text": "This function is continuous at $x = 1$. Find\n$$lim[x->1] frac{x^2 + 1}{x + 1}$$",
      "answer": 1,
      "label": "limit =",
      "level": 1,
@@ -732,15 +732,20 @@
   "slides": [
    {
     "id": "L1",
-    "type": "order",
-    "text": "A function is **continuous** at $x = a$ when three things are true. Put them in the order you check them.",
-    "items": [
+    "type": "pick",
+    "text": "A function is **continuous** at $x = a$ when three things are all true. Select all three.",
+    "options": [
      "$f(a)$ is defined",
      "$lim[x->a] f(x)$ exists",
      "$lim[x->a] f(x) = f(a)$"
     ],
-    "hint": "First the point, then the limit, then compare.",
-    "explain": "Informally: you can draw it through $x = a$ without lifting your pencil."
+    "answers": [
+     0,
+     1,
+     2
+    ],
+    "hint": "The point, the limit, and whether they match.",
+    "explain": "All three. Informally: you can draw the graph through $x = a$ without lifting your pencil."
    },
    {
     "id": "L2",

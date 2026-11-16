@@ -6,7 +6,7 @@
   --good:#1E7F4F; --good-bg:#E3F4EA; --bad:#B4372F; --bad-bg:#FBE9E7;
   --display:"Bricolage Grotesque",ui-rounded,"Trebuchet MS",sans-serif;
   --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --math:"STIX Two Text","Cambria Math",Georgia,serif;
+  --math:"KaTeX_Main","STIX Two Text","Cambria Math",Georgia,serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --paper:#0F1524; --grid:#172038; --card:#182036; --ink:#E8EDF7; --muted:#96A2BD; --rule:#3A4766;
@@ -682,3 +682,29 @@ body{margin:0}
 /* "Before class" / "After class" on each part of a stop */
 .act .when{display:block;white-space:nowrap;font:700 10px var(--body);letter-spacing:.02em;text-transform:uppercase;font-style:normal;color:var(--teal);margin-bottom:2px}
 .act .when.aft{color:var(--curve)}
+
+/* math type: the fonts LaTeX output uses (bundled in fonts/), and square roots with a real bar */
+@font-face{font-family:"KaTeX_Main";src:url(../fonts/KaTeX_Main-Regular.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"KaTeX_Main";src:url(../fonts/KaTeX_Main-Bold.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"KaTeX_Main";src:url(../fonts/KaTeX_Main-Italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"KaTeX_Math";src:url(../fonts/KaTeX_Math-Italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+.math{font-size:1.14em}
+.math i{font-family:"KaTeX_Math","KaTeX_Main",var(--math);font-style:italic}
+.rad{position:relative;display:inline-block;padding-left:.6em;margin-inline:1px;vertical-align:baseline;line-height:1.1}
+.rad-s{position:absolute;left:0;top:0;width:.66em;height:100%;overflow:visible}
+.rad-s path{fill:none;stroke:currentColor;stroke-width:1.25;vector-effect:non-scaling-stroke;stroke-linejoin:miter}
+.rad-in{display:inline-block;border-top:1.25px solid currentColor;padding:2px 2px 0 2px}
+.rad:has(.frac){vertical-align:middle}
+.rad-n{position:absolute;left:0;top:-.1em;font-size:.55em}
+.rad3{padding-left:.75em} .rad3 .rad-s{left:.15em}
+.tmpl,.xans{flex-wrap:nowrap} .tmpl .math{white-space:nowrap}
+.bar-l{white-space:normal;overflow:visible;line-height:1.15}
+.rv-y{color:var(--bad)}
+.xans .ans-box{min-width:96px;flex:0 1 auto}
+.stop-h{position:relative}
+.stop-x{margin-left:auto;flex:none;width:34px;height:30px;border:1.5px solid var(--rule);border-radius:9px;background:var(--paper);display:inline-flex;align-items:center;justify-content:center}
+.stop-x span{width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-2px) rotate(45deg)}
+.stop.min .stop-x span{transform:translateY(2px) rotate(-135deg)}
+.stop.min>*:not(.stop-h){display:none}
+.stop.min{padding-block:8px}
+.frac .rad{margin-top:3px} .frac>span:first-child .rad{margin-bottom:1px}

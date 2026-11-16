@@ -26,7 +26,7 @@
     },
     {
      "type": "crit",
-     "text": "Find the $y$-intercept of $f(x) = rac{x - 1}{x + 2}$.",
+     "text": "Find the $y$-intercept of $f(x) = frac{x - 1}{x + 2}$.",
      "answers": [
       -0.5
      ],
@@ -39,7 +39,7 @@
     },
     {
      "type": "crit",
-     "text": "Find the $y$-intercept of $f(x) = rac{1}{x}$.",
+     "text": "Find the $y$-intercept of $f(x) = frac{1}{x}$.",
      "answers": [],
      "var": "y",
      "label": "$y$ =",
@@ -87,7 +87,7 @@
     },
     {
      "type": "crit",
-     "text": "Find the $y$-intercept of $f(x) = rac{x^2 + 4}{x^2 - 4}$.",
+     "text": "Find the $y$-intercept of $f(x) = frac{x^2 + 4}{x^2 - 4}$.",
      "answers": [
       -1
      ],
@@ -126,7 +126,7 @@
     },
     {
      "type": "crit",
-     "text": "Find the $y$-intercept of $f(x) = rac{2x + 1}{x - 4}$.",
+     "text": "Find the $y$-intercept of $f(x) = frac{2x + 1}{x - 4}$.",
      "answers": [
       -0.25
      ],
@@ -150,7 +150,7 @@
     },
     {
      "type": "crit",
-     "text": "Find the $y$-intercept of $f(x) = rac{5}{x^2 + 1}$.",
+     "text": "Find the $y$-intercept of $f(x) = frac{5}{x^2 + 1}$.",
      "answers": [
       5
      ],
@@ -176,7 +176,7 @@
     },
     {
      "type": "crit",
-     "text": "Find the $y$-intercept of $f(x) = rac{x}{sqrt(x - 1)}$.",
+     "text": "Find the $y$-intercept of $f(x) = frac{x}{sqrt(x - 1)}$.",
      "answers": [],
      "var": "y",
      "label": "$y$ =",
@@ -216,7 +216,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every $x$-intercept of $f(x) = rac{x - 1}{x + 2}$.",
+     "text": "Find every $x$-intercept of $f(x) = frac{x - 1}{x + 2}$.",
      "answers": [
       1
      ],
@@ -281,7 +281,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every $x$-intercept of $f(x) = rac{x^2 - 9}{x - 3}$.",
+     "text": "Find every $x$-intercept of $f(x) = frac{x^2 - 9}{x - 3}$.",
      "answers": [
       -3
      ],
@@ -349,7 +349,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every $x$-intercept of $f(x) = rac{x^2 + x}{x^2 - 1}$.",
+     "text": "Find every $x$-intercept of $f(x) = frac{x^2 + x}{x^2 - 1}$.",
      "answers": [
       0
      ],
@@ -362,7 +362,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every $x$-intercept of $f(x) = rac{1}{x}$.",
+     "text": "Find every $x$-intercept of $f(x) = frac{1}{x}$.",
      "answers": [],
      "var": "x",
      "label": "$x$ =",
@@ -428,7 +428,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every $x$-intercept of $f(x) = rac{x^2 - 4}{x^2 + 4}$.",
+     "text": "Find every $x$-intercept of $f(x) = frac{x^2 - 4}{x^2 + 4}$.",
      "answers": [
       -2,
       2

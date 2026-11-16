@@ -97,6 +97,14 @@ Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `
 - `sketch`: the graph-sketching experience. `fn`, `window`, and `data` with `points` (`[x, y, "label"]`), `crit`, `infl`, `va`, `ha`, optional `slant`, and `lines` (the data shown to the student). Phases: place the points and asymptotes on the grid, mark each region ↗/↘ and ∪/∩ on a sign chart, then draw with a finger or mouse. The drawing is graded on key points, coverage, rising/falling, concavity and asymptote behavior, and the real graph is shown afterward. `"phases": ["draw"]` with `"prefill": true` skips straight to drawing with the data already placed.
 - Explorers (lessons only): `optim` (drag $x$ and watch a scene and the quantity being optimized; `scene` type `rect` or `box`), `rr` (related-rates scenes `ladder`, `ripple`, `balloon`, `cone` with a time slider and live rates), `curvex` (slide along a curve; the tangent shows rising/falling, or the curve is colored by concavity), `ratio` (tap closer and closer to a limit and watch the two parts of an indeterminate form fight; `op` is `/`, `*`, `-` or `^`).
 
+## How the math is drawn
+
+The app draws math itself from the markup in the decks, set in the fonts LaTeX output uses (bundled in `fonts/`, from KaTeX, under its licence there). `sqrt(...)` and `cbrt(...)` draw a root with a bar over everything inside. `$$...$$` puts a formula in a box on its own line, and ` ;; ` inside it starts a new line in the same box: `$$lim[x->1^-] f(x) = 2 ;; lim[x->1^+] f(x) = 5$$`.
+
+House style for question text (from the review notes): a formula goes in a box on its own line and the words go around it; say a thing once (if the answer box is labelled `$f^(-1)(7)$ =`, the text does not also ask for it); and when a fraction is simplified by cancelling, the explanation says where the two sides are equal.
+
+**The deck files are the source of truth.** The scripts in `tools/gen/` built them, and the one-time passes in `tools/fix/` (`layout.py`, `layout2.py`, `notes2.py`) then edited them, so running a generator again would undo those edits. Edit the JSON. `tools/maps.py` lays out the Limits, Derivatives and Integration maps by class day.
+
 ## The stop format (every world)
 
 Every stop has three parts:

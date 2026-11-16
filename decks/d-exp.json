@@ -14,7 +14,7 @@
     {
      "id": "T1",
      "type": "mc",
-     "text": "$frac{d}{dx} e^x =$",
+     "text": "$$frac{d}{dx} e^x =$$",
      "options": [
       "$e^x$",
       "$xe^(x-1)$",
@@ -27,7 +27,7 @@
     {
      "id": "T2",
      "type": "mc",
-     "text": "$frac{d}{dx} e^(g(x)) =$",
+     "text": "$$frac{d}{dx} e^(g(x)) =$$",
      "options": [
       "$e^(g(x))·g'(x)$",
       "$e^(g'(x))$",
@@ -40,7 +40,7 @@
     {
      "id": "T3",
      "type": "mc",
-     "text": "$frac{d}{dx} b^x =$",
+     "text": "$$frac{d}{dx} b^x =$$",
      "options": [
       "$b^x ln(b)$",
       "$xb^(x-1)$",
@@ -53,7 +53,7 @@
     {
      "id": "T4",
      "type": "tf",
-     "text": "$frac{d}{dx} e^(2x) = e^(2x)$",
+     "text": "$$frac{d}{dx} e^(2x) = e^(2x)$$",
      "answer": false,
      "explain": "$2e^(2x)$: multiply by the derivative of the exponent."
     },
@@ -1488,7 +1488,7 @@
     {
      "id": "Q44",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{e^x}{x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{e^x}{x}$$",
      "steps": [
       {
        "id": "Q44.1",
@@ -1567,7 +1567,7 @@
     {
      "id": "Q45",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{3^x}{3^x + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{3^x}{3^x + 1}$$",
      "steps": [
       {
        "id": "Q45.1",
@@ -1646,7 +1646,7 @@
     {
      "id": "Q46",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x}{e^x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x}{e^x}$$",
      "steps": [
       {
        "id": "Q46.1",
@@ -1725,7 +1725,7 @@
     {
      "id": "Q47",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{e^x}{e^x + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{e^x}{e^x + 1}$$",
      "steps": [
       {
        "id": "Q47.1",
@@ -1804,7 +1804,7 @@
     {
      "id": "Q48",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{e^(2x)}{x^2}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{e^(2x)}{x^2}$$",
      "steps": [
       {
        "id": "Q48.1",
@@ -1958,7 +1958,7 @@
     {
      "id": "C52",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = e^(3x^2 + 1) + x^2$.",
+     "text": "Find the derivative of\n$$f(x) = e^(3x^2 + 1) + x^2$$",
      "answer": "6xe^(3x^2 + 1) + 2x",
      "vars": [
       "x"
@@ -2054,7 +2054,7 @@
       {
        "id": "T55.3",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "2x + 1",
        "vars": [
         "x"
@@ -2097,7 +2097,7 @@
       {
        "id": "T56.3",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "x + 0",
        "vars": [
         "x"
@@ -2140,7 +2140,7 @@
       {
        "id": "T57.3",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "2x + 1",
        "vars": [
         "x"
@@ -2183,7 +2183,7 @@
       {
        "id": "T58.3",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "3x + 3",
        "vars": [
         "x"
@@ -2230,7 +2230,7 @@
    {
     "id": "L2",
     "type": "mc",
-    "text": "With the chain rule: $frac{d}{dx} e^(f(x)) = e^(f(x))·f'(x)$. The exponent stays the same, and you multiply by its derivative. What is $frac{d}{dx} e^(sin(x))$?",
+    "text": "With the chain rule:\n$$frac{d}{dx} e^(f(x)) = e^(f(x))·f'(x)$$\nThe exponent stays the same, and you multiply by its derivative. What is\n$$frac{d}{dx} e^(sin(x))$$",
     "options": [
      "$e^(sin(x))cos(x)$",
      "$e^(cos(x))$",
@@ -2244,7 +2244,7 @@
    {
     "id": "L3",
     "type": "expr",
-    "text": "Try it: $f(x) = e^(3x^2 + 1) + x^2$.",
+    "text": "Try it:\n$$f(x) = e^(3x^2 + 1) + x^2$$",
     "answer": "e^(3x^2 + 1)(6x) + 2x",
     "vars": [
      "x"
@@ -2269,7 +2269,7 @@
    {
     "id": "L4",
     "type": "mc",
-    "text": "Other bases pick up a natural log: $frac{d}{dx} b^x = b^x ln(b)$. What is $frac{d}{dx} 2^x$?",
+    "text": "Other bases pick up a natural log:\n$$frac{d}{dx} b^x = b^x ln(b)$$\nWhat is\n$$frac{d}{dx} 2^x$$",
     "options": [
      "$2^x ln(2)$",
      "$x 2^(x-1)$",
@@ -2283,7 +2283,7 @@
    {
     "id": "L5",
     "type": "steps",
-    "text": "All the old rules still work. Use the quotient rule on $f(x) = frac{e^(x^2)}{x}$.",
+    "text": "All the old rules still work. Use the quotient rule on\n$$f(x) = frac{e^(x^2)}{x}$$",
     "steps": [
      {
       "id": "L5.1",

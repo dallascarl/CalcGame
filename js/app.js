@@ -63,12 +63,21 @@ function minner(m){
   while(i<m.length){
     if(m.startsWith('frac{',i)){const a=mbrace(m,i+4),b=a>0&&m[a+1]==='{'?mbrace(m,a+1):-1;
       if(b>0){flush();out+='<span class="frac"><span>'+minner(m.slice(i+5,a))+'</span><span>'+minner(m.slice(a+2,b))+'</span></span>';i=b+1;continue;}}
+    {const R=/^(sqrt|cbrt)\(/.exec(m.slice(i)),U=m[i]==='√'||m[i]==='∛';
+      if((R&&!(i>0&&/[A-Za-z]/.test(m[i-1])))||U){
+        const cube=R?R[1]==='cbrt':m[i]==='∛',st=i+(R?R[1].length:1); let body=null,end=-1;
+        if(m[st]==='('){let d=0;for(let j=st;j<m.length;j++){if(m[j]==='(')d++;else if(m[j]===')'){d--;if(!d){end=j;break;}}} if(end>0)body=m.slice(st+1,end);}
+        else if(U){const t=/^[A-Za-z0-9.]+/.exec(m.slice(st)); if(t){body=t[0];end=st+t[0].length-1;}}
+        if(body!=null&&body.trim()){flush();out+=radHTML(minner(body),cube);i=end+1;continue;}
+      }}
     if(m.startsWith('cases{',i)){const a=mbrace(m,i+5);
       if(a>0){flush();out+=casesHTML(m.slice(i+6,a));i=a+1;continue;}}
     plain+=m[i++];
   }
   flush(); return out;
 }
+/* a square root drawn with its bar over everything inside (it stretches over fractions too) */
+function radHTML(inner,cube){return '<span class="rad'+(cube?' rad3':'')+'">'+(cube?'<span class="rad-n">3</span>':'')+'<svg class="rad-s" viewBox="0 0 12 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0.6 15.2L3 13.8L6.2 22.6L11.4 0.8H12"/></svg><span class="rad-in">'+inner+'</span></span>';}
 function math(m){return '<span class="math">'+minner(m)+'</span>';}
 /* {{table: x | f(x) ;; 1.9 | 3.61 ;; 1.99 | 3.9601}} draws a small table; the first row is the heading.
    A row that starts with ! is highlighted (the row the question is about). */
@@ -82,7 +91,7 @@ function tableHTML(body){
 function fmt(s){
   let on=false; const blocks=[];
   const src=String(s).replace(/\\\$/g,'\u0003')
-    .replace(/\n?(?:\{\{table:([^}]*)\}\}|\$\$([^$]+)\$\$)\n?/g,(_,t,m)=>{blocks.push(t!=null?tableHTML(t):'<span class="dmath">'+math(m.trim())+'</span>');return '\u0005';});
+    .replace(/\n?(?:\{\{table:([^}]*)\}\}|\$\$([^$]+)\$\$)\n?/g,(_,t,m)=>{blocks.push(t!=null?tableHTML(t):'<span class="dmath">'+m.split(';;').map(l=>math(l.trim())).join('<br>')+'</span>');return '\u0005';});
   const out=src.split('$').map((t,i)=>i%2?math(t):esc(t).split('**').map((u,k)=>(k?((on=!on)?'<strong>':'</strong>'):'')+u).join('').replace(/\n/g,'<br>')).join('');
   return (on?out+'</strong>':out).replace(/\u0003/g,'$').replace(/\u0005/g,()=>blocks.shift());
 }
@@ -329,6 +338,15 @@ function go(name){
 }
 
 /* ---------- item players: one per item type ---------- */
+/* what the student put for a missed question, for "Review your misses" (kept for this visit only) */
+const GIVEN={};
+function givenHTML(host){
+  try{
+    const sel=[...host.querySelectorAll('.opt[aria-pressed="true"],.opt.on')]; if(sel.length)return sel.map(b=>b.innerHTML).join(' · ');
+    const boxes=[...host.querySelectorAll('.ans-box')].filter(b=>!b.classList.contains('empty')); if(boxes.length)return boxes.map(b=>'<span class="math">'+b.innerHTML+'</span>').join(' , ');
+  }catch(e){}
+  return '';
+}
 function mountItem(it,host,onChange){
   let h='';
   if(it.title)h+='<h2>'+fmt(it.title)+'</h2>';
@@ -1064,7 +1082,7 @@ function home(){
   const act=(to,name,status,off,when)=>'<button class="act" data-go="'+to+'"'+(off?' disabled':'')+'>'+(when?'<i class="when'+(when==='After class'?' aft':'')+'">'+when+'</i>':'')+'<b>'+esc(name)+'</b><span>'+status+'</span></button>';
   const stopHTML=n=>{
     const open=nodeOpen(n),d=n.deck?DECKS[n.deck]:null;
-    let h='<div class="stop-h"><span class="badge k-'+n.kind+'">'+(n.kind==='main'?'Level '+lvl[n.id]:KIND[n.kind])+'</span><h2>'+esc(n.title)+'</h2>'+(nodeCleared(n)&&n.kind!=='start'?'<span class="clr">Cleared ✓</span>':'')+'</div>';
+    let h='<div class="stop-h"><span class="badge k-'+n.kind+'">'+(n.kind==='main'?'Level '+lvl[n.id]:KIND[n.kind])+'</span><h2>'+esc(n.title)+'</h2>'+(nodeCleared(n)&&n.kind!=='start'?'<span class="clr">Cleared ✓</span>':'')+(n.kind!=='start'?'<button class="stop-x" data-min aria-label="Hide or show this panel" title="Hide or show this panel"><span></span></button>':'')+'</div>';
     if(n.blurb)h+='<p class="tiny">'+esc(n.blurb)+'</p>';
     h+=ACCT.dueHTML(MAP,n);
     if(n.kind==='start')return h;
@@ -1088,12 +1106,14 @@ function home(){
   };
   const select=id=>{
     const n=nodeById(id),d=n.deck?DECKS[n.deck]:null; S.pos[MAP.id]=id; save(); DECK=d&&!d.error?d:null;
-    $('#stop').innerHTML=stopHTML(n);
+    $('#stop').innerHTML=stopHTML(n); $('#stop').classList.remove('min');
     app.querySelectorAll('.node').forEach(b=>b.classList.toggle('here',b.dataset.n===id));
   };
+  /* the little arrow tucks the panel away so the map is easier to see; tapping any stop brings it back */
+  $('#stop').addEventListener('click',e=>{if(e.target.closest('[data-min]'))$('#stop').classList.toggle('min');});
   $('.map').onclick=e=>{
     const b=e.target.closest('.node'); if(!b||walking)return;
-    const id=b.dataset.n,n=nodeById(id); if(id===S.pos[MAP.id])return;
+    const id=b.dataset.n,n=nodeById(id); if(id===S.pos[MAP.id]){$('#stop').classList.remove('min');return;}
     if(!nodeOpen(n)){$('#stop').innerHTML=stopHTML(n);toast('Locked for now');return;}
     const path=route(S.pos[MAP.id],id),still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(!path||path.length<2||still){place(n);return select(id);}
@@ -1249,7 +1269,7 @@ function drill(kind){
     const M=drillMastery(DECK,kind),sec=Math.round((Date.now()-R.t0)/1000),pct=n?Math.round(100*score/n):0;
     const miss=res.filter(r=>!r.ok),ps=drillPassed(DECK,kind);
     const review=(exam||mode==='pool')&&miss.length?'<h3 class="rv-h">Review your misses</h3><ol class="review">'+miss.map(r=>{const a=answerText(r.q);
-      return '<li><p>'+fmt(r.q.text||r.q.title||'')+'</p>'+(a?'<p><strong>Answer:</strong> '+fmt(a)+'</p>':'')+(r.q.explain?'<p class="tiny">'+fmt(r.q.explain)+'</p>':'')+'</li>';}).join('')+'</ol>':'';
+      return '<li><p>'+fmt(r.q.text||r.q.title||'')+'</p>'+(GIVEN[r.q.id]?'<p class="rv-y"><strong>You answered:</strong> '+GIVEN[r.q.id]+'</p>':'')+(a?'<p><strong>Answer:</strong> '+fmt(a)+'</p>':'')+(r.q.explain?'<p class="tiny">'+fmt(r.q.explain)+'</p>':'')+'</li>';}).join('')+'</ol>':'';
     let passLine;
     if(S.preview)passLine='';
     else if(mode==='pool')passLine=passNow?'<p class="verdict">Passed ✓ '+score+' of '+R.n+' is at least '+Math.round(100*RULES.passPct)+'%.</p>'
@@ -1302,6 +1322,7 @@ function drill(kind){
     goB.onclick=()=>{
       if(v.done){ if(justPassed&&at===R.i-1)return finish(); at++; return show(); }
       const ok=v.C.check(); v.done=true; R.ok[R.i]=ok; if(ok)R.score++;
+      if(!ok)GIVEN[q.id]=givenHTML(v.art);
       R.i++; const note=record(q,ok,kind);
       if(mode==='pool'){seen.add(q.id);if(seen.size>=all.length)seen.clear();p.seen[kind]=[...seen];}
       let again='';

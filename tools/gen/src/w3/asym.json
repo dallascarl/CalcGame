@@ -119,7 +119,7 @@
    "questions": [
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{1}{x - 2}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{1}{x - 2}$.",
      "answers": [
       2
      ],
@@ -131,7 +131,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x + 1}{x^2 - 4}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{x + 1}{x^2 - 4}$.",
      "answers": [
       -2,
       2
@@ -144,7 +144,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x^2 - 9}{x - 3}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{x^2 - 9}{x - 3}$.",
      "answers": [],
      "var": "x",
      "label": "$x$ =",
@@ -154,7 +154,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x}{x^2 + 1}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{x}{x^2 + 1}$.",
      "answers": [],
      "var": "x",
      "label": "$x$ =",
@@ -164,7 +164,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x - 1}{x^2 - 1}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{x - 1}{x^2 - 1}$.",
      "answers": [
       -1
      ],
@@ -176,7 +176,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{3}{x(x - 5)}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{3}{x(x - 5)}$.",
      "answers": [
       0,
       5
@@ -201,7 +201,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{e^x}{x + 3}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{e^x}{x + 3}$.",
      "answers": [
       -3
      ],
@@ -213,7 +213,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{2x^2}{x^2 - x - 6}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{2x^2}{x^2 - x - 6}$.",
      "answers": [
       -2,
       3
@@ -226,7 +226,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x^2 + x - 2}{x^2 - 4}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{x^2 + x - 2}{x^2 - 4}$.",
      "answers": [
       2
      ],
@@ -238,7 +238,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{1}{x^2 + 4x + 4}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{1}{x^2 + 4x + 4}$.",
      "answers": [
       -2
      ],
@@ -250,7 +250,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{sqrt x}{x - 1}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{sqrt x}{x - 1}$.",
      "answers": [
       1
      ],
@@ -262,7 +262,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x}{e^x - 1}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{x}{e^x - 1}$.",
      "answers": [],
      "var": "x",
      "label": "$x$ =",
@@ -284,7 +284,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{5}{x^3 - x}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{5}{x^3 - x}$.",
      "answers": [
       -1,
       0,
@@ -298,7 +298,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{sin x}{x}$.",
+     "text": "Find every vertical asymptote of $f(x) = frac{sin x}{x}$.",
      "answers": [],
      "var": "x",
      "label": "$x$ =",
@@ -313,7 +313,7 @@
    "questions": [
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{1}{x - 2}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{1}{x - 2}$.",
      "answers": [
       0
      ],
@@ -325,7 +325,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{3x + 1}{x - 2}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{3x + 1}{x - 2}$.",
      "answers": [
       3
      ],
@@ -337,7 +337,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{2x^2}{x^2 - x - 6}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{2x^2}{x^2 - x - 6}$.",
      "answers": [
       2
      ],
@@ -349,7 +349,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x^2}{x + 1}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{x^2}{x + 1}$.",
      "answers": [],
      "var": "y",
      "label": "$y$ =",
@@ -359,7 +359,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x^3 + 1}{x^2 + 1}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{x^3 + 1}{x^2 + 1}$.",
      "answers": [],
      "var": "y",
      "label": "$y$ =",
@@ -393,7 +393,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x}{sqrt(x^2 + 1)}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{x}{sqrt(x^2 + 1)}$.",
      "answers": [
       -1,
       1
@@ -419,7 +419,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{5x^2 - x}{2x^2 + 7}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{5x^2 - x}{2x^2 + 7}$.",
      "answers": [
       2.5
      ],
@@ -431,7 +431,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{4 - x}{2x + 1}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{4 - x}{2x + 1}$.",
      "answers": [
       -0.5
      ],
@@ -453,7 +453,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{1}{x^2 + 1}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{1}{x^2 + 1}$.",
      "answers": [
       0
      ],
@@ -465,7 +465,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x^2 + 4}{x^2 - 4}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{x^2 + 4}{x^2 - 4}$.",
      "answers": [
       1
      ],
@@ -477,7 +477,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{1 - 2x^3}{x^3 + x}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{1 - 2x^3}{x^3 + x}$.",
      "answers": [
       -2
      ],
@@ -489,7 +489,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{sin x}{x}$.",
+     "text": "Find every horizontal asymptote of $f(x) = frac{sin x}{x}$.",
      "answers": [
       0
      ],
@@ -506,7 +506,7 @@
    "questions": [
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2}{x - 1}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{x^2}{x - 1}$.",
      "answer": "1+x",
      "vars": [
       "x"
@@ -517,7 +517,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2 + 3x + 1}{x + 1}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{x^2 + 3x + 1}{x + 1}$.",
      "answer": "2+x",
      "vars": [
       "x"
@@ -528,7 +528,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{2x^2 + x - 3}{x - 2}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{2x^2 + x - 3}{x - 2}$.",
      "answer": "5+2*x",
      "vars": [
       "x"
@@ -539,7 +539,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^3 + 1}{x^2 + 1}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{x^3 + 1}{x^2 + 1}$.",
      "answer": "x",
      "vars": [
       "x"
@@ -550,7 +550,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2 - 4x + 5}{x - 3}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{x^2 - 4x + 5}{x - 3}$.",
      "answer": "-1+x",
      "vars": [
       "x"
@@ -561,7 +561,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{3x^2 - 2}{x}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{3x^2 - 2}{x}$.",
      "answer": "3*x",
      "vars": [
       "x"
@@ -572,7 +572,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^3}{x^2 - 1}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{x^3}{x^2 - 1}$.",
      "answer": "x",
      "vars": [
       "x"
@@ -583,7 +583,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{4x^2 + 1}{2x + 1}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{4x^2 + 1}{2x + 1}$.",
      "answer": "-1+2*x",
      "vars": [
       "x"
@@ -594,7 +594,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2 + 1}{x}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{x^2 + 1}{x}$.",
      "answer": "x",
      "vars": [
       "x"
@@ -605,7 +605,7 @@
     },
     {
      "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{-x^2 + 2x}{x + 1}$.",
+     "text": "Find the slant asymptote of $f(x) = frac{-x^2 + 2x}{x + 1}$.",
      "answer": "3-x",
      "vars": [
       "x"

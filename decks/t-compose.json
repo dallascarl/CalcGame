@@ -1701,7 +1701,7 @@
    {
     "id": "L4",
     "type": "mc",
-    "text": "Now run it backwards, which is what the chain rule will ask of you.$$h(x) = sqrt(x^2 + 1)$$\nIf you plugged in a number, what would you compute **first**? That part is the inside function.",
+    "text": "Now run it backwards.$$h(x) = sqrt(x^2 + 1)$$\nIf you plugged in a number, what would you compute **first**? That part is the inside function.",
     "options": [
      "$x^2 + 1$",
      "$sqrt(x)$",
@@ -1715,7 +1715,7 @@
    {
     "id": "L5",
     "type": "expr",
-    "text": "The outside function is what you do **last**. Call the inside $u = x^2 + 1$. Write the outside as a function of $u$.",
+    "text": "$$h(x) = sqrt(x^2 + 1)$$\nThe outside function is what you do **last**. Call the inside $u = x^2 + 1$. Write the outside as a function of $u$.",
     "answer": "sqrt(u)",
     "vars": [
      "u"
@@ -1726,7 +1726,7 @@
     "label": "$f(u)$ =",
     "show": "$sqrt(u)$",
     "hint": "Once you have $u$, all that is left is to take its square root.",
-    "explain": "$h(x) = f(g(x))$ with inside $g(x) = x^2 + 1$ and outside $f(u) = sqrt(u)$. Seeing these two layers is the whole chain rule."
+    "explain": "$h(x) = f(g(x))$ with inside $g(x) = x^2 + 1$ and outside $f(u) = sqrt(u)$."
    }
   ]
  }

@@ -14,7 +14,7 @@
     {
      "id": "A1",
      "type": "num",
-     "text": "Find $sum[k=1,6] k$.",
+     "text": "Find\n$$sum[k=1,6] k$$",
      "answer": 21,
      "label": "sum =",
      "level": 1,
@@ -23,7 +23,7 @@
     {
      "id": "A2",
      "type": "num",
-     "text": "Find $sum[k=3,5] k^2 - 5$.",
+     "text": "Find\n$$sum[k=3,5] k^2 - 5$$",
      "answer": 35,
      "label": "sum =",
      "level": 1,
@@ -32,7 +32,7 @@
     {
      "id": "A3",
      "type": "num",
-     "text": "Find $sum[k=1,3] 1/k$.",
+     "text": "Find\n$$sum[k=1,3] 1/k$$",
      "answer": 1.833333,
      "label": "sum =",
      "level": 1,
@@ -41,7 +41,7 @@
     {
      "id": "A4",
      "type": "num",
-     "text": "Find $sum[k=1,5] 5$.",
+     "text": "Find\n$$sum[k=1,5] 5$$",
      "answer": 25,
      "label": "sum =",
      "level": 1,
@@ -50,7 +50,7 @@
     {
      "id": "A5",
      "type": "num",
-     "text": "Find $sum[i=1,4] 2i + 1$.",
+     "text": "Find\n$$sum[i=1,4] 2i + 1$$",
      "answer": 24,
      "label": "sum =",
      "level": 1,
@@ -59,7 +59,7 @@
     {
      "id": "A6",
      "type": "num",
-     "text": "Find $sum[k=1,4] k^2$.",
+     "text": "Find\n$$sum[k=1,4] k^2$$",
      "answer": 30,
      "label": "sum =",
      "level": 1,
@@ -68,7 +68,7 @@
     {
      "id": "A7",
      "type": "num",
-     "text": "Find $sum[k=1,5] 3k - 1$.",
+     "text": "Find\n$$sum[k=1,5] 3k - 1$$",
      "answer": 40,
      "label": "sum =",
      "level": 1,
@@ -77,7 +77,7 @@
     {
      "id": "A8",
      "type": "num",
-     "text": "Find $sum[k=1,5] (-1)^k$.",
+     "text": "Find\n$$sum[k=1,5] (-1)^k$$",
      "answer": -1,
      "label": "sum =",
      "level": 1,
@@ -86,7 +86,7 @@
     {
      "id": "A9",
      "type": "num",
-     "text": "Find $sum[k=0,4] 2^k$.",
+     "text": "Find\n$$sum[k=0,4] 2^k$$",
      "answer": 31,
      "label": "sum =",
      "level": 1,
@@ -95,7 +95,7 @@
     {
      "id": "A10",
      "type": "num",
-     "text": "Find $sum[k=1,3] k(k + 1)$.",
+     "text": "Find\n$$sum[k=1,3] k(k + 1)$$",
      "answer": 20,
      "label": "sum =",
      "level": 1,
@@ -104,7 +104,7 @@
     {
      "id": "A11",
      "type": "num",
-     "text": "Find $sum[k=1,4] 10 - k$.",
+     "text": "Find\n$$sum[k=1,4] 10 - k$$",
      "answer": 30,
      "label": "sum =",
      "level": 1,
@@ -113,7 +113,7 @@
     {
      "id": "A12",
      "type": "num",
-     "text": "Find $sum[k=1,3] k^3$.",
+     "text": "Find\n$$sum[k=1,3] k^3$$",
      "answer": 36,
      "label": "sum =",
      "level": 1,
@@ -122,7 +122,7 @@
     {
      "id": "A13",
      "type": "num",
-     "text": "Find $sum[k=1,3] (2k + 1)^2$.",
+     "text": "Find\n$$sum[k=1,3] (2k + 1)^2$$",
      "answer": 83,
      "label": "sum =",
      "level": 1,
@@ -131,7 +131,7 @@
     {
      "id": "A14",
      "type": "num",
-     "text": "Find $sum[k=1,3] 1/2^k$.",
+     "text": "Find\n$$sum[k=1,3] 1/2^k$$",
      "answer": 0.875,
      "label": "sum =",
      "level": 1,
@@ -140,7 +140,7 @@
     {
      "id": "C15",
      "type": "num",
-     "text": "Find $sum[k=1,5] 5$.",
+     "text": "Find\n$$sum[k=1,5] 5$$",
      "answer": 25,
      "label": "sum =",
      "level": 1,
@@ -149,7 +149,7 @@
     {
      "id": "C16",
      "type": "num",
-     "text": "Find $sum[k=1,10] 7$.",
+     "text": "Find\n$$sum[k=1,10] 7$$",
      "answer": 70,
      "label": "sum =",
      "level": 1,
@@ -158,7 +158,7 @@
     {
      "id": "C17",
      "type": "num",
-     "text": "Find $sum[k=1,20] 3$.",
+     "text": "Find\n$$sum[k=1,20] 3$$",
      "answer": 60,
      "label": "sum =",
      "level": 1,
@@ -167,7 +167,7 @@
     {
      "id": "C18",
      "type": "num",
-     "text": "Find $sum[k=1,6] -2$.",
+     "text": "Find\n$$sum[k=1,6] -2$$",
      "answer": -12,
      "label": "sum =",
      "level": 1,
@@ -239,7 +239,7 @@
     {
      "id": "H26",
      "type": "num",
-     "text": "Find $sum[k=1,8] (2k - k^2)$. Split it up and use the formulas.",
+     "text": "Find\n$$sum[k=1,8] (2k - k^2)$$\nSplit it up and use the formulas.",
      "answer": -132,
      "label": "sum =",
      "level": 3,
@@ -248,7 +248,7 @@
     {
      "id": "H27",
      "type": "num",
-     "text": "Find $sum[k=1,100] (k^3 - k)$. Split it up and use the formulas.",
+     "text": "Find\n$$sum[k=1,100] (k^3 - k)$$\nSplit it up and use the formulas.",
      "answer": 25497450,
      "label": "sum =",
      "level": 3,
@@ -257,7 +257,7 @@
     {
      "id": "H28",
      "type": "num",
-     "text": "Find $sum[k=1,10] ((2k + 1)^2)$. Split it up and use the formulas.",
+     "text": "Find\n$$sum[k=1,10] ((2k + 1)^2)$$\nSplit it up and use the formulas.",
      "answer": 1770,
      "label": "sum =",
      "level": 3,
@@ -266,7 +266,7 @@
     {
      "id": "H29",
      "type": "num",
-     "text": "Find $sum[k=1,20] (3k + 2)$. Split it up and use the formulas.",
+     "text": "Find\n$$sum[k=1,20] (3k + 2)$$\nSplit it up and use the formulas.",
      "answer": 670,
      "label": "sum =",
      "level": 3,
@@ -275,7 +275,7 @@
     {
      "id": "P30",
      "type": "num",
-     "text": "$sum[k=1,n] a_k = 10$ and $sum[k=1,n] b_k = 4$. Find $sum[k=1,n] (3a_k - 1b_k)$.",
+     "text": "$$sum[k=1,n] a_k = 10 ;; sum[k=1,n] b_k = 4$$\nFind\n$$sum[k=1,n] (3a_k - 1b_k)$$",
      "answer": 26,
      "label": "sum =",
      "level": 2,
@@ -284,7 +284,7 @@
     {
      "id": "P31",
      "type": "num",
-     "text": "$sum[k=1,n] a_k = 6$ and $sum[k=1,n] b_k = 2$. Find $sum[k=1,n] (2a_k + 5b_k)$.",
+     "text": "$$sum[k=1,n] a_k = 6 ;; sum[k=1,n] b_k = 2$$\nFind\n$$sum[k=1,n] (2a_k + 5b_k)$$",
      "answer": 22,
      "label": "sum =",
      "level": 2,
@@ -293,7 +293,7 @@
     {
      "id": "P32",
      "type": "num",
-     "text": "$sum[k=1,n] a_k = 12$ and $sum[k=1,n] b_k = -3$. Find $sum[k=1,n] (a_k + b_k)$.",
+     "text": "$$sum[k=1,n] a_k = 12 ;; sum[k=1,n] b_k = -3$$\nFind\n$$sum[k=1,n] (a_k + b_k)$$",
      "answer": 9,
      "label": "sum =",
      "level": 2,
@@ -302,7 +302,7 @@
     {
      "id": "P33",
      "type": "num",
-     "text": "$sum[k=1,n] a_k = 8$ and $sum[k=1,n] b_k = 5$. Find $sum[k=1,n] (-1a_k + 2b_k)$.",
+     "text": "$$sum[k=1,n] a_k = 8 ;; sum[k=1,n] b_k = 5$$\nFind\n$$sum[k=1,n] (-1a_k + 2b_k)$$",
      "answer": 2,
      "label": "sum =",
      "level": 2,
@@ -311,7 +311,7 @@
     {
      "id": "P34",
      "type": "num",
-     "text": "$sum[k=1,n] a_k = 7$ and $sum[k=1,n] b_k = 1$. Find $sum[k=1,n] (4a_k )$.",
+     "text": "$$sum[k=1,n] a_k = 7 ;; sum[k=1,n] b_k = 1$$\nFind\n$$sum[k=1,n] (4a_k )$$",
      "answer": 28,
      "label": "sum =",
      "level": 2,
@@ -320,7 +320,7 @@
     {
      "id": "P35",
      "type": "num",
-     "text": "$sum[k=1,n] a_k = 20$ and $sum[k=1,n] b_k = 6$. Find $sum[k=1,n] (a_k - 2b_k)$.",
+     "text": "$$sum[k=1,n] a_k = 20 ;; sum[k=1,n] b_k = 6$$\nFind\n$$sum[k=1,n] (a_k - 2b_k)$$",
      "answer": 8,
      "label": "sum =",
      "level": 2,
@@ -399,7 +399,7 @@
    {
     "id": "L2",
     "type": "mc",
-    "text": "Which sum is $25 + 21 + 17 + 13 + 9 + 5 + 1 - 3$?",
+    "text": "Which sum is\n$$25 + 21 + 17 + 13 + 9 + 5 + 1 - 3$$",
     "options": [
      "$sum[k=0,7] (25 - 4k)$",
      "$sum[k=1,8] (25 - 4k)$",
@@ -413,7 +413,7 @@
    {
     "id": "L3",
     "type": "num",
-    "text": "Formulas help with long sums: $sum[k=1,n] k = frac{n(n + 1)}{2}$. Find $sum[k=1,100] k$.",
+    "text": "Formulas help with long sums:\n$$sum[k=1,n] k = frac{n(n + 1)}{2}$$\nFind\n$$sum[k=1,100] k$$",
     "answer": 5050,
     "label": "sum =",
     "hint": "$frac{100·101}{2}$",

@@ -14,7 +14,7 @@
     {
      "id": "A1",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x + 1}{x - 3}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x + 1}{x - 3}$$",
      "answers": [
       3
      ],
@@ -27,7 +27,7 @@
     {
      "id": "A2",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{2}{x^2 - 9}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{2}{x^2 - 9}$$",
      "answers": [
       3,
       -3
@@ -41,7 +41,7 @@
     {
      "id": "A3",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x^2 - 4}{x - 2}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x^2 - 4}{x - 2}$$",
      "answers": [],
      "var": "x",
      "label": "Asymptote at $x$ =",
@@ -52,7 +52,7 @@
     {
      "id": "A4",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x}{x^2 + 1}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x}{x^2 + 1}$$",
      "answers": [],
      "var": "x",
      "label": "Asymptote at $x$ =",
@@ -63,7 +63,7 @@
     {
      "id": "A5",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x - 1}{x^2 - x - 6}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x - 1}{x^2 - x - 6}$$",
      "answers": [
       3,
       -2
@@ -77,7 +77,7 @@
     {
      "id": "A6",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x + 2}{x^2 - 4}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x + 2}{x^2 - 4}$$",
      "answers": [
       2
      ],
@@ -90,7 +90,7 @@
     {
      "id": "A7",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{5}{x}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{5}{x}$$",
      "answers": [
       0
      ],
@@ -103,7 +103,7 @@
     {
      "id": "A8",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x^2}{(x - 1)^2}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x^2}{(x - 1)^2}$$",
      "answers": [
       1
      ],
@@ -116,7 +116,7 @@
     {
      "id": "A9",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x + 3}{x^2 + 5x + 6}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x + 3}{x^2 + 5x + 6}$$",
      "answers": [
       -2
      ],
@@ -129,7 +129,7 @@
     {
      "id": "A10",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{1}{x^2 - 5x}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{1}{x^2 - 5x}$$",
      "answers": [
       0,
       5
@@ -143,7 +143,7 @@
     {
      "id": "A11",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{3x}{2x - 1}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{3x}{2x - 1}$$",
      "answers": [
       0.5
      ],
@@ -156,7 +156,7 @@
     {
      "id": "A12",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x^2 + 1}{x^3 - x}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x^2 + 1}{x^3 - x}$$",
      "answers": [
       0,
       1,
@@ -171,7 +171,7 @@
     {
      "id": "A13",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x - 4}{x^2 - 16}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x - 4}{x^2 - 16}$$",
      "answers": [
       -4
      ],
@@ -184,7 +184,7 @@
     {
      "id": "A14",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{1}{x^2 + 4}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{1}{x^2 + 4}$$",
      "answers": [],
      "var": "x",
      "label": "Asymptote at $x$ =",
@@ -195,7 +195,7 @@
     {
      "id": "A15",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{2x + 6}{x + 3}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{2x + 6}{x + 3}$$",
      "answers": [],
      "var": "x",
      "label": "Asymptote at $x$ =",
@@ -206,7 +206,7 @@
     {
      "id": "A16",
      "type": "crit",
-     "text": "List every vertical asymptote of $f(x) = frac{x}{x^2 - 2x + 1}$.",
+     "text": "List every vertical asymptote of\n$$f(x) = frac{x}{x^2 - 2x + 1}$$",
      "answers": [
       1
      ],
@@ -382,7 +382,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "A rational function has a **vertical asymptote** where the bottom is 0 and the top is not. Where is the vertical asymptote of $f(x) = frac{x + 1}{x - 3}$?",
+    "text": "A rational function has a **vertical asymptote** where the bottom is 0 and the top is not. Where is the vertical asymptote of\n$$f(x) = frac{x + 1}{x - 3}$$",
     "options": [
      "$x = 3$",
      "$x = -1$",

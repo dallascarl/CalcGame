@@ -691,7 +691,7 @@
     {
      "id": "C21",
      "type": "num",
-     "text": "$y = frac{1}{x}$. Find the differential $dy$ when $x = 2$ and $dx = 0.1$.",
+     "text": "$$y = frac{1}{x}$$\nFind the differential $dy$ when $x = 2$ and $dx = 0.1$.",
      "label": "$dy$ =",
      "answer": -0.025,
      "tol": 0.0002,
@@ -701,7 +701,7 @@
     {
      "id": "C22",
      "type": "num",
-     "text": "A sphere's radius is measured as 10 cm, possibly off by 0.05 cm. Use differentials to estimate the possible error in its volume $V = frac{4}{3}pi r^3$.",
+     "text": "A sphere's radius is measured as 10 cm, possibly off by 0.05 cm. Use differentials to estimate the possible error in its volume\n$$V = frac{4}{3}pi r^3$$",
      "label": "$dV$ ≈",
      "answer": 62.8319,
      "tol": 0.01,
@@ -844,7 +844,7 @@
    {
     "id": "N3",
     "type": "mc",
-    "text": "The **linearization** of $f$ at $x = a$ is\n$L(x) = f(a) + f'(a)(x - a)$\nWhat is $L(x)$, really?",
+    "text": "The **linearization** of $f$ at $x = a$ is\n$$L(x) = f(a) + f'(a)(x - a)$$\nWhat is $L(x)$, really?",
     "options": [
      "The tangent line at $a$, written as a function",
      "A brand-new kind of function",
@@ -876,7 +876,7 @@
    {
     "id": "N7",
     "type": "num",
-    "text": "So $L(x) = frac{1}{2} - frac{1}{4}(x - 2)$. Use it to estimate $frac{1}{2.1}$: find $L(2.1)$.",
+    "text": "So $L(x) = frac{1}{2} - frac{1}{4}(x - 2)$. Use it to estimate\n$$frac{1}{2.1}$$\nfind $L(2.1)$.",
     "label": "$L(2.1)$ =",
     "answer": 0.475,
     "tol": 0.0005,

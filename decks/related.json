@@ -236,7 +236,7 @@
     },
     {
      "type": "expr",
-     "text": "$y = frac{1}{x}$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "text": "$$y = frac{1}{x}$$\nDifferentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
      "answer": "-x'/x^2",
      "vars": [
       "x",
@@ -284,7 +284,7 @@
     },
     {
      "type": "expr",
-     "text": "A cone whose radius is always half its height has $V = frac{pi}{12}h^3$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "text": "A cone whose radius is always half its height has\n$$V = frac{pi}{12}h^3$$\nDifferentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
      "answer": "pi*h'*h^2/4",
      "vars": [
       "h",
@@ -329,7 +329,7 @@
     },
     {
      "type": "expr",
-     "text": "$tan θ = frac{x}{100}$. Differentiate the **left side**:",
+     "text": "$$tan θ = frac{x}{100}$$\nDifferentiate the **left side**:",
      "answer": "sec(θ)^2*θ'",
      "vars": [
       "θ",
@@ -347,7 +347,7 @@
     },
     {
      "type": "expr",
-     "text": "$tan θ = frac{100}{x}$. Differentiate the **right side**:",
+     "text": "$$tan θ = frac{100}{x}$$\nDifferentiate the **right side**:",
      "answer": "-100*x'/x^2",
      "vars": [
       "x",
@@ -360,7 +360,7 @@
     },
     {
      "type": "expr",
-     "text": "$sin θ = frac{y}{10}$. Differentiate the **left side**:",
+     "text": "$$sin θ = frac{y}{10}$$\nDifferentiate the **left side**:",
      "answer": "θ'*cos(θ)",
      "vars": [
       "θ",
@@ -630,7 +630,7 @@
       },
       {
        "type": "expr",
-       "text": "$V = frac{4}{3}pi r^3$. Differentiate with respect to $t$.",
+       "text": "$$V = frac{4}{3}pi r^3$$\nDifferentiate with respect to $t$.",
        "answer": "4*pi*r^2*r'",
        "vars": [
         "r",
@@ -662,7 +662,7 @@
      "steps": [
       {
        "type": "expr",
-       "text": "$V = frac{4}{3}pi r^3$. Differentiate with respect to $t$.",
+       "text": "$$V = frac{4}{3}pi r^3$$\nDifferentiate with respect to $t$.",
        "answer": "4*pi*r^2*r'",
        "vars": [
         "r",
@@ -848,7 +848,7 @@
       },
       {
        "type": "num",
-       "text": "Find $z' = frac{x x' + y y'}{z}$.",
+       "text": "Find\n$$z' = frac{x x' + y y'}{z}$$",
        "answer": 36.055513,
        "label": "$z'$ ≈",
        "tol": 0.02,

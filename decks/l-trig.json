@@ -30,7 +30,7 @@
     {
      "id": "T2",
      "type": "tf",
-     "text": "$lim[x->0] frac{1 - cos(x)}{x} = 1$",
+     "text": "$$lim[x->0] frac{1 - cos(x)}{x} = 1$$",
      "answer": false,
      "explain": "It is 0. (It was a trick question in class too!)"
     },
@@ -69,7 +69,7 @@
     {
      "id": "A1",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(5x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(5x)}{x}$$",
      "answer": 5,
      "label": "limit =",
      "level": 2,
@@ -78,7 +78,7 @@
     {
      "id": "A2",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(3x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(3x)}{x}$$",
      "answer": 3,
      "label": "limit =",
      "level": 2,
@@ -87,7 +87,7 @@
     {
      "id": "A3",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(2x)}{3x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(2x)}{3x}$$",
      "answer": 0.666667,
      "label": "limit =",
      "level": 2,
@@ -96,7 +96,7 @@
     {
      "id": "A4",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(4x)}{2x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(4x)}{2x}$$",
      "answer": 2,
      "label": "limit =",
      "level": 2,
@@ -105,7 +105,7 @@
     {
      "id": "A5",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(7x)}{7x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(7x)}{7x}$$",
      "answer": 1,
      "label": "limit =",
      "level": 2,
@@ -114,7 +114,7 @@
     {
      "id": "A6",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(x)}{4x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(x)}{4x}$$",
      "answer": 0.25,
      "label": "limit =",
      "level": 2,
@@ -123,7 +123,7 @@
     {
      "id": "A7",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(6x)}{5x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(6x)}{5x}$$",
      "answer": 1.2,
      "label": "limit =",
      "level": 2,
@@ -132,7 +132,7 @@
     {
      "id": "A8",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(3x)}{2x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(3x)}{2x}$$",
      "answer": 1.5,
      "label": "limit =",
      "level": 2,
@@ -141,7 +141,7 @@
     {
      "id": "A9",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(8x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(8x)}{x}$$",
      "answer": 8,
      "label": "limit =",
      "level": 2,
@@ -150,7 +150,7 @@
     {
      "id": "A10",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(x)}{3x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(x)}{3x}$$",
      "answer": 0.333333,
      "label": "limit =",
      "level": 2,
@@ -159,7 +159,7 @@
     {
      "id": "K11",
      "type": "num",
-     "text": "$frac{sin(4x)}{x} = k·frac{sin(4x)}{4x}$. What is $k$?",
+     "text": "$$frac{sin(4x)}{x} = k·frac{sin(4x)}{4x}$$\nWhat is $k$?",
      "answer": 4,
      "label": "$k$ =",
      "level": 1,
@@ -168,7 +168,7 @@
     {
      "id": "K12",
      "type": "num",
-     "text": "$frac{sin(3x)}{x} = k·frac{sin(3x)}{3x}$. What is $k$?",
+     "text": "$$frac{sin(3x)}{x} = k·frac{sin(3x)}{3x}$$\nWhat is $k$?",
      "answer": 3,
      "label": "$k$ =",
      "level": 1,
@@ -177,7 +177,7 @@
     {
      "id": "K13",
      "type": "num",
-     "text": "$frac{sin(10x)}{x} = k·frac{sin(10x)}{10x}$. What is $k$?",
+     "text": "$$frac{sin(10x)}{x} = k·frac{sin(10x)}{10x}$$\nWhat is $k$?",
      "answer": 10,
      "label": "$k$ =",
      "level": 1,
@@ -186,7 +186,7 @@
     {
      "id": "K14",
      "type": "num",
-     "text": "$frac{sin(2x)}{x} = k·frac{sin(2x)}{2x}$. What is $k$?",
+     "text": "$$frac{sin(2x)}{x} = k·frac{sin(2x)}{2x}$$\nWhat is $k$?",
      "answer": 2,
      "label": "$k$ =",
      "level": 1,
@@ -195,7 +195,7 @@
     {
      "id": "K15",
      "type": "num",
-     "text": "$frac{sin(6x)}{x} = k·frac{sin(6x)}{6x}$. What is $k$?",
+     "text": "$$frac{sin(6x)}{x} = k·frac{sin(6x)}{6x}$$\nWhat is $k$?",
      "answer": 6,
      "label": "$k$ =",
      "level": 1,
@@ -204,7 +204,7 @@
     {
      "id": "K16",
      "type": "num",
-     "text": "$frac{sin(9x)}{x} = k·frac{sin(9x)}{9x}$. What is $k$?",
+     "text": "$$frac{sin(9x)}{x} = k·frac{sin(9x)}{9x}$$\nWhat is $k$?",
      "answer": 9,
      "label": "$k$ =",
      "level": 1,
@@ -213,7 +213,7 @@
     {
      "id": "B17",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(3x)}{sin(5x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(3x)}{sin(5x)}$$",
      "answer": 0.6,
      "label": "limit =",
      "level": 3,
@@ -222,7 +222,7 @@
     {
      "id": "B18",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(2x)}{sin(7x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(2x)}{sin(7x)}$$",
      "answer": 0.285714,
      "label": "limit =",
      "level": 3,
@@ -231,7 +231,7 @@
     {
      "id": "B19",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(4x)}{sin(x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(4x)}{sin(x)}$$",
      "answer": 4,
      "label": "limit =",
      "level": 3,
@@ -240,7 +240,7 @@
     {
      "id": "B20",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(6x)}{sin(3x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(6x)}{sin(3x)}$$",
      "answer": 2,
      "label": "limit =",
      "level": 3,
@@ -249,7 +249,7 @@
     {
      "id": "B21",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(x)}{sin(2x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(x)}{sin(2x)}$$",
      "answer": 0.5,
      "label": "limit =",
      "level": 3,
@@ -258,7 +258,7 @@
     {
      "id": "B22",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(5x)}{sin(5x)}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(5x)}{sin(5x)}$$",
      "answer": 1,
      "label": "limit =",
      "level": 3,
@@ -267,7 +267,7 @@
     {
      "id": "T23",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(2x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(2x)}{x}$$",
      "answer": 2,
      "label": "limit =",
      "level": 3,
@@ -276,7 +276,7 @@
     {
      "id": "T24",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(3x)}{4x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(3x)}{4x}$$",
      "answer": 0.75,
      "label": "limit =",
      "level": 3,
@@ -285,7 +285,7 @@
     {
      "id": "T25",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(5x)}{2x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(5x)}{2x}$$",
      "answer": 2.5,
      "label": "limit =",
      "level": 3,
@@ -294,7 +294,7 @@
     {
      "id": "T26",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(x)}{6x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(x)}{6x}$$",
      "answer": 0.166667,
      "label": "limit =",
      "level": 3,
@@ -303,7 +303,7 @@
     {
      "id": "T27",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(4x)}{4x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(4x)}{4x}$$",
      "answer": 1,
      "label": "limit =",
      "level": 3,
@@ -312,7 +312,7 @@
     {
      "id": "T28",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{tan(7x)}{2x}$.",
+     "text": "Find\n$$lim[x->0] frac{tan(7x)}{2x}$$",
      "answer": 3.5,
      "label": "limit =",
      "level": 3,
@@ -321,7 +321,7 @@
     {
      "id": "M29",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{x}{sin(x)}$.",
+     "text": "Find\n$$lim[x->0] frac{x}{sin(x)}$$",
      "answer": 1,
      "label": "limit =",
      "level": 2,
@@ -330,7 +330,7 @@
     {
      "id": "M30",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{1 - cos(x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{1 - cos(x)}{x}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -339,7 +339,7 @@
     {
      "id": "M31",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{1 - cos(3x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{1 - cos(3x)}{x}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -348,7 +348,7 @@
     {
      "id": "M32",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin^2(x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin^2(x)}{x}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -357,7 +357,7 @@
     {
      "id": "M33",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(x)}{x} + cos(x)$.",
+     "text": "Find\n$$lim[x->0] frac{sin(x)}{x} + cos(x)$$",
      "answer": 2,
      "label": "limit =",
      "level": 2,
@@ -366,7 +366,7 @@
     {
      "id": "M34",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{x + sin(x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{x + sin(x)}{x}$$",
      "answer": 2,
      "label": "limit =",
      "level": 2,
@@ -375,7 +375,7 @@
     {
      "id": "M35",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{sin(x)cos(x)}{x}$.",
+     "text": "Find\n$$lim[x->0] frac{sin(x)cos(x)}{x}$$",
      "answer": 1,
      "label": "limit =",
      "level": 2,
@@ -384,7 +384,7 @@
     {
      "id": "M36",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{2x}{sin(3x)}$.",
+     "text": "Find\n$$lim[x->0] frac{2x}{sin(3x)}$$",
      "answer": 0.666667,
      "label": "limit =",
      "level": 2,
@@ -393,7 +393,7 @@
     {
      "id": "M37",
      "type": "lim",
-     "text": "Find $lim[x->0] x cot(x)$.",
+     "text": "Find\n$$lim[x->0] x cot(x)$$",
      "answer": 1,
      "label": "limit =",
      "level": 2,
@@ -402,7 +402,7 @@
     {
      "id": "M38",
      "type": "lim",
-     "text": "Find $lim[x->0] frac{1 - cos(x)}{sin(x)}$.",
+     "text": "Find\n$$lim[x->0] frac{1 - cos(x)}{sin(x)}$$",
      "answer": 0,
      "label": "limit =",
      "level": 2,
@@ -416,7 +416,7 @@
       {
        "id": "W39.1",
        "type": "num",
-       "text": "Write $frac{sin(2x)}{x} = k·frac{sin(2x)}{2x}$.",
+       "text": "Write\n$$frac{sin(2x)}{x} = k·frac{sin(2x)}{2x}$$",
        "answer": 2,
        "label": "$k$ =",
        "work": "$= 2·frac{sin(2x)}{2x}$"
@@ -424,7 +424,7 @@
       {
        "id": "W39.2",
        "type": "lim",
-       "text": "Use $frac{sin(2x)}{2x} -> 1$.",
+       "text": "Use\n$$frac{sin(2x)}{2x} -> 1$$",
        "answer": 2,
        "label": "limit =",
        "work": "limit $= 2$"
@@ -441,7 +441,7 @@
       {
        "id": "W40.1",
        "type": "num",
-       "text": "Write $frac{sin(3x)}{x} = k·frac{sin(3x)}{3x}$.",
+       "text": "Write\n$$frac{sin(3x)}{x} = k·frac{sin(3x)}{3x}$$",
        "answer": 3,
        "label": "$k$ =",
        "work": "$= 3·frac{sin(3x)}{3x}$"
@@ -449,7 +449,7 @@
       {
        "id": "W40.2",
        "type": "lim",
-       "text": "Use $frac{sin(3x)}{3x} -> 1$.",
+       "text": "Use\n$$frac{sin(3x)}{3x} -> 1$$",
        "answer": 3,
        "label": "limit =",
        "work": "limit $= 3$"
@@ -466,7 +466,7 @@
       {
        "id": "W41.1",
        "type": "num",
-       "text": "Write $frac{sin(6x)}{x} = k·frac{sin(6x)}{6x}$.",
+       "text": "Write\n$$frac{sin(6x)}{x} = k·frac{sin(6x)}{6x}$$",
        "answer": 6,
        "label": "$k$ =",
        "work": "$= 6·frac{sin(6x)}{6x}$"
@@ -474,7 +474,7 @@
       {
        "id": "W41.2",
        "type": "lim",
-       "text": "Use $frac{sin(6x)}{6x} -> 1$.",
+       "text": "Use\n$$frac{sin(6x)}{6x} -> 1$$",
        "answer": 6,
        "label": "limit =",
        "work": "limit $= 6$"
@@ -490,22 +490,25 @@
   "slides": [
    {
     "id": "L1",
-    "type": "ratio",
+    "type": "linear",
     "title": "The famous one",
-    "text": "Plugging $x = 0$ into $frac{sin(x)}{x}$ gives $frac{0}{0}$. Move closer and closer to 0 and watch the top and the bottom.",
-    "f": "sin(x)",
-    "g": "x",
-    "op": "/",
+    "fn": "sin(x)",
     "a": 0,
-    "dir": 1,
-    "start": 1,
-    "goal": 5,
-    "after": "Up close, $sin(x)$ and $x$ are almost the same number, so their ratio heads to **1**: $lim[x->0] frac{sin(x)}{x} = 1$."
+    "window": [
+     -3.2,
+     3.2,
+     -2.2,
+     2.2
+    ],
+    "goal": "zoom",
+    "zoomGoal": 16,
+    "text": "Plugging $x = 0$ into $frac{sin(x)}{x}$ gives $frac{0}{0}$. Here is the top, $y = sin(x)$, drawn with the bottom, the line $y = x$. Zoom in on the origin until you cannot tell them apart.",
+    "after": "Near 0, $sin(x)$ and $x$ are almost the same number, so their ratio heads to **1**:\n$$lim[x->0] frac{sin(x)}{x} = 1$$"
    },
    {
     "id": "L2",
     "type": "mc",
-    "text": "The other one to know: $lim[x->0] frac{1 - cos(x)}{x} =$",
+    "text": "The other one to know:\n$$lim[x->0] frac{1 - cos(x)}{x} =$$",
     "options": [
      "0",
      "1",
@@ -519,12 +522,12 @@
    {
     "id": "L3",
     "type": "steps",
-    "text": "Use them with a little algebra. Find $lim[x->0] frac{sin(5x)}{x}$.",
+    "text": "Use them with a little algebra. Find\n$$lim[x->0] frac{sin(5x)}{x}$$",
     "steps": [
      {
       "id": "L3.1",
       "type": "num",
-      "text": "We want $5x$ on the bottom too. Multiply top and bottom by 5: $frac{sin(5x)}{x} = k·frac{sin(5x)}{5x}$. What is $k$?",
+      "text": "We want $5x$ on the bottom too. Multiply top and bottom by 5:\n$$frac{sin(5x)}{x} = k·frac{sin(5x)}{5x}$$\nWhat is $k$?",
       "answer": 5,
       "label": "$k$ =",
       "hint": "$frac{5}{5} = 1$, so nothing changed.",
@@ -535,7 +538,7 @@
       "type": "lim",
       "text": "As $x -> 0$, $5x -> 0$ too, so $frac{sin(5x)}{5x} -> 1$.",
       "answer": 5,
-      "label": "limit =",
+      "label": "$lim[x->0] frac{sin(5x)}{x}$ =",
       "hint": "$5·1$",
       "work": "limit $= 5$"
      }
@@ -544,7 +547,7 @@
    {
     "id": "L4",
     "type": "lim",
-    "text": "$tan(x) = frac{sin(x)}{cos(x)}$, so $frac{tan(x)}{x} = frac{sin(x)}{x}·frac{1}{cos(x)}$. Find $lim[x->0] frac{tan(x)}{x}$.",
+    "text": "$tan(x) = frac{sin(x)}{cos(x)}$, so $frac{tan(x)}{x} = frac{sin(x)}{x}·frac{1}{cos(x)}$. Find\n$$lim[x->0] frac{tan(x)}{x}$$",
     "answer": 1,
     "label": "limit =",
     "hint": "$1·frac{1}{cos(0)}$",
@@ -553,7 +556,7 @@
    {
     "id": "L5",
     "type": "lim",
-    "text": "From class: $lim[x->0] frac{1 - cos(x)}{sin(x)}$. Divide top and bottom by $x$ and use the limit laws.",
+    "text": "$$lim[x->0] frac{1 - cos(x)}{sin(x)}$$\nDivide top and bottom by $x$ and use the limit laws.",
     "answer": 0,
     "label": "limit =",
     "hint": "$frac{(1 - cos(x))/x}{sin(x)/x} -> frac{0}{1}$",

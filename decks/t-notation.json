@@ -1111,7 +1111,7 @@
     "label": "$f(x + h)$ =",
     "show": "$x^2 + 2xh + h^2 - 3x - 3h$",
     "hint": "$(x + h)^2 = x^2 + 2xh + h^2$, and $-3(x + h) = -3x - 3h$.",
-    "explain": "This is the first move of every derivative you will compute in this course."
+    "explain": ""
    }
   ]
  }

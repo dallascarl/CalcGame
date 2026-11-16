@@ -215,7 +215,7 @@
    {
     "id": "L2",
     "type": "num",
-    "text": "Prove $lim[x->2] (3x + 1) = 7$. We need $|3x + 1 - 7| = 3|x - 2| < epsilon$, which holds when $|x - 2| < frac{epsilon}{3}$. If $epsilon = 0.3$, what $delta$ works?",
+    "text": "Prove\n$$lim[x->2] (3x + 1) = 7$$\nWe need $|3x + 1 - 7| = 3|x - 2| < epsilon$, which holds when $|x - 2| < frac{epsilon}{3}$. If $epsilon = 0.3$, what $delta$ works?",
     "answer": 0.1,
     "label": "$delta$ =",
     "hint": "$delta = frac{epsilon}{3}$",

@@ -108,7 +108,7 @@
     {
      "id": "T2",
      "type": "mc",
-     "text": "What is the domain of $frac{1}{x^2 + 1}$?",
+     "text": "What is the domain of\n$$frac{1}{x^2 + 1}$$",
      "options": [
       "every real number",
       "every number except 1",
@@ -155,7 +155,7 @@
     {
      "id": "T6",
      "type": "mc",
-     "text": "What is the domain of $frac{sqrt(x)}{x - 5}$?",
+     "text": "What is the domain of\n$$frac{sqrt(x)}{x - 5}$$",
      "options": [
       "$[0, 5) ∪ (5, ∞)$",
       "$[0, ∞)$",
@@ -335,7 +335,7 @@
     {
      "id": "D15",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{x - 4}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{x - 4}$$",
      "answer": "(-inf,4)U(4,inf)",
      "label": "Domain:",
      "level": 2,
@@ -344,7 +344,7 @@
     {
      "id": "D16",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{3}{x + 2}$.",
+     "text": "Find the domain of\n$$f(x) = frac{3}{x + 2}$$",
      "answer": "(-inf,-2)U(-2,inf)",
      "label": "Domain:",
      "level": 2,
@@ -353,7 +353,7 @@
     {
      "id": "D17",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{x^2 - 9}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{x^2 - 9}$$",
      "answer": "(-inf,-3)U(-3,3)U(3,inf)",
      "label": "Domain:",
      "level": 2,
@@ -362,7 +362,7 @@
     {
      "id": "D18",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{x(x - 5)}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{x(x - 5)}$$",
      "answer": "(-inf,0)U(0,5)U(5,inf)",
      "label": "Domain:",
      "level": 2,
@@ -407,7 +407,7 @@
     {
      "id": "D23",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{sqrt(x - 1)}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{sqrt(x - 1)}$$",
      "answer": "(1,inf)",
      "label": "Domain:",
      "level": 2,
@@ -425,7 +425,7 @@
     {
      "id": "D25",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{x + 1}{x^2 + 1}$.",
+     "text": "Find the domain of\n$$f(x) = frac{x + 1}{x^2 + 1}$$",
      "answer": "(-inf,inf)",
      "label": "Domain:",
      "level": 2,
@@ -434,7 +434,7 @@
     {
      "id": "D26",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{2}{x^2 - 5x + 6}$.",
+     "text": "Find the domain of\n$$f(x) = frac{2}{x^2 - 5x + 6}$$",
      "answer": "(-inf,2)U(2,3)U(3,inf)",
      "label": "Domain:",
      "level": 2,
@@ -452,7 +452,7 @@
     {
      "id": "D28",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{5}{2x - 1}$.",
+     "text": "Find the domain of\n$$f(x) = frac{5}{2x - 1}$$",
      "answer": "(-inf,1/2)U(1/2,inf)",
      "label": "Domain:",
      "level": 2,
@@ -461,7 +461,7 @@
     {
      "id": "D29",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{sqrt(x + 2)}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{sqrt(x + 2)}$$",
      "answer": "(-2,inf)",
      "label": "Domain:",
      "level": 2,
@@ -650,7 +650,7 @@
     {
      "id": "X49",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{sqrt(x)}{x - 5}$.",
+     "text": "Find the domain of\n$$f(x) = frac{sqrt(x)}{x - 5}$$",
      "answer": "[0,5)U(5,inf)",
      "label": "Domain:",
      "level": 3,
@@ -659,7 +659,7 @@
     {
      "id": "X50",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{sqrt(x) - 2}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{sqrt(x) - 2}$$",
      "answer": "[0,4)U(4,inf)",
      "label": "Domain:",
      "level": 3,
@@ -686,7 +686,7 @@
     {
      "id": "X53",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{sqrt(x + 3)}{x - 1}$.",
+     "text": "Find the domain of\n$$f(x) = frac{sqrt(x + 3)}{x - 1}$$",
      "answer": "[-3,1)U(1,inf)",
      "label": "Domain:",
      "level": 3,
@@ -695,7 +695,7 @@
     {
      "id": "X54",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{1}{x^2 - 4x}$.",
+     "text": "Find the domain of\n$$f(x) = frac{1}{x^2 - 4x}$$",
      "answer": "(-inf,0)U(0,4)U(4,inf)",
      "label": "Domain:",
      "level": 3,
@@ -704,7 +704,7 @@
     {
      "id": "X55",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{sqrt(x - 1)}{x^2 - 9}$.",
+     "text": "Find the domain of\n$$f(x) = frac{sqrt(x - 1)}{x^2 - 9}$$",
      "answer": "[1,3)U(3,inf)",
      "label": "Domain:",
      "level": 3,
@@ -713,7 +713,7 @@
     {
      "id": "X56",
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{x}{sqrt(6 - 2x)}$.",
+     "text": "Find the domain of\n$$f(x) = frac{x}{sqrt(6 - 2x)}$$",
      "answer": "(-inf,3)",
      "label": "Domain:",
      "level": 3,
@@ -741,10 +741,10 @@
    {
     "id": "L2",
     "type": "interval",
-    "text": "So the domain of $frac{1}{x - 4}$ is every number except 4. Write that in interval notation.",
+    "text": "So the domain is every number except 4. Interval notation says “every number except 1” like this: $(-∞, 1) ∪ (1, ∞)$.\nWrite the domain of\n$$f(x) = frac{1}{x - 4}$$",
     "answer": "(-inf,4)U(4,inf)",
     "label": "Domain:",
-    "hint": "Everything below 4, joined to everything above 4: $(-∞, 4) ∪ (4, ∞)$.",
+    "hint": "Everything below 4, joined to everything above 4.",
     "explain": "Round brackets, because 4 itself is left out."
    },
    {

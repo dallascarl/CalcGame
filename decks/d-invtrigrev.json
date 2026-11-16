@@ -14,7 +14,7 @@
     {
      "id": "V1",
      "type": "expr",
-     "text": "Find the exact value of $arcsin(frac{1}{2})$.",
+     "text": "Find the exact value of\n$$arcsin(frac{1}{2})$$",
      "answer": "pi/6",
      "vars": [],
      "keys": [
@@ -59,7 +59,7 @@
     {
      "id": "V4",
      "type": "expr",
-     "text": "Find the exact value of $arcsin(frac{sqrt(2)}{2})$.",
+     "text": "Find the exact value of\n$$arcsin(frac{sqrt(2)}{2})$$",
      "answer": "pi/4",
      "vars": [],
      "keys": [
@@ -74,7 +74,7 @@
     {
      "id": "V5",
      "type": "expr",
-     "text": "Find the exact value of $arcsin(frac{sqrt(3)}{2})$.",
+     "text": "Find the exact value of\n$$arcsin(frac{sqrt(3)}{2})$$",
      "answer": "pi/3",
      "vars": [],
      "keys": [
@@ -89,7 +89,7 @@
     {
      "id": "V6",
      "type": "expr",
-     "text": "Find the exact value of $arcsin(-frac{1}{2})$.",
+     "text": "Find the exact value of\n$$arcsin(-frac{1}{2})$$",
      "answer": "-pi/6",
      "vars": [],
      "keys": [
@@ -104,7 +104,7 @@
     {
      "id": "V7",
      "type": "expr",
-     "text": "Find the exact value of $arccos(frac{1}{2})$.",
+     "text": "Find the exact value of\n$$arccos(frac{1}{2})$$",
      "answer": "pi/3",
      "vars": [],
      "keys": [
@@ -164,7 +164,7 @@
     {
      "id": "V11",
      "type": "expr",
-     "text": "Find the exact value of $arccos(frac{sqrt(3)}{2})$.",
+     "text": "Find the exact value of\n$$arccos(frac{sqrt(3)}{2})$$",
      "answer": "pi/6",
      "vars": [],
      "keys": [
@@ -179,7 +179,7 @@
     {
      "id": "V12",
      "type": "expr",
-     "text": "Find the exact value of $arccos(-frac{1}{2})$.",
+     "text": "Find the exact value of\n$$arccos(-frac{1}{2})$$",
      "answer": "2pi/3",
      "vars": [],
      "keys": [
@@ -254,7 +254,7 @@
     {
      "id": "V17",
      "type": "expr",
-     "text": "Find the exact value of $arctan(frac{sqrt(3)}{3})$.",
+     "text": "Find the exact value of\n$$arctan(frac{sqrt(3)}{3})$$",
      "answer": "pi/6",
      "vars": [],
      "keys": [
@@ -457,7 +457,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "$arcsin(x)$ asks: which angle has sine equal to $x$? Only angles from $-frac{pi}{2}$ to $frac{pi}{2}$ count. What is $arcsin(frac{1}{2})$?",
+    "text": "$arcsin(x)$ asks: which angle has sine equal to $x$? Only angles from $-frac{pi}{2}$ to $frac{pi}{2}$ count. What is\n$$arcsin(frac{1}{2})$$",
     "options": [
      "$frac{pi}{6}$",
      "$frac{5pi}{6}$",

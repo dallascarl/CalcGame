@@ -412,16 +412,35 @@
    },
    {
     "id": "s02",
-    "type": "explore",
+    "type": "multi",
     "title": "Now walk toward it",
-    "text": "Forget the point at $x = 2$ for a moment. Drag the slider so $x$ gets close to 2 from the left, then from the right. Watch the height $f(x)$.",
     "graph": "L1",
-    "target": {
-     "at": 2,
-     "within": 0.15
-    },
-    "start": -0.5,
-    "after": "From both sides, the height closes in on 3."
+    "text": "Forget the point at $x = 2$ for a moment. This is the graph of $f(x) = x + 1$. Fill in the heights as $x$ closes in on 2 from each side.",
+    "parts": [
+     {
+      "label": "$f(1.9)$ =",
+      "answer": 2.9,
+      "tol": 0.0005
+     },
+     {
+      "label": "$f(1.99)$ =",
+      "answer": 2.99,
+      "tol": 0.0005
+     },
+     {
+      "label": "$f(2.01)$ =",
+      "answer": 3.01,
+      "tol": 0.0005
+     },
+     {
+      "label": "$f(2.1)$ =",
+      "answer": 3.1,
+      "tol": 0.0005
+     }
+    ],
+    "picture": false,
+    "hint": "Add 1 to each $x$.",
+    "explain": "From both sides, the heights close in on 3."
    },
    {
     "id": "s03",
@@ -432,20 +451,34 @@
     "side": "both",
     "at": 2,
     "answer": 3,
-    "hint": "Think back to the slider. What number was $f(x)$ closing in on?",
+    "hint": "Think back to the heights you filled in. What number were they closing in on?",
     "explain": "The heights close in on 3. That height is the **limit**: $lim[x->2] f(x) = 3$."
    },
    {
     "id": "s06",
-    "type": "explore",
-    "text": "The point is gone. Drag toward $x = 2$ from both sides anyway. Where is the graph heading?",
+    "type": "multi",
     "graph": "L2",
-    "target": {
-     "at": 2,
-     "within": 0.15
-    },
-    "start": -0.5,
-    "after": "Still closing in on 3, even though the graph never gets there."
+    "text": "The point is gone: now $f(2)$ is undefined. Everywhere else, $f(x) = x + 1$ as before. Walk toward $x = 2$ anyway.",
+    "parts": [
+     {
+      "label": "$f(1.99)$ =",
+      "answer": 2.99,
+      "tol": 0.0005
+     },
+     {
+      "label": "$f(1.999)$ =",
+      "answer": 2.999,
+      "tol": 5e-05
+     },
+     {
+      "label": "$f(2.001)$ =",
+      "answer": 3.001,
+      "tol": 5e-05
+     }
+    ],
+    "picture": false,
+    "hint": "Add 1 to each $x$.",
+    "explain": "Still closing in on 3, even though the graph never gets there."
    },
    {
     "id": "s07",
@@ -475,7 +508,7 @@
    {
     "id": "s16",
     "type": "graph",
-    "text": "Coming from the left ($x -> 2^-$) the graph heads to 1. From the right ($x -> 2^+$) it heads to 3. What is the two-sided limit $lim[x->2] f(x)$?",
+    "text": "Coming from the left ($x -> 2^-$) the graph heads to 1. From the right ($x -> 2^+$) it heads to 3. What is the two-sided limit\n$$lim[x->2] f(x)$$",
     "graph": "L4",
     "ask": "limit",
     "side": "both",
@@ -541,7 +574,7 @@
     {
      "id": "t07",
      "type": "mc",
-     "text": "$lim[x->1^-] f(x) = 2$ and $lim[x->1^+] f(x) = 5$. What is $lim[x->1] f(x)$?",
+     "text": "$$lim[x->1^-] f(x) = 2 ;; lim[x->1^+] f(x) = 5$$\nWhat is\n$$lim[x->1] f(x)$$",
      "options": [
       "2",
       "5",
@@ -554,7 +587,7 @@
     {
      "id": "t08",
      "type": "mc",
-     "text": "$lim[x->1^-] f(x) = 4$ and $lim[x->1^+] f(x) = 4$, but $f(1) = 9$. What is $lim[x->1] f(x)$?",
+     "text": "$$lim[x->1^-] f(x) = 4 ;; lim[x->1^+] f(x) = 4$$\nbut\n$$f(1) = 9$$\nWhat is\n$$lim[x->1] f(x)$$",
      "options": [
       "4",
       "9",

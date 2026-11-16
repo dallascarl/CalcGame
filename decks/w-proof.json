@@ -51,7 +51,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "Define the area function $g(x) = int[a,x] f(t) dt$: the area under $f$ from $a$ up to $x$. When $x$ grows a tiny bit to $x + h$, the area grows by",
+    "text": "Define the area function\n$$g(x) = int[a,x] f(t) dt$$\nthe area under $f$ from $a$ up to $x$. When $x$ grows a tiny bit to $x + h$, the area grows by",
     "options": [
      "$int[x,x+h] f(t) dt$",
      "$f(h)$",
@@ -79,7 +79,7 @@
    {
     "id": "L3",
     "type": "mc",
-    "text": "Divide by $h$: $frac{g(x + h) - g(x)}{h} ≈ f(x)$. Let $h -> 0$. The left side becomes",
+    "text": "Divide by $h$:\n$$frac{g(x + h) - g(x)}{h} ≈ f(x)$$\nLet $h -> 0$. The left side becomes",
     "options": [
      "$g'(x)$",
      "$g(x)$",

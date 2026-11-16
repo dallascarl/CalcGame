@@ -14,7 +14,7 @@
     {
      "id": "T1",
      "type": "mc",
-     "text": "$int[a,b] F'(x) dx =$",
+     "text": "$$int[a,b] F'(x) dx =$$",
      "options": [
       "$F(b) - F(a)$",
       "$F'(b) - F'(a)$",
@@ -606,7 +606,7 @@
     {
      "id": "I18",
      "type": "expr",
-     "text": "Find $int sec(x)tan(x) + x dx$.",
+     "text": "Find\n$$int sec(x)tan(x) + x dx$$",
      "answer": "sec(x) + x^2/2",
      "vars": [
       "x"
@@ -637,7 +637,7 @@
     {
      "id": "I19",
      "type": "expr",
-     "text": "Find $int (1 - x)/sqrt(x) dx$.",
+     "text": "Find\n$$int (1 - x)/sqrt(x) dx$$",
      "answer": "2sqrt(x) - (2/3)x^(3/2)",
      "vars": [
       "x"
@@ -804,7 +804,7 @@
       {
        "id": "T31.1",
        "type": "num",
-       "text": "Displacement: $int[0,6] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,6] v(t) dt$$",
        "answer": 0,
        "label": "displacement =",
        "work": "displacement $= 0$"
@@ -829,7 +829,7 @@
       {
        "id": "T32.1",
        "type": "num",
-       "text": "Displacement: $int[0,4] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,4] v(t) dt$$",
        "answer": 0,
        "label": "displacement =",
        "work": "displacement $= 0$"
@@ -854,7 +854,7 @@
       {
        "id": "T33.1",
        "type": "num",
-       "text": "Displacement: $int[0,3] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,3] v(t) dt$$",
        "answer": -9,
        "label": "displacement =",
        "work": "displacement $= -9$"
@@ -879,7 +879,7 @@
       {
        "id": "T34.1",
        "type": "num",
-       "text": "Displacement: $int[0,5] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,5] v(t) dt$$",
        "answer": -5,
        "label": "displacement =",
        "work": "displacement $= -5$"
@@ -904,7 +904,7 @@
       {
        "id": "T35.1",
        "type": "num",
-       "text": "Displacement: $int[0,2] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,2] v(t) dt$$",
        "answer": 0.666667,
        "label": "displacement =",
        "work": "displacement $= 2/3$"
@@ -929,7 +929,7 @@
       {
        "id": "T36.1",
        "type": "num",
-       "text": "Displacement: $int[0,3] v(t) dt$.",
+       "text": "Displacement:\n$$int[0,3] v(t) dt$$",
        "answer": 3,
        "label": "displacement =",
        "work": "displacement $= 3$"
@@ -991,7 +991,7 @@
    {
     "id": "L3",
     "type": "mc",
-    "text": "**Net change theorem:** $int[a,b] F'(x) dx = F(b) - F(a)$. Integrating a rate gives the total change. If $v(t)$ is velocity, $int[0,3] v(t) dt$ is the",
+    "text": "**Net change theorem:**\n$$int[a,b] F'(x) dx = F(b) - F(a)$$\nIntegrating a rate gives the total change. If $v(t)$ is velocity, $int[0,3] v(t) dt$ is the",
     "options": [
      "displacement (change in position)",
      "acceleration",
@@ -1010,7 +1010,7 @@
      {
       "id": "L4.1",
       "type": "num",
-      "text": "Displacement: $int[0,6] (t^2 - 4t) dt$.",
+      "text": "Displacement:\n$$int[0,6] (t^2 - 4t) dt$$",
       "answer": 0,
       "label": "displacement =",
       "hint": "$frac{t^3}{3} - 2t^2$ from 0 to 6: $72 - 72$.",
@@ -1019,7 +1019,7 @@
      {
       "id": "L4.2",
       "type": "num",
-      "text": "Total distance: it moves backward for $0 < t < 4$ (where $v < 0$) and forward after. Add $|int[0,4] v dt| + int[4,6] v dt$.",
+      "text": "Total distance: it moves backward for $0 < t < 4$ (where $v < 0$) and forward after. Add\n$$|int[0,4] v dt| + int[4,6] v dt$$",
       "answer": 21.333333,
       "label": "distance =",
       "hint": "$int[0,4] v = -frac{32}{3}$ and $int[4,6] v = frac{32}{3}$.",

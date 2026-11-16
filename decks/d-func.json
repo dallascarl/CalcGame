@@ -1748,7 +1748,7 @@
    {
     "id": "L3",
     "type": "steps",
-    "text": "The same definition works at **every** $x$: $f'(x) = lim[h->0] frac{f(x+h) - f(x)}{h}$. Find $f'(x)$ for $f(x) = x^2 - x$.",
+    "text": "The same definition works at **every** $x$:\n$$f'(x) = lim[h->0] frac{f(x+h) - f(x)}{h}$$\nFind $f'(x)$ for $f(x) = x^2 - x$.",
     "steps": [
      {
       "id": "L3.1",

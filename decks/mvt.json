@@ -851,7 +851,7 @@
    {
     "id": "M10",
     "type": "mc",
-    "text": "**Mean Value Theorem**\nIf $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there is at least one $c$ in $(a, b)$ where\n$f'(c) = frac{f(b) - f(a)}{b - a}$\n\nWhat does $frac{f(b) - f(a)}{b - a}$ measure?",
+    "text": "**Mean Value Theorem**\nIf $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there is at least one $c$ in $(a, b)$ where\n$$f'(c) = frac{f(b) - f(a)}{b - a}$$\n\nWhat does $frac{f(b) - f(a)}{b - a}$ measure?",
     "options": [
      "The slope of the secant line through the two ends",
      "The slope of the tangent line at $a$",

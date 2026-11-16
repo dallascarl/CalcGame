@@ -34,7 +34,7 @@
     {
      "id": "T3",
      "type": "mc",
-     "text": "How can you check that $int x cos(x) dx = x sin(x) + cos(x) + C$?",
+     "text": "How can you check that\n$$int x cos(x) dx = x sin(x) + cos(x) + C$$",
      "options": [
       "Take the derivative of $x sin(x) + cos(x)$",
       "Take the derivative of $x cos(x)$",
@@ -47,7 +47,7 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "$int (f(x) + g(x)) dx =$",
+     "text": "$$int (f(x) + g(x)) dx =$$",
      "options": [
       "$F(x) + G(x) + C$",
       "$F(x)G(x) + C$",
@@ -844,7 +844,7 @@
     {
      "id": "B35",
      "type": "expr",
-     "text": "Find $int 2cos(x) + 3sin(x) dx$.",
+     "text": "Find\n$$int 2cos(x) + 3sin(x) dx$$",
      "answer": "2sin(x) - 3cos(x)",
      "vars": [
       "x"
@@ -876,7 +876,7 @@
     {
      "id": "B36",
      "type": "expr",
-     "text": "Find $int 1/sqrt(1 - x^2) dx$.",
+     "text": "Find\n$$int 1/sqrt(1 - x^2) dx$$",
      "answer": "arcsin(x)",
      "vars": [
       "x"

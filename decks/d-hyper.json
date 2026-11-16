@@ -34,7 +34,7 @@
     {
      "id": "T2",
      "type": "tf",
-     "text": "$frac{d}{dx} cosh(x) = -sinh(x)$",
+     "text": "$$frac{d}{dx} cosh(x) = -sinh(x)$$",
      "answer": false,
      "explain": "Unlike cosine, there is no minus sign: $frac{d}{dx} cosh(x) = sinh(x)$."
     },
@@ -271,7 +271,7 @@
     {
      "id": "D11",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = sinh(x) + cosh(x)$.",
+     "text": "Find the derivative of\n$$f(x) = sinh(x) + cosh(x)$$",
      "answer": "cosh(x) + sinh(x)",
      "vars": [
       "x"
@@ -405,7 +405,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "The **hyperbolic** functions are built from $e^x$: $sinh(x) = frac{e^x - e^(-x)}{2}$ and $cosh(x) = frac{e^x + e^(-x)}{2}$. What is $cosh(0)$?",
+    "text": "The **hyperbolic** functions are built from $e^x$:\n$$sinh(x) = frac{e^x - e^(-x)}{2} ;; cosh(x) = frac{e^x + e^(-x)}{2}$$\nWhat is $cosh(0)$?",
     "options": [
      "1",
      "0",
@@ -438,7 +438,7 @@
    {
     "id": "L3",
     "type": "mc",
-    "text": "Like $sin^2 + cos^2 = 1$, there is an identity: $cosh^2(x) - sinh^2(x) =$",
+    "text": "Like $sin^2 + cos^2 = 1$, there is an identity:\n$$cosh^2(x) - sinh^2(x) =$$",
     "options": [
      "1",
      "0",

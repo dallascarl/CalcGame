@@ -14,7 +14,7 @@
     {
      "id": "T1",
      "type": "tf",
-     "text": "$ln(a + b) = ln(a) + ln(b)$",
+     "text": "$$ln(a + b) = ln(a) + ln(b)$$",
      "answer": false,
      "explain": "The rule is for a product: $ln(ab) = ln(a) + ln(b)$. The log of a sum does not simplify."
     },
@@ -34,7 +34,7 @@
     {
      "id": "T3",
      "type": "mc",
-     "text": "$ln(frac{a}{b}) =$",
+     "text": "$$ln(frac{a}{b}) =$$",
      "options": [
       "$ln(a) - ln(b)$",
       "$frac{ln(a)}{ln(b)}$",
@@ -310,7 +310,7 @@
     {
      "id": "X21",
      "type": "mc",
-     "text": "Use the log rules to expand $ln(frac{x}{5})$.",
+     "text": "Use the log rules to expand\n$$ln(frac{x}{5})$$",
      "options": [
       "$ln(x) - ln(5)$",
       "$frac{ln(x)}{ln(5)}$",
@@ -352,7 +352,7 @@
     {
      "id": "X24",
      "type": "mc",
-     "text": "Use the log rules to expand $ln(frac{1}{x})$.",
+     "text": "Use the log rules to expand\n$$ln(frac{1}{x})$$",
      "options": [
       "$-ln(x)$",
       "$frac{1}{ln(x)}$",
@@ -366,7 +366,7 @@
     {
      "id": "X25",
      "type": "mc",
-     "text": "Use the log rules to expand $ln(frac{x^3}{y})$.",
+     "text": "Use the log rules to expand\n$$ln(frac{x^3}{y})$$",
      "options": [
       "$3ln(x) - ln(y)$",
       "$frac{3ln(x)}{ln(y)}$",

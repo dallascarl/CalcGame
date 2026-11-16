@@ -275,7 +275,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every critical number of $f(x) = 2x^3 - 9x^2 + 12x$.",
+     "text": "Find every critical number of\n$$f(x) = 2x^3 - 9x^2 + 12x$$",
      "answers": [
       1,
       2
@@ -300,7 +300,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every critical number of $f(x) = x + frac{4}{x}$.",
+     "text": "Find every critical number of\n$$f(x) = x + frac{4}{x}$$",
      "answers": [
       -2,
       2
@@ -313,7 +313,7 @@
     },
     {
      "type": "interval",
-     "text": "$f'(x) = (x - 1)(x - 5)$. Where is $f$ decreasing?",
+     "text": "$$f'(x) = (x - 1)(x - 5)$$\nWhere is $f$ decreasing?",
      "answer": "(1,5)",
      "label": "Decreasing on",
      "explain": "$f'$ is negative between its roots.",
@@ -422,7 +422,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every critical number of $g(x) = frac{x^2 + 4}{x^2 - 4}$.",
+     "text": "Find every critical number of\n$$g(x) = frac{x^2 + 4}{x^2 - 4}$$",
      "answers": [
       0
      ],
@@ -448,7 +448,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every critical number of $f(x) = frac{x}{x - 1}$.",
+     "text": "Find every critical number of\n$$f(x) = frac{x}{x - 1}$$",
      "answers": [],
      "var": "x",
      "label": "$x$ =",

@@ -55,7 +55,7 @@
     {
      "id": "T4",
      "type": "tf",
-     "text": "$frac{d}{dx} sin(x^2) = cos(2x)$",
+     "text": "$$frac{d}{dx} sin(x^2) = cos(2x)$$",
      "answer": false,
      "explain": "$cos(x^2)·2x$. The inside $x^2$ stays inside the cosine, and the $2x$ multiplies on the outside."
     },
@@ -69,7 +69,7 @@
     {
      "id": "T6",
      "type": "mc",
-     "text": "A student says $frac{d}{dx}(3x^2 + 1)^10 = 10(3x^2 + 1)^9$. What is missing?",
+     "text": "A student says\n$$frac{d}{dx}(3x^2 + 1)^10 = 10(3x^2 + 1)^9$$\nWhat is missing?",
      "options": [
       "the factor $6x$",
       "nothing, it is correct",
@@ -772,7 +772,7 @@
     {
      "id": "D30",
      "type": "expr",
-     "text": "The outside function is $h(u) = frac{1}{u^3}$. Find $h'(u)$.",
+     "text": "The outside function is\n$$h(u) = frac{1}{u^3}$$\nFind $h'(u)$.",
      "answer": "-3/u^4",
      "vars": [
       "u"
@@ -1240,7 +1240,7 @@
     {
      "id": "F49",
      "type": "expr",
-     "text": "Finish the chain rule for $f(x) = tan(x^2 - 2x + 5)$.",
+     "text": "Finish the chain rule for\n$$f(x) = tan(x^2 - 2x + 5)$$",
      "answer": "2x - 2",
      "vars": [
       "x"
@@ -1321,7 +1321,7 @@
     {
      "id": "F52",
      "type": "expr",
-     "text": "Finish the chain rule for $f(x) = frac{1}{(3x - 1)^3}$.",
+     "text": "Finish the chain rule for\n$$f(x) = frac{1}{(3x - 1)^3}$$",
      "answer": "3",
      "vars": [
       "x"
@@ -1375,7 +1375,7 @@
     {
      "id": "F54",
      "type": "expr",
-     "text": "Finish the chain rule for $f(x) = sqrt(x^2 - x + 1)$.",
+     "text": "Finish the chain rule for\n$$f(x) = sqrt(x^2 - x + 1)$$",
      "answer": "2x - 1",
      "vars": [
       "x"
@@ -1429,7 +1429,7 @@
     {
      "id": "F56",
      "type": "expr",
-     "text": "Finish the chain rule for $f(x) = sin(frac{1}{x})$.",
+     "text": "Finish the chain rule for\n$$f(x) = sin(frac{1}{x})$$",
      "answer": "-1/x^2",
      "vars": [
       "x"
@@ -1692,7 +1692,7 @@
       {
        "id": "W63.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(10(3x^2 + 1)^9)(6x)",
        "vars": [
         "x"
@@ -1795,7 +1795,7 @@
       {
        "id": "W64.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(1/(2sqrt(1 - x^2)))(-2x)",
        "vars": [
         "x"
@@ -1824,7 +1824,7 @@
     {
      "id": "W65",
      "type": "steps",
-     "text": "Use the chain rule on $f(x) = tan(x^2 - 2x + 5)$.",
+     "text": "Use the chain rule on\n$$f(x) = tan(x^2 - 2x + 5)$$",
      "steps": [
       {
        "id": "W65.1",
@@ -1898,7 +1898,7 @@
       {
        "id": "W65.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(sec(x^2 - 2x + 5)^2)(2x - 2)",
        "vars": [
         "x"
@@ -2001,7 +2001,7 @@
       {
        "id": "W66.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(3(x + sin(x))^2)(cos(x) + 1)",
        "vars": [
         "x"
@@ -2104,7 +2104,7 @@
       {
        "id": "W67.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(-sin(5x))(5)",
        "vars": [
         "x"
@@ -2207,7 +2207,7 @@
       {
        "id": "W68.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(4(2x^3 - x)^3)(6x^2 - 1)",
        "vars": [
         "x"
@@ -2310,7 +2310,7 @@
       {
        "id": "W69.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(5cos(x)^4)(-sin(x))",
        "vars": [
         "x"
@@ -2413,7 +2413,7 @@
       {
        "id": "W70.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(sec(3x)^2)(3)",
        "vars": [
         "x"
@@ -2516,7 +2516,7 @@
       {
        "id": "W71.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(cos(sqrt(x)))(1/(2sqrt(x)))",
        "vars": [
         "x"
@@ -2619,7 +2619,7 @@
       {
        "id": "W72.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(2sin(x))(cos(x))",
        "vars": [
         "x"
@@ -2722,7 +2722,7 @@
       {
        "id": "W73.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(6(x^2 + x)^5)(2x + 1)",
        "vars": [
         "x"
@@ -2825,7 +2825,7 @@
       {
        "id": "W74.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(-sin(x^2 + 3x))(2x + 3)",
        "vars": [
         "x"
@@ -3626,7 +3626,7 @@
    {
     "id": "L2",
     "type": "steps",
-    "text": "**Chain rule:** $f'(x) = h'(g(x))·g'(x)$. Derivative of the outside, with the inside left alone, times the derivative of the inside. Let's do $f(x) = (3x^2 + 1)^10$.",
+    "text": "**Chain rule:**\n$$f'(x) = h'(g(x))·g'(x)$$\nDerivative of the outside, with the inside left alone, times the derivative of the inside. Let's do $f(x) = (3x^2 + 1)^10$.",
     "steps": [
      {
       "id": "L2.1",
@@ -3747,7 +3747,7 @@
    {
     "id": "L5",
     "type": "mc",
-    "text": "Some functions are three deep: $f(x) = (sin(sqrt(x)))^2$. Peel from the outside in, one factor per layer:\n$f'(x) = 2sin(sqrt(x))·cos(sqrt(x))·frac{1}{2sqrt(x)}$\nWhich factor is the derivative of the **innermost** function?",
+    "text": "Some functions are three deep:\n$$f(x) = (sin(sqrt(x)))^2$$\nPeel from the outside in, one factor per layer:\n$$f'(x) = 2sin(sqrt(x))·cos(sqrt(x))·frac{1}{2sqrt(x)}$$\nWhich factor is the derivative of the **innermost** function?",
     "options": [
      "$frac{1}{2sqrt(x)}$",
      "$cos(sqrt(x))$",

@@ -1190,7 +1190,7 @@
        "type": "multi",
        "fail": true,
        "picture": false,
-       "text": "$f(x)$ = $x^2 - 3$ and $f'(x)$ = $2x$.  Start at $x_0$ = 2.",
+       "text": "$f(x)$ = $x^2 - 3$ and $f'(x)$ = $2x$. Start at $x_0$ = 2.",
        "parts": [
         {
          "label": "$f(x_0)$ =",
@@ -1269,7 +1269,7 @@
        "type": "multi",
        "fail": true,
        "picture": false,
-       "text": "$f(x)$ = $x^3 - 2x - 5$ and $f'(x)$ = $3x^2 - 2$.  Start at $x_0$ = 2.",
+       "text": "$f(x)$ = $x^3 - 2x - 5$ and $f'(x)$ = $3x^2 - 2$. Start at $x_0$ = 2.",
        "parts": [
         {
          "label": "$f(x_0)$ =",
@@ -1348,7 +1348,7 @@
        "type": "multi",
        "fail": true,
        "picture": false,
-       "text": "$f(x)$ = $x^3 + 2x - 4$ and $f'(x)$ = $3x^2 + 2$.  Start at $x_0$ = 1.",
+       "text": "$f(x)$ = $x^3 + 2x - 4$ and $f'(x)$ = $3x^2 + 2$. Start at $x_0$ = 1.",
        "parts": [
         {
          "label": "$f(x_0)$ =",
@@ -1427,7 +1427,7 @@
        "type": "multi",
        "fail": true,
        "picture": false,
-       "text": "$f(x)$ = $x^2 - 7$ and $f'(x)$ = $2x$.  Start at $x_0$ = 3.",
+       "text": "$f(x)$ = $x^2 - 7$ and $f'(x)$ = $2x$. Start at $x_0$ = 3.",
        "parts": [
         {
          "label": "$f(x_0)$ =",
@@ -1509,7 +1509,7 @@
        "type": "multi",
        "fail": true,
        "picture": false,
-       "text": "$f(x)$ = $cos x - x$ and $f'(x)$ = $-sin x - 1$.  Start at $x_0$ = 0.5.",
+       "text": "$f(x)$ = $cos x - x$ and $f'(x)$ = $-sin x - 1$. Start at $x_0$ = 0.5.",
        "parts": [
         {
          "label": "$f(x_0)$ =",
@@ -1588,7 +1588,7 @@
        "type": "multi",
        "fail": true,
        "picture": false,
-       "text": "$f(x)$ = $x^5 - x - 1$ and $f'(x)$ = $5x^4 - 1$.  Start at $x_0$ = 1.",
+       "text": "$f(x)$ = $x^5 - x - 1$ and $f'(x)$ = $5x^4 - 1$. Start at $x_0$ = 1.",
        "parts": [
         {
          "label": "$f(x_0)$ =",

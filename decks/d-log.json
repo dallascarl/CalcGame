@@ -14,7 +14,7 @@
     {
      "id": "T1",
      "type": "mc",
-     "text": "$frac{d}{dx} ln(x) =$",
+     "text": "$$frac{d}{dx} ln(x) =$$",
      "options": [
       "$frac{1}{x}$",
       "$ln(x)$",
@@ -27,7 +27,7 @@
     {
      "id": "T2",
      "type": "mc",
-     "text": "$frac{d}{dx} ln(g(x)) =$",
+     "text": "$$frac{d}{dx} ln(g(x)) =$$",
      "options": [
       "$frac{g'(x)}{g(x)}$",
       "$frac{1}{g(x)}$",
@@ -40,7 +40,7 @@
     {
      "id": "T3",
      "type": "tf",
-     "text": "$frac{d}{dx} ln(2x) = frac{1}{2x}$",
+     "text": "$$frac{d}{dx} ln(2x) = frac{1}{2x}$$",
      "answer": false,
      "explain": "$frac{2}{2x} = frac{1}{x}$. (Or: $ln(2x) = ln(2) + ln(x)$, and $ln(2)$ is a constant.)"
     },
@@ -71,7 +71,7 @@
     {
      "id": "T5",
      "type": "mc",
-     "text": "$frac{d}{dx} log_b(x) =$",
+     "text": "$$frac{d}{dx} log_b(x) =$$",
      "options": [
       "$frac{1}{x ln(b)}$",
       "$frac{1}{x}$",
@@ -414,7 +414,7 @@
     {
      "id": "R17",
      "type": "num",
-     "text": "Use log rules: $ln(frac{1}{x}) = n ln(x)$. What is $n$?",
+     "text": "Use log rules:\n$$ln(frac{1}{x}) = n ln(x)$$\nWhat is $n$?",
      "answer": -1,
      "label": "$n$ =",
      "level": 1,
@@ -432,7 +432,7 @@
     {
      "id": "R19",
      "type": "num",
-     "text": "Use log rules: $ln(frac{1}{x^4}) = n ln(x)$. What is $n$?",
+     "text": "Use log rules:\n$$ln(frac{1}{x^4}) = n ln(x)$$\nWhat is $n$?",
      "answer": -4,
      "label": "$n$ =",
      "level": 1,
@@ -441,7 +441,7 @@
     {
      "id": "R20",
      "type": "num",
-     "text": "Use log rules: $ln(x sqrt(x)) = n ln(x)$. What is $n$?",
+     "text": "Use log rules:\n$$ln(x sqrt(x)) = n ln(x)$$\nWhat is $n$?",
      "answer": 1.5,
      "label": "$n$ =",
      "level": 1,
@@ -450,7 +450,7 @@
     {
      "id": "F21",
      "type": "expr",
-     "text": "$$f(x) = ln(x^2 + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^2 + 1)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "2x",
      "vars": [
       "x"
@@ -477,7 +477,7 @@
     {
      "id": "F22",
      "type": "expr",
-     "text": "$$f(x) = ln(sin(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(sin(x))$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "cos(x)",
      "vars": [
       "x"
@@ -504,7 +504,7 @@
     {
      "id": "F23",
      "type": "expr",
-     "text": "$$f(x) = ln(3x - 2)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(3x - 2)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "3",
      "vars": [
       "x"
@@ -531,7 +531,7 @@
     {
      "id": "F24",
      "type": "expr",
-     "text": "$$f(x) = ln(x^3 + 2x + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^3 + 2x + 1)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "3x^2 + 2",
      "vars": [
       "x"
@@ -558,7 +558,7 @@
     {
      "id": "F25",
      "type": "expr",
-     "text": "$$f(x) = ln(cos(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(cos(x))$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "-sin(x)",
      "vars": [
       "x"
@@ -585,7 +585,7 @@
     {
      "id": "F26",
      "type": "expr",
-     "text": "$$f(x) = ln(e^x + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(e^x + 1)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "e^x",
      "vars": [
       "x"
@@ -612,7 +612,7 @@
     {
      "id": "F27",
      "type": "expr",
-     "text": "$$f(x) = ln(x^4 - x)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^4 - x)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "4x^3 - 1",
      "vars": [
       "x"
@@ -639,7 +639,7 @@
     {
      "id": "F28",
      "type": "expr",
-     "text": "$$f(x) = ln(2x^2 + 7)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(2x^2 + 7)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "4x",
      "vars": [
       "x"
@@ -666,7 +666,7 @@
     {
      "id": "F29",
      "type": "expr",
-     "text": "$$f(x) = ln(x + sqrt(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x + sqrt(x))$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "1 + 1/(2sqrt(x))",
      "vars": [
       "x"
@@ -693,7 +693,7 @@
     {
      "id": "F30",
      "type": "expr",
-     "text": "$$f(x) = ln(1 + e^(2x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(1 + e^(2x))$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "2e^(2x)",
      "vars": [
       "x"
@@ -1043,7 +1043,7 @@
       {
        "id": "W45.2",
        "type": "expr",
-       "text": "$frac{g'(x)}{g(x)}$",
+       "text": "$$frac{g'(x)}{g(x)}$$",
        "answer": "(2x)/(x^2 + 1)",
        "vars": [
         "x"
@@ -1100,7 +1100,7 @@
       {
        "id": "W46.2",
        "type": "expr",
-       "text": "$frac{g'(x)}{g(x)}$",
+       "text": "$$frac{g'(x)}{g(x)}$$",
        "answer": "(cos(x))/(sin(x))",
        "vars": [
         "x"
@@ -1157,7 +1157,7 @@
       {
        "id": "W47.2",
        "type": "expr",
-       "text": "$frac{g'(x)}{g(x)}$",
+       "text": "$$frac{g'(x)}{g(x)}$$",
        "answer": "(3)/(3x - 2)",
        "vars": [
         "x"
@@ -1185,7 +1185,7 @@
     {
      "id": "W48",
      "type": "steps",
-     "text": "Find the derivative of $f(x) = ln(x^3 + 2x + 1)$.",
+     "text": "Find the derivative of\n$$f(x) = ln(x^3 + 2x + 1)$$",
      "steps": [
       {
        "id": "W48.1",
@@ -1214,7 +1214,7 @@
       {
        "id": "W48.2",
        "type": "expr",
-       "text": "$frac{g'(x)}{g(x)}$",
+       "text": "$$frac{g'(x)}{g(x)}$$",
        "answer": "(3x^2 + 2)/(x^3 + 2x + 1)",
        "vars": [
         "x"
@@ -1271,7 +1271,7 @@
       {
        "id": "W49.2",
        "type": "expr",
-       "text": "$frac{g'(x)}{g(x)}$",
+       "text": "$$frac{g'(x)}{g(x)}$$",
        "answer": "(-sin(x))/(cos(x))",
        "vars": [
         "x"
@@ -1328,7 +1328,7 @@
       {
        "id": "W50.2",
        "type": "expr",
-       "text": "$frac{g'(x)}{g(x)}$",
+       "text": "$$frac{g'(x)}{g(x)}$$",
        "answer": "(e^x)/(e^x + 1)",
        "vars": [
         "x"
@@ -1540,7 +1540,7 @@
       {
        "id": "X57.2",
        "type": "expr",
-       "text": "$frac{d}{dx} log_2(g) = frac{g'}{g ln(2)}$",
+       "text": "$$frac{d}{dx} log_2(g) = frac{g'}{g ln(2)}$$",
        "answer": "3/((3x + 1)ln(2))",
        "vars": [
         "x"
@@ -1609,7 +1609,7 @@
    {
     "id": "L3",
     "type": "mc",
-    "text": "Log rules can make a derivative easy **before** you start. Which is the same as $ln(frac{x^2 sin(x)}{2x + 1})$?",
+    "text": "Log rules can make a derivative easy **before** you start. Which is the same as\n$$ln(frac{x^2 sin(x)}{2x + 1})$$",
     "options": [
      "$2ln(x) + ln(sin(x)) - ln(2x + 1)$",
      "$frac{ln(x^2) ln(sin(x))}{ln(2x + 1)}$",
@@ -1623,7 +1623,7 @@
    {
     "id": "L4",
     "type": "mc",
-    "text": "Other bases pick up $ln(b)$: $frac{d}{dx} log_b(x) = frac{1}{x ln(b)}$. What is $frac{d}{dx} log_2(x)$?",
+    "text": "Other bases pick up $ln(b)$:\n$$frac{d}{dx} log_b(x) = frac{1}{x ln(b)}$$\nWhat is\n$$frac{d}{dx} log_2(x)$$",
     "options": [
      "$frac{1}{x ln(2)}$",
      "$frac{1}{2x}$",
@@ -1637,7 +1637,7 @@
    {
     "id": "L5",
     "type": "steps",
-    "text": "**Inverse functions:** $(f^(-1))'(a) = frac{1}{f'(f^(-1)(a))}$. Flip the graph over $y = x$ and slopes flip too. Let $f(x) = x^3 + x$. Find $(f^(-1))'(2)$.",
+    "text": "**Inverse functions:**\n$$(f^(-1))'(a) = frac{1}{f'(f^(-1)(a))}$$\nFlip the graph over $y = x$ and slopes flip too. Let $f(x) = x^3 + x$. Find $(f^(-1))'(2)$.",
     "steps": [
      {
       "id": "L5.1",

@@ -30,7 +30,7 @@
     {
      "id": "W2",
      "type": "mc",
-     "text": "What is the **first** tool you need to differentiate $frac{sin(x)}{x^2 + 1}$?",
+     "text": "What is the **first** tool you need to differentiate\n$$frac{sin(x)}{x^2 + 1}$$",
      "options": [
       "Quotient rule",
       "Implicit differentiation",
@@ -120,7 +120,7 @@
     {
      "id": "W8",
      "type": "mc",
-     "text": "What is the **first** tool you need to differentiate $frac{e^x}{x}$?",
+     "text": "What is the **first** tool you need to differentiate\n$$frac{e^x}{x}$$",
      "options": [
       "Quotient rule",
       "Implicit differentiation",
@@ -225,7 +225,7 @@
     {
      "id": "W15",
      "type": "mc",
-     "text": "What is the **first** tool you need to differentiate $frac{3}{x^4}$?",
+     "text": "What is the **first** tool you need to differentiate\n$$frac{3}{x^4}$$",
      "options": [
       "Power rule (term by term)",
       "Logarithmic differentiation",
@@ -270,7 +270,7 @@
     {
      "id": "W18",
      "type": "mc",
-     "text": "What is the **first** tool you need to differentiate $frac{x^2}{e^x + 1}$?",
+     "text": "What is the **first** tool you need to differentiate\n$$frac{x^2}{e^x + 1}$$",
      "options": [
       "Quotient rule",
       "Product rule",
@@ -360,7 +360,7 @@
     {
      "id": "W24",
      "type": "mc",
-     "text": "What is the **first** tool you need to differentiate $frac{ln(x)}{x}$?",
+     "text": "What is the **first** tool you need to differentiate\n$$frac{ln(x)}{x}$$",
      "options": [
       "Quotient rule",
       "Chain rule",
@@ -420,7 +420,7 @@
     {
      "id": "W28",
      "type": "mc",
-     "text": "What is the **first** tool you need to differentiate $7x - frac{1}{x}$?",
+     "text": "What is the **first** tool you need to differentiate\n$$7x - frac{1}{x}$$",
      "options": [
       "Power rule (term by term)",
       "Logarithmic differentiation",
@@ -911,7 +911,7 @@
     {
      "id": "RULV59",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{2x + 5}{x^2 + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{2x + 5}{x^2 + 1}$$",
      "steps": [
       {
        "id": "RULV59.1",
@@ -974,7 +974,7 @@
     {
      "id": "RULY28",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = 2x^3 - 2x^2 + 6x + 9$.",
+     "text": "Find the derivative of\n$$f(x) = 2x^3 - 2x^2 + 6x + 9$$",
      "answer": "6x^2 - 4x + 6",
      "vars": [
       "x"
@@ -987,7 +987,7 @@
     {
      "id": "RULV58",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x^2 + 1}{x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x^2 + 1}{x}$$",
      "steps": [
       {
        "id": "RULV58.1",
@@ -1050,7 +1050,7 @@
     {
      "id": "RULW54",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (x - 3)(2x^2 + 1)$.",
+     "text": "Use the product rule on\n$$f(x) = (x - 3)(2x^2 + 1)$$",
      "steps": [
       {
        "id": "RULW54.1",
@@ -1109,7 +1109,7 @@
     {
      "id": "TRIC36",
      "type": "mc",
-     "text": "What is $frac{d^101}{dx^101} sin(x)$?",
+     "text": "What is\n$$frac{d^101}{dx^101} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -1124,7 +1124,7 @@
     {
      "id": "TRIC30",
      "type": "mc",
-     "text": "What is $frac{d^3}{dx^3} sin(x)$?",
+     "text": "What is\n$$frac{d^3}{dx^3} sin(x)$$",
      "options": [
       "$sin(x)$",
       "$cos(x)$",
@@ -1165,7 +1165,7 @@
     {
      "id": "TRIQ41",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{sin(x)}{1 + cos(x)}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{sin(x)}{1 + cos(x)}$$",
      "steps": [
       {
        "id": "TRIQ41.1",
@@ -1270,7 +1270,7 @@
     {
      "id": "TRIQ40",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x}{cos(x)}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x}{cos(x)}$$",
      "steps": [
       {
        "id": "TRIQ40.1",
@@ -1584,7 +1584,7 @@
       {
        "id": "CHAW69.4",
        "type": "expr",
-       "text": "$f'(x) = h'(g(x))·g'(x)$",
+       "text": "$$f'(x) = h'(g(x))·g'(x)$$",
        "answer": "(5cos(x)^4)(-sin(x))",
        "vars": [
         "x"
@@ -1944,7 +1944,7 @@
     {
      "id": "IMPV37",
      "type": "num",
-     "text": "$y' = -frac{y}{x}$. Find the slope at the point $(2, 3)$.",
+     "text": "$$y' = -frac{y}{x}$$\nFind the slope at the point $(2, 3)$.",
      "answer": -1.5,
      "label": "slope =",
      "explain": "Plug in $x = 2$ and $y = 3$: $-3/2$.",
@@ -1953,7 +1953,7 @@
     {
      "id": "IMPV35",
      "type": "num",
-     "text": "$y' = -frac{x}{y}$. Find the slope at the point $(3, 4)$.",
+     "text": "$$y' = -frac{x}{y}$$\nFind the slope at the point $(3, 4)$.",
      "answer": -0.75,
      "label": "slope =",
      "explain": "Plug in $x = 3$ and $y = 4$: $-3/4$.",
@@ -2069,7 +2069,7 @@
     {
      "id": "EXPQ45",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{3^x}{3^x + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{3^x}{3^x + 1}$$",
      "steps": [
       {
        "id": "EXPQ45.1",
@@ -2169,7 +2169,7 @@
       {
        "id": "EXPT56.3",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "x + 0",
        "vars": [
         "x"
@@ -2191,7 +2191,7 @@
     {
      "id": "EXPQ44",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{e^x}{x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{e^x}{x}$$",
      "steps": [
       {
        "id": "EXPQ44.1",
@@ -2299,7 +2299,7 @@
     {
      "id": "LOGF24",
      "type": "expr",
-     "text": "$$f(x) = ln(x^3 + 2x + 1)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^3 + 2x + 1)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "3x^2 + 2",
      "vars": [
       "x"
@@ -2360,7 +2360,7 @@
     {
      "id": "LOGF27",
      "type": "expr",
-     "text": "$$f(x) = ln(x^4 - x)$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x^4 - x)$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "4x^3 - 1",
      "vars": [
       "x"
@@ -2387,7 +2387,7 @@
     {
      "id": "LOGF29",
      "type": "expr",
-     "text": "$$f(x) = ln(x + sqrt(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(x + sqrt(x))$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "1 + 1/(2sqrt(x))",
      "vars": [
       "x"
@@ -2423,7 +2423,7 @@
     {
      "id": "LOGF22",
      "type": "expr",
-     "text": "$$f(x) = ln(sin(x))$$\nFill in the top of $frac{g'(x)}{g(x)}$.",
+     "text": "$$f(x) = ln(sin(x))$$\nFill in the top of\n$$frac{g'(x)}{g(x)}$$",
      "answer": "cos(x)",
      "vars": [
       "x"
@@ -2450,7 +2450,7 @@
     {
      "id": "LOGC38",
      "type": "expr",
-     "text": "$y = (sin(x))^x$ and $frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$. Multiply by $y$.",
+     "text": "$$y = (sin(x))^x ;; frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$$\nMultiply by $y$.",
      "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
      "vars": [
       "x"

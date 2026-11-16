@@ -58,7 +58,7 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "The quotient rule says $(frac{g}{k})' =$",
+     "text": "The quotient rule says\n$$(frac{g}{k})' =$$",
      "options": [
       "$frac{kg' - gk'}{k^2}$",
       "$frac{gk' - kg'}{k^2}$",
@@ -97,7 +97,7 @@
     {
      "id": "T7",
      "type": "mc",
-     "text": "What is $frac{d}{dx}(pi^2)$?",
+     "text": "What is\n$$frac{d}{dx}(pi^2)$$",
      "options": [
       "$0$",
       "$2pi$",
@@ -305,7 +305,7 @@
     {
      "id": "X15",
      "type": "num",
-     "text": "Rewrite as a power of $x$: $frac{1}{x^3} = x^n$. What is $n$?",
+     "text": "Rewrite as a power of $x$:\n$$frac{1}{x^3} = x^n$$\nWhat is $n$?",
      "answer": -3,
      "label": "$n$ =",
      "level": 1,
@@ -323,7 +323,7 @@
     {
      "id": "X17",
      "type": "num",
-     "text": "Rewrite as a power of $x$: $frac{1}{x} = x^n$. What is $n$?",
+     "text": "Rewrite as a power of $x$:\n$$frac{1}{x} = x^n$$\nWhat is $n$?",
      "answer": -1,
      "label": "$n$ =",
      "level": 1,
@@ -332,7 +332,7 @@
     {
      "id": "X18",
      "type": "num",
-     "text": "Rewrite as a power of $x$: $frac{1}{sqrt(x)} = x^n$. What is $n$?",
+     "text": "Rewrite as a power of $x$:\n$$frac{1}{sqrt(x)} = x^n$$\nWhat is $n$?",
      "answer": -0.5,
      "label": "$n$ =",
      "level": 1,
@@ -350,7 +350,7 @@
     {
      "id": "X20",
      "type": "num",
-     "text": "Rewrite as a power of $x$: $frac{1}{x^5} = x^n$. What is $n$?",
+     "text": "Rewrite as a power of $x$:\n$$frac{1}{x^5} = x^n$$\nWhat is $n$?",
      "answer": -5,
      "label": "$n$ =",
      "level": 1,
@@ -420,7 +420,7 @@
     {
      "id": "Y26",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = 2x^3 + x^2 - x + 9$.",
+     "text": "Find the derivative of\n$$f(x) = 2x^3 + x^2 - x + 9$$",
      "answer": "6x^2 + 2x - 1",
      "vars": [
       "x"
@@ -446,7 +446,7 @@
     {
      "id": "Y28",
      "type": "expr",
-     "text": "Find the derivative of $f(x) = 2x^3 - 2x^2 + 6x + 9$.",
+     "text": "Find the derivative of\n$$f(x) = 2x^3 - 2x^2 + 6x + 9$$",
      "answer": "6x^2 - 4x + 6",
      "vars": [
       "x"
@@ -696,7 +696,7 @@
     {
      "id": "W46",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (x^2 + 2)(3x + 1)$.",
+     "text": "Use the product rule on\n$$f(x) = (x^2 + 2)(3x + 1)$$",
      "steps": [
       {
        "id": "W46.1",
@@ -741,7 +741,7 @@
     {
      "id": "W47",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (2x - 1)(x + 4)$.",
+     "text": "Use the product rule on\n$$f(x) = (2x - 1)(x + 4)$$",
      "steps": [
       {
        "id": "W47.1",
@@ -786,7 +786,7 @@
     {
      "id": "W48",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (x^2 - 3)(2x + 5)$.",
+     "text": "Use the product rule on\n$$f(x) = (x^2 - 3)(2x + 5)$$",
      "steps": [
       {
        "id": "W48.1",
@@ -831,7 +831,7 @@
     {
      "id": "W49",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (3x)(x^2 - 2x + 1)$.",
+     "text": "Use the product rule on\n$$f(x) = (3x)(x^2 - 2x + 1)$$",
      "steps": [
       {
        "id": "W49.1",
@@ -921,7 +921,7 @@
     {
      "id": "W51",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (4x - 1)(x^2 + 1)$.",
+     "text": "Use the product rule on\n$$f(x) = (4x - 1)(x^2 + 1)$$",
      "steps": [
       {
        "id": "W51.1",
@@ -966,7 +966,7 @@
     {
      "id": "W52",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (x^3 + 1)(2x + 3)$.",
+     "text": "Use the product rule on\n$$f(x) = (x^3 + 1)(2x + 3)$$",
      "steps": [
       {
        "id": "W52.1",
@@ -1011,7 +1011,7 @@
     {
      "id": "W53",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (5x + 2)(x^2 - 1)$.",
+     "text": "Use the product rule on\n$$f(x) = (5x + 2)(x^2 - 1)$$",
      "steps": [
       {
        "id": "W53.1",
@@ -1056,7 +1056,7 @@
     {
      "id": "W54",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (x - 3)(2x^2 + 1)$.",
+     "text": "Use the product rule on\n$$f(x) = (x - 3)(2x^2 + 1)$$",
      "steps": [
       {
        "id": "W54.1",
@@ -1101,7 +1101,7 @@
     {
      "id": "W55",
      "type": "steps",
-     "text": "Use the product rule on $f(x) = (2x^2 + 1)(3x - 2)$.",
+     "text": "Use the product rule on\n$$f(x) = (2x^2 + 1)(3x - 2)$$",
      "steps": [
       {
        "id": "W55.1",
@@ -1146,7 +1146,7 @@
     {
      "id": "V56",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x^2}{x + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x^2}{x + 1}$$",
      "steps": [
       {
        "id": "V56.1",
@@ -1195,7 +1195,7 @@
     {
      "id": "V57",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{3x}{2x - 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{3x}{2x - 1}$$",
      "steps": [
       {
        "id": "V57.1",
@@ -1244,7 +1244,7 @@
     {
      "id": "V58",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x^2 + 1}{x}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x^2 + 1}{x}$$",
      "steps": [
       {
        "id": "V58.1",
@@ -1293,7 +1293,7 @@
     {
      "id": "V59",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{2x + 5}{x^2 + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{2x + 5}{x^2 + 1}$$",
      "steps": [
       {
        "id": "V59.1",
@@ -1342,7 +1342,7 @@
     {
      "id": "V60",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x - 2}{x + 3}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x - 2}{x + 3}$$",
      "steps": [
       {
        "id": "V60.1",
@@ -1391,7 +1391,7 @@
     {
      "id": "V61",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{4x^2}{2x + 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{4x^2}{2x + 1}$$",
      "steps": [
       {
        "id": "V61.1",
@@ -1440,7 +1440,7 @@
     {
      "id": "V62",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{x}{x^2 + 4}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{x}{x^2 + 4}$$",
      "steps": [
       {
        "id": "V62.1",
@@ -1489,7 +1489,7 @@
     {
      "id": "V63",
      "type": "steps",
-     "text": "Use the quotient rule on $f(x) = frac{5x}{x - 1}$.",
+     "text": "Use the quotient rule on\n$$f(x) = frac{5x}{x - 1}$$",
      "steps": [
       {
        "id": "V63.1",
@@ -1570,7 +1570,7 @@
       {
        "id": "T64.4",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "6(x - 2) + 7",
        "vars": [
         "x"
@@ -1618,7 +1618,7 @@
       {
        "id": "T65.4",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "4(x - 1) - 1",
        "vars": [
         "x"
@@ -1666,7 +1666,7 @@
       {
        "id": "T66.4",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "-6(x + 1) + 5",
        "vars": [
         "x"
@@ -1714,7 +1714,7 @@
       {
        "id": "T67.4",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "3(x - 1) - 1",
        "vars": [
         "x"
@@ -1762,7 +1762,7 @@
       {
        "id": "T68.4",
        "type": "expr",
-       "text": "$y = f'(a)(x - a) + f(a)$",
+       "text": "$$y = f'(a)(x - a) + f(a)$$",
        "answer": "-(x - 0) + 2",
        "vars": [
         "x"
@@ -1783,7 +1783,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "**Power rule:** $frac{d}{dx} x^n = nx^(n-1)$. Bring the power down in front, then lower the power by one. What is $frac{d}{dx} x^5$?",
+    "text": "**Power rule:**\n$$frac{d}{dx} x^n = nx^(n-1)$$\nBring the power down in front, then lower the power by one. What is\n$$frac{d}{dx} x^5$$",
     "options": [
      "$5x^4$",
      "$x^4$",
@@ -1854,7 +1854,7 @@
    {
     "id": "L4",
     "type": "steps",
-    "text": "**Quotient rule:** $(frac{g}{k})' = frac{kg' - gk'}{k^2}$ (\"low d-high minus high d-low, over low squared\"). Take $f(x) = frac{4x^2}{2x + 1}$.",
+    "text": "**Quotient rule:** $(frac{g}{k})' = frac{kg' - gk'}{k^2}$ (\"low d-high minus high d-low, over low squared\"). Take\n$$f(x) = frac{4x^2}{2x + 1}$$",
     "steps": [
      {
       "id": "L4.1",

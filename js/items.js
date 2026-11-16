@@ -152,7 +152,14 @@ function mountExpr(q,ix,onChange){
       $('.tmpl',ix).innerHTML='<span class="math">'+tparts.map(t=>mpart(t)).join(b)+'</span>';}
     let m='';if(toks.length)try{xcompile(str(),vars);}catch(e){m=e.message;} err.hidden=!m||!toks.length; err.textContent=m?'Not finished yet: '+m+'.':'';};
   const press=k=>{ if(locked)return;
-    if(k==='back')toks.pop(); else if(k==='clear')toks=[]; else toks.push(k);
+    if(k==='back')toks.pop(); else if(k==='clear')toks=[];
+    else{
+      /* a fraction typed right after a power goes into the exponent: x, xⁿ, 3, fraction, 2 gives x^(3/2) */
+      const cur=toks.join('');
+      if(k==='/'&&/\^\d+$/.test(cur)){let j=toks.length-1;while(j>=0&&toks[j]!=='^')j--; if(j>=0)toks.splice(j+1,0,'(');}
+      else if(/\^\(\d+\/\d+$/.test(cur)&&!/^[0-9.]$/.test(k))toks.push(')');
+      toks.push(k);
+    }
     show();onChange(); };
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
   itemKeys=e=>{ if(e.key==='Backspace'){press('back');e.preventDefault();return true;}

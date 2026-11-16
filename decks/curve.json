@@ -118,7 +118,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $g(x) = frac{x^2 + 4}{x^2 - 4}$.",
+     "text": "Find every horizontal asymptote of\n$$g(x) = frac{x^2 + 4}{x^2 - 4}$$",
      "answers": [
       1
      ],
@@ -131,7 +131,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = frac{x}{x^2 + 1}$.",
+     "text": "Find every horizontal asymptote of\n$$f(x) = frac{x}{x^2 + 1}$$",
      "answers": [
       0
      ],
@@ -157,7 +157,7 @@
     },
     {
      "type": "interval",
-     "text": "Find the domain of $f(x) = frac{x^2}{x - 1}$.",
+     "text": "Find the domain of\n$$f(x) = frac{x^2}{x - 1}$$",
      "answer": "(-inf,1)U(1,inf)",
      "label": "Domain:",
      "explain": "Exclude where it is undefined.",
@@ -166,7 +166,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = frac{x^2}{x - 1}$.",
+     "text": "Find every horizontal asymptote of\n$$f(x) = frac{x^2}{x - 1}$$",
      "answers": [],
      "var": "y",
      "label": "$y$ =",
@@ -177,7 +177,7 @@
     },
     {
      "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = frac{x - 1}{x^2}$.",
+     "text": "Find every vertical asymptote of\n$$f(x) = frac{x - 1}{x^2}$$",
      "answers": [
       0
      ],
@@ -203,7 +203,7 @@
     },
     {
      "type": "interval",
-     "text": "Find the domain of $h(x) = x sqrt(4 - x^2)$.",
+     "text": "Find the domain of\n$$h(x) = x sqrt(4 - x^2)$$",
      "answer": "[-2,2]",
      "label": "Domain:",
      "explain": "Exclude where it is undefined.",
@@ -2936,7 +2936,7 @@
    },
    {
     "type": "sketch",
-    "text": "Put it all together. Here is the data for $f(x) = x^3 - 6x^2 + 9x + 1$. Place it on the graph, mark the regions, then sketch.",
+    "text": "Put it all together. Here is the data for\n$$f(x) = x^3 - 6x^2 + 9x + 1$$\nPlace it on the graph, mark the regions, then sketch.",
     "fn": "1+x^3-6*x^2+9*x",
     "window": [
      -1,
@@ -2996,7 +2996,7 @@
    },
    {
     "type": "sketch",
-    "text": "One with asymptotes: $f(x) = frac{x^2 + 2x + 1}{x^2}$. Place the data, mark the regions, and sketch. Draw each piece as its own stroke.",
+    "text": "One with asymptotes:\n$$f(x) = frac{x^2 + 2x + 1}{x^2}$$\nPlace the data, mark the regions, and sketch. Draw each piece as its own stroke.",
     "fn": "(1+x^2+2*x)/x^2",
     "window": [
      -5,

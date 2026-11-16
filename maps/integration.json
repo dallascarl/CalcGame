@@ -1,132 +1,168 @@
 {
-  "course": "Calculus 1",
-  "world": 4,
-  "id": "integration",
-  "title": "Integration",
-  "height": 204,
-  "nodes": [
-    {
-      "id": "start",
-      "kind": "start",
-      "title": "Start",
-      "x": 50,
-      "y": 10,
-      "deck": null,
-      "requires": [],
-      "blurb": "Tap a stop on the map to walk there."
-    },
-    {
-      "id": "areas",
-      "kind": "main",
-      "title": "Areas and Distance",
-      "x": 16,
-      "y": 38,
-      "deck": "w-areas",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Estimating area under a curve with rectangles."
-    },
-    {
-      "id": "definite",
-      "kind": "main",
-      "title": "Definite Integral",
-      "x": 50,
-      "y": 38,
-      "deck": "w-definite",
-      "requires": [
-        "areas"
-      ],
-      "blurb": "Area as a limit of sums, and the definite integral."
-    },
-    {
-      "id": "anti",
-      "kind": "main",
-      "title": "Antiderivatives",
-      "x": 84,
-      "y": 38,
-      "deck": "w-anti",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Running differentiation backwards."
-    },
-    {
-      "id": "sumnot",
-      "kind": "review",
-      "title": "Summation Notation",
-      "x": 16,
-      "y": 66,
-      "deck": "w-sumnot",
-      "requires": [
-        "areas"
-      ],
-      "blurb": "Review: reading and writing sigma notation."
-    },
-    {
-      "id": "ftc",
-      "kind": "main",
-      "title": "Fundamental Theorem of Calculus",
-      "label": "Fundamental Theorem",
-      "x": 50,
-      "y": 94,
-      "deck": "w-ftc",
-      "requires": [
-        "definite",
-        "anti"
-      ],
-      "blurb": "The link between derivatives and integrals."
-    },
-    {
-      "id": "proof",
-      "kind": "extra",
-      "title": "Proof of the Fundamental Theorem",
-      "label": "Proof of FTC",
-      "x": 84,
-      "y": 94,
-      "deck": "w-proof",
-      "requires": [
-        "ftc"
-      ],
-      "blurb": "Optional: why the Fundamental Theorem is true."
-    },
-    {
-      "id": "indef",
-      "kind": "main",
-      "title": "Indefinite Integral and Net Change Theorem",
-      "label": "Indefinite integral",
-      "x": 50,
-      "y": 122,
-      "deck": "w-indef",
-      "requires": [
-        "ftc"
-      ],
-      "blurb": "Antiderivatives with +C, and total change from a rate."
-    },
-    {
-      "id": "subst",
-      "kind": "main",
-      "title": "Substitution",
-      "x": 50,
-      "y": 150,
-      "deck": "w-subst",
-      "requires": [
-        "indef"
-      ],
-      "blurb": "Undoing the chain rule."
-    },
-    {
-      "id": "review",
-      "kind": "boss",
-      "title": "Chapter Review",
-      "x": 50,
-      "y": 180,
-      "deck": "review4",
-      "requires": [
-        "subst"
-      ],
-      "blurb": "Questions from every stop in this world."
-    }
-  ],
-  "short": "Integration"
+ "course": "Calculus 1",
+ "world": 4,
+ "id": "integration",
+ "title": "Integration",
+ "height": 287,
+ "nodes": [
+  {
+   "id": "start",
+   "kind": "start",
+   "title": "Start",
+   "x": 50,
+   "y": 10,
+   "deck": null,
+   "requires": [],
+   "blurb": "Tap a stop on the map to walk there."
+  },
+  {
+   "id": "anti",
+   "kind": "main",
+   "title": "Antiderivatives",
+   "x": 26,
+   "y": 44,
+   "deck": "w-anti",
+   "requires": [
+    "start"
+   ],
+   "blurb": "Running differentiation backwards."
+  },
+  {
+   "id": "indef",
+   "kind": "main",
+   "title": "Indefinite Integral and Net Change Theorem",
+   "label": "Indefinite integral",
+   "x": 74,
+   "y": 44,
+   "deck": "w-indef",
+   "requires": [
+    "anti"
+   ],
+   "blurb": "Antiderivatives with +C, and total change from a rate."
+  },
+  {
+   "id": "sumnot",
+   "kind": "review",
+   "title": "Summation Notation",
+   "x": 26,
+   "y": 89,
+   "deck": "w-sumnot",
+   "requires": [
+    "areas"
+   ],
+   "blurb": "Review: reading and writing sigma notation."
+  },
+  {
+   "id": "areas",
+   "kind": "main",
+   "title": "Areas and Distance",
+   "x": 74,
+   "y": 89,
+   "deck": "w-areas",
+   "requires": [
+    "indef"
+   ],
+   "blurb": "Estimating area under a curve with rectangles."
+  },
+  {
+   "id": "definite",
+   "kind": "main",
+   "title": "Definite Integral",
+   "x": 50,
+   "y": 134,
+   "deck": "w-definite",
+   "requires": [
+    "areas"
+   ],
+   "blurb": "Area as a limit of sums, and the definite integral."
+  },
+  {
+   "id": "ftc",
+   "kind": "main",
+   "title": "Fundamental Theorem of Calculus",
+   "label": "Fundamental Theorem",
+   "x": 26,
+   "y": 179,
+   "deck": "w-ftc",
+   "requires": [
+    "definite"
+   ],
+   "blurb": "The link between derivatives and integrals."
+  },
+  {
+   "id": "proof",
+   "kind": "extra",
+   "title": "Proof of the Fundamental Theorem",
+   "label": "Proof of FTC",
+   "x": 74,
+   "y": 179,
+   "deck": "w-proof",
+   "requires": [
+    "ftc"
+   ],
+   "blurb": "Optional: why the Fundamental Theorem is true."
+  },
+  {
+   "id": "subst",
+   "kind": "main",
+   "title": "Substitution",
+   "x": 50,
+   "y": 224,
+   "deck": "w-subst",
+   "requires": [
+    "ftc"
+   ],
+   "blurb": "Undoing the chain rule."
+  },
+  {
+   "id": "review",
+   "kind": "boss",
+   "title": "Chapter Review",
+   "x": 50,
+   "y": 265,
+   "deck": "review4",
+   "requires": [
+    "subst"
+   ],
+   "blurb": "Questions from every stop in this world."
+  }
+ ],
+ "short": "Integration",
+ "regions": [
+  {
+   "label": "Day 33",
+   "x": 3,
+   "y": 24,
+   "w": 94,
+   "h": 39
+  },
+  {
+   "label": "Day 34",
+   "x": 3,
+   "y": 69,
+   "w": 94,
+   "h": 39
+  },
+  {
+   "label": "Day 35",
+   "x": 3,
+   "y": 114,
+   "w": 94,
+   "h": 39
+  },
+  {
+   "label": "Days 36 and 37",
+   "x": 3,
+   "y": 159,
+   "w": 94,
+   "h": 39
+  },
+  {
+   "label": "Days 38 and 39",
+   "x": 3,
+   "y": 204,
+   "w": 94,
+   "h": 39
+  }
+ ]
 }

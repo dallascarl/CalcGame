@@ -1,0 +1,1896 @@
+{
+ "id": "lhop",
+ "title": "L'Hopital's Rule",
+ "graphs": {},
+ "lessons": [
+  {
+   "id": "forms",
+   "title": "Indeterminate forms",
+   "slides": [
+    {
+     "type": "ratio",
+     "title": "A tug of war",
+     "text": "As $x$ heads to 0, both $sin x$ and $x$ head to 0. The quotient $frac{sin x}{x}$ is a battle between a top pulling toward 0 and a bottom pulling toward 0 (which would make the quotient huge). Tap **Move closer** and watch the last column.",
+     "f": "sin(x)",
+     "g": "x",
+     "fl": "sin x",
+     "gl": "x",
+     "a": 0,
+     "goal": 5,
+     "value": 1,
+     "after": "Top and bottom both shrink to 0, but their quotient settles at **1**. Neither side wins: they tie.",
+     "id": "F1"
+    },
+    {
+     "type": "mc",
+     "text": "Plugging in $x$ = 0 gives $frac{sin 0}{0}$ = $0/0$. What did the table say the limit is?",
+     "options": [
+      "∞",
+      "1",
+      "0",
+      "It does not exist"
+     ],
+     "answer": 1,
+     "explain": "The quotient settled at 1, even though plugging in gives $0/0$.",
+     "hint": "Look at the last column of the table as $x$ got close to 0.",
+     "id": "F2"
+    },
+    {
+     "type": "ratio",
+     "title": "Another 0/0 battle",
+     "text": "Now $frac{x^2}{x}$ as $x$ → 0. Again both parts head to 0. Tap **Move closer**.",
+     "f": "x^2",
+     "g": "x",
+     "fl": "x²",
+     "gl": "x",
+     "a": 0,
+     "goal": 5,
+     "value": 0,
+     "after": "This time the quotient goes to **0**. The top shrinks much faster than the bottom, so the top wins.",
+     "id": "F3"
+    },
+    {
+     "type": "ratio",
+     "title": "And another",
+     "text": "Now flip it: $frac{x}{x^2}$ as $x$ → $0^+$. Tap **Move closer**.",
+     "f": "x",
+     "g": "x^2",
+     "fl": "x",
+     "gl": "x²",
+     "a": 0,
+     "goal": 5,
+     "after": "Now the bottom wins: dividing by something much smaller makes the quotient **blow up** to ∞.",
+     "id": "F4"
+    },
+    {
+     "type": "mc",
+     "text": "Three limits, each of the form $0/0$, gave 1, 0 and ∞. What can a $0/0$ limit turn out to be?",
+     "options": [
+      "Always 0",
+      "Anything. It depends on which part shrinks faster",
+      "Always 1",
+      "It never exists"
+     ],
+     "answer": 1,
+     "explain": "The form $0/0$ does not decide the answer. That is exactly what **indeterminate** means.",
+     "hint": "Look back at the three answers you just got.",
+     "id": "F5"
+    },
+    {
+     "type": "tf",
+     "text": "$0/0$ means the limit does not exist.",
+     "answer": false,
+     "explain": "Indeterminate does not mean undefined or nonexistent. It means the form alone does not **determine** the answer; you have to do more work.",
+     "hint": "The first table had form $0/0$, and its limit was 1.",
+     "id": "F6"
+    },
+    {
+     "type": "ratio",
+     "title": "The battle 0 · ∞",
+     "text": "Products can fight too. In $x ln x$ as $x$ → $0^+$, the $x$ pulls toward 0 while $ln x$ pulls toward −∞. Tap **Move closer**.",
+     "f": "x",
+     "g": "ln(x)",
+     "fl": "x",
+     "gl": "ln x",
+     "a": 0,
+     "start": 0.5,
+     "op": "*",
+     "goal": 5,
+     "graph": false,
+     "value": 0,
+     "after": "The product goes to **0**: the shrinking $x$ beats the slowly growing $ln x$.",
+     "id": "F7"
+    },
+    {
+     "type": "ratio",
+     "title": "The battle ∞ − ∞",
+     "text": "In $sqrt(x^2 + x) - x$ as $x$ → ∞, both parts grow without bound. Which wins? Tap **Make x bigger**.",
+     "f": "sqrt(x^2+x)",
+     "g": "x",
+     "fl": "√(x²+x)",
+     "gl": "x",
+     "op": "-",
+     "inf": true,
+     "goal": 5,
+     "value": 0.5,
+     "after": "Neither part wins outright: the difference settles at **1/2**. $∞ - ∞$ is not 0!",
+     "id": "F8"
+    },
+    {
+     "type": "ratio",
+     "title": "The battle $1^(∞)$",
+     "text": "In $(1 + frac{1}{x})^x$ as $x$ → ∞, the base is pulled toward 1 (and $1$ to any power is 1) while the exponent heads to ∞ (which makes anything bigger than 1 explode). Tap **Make x bigger**.",
+     "f": "1+1/x",
+     "g": "x",
+     "fl": "1 + 1/x",
+     "gl": "x",
+     "op": "^",
+     "inf": true,
+     "goal": 5,
+     "value": 2.71828,
+     "after": "It settles at 2.71828…, the number **e**. A compromise neither side predicted.",
+     "id": "F9"
+    },
+    {
+     "type": "pick",
+     "text": "Which of these are **indeterminate forms**? (Each part is a limit: 0 means \"heading to 0\", ∞ means \"growing without bound\".)",
+     "options": [
+      "$1^(∞)$",
+      "$0^0$",
+      "$0/∞$",
+      "$0·∞$",
+      "$∞ - ∞$",
+      "$∞/∞$",
+      "$∞ · ∞$",
+      "$∞^0$",
+      "$∞ + ∞$",
+      "$0^(∞)$",
+      "$1/0$",
+      "$0/0$"
+     ],
+     "answers": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7,
+      11
+     ],
+     "explain": "The seven indeterminate forms: $0/0$, $∞/∞$, $0·∞$, $∞ - ∞$, $1^(∞)$, $0^0$, $∞^0$. In the others both parts push the same way.",
+     "hint": "There are seven. A form is indeterminate only when its two parts pull in opposite directions.",
+     "id": "F10"
+    },
+    {
+     "type": "match",
+     "text": "These forms are **not** battles: both parts push the same way. Match each with where it goes.",
+     "pairs": [
+      [
+       "$∞ + ∞$",
+       "∞"
+      ],
+      [
+       "$0/∞$",
+       "0"
+      ],
+      [
+       "$0^(∞)$",
+       "0 (a tiny number to a huge power)"
+      ],
+      [
+       "$∞ · ∞$",
+       "∞ as well"
+      ],
+      [
+       "$frac{5}{0^+}$",
+       "+∞"
+      ]
+     ],
+     "explain": "No tug of war, so the answer is determined by the form.",
+     "hint": "Ask: do both parts make the answer bigger, or both smaller?",
+     "id": "F11"
+    },
+    {
+     "type": "match",
+     "text": "Match each limit with its form.",
+     "pairs": [
+      [
+       "$lim[x->0] frac{sin(3x)}{x}$",
+       "$0/0$"
+      ],
+      [
+       "$lim[x->∞] frac{x^2}{e^x}$",
+       "$∞/∞$"
+      ],
+      [
+       "$lim[x->0^+] x ln x$",
+       "$0·∞$"
+      ],
+      [
+       "$lim[x->∞] (x - ln x)$",
+       "$∞ - ∞$"
+      ],
+      [
+       "$lim[x->0^+] x^x$",
+       "$0^0$"
+      ],
+      [
+       "$lim[x->∞] x^(1/x)$",
+       "$∞^0$"
+      ]
+     ],
+     "explain": "Find what each part does on its own, then name the form.",
+     "hint": "Plug in the limiting value of each part separately.",
+     "id": "F12"
+    },
+    {
+     "type": "bank",
+     "text": "An indeterminate form is a ___ between two parts of a limit. The form alone does not ___ the answer, so we need another tool.",
+     "blanks": [
+      "battle",
+      "determine"
+     ],
+     "distractors": [
+      "product",
+      "limit",
+      "cancel",
+      "zero"
+     ],
+     "explain": "Next lesson: the tool, L’Hôpital’s Rule.",
+     "hint": "Think tug of war.",
+     "id": "F13"
+    }
+   ]
+  },
+  {
+   "id": "rule",
+   "title": "L'Hôpital's Rule: 0/0 and ∞/∞",
+   "slides": [
+    {
+     "type": "ratio",
+     "title": "Zoom in on a 0/0 battle",
+     "text": "Here are $f(x) = e^x - 1$ (pink) and $g(x) = sin(2x)$ (teal). Both are 0 at $x$ = 0. Tap **Move closer** and watch the picture: it zooms in as you go.",
+     "f": "exp(x)-1",
+     "g": "sin(2*x)",
+     "fl": "e^x − 1",
+     "gl": "sin 2x",
+     "a": 0,
+     "goal": 4,
+     "value": 0.5,
+     "after": "Zoomed in, both curves look like **straight lines** through the origin: their tangent lines. The quotient settles at 1/2.",
+     "id": "R1"
+    },
+    {
+     "type": "mc",
+     "text": "Zoomed in near 0, $f$ looks like its tangent line $y = f'(0)x = 1x$ and $g$ looks like $y = g'(0)x = 2x$. So $frac{f(x)}{g(x)}$ ≈ $frac{1x}{2x}$ = ?",
+     "options": [
+      "$x$",
+      "$frac{1}{2}$",
+      "2",
+      "0"
+     ],
+     "answer": 1,
+     "explain": "The ratio of the curves is the ratio of their **slopes**: $frac{f'(0)}{g'(0)}$ = $frac{1}{2}$.",
+     "hint": "The $x$ cancels.",
+     "id": "R2"
+    },
+    {
+     "type": "bank",
+     "text": "Near $a$, $f(x)$ ≈ $f'(a)(x - a)$ and $g(x)$ ≈ $g'(a)(x - a)$. So $frac{f(x)}{g(x)}$ ≈ ___ .",
+     "blanks": [
+      "f'(a) / g'(a)"
+     ],
+     "distractors": [
+      "f(a) / g(a)",
+      "(f/g)'(a)",
+      "f'(a) · g'(a)"
+     ],
+     "explain": "That is the whole idea behind L’Hôpital’s Rule: when both parts go to 0, compare their slopes.",
+     "hint": "Cancel the $(x - a)$.",
+     "id": "R3"
+    },
+    {
+     "type": "bank",
+     "text": "**L’Hôpital’s Rule.** If $lim frac{f(x)}{g(x)}$ has the form ___ or ___ , then $lim frac{f(x)}{g(x)}$ = $lim$ ___ (as long as that new limit exists or is ±∞).",
+     "blanks": [
+      "0/0",
+      "∞/∞",
+      "f'(x) / g'(x)"
+     ],
+     "distractors": [
+      "1/0",
+      "0 · ∞",
+      "(f/g)'(x)",
+      "f(x) · g'(x)"
+     ],
+     "explain": "Only $0/0$ and $∞/∞$. Other forms must be rewritten first (Lesson 3).",
+     "hint": "Only two forms qualify, and you take the derivatives of the top and bottom separately.",
+     "id": "R4"
+    },
+    {
+     "type": "tf",
+     "text": "L’Hôpital’s Rule says to use the quotient rule on $frac{f}{g}$.",
+     "answer": false,
+     "explain": "No quotient rule! Differentiate the top and the bottom **separately**: $frac{f'}{g'}$.",
+     "hint": "Look at what the rule replaces $frac{f}{g}$ with.",
+     "id": "R5"
+    },
+    {
+     "type": "pick",
+     "text": "Before you use L’Hôpital’s Rule, what must be true?",
+     "options": [
+      "$f$ and $g$ are differentiable near $a$",
+      "You have already tried the quotient rule",
+      "$g'(x) ≠ 0$ near $a$ (except maybe at $a$)",
+      "$f(a) = g(a) = 1$",
+      "The limit has the form $0/0$ or $∞/∞$"
+     ],
+     "answers": [
+      0,
+      2,
+      4
+     ],
+     "explain": "The big one: check the form. Using the rule on a limit that is not $0/0$ or $∞/∞$ gives wrong answers.",
+     "hint": "Three conditions, and the first is the one people forget.",
+     "id": "R6"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->1] frac{ln x}{x - 1}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Plug in $x$ = 1. What form do you get?",
+       "options": [
+        "$frac{1}{0}$",
+        "$0$",
+        "$∞/∞$",
+        "$0/0$"
+       ],
+       "answer": 3,
+       "explain": "$ln 1 = 0$ and $1 - 1 = 0$: the form is $0/0$, so L’Hôpital applies.",
+       "hint": "$ln 1$ = 0."
+      },
+      {
+       "type": "expr",
+       "text": "Derivative of the top, $ln x$:",
+       "answer": "1/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "explain": "$frac{d}{dx} ln x = frac{1}{x}$."
+      },
+      {
+       "type": "expr",
+       "text": "Derivative of the bottom, $x - 1$:",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'(x)$ =",
+       "explain": "The derivative of $x - 1$ is 1."
+      },
+      {
+       "type": "num",
+       "text": "So the limit is $lim[x->1] frac{1/x}{1}$. Plug in $x$ = 1.",
+       "answer": 1,
+       "label": "Limit =",
+       "explain": "$frac{1/1}{1}$ = 1."
+      }
+     ],
+     "title": "Worked example",
+     "id": "R7"
+    },
+    {
+     "type": "num",
+     "text": "Your turn: $lim[x->0] frac{e^x - 1}{x}$",
+     "answer": 1,
+     "label": "Limit =",
+     "explain": "$lim[x->0] frac{e^x}{1}$ = 1.",
+     "hint": "Form $0/0$. Top derivative $e^x$, bottom derivative 1.",
+     "id": "R8"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->∞] frac{3x^2 + 1}{5x^2 - x}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "What form is this?",
+       "options": [
+        "$frac{3}{5}$ already",
+        "$∞ - ∞$",
+        "$∞/∞$",
+        "$0/0$"
+       ],
+       "answer": 2,
+       "explain": "Top and bottom both grow without bound: $∞/∞$."
+      },
+      {
+       "type": "expr",
+       "text": "Apply the rule once. The new top is:",
+       "answer": "6x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "explain": "$frac{d}{dx}(3x^2 + 1) = 6x$."
+      },
+      {
+       "type": "expr",
+       "text": "The new bottom is:",
+       "answer": "10x-1",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'(x)$ =",
+       "explain": "$frac{d}{dx}(5x^2 - x) = 10x - 1$."
+      },
+      {
+       "type": "mc",
+       "text": "What form is $lim[x->∞] frac{6x}{10x - 1}$?",
+       "options": [
+        "$0/0$",
+        "Not indeterminate",
+        "$∞/∞$"
+       ],
+       "answer": 2,
+       "explain": "Still $∞/∞$, so use the rule again."
+      },
+      {
+       "type": "num",
+       "text": "Apply it again: $lim[x->∞] frac{6}{10}$ = ?",
+       "answer": 0.6,
+       "label": "Limit =",
+       "explain": "$frac{6}{10} = frac{3}{5}$. You can use L’Hôpital as many times as you need, checking the form each time."
+      }
+     ],
+     "title": "Twice in a row",
+     "id": "R9"
+    },
+    {
+     "type": "mc",
+     "text": "A student finds $lim[x->0] frac{x + 1}{x + 2}$ with L’Hôpital’s Rule and gets $frac{1}{1}$ = 1. What is the real limit?",
+     "options": [
+      "0",
+      "1",
+      "$frac{1}{2}$",
+      "It does not exist"
+     ],
+     "answer": 2,
+     "explain": "Plugging in gives $frac{1}{2}$ right away. The form was not $0/0$, so L’Hôpital did not apply, and using it gave a wrong answer.",
+     "hint": "Plug in first. Is it even indeterminate?",
+     "id": "R10"
+    },
+    {
+     "type": "num",
+     "text": "$lim[x->0] frac{1 - cos x}{x^2}$",
+     "answer": 0.5,
+     "label": "Limit =",
+     "explain": "$frac{sin x}{2x}$ → $frac{cos x}{2}$ → $frac{1}{2}$.",
+     "hint": "$0/0$. After one round you get $frac{sin x}{2x}$, still $0/0$. Go again.",
+     "id": "R11"
+    },
+    {
+     "type": "num",
+     "text": "$lim[x->∞] frac{x}{e^x}$",
+     "answer": 0,
+     "label": "Limit =",
+     "explain": "$frac{1}{e^x}$ → 0. The exponential wins the battle.",
+     "hint": "$∞/∞$. Differentiate top and bottom.",
+     "id": "R12"
+    },
+    {
+     "type": "mc",
+     "text": "Who wins the battle $lim[x->∞] frac{ln x}{x}$?",
+     "options": [
+      "$x$ wins, so the limit is 0",
+      "$ln x$ wins, so the limit is ∞",
+      "A tie: the limit is 1"
+     ],
+     "answer": 0,
+     "explain": "$frac{1/x}{1}$ → 0. Powers of $x$ beat logarithms; exponentials beat powers.",
+     "hint": "Apply the rule: $frac{1/x}{1}$.",
+     "id": "R13"
+    }
+   ]
+  },
+  {
+   "id": "other",
+   "title": "The other five forms",
+   "needs": [
+    "basic"
+   ],
+   "slides": [
+    {
+     "type": "match",
+     "text": "The other five forms each get turned into $0/0$ or $∞/∞$ first. Match each form with its move.",
+     "pairs": [
+      [
+       "$0·∞$",
+       "Move one factor to the bottom: $fg = frac{f}{1/g}$"
+      ],
+      [
+       "$∞ - ∞$",
+       "Combine into one fraction (common denominator or conjugate)"
+      ],
+      [
+       "$1^(∞)$",
+       "Take $ln$: the exponent comes down"
+      ],
+      [
+       "$0^0$",
+       "Take $ln$ as well"
+      ],
+      [
+       "$∞^0$",
+       "Take $ln$ too"
+      ]
+     ],
+     "explain": "Products become quotients; differences become one fraction; powers get a logarithm.",
+     "hint": "Three of them are exponent forms.",
+     "id": "O1"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->0^+] x ln x$ (form $0·∞$).",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Rewrite as a quotient. Which one is $∞/∞$?",
+       "options": [
+        "$frac{1}{x ln x}$",
+        "$frac{ln x}{1/x}$",
+        "$frac{x}{1/ln x}$"
+       ],
+       "answer": 1,
+       "explain": "$ln x$ → −∞ and $frac{1}{x}$ → ∞: form $∞/∞$. (The other choice works too but gets messy.)"
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate the top and the bottom. What is $frac{f'(x)}{g'(x)}$ = $frac{1/x}{-1/x^2}$ simplified?",
+       "answer": "-x",
+       "vars": [
+        "x"
+       ],
+       "label": "Simplified =",
+       "explain": "$frac{1/x}{-1/x^2} = -x$."
+      },
+      {
+       "type": "num",
+       "text": "So the limit is $lim[x->0^+] (-x)$ = ?",
+       "answer": 0,
+       "label": "Limit =",
+       "explain": "The 0 wins this battle."
+      }
+     ],
+     "title": "0 · ∞: make it a quotient",
+     "id": "O2"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->0^+] (frac{1}{x} - frac{1}{sin x})$ (form $∞ - ∞$).",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Combine into one fraction. Which is right?",
+       "options": [
+        "$frac{x - sin x}{x sin x}$",
+        "$frac{sin x - x}{x sin x}$",
+        "$frac{1}{x - sin x}$"
+       ],
+       "answer": 1,
+       "explain": "Common denominator $x sin x$: $frac{sin x - x}{x sin x}$, form $0/0$."
+      },
+      {
+       "type": "mc",
+       "text": "One round of L’Hôpital gives $frac{cos x - 1}{sin x + x cos x}$. Form?",
+       "options": [
+        "$∞/∞$",
+        "Not indeterminate",
+        "$0/0$"
+       ],
+       "answer": 2,
+       "explain": "Top → 0, bottom → 0. Again!"
+      },
+      {
+       "type": "num",
+       "text": "A second round gives $frac{-sin x}{2cos x - x sin x}$. Plug in 0.",
+       "answer": 0,
+       "label": "Limit =",
+       "explain": "$frac{0}{2}$ = 0."
+      }
+     ],
+     "title": "∞ − ∞: make it one fraction",
+     "id": "O3"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->∞] (1 + frac{1}{x})^x$ (form $1^(∞)$).",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Let $y = (1 + frac{1}{x})^x$. Take $ln$ of both sides. What is $ln y$?",
+       "options": [
+        "$ln(x) · (1 + frac{1}{x})$",
+        "$(ln(1 + frac{1}{x}))^x$",
+        "$x ln(1 + frac{1}{x})$"
+       ],
+       "answer": 2,
+       "explain": "The log brings the exponent down: $ln y = x ln(1 + frac{1}{x})$, form $∞·0$."
+      },
+      {
+       "type": "mc",
+       "text": "Write it as $frac{ln(1 + 1/x)}{1/x}$. Form?",
+       "options": [
+        "$0/0$",
+        "Not indeterminate",
+        "$∞/∞$"
+       ],
+       "answer": 0,
+       "explain": "Top → $ln 1$ = 0, bottom → 0."
+      },
+      {
+       "type": "num",
+       "text": "L’Hôpital (and some algebra) gives $lim frac{1}{1 + 1/x}$. So $lim ln y$ = ?",
+       "answer": 1,
+       "label": "lim ln y =",
+       "explain": "$frac{1}{1 + 0}$ = 1."
+      },
+      {
+       "type": "mc",
+       "text": "If $ln y$ → 1, then $y$ → ?",
+       "options": [
+        "$ln 1$",
+        "$e^1 = e$",
+        "1",
+        "0"
+       ],
+       "answer": 1,
+       "explain": "Undo the log: $y = e^(ln y)$ → $e^1$ = e ≈ 2.718. Just like the table in Lesson 1."
+      }
+     ],
+     "title": "Exponent forms: take the log",
+     "id": "O4"
+    },
+    {
+     "type": "tf",
+     "text": "After taking logs, you find $lim ln y$ = 3. So the original limit is 3.",
+     "answer": false,
+     "explain": "The answer is $e^3$. The most common mistake with exponent forms is forgetting to undo the log.",
+     "hint": "You found the limit of $ln y$, not $y$.",
+     "id": "O5"
+    },
+    {
+     "type": "order",
+     "text": "Put the steps for an exponent form ($1^(∞)$, $0^0$, $∞^0$) in order.",
+     "items": [
+      "Call the limit expression $y$",
+      "Take $ln$ of both sides to bring the exponent down",
+      "Rewrite $ln y$ as a quotient ($0/0$ or $∞/∞$)",
+      "Use L’Hôpital to find $lim ln y$ = $L$",
+      "The answer is $e^L$"
+     ],
+     "explain": "Log, quotient, L’Hôpital, exponentiate.",
+     "hint": "The log comes first and is undone last.",
+     "id": "O6"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] x^x$ (form $0^0$). Hint: $ln y = x ln x$, which you found above.",
+     "answer": 1,
+     "label": "Limit =",
+     "explain": "$ln y$ → 0, so $y$ → $e^0$ = 1.",
+     "hint": "$lim x ln x$ = 0, so the answer is $e^0$.",
+     "id": "O7"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] x^(1/x)$ (form $∞^0$).",
+     "answer": 1,
+     "label": "Limit =",
+     "explain": "$ln y = frac{ln x}{x}$ → 0 (by L’Hôpital: $frac{1/x}{1}$ → 0). So $y$ → $e^0$ = 1.",
+     "hint": "$ln y = frac{ln x}{x}$ → 0.",
+     "id": "O8"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] x^2 ln x$.",
+     "answer": 0,
+     "label": "Limit =",
+     "explain": "$frac{1/x}{-2/x^3} = -frac{x^2}{2}$ → 0.",
+     "hint": "Write it as $frac{ln x}{1/x^2}$.",
+     "id": "O9"
+    }
+   ]
+  }
+ ],
+ "drills": {
+  "forms": {
+   "title": "Indeterminate forms drill",
+   "after": "forms",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0] frac{sin(3x)}{x}$ have?",
+     "options": [
+      "$0^0$",
+      "$0/0$",
+      "$∞^0$",
+      "Not indeterminate"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0/0$.",
+     "id": "TF1"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] frac{x^2}{e^x}$ have?",
+     "options": [
+      "$1^(∞)$",
+      "$∞/∞$",
+      "$∞ - ∞$",
+      "$∞^0$"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $∞/∞$.",
+     "id": "TF2"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] x ln x$ have?",
+     "options": [
+      "$∞^0$",
+      "$0·∞$",
+      "$∞/∞$",
+      "$∞ - ∞$"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0·∞$.",
+     "id": "TF3"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] (x - ln x)$ have?",
+     "options": [
+      "$1^(∞)$",
+      "Not indeterminate",
+      "$∞ - ∞$",
+      "$∞^0$"
+     ],
+     "answer": 2,
+     "explain": "Find where each part goes on its own: that gives $∞ - ∞$.",
+     "id": "TF4"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] (1 + frac{2}{x})^x$ have?",
+     "options": [
+      "$1^(∞)$",
+      "$0·∞$",
+      "Not indeterminate",
+      "$∞ - ∞$"
+     ],
+     "answer": 0,
+     "explain": "Find where each part goes on its own: that gives $1^(∞)$.",
+     "id": "TF5"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] x^(sin x)$ have?",
+     "options": [
+      "$∞^0$",
+      "$0^0$",
+      "$0·∞$",
+      "$∞ - ∞$"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0^0$.",
+     "id": "TF6"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] x^(1/x)$ have?",
+     "options": [
+      "$∞ - ∞$",
+      "$∞^0$",
+      "$0/0$",
+      "$0^0$"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $∞^0$.",
+     "id": "TF7"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] (frac{1}{x} - frac{1}{sin x})$ have?",
+     "options": [
+      "$0/0$",
+      "Not indeterminate",
+      "$∞/∞$",
+      "$∞ - ∞$"
+     ],
+     "answer": 3,
+     "explain": "Find where each part goes on its own: that gives $∞ - ∞$.",
+     "id": "TF8"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->1] frac{ln x}{x - 1}$ have?",
+     "options": [
+      "$0/0$",
+      "$∞/∞$",
+      "$∞^0$",
+      "$0^0$"
+     ],
+     "answer": 0,
+     "explain": "Find where each part goes on its own: that gives $0/0$.",
+     "id": "TF9"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] frac{ln x}{sqrt x}$ have?",
+     "options": [
+      "$0^0$",
+      "$0/0$",
+      "$∞/∞$",
+      "$0·∞$"
+     ],
+     "answer": 2,
+     "explain": "Find where each part goes on its own: that gives $∞/∞$.",
+     "id": "TF10"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] x sin(frac{1}{x})$ have?",
+     "options": [
+      "$0·∞$",
+      "$∞/∞$",
+      "Not indeterminate",
+      "$∞ - ∞$"
+     ],
+     "answer": 0,
+     "explain": "Find where each part goes on its own: that gives $0·∞$.",
+     "id": "TF11"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] (1 + x)^(1/x)$ have?",
+     "options": [
+      "Not indeterminate",
+      "$∞/∞$",
+      "$1^(∞)$",
+      "$0^0$"
+     ],
+     "answer": 2,
+     "explain": "Find where each part goes on its own: that gives $1^(∞)$.",
+     "id": "TF12"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] (frac{1}{x})^x$ have?",
+     "options": [
+      "$0^0$",
+      "$∞^0$",
+      "$∞ - ∞$",
+      "$0/0$"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $∞^0$.",
+     "id": "TF13"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] x e^(-x)$ have?",
+     "options": [
+      "$∞^0$",
+      "$0/0$",
+      "$0·∞$",
+      "$∞/∞$"
+     ],
+     "answer": 2,
+     "explain": "Find where each part goes on its own: that gives $0·∞$.",
+     "id": "TF14"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0] frac{e^x - 1}{x^2 + x}$ have?",
+     "options": [
+      "$∞/∞$",
+      "$0/0$",
+      "$0^0$",
+      "Not indeterminate"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0/0$.",
+     "id": "TF15"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] (sin x)^x$ have?",
+     "options": [
+      "$0·∞$",
+      "$0^0$",
+      "$1^(∞)$",
+      "Not indeterminate"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0^0$.",
+     "id": "TF16"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0] frac{x}{x + 1}$ have?",
+     "options": [
+      "Not indeterminate",
+      "$∞^0$",
+      "$0/0$",
+      "$0^0$"
+     ],
+     "answer": 0,
+     "explain": "Top → 0, bottom → 1: the form is $0/1$, so the limit is just 0.",
+     "id": "TF17"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] frac{ln x}{x}$ have?",
+     "options": [
+      "$0/0$",
+      "Not indeterminate",
+      "$0·∞$",
+      "$∞/∞$"
+     ],
+     "answer": 1,
+     "explain": "Top → −∞, bottom → $0^+$: dividing a huge negative by a tiny positive gives −∞. No battle.",
+     "id": "TF18"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] x e^x$ have?",
+     "options": [
+      "$0·∞$",
+      "$∞^0$",
+      "Not indeterminate",
+      "$1^(∞)$"
+     ],
+     "answer": 2,
+     "explain": "$∞·∞$: both make it bigger. The limit is ∞.",
+     "id": "TF19"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] x^(1/x)$ have?",
+     "options": [
+      "$∞^0$",
+      "$∞ - ∞$",
+      "$∞/∞$",
+      "Not indeterminate"
+     ],
+     "answer": 3,
+     "explain": "$0^(∞)$: a tiny base to a huge power is even tinier. The limit is 0.",
+     "id": "TF20"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] (x^2 + ln x)$ have?",
+     "options": [
+      "$∞^0$",
+      "$0^0$",
+      "Not indeterminate",
+      "$0·∞$"
+     ],
+     "answer": 2,
+     "explain": "$∞ + ∞$ = ∞. Both push the same way.",
+     "id": "TF21"
+    },
+    {
+     "type": "tf",
+     "text": "$∞ - ∞$ = 0.",
+     "answer": false,
+     "explain": "$∞ - ∞$ is indeterminate. For example $sqrt(x^2 + x) - x$ → $frac{1}{2}$, while $x^2 - x$ → ∞.",
+     "id": "TF22"
+    },
+    {
+     "type": "tf",
+     "text": "Every limit of the form $0/0$ equals 1.",
+     "answer": false,
+     "explain": "$frac{x^2}{x}$ → 0 and $frac{x}{x^2}$ → ∞, both $0/0$.",
+     "id": "TF23"
+    },
+    {
+     "type": "tf",
+     "text": "$1^(∞)$ = 1, because 1 to any power is 1.",
+     "answer": false,
+     "explain": "The base is only **heading** to 1. $(1 + frac{1}{x})^x$ → e.",
+     "id": "TF24"
+    },
+    {
+     "type": "tf",
+     "text": "$0^(∞)$ is an indeterminate form.",
+     "answer": false,
+     "explain": "A tiny positive base raised to a huge power gets even tinier: $0^(∞)$ → 0.",
+     "id": "TF25"
+    },
+    {
+     "type": "tf",
+     "text": "$∞ + ∞$ is an indeterminate form.",
+     "answer": false,
+     "explain": "Both parts push toward ∞, so the sum goes to ∞. No battle.",
+     "id": "TF26"
+    },
+    {
+     "type": "tf",
+     "text": "An indeterminate form means the limit does not exist.",
+     "answer": false,
+     "explain": "It means the form does not determine the limit. Many indeterminate limits exist.",
+     "id": "TF27"
+    },
+    {
+     "type": "tf",
+     "text": "If $f$ → 0 and $g$ → 0, the limit of $frac{f}{g}$ could be 7.",
+     "answer": true,
+     "explain": "Yes: $frac{7x}{x}$ → 7. A $0/0$ limit can be any number.",
+     "id": "TF28"
+    },
+    {
+     "type": "tf",
+     "text": "A $0·∞$ limit could turn out to be 0, a finite nonzero number, or infinite.",
+     "answer": true,
+     "explain": "$x · frac{1}{x}$ → 1, $x^2 · frac{1}{x}$ → 0, $x · frac{1}{x^2}$ → ∞.",
+     "id": "TF29"
+    },
+    {
+     "type": "tf",
+     "text": "$frac{1}{0}$ is one of the seven indeterminate forms.",
+     "answer": false,
+     "explain": "A number divided by something tiny blows up (or does not exist from both sides), but there is no battle.",
+     "id": "TF30"
+    },
+    {
+     "type": "tf",
+     "text": "There are exactly seven indeterminate forms.",
+     "answer": true,
+     "explain": "$0/0$, $∞/∞$, $0·∞$, $∞ - ∞$, $1^(∞)$, $0^0$, $∞^0$.",
+     "id": "TF31"
+    },
+    {
+     "type": "pick",
+     "text": "Select every indeterminate form.",
+     "options": [
+      "$∞^0$",
+      "$∞ - ∞$",
+      "$0/∞$",
+      "$1/∞$",
+      "$0^0$",
+      "$1^(∞)$"
+     ],
+     "answers": [
+      0,
+      1,
+      4,
+      5
+     ],
+     "explain": "$0/∞$ → 0 and $1/∞$ → 0 are determined.",
+     "id": "TF32"
+    },
+    {
+     "type": "pick",
+     "text": "Select every indeterminate form.",
+     "options": [
+      "$∞/∞$",
+      "$∞ + ∞$",
+      "$∞·∞$",
+      "$0/0$",
+      "$0·∞$",
+      "$0 - ∞$"
+     ],
+     "answers": [
+      0,
+      3,
+      4
+     ],
+     "explain": "$∞·∞$ → ∞, $∞ + ∞$ → ∞, $0 - ∞$ → −∞.",
+     "id": "TF33"
+    },
+    {
+     "type": "match",
+     "text": "Match each limit with its form.",
+     "pairs": [
+      [
+       "$lim[x->∞] (1 - frac{3}{x})^x$",
+       "$1^(∞)$"
+      ],
+      [
+       "$lim[x->0^+] x^(x^2)$",
+       "$0^0$"
+      ],
+      [
+       "$lim[x->∞] (e^x)^(1/x)$",
+       "$∞^0$"
+      ],
+      [
+       "$lim[x->∞] frac{e^x}{x^3}$",
+       "$∞/∞$"
+      ],
+      [
+       "$lim[x->0] frac{tan x}{x}$",
+       "$0/0$"
+      ]
+     ],
+     "explain": "Look at each part on its own.",
+     "id": "TF34"
+    },
+    {
+     "type": "mc",
+     "text": "In the form $0·∞$, the 0 pulls the product toward ___ and the ∞ pulls it toward ___.",
+     "options": [
+      "0; ∞",
+      "∞; 0",
+      "0; 0",
+      "1; 1"
+     ],
+     "answer": 0,
+     "explain": "That is the battle. Who wins depends on how fast each part moves.",
+     "id": "TF35"
+    },
+    {
+     "type": "mc",
+     "text": "In the form $1^(∞)$, what is the battle?",
+     "options": [
+      "Two terms that both grow",
+      "A base heading to 1 versus an exponent that grows",
+      "A top versus a bottom"
+     ],
+     "answer": 1,
+     "explain": "1 to any power stays 1, but anything above 1 to a huge power explodes.",
+     "id": "TF36"
+    }
+   ]
+  },
+  "basic": {
+   "title": "0/0 and ∞/∞ drill",
+   "after": "rule",
+   "questions": [
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{sin(3x)}{x}$.",
+     "answer": 3,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "Form $0/0$. Derivatives: $frac{3cos(3x)}{1}$ → 3.",
+     "id": "TB1"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{e^(2x) - 1}{x}$.",
+     "answer": 2,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2e^(2x)}{1}$ → 2.",
+     "id": "TB2"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->3] frac{x^2 - 9}{x - 3}$.",
+     "answer": 6,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2x}{1}$ → 6. (Factoring works too.)",
+     "id": "TB3"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{tan x}{x}$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{sec^2 x}{1}$ → 1.",
+     "id": "TB4"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->2] frac{x^3 - 8}{x - 2}$.",
+     "answer": 12,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{3x^2}{1}$ → 12.",
+     "id": "TB5"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{sin(5x)}{sin(2x)}$.",
+     "answer": 2.5,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{5cos(5x)}{2cos(2x)}$ → $frac{5}{2}$.",
+     "id": "TB6"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{e^x - 1 - x}{x^2}$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{e^x - 1}{2x}$ is still $0/0$; again: $frac{e^x}{2}$ → $frac{1}{2}$.",
+     "id": "TB7"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{x^2}{e^x}$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2x}{e^x}$ → $frac{2}{e^x}$ → 0.",
+     "id": "TB8"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{2x + 1}{4x - 3}$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2}{4}$ = $frac{1}{2}$.",
+     "id": "TB9"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{ln x}{sqrt x}$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{1/x}{1/(2sqrt x)} = frac{2}{sqrt x}$ → 0.",
+     "id": "TB10"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{sqrt(x + 4) - 2}{x}$.",
+     "answer": 0.25,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{1/(2sqrt(x + 4))}{1}$ → $frac{1}{4}$.",
+     "id": "TB11"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{x - sin x}{x^3}$.",
+     "answer": 0.166667,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "Three rounds: $frac{1 - cos x}{3x^2}$ → $frac{sin x}{6x}$ → $frac{cos x}{6}$ → $frac{1}{6}$.",
+     "id": "TB12"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{arctan x}{x}$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{1/(1 + x^2)}{1}$ → 1.",
+     "id": "TB13"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{2^x - 1}{x}$.",
+     "answer": 0.693147,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2^x ln 2}{1}$ → $ln 2$ ≈ 0.6931.",
+     "id": "TB14"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{ln(1 + x)}{x}$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{1/(1 + x)}{1}$ → 1.",
+     "id": "TB15"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->π] frac{sin x}{x - π}$.",
+     "answer": -1,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{cos x}{1}$ → $cos π$ = −1.",
+     "id": "TB16"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{cos x - 1}{x}$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{-sin x}{1}$ → 0.",
+     "id": "TB17"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->1] frac{x - 1}{x^3 - 1}$.",
+     "answer": 0.333333,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{1}{3x^2}$ → $frac{1}{3}$.",
+     "id": "TB18"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{e^x - e^(-x)}{sin x}$.",
+     "answer": 2,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{e^x + e^(-x)}{cos x}$ → 2.",
+     "id": "TB19"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{x^3}{e^x}$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "Three rounds: $frac{6}{e^x}$ → 0.",
+     "id": "TB20"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{5x^2 - 3x}{2x^2 + 7}$.",
+     "answer": 2.5,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "Two rounds: $frac{10}{4}$ = $frac{5}{2}$.",
+     "id": "TB21"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{1 - cos(2x)}{x^2}$.",
+     "answer": 2,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2sin(2x)}{2x}$ → $frac{4cos(2x)}{2}$ → 2.",
+     "id": "TB22"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->1] frac{ln x}{x^2 - 1}$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{1/x}{2x}$ → $frac{1}{2}$.",
+     "id": "TB23"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{ln(x^2)}{x}$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2/x}{1}$ → 0.",
+     "id": "TB24"
+    },
+    {
+     "type": "mc",
+     "text": "$lim[x->∞] frac{e^x}{x^2}$ = ?",
+     "options": [
+      "∞",
+      "0",
+      "It does not exist",
+      "1"
+     ],
+     "answer": 0,
+     "explain": "$frac{e^x}{2x}$ → $frac{e^x}{2}$ → ∞. The exponential wins.",
+     "id": "TB25"
+    },
+    {
+     "type": "mc",
+     "text": "$lim[x->0^+] frac{ln x}{x}$ = ?",
+     "options": [
+      "0",
+      "It does not exist",
+      "1, by L’Hôpital",
+      "−∞"
+     ],
+     "answer": 3,
+     "explain": "Not indeterminate: −∞ divided by a tiny positive number is −∞. L’Hôpital would give the wrong answer here.",
+     "id": "TB26"
+    },
+    {
+     "type": "mc",
+     "text": "Can you use L’Hôpital on $lim[x->0] frac{cos x}{x + 1}$?",
+     "options": [
+      "Yes, and the answer is $-sin 0$ = 0",
+      "No: plugging in gives $frac{1}{1}$ = 1, which is the answer",
+      "Yes, and the answer is 1"
+     ],
+     "answer": 1,
+     "explain": "Always check the form first.",
+     "id": "TB27"
+    },
+    {
+     "type": "mc",
+     "text": "$lim[x->∞] frac{x + sin x}{x}$. L’Hôpital gives $lim frac{1 + cos x}{1}$, which keeps bouncing. What is the real limit?",
+     "options": [
+      "It does not exist",
+      "1",
+      "2",
+      "0"
+     ],
+     "answer": 1,
+     "explain": "Divide by $x$: $1 + frac{sin x}{x}$ → 1. When the new limit does not exist, L’Hôpital tells you nothing; try something else.",
+     "id": "TB28"
+    },
+    {
+     "type": "mc",
+     "text": "Which grows fastest as $x$ → ∞?",
+     "options": [
+      "$x^(10)$",
+      "$sqrt x$",
+      "$e^x$",
+      "$ln x$"
+     ],
+     "answer": 2,
+     "explain": "Exponentials beat powers, which beat logarithms. L’Hôpital proves each one.",
+     "id": "TB29"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{e^(3x) - 1}{sin x}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Form?",
+       "options": [
+        "$0/0$",
+        "$∞/∞$",
+        "Not indeterminate"
+       ],
+       "answer": 0,
+       "explain": "$e^0 - 1$ = 0 and $sin 0$ = 0."
+      },
+      {
+       "type": "expr",
+       "text": "Derivative of the top:",
+       "answer": "3e^(3x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "keys": [
+        "e^("
+       ],
+       "explain": "Chain rule: $3e^(3x)$."
+      },
+      {
+       "type": "expr",
+       "text": "Derivative of the bottom:",
+       "answer": "cos(x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$g'(x)$ =",
+       "keys": [
+        "cos("
+       ],
+       "explain": "$cos x$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in 0:",
+       "answer": 3,
+       "label": "Limit =",
+       "explain": "$frac{3}{1}$ = 3."
+      }
+     ],
+     "title": "Step by step",
+     "id": "TB30"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->∞] frac{(ln x)^2}{x}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Form?",
+       "options": [
+        "$∞/∞$",
+        "$0/0$",
+        "Not indeterminate"
+       ],
+       "answer": 0,
+       "explain": "Both grow without bound."
+      },
+      {
+       "type": "expr",
+       "text": "After one round the top's derivative is:",
+       "answer": "2ln(x)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "keys": [
+        "ln("
+       ],
+       "explain": "Chain rule: $2 ln x · frac{1}{x}$."
+      },
+      {
+       "type": "mc",
+       "text": "So the new limit is $lim frac{2 ln x / x}{1} = lim frac{2 ln x}{x}$. Form?",
+       "options": [
+        "$∞/∞$",
+        "$0/0$",
+        "Not indeterminate"
+       ],
+       "answer": 0,
+       "explain": "Still $∞/∞$."
+      },
+      {
+       "type": "num",
+       "text": "One more round: $frac{2/x}{1}$ →",
+       "answer": 0,
+       "label": "Limit =",
+       "explain": "0. Powers of $x$ beat powers of $ln x$."
+      }
+     ],
+     "title": "Step by step",
+     "id": "TB31"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->0] frac{x^2}{1 - cos x}$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Form?",
+       "options": [
+        "$0/0$",
+        "$∞/∞$",
+        "Not indeterminate"
+       ],
+       "answer": 0,
+       "explain": "$0/(1 - 1)$ = $0/0$."
+      },
+      {
+       "type": "expr",
+       "text": "After one round:",
+       "answer": "2x/sin(x)",
+       "vars": [
+        "x"
+       ],
+       "label": "New quotient =",
+       "keys": [
+        "sin("
+       ],
+       "explain": "$frac{2x}{sin x}$."
+      },
+      {
+       "type": "mc",
+       "text": "Form of $frac{2x}{sin x}$ at 0?",
+       "options": [
+        "Not indeterminate",
+        "$∞/∞$",
+        "$0/0$"
+       ],
+       "answer": 2,
+       "explain": "Still $0/0$."
+      },
+      {
+       "type": "num",
+       "text": "Second round: $frac{2}{cos x}$ →",
+       "answer": 2,
+       "label": "Limit =",
+       "explain": "$frac{2}{1}$ = 2."
+      }
+     ],
+     "title": "Step by step",
+     "id": "TB32"
+    }
+   ]
+  },
+  "other": {
+   "title": "Other forms drill",
+   "after": "other",
+   "questions": [
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] x ln x$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{ln x}{1/x}$ → $frac{1/x}{-1/x^2} = -x$ → 0.",
+     "id": "TO1"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] x e^(-x)$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{x}{e^x}$ → $frac{1}{e^x}$ → 0.",
+     "id": "TO2"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] x^2 ln x$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{ln x}{1/x^2}$ → $-frac{x^2}{2}$ → 0.",
+     "id": "TO3"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] x sin(frac{1}{x})$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{sin(1/x)}{1/x}$, form $0/0$, → $cos(0)$ = 1.",
+     "id": "TO4"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] sin(x) ln(x)$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{ln x}{csc x}$ → $frac{1/x}{-csc x cot x} = -frac{sin^2 x}{x cos x}$ → 0.",
+     "id": "TO5"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] (frac{1}{x} - frac{1}{sin x})$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{sin x - x}{x sin x}$, two rounds → 0.",
+     "id": "TO6"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->1^+] (frac{1}{ln x} - frac{1}{x - 1})$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{x - 1 - ln x}{(x - 1)ln x}$, two rounds → $frac{1}{2}$.",
+     "id": "TO7"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] (x - sqrt(x^2 + x))$.",
+     "answer": -0.5,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "Multiply by the conjugate: $frac{-x}{x + sqrt(x^2 + x)}$ → $-frac{1}{2}$.",
+     "id": "TO8"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] (frac{1}{x} - frac{1}{e^x - 1})$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{e^x - 1 - x}{x(e^x - 1)}$, two rounds → $frac{1}{2}$.",
+     "id": "TO9"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] (1 + frac{3}{x})^x$.",
+     "answer": 20.085537,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln(1 + 3/x)}{1/x}$ → 3, so $y$ → $e^3$ ≈ 20.09.",
+     "id": "TO10"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] (1 + x)^(1/x)$.",
+     "answer": 2.718282,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln(1 + x)}{x}$ → 1, so $y$ → e ≈ 2.718.",
+     "id": "TO11"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] x^(sin x)$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = sin x ln x$ → 0, so $y$ → 1.",
+     "id": "TO12"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] (cos x)^(1/x^2)$.",
+     "answer": 0.606531,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln cos x}{x^2}$ → $-frac{1}{2}$, so $y$ → $e^(-1/2)$ ≈ 0.6065.",
+     "id": "TO13"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] (1 - frac{2}{x})^x$.",
+     "answer": 0.135335,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y$ → −2, so $y$ → $e^(-2)$ ≈ 0.1353.",
+     "id": "TO14"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] x^(1/x)$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln x}{x}$ → 0, so $y$ → 1.",
+     "id": "TO15"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] (1 + sin x)^(1/x)$.",
+     "answer": 2.718282,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln(1 + sin x)}{x}$ → 1, so $y$ → e.",
+     "id": "TO16"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->(π/2)^-] (frac{π}{2} - x) tan x$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{π/2 - x}{cot x}$ → $frac{-1}{-csc^2 x}$ → 1.",
+     "id": "TO17"
+    },
+    {
+     "type": "match",
+     "text": "Match each form with the first move.",
+     "pairs": [
+      [
+       "$0·∞$",
+       "Rewrite $fg$ as $frac{f}{1/g}$"
+      ],
+      [
+       "$∞ - ∞$",
+       "Combine into one fraction"
+      ],
+      [
+       "$1^(∞)$, $0^0$, $∞^0$",
+       "Take $ln$ of the expression"
+      ]
+     ],
+     "explain": "Then use L’Hôpital on the $0/0$ or $∞/∞$ that results.",
+     "id": "TO18"
+    },
+    {
+     "type": "tf",
+     "text": "After taking logs you find $lim ln y = -2$. The limit of $y$ is $e^(-2)$.",
+     "answer": true,
+     "explain": "Undo the log: $y$ → $e^(-2)$.",
+     "id": "TO19"
+    },
+    {
+     "type": "tf",
+     "text": "After taking logs you find $lim ln y = 0$. So the limit of $y$ is 0.",
+     "answer": false,
+     "explain": "$y$ → $e^0$ = 1.",
+     "id": "TO20"
+    },
+    {
+     "type": "mc",
+     "text": "To find $lim[x->0^+] x ln x$, which rewrite leads to an easy L’Hôpital step?",
+     "options": [
+      "$frac{x}{1/ln x}$",
+      "$x ln x$ is already ready",
+      "$frac{ln x}{1/x}$"
+     ],
+     "answer": 2,
+     "explain": "Differentiating $frac{1}{ln x}$ is messy; $frac{1}{x}$ is easy.",
+     "id": "TO21"
+    },
+    {
+     "type": "mc",
+     "text": "What form is $lim[x->∞] (sqrt(x^2 + 1) - x)$, and what is a good first move?",
+     "options": [
+      "$0·∞$; take the log",
+      "$∞ - ∞$; multiply by the conjugate",
+      "$∞/∞$; L’Hôpital right away"
+     ],
+     "answer": 1,
+     "explain": "Conjugate: $frac{1}{sqrt(x^2 + 1) + x}$ → 0.",
+     "id": "TO22"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->0^+] x^x$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Form?",
+       "options": [
+        "$0^0$",
+        "$0·∞$",
+        "$1^(∞)$"
+       ],
+       "answer": 0,
+       "explain": "$0^0$."
+      },
+      {
+       "type": "mc",
+       "text": "Let $y = x^x$. Then $ln y$ = ?",
+       "options": [
+        "$x^x ln x$",
+        "$x ln x$",
+        "$ln(x)^x$"
+       ],
+       "answer": 1,
+       "explain": "The exponent comes down."
+      },
+      {
+       "type": "num",
+       "text": "$lim[x->0^+] x ln x$ = ?",
+       "answer": 0,
+       "label": "lim ln y =",
+       "explain": "Shown earlier: 0."
+      },
+      {
+       "type": "num",
+       "text": "So $lim x^x$ = ?",
+       "answer": 1,
+       "label": "Limit =",
+       "explain": "$e^0$ = 1."
+      }
+     ],
+     "title": "Exponent form, step by step",
+     "id": "TO23"
+    },
+    {
+     "type": "steps",
+     "text": "Find $lim[x->∞] (1 + frac{5}{x})^(2x)$.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Form?",
+       "options": [
+        "$1^(∞)$",
+        "$∞^0$",
+        "$0^0$"
+       ],
+       "answer": 0,
+       "explain": "Base → 1, exponent → ∞."
+      },
+      {
+       "type": "mc",
+       "text": "$ln y$ = ?",
+       "options": [
+        "$ln(2x) ln(1 + frac{5}{x})$",
+        "$2x ln(1 + frac{5}{x})$",
+        "$(1 + frac{5}{x}) ln(2x)$"
+       ],
+       "answer": 1,
+       "explain": "The exponent $2x$ comes down."
+      },
+      {
+       "type": "num",
+       "text": "Rewrite as $frac{2 ln(1 + 5/x)}{1/x}$ and use L’Hôpital. $lim ln y$ = ?",
+       "answer": 10,
+       "label": "lim ln y =",
+       "explain": "The limit is $frac{2 · 5}{1}$ = 10."
+      },
+      {
+       "type": "num",
+       "text": "So the limit is $e^(10)$ ≈ ?",
+       "answer": 22026.465795,
+       "label": "Limit ≈",
+       "tol": 1,
+       "explain": "$e^(10)$ ≈ 22026.47."
+      }
+     ],
+     "title": "Exponent form, step by step",
+     "id": "TO24"
+    }
+   ]
+  }
+ }
+}

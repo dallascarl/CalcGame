@@ -1,0 +1,907 @@
+{
+ "id": "related2",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
+ "title": "Related Rates II",
+ "subtitle": "Harder geometry and harder reading: cones, shadows, angles and moving cars.",
+ "version": 2,
+ "graphs": {},
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "id": "T1",
+     "type": "tf",
+     "text": "Substituting $r = frac{h}{2}$ **before** differentiating is fine, because it is true at every moment.",
+     "answer": true,
+     "hint": "Is the water’s radius half its depth the whole time, or only at one instant?",
+     "explain": "A relationship that always holds can go in before you differentiate."
+    },
+    {
+     "id": "T2",
+     "type": "tf",
+     "text": "Substituting $h$ = 12 **before** differentiating is fine, because the problem asks about that moment.",
+     "answer": false,
+     "hint": "What is the derivative of the constant 12?",
+     "explain": "$h$ = 12 is true at one instant only. Put it in early and $h$ becomes a constant, so its rate disappears."
+    },
+    {
+     "id": "T3",
+     "type": "mc",
+     "text": "A kite flies 100 ft above the ground, $x$ ft away horizontally. Which equation links the angle of elevation $theta$ to $x$?",
+     "options": [
+      "$tan theta = frac{100}{x}$",
+      "$sin theta = frac{100}{x}$",
+      "$tan theta = frac{x}{100}$",
+      "$theta = 100x$"
+     ],
+     "answer": 0,
+     "hint": "The height is opposite the angle and $x$ is adjacent.",
+     "explain": "Opposite over adjacent: $tan theta = frac{100}{x}$."
+    },
+    {
+     "id": "T4",
+     "type": "mc",
+     "text": "A 13-ft ladder slides down a wall. Which quantity is a **constant**?",
+     "options": [
+      "The length of the ladder",
+      "The height of the top",
+      "The distance of the bottom from the wall",
+      "None of them"
+     ],
+     "answer": 0,
+     "hint": "What does not change as the ladder slides?",
+     "explain": "The ladder stays 13 ft long, so 13 goes into the equation as a number: $x^2 + y^2 = 169$."
+    },
+    {
+     "id": "T5",
+     "type": "mc",
+     "text": "A snowball melts so that its surface area decreases at 1 cm²/min. In symbols:",
+     "options": [
+      "$frac{dS}{dt} = -1$",
+      "$frac{dS}{dt} = 1$",
+      "$S = -1$",
+      "$frac{dr}{dt} = -1$"
+     ],
+     "answer": 0,
+     "hint": "Which quantity is the 1 cm²/min about?",
+     "explain": "The rate is about the surface area, and it is going down."
+    },
+    {
+     "id": "T6",
+     "type": "mc",
+     "text": "Two cars leave an intersection, one heading east ($x$) and one north ($y$). $z$ is the distance between them. Which equation links them?",
+     "options": [
+      "$x^2 + y^2 = z^2$",
+      "$x + y = z$",
+      "$xy = z$",
+      "$z = frac{1}{2}xy$"
+     ],
+     "answer": 0,
+     "hint": "East and north make a right angle.",
+     "explain": "A right triangle: the Pythagorean theorem."
+    },
+    {
+     "id": "T7",
+     "type": "mc",
+     "text": "In a problem about a changing angle, $frac{d theta}{dt}$ comes out in…",
+     "options": [
+      "radians per unit of time",
+      "degrees per unit of time",
+      "feet per second",
+      "no units at all"
+     ],
+     "answer": 0,
+     "hint": "The derivative formulas for sine, cosine and tangent assume one kind of angle measure.",
+     "explain": "The trig derivative rules only work in radians, so the rate is in radians per second (or minute, or hour)."
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 10,
+   "questions": [
+    {
+     "type": "expr",
+     "text": "$A = xy$, where $x$ and $y$ both change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "x*y'+x'*y",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "$A'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Product rule: $A' = x'y + xy'$.",
+     "id": "D14",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$A = frac{1}{2}bh$. Both $b$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "b*h'/2+b'*h/2",
+     "vars": [
+      "b",
+      "h",
+      "b'",
+      "h'"
+     ],
+     "label": "$A'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$A' = frac{1}{2}(b'h + bh')$.",
+     "id": "D15",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$P = 2l + 2w$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "2*l'+2*w'",
+     "vars": [
+      "l",
+      "w",
+      "l'",
+      "w'"
+     ],
+     "label": "$P'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$P' = 2l' + 2w'$.",
+     "id": "D16",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$V = pi r^2 h$ (a cylinder). Both $r$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "pi*r*(h'*r+2*h*r')",
+     "vars": [
+      "r",
+      "h",
+      "r'",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Product rule: $V' = pi(2r r' h + r^2 h')$.",
+     "id": "D17",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$V = frac{1}{3}pi r^2 h$ (a cone). Both $r$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "pi*r*(h'*r+2*h*r')/3",
+     "vars": [
+      "r",
+      "h",
+      "r'",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$.",
+     "id": "D18",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$V = lwh$ (a box). All three change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "h*l*w'+h*l'*w+h'*l*w",
+     "vars": [
+      "l",
+      "w",
+      "h",
+      "l'",
+      "w'",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Three-term product rule: $V' = l'wh + lw'h + lwh'$.",
+     "id": "D19",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$D = sqrt(x^2 + y^2)$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "(x*x'+y*y')/sqrt(x^2+y^2)",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "$D'$ =",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "$D' = frac{x x' + y y'}{sqrt(x^2 + y^2)}$.",
+     "id": "D20",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$P = frac{20x}{E} - H$ (the Profit slide). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "20*(x'*E-x*E')/E^2-H'",
+     "vars": [
+      "x",
+      "E",
+      "H",
+      "x'",
+      "E'",
+      "H'"
+     ],
+     "label": "$P'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "Quotient rule on the first term: $P' = frac{20(x'E - xE')}{E^2} - H'$.",
+     "id": "D21",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$x^2 + y^2 = 169$. Differentiate both sides. The left side becomes:",
+     "answer": "2*x*x'+2*y*y'",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "Left side →",
+     "explain": "$2x x' + 2y y'$, and the right side becomes 0 (169 is a constant).",
+     "id": "D22",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "$PV = 12$ (pressure times volume is constant). Differentiate the left side:",
+     "answer": "P*V'+P'*V",
+     "vars": [
+      "P",
+      "V",
+      "P'",
+      "V'"
+     ],
+     "label": "Left side →",
+     "explain": "Product rule: $P'V + PV'$.",
+     "id": "D27",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "From $2x x' + 2y y' = 0$, solve for $y'$.",
+     "answer": "-x*x'/y",
+     "vars": [
+      "x",
+      "y",
+      "x'",
+      "y'"
+     ],
+     "label": "$y'$ =",
+     "explain": "$y' = -frac{x x'}{y}$.",
+     "id": "D28",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "From $2z z' = 2x x' + 2y y'$, solve for $z'$.",
+     "answer": "(x*x'+y*y')/z",
+     "vars": [
+      "x",
+      "y",
+      "z",
+      "x'",
+      "y'",
+      "z'"
+     ],
+     "label": "$z'$ =",
+     "explain": "$z' = frac{x x' + y y'}{z}$.",
+     "id": "D29",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "From $V' = 4pi r^2 r'$, solve for $r'$.",
+     "answer": "V'/(4*pi*r^2)",
+     "vars": [
+      "V",
+      "r",
+      "V'",
+      "r'"
+     ],
+     "label": "$r'$ =",
+     "explain": "$r' = frac{V'}{4pi r^2}$.",
+     "keys": [
+      "pi"
+     ],
+     "id": "D30",
+     "level": 1
+    },
+    {
+     "type": "expr",
+     "text": "From $P'V + PV' = 0$, solve for $V'$.",
+     "answer": "-P'*V/P",
+     "vars": [
+      "P",
+      "V",
+      "P'",
+      "V'"
+     ],
+     "label": "$V'$ =",
+     "explain": "$V' = -frac{P'V}{P}$.",
+     "id": "D31",
+     "level": 1
+    },
+    {
+     "id": "ND14",
+     "type": "num",
+     "text": "$$A' = x'y + xy'$$\nFind $A'$ when $x = 4$, $x' = 3$, $y = 4$ and $y' = −1$.",
+     "answer": 8,
+     "label": "$A'$ =",
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$A'$ = 8."
+    },
+    {
+     "id": "ND15",
+     "type": "num",
+     "text": "$$A' = frac{1}{2}(b'h + bh')$$\nFind $A'$ when $b = 6$, $b' = −1$, $h = 6$ and $h' = −1$.",
+     "answer": -6,
+     "label": "$A'$ =",
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$A'$ = -6."
+    },
+    {
+     "id": "ND16",
+     "type": "num",
+     "text": "$$P' = 2l' + 2w'$$\nFind $P'$ when $l' = 3$ and $w' = 2$.",
+     "answer": 10,
+     "label": "$P'$ =",
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$P'$ = 10."
+    },
+    {
+     "id": "ND17",
+     "type": "num",
+     "text": "$$V' = pi(2r r' h + r^2 h')$$\nFind $V'$ when $h = 3$, $h' = 1$, $r = 6$ and $r' = 2$. A decimal is fine.",
+     "answer": 339.292,
+     "label": "$V'$ ≈",
+     "tol": 1.6964600329384882,
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$V'$ ≈ 339.292."
+    },
+    {
+     "id": "ND18",
+     "type": "num",
+     "text": "$$V' = frac{pi}{3}(2r r' h + r^2 h')$$\nFind $V'$ when $h = 3$, $h' = 3$, $r = 2$ and $r' = 3$. A decimal is fine.",
+     "answer": 50.2655,
+     "label": "$V'$ ≈",
+     "tol": 0.25132741228718347,
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$V'$ ≈ 50.265."
+    },
+    {
+     "id": "ND19",
+     "type": "num",
+     "text": "$$V' = l'wh + lw'h + lwh'$$\nFind $V'$ when $h = 3$, $h' = 3$, $l = 5$, $l' = 2$, $w = 4$ and $w' = 2$.",
+     "answer": 114,
+     "label": "$V'$ =",
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$V'$ = 114."
+    },
+    {
+     "id": "ND20",
+     "type": "num",
+     "text": "$$D' = frac{x x' + y y'}{sqrt(x^2 + y^2)}$$\nFind $D'$ when $x = 3$, $x' = 1$, $y = 4$ and $y' = 3$.",
+     "answer": 3,
+     "label": "$D'$ =",
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$D'$ = 3."
+    },
+    {
+     "id": "ND21",
+     "type": "num",
+     "text": "$$P' = frac{20(x'E - xE')}{E^2} - H'$$\nFind $P'$ when $E = 2$, $E' = 2$, $H' = −1$, $x = 3$ and $x' = −1$.",
+     "answer": -39,
+     "label": "$P'$ =",
+     "level": 2,
+     "hint": "Every letter has a value now. Put them in and compute.",
+     "explain": "$P'$ = -39."
+    },
+    {
+     "type": "steps",
+     "text": "Car A heads east from an intersection at 40 mi/h, and car B heads north from it at 30 mi/h. How fast is the distance between them increasing 2 hours later?",
+     "steps": [
+      {
+       "type": "num",
+       "text": "After 2 hours, how far east is car A?",
+       "answer": 80,
+       "label": "$x$ =",
+       "explain": "40 · 2 = 80 mi."
+      },
+      {
+       "type": "num",
+       "text": "How far north is car B?",
+       "answer": 60,
+       "label": "$y$ =",
+       "explain": "30 · 2 = 60 mi."
+      },
+      {
+       "type": "num",
+       "text": "How far apart are they?",
+       "answer": 100,
+       "label": "$z$ =",
+       "explain": "$sqrt(80^2 + 60^2)$ = 100 mi."
+      },
+      {
+       "type": "expr",
+       "text": "From $z^2 = x^2 + y^2$, solve for $z'$ after differentiating.",
+       "answer": "(x*x'+y*y')/z",
+       "vars": [
+        "x",
+        "y",
+        "z",
+        "x'",
+        "y'",
+        "z'"
+       ],
+       "label": "$z'$ =",
+       "explain": "$2z z' = 2x x' + 2y y'$, so $z' = frac{x x' + y y'}{z}$."
+      },
+      {
+       "type": "num",
+       "text": "Plug everything in.",
+       "answer": 50,
+       "label": "$z'$ =",
+       "explain": "$frac{80(40) + 60(30)}{100}$ = 50 mi/h."
+      }
+     ],
+     "title": "Two cars",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"270\" y2=\"150\"/><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"60\" y2=\"20\"/><line class=\"f-acc\" x1=\"60\" y1=\"30\" x2=\"250\" y2=\"150\"/><circle class=\"f-dot\" cx=\"250\" cy=\"150\" r=\"5\"/><circle class=\"f-dot\" cx=\"60\" cy=\"30\" r=\"5\"/><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"48\" y=\"92\" text-anchor=\"end\">y</text><text x=\"165\" y=\"84\" text-anchor=\"middle\">z</text><text x=\"255\" y=\"136\" text-anchor=\"start\" class=\"f-s\">A</text><text x=\"70\" y=\"24\" text-anchor=\"start\" class=\"f-s\">B</text></svg>",
+     "id": "P7",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "A kite flies 100 ft above the ground and moves horizontally away from the person flying it at 8 ft/s. How fast is the angle of elevation θ changing when 200 ft of string is out?",
+     "steps": [
+      {
+       "type": "num",
+       "text": "How far away (horizontally) is the kite when the string is 200 ft?",
+       "answer": 173.205081,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(200^2 - 100^2)$ ≈ 173.2 ft."
+      },
+      {
+       "type": "mc",
+       "text": "Which equation links θ and $x$?",
+       "options": [
+        "$sin θ = frac{x}{100}$",
+        "$tan θ = frac{100}{x}$",
+        "$tan θ = frac{x}{100}$"
+       ],
+       "answer": 1,
+       "explain": "Opposite over adjacent."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate $tan θ = frac{100}{x}$. Solve for $θ'$.",
+       "answer": "-100*x'/(x^2*sec(θ)^2)",
+       "vars": [
+        "x",
+        "θ",
+        "x'",
+        "θ'"
+       ],
+       "label": "$θ'$ =",
+       "keys": [
+        "sec(",
+        "cos(",
+        "^"
+       ],
+       "explain": "$sec^2 θ · θ' = -frac{100x'}{x^2}$, so $θ' = -frac{100x'}{x^2 sec^2 θ}$."
+      },
+      {
+       "type": "num",
+       "text": "Here $sec θ = frac{200}{x}$, so $x^2 sec^2 θ$ = 40,000. Find $θ'$.",
+       "answer": -0.02,
+       "label": "$θ'$ =",
+       "tol": 0.0005,
+       "explain": "$θ' = -frac{100(8)}{40000}$ = −0.02 rad/s. The angle is shrinking."
+      }
+     ],
+     "title": "Rising kite",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><line class=\"f-acc\" x1=\"50\" y1=\"150\" x2=\"260\" y2=\"30\"/><path class=\"f-fill\" d=\"M260 18 l12 12 l-12 14 l-12 -14 Z\"/><line class=\"f-dash\" x1=\"260\" y1=\"30\" x2=\"260\" y2=\"150\"/><text x=\"272\" y=\"96\" text-anchor=\"start\" class=\"f-s\">100 ft</text><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"150\" y=\"82\" text-anchor=\"middle\">string</text><text x=\"80\" y=\"144\" text-anchor=\"middle\">θ</text></svg>",
+     "id": "P9",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "A baseball diamond is a 90-ft square. A batter runs from home to first at 24 ft/s. How fast is the batter’s distance from **second base** changing when the batter is halfway to first?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Let $x$ be the distance from home. Which equation gives the distance $s$ to second base?",
+       "options": [
+        "$s^2 = (90 - x)^2 + 90^2$",
+        "$s^2 = x^2 + 90^2$",
+        "$s = 90 - x$"
+       ],
+       "answer": 0,
+       "explain": "The right angle is at first base."
+      },
+      {
+       "type": "num",
+       "text": "Halfway: $x$ = 45. Find $s$.",
+       "answer": 100.623059,
+       "label": "$s$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(45^2 + 90^2)$ ≈ 100.62 ft."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate and solve for $s'$.",
+       "answer": "-(90-x)*x'/s",
+       "vars": [
+        "x",
+        "s",
+        "x'",
+        "s'"
+       ],
+       "label": "$s'$ =",
+       "explain": "$2s s' = -2(90 - x)x'$, so $s' = -frac{(90 - x)x'}{s}$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in.",
+       "answer": -10.733126,
+       "label": "$s'$ ≈",
+       "tol": 0.01,
+       "explain": "$-frac{45(24)}{100.62}$ ≈ −10.73 ft/s: getting closer to second."
+      }
+     ],
+     "title": "Rounding first base",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M60 150 L250 150 L250 20\"/><path class=\"f-dash\" d=\"M60 150 L60 20 L250 20\"/><line class=\"f-acc\" x1=\"155\" y1=\"150\" x2=\"250\" y2=\"20\"/><text x=\"60\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">home</text><text x=\"262\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">first</text><text x=\"262\" y=\"16\" text-anchor=\"middle\" class=\"f-s\">second</text><text x=\"205\" y=\"166\" text-anchor=\"middle\">90 − x</text><text x=\"268\" y=\"90\" text-anchor=\"start\" class=\"f-s\">90</text><text x=\"185\" y=\"80\" text-anchor=\"middle\">s</text><circle class=\"f-dot\" cx=\"155\" cy=\"150\" r=\"5\"/><text x=\"110\" y=\"166\" text-anchor=\"middle\">x</text></svg>",
+     "id": "P10",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "A plane flies horizontally at 1 km altitude and 1000 km/h. How fast is its distance from you growing when it is 2 km away horizontally?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which equation links $x$ and $s$?",
+       "options": [
+        "$s = x + 1$",
+        "$s^2 = x^2 - 1$",
+        "$s^2 = x^2 + 1$"
+       ],
+       "answer": 2,
+       "explain": "The altitude 1 km is constant."
+      },
+      {
+       "type": "num",
+       "text": "When $x$ = 2, $s$ = ?",
+       "answer": 2.236068,
+       "label": "$s$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt 5$ ≈ 2.236 km."
+      },
+      {
+       "type": "num",
+       "text": "$s' = frac{x x'}{s}$. Plug in.",
+       "answer": 894.427191,
+       "label": "$s'$ ≈",
+       "tol": 0.5,
+       "explain": "$frac{2(1000)}{sqrt 5}$ ≈ 894.4 km/h."
+      }
+     ],
+     "title": "Plane overhead",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"155\" x2=\"300\" y2=\"155\"/><line class=\"f-dash\" x1=\"70\" y1=\"30\" x2=\"230\" y2=\"30\"/><line class=\"f-dash\" x1=\"70\" y1=\"30\" x2=\"70\" y2=\"155\"/><line class=\"f-acc\" x1=\"70\" y1=\"155\" x2=\"230\" y2=\"30\"/><path class=\"f-fill\" d=\"M222 24 h22 l6 6 l-6 6 h-22 Z\"/><circle class=\"f-dot\" cx=\"70\" cy=\"155\" r=\"5\"/><text x=\"150\" y=\"24\" text-anchor=\"middle\">x</text><text x=\"58\" y=\"96\" text-anchor=\"end\" class=\"f-s\">1 km</text><text x=\"162\" y=\"104\" text-anchor=\"middle\">s</text><text x=\"70\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">you</text></svg>",
+     "id": "P11",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "A rocket rises vertically. A camera is 5000 ft from the launch pad. When the rocket is 1000 ft up, its velocity is 600 ft/s. How fast must the camera’s angle change to stay on the rocket?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which equation links θ and $h$?",
+       "options": [
+        "$tan θ = frac{h}{5000}$",
+        "$tan θ = frac{5000}{h}$",
+        "$sin θ = frac{h}{5000}$"
+       ],
+       "answer": 0,
+       "explain": "Opposite over adjacent."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate the left side, $tan θ$.",
+       "answer": "sec(θ)^2*θ'",
+       "vars": [
+        "θ",
+        "θ'"
+       ],
+       "label": "Left side →",
+       "keys": [
+        "sec(",
+        "tan(",
+        "^"
+       ],
+       "explain": "$sec^2 θ · θ'$."
+      },
+      {
+       "type": "num",
+       "text": "When $h$ = 1000, $sec^2 θ = 1 + tan^2 θ$ = ?",
+       "answer": 1.04,
+       "label": "$sec^2 θ$ =",
+       "explain": "$1 + (0.2)^2$ = 1.04."
+      },
+      {
+       "type": "num",
+       "text": "$θ' = frac{h'}{5000 sec^2 θ}$. Plug in.",
+       "answer": 0.115385,
+       "label": "$θ'$ ≈",
+       "tol": 0.0005,
+       "explain": "$frac{600}{5200}$ ≈ 0.1154 rad/s."
+      }
+     ],
+     "title": "Rocket launch",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"155\" x2=\"300\" y2=\"155\"/><line class=\"f-line\" x1=\"260\" y1=\"155\" x2=\"260\" y2=\"35\"/><path class=\"f-fill\" d=\"M252 40 l8 -20 l8 20 Z\"/><line class=\"f-acc\" x1=\"50\" y1=\"155\" x2=\"260\" y2=\"40\"/><circle class=\"f-dot\" cx=\"50\" cy=\"155\" r=\"5\"/><text x=\"155\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">5000 ft</text><text x=\"270\" y=\"100\" text-anchor=\"start\">h</text><text x=\"90\" y=\"148\" text-anchor=\"middle\">θ</text><text x=\"50\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">camera</text></svg>",
+     "id": "P12",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Water drains from a cone-shaped funnel at 0.3 ft³/s. The funnel is 20 ft tall with top radius 10 ft. How fast is the water level changing when the water is 12 ft deep?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "By similar triangles, the water’s radius $r$ and depth $h$ satisfy:",
+       "options": [
+        "$r = 2h$",
+        "$r = h - 10$",
+        "$r = frac{h}{2}$"
+       ],
+       "answer": 2,
+       "explain": "$frac{r}{h} = frac{10}{20}$."
+      },
+      {
+       "type": "expr",
+       "text": "Substitute into $V = frac{1}{3}pi r^2 h$. $V$ in terms of $h$ only:",
+       "answer": "pi*h^3/12",
+       "vars": [
+        "h"
+       ],
+       "label": "$V$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$frac{1}{3}pi(frac{h}{2})^2 h = frac{pi h^3}{12}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate with respect to $t$.",
+       "answer": "pi*h^2*h'/4",
+       "vars": [
+        "h",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = frac{pi}{4}h^2 h'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $h'$ when $V'$ = −0.3 and $h$ = 12.",
+       "answer": -0.002653,
+       "label": "$h'$ ≈",
+       "tol": 0.0001,
+       "explain": "$h' = frac{4(-0.3)}{pi(144)}$ ≈ −0.00265 ft/s."
+      }
+     ],
+     "title": "Draining funnel",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M90 15 L160 155 L230 15 Z\"/><path class=\"f-water\" d=\"M118 71 L160 155 L202 71 Z\"/><line class=\"f-dash\" x1=\"118\" y1=\"71\" x2=\"202\" y2=\"71\"/><text x=\"170\" y=\"66\" text-anchor=\"middle\">r</text><line class=\"f-thin\" x1=\"250\" y1=\"71\" x2=\"250\" y2=\"155\"/><text x=\"262\" y=\"118\" text-anchor=\"middle\">h</text><text x=\"160\" y=\"12\" text-anchor=\"middle\" class=\"f-s\">10 ft across the top radius</text><line class=\"f-dash\" x1=\"60\" y1=\"15\" x2=\"60\" y2=\"155\"/><text x=\"48\" y=\"90\" text-anchor=\"end\" class=\"f-s\">20 ft</text></svg>",
+     "id": "P13",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Sand is poured into a conical pile. The radius grows at 2 ft/min while the height grows at 1 ft/min. How fast is the volume growing when $r$ = 6 ft and $h$ = 4 ft?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "How many variables are changing?",
+       "options": [
+        "Two: $r$ and $h$",
+        "One: $r$",
+        "One: $V$"
+       ],
+       "answer": 0,
+       "explain": "Both $r$ and $h$ change, so expect the product rule."
+      },
+      {
+       "type": "expr",
+       "text": "$V = frac{1}{3}pi r^2 h$. Differentiate with respect to $t$.",
+       "answer": "pi/3*(2*r*r'*h+r^2*h')",
+       "vars": [
+        "r",
+        "h",
+        "r'",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $r$ = 6, $r'$ = 2, $h$ = 4, $h'$ = 1.",
+       "answer": 138.230077,
+       "label": "$V'$ ≈",
+       "tol": 0.05,
+       "explain": "$frac{pi}{3}(96 + 36) = 44pi$ ≈ 138.2 ft³/min."
+      }
+     ],
+     "title": "Sand pile",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><path class=\"f-fill\" d=\"M70 150 L160 60 L250 150 Z\"/><line class=\"f-dash\" x1=\"160\" y1=\"60\" x2=\"160\" y2=\"150\"/><line class=\"f-acc\" x1=\"160\" y1=\"146\" x2=\"250\" y2=\"146\"/><text x=\"170\" y=\"110\" text-anchor=\"start\">h</text><text x=\"205\" y=\"140\" text-anchor=\"middle\">r</text></svg>",
+     "id": "P15",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "A 6-ft person walks away from a 15-ft lamppost at 5 ft/s. How fast is the length of their shadow growing?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "With $x$ = distance from the post and $s$ = shadow length, similar triangles give:",
+       "options": [
+        "$frac{15}{x} = frac{6}{s}$",
+        "$frac{15}{x + s} = frac{6}{s}$",
+        "$15s = 6x$"
+       ],
+       "answer": 1,
+       "explain": "The big triangle (post) and small triangle (person) share the tip of the shadow."
+      },
+      {
+       "type": "expr",
+       "text": "Solve for $s$ in terms of $x$.",
+       "answer": "2*x/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$s$ =",
+       "explain": "$15s = 6x + 6s$, so $9s = 6x$ and $s = frac{2}{3}x$."
+      },
+      {
+       "type": "num",
+       "text": "So $s' = frac{2}{3}x'$. Find $s'$.",
+       "answer": 3.333333,
+       "label": "$s'$ ≈",
+       "tol": 0.002,
+       "explain": "$frac{2}{3}(5)$ ≈ 3.33 ft/s, no matter where the person is."
+      }
+     ],
+     "title": "Lengthening shadow",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" x1=\"40\" y1=\"150\" x2=\"40\" y2=\"20\"/><circle class=\"f-dot\" cx=\"40\" cy=\"20\" r=\"6\"/><line class=\"f-line\" x1=\"170\" y1=\"150\" x2=\"170\" y2=\"98\"/><line class=\"f-dash\" x1=\"40\" y1=\"20\" x2=\"290\" y2=\"150\"/><line class=\"f-acc\" x1=\"170\" y1=\"150\" x2=\"290\" y2=\"150\"/><text x=\"28\" y=\"90\" text-anchor=\"end\" class=\"f-s\">15 ft</text><text x=\"182\" y=\"126\" text-anchor=\"start\" class=\"f-s\">6 ft</text><text x=\"105\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"230\" y=\"166\" text-anchor=\"middle\">s</text></svg>",
+     "id": "P17",
+     "level": 3
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L1",
+    "type": "mc",
+    "text": "Water drains from a cone-shaped funnel 20 ft tall with top radius 10 ft. The water is $h$ ft deep and its surface has radius $r$.\n$$V = frac{1}{3}pi r^2 h$$\nWe know $frac{dV}{dt}$ and want $frac{dh}{dt}$. What is in the way?",
+    "options": [
+     "The formula has a second changing variable, $r$, and we do not know $frac{dr}{dt}$",
+     "The volume formula is wrong for water",
+     "Nothing. Differentiate right away"
+    ],
+    "answer": 0,
+    "hint": "Count the letters on the right side that change as the water drains.",
+    "explain": "Two changing variables would need two rates. The fix: get rid of $r$ before differentiating.",
+    "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M90 15 L160 155 L230 15 Z\"/><path class=\"f-water\" d=\"M118 71 L160 155 L202 71 Z\"/><line class=\"f-dash\" x1=\"118\" y1=\"71\" x2=\"202\" y2=\"71\"/><text x=\"170\" y=\"66\" text-anchor=\"middle\">r</text><line class=\"f-thin\" x1=\"250\" y1=\"71\" x2=\"250\" y2=\"155\"/><text x=\"262\" y=\"118\" text-anchor=\"middle\">h</text><text x=\"160\" y=\"12\" text-anchor=\"middle\" class=\"f-s\">10 ft across the top radius</text><line class=\"f-dash\" x1=\"60\" y1=\"15\" x2=\"60\" y2=\"155\"/><text x=\"48\" y=\"90\" text-anchor=\"end\" class=\"f-s\">20 ft</text></svg>"
+   },
+   {
+    "id": "L2",
+    "type": "num",
+    "text": "**Similar triangles.** The water makes a small cone with the same shape as the funnel (20 ft tall, top radius 10 ft). When the water is 12 ft deep, what is the radius of its surface?",
+    "answer": 6,
+    "label": "$r$ =",
+    "hint": "$frac{r}{12} = frac{10}{20}$",
+    "explain": "The radius is always half the depth: $r$ = 6."
+   },
+   {
+    "type": "mc",
+    "text": "By similar triangles, the water’s radius $r$ and depth $h$ satisfy:",
+    "options": [
+     "$r = 2h$",
+     "$r = h - 10$",
+     "$r = frac{h}{2}$"
+    ],
+    "answer": 2,
+    "explain": "$frac{r}{h} = frac{10}{20}$.",
+    "id": "L3",
+    "hint": "The ratio of radius to height is the same for the water as for the funnel."
+   },
+   {
+    "type": "expr",
+    "text": "Substitute into $V = frac{1}{3}pi r^2 h$. $V$ in terms of $h$ only:",
+    "answer": "pi*h^3/12",
+    "vars": [
+     "h"
+    ],
+    "label": "$V$ =",
+    "keys": [
+     "pi"
+    ],
+    "explain": "$frac{1}{3}pi(frac{h}{2})^2 h = frac{pi h^3}{12}$.",
+    "id": "L4",
+    "hint": "Replace $r$ with $frac{h}{2}$ and simplify."
+   },
+   {
+    "type": "expr",
+    "text": "Differentiate with respect to $t$.",
+    "answer": "pi*h^2*h'/4",
+    "vars": [
+     "h",
+     "h'"
+    ],
+    "label": "$V'$ =",
+    "keys": [
+     "pi"
+    ],
+    "explain": "$V' = frac{pi}{4}h^2 h'$.",
+    "id": "L5",
+    "hint": "Chain rule: $frac{d}{dt}(h^3) = 3h^2 h'$."
+   },
+   {
+    "id": "L6",
+    "type": "mc",
+    "text": "Now the reading. “Water **drains** at 0.3 ft³/s.” What does that say?",
+    "options": [
+     "$frac{dV}{dt} = -0.3$",
+     "$frac{dV}{dt} = 0.3$",
+     "$V = 0.3$",
+     "$frac{dh}{dt} = -0.3$"
+    ],
+    "answer": 0,
+    "hint": "Is the volume going up or down?",
+    "explain": "Draining means the volume goes down, so its rate is negative. Drains, shrinks, melts and slides down all mean a negative rate."
+   }
+  ]
+ }
+}

@@ -1,225 +1,326 @@
 {
-  "course": "Calculus 1",
-  "world": 3,
-  "id": "applications",
-  "title": "Applications of Derivatives",
-  "height": 262,
-  "regions": [
-    {
-      "label": "Curve sketching",
-      "x": 3,
-      "y": 110,
-      "w": 94,
-      "h": 112
-    }
-  ],
-  "nodes": [
-    {
-      "id": "start",
-      "kind": "start",
-      "title": "Start",
-      "x": 50,
-      "y": 10,
-      "deck": null,
-      "requires": [],
-      "blurb": "Tap a stop on the map to walk there."
-    },
-    {
-      "id": "newton",
-      "kind": "main",
-      "title": "Newton's Method",
-      "label": "Newton's Method",
-      "x": 16,
-      "y": 36,
-      "deck": "newton",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Using tangent lines to home in on a root."
-    },
-    {
-      "id": "max",
-      "kind": "main",
-      "title": "Max and Mins",
-      "x": 50,
-      "y": 36,
-      "deck": "maxmin",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Highest and lowest points: absolute and local extremes, critical points, and how to find them."
-    },
-    {
-      "id": "lhop",
-      "kind": "main",
-      "title": "L'Hopital's Rule",
-      "label": "L'Hopital's Rule",
-      "x": 84,
-      "y": 36,
-      "deck": "lhop",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Indeterminate forms, then using derivatives to beat 0/0 and ∞/∞, then the other five forms."
-    },
-    {
-      "id": "related",
-      "kind": "main",
-      "title": "Related Rates",
-      "x": 16,
-      "y": 64,
-      "deck": "related",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Every variable is a function of time: differentiate, then plug in."
-    },
-    {
-      "id": "opt",
-      "kind": "main",
-      "title": "Optimization",
-      "x": 50,
-      "y": 64,
-      "deck": "opt",
-      "requires": [
-        "max"
-      ],
-      "blurb": "Find the best value in a real situation. Step one: what is being optimized?"
-    },
-    {
-      "id": "lin",
-      "kind": "main",
-      "title": "Linearization and Differentials",
-      "label": "Linearization",
-      "x": 84,
-      "y": 64,
-      "deck": "linear",
-      "requires": [
-        "start"
-      ],
-      "blurb": "Approximating a function with its tangent line."
-    },
-    {
-      "id": "geom",
-      "kind": "review",
-      "title": "Standard Geometry",
-      "x": 50,
-      "y": 92,
-      "deck": "geom",
-      "requires": [
-        "max"
-      ],
-      "from": [
-        "opt"
-      ],
-      "blurb": "Review: area, volume and perimeter formulas."
-    },
-    {
-      "id": "mvt",
-      "kind": "main",
-      "title": "Mean Value Theorem",
-      "x": 84,
-      "y": 92,
-      "deck": "mvt",
-      "requires": [
-        "max"
-      ],
-      "blurb": "Where the slope of a tangent equals the average slope."
-    },
-    {
-      "id": "curve",
-      "kind": "main",
-      "title": "Curve Sketching",
-      "x": 16,
-      "y": 126,
-      "deck": "curve",
-      "requires": [
-        "max"
-      ],
-      "blurb": "First derivative: up or down. Second derivative: how it bends. Then draw it."
-    },
-    {
-      "id": "domain",
-      "kind": "review",
-      "title": "Domain",
-      "x": 16,
-      "y": 164,
-      "deck": "domain",
-      "requires": [
-        "max"
-      ],
-      "from": [
-        "curve"
-      ],
-      "blurb": "Review: where a function is defined."
-    },
-    {
-      "id": "intercepts",
-      "kind": "review",
-      "title": "Intercepts",
-      "x": 50,
-      "y": 164,
-      "deck": "intercepts",
-      "requires": [
-        "max"
-      ],
-      "from": [
-        "curve"
-      ],
-      "blurb": "Review: where a graph crosses the axes."
-    },
-    {
-      "id": "asym",
-      "kind": "review",
-      "title": "Asymptotes",
-      "x": 84,
-      "y": 164,
-      "deck": "asym",
-      "requires": [
-        "max"
-      ],
-      "from": [
-        "curve"
-      ],
-      "blurb": "Review: vertical, horizontal and slant asymptotes."
-    },
-    {
-      "id": "longdiv",
-      "kind": "review",
-      "title": "Long Division",
-      "x": 84,
-      "y": 200,
-      "deck": "longdiv",
-      "requires": [
-        "max"
-      ],
-      "from": [
-        "asym"
-      ],
-      "blurb": "Review: polynomial long division for slant asymptotes."
-    },
-    {
-      "id": "review",
-      "kind": "boss",
-      "title": "Chapter Review",
-      "x": 50,
-      "y": 240,
-      "deck": "review3",
-      "requires": [
-        "curve",
-        "opt",
-        "mvt",
-        "newton",
-        "lin",
-        "related",
-        "lhop"
-      ],
-      "from": [
-        "curve",
-        "mvt"
-      ],
-      "blurb": "A game plan, mixed practice from every stop, and a practice test scored by topic."
-    }
-  ],
-  "short": "Applications"
+ "course": "Calculus 1",
+ "world": 3,
+ "id": "applications",
+ "title": "Applications of Derivatives",
+ "short": "Applications",
+ "height": 446,
+ "regions": [
+  {
+   "label": "Day 22",
+   "x": 3,
+   "y": 22,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 23",
+   "x": 3,
+   "y": 58,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 24",
+   "x": 3,
+   "y": 94,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 25",
+   "x": 3,
+   "y": 130,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 26",
+   "x": 3,
+   "y": 166,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 27",
+   "x": 3,
+   "y": 202,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 28",
+   "x": 3,
+   "y": 238,
+   "w": 94,
+   "h": 61
+  },
+  {
+   "label": "Day 29",
+   "x": 3,
+   "y": 304,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 30",
+   "x": 3,
+   "y": 340,
+   "w": 94,
+   "h": 31
+  },
+  {
+   "label": "Day 31",
+   "x": 3,
+   "y": 376,
+   "w": 94,
+   "h": 31
+  }
+ ],
+ "nodes": [
+  {
+   "id": "start",
+   "kind": "start",
+   "title": "Start",
+   "x": 50,
+   "y": 10,
+   "deck": null,
+   "requires": [],
+   "blurb": "Tap a stop on the map to walk there."
+  },
+  {
+   "id": "geom",
+   "kind": "review",
+   "title": "Standard Geometry",
+   "x": 28,
+   "y": 40,
+   "deck": "geom",
+   "blurb": "Review: area, volume and perimeter formulas, and similar triangles.",
+   "requires": [
+    "start"
+   ],
+   "from": [
+    "related"
+   ]
+  },
+  {
+   "id": "related",
+   "kind": "main",
+   "title": "Related Rates",
+   "x": 72,
+   "y": 40,
+   "deck": "related",
+   "blurb": "Every variable is a function of time: differentiate, then plug in.",
+   "requires": [
+    "start"
+   ]
+  },
+  {
+   "id": "related2",
+   "kind": "main",
+   "title": "Related Rates II",
+   "x": 50,
+   "y": 76,
+   "deck": "related2",
+   "blurb": "Harder geometry and harder reading: cones, shadows, angles and moving cars.",
+   "requires": [
+    "related"
+   ]
+  },
+  {
+   "id": "lin",
+   "kind": "main",
+   "title": "Linearization and Differentials",
+   "label": "Linearization",
+   "x": 28,
+   "y": 112,
+   "deck": "linear",
+   "blurb": "Approximating a function with its tangent line.",
+   "requires": [
+    "related2"
+   ]
+  },
+  {
+   "id": "newton",
+   "kind": "main",
+   "title": "Newton's Method",
+   "x": 72,
+   "y": 112,
+   "deck": "newton",
+   "blurb": "Using tangent lines to home in on a root.",
+   "requires": [
+    "related2"
+   ]
+  },
+  {
+   "id": "max",
+   "kind": "main",
+   "title": "Max and Mins",
+   "x": 50,
+   "y": 148,
+   "deck": "maxmin",
+   "blurb": "Highest and lowest points: absolute and local extremes, critical points, and how to find them.",
+   "requires": [
+    "newton"
+   ]
+  },
+  {
+   "id": "mvt",
+   "kind": "main",
+   "title": "Mean Value Theorem",
+   "x": 28,
+   "y": 184,
+   "deck": "mvt",
+   "blurb": "Where the slope of a tangent equals the average slope.",
+   "requires": [
+    "max"
+   ]
+  },
+  {
+   "id": "incdec",
+   "kind": "main",
+   "title": "Increasing, Decreasing and the First Derivative Test",
+   "label": "First Derivative Test",
+   "x": 72,
+   "y": 184,
+   "deck": "incdec",
+   "blurb": "What the sign of f′ says about f, and how to find local highs and lows with it.",
+   "requires": [
+    "max"
+   ]
+  },
+  {
+   "id": "concavity",
+   "kind": "main",
+   "title": "Concavity and the Second Derivative Test",
+   "label": "Concavity",
+   "x": 50,
+   "y": 220,
+   "deck": "concavity",
+   "blurb": "How a graph bends, where the bend changes, and a second way to sort critical numbers.",
+   "requires": [
+    "incdec"
+   ]
+  },
+  {
+   "id": "domain",
+   "kind": "review",
+   "title": "Domain",
+   "x": 16,
+   "y": 256,
+   "deck": "domain",
+   "blurb": "Review: where a function is defined.",
+   "requires": [
+    "concavity"
+   ],
+   "from": [
+    "curve"
+   ]
+  },
+  {
+   "id": "intercepts",
+   "kind": "review",
+   "title": "Intercepts",
+   "x": 50,
+   "y": 256,
+   "deck": "intercepts",
+   "blurb": "Review: where a graph crosses the axes.",
+   "requires": [
+    "concavity"
+   ],
+   "from": [
+    "curve"
+   ]
+  },
+  {
+   "id": "asym",
+   "kind": "review",
+   "title": "Asymptotes",
+   "x": 84,
+   "y": 256,
+   "deck": "asym",
+   "blurb": "Review: vertical, horizontal and slant asymptotes.",
+   "requires": [
+    "concavity"
+   ],
+   "from": [
+    "curve"
+   ]
+  },
+  {
+   "id": "longdiv",
+   "kind": "review",
+   "title": "Long Division",
+   "x": 28,
+   "y": 286,
+   "deck": "longdiv",
+   "blurb": "Review: polynomial long division for slant asymptotes.",
+   "requires": [
+    "concavity"
+   ],
+   "from": [
+    "curve"
+   ]
+  },
+  {
+   "id": "curve",
+   "kind": "main",
+   "title": "Curve Sketching",
+   "x": 72,
+   "y": 286,
+   "deck": "curve",
+   "blurb": "Put the whole picture together: the data first, then the drawing.",
+   "requires": [
+    "concavity"
+   ]
+  },
+  {
+   "id": "lhop",
+   "kind": "main",
+   "title": "L'Hopital's Rule",
+   "x": 50,
+   "y": 322,
+   "deck": "lhop",
+   "blurb": "Indeterminate forms, then using derivatives to beat 0/0 and ∞/∞, then the other five forms.",
+   "requires": [
+    "curve"
+   ]
+  },
+  {
+   "id": "opt",
+   "kind": "main",
+   "title": "Optimization",
+   "x": 50,
+   "y": 358,
+   "deck": "opt",
+   "blurb": "Turn a word problem into a function. Step one: what is being optimized?",
+   "requires": [
+    "lhop"
+   ]
+  },
+  {
+   "id": "opt2",
+   "kind": "main",
+   "title": "Optimization II",
+   "x": 50,
+   "y": 394,
+   "deck": "opt2",
+   "blurb": "Finish the job: the derivative, the critical number, the check, and the answer to the question asked.",
+   "requires": [
+    "opt"
+   ]
+  },
+  {
+   "id": "review",
+   "kind": "boss",
+   "title": "Chapter Review",
+   "x": 50,
+   "y": 426,
+   "deck": "review3",
+   "requires": [
+    "opt2"
+   ],
+   "blurb": "A warm-up, mixed practice from every stop, and a practice test scored by topic."
+  }
+ ]
 }

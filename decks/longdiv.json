@@ -1,8 +1,603 @@
 {
  "id": "longdiv",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
  "title": "Long Division",
- "lessonOptional": true,
+ "subtitle": "Review: polynomial long division for slant asymptotes.",
+ "version": 2,
  "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{x^2 + 2x + 3}{x - 1}$.",
+     "answer": "3+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $x + 3$, remainder $6$. The asymptote is $y = x + 3$.",
+     "id": "S1",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{2x^2 - x + 1}{x + 1}$.",
+     "answer": "-3+2*x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $2x - 3$, remainder $4$. The asymptote is $y = 2x - 3$.",
+     "id": "S2",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{x^3 + 2}{x^2 + x}$.",
+     "answer": "-1+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $x - 1$, remainder $x + 2$. The asymptote is $y = x - 1$.",
+     "id": "S3",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{3x^2 + 5}{x - 2}$.",
+     "answer": "6+3*x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $3x + 6$, remainder $17$. The asymptote is $y = 3x + 6$.",
+     "id": "S4",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{x^2 - x}{x + 4}$.",
+     "answer": "-5+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $x - 5$, remainder $20$. The asymptote is $y = x - 5$.",
+     "id": "S5",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{x^3 - 1}{x^2 + 2}$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $x$, remainder $-2x - 1$. The asymptote is $y = x$.",
+     "id": "S6",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{5x^2 + x + 1}{x}$.",
+     "answer": "1+5*x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $5x + 1$, remainder $1$. The asymptote is $y = 5x + 1$.",
+     "id": "S7",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{2x^2 + 3x}{2x - 1}$.",
+     "answer": "2+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $x + 2$, remainder $2$. The asymptote is $y = x + 2$.",
+     "id": "S8",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{4 - x^2}{x - 1}$.",
+     "answer": "-1-x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $-x - 1$, remainder $3$. The asymptote is $y = -x - 1$.",
+     "id": "S9",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = frac{x^3 + x + 1}{x^2 - 1}$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Quotient $x$, remainder $2x + 1$. The asymptote is $y = x$.",
+     "id": "S10",
+     "level": 2
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(2x^3 + 3x^2 - x + 5) ÷ (x + 2)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "1-x+2*x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $2x^2 - x + 1$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "3",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $3$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D1",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^2 + 5x + 6) ÷ (x + 2)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "3+x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x + 3$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D2",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^2 - 7x + 10) ÷ (x - 5)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "-2+x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x - 2$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D3",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^3 - 8) ÷ (x - 2)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "4+x^2+2*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x^2 + 2x + 4$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D4",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^3 + 2x^2 - 5x + 3) ÷ (x - 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "-2+x^2+3*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x^2 + 3x - 2$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "1",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $1$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D5",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(3x^2 - 4x + 7) ÷ (x + 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "-7+3*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $3x - 7$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "14",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $14$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D6",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^3 - x + 4) ÷ (x + 3)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "8+x^2-3*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x^2 - 3x + 8$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "-20",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $-20$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D7",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(4x^3 - 2x^2 + x) ÷ (2x - 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "1/2+2*x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $2x^2 + 1/2$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "1/2",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $1/2$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D8",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^4 - 1) ÷ (x - 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "1+x+x^2+x^3",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x^3 + x^2 + x + 1$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D9",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^3 + x^2 + x + 1) ÷ (x^2 + 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "1+x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x + 1$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D10",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(2x^3 - x^2 + 3) ÷ (x^2 - 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "-1+2*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $2x - 1$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "2+2*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $2x + 2$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D11",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^2 + 4) ÷ (x - 2)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "2+x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x + 2$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "8",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $8$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D12",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(6x^2 + x - 2) ÷ (2x - 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "2+3*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $3x + 2$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D13",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^3 - 3x^2 + 4) ÷ (x + 1)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "4+x^2-4*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x^2 - 4x + 4$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "0",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $0$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D14",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(5x^3 + 2) ÷ (x)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "5*x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $5x^2$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "2",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $2$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D15",
+     "level": 3
+    },
+    {
+     "type": "steps",
+     "text": "Divide $(x^4 + 2x^2 + 3) ÷ (x^2 + x)$.",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "Quotient:",
+       "answer": "3+x^2-x",
+       "vars": [
+        "x"
+       ],
+       "label": "Quotient =",
+       "explain": "The quotient is $x^2 - x + 3$."
+      },
+      {
+       "type": "expr",
+       "text": "Remainder:",
+       "answer": "3-3*x",
+       "vars": [
+        "x"
+       ],
+       "label": "Remainder =",
+       "explain": "The remainder is $3 - 3x$."
+      }
+     ],
+     "title": "Long division",
+     "id": "D16",
+     "level": 3
+    }
+   ]
+  }
+ },
  "lesson": {
   "slides": [
    {
@@ -139,575 +734,5 @@
    }
   ]
  },
- "drills": {
-  "divide": {
-   "title": "Divide drill",
-   "setSize": 6,
-   "questions": [
-    {
-     "type": "steps",
-     "text": "Divide $(2x^3 + 3x^2 - x + 5) ÷ (x + 2)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "1-x+2*x^2",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $2x^2 - x + 1$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "3",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $3$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D1"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^2 + 5x + 6) ÷ (x + 2)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "3+x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x + 3$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D2"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^2 - 7x + 10) ÷ (x - 5)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "-2+x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x - 2$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D3"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^3 - 8) ÷ (x - 2)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "4+x^2+2*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x^2 + 2x + 4$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D4"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^3 + 2x^2 - 5x + 3) ÷ (x - 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "-2+x^2+3*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x^2 + 3x - 2$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "1",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $1$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D5"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(3x^2 - 4x + 7) ÷ (x + 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "-7+3*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $3x - 7$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "14",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $14$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D6"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^3 - x + 4) ÷ (x + 3)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "8+x^2-3*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x^2 - 3x + 8$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "-20",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $-20$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D7"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(4x^3 - 2x^2 + x) ÷ (2x - 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "1/2+2*x^2",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $2x^2 + 1/2$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "1/2",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $1/2$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D8"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^4 - 1) ÷ (x - 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "1+x+x^2+x^3",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x^3 + x^2 + x + 1$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D9"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^3 + x^2 + x + 1) ÷ (x^2 + 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "1+x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x + 1$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D10"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(2x^3 - x^2 + 3) ÷ (x^2 - 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "-1+2*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $2x - 1$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "2+2*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $2x + 2$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D11"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^2 + 4) ÷ (x - 2)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "2+x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x + 2$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "8",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $8$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D12"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(6x^2 + x - 2) ÷ (2x - 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "2+3*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $3x + 2$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D13"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^3 - 3x^2 + 4) ÷ (x + 1)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "4+x^2-4*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x^2 - 4x + 4$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "0",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $0$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D14"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(5x^3 + 2) ÷ (x)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "5*x^2",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $5x^2$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "2",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $2$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D15"
-    },
-    {
-     "type": "steps",
-     "text": "Divide $(x^4 + 2x^2 + 3) ÷ (x^2 + x)$.",
-     "steps": [
-      {
-       "type": "expr",
-       "text": "Quotient:",
-       "answer": "3+x^2-x",
-       "vars": [
-        "x"
-       ],
-       "label": "Quotient =",
-       "explain": "The quotient is $x^2 - x + 3$."
-      },
-      {
-       "type": "expr",
-       "text": "Remainder:",
-       "answer": "3-3*x",
-       "vars": [
-        "x"
-       ],
-       "label": "Remainder =",
-       "explain": "The remainder is $3 - 3x$."
-      }
-     ],
-     "title": "Long division",
-     "id": "D16"
-    }
-   ]
-  },
-  "slant": {
-   "title": "Slant asymptotes drill",
-   "questions": [
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{x^2 + 2x + 3}{x - 1}$.",
-     "answer": "3+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $x + 3$, remainder $6$. The asymptote is $y = x + 3$.",
-     "id": "S1"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{2x^2 - x + 1}{x + 1}$.",
-     "answer": "-3+2*x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $2x - 3$, remainder $4$. The asymptote is $y = 2x - 3$.",
-     "id": "S2"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{x^3 + 2}{x^2 + x}$.",
-     "answer": "-1+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $x - 1$, remainder $x + 2$. The asymptote is $y = x - 1$.",
-     "id": "S3"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{3x^2 + 5}{x - 2}$.",
-     "answer": "6+3*x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $3x + 6$, remainder $17$. The asymptote is $y = 3x + 6$.",
-     "id": "S4"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{x^2 - x}{x + 4}$.",
-     "answer": "-5+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $x - 5$, remainder $20$. The asymptote is $y = x - 5$.",
-     "id": "S5"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{x^3 - 1}{x^2 + 2}$.",
-     "answer": "x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $x$, remainder $-2x - 1$. The asymptote is $y = x$.",
-     "id": "S6"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{5x^2 + x + 1}{x}$.",
-     "answer": "1+5*x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $5x + 1$, remainder $1$. The asymptote is $y = 5x + 1$.",
-     "id": "S7"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{2x^2 + 3x}{2x - 1}$.",
-     "answer": "2+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $x + 2$, remainder $2$. The asymptote is $y = x + 2$.",
-     "id": "S8"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{4 - x^2}{x - 1}$.",
-     "answer": "-1-x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $-x - 1$, remainder $3$. The asymptote is $y = -x - 1$.",
-     "id": "S9"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = frac{x^3 + x + 1}{x^2 - 1}$.",
-     "answer": "x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Quotient $x$, remainder $2x + 1$. The asymptote is $y = x$.",
-     "id": "S10"
-    }
-   ]
-  }
- }
+ "lessonOptional": true
 }

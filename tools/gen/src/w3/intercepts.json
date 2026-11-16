@@ -1,0 +1,518 @@
+{
+ "id": "intercepts",
+ "title": "Intercepts",
+ "lessonOptional": true,
+ "graphs": {},
+ "lesson": {
+  "slides": [
+   {
+    "type": "bank",
+    "text": "To find an $x$-intercept, set ___ and solve. To find the $y$-intercept, compute ___ .",
+    "blanks": [
+     "f(x) = 0",
+     "f(0)"
+    ],
+    "distractors": [
+     "x = 0",
+     "f(1)",
+     "f′(x) = 0"
+    ],
+    "explain": "$x$-intercepts: where the graph meets the $x$-axis ($y$ = 0). $y$-intercept: where it meets the $y$-axis ($x$ = 0).",
+    "hint": "$x$-intercepts are on the $x$-axis, where the height is 0.",
+    "id": "L1"
+   },
+   {
+    "type": "crit",
+    "text": "Find every $x$-intercept of $f(x) = x^2 - 5x + 6$. (Type one, tap **Add to list**, repeat.)",
+    "answers": [
+     2,
+     3
+    ],
+    "var": "x",
+    "label": "$x$ =",
+    "noneText": "No x-intercepts",
+    "explain": "$x$ = 2 and $x$ = 3.",
+    "hint": "Factor: $(x - 2)(x - 3)$.",
+    "id": "L2"
+   },
+   {
+    "type": "num",
+    "text": "Find the $y$-intercept of $f(x) = x^2 - 5x + 6$.",
+    "answer": 6,
+    "label": "$f(0)$ =",
+    "explain": "$f(0)$ = 6.",
+    "hint": "Plug in 0.",
+    "id": "L3"
+   },
+   {
+    "type": "crit",
+    "text": "Find every $x$-intercept of $f(x) = frac{x^2 - 9}{x - 3}$.",
+    "answers": [
+     -3
+    ],
+    "var": "x",
+    "label": "$x$ =",
+    "noneText": "No x-intercepts",
+    "explain": "Only −3. At $x$ = 3 the function is undefined (a hole), so it cannot be an intercept.",
+    "hint": "$x$ = 3 makes the top 0, but is 3 in the domain?",
+    "id": "L4"
+   },
+   {
+    "type": "crit",
+    "text": "Find every $x$-intercept of $f(x) = x^2 + 1$.",
+    "answers": [],
+    "var": "x",
+    "label": "$x$ =",
+    "noneText": "No x-intercepts",
+    "explain": "$x^2 + 1 ≥ 1$: no $x$-intercepts.",
+    "hint": "Can $x^2 + 1$ ever be 0?",
+    "id": "L5"
+   },
+   {
+    "type": "crit",
+    "text": "Find the $y$-intercept of $f(x) = frac{1}{x}$.",
+    "answers": [],
+    "var": "y",
+    "label": "$y$ =",
+    "noneText": "No y-intercept",
+    "explain": "$f(0)$ is undefined, so there is no $y$-intercept.",
+    "hint": "Is 0 in the domain?",
+    "id": "L6"
+   }
+  ]
+ },
+ "drills": {
+  "x": {
+   "title": "x-intercepts drill",
+   "questions": [
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^2 - 5x + 6$.",
+     "answers": [
+      2,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 2, 3",
+     "id": "X1"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^3 - 4x$.",
+     "answers": [
+      -2,
+      0,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -2, 0, 2",
+     "id": "X2"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = rac{x - 1}{x + 2}$.",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 1",
+     "id": "X3"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^2 + 1$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). There are none.",
+     "id": "X4"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = x + 6$.",
+     "answers": [
+      -3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -3",
+     "id": "X5"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^2 - 2x - 8$.",
+     "answers": [
+      -2,
+      4
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -2, 4",
+     "id": "X6"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^3 - x^2$.",
+     "answers": [
+      0,
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 0, 1",
+     "id": "X7"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = rac{x^2 - 9}{x - 3}$.",
+     "answers": [
+      -3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -3",
+     "id": "X8"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = n x$.",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 1",
+     "id": "X9"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^x - 1$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 0",
+     "id": "X10"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^4 - 5x^2 + 4$.",
+     "answers": [
+      -2,
+      -1,
+      1,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -2, -1, 1, 2",
+     "id": "X11"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = qrt(x + 4) - 2$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 0",
+     "id": "X12"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = rac{x^2 + x}{x^2 - 1}$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 0",
+     "id": "X13"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = rac{1}{x}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). There are none.",
+     "id": "X14"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) =  e^x$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 0",
+     "id": "X15"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = x + 3)^2(x - 1)$.",
+     "answers": [
+      -3,
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -3, 1",
+     "id": "X16"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = x^2 - x - 1$.",
+     "answers": [
+      -0.5,
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -0.5, 1",
+     "id": "X17"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = ^2 - 2$.",
+     "answers": [
+      -1.4142,
+      1.4142
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -1.414, 1.414",
+     "id": "X18"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = rac{x^2 - 4}{x^2 + 4}$.",
+     "answers": [
+      -2,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: -2, 2",
+     "id": "X19"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = n(x - 2)$.",
+     "answers": [
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "Solve $f(x) = 0$ (only $x$ in the domain count). Answer: 3",
+     "id": "X20"
+    },
+    {
+     "type": "crit",
+     "text": "Find every $x$-intercept of $f(x) = sin x$ on $[0, 2π]$ (decimals are fine).",
+     "answers": [
+      0,
+      3.1416,
+      6.2832
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No x-intercepts",
+     "explain": "$sin x = 0$ at 0, π ≈ 3.14 and 2π ≈ 6.28.",
+     "id": "X21"
+    }
+   ]
+  },
+  "y": {
+   "title": "y-intercepts drill",
+   "questions": [
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = ^2 - 5x + 6$.",
+     "answers": [
+      6
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = 6.",
+     "id": "Y1"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = rac{x - 1}{x + 2}$.",
+     "answers": [
+      -0.5
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = -0.5.",
+     "id": "Y2"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = rac{1}{x}$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "0 is not in the domain, so there is no $y$-intercept.",
+     "id": "Y3"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = n x$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "0 is not in the domain, so there is no $y$-intercept.",
+     "id": "Y4"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = ^x + 2$.",
+     "answers": [
+      3
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = 3.",
+     "id": "Y5"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = qrt(9 - x)$.",
+     "answers": [
+      3
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = 3.",
+     "id": "Y6"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = rac{x^2 + 4}{x^2 - 4}$.",
+     "answers": [
+      -1
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = -1.",
+     "id": "Y7"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = os x$.",
+     "answers": [
+      1
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = 1.",
+     "id": "Y8"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = x^3 - 2x + 7$.",
+     "answers": [
+      7
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = 7.",
+     "id": "Y9"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = rac{2x + 1}{x - 4}$.",
+     "answers": [
+      -0.25
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = -0.25.",
+     "id": "Y10"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) =  ln x$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "0 is not in the domain, so there is no $y$-intercept.",
+     "id": "Y11"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = rac{5}{x^2 + 1}$.",
+     "answers": [
+      5
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = 5.",
+     "id": "Y12"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = x - 2)^3$.",
+     "answers": [
+      -8
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "$f(0)$ = -8.",
+     "id": "Y13"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $y$-intercept of $f(x) = rac{x}{sqrt(x - 1)}$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No y-intercept",
+     "explain": "0 is not in the domain, so there is no $y$-intercept.",
+     "id": "Y14"
+    }
+   ]
+  }
+ }
+}

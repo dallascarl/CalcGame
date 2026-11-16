@@ -1,884 +1,93 @@
 {
  "id": "curve",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
  "title": "Curve Sketching",
- "graphs": {
-  "p1": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "(x+1)*(x-2)",
-     "from": -4,
-     "to": 4
-    }
-   ],
-   "xstep": 1
-  },
-  "p2": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "4-x^2",
-     "from": -4,
-     "to": 4
-    }
-   ]
-  },
-  "p3": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "x^2*(x-2)",
-     "from": -4,
-     "to": 4
-    }
-   ]
-  },
-  "p4": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "-(x+3)*(x-1)",
-     "from": -4,
-     "to": 4
-    }
-   ]
-  },
-  "p5": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "(x+2)*(x-1)*(x-3)/2",
-     "from": -4,
-     "to": 4
-    }
-   ]
-  },
-  "c1": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "x-1",
-     "from": -4,
-     "to": 4
-    }
-   ]
-  },
-  "c2": {
-   "window": [
-    -4,
-    4,
-    -5,
-    5
-   ],
-   "pieces": [
-    {
-     "expr": "x^2-4",
-     "from": -4,
-     "to": 4
-    }
-   ]
-  }
- },
- "lesson": {
-  "slides": [
-   {
-    "type": "curvex",
-    "mode": "slope",
-    "fn": "x^3-3*x",
-    "window": [
-     -3,
-     3,
-     -5,
-     5
-    ],
-    "title": "What the slope tells you",
-    "text": "Slide the point along $f(x) = x^3 - 3x$. The tangent line turns **green** when it slopes up and **red** when it slopes down. Visit all three regions.",
-    "regions": [
-     [
-      -3,
-      -1,
-      "left of −1"
-     ],
-     [
-      -1,
-      1,
-      "between −1 and 1"
-     ],
-     [
-      1,
-      3,
-      "right of 1"
-     ]
-    ],
-    "start": -2.6,
-    "after": "Where the tangent slopes up, $f'(x) > 0$ and the graph rises. Where it slopes down, $f'(x) < 0$ and the graph falls. The switches happen where $f'(x) = 0$.",
-    "id": "L1"
-   },
-   {
-    "type": "bank",
-    "text": "If $f'(x) > 0$ on an interval, $f$ is ___ there. If $f'(x) < 0$, $f$ is ___ .",
-    "blanks": [
-     "increasing",
-     "decreasing"
-    ],
-    "distractors": [
-     "concave up",
-     "constant",
-     "undefined"
-    ],
-    "explain": "The sign of the first derivative tells you which way the graph goes.",
-    "hint": "Positive slope means going up.",
-    "id": "L2"
-   },
-   {
-    "type": "mc",
-    "text": "Here is the graph of $f'$ (not $f$!). On which interval is $f$ decreasing?",
-    "options": [
-     "$(-∞, 0.5)$",
-     "$(-5, 5)$",
-     "$(-1, 2)$",
-     "$(-∞, -1) ∪ (2, ∞)$"
-    ],
-    "answer": 2,
-    "explain": "$f'$ is negative between −1 and 2, so $f$ decreases on $(-1, 2)$.",
-    "hint": "$f$ decreases where the graph of $f'$ is **below** the axis.",
-    "graph": "p1",
-    "id": "L3"
-   },
-   {
-    "type": "mc",
-    "text": "From the same picture: what happens at $x$ = 2?",
-    "options": [
-     "$f$ has a local max",
-     "$f$ has an inflection point",
-     "$f$ has a local min"
-    ],
-    "answer": 2,
-    "explain": "Decreasing, then increasing: the bottom of a valley.",
-    "hint": "$f'$ goes from negative to positive at 2.",
-    "graph": "p1",
-    "id": "L4"
-   },
-   {
-    "type": "match",
-    "text": "**The First Derivative Test.** Match how $f'$ changes sign at a critical number $c$ with what $f$ has there.",
-    "pairs": [
-     [
-      "$f'$ changes from + to −",
-      "a local max at $c$"
-     ],
-     [
-      "$f'$ changes from − to +",
-      "a local min at $c$"
-     ],
-     [
-      "$f'$ does not change sign",
-      "neither (no local extreme)"
-     ]
-    ],
-    "explain": "Increasing to decreasing = max; decreasing to increasing = min.",
-    "hint": "Increasing then decreasing makes a hilltop.",
-    "id": "L5"
-   },
-   {
-    "type": "pick",
-    "text": "$f'(x) = frac{x^2 + 5x + 6}{x(x - 3)}$, and $f$ is undefined at 0 and 3. Which $x$-values split the number line for the sign chart of $f'$?",
-    "options": [
-     "−2",
-     "5",
-     "−3",
-     "0",
-     "1",
-     "3"
-    ],
-    "answers": [
-     0,
-     2,
-     3,
-     5
-    ],
-    "explain": "The top $(x + 2)(x + 3)$ is 0 at −2 and −3; the bottom is 0 at 0 and 3. Points where $f$ is undefined are not critical numbers, but they still split the sign chart.",
-    "hint": "Where the top is 0 and where the bottom is 0.",
-    "id": "L6"
-   },
-   {
-    "type": "interval",
-    "text": "Test a point in each piece. Where is $f$ increasing? (Use open intervals.)",
-    "answer": "(-inf,-3)U(-2,0)U(3,inf)",
-    "label": "Increasing on",
-    "explain": "Signs: + on $(-∞, -3)$, − on $(-3, -2)$, + on $(-2, 0)$, − on $(0, 3)$, + on $(3, ∞)$.",
-    "hint": "Try $x$ = −4, −2.5, −1, 1 and 4 in $frac{(x + 2)(x + 3)}{x(x - 3)}$.",
-    "id": "L7"
-   },
-   {
-    "type": "mc",
-    "text": "So what kind of point is at $x$ = −3?",
-    "options": [
-     "Neither",
-     "A local min",
-     "A local max"
-    ],
-    "answer": 2,
-    "explain": "+ to −: a local max.",
-    "hint": "Look at the signs just left and right of −3.",
-    "id": "L8"
-   },
-   {
-    "type": "curvex",
-    "mode": "concave",
-    "fn": "x^3-6*x^2+9*x+30",
-    "window": [
-     -1,
-     5,
-     20,
-     40
-    ],
-    "ystep": 5,
-    "title": "What the bend tells you",
-    "text": "Now slide along $f(x) = x^3 - 6x^2 + 9x + 30$. The curve is **gold** where it bends up like a cup and **teal** where it bends down like a frown. Visit both.",
-    "regions": [
-     [
-      -1,
-      2,
-      "left of 2"
-     ],
-     [
-      2,
-      5,
-      "right of 2"
-     ]
-    ],
-    "start": -0.5,
-    "after": "Concave down on the left, concave up on the right. The switch at $x$ = 2 is an **inflection point**.",
-    "id": "L9"
-   },
-   {
-    "type": "bank",
-    "text": "If $f''(x) > 0$, the graph is concave ___ (like a cup). If $f''(x) < 0$, it is concave ___ (like a frown).",
-    "blanks": [
-     "up",
-     "down"
-    ],
-    "distractors": [
-     "left",
-     "right",
-     "increasing"
-    ],
-    "explain": "The second derivative tells you which way the graph bends.",
-    "hint": "Positive second derivative: slopes are increasing.",
-    "id": "L10"
-   },
-   {
-    "type": "interval",
-    "text": "For $f(x) = x^3 - 6x^2 + 9x + 30$, $f''(x) = 6x - 12$. Where is $f$ concave up?",
-    "answer": "(2,inf)",
-    "label": "Concave up on",
-    "explain": "$6x - 12 > 0$ when $x > 2$.",
-    "hint": "Solve $6x - 12 > 0$.",
-    "id": "L11"
-   },
-   {
-    "type": "mc",
-    "text": "An **inflection point** is where…",
-    "options": [
-     "$f'(x) = 0$",
-     "$f$ has a max",
-     "the graph crosses the $x$-axis",
-     "the concavity changes"
-    ],
-    "answer": 3,
-    "explain": "Where the graph switches between cup and frown.",
-    "hint": "Think gold switching to teal.",
-    "id": "L12"
-   },
-   {
-    "type": "tf",
-    "text": "If $f''(c) = 0$, then $c$ is an inflection point.",
-    "answer": false,
-    "explain": "$x^4$ has $f''(0) = 0$ but is concave up on both sides. The concavity must actually **change**.",
-    "hint": "Try $f(x) = x^4$ at 0.",
-    "id": "L13"
-   },
-   {
-    "type": "match",
-    "text": "**The Second Derivative Test.** Suppose $f'(c) = 0$. Match each case.",
-    "pairs": [
-     [
-      "$f''(c) < 0$",
-      "local max (frown at the top)"
-     ],
-     [
-      "$f''(c) > 0$",
-      "local min (cup at the bottom)"
-     ],
-     [
-      "$f''(c) = 0$",
-      "the test fails: use the first derivative test"
-     ]
-    ],
-    "explain": "Concave down at a flat spot is a max; concave up is a min.",
-    "hint": "A frown has a hilltop.",
-    "id": "L14"
-   },
-   {
-    "type": "steps",
-    "text": "Use the second derivative test on $f(x) = x^3 - frac{3}{2}x^2 - 18x$. The critical numbers are $c$ = 3 and $c$ = −2.",
-    "steps": [
-     {
-      "type": "expr",
-      "text": "Find $f''(x)$.",
-      "answer": "6*x-3",
-      "vars": [
-       "x"
-      ],
-      "label": "$f''(x)$ =",
-      "explain": "$f''(x) = 6x - 3$.",
-      "hint": "$f'(x) = 3x^2 - 3x - 18$."
-     },
-     {
-      "type": "mc",
-      "text": "$f''(3)$ = 15. So $x$ = 3 is a…",
-      "options": [
-       "test fails",
-       "local min",
-       "local max"
-      ],
-      "answer": 1,
-      "explain": "Concave up at a flat spot: local min.",
-      "hint": "Positive means cup."
-     },
-     {
-      "type": "mc",
-      "text": "$f''(-2)$ = −15. So $x$ = −2 is a…",
-      "options": [
-       "local max",
-       "test fails",
-       "local min"
-      ],
-      "answer": 0,
-      "explain": "Concave down at a flat spot: local max.",
-      "hint": "Negative means frown."
-     }
-    ],
-    "title": "Try it out",
-    "id": "L15"
-   },
-   {
-    "type": "order",
-    "text": "Put the curve-sketching checklist in order.",
-    "items": [
-     "Domain",
-     "Intercepts",
-     "Vertical asymptotes",
-     "Horizontal (or slant) asymptotes",
-     "Increasing / decreasing",
-     "Local max and min",
-     "Concavity and inflection points",
-     "Sketch"
-    ],
-    "explain": "The checklist from class. The review side quests cover the first four.",
-    "hint": "Start with where the function lives; sketch last.",
-    "id": "L16"
-   },
-   {
-    "type": "sketch",
-    "text": "Put it all together. Here is the data for $f(x) = x^3 - 6x^2 + 9x + 1$. Place it on the graph, mark the regions, then sketch.",
-    "fn": "1+x^3-6*x^2+9*x",
-    "window": [
-     -1,
-     5,
-     -4,
-     8
-    ],
-    "data": {
-     "points": [
-      [
-       1.0,
-       5.0,
-       "Local max"
-      ],
-      [
-       3.0,
-       1.0,
-       "Local min"
-      ],
-      [
-       2.0,
-       3.0,
-       "Inflection point"
-      ],
-      [
-       -0.1038,
-       -0.0,
-       "x-intercept"
-      ],
-      [
-       0.0,
-       1.0,
-       "y-intercept"
-      ]
-     ],
-     "crit": [
-      1.0,
-      3.0
-     ],
-     "infl": [
-      2.0
-     ],
-     "va": [],
-     "ha": [],
-     "lines": [
-      "Domain: all real numbers",
-      "$x$-intercepts: $≈−0.10$; $y$-intercept: $1$",
-      "Increasing on $(-∞, 1) ∪ (3, ∞)$; decreasing on $(1, 3)$",
-      "Local max: $(1, 5)$; local min: $(3, 1)$",
-      "Concave up on $(2, ∞)$; concave down on $(-∞, 2)$",
-      "Inflection point: $(2, 3)$"
-     ]
-    },
-    "ystep": 2,
-    "title": "Your first sketch",
-    "id": "L17"
-   },
-   {
-    "type": "sketch",
-    "text": "One with asymptotes: $f(x) = frac{x^2 + 2x + 1}{x^2}$ (from the slides). Place the data, mark the regions, and sketch. Draw each piece as its own stroke.",
-    "fn": "(1+x^2+2*x)/x^2",
-    "window": [
-     -5,
-     5,
-     -1,
-     5
-    ],
-    "data": {
-     "points": [
-      [
-       -1.0,
-       0.0,
-       "Local min"
-      ],
-      [
-       -1.5,
-       0.1111,
-       "Inflection point"
-      ]
-     ],
-     "crit": [
-      -1.0
-     ],
-     "infl": [
-      -1.5
-     ],
-     "va": [
-      0.0
-     ],
-     "ha": [
-      1.0
-     ],
-     "lines": [
-      "Domain: $(-∞, 0) ∪ (0, ∞)$",
-      "$x$-intercepts: $−1$; $y$-intercept: none",
-      "Vertical asymptote: $x$ = 0",
-      "Horizontal asymptote: $y$ = 1",
-      "Increasing on $(-1, 0)$; decreasing on $(-∞, -1) ∪ (0, ∞)$",
-      "Local max: none; local min: $(−1, 0)$",
-      "Concave up on $(-3/2, ∞)$; concave down on $(-∞, -3/2)$",
-      "Inflection point: $(−3/2, 1/9)$"
-     ]
-    },
-    "title": "A sketch with asymptotes",
-    "id": "L18"
-   }
-  ]
- },
+ "subtitle": "Put the whole picture together: the data first, then the drawing.",
+ "version": 2,
+ "graphs": {},
  "drills": {
-  "tests": {
-   "title": "Derivative tests drill",
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
    "questions": [
     {
+     "id": "H1",
      "type": "mc",
-     "text": "Here is the graph of $f'$. Where is $f$ increasing?",
+     "text": "On an interval, $f' < 0$ and $f'' > 0$. The graph there is…",
      "options": [
-      "$(-∞, -2) ∪ (2, ∞)$",
-      "$(-∞, 4)$",
-      "$(-2, 2)$",
-      "$(0, ∞)$"
-     ],
-     "answer": 2,
-     "explain": "$f'$ is above the axis between −2 and 2.",
-     "graph": "p2",
-     "id": "T1"
-    },
-    {
-     "type": "mc",
-     "text": "Here is the graph of $f'$. Where does $f$ have a local max?",
-     "options": [
-      "$x$ = −2",
-      "$x$ = 0",
-      "Nowhere",
-      "$x$ = 2"
-     ],
-     "answer": 3,
-     "explain": "$f'$ goes from + to − at 2.",
-     "graph": "p2",
-     "id": "T2"
-    },
-    {
-     "type": "mc",
-     "text": "Here is the graph of $f'$. At $x$ = 0, $f$ has…",
-     "options": [
-      "a local max",
-      "a local min",
-      "neither a max nor a min"
-     ],
-     "answer": 2,
-     "explain": "$f'$ touches 0 at 0 but stays negative on both sides: no sign change.",
-     "graph": "p3",
-     "id": "T3"
-    },
-    {
-     "type": "mc",
-     "text": "Here is the graph of $f'$. Where does $f$ have a local min?",
-     "options": [
-      "$x$ = 2",
-      "$x$ = 0",
-      "$x$ = 0 and $x$ = 2",
-      "Nowhere"
+      "falling and bending up",
+      "falling and bending down",
+      "rising and bending up",
+      "rising and bending down"
      ],
      "answer": 0,
-     "explain": "$f'$ changes from − to + at 2.",
-     "graph": "p3",
-     "id": "T4"
+     "hint": "$f'$ is the direction. $f''$ is the bend.",
+     "explain": "Negative slope, so falling. Positive second derivative, so cupped upward."
     },
     {
-     "type": "mc",
-     "text": "Here is the graph of $f'$. Where is $f$ decreasing?",
-     "options": [
-      "$(-3, 1)$",
-      "$(-1, ∞)$",
-      "Nowhere",
-      "$(-∞, -3) ∪ (1, ∞)$"
-     ],
-     "answer": 3,
-     "explain": "$f'$ is below the axis outside $[-3, 1]$.",
-     "graph": "p4",
-     "id": "T5"
-    },
-    {
-     "type": "mc",
-     "text": "Here is the graph of $f'$. How many local extremes does $f$ have?",
-     "options": [
-      "3",
-      "0",
-      "1",
-      "2"
-     ],
-     "answer": 0,
-     "explain": "$f'$ changes sign at −2, 1 and 3.",
-     "graph": "p5",
-     "id": "T6"
-    },
-    {
-     "type": "mc",
-     "text": "Here is the graph of $f''$. Where is $f$ concave up?",
-     "options": [
-      "$(1, ∞)$",
-      "$(-∞, 1)$",
-      "Everywhere",
-      "$(0, ∞)$"
-     ],
-     "answer": 0,
-     "explain": "$f'' > 0$ when the line is above the axis.",
-     "graph": "c1",
-     "id": "T7"
-    },
-    {
-     "type": "mc",
-     "text": "Here is the graph of $f''$. How many inflection points does $f$ have?",
-     "options": [
-      "0",
-      "2",
-      "1",
-      "4"
-     ],
-     "answer": 1,
-     "explain": "$f''$ changes sign at −2 and 2.",
-     "graph": "c2",
-     "id": "T8"
-    },
-    {
-     "type": "mc",
-     "text": "$f'$ changes from + to − at $x$ = 4. So $f$ has…",
-     "options": [
-      "an inflection point at 4",
-      "a local min at 4",
-      "a local max at 4"
-     ],
-     "answer": 2,
-     "explain": "Up, then down: a hilltop.",
-     "id": "T9"
-    },
-    {
-     "type": "mc",
-     "text": "$f'$ changes from − to + at $x$ = −1. So $f$ has…",
-     "options": [
-      "a local min at −1",
-      "a local max at −1",
-      "no extreme at −1"
-     ],
-     "answer": 0,
-     "explain": "Down, then up: a valley.",
-     "id": "T10"
-    },
-    {
-     "type": "mc",
-     "text": "$f'(5) = 0$ and $f'$ is negative on both sides of 5. So at 5, $f$ has…",
-     "options": [
-      "a local min",
-      "no local extreme",
-      "a local max"
-     ],
-     "answer": 1,
-     "explain": "No sign change: just a flat spot on the way down.",
-     "id": "T11"
-    },
-    {
-     "type": "mc",
-     "text": "$f'(2) = 0$ and $f''(2) = -7$. At $x$ = 2, $f$ has…",
-     "options": [
-      "an inflection point",
-      "a local min",
-      "a local max"
-     ],
-     "answer": 2,
-     "explain": "Concave down at a flat spot: max.",
-     "id": "T12"
-    },
-    {
-     "type": "mc",
-     "text": "$f'(0) = 0$ and $f''(0) = 3$. At $x$ = 0, $f$ has…",
-     "options": [
-      "no extreme",
-      "a local max",
-      "a local min"
-     ],
-     "answer": 2,
-     "explain": "Concave up at a flat spot: min.",
-     "id": "T13"
-    },
-    {
-     "type": "mc",
-     "text": "$f'(1) = 0$ and $f''(1) = 0$. What does the second derivative test say?",
-     "options": [
-      "Local min",
-      "Inflection point",
-      "Nothing: it fails. Use the first derivative test.",
-      "Local max"
-     ],
-     "answer": 2,
-     "explain": "Examples: $x^3$ (neither), $x^4$ (min), $-x^4$ (max) all have this.",
-     "id": "T14"
-    },
-    {
+     "id": "H2",
      "type": "tf",
-     "text": "If $f'(c) = 0$, then $f$ has a local max or min at $c$.",
+     "text": "The graph of a function can cross its **horizontal** asymptote.",
+     "answer": true,
+     "hint": "A horizontal asymptote only describes the far left and far right.",
+     "explain": "$f(x) = frac{x}{x^2 + 1}$ has the asymptote $y = 0$ and crosses it at the origin."
+    },
+    {
+     "id": "H3",
+     "type": "tf",
+     "text": "The graph of a function can cross its **vertical** asymptote.",
      "answer": false,
-     "explain": "$x^3$ at 0: flat, but no max or min.",
-     "id": "T15"
+     "hint": "What is true about $f$ at that $x$?",
+     "explain": "The function is not defined there, so there is no point of the graph on that line."
     },
     {
-     "type": "tf",
-     "text": "If $f$ has a local max at $c$ and $f'(c)$ exists, then $f'(c) = 0$.",
-     "answer": true,
-     "explain": "That's Fermat's Theorem.",
-     "id": "T16"
-    },
-    {
-     "type": "tf",
-     "text": "If $f''(x) > 0$ on an interval, the graph is concave up there.",
-     "answer": true,
-     "explain": "Cup shape.",
-     "id": "T17"
-    },
-    {
-     "type": "tf",
-     "text": "A function can be increasing and concave down at the same time.",
-     "answer": true,
-     "explain": "Like $sqrt x$: rising, but leveling off.",
-     "id": "T18"
-    },
-    {
-     "type": "tf",
-     "text": "At an inflection point, $f'$ must be 0.",
-     "answer": false,
-     "explain": "$x^3 - 3x$ has an inflection at 0, where the slope is −3.",
-     "id": "T19"
-    },
-    {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = x^3 - 12x$.",
-     "answers": [
-      -2,
-      2
+     "id": "H4",
+     "type": "mc",
+     "text": "$f$ has a vertical asymptote at $x$ = 2. How should the sketch handle it?",
+     "options": [
+      "A dashed vertical line at $x$ = 2, with each side drawn as its own piece",
+      "One smooth curve passing through $x$ = 2",
+      "A dot at $(2, 0)$"
      ],
-     "var": "x",
-     "label": "$x$ =",
-     "explain": "$f'(x) = 3x^2 - 12 = 0$ at $x = ±2$.",
-     "id": "T20"
+     "answer": 0,
+     "hint": "The graph never touches that line.",
+     "explain": "Draw the asymptote first, then sketch the left piece and the right piece separately."
     },
     {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = x^4 - 8x^2$.",
-     "answers": [
-      -2,
-      0,
-      2
+     "id": "H5",
+     "type": "mc",
+     "text": "$f'$ changes from + to − at $x$ = 1, and $f(1) = 4$. What goes on the sketch?",
+     "options": [
+      "A hilltop at $(1, 4)$",
+      "A valley at $(1, 4)$",
+      "An inflection point at $(1, 4)$",
+      "An $x$-intercept at $x$ = 1"
      ],
-     "var": "x",
-     "label": "$x$ =",
-     "explain": "$f'(x) = 4x^3 - 16x = 4x(x - 2)(x + 2)$.",
-     "id": "T21"
+     "answer": 0,
+     "hint": "Rising, then falling.",
+     "explain": "Rising then falling is a local max, at the point $(1, 4)$."
     },
     {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = 2x^3 - 9x^2 + 12x$.",
-     "answers": [
-      1,
-      2
+     "id": "H6",
+     "type": "mc",
+     "text": "$f$ is undefined at $x$ = 0. On the sign chart for $f'$, that point…",
+     "options": [
+      "still splits the number line",
+      "is left off",
+      "ends the chart"
      ],
-     "var": "x",
-     "label": "$x$ =",
-     "explain": "$f'(x) = 6x^2 - 18x + 12 = 6(x - 1)(x - 2)$.",
-     "id": "T22"
-    },
-    {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = x^(2/3)$.",
-     "answers": [
-      0
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "explain": "$f'(x) = frac{2}{3x^(1/3)}$ is never 0 but does not exist at 0, where $f$ is defined: a corner (cusp) and a local min.",
-     "id": "T23"
-    },
-    {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = x + frac{4}{x}$.",
-     "answers": [
-      -2,
-      2
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "explain": "$f'(x) = 1 - frac{4}{x^2} = 0$ at ±2. ($x$ = 0 is not in the domain, so it is not a critical number.)",
-     "id": "T24"
-    },
-    {
-     "type": "interval",
-     "text": "$f'(x) = (x - 1)(x - 5)$. Where is $f$ decreasing?",
-     "answer": "(1,5)",
-     "label": "Decreasing on",
-     "explain": "$f'$ is negative between its roots.",
-     "id": "T25"
-    },
-    {
-     "type": "interval",
-     "text": "$f'(x) = x^2(x + 3)$. Where is $f$ increasing?",
-     "answer": [
-      "(-3,inf)",
-      "(-3,0)U(0,inf)"
-     ],
-     "label": "Increasing on",
-     "explain": "$x^2 ≥ 0$, so the sign is the sign of $x + 3$: positive for $x > -3$.",
-     "id": "T26"
-    },
-    {
-     "type": "interval",
-     "text": "$f''(x) = 12x^2 - 12$. Where is $f$ concave down?",
-     "answer": "(-1,1)",
-     "label": "Concave down on",
-     "explain": "$12(x^2 - 1) < 0$ when $-1 < x < 1$.",
-     "id": "T27"
-    },
-    {
-     "type": "interval",
-     "text": "$f''(x) = e^x(x + 2)$. Where is $f$ concave up?",
-     "answer": "(-2,inf)",
-     "label": "Concave up on",
-     "explain": "$e^x > 0$ always, so the sign is the sign of $x + 2$.",
-     "id": "T28"
-    },
-    {
-     "type": "crit",
-     "text": "$f''(x) = x(x - 4)$. Find the $x$-values of all inflection points.",
-     "answers": [
-      0,
-      4
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "explain": "$f''$ changes sign at 0 and 4.",
-     "id": "T29"
-    },
-    {
-     "type": "crit",
-     "text": "$f''(x) = (x - 1)^2$. Find the $x$-values of all inflection points.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "There are no inflection points",
-     "explain": "$(x - 1)^2 ≥ 0$ never changes sign.",
-     "id": "T30"
+     "answer": 0,
+     "hint": "Can the sign of $f'$ change across a vertical asymptote?",
+     "explain": "It is not a critical number, but $f'$ can change sign there, so it splits the chart."
     }
    ]
   },
-  "data": {
-   "title": "Find the data drill",
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "setSize": 8,
    "questions": [
-    {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = x^4 - 4x^3$.",
-     "answers": [
-      0,
-      3
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No critical numbers",
-     "explain": "$f'(x) = 4x^2(x - 3)$.",
-     "id": "D1"
-    },
     {
      "type": "crit",
      "text": "Find every $x$-intercept of $f(x) = x^4 - 4x^3$.",
@@ -890,41 +99,8 @@
      "label": "$x$ =",
      "noneText": "No x-intercepts",
      "explain": "Solve $f(x) = 0$.",
-     "id": "D2"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = x^4 - 4x^3$ increasing? (Open intervals.)",
-     "answer": [
-      "(3,inf)"
-     ],
-     "label": "Increasing on",
-     "noneText": "Never increasing",
-     "explain": "Where $f'(x) > 0$.",
-     "id": "D3"
-    },
-    {
-     "type": "crit",
-     "text": "Where does $f(x) = -x^3 + 3x^2$ have a local max?",
-     "answers": [
-      2
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No local max",
-     "explain": "Where $f'$ changes from + to −.",
-     "id": "D4"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = -x^3 + 3x^2$ concave down?",
-     "answer": [
-      "(1,inf)"
-     ],
-     "label": "Concave down on",
-     "noneText": "Never concave down",
-     "explain": "Where $f''(x) < 0$.",
-     "id": "D5"
+     "id": "D2",
+     "level": 1
     },
     {
      "type": "crit",
@@ -937,54 +113,8 @@
      "label": "$x$ =",
      "noneText": "No x-intercepts",
      "explain": "Solve $f(x) = 0$.",
-     "id": "D6"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{x^2 + 2x + 1}{x^2}$ decreasing? (Open intervals.)",
-     "answer": [
-      "(-inf,-1)U(0,inf)"
-     ],
-     "label": "Decreasing on",
-     "noneText": "Never decreasing",
-     "explain": "Where $f'(x) < 0$.",
-     "id": "D7"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{x^2 + 2x + 1}{x^2}$ concave up?",
-     "answer": [
-      "(-3/2,0)U(0,inf)",
-      "(-3/2,inf)"
-     ],
-     "label": "Concave up on",
-     "noneText": "Never concave up",
-     "explain": "Where $f''(x) > 0$.",
-     "id": "D8"
-    },
-    {
-     "type": "crit",
-     "text": "Find the $x$-value of every inflection point of $f(x) = frac{x^2 + 2x + 1}{x^2}$.",
-     "answers": [
-      -1.5
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No inflection points",
-     "explain": "Where $f''$ changes sign.",
-     "id": "D9"
-    },
-    {
-     "type": "crit",
-     "text": "Find every critical number of $g(x) = frac{x^2 + 4}{x^2 - 4}$.",
-     "answers": [
-      0
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No critical numbers",
-     "explain": "$f'(x) = -16x/((x - 2)^2(x + 2)^2)$.",
-     "id": "D10"
+     "id": "D6",
+     "level": 1
     },
     {
      "type": "crit",
@@ -996,19 +126,8 @@
      "label": "$y$ =",
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞.",
-     "id": "D11"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $g(x) = frac{x^2 + 4}{x^2 - 4}$ increasing? (Open intervals.)",
-     "answer": [
-      "(-inf,-2)U(-2,0)",
-      "(-inf,0)"
-     ],
-     "label": "Increasing on",
-     "noneText": "Never increasing",
-     "explain": "Where $f'(x) > 0$.",
-     "id": "D12"
+     "id": "D11",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1020,7 +139,8 @@
      "label": "$y$ =",
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞.",
-     "id": "D13"
+     "id": "D13",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1032,28 +152,8 @@
      "label": "$x$ =",
      "noneText": "No x-intercepts",
      "explain": "Solve $f(x) = 0$.",
-     "id": "D14"
-    },
-    {
-     "type": "crit",
-     "text": "Find every critical number of $f(x) = frac{x}{x - 1}$.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No critical numbers",
-     "explain": "$f'(x) = -1/(x - 1)^2$.",
-     "id": "D15"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{x}{x - 1}$ concave up?",
-     "answer": [
-      "(1,inf)"
-     ],
-     "label": "Concave up on",
-     "noneText": "Never concave up",
-     "explain": "Where $f''(x) > 0$.",
-     "id": "D16"
+     "id": "D14",
+     "level": 1
     },
     {
      "type": "interval",
@@ -1061,7 +161,8 @@
      "answer": "(-inf,1)U(1,inf)",
      "label": "Domain:",
      "explain": "Exclude where it is undefined.",
-     "id": "D17"
+     "id": "D17",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1071,52 +172,8 @@
      "label": "$y$ =",
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞. A slant asymptote is not horizontal.",
-     "id": "D18"
-    },
-    {
-     "type": "crit",
-     "text": "Find the $x$-value of every inflection point of $f(x) = frac{x^2}{x - 1}$.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No inflection points",
-     "explain": "Where $f''$ changes sign.",
-     "id": "D19"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{1}{x^2 - 1}$ concave down?",
-     "answer": [
-      "(-1,1)"
-     ],
-     "label": "Concave down on",
-     "noneText": "Never concave down",
-     "explain": "Where $f''(x) < 0$.",
-     "id": "D20"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{1}{x^2 - 1}$ increasing? (Open intervals.)",
-     "answer": [
-      "(-inf,-1)U(-1,0)",
-      "(-inf,0)"
-     ],
-     "label": "Increasing on",
-     "noneText": "Never increasing",
-     "explain": "Where $f'(x) > 0$.",
-     "id": "D21"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{1}{x^2 - 1}$ decreasing? (Open intervals.)",
-     "answer": [
-      "(0,1)U(1,inf)",
-      "(0,inf)"
-     ],
-     "label": "Decreasing on",
-     "noneText": "Never decreasing",
-     "explain": "Where $f'(x) < 0$.",
-     "id": "D22"
+     "id": "D18",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1128,18 +185,8 @@
      "label": "$x$ =",
      "noneText": "No vertical asymptotes",
      "explain": "Where the function blows up: $x$ = 0.",
-     "id": "D23"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = frac{x - 1}{x^2}$ decreasing? (Open intervals.)",
-     "answer": [
-      "(-inf,0)U(2,inf)"
-     ],
-     "label": "Decreasing on",
-     "noneText": "Never decreasing",
-     "explain": "Where $f'(x) < 0$.",
-     "id": "D24"
+     "id": "D23",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1151,7 +198,8 @@
      "label": "$x$ =",
      "noneText": "No x-intercepts",
      "explain": "Solve $f(x) = 0$.",
-     "id": "D25"
+     "id": "D25",
+     "level": 1
     },
     {
      "type": "interval",
@@ -1159,19 +207,8 @@
      "answer": "[-2,2]",
      "label": "Domain:",
      "explain": "Exclude where it is undefined.",
-     "id": "D26"
-    },
-    {
-     "type": "crit",
-     "text": "Where does $f(x) = x e^(-x)$ have a local max?",
-     "answers": [
-      1
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No local max",
-     "explain": "Where $f'$ changes from + to −.",
-     "id": "D27"
+     "id": "D26",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1183,18 +220,8 @@
      "label": "$y$ =",
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞.",
-     "id": "D28"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = x e^(-x)$ concave up?",
-     "answer": [
-      "(2,inf)"
-     ],
-     "label": "Concave up on",
-     "noneText": "Never concave up",
-     "explain": "Where $f''(x) > 0$.",
-     "id": "D29"
+     "id": "D28",
+     "level": 1
     },
     {
      "type": "interval",
@@ -1202,7 +229,8 @@
      "answer": "(0,inf)",
      "label": "Domain:",
      "explain": "Exclude where it is undefined.",
-     "id": "D30"
+     "id": "D30",
+     "level": 1
     },
     {
      "type": "crit",
@@ -1214,47 +242,9 @@
      "label": "$y$ =",
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞.",
-     "id": "D31"
+     "id": "D31",
+     "level": 1
     },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = ln(x^2 + 1)$ increasing? (Open intervals.)",
-     "answer": [
-      "(0,inf)"
-     ],
-     "label": "Increasing on",
-     "noneText": "Never increasing",
-     "explain": "Where $f'(x) > 0$.",
-     "id": "D32"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = ln(x^2 + 1)$ concave down?",
-     "answer": [
-      "(-inf,-1)U(1,inf)"
-     ],
-     "label": "Concave down on",
-     "noneText": "Never concave down",
-     "explain": "Where $f''(x) < 0$.",
-     "id": "D33"
-    },
-    {
-     "type": "interval",
-     "text": "Where is $f(x) = ln(x^2 + 1)$ decreasing? (Open intervals.)",
-     "answer": [
-      "(-inf,0)"
-     ],
-     "label": "Decreasing on",
-     "noneText": "Never decreasing",
-     "explain": "Where $f'(x) < 0$.",
-     "id": "D34"
-    }
-   ]
-  },
-  "sketch": {
-   "title": "Sketch from data drill",
-   "setSize": 3,
-   "questions": [
     {
      "type": "sketch",
      "text": "Sketch the graph of $f(x) = x^3 - 3x$ from its data.",
@@ -1301,7 +291,8 @@
        "Inflection point: $(0, 0)$"
       ]
      },
-     "id": "S1"
+     "id": "S1",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1360,7 +351,8 @@
       ]
      },
      "ystep": 2,
-     "id": "S2"
+     "id": "S2",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1415,7 +407,8 @@
       ]
      },
      "ystep": 10,
-     "id": "S3"
+     "id": "S3",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1468,7 +461,8 @@
        "Inflection point: $(1, 2)$"
       ]
      },
-     "id": "S4"
+     "id": "S4",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1528,7 +522,8 @@
        "Inflection points: $(≈−0.58, −5/9)$, $(≈0.58, −5/9)$"
       ]
      },
-     "id": "S5"
+     "id": "S5",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1577,7 +572,8 @@
       ]
      },
      "ystep": 2,
-     "id": "S6"
+     "id": "S6",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1631,7 +627,8 @@
       ]
      },
      "ystep": 10,
-     "id": "S7"
+     "id": "S7",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1679,7 +676,8 @@
        "Inflection point: $(−3/2, 1/9)$"
       ]
      },
-     "id": "S8"
+     "id": "S8",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1721,7 +719,8 @@
        "Inflection point: none"
       ]
      },
-     "id": "S9"
+     "id": "S9",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1785,7 +784,8 @@
       ]
      },
      "ystep": 0.5,
-     "id": "S10"
+     "id": "S10",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1824,7 +824,8 @@
        "Inflection point: none"
       ]
      },
-     "id": "S11"
+     "id": "S11",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1871,7 +872,8 @@
       ]
      },
      "ystep": 2,
-     "id": "S12"
+     "id": "S12",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1913,7 +915,8 @@
        "Inflection point: none"
       ]
      },
-     "id": "S13"
+     "id": "S13",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -1966,7 +969,8 @@
        "Inflection point: $(3, 2/9)$"
       ]
      },
-     "id": "S14"
+     "id": "S14",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2024,7 +1028,8 @@
        "Inflection point: $(0, 0)$"
       ]
      },
-     "id": "S15"
+     "id": "S15",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2075,7 +1080,8 @@
       ]
      },
      "ystep": 0.5,
-     "id": "S16"
+     "id": "S16",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2117,7 +1123,8 @@
      },
      "xstep": 0.5,
      "ystep": 0.5,
-     "id": "S17"
+     "id": "S17",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2169,7 +1176,8 @@
       ]
      },
      "ystep": 0.5,
-     "id": "S18"
+     "id": "S18",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2217,7 +1225,8 @@
        "Inflection points: $(−1, ≈0.69)$, $(1, ≈0.69)$"
       ]
      },
-     "id": "S19"
+     "id": "S19",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2276,7 +1285,8 @@
       ]
      },
      "xstep": 1,
-     "id": "S20"
+     "id": "S20",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2359,7 +1369,8 @@
       ]
      },
      "ystep": 5,
-     "id": "S21"
+     "id": "S21",
+     "level": 2
     },
     {
      "type": "sketch",
@@ -2414,14 +1425,9 @@
        "Inflection point: $(0, 0)$"
       ]
      },
-     "id": "S22"
-    }
-   ]
-  },
-  "full": {
-   "title": "Whole sketch drill",
-   "setSize": 2,
-   "questions": [
+     "id": "S22",
+     "level": 2
+    },
     {
      "type": "steps",
      "text": "Sketch $f(x) = x^3 - 3x^2$ from scratch: find the data, then draw.",
@@ -2592,7 +1598,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W1"
+     "id": "W1",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2766,7 +1773,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W2"
+     "id": "W2",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2949,7 +1957,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W3"
+     "id": "W3",
+     "level": 3
     },
     {
      "type": "steps",
@@ -3152,7 +2161,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W4"
+     "id": "W4",
+     "level": 3
     },
     {
      "type": "steps",
@@ -3329,7 +2339,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W5"
+     "id": "W5",
+     "level": 3
     },
     {
      "type": "steps",
@@ -3511,7 +2522,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W6"
+     "id": "W6",
+     "level": 3
     },
     {
      "type": "steps",
@@ -3694,7 +2706,8 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W7"
+     "id": "W7",
+     "level": 3
     },
     {
      "type": "steps",
@@ -3871,9 +2884,165 @@
       }
      ],
      "title": "The whole checklist",
-     "id": "W8"
+     "id": "W8",
+     "level": 3
     }
    ]
   }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "id": "L0",
+    "type": "match",
+    "text": "A sketch is built from two signs. Match each pair of signs with the shape of the graph there.",
+    "pairs": [
+     [
+      "$f' > 0$, $f'' > 0$",
+      "Rising, bending up"
+     ],
+     [
+      "$f' > 0$, $f'' < 0$",
+      "Rising, bending down"
+     ],
+     [
+      "$f' < 0$, $f'' > 0$",
+      "Falling, bending up"
+     ],
+     [
+      "$f' < 0$, $f'' < 0$",
+      "Falling, bending down"
+     ]
+    ],
+    "hint": "$f'$ says up or down. $f''$ says cup or frown.",
+    "explain": "The first derivative gives the direction and the second gives the bend."
+   },
+   {
+    "type": "order",
+    "text": "Put the curve-sketching checklist in order.",
+    "items": [
+     "Domain",
+     "Intercepts",
+     "Vertical asymptotes",
+     "Horizontal (or slant) asymptotes",
+     "Increasing / decreasing",
+     "Local max and min",
+     "Concavity and inflection points",
+     "Sketch"
+    ],
+    "explain": "Start with where the function lives and finish with the drawing. The review stops next to this one cover the first four.",
+    "hint": "Start with where the function lives; sketch last.",
+    "id": "L16"
+   },
+   {
+    "type": "sketch",
+    "text": "Put it all together. Here is the data for $f(x) = x^3 - 6x^2 + 9x + 1$. Place it on the graph, mark the regions, then sketch.",
+    "fn": "1+x^3-6*x^2+9*x",
+    "window": [
+     -1,
+     5,
+     -4,
+     8
+    ],
+    "data": {
+     "points": [
+      [
+       1.0,
+       5.0,
+       "Local max"
+      ],
+      [
+       3.0,
+       1.0,
+       "Local min"
+      ],
+      [
+       2.0,
+       3.0,
+       "Inflection point"
+      ],
+      [
+       -0.1038,
+       -0.0,
+       "x-intercept"
+      ],
+      [
+       0.0,
+       1.0,
+       "y-intercept"
+      ]
+     ],
+     "crit": [
+      1.0,
+      3.0
+     ],
+     "infl": [
+      2.0
+     ],
+     "va": [],
+     "ha": [],
+     "lines": [
+      "Domain: all real numbers",
+      "$x$-intercepts: $≈−0.10$; $y$-intercept: $1$",
+      "Increasing on $(-∞, 1) ∪ (3, ∞)$; decreasing on $(1, 3)$",
+      "Local max: $(1, 5)$; local min: $(3, 1)$",
+      "Concave up on $(2, ∞)$; concave down on $(-∞, 2)$",
+      "Inflection point: $(2, 3)$"
+     ]
+    },
+    "ystep": 2,
+    "title": "Your first sketch",
+    "id": "L17"
+   },
+   {
+    "type": "sketch",
+    "text": "One with asymptotes: $f(x) = frac{x^2 + 2x + 1}{x^2}$. Place the data, mark the regions, and sketch. Draw each piece as its own stroke.",
+    "fn": "(1+x^2+2*x)/x^2",
+    "window": [
+     -5,
+     5,
+     -1,
+     5
+    ],
+    "data": {
+     "points": [
+      [
+       -1.0,
+       0.0,
+       "Local min"
+      ],
+      [
+       -1.5,
+       0.1111,
+       "Inflection point"
+      ]
+     ],
+     "crit": [
+      -1.0
+     ],
+     "infl": [
+      -1.5
+     ],
+     "va": [
+      0.0
+     ],
+     "ha": [
+      1.0
+     ],
+     "lines": [
+      "Domain: $(-∞, 0) ∪ (0, ∞)$",
+      "$x$-intercepts: $−1$; $y$-intercept: none",
+      "Vertical asymptote: $x$ = 0",
+      "Horizontal asymptote: $y$ = 1",
+      "Increasing on $(-1, 0)$; decreasing on $(-∞, -1) ∪ (0, ∞)$",
+      "Local max: none; local min: $(−1, 0)$",
+      "Concave up on $(-3/2, ∞)$; concave down on $(-∞, -3/2)$",
+      "Inflection point: $(−3/2, 1/9)$"
+     ]
+    },
+    "title": "A sketch with asymptotes",
+    "id": "L18"
+   }
+  ]
  }
 }

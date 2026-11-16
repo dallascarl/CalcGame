@@ -1,0 +1,1279 @@
+{
+ "id": "concavity",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
+ "title": "Concavity and the Second Derivative Test",
+ "subtitle": "How a graph bends, where the bend changes, and a second way to sort critical numbers.",
+ "version": 2,
+ "graphs": {
+  "c1": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x-1",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  },
+  "c2": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x^2-4",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "type": "tf",
+     "text": "If $f''(c) = 0$, then $c$ is an inflection point.",
+     "answer": false,
+     "explain": "$x^4$ has $f''(0) = 0$ but is concave up on both sides. The concavity must actually **change**.",
+     "hint": "Try $f(x) = x^4$ at 0.",
+     "id": "L13"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(2) = 0$ and $f''(2) = -7$. At $x$ = 2, $f$ has…",
+     "options": [
+      "an inflection point",
+      "a local min",
+      "a local max"
+     ],
+     "answer": 2,
+     "explain": "Concave down at a flat spot: max.",
+     "id": "T12"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(0) = 0$ and $f''(0) = 3$. At $x$ = 0, $f$ has…",
+     "options": [
+      "no extreme",
+      "a local max",
+      "a local min"
+     ],
+     "answer": 2,
+     "explain": "Concave up at a flat spot: min.",
+     "id": "T13"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(1) = 0$ and $f''(1) = 0$. What does the second derivative test say?",
+     "options": [
+      "Local min",
+      "Inflection point",
+      "Nothing: it fails. Use the first derivative test.",
+      "Local max"
+     ],
+     "answer": 2,
+     "explain": "Examples: $x^3$ (neither), $x^4$ (min), $-x^4$ (max) all have this.",
+     "id": "T14"
+    },
+    {
+     "type": "tf",
+     "text": "If $f''(x) > 0$ on an interval, the graph is concave up there.",
+     "answer": true,
+     "explain": "Cup shape.",
+     "id": "T17"
+    },
+    {
+     "type": "tf",
+     "text": "A function can be increasing and concave down at the same time.",
+     "answer": true,
+     "explain": "Like $sqrt x$: rising, but leveling off.",
+     "id": "T18"
+    },
+    {
+     "type": "tf",
+     "text": "At an inflection point, $f'$ must be 0.",
+     "answer": false,
+     "explain": "$x^3 - 3x$ has an inflection at 0, where the slope is −3.",
+     "id": "T19"
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f''$. Where is $f$ concave up?",
+     "options": [
+      "$(1, ∞)$",
+      "$(-∞, 1)$",
+      "Everywhere",
+      "$(0, ∞)$"
+     ],
+     "answer": 0,
+     "explain": "$f'' > 0$ when the line is above the axis.",
+     "graph": "c1",
+     "id": "T7",
+     "level": 1
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f''$. How many inflection points does $f$ have?",
+     "options": [
+      "0",
+      "2",
+      "1",
+      "4"
+     ],
+     "answer": 1,
+     "explain": "$f''$ changes sign at −2 and 2.",
+     "graph": "c2",
+     "id": "T8",
+     "level": 1
+    },
+    {
+     "type": "interval",
+     "text": "$f''(x) = 12x^2 - 12$. Where is $f$ concave down?",
+     "answer": "(-1,1)",
+     "label": "Concave down on",
+     "explain": "$12(x^2 - 1) < 0$ when $-1 < x < 1$.",
+     "id": "T27",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "$f''(x) = e^x(x + 2)$. Where is $f$ concave up?",
+     "answer": "(-2,inf)",
+     "label": "Concave up on",
+     "explain": "$e^x > 0$ always, so the sign is the sign of $x + 2$.",
+     "id": "T28",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "$f''(x) = x(x - 4)$. Find the $x$-values of all inflection points.",
+     "answers": [
+      0,
+      4
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f''$ changes sign at 0 and 4.",
+     "id": "T29",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "$f''(x) = (x - 1)^2$. Find the $x$-values of all inflection points.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "There are no inflection points",
+     "explain": "$(x - 1)^2 ≥ 0$ never changes sign.",
+     "id": "T30",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = -x^3 + 3x^2$ concave down?",
+     "answer": [
+      "(1,inf)"
+     ],
+     "label": "Concave down on",
+     "noneText": "Never concave down",
+     "explain": "Where $f''(x) < 0$.",
+     "id": "D5",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = x e^(-x)$ concave up?",
+     "answer": [
+      "(2,inf)"
+     ],
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "explain": "Where $f''(x) > 0$.",
+     "id": "D29",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = ln(x^2 + 1)$ concave down?",
+     "answer": [
+      "(-inf,-1)U(1,inf)"
+     ],
+     "label": "Concave down on",
+     "noneText": "Never concave down",
+     "explain": "Where $f''(x) < 0$.",
+     "id": "D33",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{x^2 + 2x + 1}{x^2}$ concave up?",
+     "answer": [
+      "(-3/2,0)U(0,inf)",
+      "(-3/2,inf)"
+     ],
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "explain": "Where $f''(x) > 0$.",
+     "id": "D8",
+     "level": 3
+    },
+    {
+     "type": "crit",
+     "text": "Find the $x$-value of every inflection point of $f(x) = frac{x^2 + 2x + 1}{x^2}$.",
+     "answers": [
+      -1.5
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No inflection points",
+     "explain": "Where $f''$ changes sign.",
+     "id": "D9",
+     "level": 3
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{x}{x - 1}$ concave up?",
+     "answer": [
+      "(1,inf)"
+     ],
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "explain": "Where $f''(x) > 0$.",
+     "id": "D16",
+     "level": 3
+    },
+    {
+     "type": "crit",
+     "text": "Find the $x$-value of every inflection point of $f(x) = frac{x^2}{x - 1}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No inflection points",
+     "explain": "Where $f''$ changes sign.",
+     "id": "D19",
+     "level": 3
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{1}{x^2 - 1}$ concave down?",
+     "answer": [
+      "(-1,1)"
+     ],
+     "label": "Concave down on",
+     "noneText": "Never concave down",
+     "explain": "Where $f''(x) < 0$.",
+     "id": "D20",
+     "level": 3
+    },
+    {
+     "id": "G1",
+     "type": "mc",
+     "text": "$f'(1) = 0$ and $f''(1) = −4$. At $x$ = 1, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "A flat spot on a frown is a hilltop: local max."
+    },
+    {
+     "id": "G2",
+     "type": "mc",
+     "text": "$f'(3) = 0$ and $f''(3) = 5$. At $x$ = 3, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "A flat spot in a cup is a valley: local min."
+    },
+    {
+     "id": "G3",
+     "type": "mc",
+     "text": "$f'(-2) = 0$ and $f''(-2) = 12$. At $x$ = −2, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "A flat spot in a cup is a valley: local min."
+    },
+    {
+     "id": "G4",
+     "type": "mc",
+     "text": "$f'(0) = 0$ and $f''(0) = −9$. At $x$ = 0, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "A flat spot on a frown is a hilltop: local max."
+    },
+    {
+     "id": "G5",
+     "type": "mc",
+     "text": "$f'(4) = 0$ and $f''(4) = 0$. At $x$ = 4, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "When $f''(c) = 0$ the test says nothing. Use the first derivative test."
+    },
+    {
+     "id": "G6",
+     "type": "mc",
+     "text": "$f'(-1) = 0$ and $f''(-1) = 2$. At $x$ = −1, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "A flat spot in a cup is a valley: local min."
+    },
+    {
+     "id": "G7",
+     "type": "mc",
+     "text": "$f'(5) = 0$ and $f''(5) = −1$. At $x$ = 5, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "A flat spot on a frown is a hilltop: local max."
+    },
+    {
+     "id": "G8",
+     "type": "mc",
+     "text": "$f'(2) = 0$ and $f''(2) = 0$. At $x$ = 2, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "no answer from this test"
+     ],
+     "answer": 2,
+     "fixed": true,
+     "level": 1,
+     "hint": "Positive second derivative: a cup. Negative: a frown.",
+     "explain": "When $f''(c) = 0$ the test says nothing. Use the first derivative test."
+    },
+    {
+     "id": "G9",
+     "type": "interval",
+     "text": "$$f(x) = x^3 - 3x^2 + 3x$$\nWhere is $f$ concave up?",
+     "answer": "(1,inf)",
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "level": 2,
+     "hint": "Find $f''(x)$ and see where it is positive.",
+     "explain": "$f''(x) = 6x - 6$, which is positive for $x > 1$."
+    },
+    {
+     "id": "G10",
+     "type": "interval",
+     "text": "$$f(x) = x^3 + 6x^2 + 5x$$\nWhere is $f$ concave up?",
+     "answer": "(-2,inf)",
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "level": 2,
+     "hint": "Find $f''(x)$ and see where it is positive.",
+     "explain": "$f''(x) = 6x + 12$, which is positive for $x > −2$."
+    },
+    {
+     "id": "G11",
+     "type": "interval",
+     "text": "$$f(x) = x^3 - 6x^2 - 4x$$\nWhere is $f$ concave up?",
+     "answer": "(2,inf)",
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "level": 2,
+     "hint": "Find $f''(x)$ and see where it is positive.",
+     "explain": "$f''(x) = 6x - 12$, which is positive for $x > 2$."
+    },
+    {
+     "id": "G12",
+     "type": "interval",
+     "text": "$$f(x) = x^3 + 3x^2$$\nWhere is $f$ concave up?",
+     "answer": "(-1,inf)",
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "level": 2,
+     "hint": "Find $f''(x)$ and see where it is positive.",
+     "explain": "$f''(x) = 6x + 6$, which is positive for $x > −1$."
+    },
+    {
+     "id": "G13",
+     "type": "interval",
+     "text": "$$f(x) = x^3 - 9x^2 + 2x$$\nWhere is $f$ concave up?",
+     "answer": "(3,inf)",
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "level": 2,
+     "hint": "Find $f''(x)$ and see where it is positive.",
+     "explain": "$f''(x) = 6x - 18$, which is positive for $x > 3$."
+    },
+    {
+     "id": "G14",
+     "type": "interval",
+     "text": "$$f(x) = x^3 + 9x^2 - 6x$$\nWhere is $f$ concave up?",
+     "answer": "(-3,inf)",
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "level": 2,
+     "hint": "Find $f''(x)$ and see where it is positive.",
+     "explain": "$f''(x) = 6x + 18$, which is positive for $x > −3$."
+    },
+    {
+     "id": "G15",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 - 4x^3$$",
+     "steps": [
+      {
+       "id": "G15.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2-24*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2-24·x$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 - 24x$"
+      },
+      {
+       "id": "G15.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(0,2)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x - 0)(x - 2)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G15.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        0,
+        2
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G16",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 - 6x^2$$",
+     "steps": [
+      {
+       "id": "G16.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2-12",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2-12$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 - 12$"
+      },
+      {
+       "id": "G16.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(-1,1)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x + 1)(x - 1)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G16.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        -1,
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G17",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 - 8x^3 + 18x^2$$",
+     "steps": [
+      {
+       "id": "G17.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2-48*x+36",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2-48·x+36$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 - 48x + 36$"
+      },
+      {
+       "id": "G17.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(1,3)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x - 1)(x - 3)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G17.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        1,
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G18",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 + 4x^3$$",
+     "steps": [
+      {
+       "id": "G18.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2+24*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2+24·x$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 + 24x$"
+      },
+      {
+       "id": "G18.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(-2,0)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x + 2)(x - 0)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G18.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        -2,
+        0
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G19",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 + 4x^3 - 18x^2$$",
+     "steps": [
+      {
+       "id": "G19.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2+24*x-36",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2+24·x-36$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 + 24x - 36$"
+      },
+      {
+       "id": "G19.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(-3,1)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x + 3)(x - 1)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G19.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        -3,
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G20",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 - 8x^3$$",
+     "steps": [
+      {
+       "id": "G20.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2-48*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2-48·x$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 - 48x$"
+      },
+      {
+       "id": "G20.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(0,4)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x - 0)(x - 4)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G20.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        0,
+        4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G21",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 - 2x^3 - 12x^2$$",
+     "steps": [
+      {
+       "id": "G21.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2-12*x-24",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2-12·x-24$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 - 12x - 24$"
+      },
+      {
+       "id": "G21.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(-1,2)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x + 1)(x - 2)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G21.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        -1,
+        2
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G22",
+     "type": "steps",
+     "title": "Concavity",
+     "text": "Find where this graph bends each way.\n$$f(x) = x^4 - 6x^3 + 12x^2$$",
+     "steps": [
+      {
+       "id": "G22.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x^2-36*x+24",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x^2-36·x+24$",
+       "hint": "Differentiate twice.",
+       "work": "$f''(x) = 12x^2 - 36x + 24$"
+      },
+      {
+       "id": "G22.2",
+       "type": "interval",
+       "text": "Where is $f$ concave **down**?",
+       "answer": "(1,2)",
+       "label": "Concave down on",
+       "noneText": "Never concave down",
+       "hint": "$f''(x) = 12(x - 1)(x - 2)$. Where is it negative?",
+       "explain": "$f''$ is negative between its two zeros."
+      },
+      {
+       "id": "G22.3",
+       "type": "crit",
+       "text": "Find the $x$-value of every inflection point.",
+       "answers": [
+        1,
+        2
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No inflection points",
+       "hint": "Where does the concavity change?",
+       "explain": "$f''$ changes sign at both zeros, so both are inflection points."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G23",
+     "type": "steps",
+     "title": "Second derivative test",
+     "text": "Use the second derivative test on\n$$f(x) = 2x^3 - 6x^2 - 18x$$\nThe critical numbers are $x$ = −1 and $x$ = 3.",
+     "steps": [
+      {
+       "id": "G23.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x-12",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x-12$",
+       "hint": "$f'(x) = 6x^2 - 12x - 18$.",
+       "work": "$f''(x) = 12x - 12$"
+      },
+      {
+       "id": "G23.2",
+       "type": "mc",
+       "text": "$f''(-1)$ = −24. So $x$ = −1 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 0,
+       "fixed": true,
+       "hint": "Negative means frown.",
+       "explain": "Concave down at a flat spot: local max."
+      },
+      {
+       "id": "G23.3",
+       "type": "mc",
+       "text": "$f''(3)$ = 24. So $x$ = 3 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 1,
+       "fixed": true,
+       "hint": "Positive means cup.",
+       "explain": "Concave up at a flat spot: local min."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G24",
+     "type": "steps",
+     "title": "Second derivative test",
+     "text": "Use the second derivative test on\n$$f(x) = 2x^3 - 6x^2$$\nThe critical numbers are $x$ = 0 and $x$ = 2.",
+     "steps": [
+      {
+       "id": "G24.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x-12",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x-12$",
+       "hint": "$f'(x) = 6x^2 - 12x$.",
+       "work": "$f''(x) = 12x - 12$"
+      },
+      {
+       "id": "G24.2",
+       "type": "mc",
+       "text": "$f''(0)$ = −12. So $x$ = 0 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 0,
+       "fixed": true,
+       "hint": "Negative means frown.",
+       "explain": "Concave down at a flat spot: local max."
+      },
+      {
+       "id": "G24.3",
+       "type": "mc",
+       "text": "$f''(2)$ = 12. So $x$ = 2 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 1,
+       "fixed": true,
+       "hint": "Positive means cup.",
+       "explain": "Concave up at a flat spot: local min."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G25",
+     "type": "steps",
+     "title": "Second derivative test",
+     "text": "Use the second derivative test on\n$$f(x) = 2x^3 - 24x$$\nThe critical numbers are $x$ = −2 and $x$ = 2.",
+     "steps": [
+      {
+       "id": "G25.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x$",
+       "hint": "$f'(x) = 6x^2 - 24$.",
+       "work": "$f''(x) = 12x$"
+      },
+      {
+       "id": "G25.2",
+       "type": "mc",
+       "text": "$f''(-2)$ = −24. So $x$ = −2 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 0,
+       "fixed": true,
+       "hint": "Negative means frown.",
+       "explain": "Concave down at a flat spot: local max."
+      },
+      {
+       "id": "G25.3",
+       "type": "mc",
+       "text": "$f''(2)$ = 24. So $x$ = 2 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 1,
+       "fixed": true,
+       "hint": "Positive means cup.",
+       "explain": "Concave up at a flat spot: local min."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G26",
+     "type": "steps",
+     "title": "Second derivative test",
+     "text": "Use the second derivative test on\n$$f(x) = 2x^3 - 18x^2 + 30x$$\nThe critical numbers are $x$ = 1 and $x$ = 5.",
+     "steps": [
+      {
+       "id": "G26.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x-36",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x-36$",
+       "hint": "$f'(x) = 6x^2 - 36x + 30$.",
+       "work": "$f''(x) = 12x - 36$"
+      },
+      {
+       "id": "G26.2",
+       "type": "mc",
+       "text": "$f''(1)$ = −24. So $x$ = 1 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 0,
+       "fixed": true,
+       "hint": "Negative means frown.",
+       "explain": "Concave down at a flat spot: local max."
+      },
+      {
+       "id": "G26.3",
+       "type": "mc",
+       "text": "$f''(5)$ = 24. So $x$ = 5 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 1,
+       "fixed": true,
+       "hint": "Positive means cup.",
+       "explain": "Concave up at a flat spot: local min."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G27",
+     "type": "steps",
+     "title": "Second derivative test",
+     "text": "Use the second derivative test on\n$$f(x) = 2x^3 + 6x^2 - 18x$$\nThe critical numbers are $x$ = −3 and $x$ = 1.",
+     "steps": [
+      {
+       "id": "G27.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x+12",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x+12$",
+       "hint": "$f'(x) = 6x^2 + 12x - 18$.",
+       "work": "$f''(x) = 12x + 12$"
+      },
+      {
+       "id": "G27.2",
+       "type": "mc",
+       "text": "$f''(-3)$ = −24. So $x$ = −3 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 0,
+       "fixed": true,
+       "hint": "Negative means frown.",
+       "explain": "Concave down at a flat spot: local max."
+      },
+      {
+       "id": "G27.3",
+       "type": "mc",
+       "text": "$f''(1)$ = 24. So $x$ = 1 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 1,
+       "fixed": true,
+       "hint": "Positive means cup.",
+       "explain": "Concave up at a flat spot: local min."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G28",
+     "type": "steps",
+     "title": "Second derivative test",
+     "text": "Use the second derivative test on\n$$f(x) = 2x^3 + 18x^2 + 48x$$\nThe critical numbers are $x$ = −4 and $x$ = −2.",
+     "steps": [
+      {
+       "id": "G28.1",
+       "type": "expr",
+       "text": "Find $f''(x)$.",
+       "answer": "12*x+36",
+       "vars": [
+        "x"
+       ],
+       "label": "$f''(x)$ =",
+       "show": "$12·x+36$",
+       "hint": "$f'(x) = 6x^2 + 36x + 48$.",
+       "work": "$f''(x) = 12x + 36$"
+      },
+      {
+       "id": "G28.2",
+       "type": "mc",
+       "text": "$f''(-4)$ = −12. So $x$ = −4 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 0,
+       "fixed": true,
+       "hint": "Negative means frown.",
+       "explain": "Concave down at a flat spot: local max."
+      },
+      {
+       "id": "G28.3",
+       "type": "mc",
+       "text": "$f''(-2)$ = 12. So $x$ = −2 is a…",
+       "options": [
+        "local max",
+        "local min",
+        "test fails"
+       ],
+       "answer": 1,
+       "fixed": true,
+       "hint": "Positive means cup.",
+       "explain": "Concave up at a flat spot: local min."
+      }
+     ],
+     "level": 3
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "type": "curvex",
+    "mode": "concave",
+    "fn": "x^3-6*x^2+9*x+30",
+    "window": [
+     -1,
+     5,
+     20,
+     40
+    ],
+    "ystep": 5,
+    "title": "What the bend tells you",
+    "text": "Now slide along $f(x) = x^3 - 6x^2 + 9x + 30$. The curve is **gold** where it bends up like a cup and **teal** where it bends down like a frown. Visit both.",
+    "regions": [
+     [
+      -1,
+      2,
+      "left of 2"
+     ],
+     [
+      2,
+      5,
+      "right of 2"
+     ]
+    ],
+    "start": -0.5,
+    "after": "Concave down on the left, concave up on the right. The switch at $x$ = 2 is an **inflection point**.",
+    "id": "L9"
+   },
+   {
+    "type": "bank",
+    "text": "If $f''(x) > 0$, the graph is concave ___ (like a cup). If $f''(x) < 0$, it is concave ___ (like a frown).",
+    "blanks": [
+     "up",
+     "down"
+    ],
+    "distractors": [
+     "left",
+     "right",
+     "increasing"
+    ],
+    "explain": "The second derivative tells you which way the graph bends.",
+    "hint": "Positive second derivative: slopes are increasing.",
+    "id": "L10"
+   },
+   {
+    "type": "interval",
+    "text": "For $f(x) = x^3 - 6x^2 + 9x + 30$, $f''(x) = 6x - 12$. Where is $f$ concave up?",
+    "answer": "(2,inf)",
+    "label": "Concave up on",
+    "explain": "$6x - 12 > 0$ when $x > 2$.",
+    "hint": "Solve $6x - 12 > 0$.",
+    "id": "L11"
+   },
+   {
+    "type": "mc",
+    "text": "An **inflection point** is where…",
+    "options": [
+     "$f'(x) = 0$",
+     "$f$ has a max",
+     "the graph crosses the $x$-axis",
+     "the concavity changes"
+    ],
+    "answer": 3,
+    "explain": "Where the graph switches between cup and frown.",
+    "hint": "Think gold switching to teal.",
+    "id": "L12"
+   },
+   {
+    "type": "match",
+    "text": "**The Second Derivative Test.** Suppose $f'(c) = 0$. Match each case.",
+    "pairs": [
+     [
+      "$f''(c) < 0$",
+      "local max (frown at the top)"
+     ],
+     [
+      "$f''(c) > 0$",
+      "local min (cup at the bottom)"
+     ],
+     [
+      "$f''(c) = 0$",
+      "the test fails: use the first derivative test"
+     ]
+    ],
+    "explain": "Concave down at a flat spot is a max; concave up is a min.",
+    "hint": "A frown has a hilltop.",
+    "id": "L14"
+   },
+   {
+    "type": "steps",
+    "text": "Use the second derivative test on $f(x) = x^3 - frac{3}{2}x^2 - 18x$. The critical numbers are $c$ = 3 and $c$ = −2.",
+    "steps": [
+     {
+      "type": "expr",
+      "text": "Find $f''(x)$.",
+      "answer": "6*x-3",
+      "vars": [
+       "x"
+      ],
+      "label": "$f''(x)$ =",
+      "explain": "$f''(x) = 6x - 3$.",
+      "hint": "$f'(x) = 3x^2 - 3x - 18$."
+     },
+     {
+      "type": "mc",
+      "text": "$f''(3)$ = 15. So $x$ = 3 is a…",
+      "options": [
+       "test fails",
+       "local min",
+       "local max"
+      ],
+      "answer": 1,
+      "explain": "Concave up at a flat spot: local min.",
+      "hint": "Positive means cup."
+     },
+     {
+      "type": "mc",
+      "text": "$f''(-2)$ = −15. So $x$ = −2 is a…",
+      "options": [
+       "local max",
+       "test fails",
+       "local min"
+      ],
+      "answer": 0,
+      "explain": "Concave down at a flat spot: local max.",
+      "hint": "Negative means frown."
+     }
+    ],
+    "title": "Try it out",
+    "id": "L15"
+   }
+  ]
+ }
+}

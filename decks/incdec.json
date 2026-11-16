@@ -1,0 +1,1490 @@
+{
+ "id": "incdec",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
+ "title": "Increasing, Decreasing and the First Derivative Test",
+ "subtitle": "What the sign of f′ says about f, and how to find local highs and lows with it.",
+ "version": 2,
+ "graphs": {
+  "p1": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "(x+1)*(x-2)",
+     "from": -4,
+     "to": 4
+    }
+   ],
+   "xstep": 1
+  },
+  "p2": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "4-x^2",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  },
+  "p3": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "x^2*(x-2)",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  },
+  "p4": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "-(x+3)*(x-1)",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  },
+  "p5": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "(x+2)*(x-1)*(x-3)/2",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  }
+ },
+ "drills": {
+  "theory": {
+   "title": "Theory",
+   "mode": "all",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$ (not $f$). What happens to $f$ at $x$ = 2?",
+     "options": [
+      "$f$ has a local max",
+      "$f$ has an inflection point",
+      "$f$ has a local min"
+     ],
+     "answer": 2,
+     "explain": "Decreasing, then increasing: the bottom of a valley.",
+     "hint": "$f'$ goes from negative to positive at 2.",
+     "graph": "p1",
+     "id": "L4"
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. Where does $f$ have a local max?",
+     "options": [
+      "$x$ = −2",
+      "$x$ = 0",
+      "Nowhere",
+      "$x$ = 2"
+     ],
+     "answer": 3,
+     "explain": "$f'$ goes from + to − at 2.",
+     "graph": "p2",
+     "id": "T2"
+    },
+    {
+     "type": "mc",
+     "text": "$f'$ changes from + to − at $x$ = 4. So $f$ has…",
+     "options": [
+      "an inflection point at 4",
+      "a local min at 4",
+      "a local max at 4"
+     ],
+     "answer": 2,
+     "explain": "Up, then down: a hilltop.",
+     "id": "T9"
+    },
+    {
+     "type": "mc",
+     "text": "$f'$ changes from − to + at $x$ = −1. So $f$ has…",
+     "options": [
+      "a local min at −1",
+      "a local max at −1",
+      "no extreme at −1"
+     ],
+     "answer": 0,
+     "explain": "Down, then up: a valley.",
+     "id": "T10"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(5) = 0$ and $f'$ is negative on both sides of 5. So at 5, $f$ has…",
+     "options": [
+      "a local min",
+      "no local extreme",
+      "a local max"
+     ],
+     "answer": 1,
+     "explain": "No sign change: just a flat spot on the way down.",
+     "id": "T11"
+    },
+    {
+     "type": "tf",
+     "text": "If $f'(c) = 0$, then $f$ has a local max or min at $c$.",
+     "answer": false,
+     "explain": "$x^3$ at 0: flat, but no max or min.",
+     "id": "T15"
+    },
+    {
+     "type": "tf",
+     "text": "If $f$ has a local max at $c$ and $f'(c)$ exists, then $f'(c) = 0$.",
+     "answer": true,
+     "explain": "That's Fermat's Theorem.",
+     "id": "T16"
+    }
+   ]
+  },
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. Where is $f$ increasing?",
+     "options": [
+      "$(-∞, -2) ∪ (2, ∞)$",
+      "$(-∞, 4)$",
+      "$(-2, 2)$",
+      "$(0, ∞)$"
+     ],
+     "answer": 2,
+     "explain": "$f'$ is above the axis between −2 and 2.",
+     "graph": "p2",
+     "id": "T1",
+     "level": 1
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. At $x$ = 0, $f$ has…",
+     "options": [
+      "a local max",
+      "a local min",
+      "neither a max nor a min"
+     ],
+     "answer": 2,
+     "explain": "$f'$ touches 0 at 0 but stays negative on both sides: no sign change.",
+     "graph": "p3",
+     "id": "T3",
+     "level": 1
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. Where does $f$ have a local min?",
+     "options": [
+      "$x$ = 2",
+      "$x$ = 0",
+      "$x$ = 0 and $x$ = 2",
+      "Nowhere"
+     ],
+     "answer": 0,
+     "explain": "$f'$ changes from − to + at 2.",
+     "graph": "p3",
+     "id": "T4",
+     "level": 1
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. Where is $f$ decreasing?",
+     "options": [
+      "$(-3, 1)$",
+      "$(-1, ∞)$",
+      "Nowhere",
+      "$(-∞, -3) ∪ (1, ∞)$"
+     ],
+     "answer": 3,
+     "explain": "$f'$ is below the axis outside $[-3, 1]$.",
+     "graph": "p4",
+     "id": "T5",
+     "level": 1
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. How many local extremes does $f$ have?",
+     "options": [
+      "3",
+      "0",
+      "1",
+      "2"
+     ],
+     "answer": 0,
+     "explain": "$f'$ changes sign at −2, 1 and 3.",
+     "graph": "p5",
+     "id": "T6",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = x^3 - 12x$.",
+     "answers": [
+      -2,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f'(x) = 3x^2 - 12 = 0$ at $x = ±2$.",
+     "id": "T20",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = x^4 - 8x^2$.",
+     "answers": [
+      -2,
+      0,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f'(x) = 4x^3 - 16x = 4x(x - 2)(x + 2)$.",
+     "id": "T21",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = 2x^3 - 9x^2 + 12x$.",
+     "answers": [
+      1,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f'(x) = 6x^2 - 18x + 12 = 6(x - 1)(x - 2)$.",
+     "id": "T22",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = x^(2/3)$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f'(x) = frac{2}{3x^(1/3)}$ is never 0 but does not exist at 0, where $f$ is defined: a corner (cusp) and a local min.",
+     "id": "T23",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = x + frac{4}{x}$.",
+     "answers": [
+      -2,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f'(x) = 1 - frac{4}{x^2} = 0$ at ±2. ($x$ = 0 is not in the domain, so it is not a critical number.)",
+     "id": "T24",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "$f'(x) = (x - 1)(x - 5)$. Where is $f$ decreasing?",
+     "answer": "(1,5)",
+     "label": "Decreasing on",
+     "explain": "$f'$ is negative between its roots.",
+     "id": "T25",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "$f'(x) = x^2(x + 3)$. Where is $f$ increasing?",
+     "answer": [
+      "(-3,inf)",
+      "(-3,0)U(0,inf)"
+     ],
+     "label": "Increasing on",
+     "explain": "$x^2 ≥ 0$, so the sign is the sign of $x + 3$: positive for $x > -3$.",
+     "id": "T26",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = x^4 - 4x^3$.",
+     "answers": [
+      0,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No critical numbers",
+     "explain": "$f'(x) = 4x^2(x - 3)$.",
+     "id": "D1",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = x^4 - 4x^3$ increasing? (Open intervals.)",
+     "answer": [
+      "(3,inf)"
+     ],
+     "label": "Increasing on",
+     "noneText": "Never increasing",
+     "explain": "Where $f'(x) > 0$.",
+     "id": "D3",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Where does $f(x) = -x^3 + 3x^2$ have a local max?",
+     "answers": [
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No local max",
+     "explain": "Where $f'$ changes from + to −.",
+     "id": "D4",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Where does $f(x) = x e^(-x)$ have a local max?",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No local max",
+     "explain": "Where $f'$ changes from + to −.",
+     "id": "D27",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = ln(x^2 + 1)$ increasing? (Open intervals.)",
+     "answer": [
+      "(0,inf)"
+     ],
+     "label": "Increasing on",
+     "noneText": "Never increasing",
+     "explain": "Where $f'(x) > 0$.",
+     "id": "D32",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = ln(x^2 + 1)$ decreasing? (Open intervals.)",
+     "answer": [
+      "(-inf,0)"
+     ],
+     "label": "Decreasing on",
+     "noneText": "Never decreasing",
+     "explain": "Where $f'(x) < 0$.",
+     "id": "D34",
+     "level": 2
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{x^2 + 2x + 1}{x^2}$ decreasing? (Open intervals.)",
+     "answer": [
+      "(-inf,-1)U(0,inf)"
+     ],
+     "label": "Decreasing on",
+     "noneText": "Never decreasing",
+     "explain": "Where $f'(x) < 0$.",
+     "id": "D7",
+     "level": 3
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $g(x) = frac{x^2 + 4}{x^2 - 4}$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No critical numbers",
+     "explain": "$f'(x) = -16x/((x - 2)^2(x + 2)^2)$.",
+     "id": "D10",
+     "level": 3
+    },
+    {
+     "type": "interval",
+     "text": "Where is $g(x) = frac{x^2 + 4}{x^2 - 4}$ increasing? (Open intervals.)",
+     "answer": [
+      "(-inf,-2)U(-2,0)",
+      "(-inf,0)"
+     ],
+     "label": "Increasing on",
+     "noneText": "Never increasing",
+     "explain": "Where $f'(x) > 0$.",
+     "id": "D12",
+     "level": 3
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = frac{x}{x - 1}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No critical numbers",
+     "explain": "$f'(x) = -1/(x - 1)^2$.",
+     "id": "D15",
+     "level": 3
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{1}{x^2 - 1}$ increasing? (Open intervals.)",
+     "answer": [
+      "(-inf,-1)U(-1,0)",
+      "(-inf,0)"
+     ],
+     "label": "Increasing on",
+     "noneText": "Never increasing",
+     "explain": "Where $f'(x) > 0$.",
+     "id": "D21",
+     "level": 3
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{1}{x^2 - 1}$ decreasing? (Open intervals.)",
+     "answer": [
+      "(0,1)U(1,inf)",
+      "(0,inf)"
+     ],
+     "label": "Decreasing on",
+     "noneText": "Never decreasing",
+     "explain": "Where $f'(x) < 0$.",
+     "id": "D22",
+     "level": 3
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{x - 1}{x^2}$ decreasing? (Open intervals.)",
+     "answer": [
+      "(-inf,0)U(2,inf)"
+     ],
+     "label": "Decreasing on",
+     "noneText": "Never decreasing",
+     "explain": "Where $f'(x) < 0$.",
+     "id": "D24",
+     "level": 3
+    },
+    {
+     "id": "G1",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 4)(x + 2)$$\nAt $x$ = −3, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 1 and −1 there, so $f'$ is negative and $f$ is decreasing."
+    },
+    {
+     "id": "G2",
+     "type": "mc",
+     "text": "$$f'(x) = (x - 2)(x - 4)$$\nAt $x$ = 5, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 3 and 1 there, so $f'$ is positive and $f$ is increasing."
+    },
+    {
+     "id": "G3",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 3)(x - 3)$$\nAt $x$ = 5, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 8 and 2 there, so $f'$ is positive and $f$ is increasing."
+    },
+    {
+     "id": "G4",
+     "type": "mc",
+     "text": "$$f'(x) = x(x - 1)$$\nAt $x$ = 2, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 2 and 1 there, so $f'$ is positive and $f$ is increasing."
+    },
+    {
+     "id": "G5",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 2)(x - 1)$$\nAt $x$ = 0, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 2 and −1 there, so $f'$ is negative and $f$ is decreasing."
+    },
+    {
+     "id": "G6",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 3)(x + 1)$$\nAt $x$ = −2, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 1 and −1 there, so $f'$ is negative and $f$ is decreasing."
+    },
+    {
+     "id": "G7",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 1)(x - 2)$$\nAt $x$ = 1, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 2 and −1 there, so $f'$ is negative and $f$ is decreasing."
+    },
+    {
+     "id": "G8",
+     "type": "mc",
+     "text": "$$f'(x) = (x - 3)(x - 4)$$\nAt $x$ = 2, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are −1 and −2 there, so $f'$ is positive and $f$ is increasing."
+    },
+    {
+     "id": "G9",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 1)(x - 3)$$\nAt $x$ = −3, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 0,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are −2 and −6 there, so $f'$ is positive and $f$ is increasing."
+    },
+    {
+     "id": "G10",
+     "type": "mc",
+     "text": "$$f'(x) = (x + 4)(x - 4)$$\nAt $x$ = −2, is $f$ increasing or decreasing?",
+     "options": [
+      "Increasing",
+      "Decreasing",
+      "Neither"
+     ],
+     "answer": 1,
+     "fixed": true,
+     "level": 1,
+     "hint": "Find the sign of each factor at that $x$, then multiply the signs.",
+     "explain": "The factors are 2 and −6 there, so $f'$ is negative and $f$ is decreasing."
+    },
+    {
+     "id": "G11",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = -2x^3 - 9x^2 - 12x$$",
+     "steps": [
+      {
+       "id": "G11.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "-6*x^2-18*x-12",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-6·x^2-18·x-12$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = -6x^2 - 18x - 12$"
+      },
+      {
+       "id": "G11.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -2,
+        -1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = -6(x + 2)(x + 1)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −2 and $x$ = −1."
+      },
+      {
+       "id": "G11.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-2,-1)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G11.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        -1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = −1."
+      },
+      {
+       "id": "G11.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        -2
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = −2."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G12",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = -2x^3 + 9x^2 + 24x$$",
+     "steps": [
+      {
+       "id": "G12.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "-6*x^2+18*x+24",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-6·x^2+18·x+24$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = -6x^2 + 18x + 24$"
+      },
+      {
+       "id": "G12.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -1,
+        4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = -6(x + 1)(x - 4)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −1 and $x$ = 4."
+      },
+      {
+       "id": "G12.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-1,4)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G12.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = 4."
+      },
+      {
+       "id": "G12.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        -1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = −1."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G13",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = 2x^3 - 3x^2 - 72x$$",
+     "steps": [
+      {
+       "id": "G13.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "6*x^2-6*x-72",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6·x^2-6·x-72$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = 6x^2 - 6x - 72$"
+      },
+      {
+       "id": "G13.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -3,
+        4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = 6(x + 3)(x - 4)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −3 and $x$ = 4."
+      },
+      {
+       "id": "G13.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-inf,-3)U(4,inf)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G13.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        -3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = −3."
+      },
+      {
+       "id": "G13.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = 4."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G14",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = 2x^3 - 6x$$",
+     "steps": [
+      {
+       "id": "G14.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "6*x^2-6",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6·x^2-6$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = 6x^2 - 6$"
+      },
+      {
+       "id": "G14.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -1,
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = 6(x + 1)(x - 1)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −1 and $x$ = 1."
+      },
+      {
+       "id": "G14.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-inf,-1)U(1,inf)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G14.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        -1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = −1."
+      },
+      {
+       "id": "G14.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = 1."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G15",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = -2x^3 - 9x^2 + 24x$$",
+     "steps": [
+      {
+       "id": "G15.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "-6*x^2-18*x+24",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-6·x^2-18·x+24$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = -6x^2 - 18x + 24$"
+      },
+      {
+       "id": "G15.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -4,
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = -6(x + 4)(x - 1)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −4 and $x$ = 1."
+      },
+      {
+       "id": "G15.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-4,1)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G15.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = 1."
+      },
+      {
+       "id": "G15.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        -4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = −4."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G16",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = -2x^3 - 21x^2 - 72x$$",
+     "steps": [
+      {
+       "id": "G16.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "-6*x^2-42*x-72",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-6·x^2-42·x-72$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = -6x^2 - 42x - 72$"
+      },
+      {
+       "id": "G16.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -4,
+        -3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = -6(x + 4)(x + 3)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −4 and $x$ = −3."
+      },
+      {
+       "id": "G16.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-4,-3)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G16.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        -3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = −3."
+      },
+      {
+       "id": "G16.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        -4
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = −4."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G17",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = -2x^3 + 9x^2$$",
+     "steps": [
+      {
+       "id": "G17.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "-6*x^2+18*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-6·x^2+18·x$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = -6x^2 + 18x$"
+      },
+      {
+       "id": "G17.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        0,
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = -6(x - 0)(x - 3)$.",
+       "explain": "$f'(x) = 0$ at $x$ = 0 and $x$ = 3."
+      },
+      {
+       "id": "G17.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(0,3)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G17.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = 3."
+      },
+      {
+       "id": "G17.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        0
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = 0."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G18",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = 2x^3 - 15x^2 + 36x$$",
+     "steps": [
+      {
+       "id": "G18.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "6*x^2-30*x+36",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6·x^2-30·x+36$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = 6x^2 - 30x + 36$"
+      },
+      {
+       "id": "G18.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        2,
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = 6(x - 2)(x - 3)$.",
+       "explain": "$f'(x) = 0$ at $x$ = 2 and $x$ = 3."
+      },
+      {
+       "id": "G18.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-inf,2)U(3,inf)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G18.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        2
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = 2."
+      },
+      {
+       "id": "G18.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = 3."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G19",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = 2x^3 - 12x^2 + 18x$$",
+     "steps": [
+      {
+       "id": "G19.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "6*x^2-24*x+18",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$6·x^2-24·x+18$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = 6x^2 - 24x + 18$"
+      },
+      {
+       "id": "G19.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        1,
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = 6(x - 1)(x - 3)$.",
+       "explain": "$f'(x) = 0$ at $x$ = 1 and $x$ = 3."
+      },
+      {
+       "id": "G19.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-inf,1)U(3,inf)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G19.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = 1."
+      },
+      {
+       "id": "G19.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = 3."
+      }
+     ],
+     "level": 3
+    },
+    {
+     "id": "G20",
+     "type": "steps",
+     "title": "First derivative test",
+     "text": "Run the first derivative test on\n$$f(x) = -2x^3 - 6x^2 + 18x$$",
+     "steps": [
+      {
+       "id": "G20.1",
+       "type": "expr",
+       "text": "Find $f'(x)$.",
+       "answer": "-6*x^2-12*x+18",
+       "vars": [
+        "x"
+       ],
+       "label": "$f'(x)$ =",
+       "show": "$-6·x^2-12·x+18$",
+       "hint": "Power rule on each term.",
+       "work": "$f'(x) = -6x^2 - 12x + 18$"
+      },
+      {
+       "id": "G20.2",
+       "type": "crit",
+       "text": "Find every critical number.",
+       "answers": [
+        -3,
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No critical numbers",
+       "hint": "Factor: $f'(x) = -6(x + 3)(x - 1)$.",
+       "explain": "$f'(x) = 0$ at $x$ = −3 and $x$ = 1."
+      },
+      {
+       "id": "G20.3",
+       "type": "interval",
+       "text": "Where is $f$ increasing? (Open intervals.)",
+       "answer": "(-3,1)",
+       "label": "Increasing on",
+       "noneText": "Never increasing",
+       "hint": "Test one point in each of the three pieces.",
+       "explain": "$f'$ is positive there."
+      },
+      {
+       "id": "G20.4",
+       "type": "crit",
+       "text": "Where does $f$ have a local **max**?",
+       "answers": [
+        1
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local max",
+       "hint": "Where does $f'$ change from + to −?",
+       "explain": "$f'$ goes from + to − at $x$ = 1."
+      },
+      {
+       "id": "G20.5",
+       "type": "crit",
+       "text": "Where does $f$ have a local **min**?",
+       "answers": [
+        -3
+       ],
+       "var": "x",
+       "label": "$x$ =",
+       "noneText": "No local min",
+       "hint": "Where does $f'$ change from − to +?",
+       "explain": "$f'$ goes from − to + at $x$ = −3."
+      }
+     ],
+     "level": 3
+    }
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "type": "curvex",
+    "mode": "slope",
+    "fn": "x^3-3*x",
+    "window": [
+     -3,
+     3,
+     -5,
+     5
+    ],
+    "title": "What the slope tells you",
+    "text": "Slide the point along $f(x) = x^3 - 3x$. The tangent line turns **green** when it slopes up and **red** when it slopes down. Visit all three regions.",
+    "regions": [
+     [
+      -3,
+      -1,
+      "left of −1"
+     ],
+     [
+      -1,
+      1,
+      "between −1 and 1"
+     ],
+     [
+      1,
+      3,
+      "right of 1"
+     ]
+    ],
+    "start": -2.6,
+    "after": "Where the tangent slopes up, $f'(x) > 0$ and the graph rises. Where it slopes down, $f'(x) < 0$ and the graph falls. The switches happen where $f'(x) = 0$.",
+    "id": "L1"
+   },
+   {
+    "type": "bank",
+    "text": "If $f'(x) > 0$ on an interval, $f$ is ___ there. If $f'(x) < 0$, $f$ is ___ .",
+    "blanks": [
+     "increasing",
+     "decreasing"
+    ],
+    "distractors": [
+     "concave up",
+     "constant",
+     "undefined"
+    ],
+    "explain": "The sign of the first derivative tells you which way the graph goes.",
+    "hint": "Positive slope means going up.",
+    "id": "L2"
+   },
+   {
+    "type": "mc",
+    "text": "Here is the graph of $f'$ (not $f$!). On which interval is $f$ decreasing?",
+    "options": [
+     "$(-∞, 0.5)$",
+     "$(-5, 5)$",
+     "$(-1, 2)$",
+     "$(-∞, -1) ∪ (2, ∞)$"
+    ],
+    "answer": 2,
+    "explain": "$f'$ is negative between −1 and 2, so $f$ decreases on $(-1, 2)$.",
+    "hint": "$f$ decreases where the graph of $f'$ is **below** the axis.",
+    "graph": "p1",
+    "id": "L3"
+   },
+   {
+    "type": "match",
+    "text": "**The First Derivative Test.** Match how $f'$ changes sign at a critical number $c$ with what $f$ has there.",
+    "pairs": [
+     [
+      "$f'$ changes from + to −",
+      "a local max at $c$"
+     ],
+     [
+      "$f'$ changes from − to +",
+      "a local min at $c$"
+     ],
+     [
+      "$f'$ does not change sign",
+      "neither (no local extreme)"
+     ]
+    ],
+    "explain": "Increasing to decreasing = max; decreasing to increasing = min.",
+    "hint": "Increasing then decreasing makes a hilltop.",
+    "id": "L5"
+   },
+   {
+    "type": "pick",
+    "text": "$f'(x) = frac{x^2 + 5x + 6}{x(x - 3)}$, and $f$ is undefined at 0 and 3. Which $x$-values split the number line for the sign chart of $f'$?",
+    "options": [
+     "−2",
+     "5",
+     "−3",
+     "0",
+     "1",
+     "3"
+    ],
+    "answers": [
+     0,
+     2,
+     3,
+     5
+    ],
+    "explain": "The top $(x + 2)(x + 3)$ is 0 at −2 and −3; the bottom is 0 at 0 and 3. Points where $f$ is undefined are not critical numbers, but they still split the sign chart.",
+    "hint": "Where the top is 0 and where the bottom is 0.",
+    "id": "L6"
+   },
+   {
+    "type": "interval",
+    "text": "Test a point in each piece. Where is $f$ increasing? (Use open intervals.)",
+    "answer": "(-inf,-3)U(-2,0)U(3,inf)",
+    "label": "Increasing on",
+    "explain": "Signs: + on $(-∞, -3)$, − on $(-3, -2)$, + on $(-2, 0)$, − on $(0, 3)$, + on $(3, ∞)$.",
+    "hint": "Try $x$ = −4, −2.5, −1, 1 and 4 in $frac{(x + 2)(x + 3)}{x(x - 3)}$.",
+    "id": "L7"
+   }
+  ]
+ }
+}

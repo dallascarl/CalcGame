@@ -1,8 +1,601 @@
 {
  "id": "asym",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
  "title": "Asymptotes",
- "lessonOptional": true,
+ "subtitle": "Review: vertical, horizontal and slant asymptotes.",
+ "version": 2,
  "graphs": {},
+ "drills": {
+  "practice": {
+   "title": "Practice",
+   "mode": "pool",
+   "questions": [
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{1}{x - 2}$.",
+     "answers": [
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = 2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V1",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{x + 1}{x^2 - 4}$.",
+     "answers": [
+      -2,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = -2, $x$ = 2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V2",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{x^2 - 9}{x - 3}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V3",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{x}{x^2 + 1}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V4",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{x - 1}{x^2 - 1}$.",
+     "answers": [
+      -1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = -1. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V5",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{3}{x(x - 5)}$.",
+     "answers": [
+      0,
+      5
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = 0, $x$ = 5. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V6",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = n x$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = 0. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V7",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{e^x}{x + 3}$.",
+     "answers": [
+      -3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = -3. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V8",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{2x^2}{x^2 - x - 6}$.",
+     "answers": [
+      -2,
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = -2, $x$ = 3. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V9",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{x^2 + x - 2}{x^2 - 4}$.",
+     "answers": [
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = 2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V10",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{1}{x^2 + 4x + 4}$.",
+     "answers": [
+      -2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = -2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V11",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{sqrt x}{x - 1}$.",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = 1. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V12",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{x}{e^x - 1}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V13",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = n(x - 3)$.",
+     "answers": [
+      3
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = 3. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V14",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{5}{x^3 - x}$.",
+     "answers": [
+      -1,
+      0,
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Vertical asymptotes at $x$ = -1, $x$ = 0, $x$ = 1. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V15",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = rac{sin x}{x}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
+     "id": "V16",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{1}{x - 2}$.",
+     "answers": [
+      0
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 0.",
+     "id": "H1",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{3x + 1}{x - 2}$.",
+     "answers": [
+      3
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 3.",
+     "id": "H2",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{2x^2}{x^2 - x - 6}$.",
+     "answers": [
+      2
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 2.",
+     "id": "H3",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{x^2}{x + 1}$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "The limits at ±∞ are infinite (or do not exist), so there is none.",
+     "id": "H4",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{x^3 + 1}{x^2 + 1}$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "The limits at ±∞ are infinite (or do not exist), so there is none.",
+     "id": "H5",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = ^x$.",
+     "answers": [
+      0
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 0.",
+     "id": "H6",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = ^(-x) + 3$.",
+     "answers": [
+      3
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 3.",
+     "id": "H7",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{x}{sqrt(x^2 + 1)}$.",
+     "answers": [
+      -1,
+      1
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = -1, $y$ = 1.",
+     "id": "H8",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rctan x$.",
+     "answers": [
+      -1.5708,
+      1.5708
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = -1.571, $y$ = 1.571. (≈ ±π/2)",
+     "id": "H9",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{5x^2 - x}{2x^2 + 7}$.",
+     "answers": [
+      2.5
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 2.5.",
+     "id": "H10",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{4 - x}{2x + 1}$.",
+     "answers": [
+      -0.5
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = -0.5.",
+     "id": "H11",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = n x$.",
+     "answers": [],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "The limits at ±∞ are infinite (or do not exist), so there is none.",
+     "id": "H12",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{1}{x^2 + 1}$.",
+     "answers": [
+      0
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 0.",
+     "id": "H13",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{x^2 + 4}{x^2 - 4}$.",
+     "answers": [
+      1
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 1.",
+     "id": "H14",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{1 - 2x^3}{x^3 + x}$.",
+     "answers": [
+      -2
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = -2.",
+     "id": "H15",
+     "level": 2
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = rac{sin x}{x}$.",
+     "answers": [
+      0
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Limits at ±∞ give $y$ = 0.",
+     "id": "H16",
+     "level": 2
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{x^2}{x - 1}$.",
+     "answer": "1+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = x + 1 + frac{1}{x - 1}$. The fraction → 0, so $y = x + 1$.",
+     "id": "S1",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{x^2 + 3x + 1}{x + 1}$.",
+     "answer": "2+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = x + 2 + frac{-1}{x + 1}$. The fraction → 0, so $y = x + 2$.",
+     "id": "S2",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{2x^2 + x - 3}{x - 2}$.",
+     "answer": "5+2*x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = 2x + 5 + frac{7}{x - 2}$. The fraction → 0, so $y = 2x + 5$.",
+     "id": "S3",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{x^3 + 1}{x^2 + 1}$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = x + frac{1 - x}{x^2 + 1}$. The fraction → 0, so $y = x$.",
+     "id": "S4",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{x^2 - 4x + 5}{x - 3}$.",
+     "answer": "-1+x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = x - 1 + frac{2}{x - 3}$. The fraction → 0, so $y = x - 1$.",
+     "id": "S5",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{3x^2 - 2}{x}$.",
+     "answer": "3*x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = 3x + frac{-2}{x}$. The fraction → 0, so $y = 3x$.",
+     "id": "S6",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{x^3}{x^2 - 1}$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = x + frac{x}{x^2 - 1}$. The fraction → 0, so $y = x$.",
+     "id": "S7",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{4x^2 + 1}{2x + 1}$.",
+     "answer": "-1+2*x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = 2x - 1 + frac{2}{2x + 1}$. The fraction → 0, so $y = 2x - 1$.",
+     "id": "S8",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{x^2 + 1}{x}$.",
+     "answer": "x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = x + frac{1}{x}$. The fraction → 0, so $y = x$.",
+     "id": "S9",
+     "level": 3
+    },
+    {
+     "type": "expr",
+     "text": "Find the slant asymptote of $f(x) = rac{-x^2 + 2x}{x + 1}$.",
+     "answer": "3-x",
+     "vars": [
+      "x"
+     ],
+     "label": "$y$ =",
+     "explain": "Long division: $f(x) = 3 - x + frac{-3}{x + 1}$. The fraction → 0, so $y = 3 - x$.",
+     "id": "S10",
+     "level": 3
+    },
+    {
+     "type": "mc",
+     "text": "Which function has a slant asymptote?",
+     "options": [
+      "$frac{x + 1}{x^2 - 2}$",
+      "$frac{x^3 + 1}{x - 2}$",
+      "$frac{x^2 + 1}{x - 2}$",
+      "$frac{x^2 + 1}{x^2 - 2}$"
+     ],
+     "answer": 2,
+     "explain": "The top must be exactly one degree higher than the bottom.",
+     "id": "S11",
+     "level": 3
+    },
+    {
+     "type": "mc",
+     "text": "Can a graph cross its horizontal asymptote?",
+     "options": [
+      "Yes; the asymptote only describes the far left and far right",
+      "No, never"
+     ],
+     "answer": 0,
+     "explain": "$frac{sin x}{x}$ crosses $y$ = 0 again and again. Vertical asymptotes are the ones a graph never crosses.",
+     "id": "S12",
+     "level": 3
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $frac{x^2 - 9}{x - 3}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "$frac{(x - 3)(x + 3)}{x - 3} = x + 3$ (for $x ≠ 3$). The function approaches 6 at 3: a **hole**, not an asymptote.",
+     "hint": "Factor and cancel first.",
+     "id": "L2",
+     "level": 1
+    },
+    {
+     "type": "crit",
+     "text": "Horizontal asymptotes of $frac{x}{sqrt(x^2 + 1)}$ (there may be two!):",
+     "answers": [
+      -1,
+      1
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "$x$ → ∞ gives 1 and $x$ → −∞ gives −1, so $y$ = 1 and $y$ = −1.",
+     "hint": "As $x$ → ∞ it heads to 1. What about $x$ → −∞?",
+     "id": "L6",
+     "level": 1
+    }
+   ]
+  }
+ },
  "lesson": {
   "slides": [
    {
@@ -18,17 +611,6 @@
     "explain": "As $x$ → 2, the bottom shrinks to 0 and $f$ blows up.",
     "hint": "Where is the bottom 0?",
     "id": "L1"
-   },
-   {
-    "type": "crit",
-    "text": "Find every vertical asymptote of $frac{x^2 - 9}{x - 3}$.",
-    "answers": [],
-    "var": "x",
-    "label": "$x$ =",
-    "noneText": "No vertical asymptotes",
-    "explain": "$frac{(x - 3)(x + 3)}{x - 3} = x + 3$ (for $x ≠ 3$). The function approaches 6 at 3: a **hole**, not an asymptote.",
-    "hint": "Factor and cancel first.",
-    "id": "L2"
    },
    {
     "type": "bank",
@@ -85,20 +667,6 @@
     "id": "L5"
    },
    {
-    "type": "crit",
-    "text": "Horizontal asymptotes of $frac{x}{sqrt(x^2 + 1)}$ (there may be two!):",
-    "answers": [
-     -1,
-     1
-    ],
-    "var": "y",
-    "label": "$y$ =",
-    "noneText": "No horizontal asymptotes",
-    "explain": "$x$ → ∞ gives 1 and $x$ → −∞ gives −1, so $y$ = 1 and $y$ = −1.",
-    "hint": "As $x$ → ∞ it heads to 1. What about $x$ → −∞?",
-    "id": "L6"
-   },
-   {
     "type": "mc",
     "text": "$$f(x) = frac{x^2}{x - 1}$$\nTop degree 2, bottom degree 1. What happens as $x$ → ∞?",
     "options": [
@@ -113,532 +681,5 @@
    }
   ]
  },
- "drills": {
-  "vert": {
-   "title": "Vertical asymptotes drill",
-   "questions": [
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{1}{x - 2}$.",
-     "answers": [
-      2
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = 2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V1"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x + 1}{x^2 - 4}$.",
-     "answers": [
-      -2,
-      2
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = -2, $x$ = 2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V2"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x^2 - 9}{x - 3}$.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V3"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x}{x^2 + 1}$.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V4"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x - 1}{x^2 - 1}$.",
-     "answers": [
-      -1
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = -1. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V5"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{3}{x(x - 5)}$.",
-     "answers": [
-      0,
-      5
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = 0, $x$ = 5. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V6"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = n x$.",
-     "answers": [
-      0
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = 0. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V7"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{e^x}{x + 3}$.",
-     "answers": [
-      -3
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = -3. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V8"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{2x^2}{x^2 - x - 6}$.",
-     "answers": [
-      -2,
-      3
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = -2, $x$ = 3. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V9"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x^2 + x - 2}{x^2 - 4}$.",
-     "answers": [
-      2
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = 2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V10"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{1}{x^2 + 4x + 4}$.",
-     "answers": [
-      -2
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = -2. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V11"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{sqrt x}{x - 1}$.",
-     "answers": [
-      1
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = 1. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V12"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{x}{e^x - 1}$.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V13"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = n(x - 3)$.",
-     "answers": [
-      3
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = 3. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V14"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{5}{x^3 - x}$.",
-     "answers": [
-      -1,
-      0,
-      1
-     ],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "Vertical asymptotes at $x$ = -1, $x$ = 0, $x$ = 1. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V15"
-    },
-    {
-     "type": "crit",
-     "text": "Find every vertical asymptote of $f(x) = rac{sin x}{x}$.",
-     "answers": [],
-     "var": "x",
-     "label": "$x$ =",
-     "noneText": "No vertical asymptotes",
-     "explain": "None. Check each zero of the bottom: if the function blows up there it is an asymptote; if it approaches a number, it is a hole.",
-     "id": "V16"
-    }
-   ]
-  },
-  "horiz": {
-   "title": "Horizontal asymptotes drill",
-   "questions": [
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{1}{x - 2}$.",
-     "answers": [
-      0
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 0.",
-     "id": "H1"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{3x + 1}{x - 2}$.",
-     "answers": [
-      3
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 3.",
-     "id": "H2"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{2x^2}{x^2 - x - 6}$.",
-     "answers": [
-      2
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 2.",
-     "id": "H3"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x^2}{x + 1}$.",
-     "answers": [],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "The limits at ±∞ are infinite (or do not exist), so there is none.",
-     "id": "H4"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x^3 + 1}{x^2 + 1}$.",
-     "answers": [],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "The limits at ±∞ are infinite (or do not exist), so there is none.",
-     "id": "H5"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = ^x$.",
-     "answers": [
-      0
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 0.",
-     "id": "H6"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = ^(-x) + 3$.",
-     "answers": [
-      3
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 3.",
-     "id": "H7"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x}{sqrt(x^2 + 1)}$.",
-     "answers": [
-      -1,
-      1
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = -1, $y$ = 1.",
-     "id": "H8"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rctan x$.",
-     "answers": [
-      -1.5708,
-      1.5708
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = -1.571, $y$ = 1.571. (≈ ±π/2)",
-     "id": "H9"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{5x^2 - x}{2x^2 + 7}$.",
-     "answers": [
-      2.5
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 2.5.",
-     "id": "H10"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{4 - x}{2x + 1}$.",
-     "answers": [
-      -0.5
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = -0.5.",
-     "id": "H11"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = n x$.",
-     "answers": [],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "The limits at ±∞ are infinite (or do not exist), so there is none.",
-     "id": "H12"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{1}{x^2 + 1}$.",
-     "answers": [
-      0
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 0.",
-     "id": "H13"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{x^2 + 4}{x^2 - 4}$.",
-     "answers": [
-      1
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 1.",
-     "id": "H14"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{1 - 2x^3}{x^3 + x}$.",
-     "answers": [
-      -2
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = -2.",
-     "id": "H15"
-    },
-    {
-     "type": "crit",
-     "text": "Find every horizontal asymptote of $f(x) = rac{sin x}{x}$.",
-     "answers": [
-      0
-     ],
-     "var": "y",
-     "label": "$y$ =",
-     "noneText": "No horizontal asymptotes",
-     "explain": "Limits at ±∞ give $y$ = 0.",
-     "id": "H16"
-    }
-   ]
-  },
-  "slant": {
-   "title": "Slant asymptotes drill",
-   "questions": [
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2}{x - 1}$.",
-     "answer": "1+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = x + 1 + frac{1}{x - 1}$. The fraction → 0, so $y = x + 1$.",
-     "id": "S1"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2 + 3x + 1}{x + 1}$.",
-     "answer": "2+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = x + 2 + frac{-1}{x + 1}$. The fraction → 0, so $y = x + 2$.",
-     "id": "S2"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{2x^2 + x - 3}{x - 2}$.",
-     "answer": "5+2*x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = 2x + 5 + frac{7}{x - 2}$. The fraction → 0, so $y = 2x + 5$.",
-     "id": "S3"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^3 + 1}{x^2 + 1}$.",
-     "answer": "x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = x + frac{1 - x}{x^2 + 1}$. The fraction → 0, so $y = x$.",
-     "id": "S4"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2 - 4x + 5}{x - 3}$.",
-     "answer": "-1+x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = x - 1 + frac{2}{x - 3}$. The fraction → 0, so $y = x - 1$.",
-     "id": "S5"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{3x^2 - 2}{x}$.",
-     "answer": "3*x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = 3x + frac{-2}{x}$. The fraction → 0, so $y = 3x$.",
-     "id": "S6"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^3}{x^2 - 1}$.",
-     "answer": "x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = x + frac{x}{x^2 - 1}$. The fraction → 0, so $y = x$.",
-     "id": "S7"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{4x^2 + 1}{2x + 1}$.",
-     "answer": "-1+2*x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = 2x - 1 + frac{2}{2x + 1}$. The fraction → 0, so $y = 2x - 1$.",
-     "id": "S8"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{x^2 + 1}{x}$.",
-     "answer": "x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = x + frac{1}{x}$. The fraction → 0, so $y = x$.",
-     "id": "S9"
-    },
-    {
-     "type": "expr",
-     "text": "Find the slant asymptote of $f(x) = rac{-x^2 + 2x}{x + 1}$.",
-     "answer": "3-x",
-     "vars": [
-      "x"
-     ],
-     "label": "$y$ =",
-     "explain": "Long division: $f(x) = 3 - x + frac{-3}{x + 1}$. The fraction → 0, so $y = 3 - x$.",
-     "id": "S10"
-    },
-    {
-     "type": "mc",
-     "text": "Which function has a slant asymptote?",
-     "options": [
-      "$frac{x + 1}{x^2 - 2}$",
-      "$frac{x^3 + 1}{x - 2}$",
-      "$frac{x^2 + 1}{x - 2}$",
-      "$frac{x^2 + 1}{x^2 - 2}$"
-     ],
-     "answer": 2,
-     "explain": "The top must be exactly one degree higher than the bottom.",
-     "id": "S11"
-    },
-    {
-     "type": "mc",
-     "text": "Can a graph cross its horizontal asymptote?",
-     "options": [
-      "Yes; the asymptote only describes the far left and far right",
-      "No, never"
-     ],
-     "answer": 0,
-     "explain": "$frac{sin x}{x}$ crosses $y$ = 0 again and again. Vertical asymptotes are the ones a graph never crosses.",
-     "id": "S12"
-    }
-   ]
-  }
- }
+ "lessonOptional": true
 }

@@ -1,0 +1,3994 @@
+{
+ "id": "review3",
+ "title": "Chapter Review",
+ "graphs": {
+  "maxmin_Eb": {
+   "window": [
+    -4,
+    4,
+    -1,
+    2
+   ],
+   "pieces": [
+    {
+     "expr": "1/(x^2+1)",
+     "from": -4,
+     "to": 4,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "curve_p2": {
+   "window": [
+    -4,
+    4,
+    -5,
+    5
+   ],
+   "pieces": [
+    {
+     "expr": "4-x^2",
+     "from": -4,
+     "to": 4
+    }
+   ]
+  },
+  "maxmin_Ed": {
+   "window": [
+    -1,
+    5,
+    -4,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "2-x^2",
+     "from": 0,
+     "to": 2
+    },
+    {
+     "expr": "x-3",
+     "from": 2,
+     "to": 4
+    }
+   ],
+   "holes": [
+    [
+     2,
+     -2
+    ]
+   ],
+   "dots": [
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     4,
+     1
+    ]
+   ]
+  },
+  "maxmin_H1": {
+   "window": [
+    -3,
+    3,
+    -3,
+    3
+   ],
+   "pieces": [
+    {
+     "expr": "(x^3-3*x)/2+0.5",
+     "from": -2.2,
+     "to": 2.2,
+     "arrow": "LR"
+    }
+   ]
+  },
+  "maxmin_Ee": {
+   "window": [
+    -1,
+    6,
+    -1,
+    10
+   ],
+   "pieces": [
+    {
+     "expr": "(x-2)^2",
+     "from": 1,
+     "to": 5
+    }
+   ],
+   "dots": [
+    [
+     1,
+     1
+    ],
+    [
+     5,
+     9
+    ]
+   ],
+   "ystep": 2
+  },
+  "maxmin_P2": {
+   "window": [
+    -1,
+    4,
+    -1,
+    10
+   ],
+   "pieces": [
+    {
+     "expr": "x^2",
+     "from": 0,
+     "to": 3
+    }
+   ],
+   "holes": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     9
+    ]
+   ]
+  },
+  "maxmin_P1": {
+   "window": [
+    -2,
+    4,
+    -2,
+    4
+   ],
+   "pieces": [
+    {
+     "expr": "3-(x-1)^2",
+     "from": -1,
+     "to": 2.5
+    }
+   ],
+   "dots": [
+    [
+     -1,
+     -1
+    ],
+    [
+     2.5,
+     0.75
+    ]
+   ]
+  }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "type": "match",
+    "text": "Every World 3 problem starts with recognizing which tool it needs. Match each task with its tool.",
+    "pairs": [
+     [
+      "Biggest value of $f$ on $[a, b]$",
+      "Closed interval method"
+     ],
+     [
+      "Prove some $f'(c)$ equals the average slope",
+      "Mean Value Theorem"
+     ],
+     [
+      "Approximate a root to 6 decimals",
+      "Newton's Method"
+     ],
+     [
+      "Estimate $sqrt(9.1)$ by hand",
+      "Linearization"
+     ],
+     [
+      "Limit of the form $0/0$",
+      "L'Hôpital's Rule"
+     ],
+     [
+      "How fast is the shadow growing?",
+      "Related rates"
+     ]
+    ],
+    "explain": "Recognizing the problem type is half the test.",
+    "hint": "Look for the key words: \"on [a, b]\", \"some c\", \"root\", \"estimate\", \"0/0\", \"how fast\".",
+    "id": "L1"
+   },
+   {
+    "type": "match",
+    "text": "Three more.",
+    "pairs": [
+     [
+      "Largest pen from 600 ft of fence",
+      "Optimization"
+     ],
+     [
+      "Where is $f$ increasing?",
+      "Sign chart of $f'$"
+     ],
+     [
+      "Where is $f$ concave up?",
+      "Sign of $f''$"
+     ],
+     [
+      "Is the flat spot a max or a min?",
+      "First or second derivative test"
+     ]
+    ],
+    "explain": "Curve-sketching questions are about reading derivatives.",
+    "hint": "Increasing is about $f'$; bending is about $f''$.",
+    "id": "L2"
+   },
+   {
+    "type": "extrema",
+    "title": "Max and Mins in one minute",
+    "text": "Absolute max and min of $f(x) = x^3 - 3x$ on $[0, 2]$.",
+    "fn": {
+     "expr": "x^3-3*x",
+     "domain": [
+      0,
+      2
+     ]
+    },
+    "crit": [
+     1
+    ],
+    "deriv": "$f'(x) = 3x^2 - 3$",
+    "after": "Critical points **and** endpoints, every time.",
+    "id": "L3"
+   },
+   {
+    "type": "mvt",
+    "title": "MVT in one minute",
+    "text": "For $f(x) = x^2$ on $[0, 2]$, drag until the tangent is parallel to the secant.",
+    "fn": "x^2",
+    "a": 0,
+    "b": 2,
+    "cs": [
+     1
+    ],
+    "window": [
+     -0.5,
+     2.5,
+     -0.5,
+     4.5
+    ],
+    "secLabel": "Secant slope",
+    "start": 0.2,
+    "after": "$c$ = 1: $f'(1) = 2$ = the average slope $frac{4 - 0}{2 - 0}$.",
+    "id": "L4"
+   },
+   {
+    "type": "multi",
+    "text": "**Newton in one step.** $f(x) = x^2 - 2$, $x_0$ = 1. Fill in all three.",
+    "parts": [
+     {
+      "label": "$f(x_0)$ =",
+      "answer": -1
+     },
+     {
+      "label": "$f'(x_0)$ =",
+      "answer": 2
+     },
+     {
+      "label": "$x_1$ =",
+      "answer": 1.5
+     }
+    ],
+    "hint": "$x_1 = x_0 - frac{f(x_0)}{f'(x_0)}$",
+    "explain": "$x_1 = 1 - frac{-1}{2}$ = 1.5.",
+    "id": "L5"
+   },
+   {
+    "type": "num",
+    "text": "**Linearization.** Use the tangent line to $sqrt x$ at 4 to estimate $sqrt(4.1)$.",
+    "answer": 2.025,
+    "label": "≈",
+    "tol": 0.0005,
+    "explain": "$2 + frac{0.1}{4}$ = 2.025.",
+    "hint": "$L(x) = 2 + frac{1}{4}(x - 4)$",
+    "id": "L6"
+   },
+   {
+    "type": "num",
+    "text": "**L'Hôpital.** $lim[x->0] frac{sin(4x)}{x}$ = ?",
+    "answer": 4,
+    "label": "Limit =",
+    "explain": "4.",
+    "hint": "$0/0$: $frac{4cos(4x)}{1}$.",
+    "id": "L7"
+   },
+   {
+    "type": "steps",
+    "text": "**Related rates.** A circle’s radius grows at 3 cm/s. How fast is its area growing when $r$ = 10?",
+    "steps": [
+     {
+      "type": "expr",
+      "text": "Differentiate $A = pi r^2$ with respect to $t$.",
+      "answer": "2*pi*r*r'",
+      "vars": [
+       "r",
+       "r'"
+      ],
+      "label": "$A'$ =",
+      "keys": [
+       "pi"
+      ],
+      "explain": "$2pi r r'$.",
+      "hint": "Chain rule: tack on $r'$."
+     },
+     {
+      "type": "num",
+      "text": "Plug in.",
+      "answer": 188.495559,
+      "label": "$A'$ ≈",
+      "tol": 0.05,
+      "explain": "$60pi$ ≈ 188.5 cm²/s.",
+      "hint": "$2pi(10)(3)$"
+     }
+    ],
+    "title": "Related rates in one minute",
+    "id": "L8"
+   },
+   {
+    "type": "steps",
+    "text": "**Optimization.** Two positive numbers add to 20. Maximize their product.",
+    "steps": [
+     {
+      "type": "mc",
+      "text": "What is being optimized?",
+      "options": [
+       "The sum",
+       "The product"
+      ],
+      "answer": 1,
+      "explain": "The product (the sum is the constraint).",
+      "hint": "The sum is fixed."
+     },
+     {
+      "type": "expr",
+      "text": "Product as a function of $x$:",
+      "answer": "x*(20-x)",
+      "vars": [
+       "x"
+      ],
+      "label": "$P(x)$ =",
+      "explain": "$x(20 - x)$.",
+      "hint": "The other number is $20 - x$."
+     },
+     {
+      "type": "num",
+      "text": "Best $x$:",
+      "answer": 10,
+      "label": "$x$ =",
+      "explain": "10 and 10, product 100.",
+      "hint": "$P'(x) = 20 - 2x$"
+     }
+    ],
+    "title": "Optimization in one minute",
+    "id": "L9"
+   },
+   {
+    "type": "pick",
+    "text": "Common test traps. Which statements are TRUE?",
+    "options": [
+     "L'Hôpital's Rule works on any quotient.",
+     "The MVT needs $f$ continuous on $[a, b]$ and differentiable on $(a, b)$.",
+     "An inflection point is anywhere $f''(x) = 0$.",
+     "In related rates, plug in the numbers after differentiating.",
+     "The linearization of $f$ at $a$ is its tangent line at $a$.",
+     "Newton's method always converges.",
+     "If $f'(c) = 0$, then $f$ has a max or min at $c$."
+    ],
+    "answers": [
+     1,
+     3,
+     4
+    ],
+    "explain": "False: $f'(c) = 0$ does not guarantee an extreme ($x^3$); Newton can fail; L'Hôpital needs $0/0$ or $∞/∞$; inflection needs a sign change.",
+    "hint": "Three are true.",
+    "id": "L10"
+   },
+   {
+    "type": "order",
+    "text": "**Closed interval method**, in order.",
+    "items": [
+     "Check $f$ is continuous on $[a, b]$",
+     "Find the critical numbers in $(a, b)$",
+     "Evaluate $f$ at the critical numbers and the endpoints",
+     "The largest value is the absolute max; the smallest is the absolute min"
+    ],
+    "explain": "The Extreme Value Theorem guarantees an answer exists.",
+    "hint": "Endpoints come with the critical numbers.",
+    "id": "L11"
+   },
+   {
+    "type": "sketch",
+    "fn": "x^3-3*x^2",
+    "window": [
+     -2,
+     4,
+     -5,
+     3
+    ],
+    "prefill": true,
+    "phases": [
+     "draw"
+    ],
+    "data": {
+     "points": [
+      [
+       0,
+       0,
+       "Local max"
+      ],
+      [
+       2,
+       -4,
+       "Local min"
+      ],
+      [
+       1,
+       -2,
+       "Inflection point"
+      ],
+      [
+       3,
+       0,
+       "x-intercept"
+      ]
+     ],
+     "crit": [
+      0,
+      2
+     ],
+     "infl": [
+      1
+     ],
+     "lines": [
+      "Local max $(0, 0)$, local min $(2, -4)$",
+      "Inflection point $(1, -2)$",
+      "$x$-intercepts 0 and 3"
+     ]
+    },
+    "title": "Curve sketching in one minute",
+    "text": "**Sketch** $f(x) = x^3 - 3x^2$. The key points and regions are already marked: just draw.",
+    "id": "L12"
+   },
+   {
+    "type": "mc",
+    "text": "You are ready for the drills. What is the best way to use the **Practice test**?",
+    "options": [
+     "Retake it until you memorize the answers",
+     "Skip it",
+     "Take it like a real test: no notes, then study the red topics it reports"
+    ],
+    "answer": 2,
+    "explain": "The topic breakdown tells you which stop on the map to revisit.",
+    "hint": "It reports a score for each topic.",
+    "id": "L13"
+   }
+  ]
+ },
+ "drills": {
+  "tool": {
+   "title": "Which tool? drill",
+   "questions": [
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find the largest and smallest values of $f(x) = x^3 - 3x + 1$ on $[0, 3]$.",
+     "options": [
+      "Newton's Method",
+      "Closed interval method (critical points + endpoints)",
+      "Optimization",
+      "Mean Value Theorem"
+     ],
+     "answer": 1,
+     "explain": "Absolute extremes on a closed interval: test the critical points and the endpoints.",
+     "topic": "Which tool?",
+     "id": "W1"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Show that some time during a 2-hour, 120-mile trip your speedometer read exactly 60 mi/h.",
+     "options": [
+      "Related rates",
+      "Linearization (tangent line)",
+      "Closed interval method (critical points + endpoints)",
+      "Mean Value Theorem"
+     ],
+     "answer": 3,
+     "explain": "Average speed is 60, so the MVT guarantees an instant at 60.",
+     "topic": "Which tool?",
+     "id": "W2"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Approximate the solution of $cos x = x$ to six decimal places.",
+     "options": [
+      "Newton's Method",
+      "L'Hôpital's Rule",
+      "Mean Value Theorem",
+      "Linearization (tangent line)"
+     ],
+     "answer": 0,
+     "explain": "Find a root of $cos x - x$ with tangent lines.",
+     "topic": "Which tool?",
+     "id": "W3"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Estimate $sqrt(4.1)$ without a calculator.",
+     "options": [
+      "Linearization (tangent line)",
+      "Newton's Method",
+      "Mean Value Theorem",
+      "L'Hôpital's Rule"
+     ],
+     "answer": 0,
+     "explain": "Use the tangent line to $sqrt x$ at 4.",
+     "topic": "Which tool?",
+     "id": "W4"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find $lim[x->0] frac{e^(3x) - 1}{sin x}$.",
+     "options": [
+      "Mean Value Theorem",
+      "Closed interval method (critical points + endpoints)",
+      "Linearization (tangent line)",
+      "L'Hôpital's Rule"
+     ],
+     "answer": 3,
+     "explain": "Form $0/0$.",
+     "topic": "Which tool?",
+     "id": "W5"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Water drains from a cone. How fast is the water level falling when it is 3 ft deep?",
+     "options": [
+      "Related rates",
+      "Optimization",
+      "Linearization (tangent line)",
+      "Mean Value Theorem"
+     ],
+     "answer": 0,
+     "explain": "Rates of connected quantities at an instant.",
+     "topic": "Which tool?",
+     "id": "W6"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** A farmer has 600 ft of fence. What is the largest rectangular pen?",
+     "options": [
+      "Optimization",
+      "Related rates",
+      "Closed interval method (critical points + endpoints)",
+      "Mean Value Theorem"
+     ],
+     "answer": 0,
+     "explain": "Make something as large as possible under a constraint.",
+     "topic": "Which tool?",
+     "id": "W7"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** On which intervals is $f(x) = x^4 - 8x^2$ increasing?",
+     "options": [
+      "First derivative sign chart",
+      "Second derivative",
+      "Mean Value Theorem",
+      "Closed interval method (critical points + endpoints)"
+     ],
+     "answer": 0,
+     "explain": "Sign chart of $f'$.",
+     "topic": "Which tool?",
+     "id": "W8"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Where is $f(x) = x^3 - 6x^2$ concave down?",
+     "options": [
+      "Closed interval method (critical points + endpoints)",
+      "Linearization (tangent line)",
+      "Second derivative",
+      "First derivative sign chart"
+     ],
+     "answer": 2,
+     "explain": "Sign of $f''$.",
+     "topic": "Which tool?",
+     "id": "W9"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** $f'(2) = 0$. Is $x$ = 2 a local max or a local min?",
+     "options": [
+      "Mean Value Theorem",
+      "Second derivative",
+      "Linearization (tangent line)",
+      "Closed interval method (critical points + endpoints)"
+     ],
+     "answer": 1,
+     "explain": "Second derivative test (or the first derivative test).",
+     "topic": "Which tool?",
+     "id": "W10"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** A ladder slides down a wall. How fast is the top falling when the bottom is 6 ft out?",
+     "options": [
+      "Linearization (tangent line)",
+      "Newton's Method",
+      "Optimization",
+      "Related rates"
+     ],
+     "answer": 3,
+     "explain": "Two rates linked by $x^2 + y^2 = L^2$.",
+     "topic": "Which tool?",
+     "id": "W11"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find $lim[x->∞] frac{ln x}{sqrt x}$.",
+     "options": [
+      "Mean Value Theorem",
+      "L'Hôpital's Rule",
+      "Linearization (tangent line)",
+      "Newton's Method"
+     ],
+     "answer": 1,
+     "explain": "Form $∞/∞$.",
+     "topic": "Which tool?",
+     "id": "W12"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find the dimensions of the cheapest can that holds 500 cm³.",
+     "options": [
+      "Optimization",
+      "Linearization (tangent line)",
+      "Related rates",
+      "Closed interval method (critical points + endpoints)"
+     ],
+     "answer": 0,
+     "explain": "Minimize cost subject to a volume constraint.",
+     "topic": "Which tool?",
+     "id": "W13"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Use $dy = f'(x)dx$ to estimate the error in a computed volume.",
+     "options": [
+      "Related rates",
+      "Mean Value Theorem",
+      "L'Hôpital's Rule",
+      "Linearization (tangent line)"
+     ],
+     "answer": 3,
+     "explain": "Differentials are linearization.",
+     "topic": "Which tool?",
+     "id": "W14"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Prove that $f(x) = x^3 + x - 1$ cannot have two roots.",
+     "options": [
+      "Newton's Method",
+      "L'Hôpital's Rule",
+      "Closed interval method (critical points + endpoints)",
+      "Mean Value Theorem"
+     ],
+     "answer": 3,
+     "explain": "If it had two, Rolle's Theorem would give $f'(c) = 0$, but $f' = 3x^2 + 1 > 0$.",
+     "topic": "Which tool?",
+     "id": "W15"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find a root of $x^5 - 3x + 1$ near $x$ = 1.5.",
+     "options": [
+      "Closed interval method (critical points + endpoints)",
+      "Linearization (tangent line)",
+      "Newton's Method",
+      "Mean Value Theorem"
+     ],
+     "answer": 2,
+     "explain": "A quintic has no formula; iterate.",
+     "topic": "Which tool?",
+     "id": "W16"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** A balloon’s volume grows at 50 cm³/s. How fast does the radius grow when $r$ = 5?",
+     "options": [
+      "Optimization",
+      "Linearization (tangent line)",
+      "Related rates",
+      "Newton's Method"
+     ],
+     "answer": 2,
+     "explain": "Rates linked by $V = frac{4}{3}pi r^3$.",
+     "topic": "Which tool?",
+     "id": "W17"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** What is the maximum area of a rectangle inscribed in a semicircle of radius 4?",
+     "options": [
+      "Closed interval method (critical points + endpoints)",
+      "Related rates",
+      "Optimization",
+      "Mean Value Theorem"
+     ],
+     "answer": 2,
+     "explain": "Maximize area under a geometric constraint.",
+     "topic": "Which tool?",
+     "id": "W18"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find the absolute minimum of $f(x) = x + frac{4}{x}$ on $[1, 5]$.",
+     "options": [
+      "Linearization (tangent line)",
+      "Closed interval method (critical points + endpoints)",
+      "Newton's Method",
+      "Mean Value Theorem"
+     ],
+     "answer": 1,
+     "explain": "Closed interval: critical point 2 and both endpoints.",
+     "topic": "Which tool?",
+     "id": "W19"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Find $lim[x->0^+] x ln x$.",
+     "options": [
+      "L'Hôpital's Rule",
+      "Mean Value Theorem",
+      "Closed interval method (critical points + endpoints)",
+      "Linearization (tangent line)"
+     ],
+     "answer": 0,
+     "explain": "$0·∞$: rewrite as $frac{ln x}{1/x}$, then L’Hôpital.",
+     "topic": "Which tool?",
+     "id": "W20"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Where does $f(x) = x e^(-x)$ have an inflection point?",
+     "options": [
+      "L'Hôpital's Rule",
+      "Second derivative",
+      "Closed interval method (critical points + endpoints)",
+      "First derivative sign chart"
+     ],
+     "answer": 1,
+     "explain": "Where $f''$ changes sign.",
+     "topic": "Which tool?",
+     "id": "W21"
+    },
+    {
+     "type": "mc",
+     "text": "**Which tool?** Approximate $(2.01)^5$ quickly.",
+     "options": [
+      "Newton's Method",
+      "Linearization (tangent line)",
+      "L'Hôpital's Rule",
+      "Mean Value Theorem"
+     ],
+     "answer": 1,
+     "explain": "Tangent line to $x^5$ at 2.",
+     "topic": "Which tool?",
+     "id": "W22"
+    }
+   ]
+  },
+  "theory": {
+   "title": "Theory review drill",
+   "setSize": 12,
+   "questions": [
+    {
+     "id": "mm_t11",
+     "type": "tf",
+     "text": "A critical point can occur where $f'(x)$ does not exist.",
+     "answer": true,
+     "explain": "Sharp corners, cusps, and vertical tangents are critical points as long as $f$ is defined there.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_t14",
+     "type": "mc",
+     "text": "$f(x) = x^3$ has $f'(0) = 0$. What does this tell you?",
+     "options": [
+      "$x = 0$ is a critical point, but you cannot tell yet if it is a max or min",
+      "$x = 0$ is a local maximum",
+      "$x = 0$ is a local minimum",
+      "$x = 0$ is not a critical point"
+     ],
+     "answer": 0,
+     "explain": "A flat tangent makes it a critical point, but that is only a suspect. For $x^3$ the graph keeps climbing, so it is neither.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_t18",
+     "type": "bank",
+     "text": "To find the absolute extremes of a continuous function on $[a, b]$: list the ___ points, add the ___, and plug them all into $f$. The ___ value is the max and the ___ value is the min.",
+     "blanks": [
+      "critical",
+      "endpoints",
+      "largest",
+      "smallest"
+     ],
+     "distractors": [
+      "local",
+      "zeros"
+     ],
+     "explain": "Test every critical point and both endpoints. The largest value is the max and the smallest value is the min.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_t21",
+     "type": "mc",
+     "graph": "maxmin_Eb",
+     "text": "$f(x) = 1/(x^2 + 1)$ on all real numbers. Which is true?",
+     "options": [
+      "Both an absolute max and an absolute min",
+      "An absolute max, but no absolute min",
+      "An absolute min, but no absolute max",
+      "Neither one"
+     ],
+     "answer": 1,
+     "explain": "The highest point is $(0, 1)$. The graph only gets closer to 0 on the sides, so there is no lowest point.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_t15",
+     "type": "tf",
+     "text": "$f(x) = |x|$ has a local minimum at $x = 0$, so Fermat's Theorem says $f'(0) = 0$.",
+     "answer": false,
+     "explain": "$|x|$ is not differentiable at 0, so Fermat's Theorem does not apply. The point $x = 0$ is critical because $f'(0)$ does not exist.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_t07",
+     "type": "tf",
+     "text": "A function that is continuous on $[a, b]$ must have both an absolute maximum and an absolute minimum on $[a, b]$.",
+     "answer": true,
+     "explain": "That is exactly the Extreme Value Theorem.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mv_T19",
+     "type": "tf",
+     "text": "If $f'(x) = g'(x)$ for every $x$, then $f(x) = g(x)$.",
+     "answer": false,
+     "explain": "Only $f = g + C$. For example $x^2$ and $x^2 + 5$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_T18",
+     "type": "tf",
+     "text": "If $f'(x) = 0$ for every $x$ in an interval, then $f$ is constant there.",
+     "answer": true,
+     "explain": "A corollary of the MVT.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_T20",
+     "type": "mc",
+     "text": "Which theorem is used to prove the Mean Value Theorem?",
+     "options": [
+      "Rolle's Theorem",
+      "Fermat's Theorem alone",
+      "The Intermediate Value Theorem",
+      "None"
+     ],
+     "answer": 0,
+     "explain": "Tilt the picture: subtract the secant line from $f$ and apply Rolle's Theorem.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_T9",
+     "type": "tf",
+     "text": "The Mean Value Theorem tells you exactly where $c$ is.",
+     "answer": false,
+     "explain": "It only promises that some $c$ exists. You find it yourself by solving $f'(c)$ = the secant slope.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_T5",
+     "type": "pick",
+     "text": "Which conditions does the **Extreme Value Theorem** require?",
+     "options": [
+      "$f$ continuous",
+      "a closed interval $[a, b]$",
+      "$f$ differentiable",
+      "$f(a) = f(b)$"
+     ],
+     "answers": [
+      0,
+      1
+     ],
+     "explain": "Only continuity on a closed interval. No derivatives needed.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_T14",
+     "type": "mc",
+     "text": "Does the MVT apply to $f(x) = x^2$ on $[0, 3]$?",
+     "options": [
+      "Yes",
+      "No: $f(0) ≠ f(3)$",
+      "No: $f$ is not differentiable"
+     ],
+     "answer": 0,
+     "explain": "Polynomials are continuous and differentiable everywhere. Equal ends are not required.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "nw_T9",
+     "type": "mc",
+     "text": "$f'(x_0)$ is very close to 0, but not 0. What usually happens to $x_1$?",
+     "options": [
+      "It lands very far from $x_0$",
+      "$x_1$ = $x_0$",
+      "It lands exactly on the root",
+      "$x_1$ = 0"
+     ],
+     "answer": 0,
+     "explain": "A nearly flat tangent crosses the axis far away. Dividing by a tiny $f'(x_0)$ makes a huge jump.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_T4",
+     "type": "bank",
+     "text": "To get x₁, draw the ___ line at x₀ and find where it crosses the ___.",
+     "blanks": [
+      "tangent",
+      "x-axis"
+     ],
+     "distractors": [
+      "secant",
+      "y-axis",
+      "normal"
+     ],
+     "explain": "Follow the tangent line at $x_0$ down to the $x$-axis.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_T2",
+     "type": "tf",
+     "text": "Newton's method usually gives the exact root after one step.",
+     "answer": false,
+     "explain": "One step gives an approximation. Repeating the step makes it better and better.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_T11",
+     "type": "tf",
+     "text": "For a smooth function, if $x_0$ is close enough to a root, the guesses usually close in on that root very quickly.",
+     "answer": true,
+     "explain": "Near the root the curve looks like its tangent line, so each step lands very close. (It needs $f'$ not to be 0 at the root.)",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_T18",
+     "type": "mc",
+     "text": "$f(x_0)$ < 0 and $f'(x_0)$ > 0. Where is $x_1$?",
+     "options": [
+      "To the right of $x_0$",
+      "To the left of $x_0$",
+      "At $x_0$",
+      "You can't tell"
+     ],
+     "answer": 0,
+     "explain": "The fraction is negative, and subtracting a negative moves right. Below the axis and rising: the root is ahead.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "ln_T15",
+     "type": "tf",
+     "text": "$dx$ and $Δx$ mean the same thing.",
+     "answer": true,
+     "explain": "Both are the change in $x$ that you choose.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_T2",
+     "type": "match",
+     "text": "Match each piece of $L(x) = f(a) + f'(a)(x - a)$ to its meaning.",
+     "pairs": [
+      [
+       "$f(a)$",
+       "height of the curve at the point"
+      ],
+      [
+       "$f'(a)$",
+       "slope of the tangent line"
+      ],
+      [
+       "$a$",
+       "$x$-value of the point of tangency"
+      ],
+      [
+       "$L(x)$",
+       "the approximate value of $f(x)$"
+      ]
+     ],
+     "explain": "Point, slope, line.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_T7",
+     "type": "mc",
+     "text": "Best function and point to approximate $ln(1.04)$:",
+     "options": [
+      "$f(x) = ln x$ at $a = 1$",
+      "$f(x) = ln x$ at $a = 0$",
+      "$f(x) = e^x$ at $a = 1$",
+      "$f(x) = ln x$ at $a = e$"
+     ],
+     "answer": 0,
+     "explain": "$ln 1 = 0$ and 1 is close to 1.04. ($ln 0$ doesn't exist.)",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_T10",
+     "type": "mc",
+     "text": "$f$ is concave up near $a$. Then $L(x)$ near $a$ is…",
+     "options": [
+      "an underestimate (the tangent is below the curve)",
+      "an overestimate (the tangent is above the curve)",
+      "exactly right",
+      "impossible to tell"
+     ],
+     "answer": 0,
+     "explain": "A concave-up curve bends up away from its tangent line, so the line sits below it.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_T4",
+     "type": "mc",
+     "text": "The slope of $L(x)$ is…",
+     "options": [
+      "$f'(a)$, the same everywhere",
+      "$f'(x)$, changing with $x$",
+      "$f(a)$",
+      "1"
+     ],
+     "answer": 0,
+     "explain": "$L$ is a line with slope $f'(a)$.",
+     "topic": "Linearization"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0^+] x^(sin x)$ have?",
+     "options": [
+      "$∞^0$",
+      "$0^0$",
+      "$0·∞$",
+      "$∞ - ∞$"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0^0$.",
+     "id": "lh_TF6",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "pick",
+     "text": "Select every indeterminate form.",
+     "options": [
+      "$∞/∞$",
+      "$∞ + ∞$",
+      "$∞·∞$",
+      "$0/0$",
+      "$0·∞$",
+      "$0 - ∞$"
+     ],
+     "answers": [
+      0,
+      3,
+      4
+     ],
+     "explain": "$∞·∞$ → ∞, $∞ + ∞$ → ∞, $0 - ∞$ → −∞.",
+     "id": "lh_TF33",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0] frac{e^x - 1}{x^2 + x}$ have?",
+     "options": [
+      "$∞/∞$",
+      "$0/0$",
+      "$0^0$",
+      "Not indeterminate"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0/0$.",
+     "id": "lh_TF15",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->∞] (x - ln x)$ have?",
+     "options": [
+      "$1^(∞)$",
+      "Not indeterminate",
+      "$∞ - ∞$",
+      "$∞^0$"
+     ],
+     "answer": 2,
+     "explain": "Find where each part goes on its own: that gives $∞ - ∞$.",
+     "id": "lh_TF4",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0] frac{x}{x + 1}$ have?",
+     "options": [
+      "Not indeterminate",
+      "$∞^0$",
+      "$0/0$",
+      "$0^0$"
+     ],
+     "answer": 0,
+     "explain": "Top → 0, bottom → 1: the form is $0/1$, so the limit is just 0.",
+     "id": "lh_TF17",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "match",
+     "text": "Match each limit with its form.",
+     "pairs": [
+      [
+       "$lim[x->∞] (1 - frac{3}{x})^x$",
+       "$1^(∞)$"
+      ],
+      [
+       "$lim[x->0^+] x^(x^2)$",
+       "$0^0$"
+      ],
+      [
+       "$lim[x->∞] (e^x)^(1/x)$",
+       "$∞^0$"
+      ],
+      [
+       "$lim[x->∞] frac{e^x}{x^3}$",
+       "$∞/∞$"
+      ],
+      [
+       "$lim[x->0] frac{tan x}{x}$",
+       "$0/0$"
+      ]
+     ],
+     "explain": "Look at each part on its own.",
+     "id": "lh_TF34",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "tf",
+     "text": "If $f''(x) > 0$ on an interval, the graph is concave up there.",
+     "answer": true,
+     "explain": "Cup shape.",
+     "id": "cs_T17",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(1) = 0$ and $f''(1) = 0$. What does the second derivative test say?",
+     "options": [
+      "Local min",
+      "Inflection point",
+      "Nothing: it fails. Use the first derivative test.",
+      "Local max"
+     ],
+     "answer": 2,
+     "explain": "Examples: $x^3$ (neither), $x^4$ (min), $-x^4$ (max) all have this.",
+     "id": "cs_T14",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(2) = 0$ and $f''(2) = -7$. At $x$ = 2, $f$ has…",
+     "options": [
+      "an inflection point",
+      "a local min",
+      "a local max"
+     ],
+     "answer": 2,
+     "explain": "Concave down at a flat spot: max.",
+     "id": "cs_T12",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. Where is $f$ increasing?",
+     "options": [
+      "$(-∞, -2) ∪ (2, ∞)$",
+      "$(-∞, 4)$",
+      "$(-2, 2)$",
+      "$(0, ∞)$"
+     ],
+     "answer": 2,
+     "explain": "$f'$ is above the axis between −2 and 2.",
+     "graph": "curve_p2",
+     "id": "cs_T1",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(0) = 0$ and $f''(0) = 3$. At $x$ = 0, $f$ has…",
+     "options": [
+      "no extreme",
+      "a local max",
+      "a local min"
+     ],
+     "answer": 2,
+     "explain": "Concave up at a flat spot: min.",
+     "id": "cs_T13",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "$f'(5) = 0$ and $f'$ is negative on both sides of 5. So at 5, $f$ has…",
+     "options": [
+      "a local min",
+      "no local extreme",
+      "a local max"
+     ],
+     "answer": 1,
+     "explain": "No sign change: just a flat spot on the way down.",
+     "id": "cs_T11",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "Here is the graph of $f'$. Where does $f$ have a local max?",
+     "options": [
+      "$x$ = −2",
+      "$x$ = 0",
+      "Nowhere",
+      "$x$ = 2"
+     ],
+     "answer": 3,
+     "explain": "$f'$ goes from + to − at 2.",
+     "graph": "curve_p2",
+     "id": "cs_T2",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "**What is the constraint?**\nFind two positive numbers whose product is 192 such that the first number plus **three times** the second is as small as possible.",
+     "options": [
+      "$x + 3y = 192$",
+      "$x + y = 192$",
+      "$xy = 192$"
+     ],
+     "answer": 2,
+     "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
+     "id": "op_S9",
+     "topic": "Optimization"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nAn open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.",
+     "options": [
+      "The cost of the metal (minimize)",
+      "The surface area (minimize)",
+      "The volume (maximize)",
+      "The height (minimize)"
+     ],
+     "answer": 0,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><ellipse class=\"f-line\" cx=\"160\" cy=\"30\" rx=\"60\" ry=\"13\" style=\"stroke-dasharray:5 4\"/><path class=\"f-fill\" d=\"M100 30 V140 A60 13 0 0 0 220 140 V30\"/><line class=\"f-acc\" x1=\"160\" y1=\"140\" x2=\"220\" y2=\"140\"/><text x=\"190\" y=\"134\" text-anchor=\"middle\">r</text><text x=\"232\" y=\"90\" text-anchor=\"start\">h</text><text x=\"160\" y=\"20\" text-anchor=\"middle\" class=\"f-s\">open top</text></svg>",
+     "id": "op_S10",
+     "topic": "Optimization"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nYou may have one slice of pizza (a sector of a circle), but its perimeter (two radii plus the crust) must be 32 inches. What radius gives the most pizza?",
+     "options": [
+      "The perimeter (maximize)",
+      "The angle (maximize)",
+      "The area of the slice (maximize)",
+      "The crust length (maximize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "op_S43",
+     "topic": "Optimization"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA page must have 400 in² of paper, with 2-inch margins at top and bottom and half-inch margins on the left and right. What width maximizes the printed area?",
+     "options": [
+      "The paper area (minimize)",
+      "The printed area (maximize)",
+      "The margins (minimize)",
+      "The page width (maximize)"
+     ],
+     "answer": 1,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "id": "op_S34",
+     "topic": "Optimization"
+    },
+    {
+     "type": "mc",
+     "text": "**What is being optimized?**\nA gardener uses a wall as one side of a rectangular enclosure and has 120 m of fencing for the other three sides. Find the largest possible area.",
+     "options": [
+      "The wall length (maximize)",
+      "The fencing used (minimize)",
+      "The area enclosed (maximize)",
+      "The perimeter (maximize)"
+     ],
+     "answer": 2,
+     "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" style=\"stroke-width:6\" x1=\"60\" y1=\"30\" x2=\"260\" y2=\"30\"/><text x=\"160\" y=\"22\" text-anchor=\"middle\" class=\"f-s\">wall</text><path class=\"f-line\" d=\"M80 33 V140 H240 V33\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
+     "id": "op_S4",
+     "topic": "Optimization"
+    },
+    {
+     "type": "expr",
+     "text": "$y = sqrt x$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "x'/(2*sqrt(x))",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "$y'$ =",
+     "keys": [
+      "sqrt("
+     ],
+     "explain": "$y' = frac{x'}{2sqrt x}$.",
+     "id": "rr_D8",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "expr",
+     "text": "$y = frac{1}{x}$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "-x'/x^2",
+     "vars": [
+      "x",
+      "x'"
+     ],
+     "label": "$y'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$y' = -frac{x'}{x^2}$.",
+     "id": "rr_D9",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "expr",
+     "text": "$S = 4pi r^2$ (surface of a sphere). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "8*pi*r*r'",
+     "vars": [
+      "r",
+      "r'"
+     ],
+     "label": "$S'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$S' = 8pi r r'$.",
+     "id": "rr_D6",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "expr",
+     "text": "A cone whose radius is always half its height has $V = frac{pi}{12}h^3$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
+     "answer": "pi*h'*h^2/4",
+     "vars": [
+      "h",
+      "h'"
+     ],
+     "label": "$V'$ =",
+     "keys": [
+      "pi"
+     ],
+     "explain": "$V' = frac{pi}{4}h^2 h'$.",
+     "id": "rr_D12",
+     "topic": "Related Rates"
+    }
+   ]
+  },
+  "problems": {
+   "title": "Problem review drill",
+   "setSize": 8,
+   "questions": [
+    {
+     "id": "mm_c14",
+     "type": "graph",
+     "graph": "maxmin_Ed",
+     "ask": "absmin",
+     "answer": "NONE",
+     "explain": "The left piece heads down toward the open circle at height $-2$ but never reaches it, and the filled point is higher. There is no absolute minimum.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_c18",
+     "type": "graph",
+     "graph": "maxmin_H1",
+     "ask": "absmax",
+     "answer": "NONE",
+     "explain": "The graph keeps climbing to the right. The hilltop is only a local maximum, so there is no absolute maximum.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_c13",
+     "type": "graph",
+     "graph": "maxmin_Ed",
+     "ask": "argmax",
+     "answer": 0,
+     "explain": "The highest point is $(0, 2)$. It occurs at $x = 0$.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_c28",
+     "type": "num",
+     "verify": {
+      "expr": "3*x^2-9*x",
+      "domain": [
+       -1,
+       2
+      ],
+      "ask": "min"
+     },
+     "text": "Find the absolute **minimum** of $f(x) = 3x^2 - 9x$ on $[-1, 2]$.",
+     "label": "Absolute min =",
+     "answer": -6.75,
+     "explain": "$f'(x) = 6x - 9 = 0$ at $x = 1.5$. The critical point: $x = 1.5$. Test the endpoints too: $f(-1) = 12$; $f(1.5) = -6.75$; $f(2) = -6$. The smallest is -6.75.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_c04",
+     "type": "graph",
+     "graph": "maxmin_Ee",
+     "ask": "argmax",
+     "answer": 5,
+     "explain": "The highest point is $(5, 9)$. It occurs at $x = 5$.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mm_c11",
+     "type": "graph",
+     "graph": "maxmin_P2",
+     "ask": "absmax",
+     "answer": "NONE",
+     "explain": "The graph heads toward the open circle at height 9 but never reaches it. There is no absolute maximum.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "mv_C2",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^2 - 6x$ on $[0, 6]$.",
+     "answers": [
+      3
+     ],
+     "verify": {
+      "expr": "x^2-6*x-(0)*x",
+      "range": [
+       0.001,
+       5.999
+      ]
+     },
+     "explain": "$f(0) = f(6) = 0$. $2c - 6 = 0$ gives $c = 3$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_C9",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^3$ on $[0, 3]$.",
+     "answers": [
+      1.7321
+     ],
+     "verify": {
+      "expr": "x^3-(9)*x",
+      "range": [
+       0.001,
+       2.999
+      ]
+     },
+     "explain": "Secant slope = 27/3 = 9. $3c^2 = 9$ gives $c = √3 ≈ 1.7321$ (−√3 is outside).",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_C21",
+     "type": "multi",
+     "text": "A particle's position is $s(t) = t^2 + 3t$ meters. On $[0, 4]$:",
+     "parts": [
+      {
+       "label": "Average velocity =",
+       "answer": 7
+      },
+      {
+       "label": "Time $c$ when $s'(c)$ equals it =",
+       "answer": 2
+      }
+     ],
+     "explain": "Average = (28 − 0)/4 = 7. $2c + 3 = 7$ gives $c = 2$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_C8",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^2$ on $[1, 3]$.",
+     "answers": [
+      2
+     ],
+     "verify": {
+      "expr": "x^2-(4)*x",
+      "range": [
+       1.001,
+       2.999
+      ]
+     },
+     "explain": "Secant slope = (9 − 1)/2 = 4. $2c = 4$ gives $c = 2$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "mv_C23",
+     "type": "num",
+     "text": "You drive 150 miles in 2.5 hours. By the MVT, at some moment your speedometer read exactly…",
+     "label": "mph =",
+     "answer": 60,
+     "explain": "150/2.5 = 60 mph.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "nw_C10",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^2 - 5$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^2-5",
+      "x0": 2
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -1,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 4,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 2.25,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $2x$.  $x_1$ = $2 - frac{-1}{4}$ ≈ 2.25",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_C31",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^5 - x - 1$, starting at $x_0$ = 1. Find $x_1$ and $x_2$ (at least 3 decimal places).",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.25,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 1.178459,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^5-x-1",
+      "x0": 1
+     },
+     "explain": "$x_1$ ≈ 1.25 and $x_2$ ≈ 1.178459",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_C3",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 2, $f(2)$ = 5 and $f'(2)$ = −2. Find $x_1$.",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 4.5
+      }
+     ],
+     "explain": "$x_1$ = $2 - frac{5}{-2}$ = 4.5",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_C17",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^4 - 2$, starting at $x_0$ = 1. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "x^4-2",
+      "x0": 1
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -1,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 4,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 1.25,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $4x^3$.  $x_1$ = $1 - frac{-1}{4}$ ≈ 1.25",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "nw_C16",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $frac{2}{x} - x^2 + 1$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "2/x-x^2+1",
+      "x0": 2
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -2,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": -4.5,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 1.555556,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $-frac{2}{x^2} - 2x$.  $x_1$ = $2 - frac{-2}{-4.5}$ ≈ 1.555556",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "ln_C13",
+     "type": "multi",
+     "text": "Approximate $sqrt(15.8)$ with a linearization of $f(x) = sqrt(x)$ at $a = 16$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 4
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.125
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 3.975,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(16) = 1/8$. $L = 4 + (0.125)(-0.2) ≈ 3.975$. (The real value is 3.974921.)",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_C25",
+     "type": "num",
+     "text": "A cube's side is 5 cm ± 1 cm. Estimate the possible error in its volume.",
+     "label": "$dV$ ≈",
+     "answer": 75,
+     "tol": 0.01,
+     "explain": "$dV = 3s^2 ds = 3(25)(1) = 75$ cm³. (With an error this big, the real change is 91: $dy$ is best for small $dx$.)",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_C9",
+     "type": "multi",
+     "text": "Approximate $2.98^2$ with a linearization of $f(x) = x^2$ at $a = 3$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 9
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 6
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 8.88,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = 2x$. $L = 9 + (6)(-0.02) ≈ 8.88$. (The real value is 8.8804.)",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_C20",
+     "type": "multi",
+     "text": "$y = x^2$ at $x = 5$ with $dx = −0.1$. Find $dy$ and $Δy$ (at least 4 decimal places).",
+     "parts": [
+      {
+       "label": "$dy$ =",
+       "answer": -1,
+       "tol": 0.0002
+      },
+      {
+       "label": "$Δy$ =",
+       "answer": -0.99,
+       "tol": 0.0002
+      }
+     ],
+     "explain": "$dy = 2(5)(−0.1)$ = -1, and $Δy = f(4.9) - f(5)$ = -0.99.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "ln_C19",
+     "type": "multi",
+     "text": "$y = sqrt(x)$ at $x = 4$ with $dx = 0.2$. Find $dy$ and $Δy$ (at least 4 decimal places).",
+     "parts": [
+      {
+       "label": "$dy$ =",
+       "answer": 0.05,
+       "tol": 0.0002
+      },
+      {
+       "label": "$Δy$ =",
+       "answer": 0.04939,
+       "tol": 0.0002
+      }
+     ],
+     "explain": "$dy = frac{1}{2sqrt(4)}(0.2)$ = 0.05, and $Δy = f(4.2) - f(4)$ = 0.04939.",
+     "topic": "Linearization"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{tan x}{x}$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{sec^2 x}{1}$ → 1.",
+     "id": "lh_TB4",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] (1 + frac{3}{x})^x$.",
+     "answer": 20.085537,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln(1 + 3/x)}{1/x}$ → 3, so $y$ → $e^3$ ≈ 20.09.",
+     "id": "lh_TO10",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{e^x - 1 - x}{x^2}$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{e^x - 1}{2x}$ is still $0/0$; again: $frac{e^x}{2}$ → $frac{1}{2}$.",
+     "id": "lh_TB7",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->(π/2)^-] (frac{π}{2} - x) tan x$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{π/2 - x}{cot x}$ → $frac{-1}{-csc^2 x}$ → 1.",
+     "id": "lh_TO17",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{e^x - e^(-x)}{sin x}$.",
+     "answer": 2,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{e^x + e^(-x)}{cos x}$ → 2.",
+     "id": "lh_TB19",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->∞] frac{x^2}{e^x}$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2x}{e^x}$ → $frac{2}{e^x}$ → 0.",
+     "id": "lh_TB8",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] (1 + x)^(1/x)$.",
+     "answer": 2.718282,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$ln y = frac{ln(1 + x)}{x}$ → 1, so $y$ → e ≈ 2.718.",
+     "id": "lh_TO11",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "steps",
+     "text": "Air is pumped into a spherical balloon at 100 cm³/s. How fast is the radius increasing when $r$ = 5 cm? How fast is the **surface area** increasing at that instant?",
+     "steps": [
+      {
+       "type": "expr",
+       "text": "$V = frac{4}{3}pi r^3$. Differentiate with respect to $t$.",
+       "answer": "4*pi*r^2*r'",
+       "vars": [
+        "r",
+        "r'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = 4pi r^2 r'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $r'$ when $V'$ = 100 and $r$ = 5.",
+       "answer": 0.31831,
+       "label": "$r'$ ≈",
+       "tol": 0.001,
+       "explain": "$100 = 100pi r'$, so $r' = frac{1}{pi}$ ≈ 0.318 cm/s."
+      },
+      {
+       "type": "expr",
+       "text": "Now $S = 4pi r^2$. Differentiate with respect to $t$.",
+       "answer": "8*pi*r*r'",
+       "vars": [
+        "r",
+        "r'"
+       ],
+       "label": "$S'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$S' = 8pi r r'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $r$ = 5 and the $r'$ you just found.",
+       "answer": 40,
+       "label": "$S'$ =",
+       "explain": "$8pi(5)(frac{1}{pi})$ = 40 cm²/s. Part 2 needed the answer to part 1."
+      }
+     ],
+     "title": "Two questions, one balloon",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><circle class=\"f-fill\" cx=\"160\" cy=\"85\" r=\"62\"/><line class=\"f-acc\" x1=\"160\" y1=\"85\" x2=\"222\" y2=\"85\"/><text x=\"191\" y=\"78\" text-anchor=\"middle\">r</text></svg>",
+     "id": "rr_P4",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "Sand is poured into a conical pile. The radius grows at 2 ft/min while the height grows at 1 ft/min. How fast is the volume growing when $r$ = 6 ft and $h$ = 4 ft?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "How many variables are changing?",
+       "options": [
+        "Two: $r$ and $h$",
+        "One: $r$",
+        "One: $V$"
+       ],
+       "answer": 0,
+       "explain": "Both $r$ and $h$ change, so expect the product rule."
+      },
+      {
+       "type": "expr",
+       "text": "$V = frac{1}{3}pi r^2 h$. Differentiate with respect to $t$.",
+       "answer": "pi/3*(2*r*r'*h+r^2*h')",
+       "vars": [
+        "r",
+        "h",
+        "r'",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $r$ = 6, $r'$ = 2, $h$ = 4, $h'$ = 1.",
+       "answer": 138.230077,
+       "label": "$V'$ ≈",
+       "tol": 0.05,
+       "explain": "$frac{pi}{3}(96 + 36) = 44pi$ ≈ 138.2 ft³/min."
+      }
+     ],
+     "title": "Sand pile",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><path class=\"f-fill\" d=\"M70 150 L160 60 L250 150 Z\"/><line class=\"f-dash\" x1=\"160\" y1=\"60\" x2=\"160\" y2=\"150\"/><line class=\"f-acc\" x1=\"160\" y1=\"146\" x2=\"250\" y2=\"146\"/><text x=\"170\" y=\"110\" text-anchor=\"start\">h</text><text x=\"205\" y=\"140\" text-anchor=\"middle\">r</text></svg>",
+     "id": "rr_P15",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "A 6-ft person walks away from a 15-ft lamppost at 5 ft/s. How fast is the length of their shadow growing?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "With $x$ = distance from the post and $s$ = shadow length, similar triangles give:",
+       "options": [
+        "$frac{15}{x} = frac{6}{s}$",
+        "$frac{15}{x + s} = frac{6}{s}$",
+        "$15s = 6x$"
+       ],
+       "answer": 1,
+       "explain": "The big triangle (post) and small triangle (person) share the tip of the shadow."
+      },
+      {
+       "type": "expr",
+       "text": "Solve for $s$ in terms of $x$.",
+       "answer": "2*x/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$s$ =",
+       "explain": "$15s = 6x + 6s$, so $9s = 6x$ and $s = frac{2}{3}x$."
+      },
+      {
+       "type": "num",
+       "text": "So $s' = frac{2}{3}x'$. Find $s'$.",
+       "answer": 3.333333,
+       "label": "$s'$ ≈",
+       "tol": 0.002,
+       "explain": "$frac{2}{3}(5)$ ≈ 3.33 ft/s, no matter where the person is."
+      }
+     ],
+     "title": "Lengthening shadow",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" x1=\"40\" y1=\"150\" x2=\"40\" y2=\"20\"/><circle class=\"f-dot\" cx=\"40\" cy=\"20\" r=\"6\"/><line class=\"f-line\" x1=\"170\" y1=\"150\" x2=\"170\" y2=\"98\"/><line class=\"f-dash\" x1=\"40\" y1=\"20\" x2=\"290\" y2=\"150\"/><line class=\"f-acc\" x1=\"170\" y1=\"150\" x2=\"290\" y2=\"150\"/><text x=\"28\" y=\"90\" text-anchor=\"end\" class=\"f-s\">15 ft</text><text x=\"182\" y=\"126\" text-anchor=\"start\" class=\"f-s\">6 ft</text><text x=\"105\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"230\" y=\"166\" text-anchor=\"middle\">s</text></svg>",
+     "id": "rr_P17",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "Water drains from a cone-shaped funnel at 0.3 ft³/s. The funnel is 20 ft tall with top radius 10 ft. How fast is the water level changing when the water is 12 ft deep?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "By similar triangles, the water’s radius $r$ and depth $h$ satisfy:",
+       "options": [
+        "$r = 2h$",
+        "$r = h - 10$",
+        "$r = frac{h}{2}$"
+       ],
+       "answer": 2,
+       "explain": "$frac{r}{h} = frac{10}{20}$."
+      },
+      {
+       "type": "expr",
+       "text": "Substitute into $V = frac{1}{3}pi r^2 h$. $V$ in terms of $h$ only:",
+       "answer": "pi*h^3/12",
+       "vars": [
+        "h"
+       ],
+       "label": "$V$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$frac{1}{3}pi(frac{h}{2})^2 h = frac{pi h^3}{12}$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate with respect to $t$.",
+       "answer": "pi*h^2*h'/4",
+       "vars": [
+        "h",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "keys": [
+        "pi"
+       ],
+       "explain": "$V' = frac{pi}{4}h^2 h'$."
+      },
+      {
+       "type": "num",
+       "text": "Solve for $h'$ when $V'$ = −0.3 and $h$ = 12.",
+       "answer": -0.002653,
+       "label": "$h'$ ≈",
+       "tol": 0.0001,
+       "explain": "$h' = frac{4(-0.3)}{pi(144)}$ ≈ −0.00265 ft/s."
+      }
+     ],
+     "title": "Draining funnel",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M90 15 L160 155 L230 15 Z\"/><path class=\"f-water\" d=\"M118 71 L160 155 L202 71 Z\"/><line class=\"f-dash\" x1=\"118\" y1=\"71\" x2=\"202\" y2=\"71\"/><text x=\"170\" y=\"66\" text-anchor=\"middle\">r</text><line class=\"f-thin\" x1=\"250\" y1=\"71\" x2=\"250\" y2=\"155\"/><text x=\"262\" y=\"118\" text-anchor=\"middle\">h</text><text x=\"160\" y=\"12\" text-anchor=\"middle\" class=\"f-s\">10 ft across the top radius</text><line class=\"f-dash\" x1=\"60\" y1=\"15\" x2=\"60\" y2=\"155\"/><text x=\"48\" y=\"90\" text-anchor=\"end\" class=\"f-s\">20 ft</text></svg>",
+     "id": "rr_P13",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "A kite flies 100 ft above the ground and moves horizontally away from the person flying it at 8 ft/s. How fast is the angle of elevation θ changing when 200 ft of string is out?",
+     "steps": [
+      {
+       "type": "num",
+       "text": "How far away (horizontally) is the kite when the string is 200 ft?",
+       "answer": 173.205081,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(200^2 - 100^2)$ ≈ 173.2 ft."
+      },
+      {
+       "type": "mc",
+       "text": "Which equation links θ and $x$?",
+       "options": [
+        "$sin θ = frac{x}{100}$",
+        "$tan θ = frac{100}{x}$",
+        "$tan θ = frac{x}{100}$"
+       ],
+       "answer": 1,
+       "explain": "Opposite over adjacent."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate $tan θ = frac{100}{x}$. Solve for $θ'$.",
+       "answer": "-100*x'/(x^2*sec(θ)^2)",
+       "vars": [
+        "x",
+        "θ",
+        "x'",
+        "θ'"
+       ],
+       "label": "$θ'$ =",
+       "keys": [
+        "sec(",
+        "cos(",
+        "^"
+       ],
+       "explain": "$sec^2 θ · θ' = -frac{100x'}{x^2}$, so $θ' = -frac{100x'}{x^2 sec^2 θ}$."
+      },
+      {
+       "type": "num",
+       "text": "Here $sec θ = frac{200}{x}$, so $x^2 sec^2 θ$ = 40,000. Find $θ'$.",
+       "answer": -0.02,
+       "label": "$θ'$ =",
+       "tol": 0.0005,
+       "explain": "$θ' = -frac{100(8)}{40000}$ = −0.02 rad/s. The angle is shrinking."
+      }
+     ],
+     "title": "Rising kite",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><line class=\"f-acc\" x1=\"50\" y1=\"150\" x2=\"260\" y2=\"30\"/><path class=\"f-fill\" d=\"M260 18 l12 12 l-12 14 l-12 -14 Z\"/><line class=\"f-dash\" x1=\"260\" y1=\"30\" x2=\"260\" y2=\"150\"/><text x=\"272\" y=\"96\" text-anchor=\"start\" class=\"f-s\">100 ft</text><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"150\" y=\"82\" text-anchor=\"middle\">string</text><text x=\"80\" y=\"144\" text-anchor=\"middle\">θ</text></svg>",
+     "id": "rr_P9",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "A poster must have a 72 in² photo with 4-inch borders at the top and bottom and 2-inch borders on each side. What overall dimensions use the least paper?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The total area of the poster (minimize)",
+        "The width of the borders (minimize)",
+        "The area of the photo (maximize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$(x + 4)(y + 8) = 72$",
+        "$xy = 72$ (the photo)",
+        "$x + y = 72$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "(4+x)*(8+72/x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$(x + 4)(frac{72}{x} + 8)$",
+       "explain": "Photo $x$ by $y$ with $y = frac{72}{x}$. Poster is $(x + 4)$ by $(y + 8)$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "8-288/x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$A′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 6,
+       "label": "Photo width $x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the smallest total area?",
+       "answer": 200,
+       "label": "Area =",
+       "tol": 0.2,
+       "explain": "Photo 6 by 12, poster 10 by 20 = 200 in². The 72 is the constraint, not what we minimize."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 190\" role=\"img\"><rect class=\"f-line\" x=\"100\" y=\"10\" width=\"120\" height=\"155\"/><rect class=\"f-fill\" x=\"120\" y=\"40\" width=\"80\" height=\"95\"/><text x=\"160\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">72 in²</text><text x=\"160\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"160\" y=\"153\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"110\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"210\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"160\" y=\"182\" text-anchor=\"middle\">x</text><text x=\"92\" y=\"92\" text-anchor=\"end\">y</text></svg>",
+     "id": "op_P5",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "Squares of side $x$ are cut from the corners of a 12-inch square sheet, and the sides are folded up into an open box. What $x$ gives the largest volume?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The area of the sheet (maximize)",
+        "The volume of the box (maximize)",
+        "The cut size (minimize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "base edge = $12 - 2x$",
+        "base edge = $12 - x$",
+        "$x + 12 = 24$"
+       ],
+       "answer": 0,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x*(12-2*x)^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$V(x)$ =",
+       "show": "$x(12 - 2x)^2$",
+       "explain": "The base is $(12 - 2x)$ square and the height is $x$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "12*(-6+x)*(-2+x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$V′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest volume?",
+       "answer": 128,
+       "label": "$V$ =",
+       "tol": 0.128,
+       "explain": "$2 · 8^2$ = 128 in³."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><rect class=\"f-fill\" x=\"90\" y=\"15\" width=\"140\" height=\"140\"/><rect x=\"90\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"90\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect class=\"f-dash\" x=\"120\" y=\"45\" width=\"80\" height=\"80\"/><text x=\"105\" y=\"62\" text-anchor=\"middle\" class=\"f-s\">x</text><text x=\"160\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">12 in</text></svg>",
+     "id": "op_P20",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "A gardener uses a wall as one side of a rectangular enclosure and has 120 m of fencing for the other three sides. Find the largest possible area.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The wall length (maximize)",
+        "The fencing used (minimize)",
+        "The area enclosed (maximize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x + y = 120$",
+        "$2x + 2y = 120$",
+        "$2x + y = 120$"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "x*(120-2*x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$x(120-2x)$",
+       "explain": "$y = 120 - 2x$, so $A = x(120 - 2x)$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "120-4*x",
+       "vars": [
+        "x"
+       ],
+       "label": "$A′(x)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 30,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest area:",
+       "answer": 1800,
+       "label": "$A$ =",
+       "tol": 1.8,
+       "explain": "30 m by 60 m gives 1800 m². Only three sides need fence."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" style=\"stroke-width:6\" x1=\"60\" y1=\"30\" x2=\"260\" y2=\"30\"/><text x=\"160\" y=\"22\" text-anchor=\"middle\" class=\"f-s\">wall</text><path class=\"f-line\" d=\"M80 33 V140 H240 V33\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
+     "id": "op_P2",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "An isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The area of the triangle (maximize)",
+        "The perimeter of the triangle (minimize)",
+        "The radius (maximize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "base · height = 25",
+        "half-base$^2$ + $x^2$ = 25",
+        "base + height = 10"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "sqrt(25-x^2)*(5+x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$sqrt(25 - x^2)(5 + x)$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Half-base $sqrt(25 - x^2)$, height $5 + x$. Area = half-base × height."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2.5,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest area?",
+       "answer": 32.475953,
+       "label": "$A$ ≈",
+       "tol": 0.03247595264191645,
+       "explain": "Height 7.5 and base $2sqrt(18.75)$: the triangle is equilateral, area ≈ 32.48."
+      }
+     ],
+     "id": "op_P13",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "An island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The swimming distance (minimize)",
+        "The total time (minimize)",
+        "The running distance (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "run + swim = 8 mi",
+        "time = distance ÷ rate for each leg",
+        "run time = swim time"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "3/4-x/8+sqrt(4+x^2)/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$T(x)$ =",
+       "show": "$frac{6 - x}{8} + frac{sqrt(4 + x^2)}{3}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Run $6 - x$ at 8 mi/h; swim $sqrt(4 + x^2)$ at 3 mi/h."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 0.80904,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "How far should they run (miles)?",
+       "answer": 5.19096,
+       "label": "Run ≈",
+       "tol": 0.01,
+       "explain": "Run $6 - 0.809$ ≈ 5.19 mi, then swim."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">island</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "op_P8",
+     "topic": "Optimization"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $x$-value of every inflection point of $f(x) = frac{x^2 + 2x + 1}{x^2}$.",
+     "answers": [
+      -1.5
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No inflection points",
+     "explain": "Where $f''$ changes sign.",
+     "id": "cs_D9",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $f(x) = x e^(-x)$.",
+     "answers": [
+      0
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Take the limits as $x$ → ±∞.",
+     "id": "cs_D28",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "crit",
+     "text": "Find every vertical asymptote of $f(x) = frac{x - 1}{x^2}$.",
+     "answers": [
+      0
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No vertical asymptotes",
+     "explain": "Where the function blows up: $x$ = 0.",
+     "id": "cs_D23",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "crit",
+     "text": "Find every horizontal asymptote of $g(x) = frac{x^2 + 4}{x^2 - 4}$.",
+     "answers": [
+      1
+     ],
+     "var": "y",
+     "label": "$y$ =",
+     "noneText": "No horizontal asymptotes",
+     "explain": "Take the limits as $x$ → ±∞.",
+     "id": "cs_D11",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "interval",
+     "text": "Find the domain of $f(x) = x ln x$.",
+     "answer": "(0,inf)",
+     "label": "Domain:",
+     "explain": "Exclude where it is undefined.",
+     "id": "cs_D30",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{x^2 + 2x + 1}{x^2}$ concave up?",
+     "answer": [
+      "(-3/2,0)U(0,inf)",
+      "(-3/2,inf)"
+     ],
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "explain": "Where $f''(x) > 0$.",
+     "id": "cs_D8",
+     "topic": "Curve Sketching"
+    }
+   ]
+  },
+  "exam": {
+   "title": "Practice test",
+   "exam": true,
+   "setSize": 20,
+   "questions": [
+    {
+     "id": "xm_t08",
+     "type": "tf",
+     "text": "A local maximum is always the highest point on the whole graph.",
+     "answer": false,
+     "explain": "A local maximum only has to be higher than the points near it.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xm_c07",
+     "type": "graph",
+     "graph": "maxmin_P1",
+     "ask": "argmax",
+     "answer": 1,
+     "explain": "The top of the hill is $(1, 3)$. It occurs at $x = 1$.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xm_t03",
+     "type": "mc",
+     "text": "Which pair of conditions does the Extreme Value Theorem require?",
+     "options": [
+      "$f$ is continuous on a closed interval",
+      "$f$ is differentiable on an open interval",
+      "$f'(x) = 0$ at some point of the interval",
+      "$f$ is increasing on the interval"
+     ],
+     "answer": 0,
+     "explain": "The EVT needs a continuous function on a closed interval $[a, b]$.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xm_c05",
+     "type": "graph",
+     "graph": "maxmin_Ee",
+     "ask": "argmin",
+     "answer": 2,
+     "explain": "The lowest point is $(2, 0)$. It occurs at $x = 2$.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xm_t02",
+     "type": "tf",
+     "text": "The absolute maximum of a function is an $x$-value.",
+     "answer": false,
+     "explain": "The absolute maximum is a height, a $y$-value. The $x$-value is where it **occurs**.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xm_c37",
+     "type": "num",
+     "verify": {
+      "expr": "x^3-3*x",
+      "domain": [
+       0,
+       2
+      ],
+      "ask": "max"
+     },
+     "text": "Find the absolute **maximum** of $f(x) = x^3 - 3x$ on $[0, 2]$.",
+     "label": "Absolute max =",
+     "answer": 2,
+     "explain": "$f'(x) = 3x^2 - 3 = 0$ at $x = 1$ (and $x = -1$, which is outside the interval). The critical point: $x = 1$. Test the endpoints too: $f(0) = 0$; $f(1) = -2$; $f(2) = 2$. The largest is 2.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xm_t21",
+     "type": "mc",
+     "graph": "maxmin_Eb",
+     "text": "$f(x) = 1/(x^2 + 1)$ on all real numbers. Which is true?",
+     "options": [
+      "Both an absolute max and an absolute min",
+      "An absolute max, but no absolute min",
+      "An absolute min, but no absolute max",
+      "Neither one"
+     ],
+     "answer": 1,
+     "explain": "The highest point is $(0, 1)$. The graph only gets closer to 0 on the sides, so there is no lowest point.",
+     "topic": "Max and Mins"
+    },
+    {
+     "id": "xv_C18",
+     "type": "num",
+     "text": "Find the slope of the secant line for $f(x) = x^3$ on $[1, 3]$.",
+     "label": "Slope =",
+     "answer": 13,
+     "explain": "(27 − 1)/(3 − 1) = 13.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "xv_C16",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **the Mean Value Theorem** promises for $f(x) = x^3 - 3x$ on $[−2, 2.5]$.",
+     "answers": [
+      -1.3229,
+      1.3229
+     ],
+     "verify": {
+      "expr": "x^3-3*x-(2.25)*x",
+      "range": [
+       -1.999,
+       2.499
+      ]
+     },
+     "explain": "Secant slope = (8.125 − (−2))/4.5 = 2.25. $3c^2 - 3 = 2.25$ gives $c = ±1.3229$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "xv_C4",
+     "type": "crit",
+     "var": "c",
+     "label": "$c$ =",
+     "noneText": "The theorem doesn't apply",
+     "text": "Find every $c$ that **Rolle's Theorem** promises for $f(x) = x^3 - x$ on $[−1, 1]$.",
+     "answers": [
+      -0.5774,
+      0.5774
+     ],
+     "verify": {
+      "expr": "x^3-x-(0)*x",
+      "range": [
+       -0.999,
+       0.999
+      ]
+     },
+     "explain": "$3c^2 - 1 = 0$ gives $c = ±1/√3 ≈ ±0.5774$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "xv_C21",
+     "type": "multi",
+     "text": "A particle's position is $s(t) = t^2 + 3t$ meters. On $[0, 4]$:",
+     "parts": [
+      {
+       "label": "Average velocity =",
+       "answer": 7
+      },
+      {
+       "label": "Time $c$ when $s'(c)$ equals it =",
+       "answer": 2
+      }
+     ],
+     "explain": "Average = (28 − 0)/4 = 7. $2c + 3 = 7$ gives $c = 2$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "xv_C19",
+     "type": "num",
+     "text": "$f(0) = 2$ and $f'(x) ≤ 3$ for every $x$. What is the **largest** $f(4)$ could be?",
+     "label": "$f(4)$ ≤",
+     "answer": 14,
+     "explain": "By the MVT, $frac{f(4) - f(0)}{4} = f'(c) ≤ 3$, so $f(4) ≤ 2 + 12 = 14$.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "xv_T1",
+     "type": "match",
+     "text": "Match each theorem with its **conclusion**.",
+     "pairs": [
+      [
+       "Extreme Value Theorem",
+       "$f$ has an absolute max and min on $[a, b]$"
+      ],
+      [
+       "Fermat's Theorem",
+       "a local max or min at $c$ (where $f'(c)$ exists) has $f'(c) = 0$"
+      ],
+      [
+       "Rolle's Theorem",
+       "some $c$ in $(a, b)$ has $f'(c) = 0$"
+      ],
+      [
+       "Mean Value Theorem",
+       "some $c$ in $(a, b)$ has $f'(c) = frac{f(b) - f(a)}{b - a}$"
+      ]
+     ],
+     "explain": "Each theorem's promise.",
+     "topic": "Mean Value Theorem"
+    },
+    {
+     "id": "xn_C20",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $ln x - 1$, starting at $x_0$ = 3. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "ln(x)-1",
+      "x0": 3
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": 0.098612,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": 0.333333,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 2.704163,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $frac{1}{x}$.  $x_1$ = $3 - frac{0.0986}{0.3333}$ ≈ 2.704163",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "xn_C16",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $frac{2}{x} - x^2 + 1$, starting at $x_0$ = 2. Give decimals to at least 3 places.",
+     "verify": {
+      "expr": "2/x-x^2+1",
+      "x0": 2
+     },
+     "parts": [
+      {
+       "label": "$f(x_0)$ =",
+       "answer": -2,
+       "calc": "f(x0)"
+      },
+      {
+       "label": "$f'(x_0)$ =",
+       "answer": -4.5,
+       "calc": "f'(x0)"
+      },
+      {
+       "label": "$x_1$ =",
+       "answer": 1.555556,
+       "calc": "x1"
+      }
+     ],
+     "explain": "$f'(x)$ = $-frac{2}{x^2} - 2x$.  $x_1$ = $2 - frac{-2}{-4.5}$ ≈ 1.555556",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "xn_C31",
+     "type": "multi",
+     "fail": true,
+     "text": "$f(x)$ = $x^5 - x - 1$, starting at $x_0$ = 1. Find $x_1$ and $x_2$ (at least 3 decimal places).",
+     "parts": [
+      {
+       "label": "$x_1$ =",
+       "answer": 1.25,
+       "calc": "x1"
+      },
+      {
+       "label": "$x_2$ =",
+       "answer": 1.178459,
+       "calc": "x2"
+      }
+     ],
+     "verify": {
+      "expr": "x^5-x-1",
+      "x0": 1
+     },
+     "explain": "$x_1$ ≈ 1.25 and $x_2$ ≈ 1.178459",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "xn_T8",
+     "type": "mc",
+     "text": "If $f'(x_0)$ = 0, what does the tangent line at $x_0$ look like?",
+     "options": [
+      "Horizontal, so it never meets the $x$-axis (unless $f(x_0)$ = 0)",
+      "Vertical",
+      "Exactly the same as the curve",
+      "A line through the origin"
+     ],
+     "answer": 0,
+     "explain": "Slope 0 means a horizontal line. Picture: a flat tangent at the bottom of a valley.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "xn_T7",
+     "type": "tf",
+     "text": "If $f'(x_0)$ = 0, Newton's formula divides by zero, so it cannot produce $x_1$.",
+     "answer": true,
+     "explain": "The formula has $f'(x_0)$ in the denominator.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "xn_C9",
+     "type": "multi",
+     "fail": true,
+     "text": "Newton's method: $x_0$ = 2, $f(2)$ = 3 and $f'(2)$ = 0. Find $x_1$.",
+     "fails": true,
+     "parts": [
+      {
+       "label": "$x_1$ ="
+      }
+     ],
+     "explain": "$f'(x_0)$ = 0, so the formula divides by zero: the tangent line is flat.",
+     "topic": "Newton's Method"
+    },
+    {
+     "id": "xl_C2",
+     "type": "multi",
+     "text": "Approximate $sqrt(26)$ with a linearization of $f(x) = sqrt(x)$ at $a = 25$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 5
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 0.1
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 5.1,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(25) = 1/10$. $L = 5 + (0.1)(1) ≈ 5.1$. (The real value is 5.09902.)",
+     "topic": "Linearization"
+    },
+    {
+     "id": "xl_C6",
+     "type": "multi",
+     "text": "Approximate $ln(1.05)$ with a linearization of $f(x) = ln x$ at $a = 1$.",
+     "parts": [
+      {
+       "label": "$f(a)$ =",
+       "answer": 0
+      },
+      {
+       "label": "$f'(a)$ =",
+       "answer": 1
+      },
+      {
+       "label": "Estimate $L$ =",
+       "answer": 0.05,
+       "tol": 0.0005
+      }
+     ],
+     "explain": "$f'(x) = 1/x$. $L = 0 + (1)(0.05) ≈ 0.05$. (The real value is 0.04879.)",
+     "topic": "Linearization"
+    },
+    {
+     "id": "xl_C16",
+     "type": "multi",
+     "text": "Write the linearization of $f(x) = sin x$ at $a = 0$ in the form $L(x) = mx + b$.",
+     "parts": [
+      {
+       "label": "slope $m$ =",
+       "answer": 1
+      },
+      {
+       "label": "intercept $b$ =",
+       "answer": 0
+      }
+     ],
+     "explain": "$L(x) = 0 + 1(x - 0) = x$. Near 0, $sin x ≈ x$.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "xl_C18",
+     "type": "multi",
+     "text": "$y = x^3$ at $x = 2$ with $dx = 0.05$. Find $dy$ and $Δy$ (at least 4 decimal places).",
+     "parts": [
+      {
+       "label": "$dy$ =",
+       "answer": 0.6,
+       "tol": 0.0002
+      },
+      {
+       "label": "$Δy$ =",
+       "answer": 0.615125,
+       "tol": 0.0002
+      }
+     ],
+     "explain": "$dy = 3(2)^2(0.05)$ = 0.6, and $Δy = f(2.05) - f(2)$ = 0.615125.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "xl_T13",
+     "type": "mc",
+     "text": "If $y = sin x$, then $dy$ = …",
+     "options": [
+      "$cos x dx$",
+      "$cos x$",
+      "$-cos x dx$",
+      "$sin x dx$"
+     ],
+     "answer": 0,
+     "explain": "$dy = (sin x)' dx = cos x dx$.",
+     "topic": "Linearization"
+    },
+    {
+     "id": "xl_T12",
+     "type": "mc",
+     "text": "If $y = x^3$, the differential $dy$ is…",
+     "options": [
+      "$3x^2 dx$",
+      "$3x^2$",
+      "$x^3 dx$",
+      "$(x + dx)^3 - x^3$"
+     ],
+     "answer": 0,
+     "explain": "$dy = f'(x) dx = 3x^2 dx$. (The last option is $Δy$.)",
+     "topic": "Linearization"
+    },
+    {
+     "type": "mc",
+     "text": "In the form $0·∞$, the 0 pulls the product toward ___ and the ∞ pulls it toward ___.",
+     "options": [
+      "0; ∞",
+      "∞; 0",
+      "0; 0",
+      "1; 1"
+     ],
+     "answer": 0,
+     "explain": "That is the battle. Who wins depends on how fast each part moves.",
+     "id": "xh_TF35",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "mc",
+     "text": "What form does $lim[x->0] frac{e^x - 1}{x^2 + x}$ have?",
+     "options": [
+      "$∞/∞$",
+      "$0/0$",
+      "$0^0$",
+      "Not indeterminate"
+     ],
+     "answer": 1,
+     "explain": "Find where each part goes on its own: that gives $0/0$.",
+     "id": "xh_TF15",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "mc",
+     "text": "$lim[x->∞] frac{x + sin x}{x}$. L’Hôpital gives $lim frac{1 + cos x}{1}$, which keeps bouncing. What is the real limit?",
+     "options": [
+      "It does not exist",
+      "1",
+      "2",
+      "0"
+     ],
+     "answer": 1,
+     "explain": "Divide by $x$: $1 + frac{sin x}{x}$ → 1. When the new limit does not exist, L’Hôpital tells you nothing; try something else.",
+     "id": "xh_TB28",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->(π/2)^-] (frac{π}{2} - x) tan x$.",
+     "answer": 1,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{π/2 - x}{cot x}$ → $frac{-1}{-csc^2 x}$ → 1.",
+     "id": "xh_TO17",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] (frac{1}{x} - frac{1}{e^x - 1})$.",
+     "answer": 0.5,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{e^x - 1 - x}{x(e^x - 1)}$, two rounds → $frac{1}{2}$.",
+     "id": "xh_TO9",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0] frac{e^(2x) - 1}{x}$.",
+     "answer": 2,
+     "label": "Limit =",
+     "tol": 0.001,
+     "explain": "$frac{2e^(2x)}{1}$ → 2.",
+     "id": "xh_TB2",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "num",
+     "text": "Find $lim[x->0^+] x^2 ln x$.",
+     "answer": 0,
+     "label": "Limit =",
+     "tol": 0.002,
+     "explain": "$frac{ln x}{1/x^2}$ → $-frac{x^2}{2}$ → 0.",
+     "id": "xh_TO3",
+     "topic": "L'Hôpital's Rule"
+    },
+    {
+     "type": "steps",
+     "text": "A rectangular prism is being stretched: its height grows at 1 cm/min while its width and depth each shrink at 2 cm/min. How fast is the volume changing when $(w, d, h)$ = (10, 10, 20)?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Rates:",
+       "options": [
+        "$w' = d' = -2$, $h' = -1$",
+        "$w' = d' = -2$, $h' = 1$",
+        "$w' = d' = 2$, $h' = 1$"
+       ],
+       "answer": 1,
+       "explain": "Shrinking means negative."
+      },
+      {
+       "type": "expr",
+       "text": "$V = wdh$. Differentiate with respect to $t$.",
+       "answer": "w'*d*h+w*d'*h+w*d*h'",
+       "vars": [
+        "w",
+        "d",
+        "h",
+        "w'",
+        "d'",
+        "h'"
+       ],
+       "label": "$V'$ =",
+       "explain": "$V' = w'dh + wd'h + wdh'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in.",
+       "answer": -700,
+       "label": "$V'$ =",
+       "explain": "$-2(10)(20) + 10(-2)(20) + 10(10)(1)$ = −700 cm³/min."
+      }
+     ],
+     "title": "Stretching a box",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-fill\" d=\"M110 50 h80 v100 h-80 Z\"/><path class=\"f-fill\" d=\"M190 50 l40 -25 v100 l-40 25 Z\"/><path class=\"f-fill\" d=\"M110 50 l40 -25 h80 l-40 25 Z\"/><text x=\"150\" y=\"166\" text-anchor=\"middle\">w</text><text x=\"222\" y=\"152\" text-anchor=\"middle\">d</text><text x=\"98\" y=\"104\" text-anchor=\"end\">h</text></svg>",
+     "id": "xr_P16",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "A plane flies horizontally at 1 km altitude and 1000 km/h. How fast is its distance from you growing when it is 2 km away horizontally?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which equation links $x$ and $s$?",
+       "options": [
+        "$s = x + 1$",
+        "$s^2 = x^2 - 1$",
+        "$s^2 = x^2 + 1$"
+       ],
+       "answer": 2,
+       "explain": "The altitude 1 km is constant."
+      },
+      {
+       "type": "num",
+       "text": "When $x$ = 2, $s$ = ?",
+       "answer": 2.236068,
+       "label": "$s$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt 5$ ≈ 2.236 km."
+      },
+      {
+       "type": "num",
+       "text": "$s' = frac{x x'}{s}$. Plug in.",
+       "answer": 894.427191,
+       "label": "$s'$ ≈",
+       "tol": 0.5,
+       "explain": "$frac{2(1000)}{sqrt 5}$ ≈ 894.4 km/h."
+      }
+     ],
+     "title": "Plane overhead",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"155\" x2=\"300\" y2=\"155\"/><line class=\"f-dash\" x1=\"70\" y1=\"30\" x2=\"230\" y2=\"30\"/><line class=\"f-dash\" x1=\"70\" y1=\"30\" x2=\"70\" y2=\"155\"/><line class=\"f-acc\" x1=\"70\" y1=\"155\" x2=\"230\" y2=\"30\"/><path class=\"f-fill\" d=\"M222 24 h22 l6 6 l-6 6 h-22 Z\"/><circle class=\"f-dot\" cx=\"70\" cy=\"155\" r=\"5\"/><text x=\"150\" y=\"24\" text-anchor=\"middle\">x</text><text x=\"58\" y=\"96\" text-anchor=\"end\" class=\"f-s\">1 km</text><text x=\"162\" y=\"104\" text-anchor=\"middle\">s</text><text x=\"70\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">you</text></svg>",
+     "id": "xr_P11",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "Car A heads east from an intersection at 40 mi/h, and car B heads north from it at 30 mi/h. How fast is the distance between them increasing 2 hours later?",
+     "steps": [
+      {
+       "type": "num",
+       "text": "After 2 hours, how far east is car A?",
+       "answer": 80,
+       "label": "$x$ =",
+       "explain": "40 · 2 = 80 mi."
+      },
+      {
+       "type": "num",
+       "text": "How far north is car B?",
+       "answer": 60,
+       "label": "$y$ =",
+       "explain": "30 · 2 = 60 mi."
+      },
+      {
+       "type": "num",
+       "text": "How far apart are they?",
+       "answer": 100,
+       "label": "$z$ =",
+       "explain": "$sqrt(80^2 + 60^2)$ = 100 mi."
+      },
+      {
+       "type": "expr",
+       "text": "From $z^2 = x^2 + y^2$, solve for $z'$ after differentiating.",
+       "answer": "(x*x'+y*y')/z",
+       "vars": [
+        "x",
+        "y",
+        "z",
+        "x'",
+        "y'",
+        "z'"
+       ],
+       "label": "$z'$ =",
+       "explain": "$2z z' = 2x x' + 2y y'$, so $z' = frac{x x' + y y'}{z}$."
+      },
+      {
+       "type": "num",
+       "text": "Plug everything in.",
+       "answer": 50,
+       "label": "$z'$ =",
+       "explain": "$frac{80(40) + 60(30)}{100}$ = 50 mi/h."
+      }
+     ],
+     "title": "Two cars",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"270\" y2=\"150\"/><line class=\"f-line\" x1=\"60\" y1=\"150\" x2=\"60\" y2=\"20\"/><line class=\"f-acc\" x1=\"60\" y1=\"30\" x2=\"250\" y2=\"150\"/><circle class=\"f-dot\" cx=\"250\" cy=\"150\" r=\"5\"/><circle class=\"f-dot\" cx=\"60\" cy=\"30\" r=\"5\"/><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"48\" y=\"92\" text-anchor=\"end\">y</text><text x=\"165\" y=\"84\" text-anchor=\"middle\">z</text><text x=\"255\" y=\"136\" text-anchor=\"start\" class=\"f-s\">A</text><text x=\"70\" y=\"24\" text-anchor=\"start\" class=\"f-s\">B</text></svg>",
+     "id": "xr_P7",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "A rocket rises vertically. A camera is 5000 ft from the launch pad. When the rocket is 1000 ft up, its velocity is 600 ft/s. How fast must the camera’s angle change to stay on the rocket?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Which equation links θ and $h$?",
+       "options": [
+        "$tan θ = frac{h}{5000}$",
+        "$tan θ = frac{5000}{h}$",
+        "$sin θ = frac{h}{5000}$"
+       ],
+       "answer": 0,
+       "explain": "Opposite over adjacent."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate the left side, $tan θ$.",
+       "answer": "sec(θ)^2*θ'",
+       "vars": [
+        "θ",
+        "θ'"
+       ],
+       "label": "Left side →",
+       "keys": [
+        "sec(",
+        "tan(",
+        "^"
+       ],
+       "explain": "$sec^2 θ · θ'$."
+      },
+      {
+       "type": "num",
+       "text": "When $h$ = 1000, $sec^2 θ = 1 + tan^2 θ$ = ?",
+       "answer": 1.04,
+       "label": "$sec^2 θ$ =",
+       "explain": "$1 + (0.2)^2$ = 1.04."
+      },
+      {
+       "type": "num",
+       "text": "$θ' = frac{h'}{5000 sec^2 θ}$. Plug in.",
+       "answer": 0.115385,
+       "label": "$θ'$ ≈",
+       "tol": 0.0005,
+       "explain": "$frac{600}{5200}$ ≈ 0.1154 rad/s."
+      }
+     ],
+     "title": "Rocket launch",
+     "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"155\" x2=\"300\" y2=\"155\"/><line class=\"f-line\" x1=\"260\" y1=\"155\" x2=\"260\" y2=\"35\"/><path class=\"f-fill\" d=\"M252 40 l8 -20 l8 20 Z\"/><line class=\"f-acc\" x1=\"50\" y1=\"155\" x2=\"260\" y2=\"40\"/><circle class=\"f-dot\" cx=\"50\" cy=\"155\" r=\"5\"/><text x=\"155\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">5000 ft</text><text x=\"270\" y=\"100\" text-anchor=\"start\">h</text><text x=\"90\" y=\"148\" text-anchor=\"middle\">θ</text><text x=\"50\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">camera</text></svg>",
+     "id": "xr_P12",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "The edge of a cube grows at 10 cm/s. How fast is the volume increasing when the edge is 30 cm?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "What rate are you asked to find?",
+       "options": [
+        "$frac{ds}{dt}$",
+        "$V$",
+        "$frac{dV}{dt}$"
+       ],
+       "answer": 2,
+       "explain": "You know $frac{ds}{dt}$ = 10 and want $frac{dV}{dt}$."
+      },
+      {
+       "type": "mc",
+       "text": "Which equation links the variables?",
+       "options": [
+        "$V = s^3$",
+        "$V = 3s^2$",
+        "$V = 6s^2$"
+       ],
+       "answer": 0,
+       "explain": "Volume of a cube."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate with respect to $t$.",
+       "answer": "3s^2*s'",
+       "vars": [
+        "s",
+        "s'"
+       ],
+       "label": "$V'$ =",
+       "explain": "$V' = 3s^2 s'$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in $s$ = 30 and $s'$ = 10.",
+       "answer": 27000,
+       "label": "$V'$ =",
+       "explain": "$3(900)(10)$ = 27,000 cm³/s."
+      }
+     ],
+     "title": "Growing cube",
+     "id": "xr_P1",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "A baseball diamond is a 90-ft square. A batter runs from home to first at 24 ft/s. How fast is the batter’s distance from **second base** changing when the batter is halfway to first?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "Let $x$ be the distance from home. Which equation gives the distance $s$ to second base?",
+       "options": [
+        "$s^2 = (90 - x)^2 + 90^2$",
+        "$s^2 = x^2 + 90^2$",
+        "$s = 90 - x$"
+       ],
+       "answer": 0,
+       "explain": "The right angle is at first base."
+      },
+      {
+       "type": "num",
+       "text": "Halfway: $x$ = 45. Find $s$.",
+       "answer": 100.623059,
+       "label": "$s$ ≈",
+       "tol": 0.01,
+       "explain": "$sqrt(45^2 + 90^2)$ ≈ 100.62 ft."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate and solve for $s'$.",
+       "answer": "-(90-x)*x'/s",
+       "vars": [
+        "x",
+        "s",
+        "x'",
+        "s'"
+       ],
+       "label": "$s'$ =",
+       "explain": "$2s s' = -2(90 - x)x'$, so $s' = -frac{(90 - x)x'}{s}$."
+      },
+      {
+       "type": "num",
+       "text": "Plug in.",
+       "answer": -10.733126,
+       "label": "$s'$ ≈",
+       "tol": 0.01,
+       "explain": "$-frac{45(24)}{100.62}$ ≈ −10.73 ft/s: getting closer to second."
+      }
+     ],
+     "title": "Rounding first base",
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M60 150 L250 150 L250 20\"/><path class=\"f-dash\" d=\"M60 150 L60 20 L250 20\"/><line class=\"f-acc\" x1=\"155\" y1=\"150\" x2=\"250\" y2=\"20\"/><text x=\"60\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">home</text><text x=\"262\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">first</text><text x=\"262\" y=\"16\" text-anchor=\"middle\" class=\"f-s\">second</text><text x=\"205\" y=\"166\" text-anchor=\"middle\">90 − x</text><text x=\"268\" y=\"90\" text-anchor=\"start\" class=\"f-s\">90</text><text x=\"185\" y=\"80\" text-anchor=\"middle\">s</text><circle class=\"f-dot\" cx=\"155\" cy=\"150\" r=\"5\"/><text x=\"110\" y=\"166\" text-anchor=\"middle\">x</text></svg>",
+     "id": "xr_P10",
+     "topic": "Related Rates"
+    },
+    {
+     "type": "steps",
+     "text": "You are in a rowboat 2 mi from the nearest point on a straight shore. A house is 6 mi down the shore from that point. You row at 3 mi/h and walk at 5 mi/h. Where should you land to reach the house as fast as possible?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The total travel time (minimize)",
+        "The total distance (minimize)",
+        "The rowing distance (minimize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "rowing time = walking time",
+        "time = distance ÷ rate for each leg",
+        "$x + y = 6$ miles total"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "6/5-x/5+sqrt(4+x^2)/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$T(x)$ =",
+       "show": "$frac{sqrt(4 + x^2)}{3} + frac{6 - x}{5}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Row $sqrt(4 + x^2)$ at 3 mi/h, then walk $6 - x$ at 5 mi/h."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 1.5,
+       "label": "Land at $x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the least time (hours)?",
+       "answer": 1.733333,
+       "label": "$T$ ≈",
+       "tol": 0.01,
+       "explain": "$T(1.5) = frac{2.5}{3} + frac{4.5}{5}$ ≈ 1.733 h (about 1 h 44 min). Shortest distance is not fastest!"
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">boat</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "xo_P6",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "A car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The number of cars rented (maximize)",
+        "The daily profit (maximize)",
+        "The price (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$np = 1000$",
+        "$n = 1000 - 5p$",
+        "$p + n = 1000$"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $p$ alone.",
+       "answer": "-500+(-10+p)*(1000-5*p)",
+       "vars": [
+        "p"
+       ],
+       "label": "$P(p)$ =",
+       "show": "$(p - 10)(1000 - 5p) - 500$",
+       "explain": "Each car earns $p - 10$ after cleaning; there are $n$ cars; subtract \\$500."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "1050-10*p",
+       "vars": [
+        "p"
+       ],
+       "label": "$P′(p)$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 105,
+       "label": "$p$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the maximum daily profit?",
+       "answer": 44625,
+       "label": "Profit =",
+       "tol": 44.625,
+       "explain": "$95 · 475 - 500$ = \\$44,625."
+      }
+     ],
+     "id": "xo_P10",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "An 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The fence height (minimize)",
+        "The height reached on the building (maximize)",
+        "The length of the ladder (minimize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "$x^2 + 8^2 = 4^2$",
+        "$x + 4 = 8$",
+        "the ladder touches the top of the fence (similar triangles)"
+       ],
+       "answer": 2,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "sqrt(64+x^2)*(4+x)/x",
+       "vars": [
+        "x"
+       ],
+       "label": "$L(x)$ =",
+       "show": "$frac{(x + 4)sqrt(x^2 + 64)}{x}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "The ladder rises 8 ft over a run of $x$, so over the full run $x + 4$ its length is $(x + 4) · frac{sqrt(x^2 + 64)}{x}$."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 6.349604,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Shortest ladder (ft)?",
+       "answer": 16.647753,
+       "label": "$L$ ≈",
+       "tol": 0.01664775273976585,
+       "explain": "At $x = ∛256$ ≈ 6.35 ft, $L$ ≈ 16.65 ft."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" style=\"stroke-width:5\" x1=\"260\" y1=\"150\" x2=\"260\" y2=\"10\"/><line class=\"f-line\" style=\"stroke-width:4\" x1=\"190\" y1=\"150\" x2=\"190\" y2=\"96\"/><line class=\"f-acc\" x1=\"70\" y1=\"150\" x2=\"260\" y2=\"20\"/><text x=\"225\" y=\"166\" text-anchor=\"middle\" class=\"f-s\">4 ft</text><text x=\"180\" y=\"126\" text-anchor=\"end\" class=\"f-s\">8 ft</text><text x=\"254\" y=\"8\" text-anchor=\"end\" class=\"f-s\">building</text><text x=\"130\" y=\"166\" text-anchor=\"middle\">x</text></svg>",
+     "id": "xo_P17",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "At what positive $x$ does the curve $y = 1 + 40x^3 - 3x^5$ have the largest slope?",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The value $x$ (maximize)",
+        "The height $y$ (maximize)",
+        "The slope $y'$ (maximize)"
+       ],
+       "answer": 2,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "-15*x^4+120*x^2",
+       "vars": [
+        "x"
+       ],
+       "label": "$m(x) = y'$ =",
+       "show": "$120x^2 - 15x^4$",
+       "explain": "The quantity to optimize is the slope itself: $m = y' = 120x^2 - 15x^4$."
+      },
+      {
+       "type": "expr",
+       "text": "Differentiate it.",
+       "answer": "60*x*(4-x^2)",
+       "vars": [
+        "x"
+       ],
+       "label": "$m′(x) = y'$ =",
+       "explain": "Set this equal to 0 to find the critical point."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "What is the largest slope?",
+       "answer": 240,
+       "label": "Slope =",
+       "tol": 0.24,
+       "explain": "$m(2) = 480 - 240$ = 240. Here we optimize the derivative, so we differentiate it again."
+      }
+     ],
+     "id": "xo_P16",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "An island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The swimming distance (minimize)",
+        "The total time (minimize)",
+        "The running distance (maximize)"
+       ],
+       "answer": 1,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "run + swim = 8 mi",
+        "time = distance ÷ rate for each leg",
+        "run time = swim time"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "3/4-x/8+sqrt(4+x^2)/3",
+       "vars": [
+        "x"
+       ],
+       "label": "$T(x)$ =",
+       "show": "$frac{6 - x}{8} + frac{sqrt(4 + x^2)}{3}$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Run $6 - x$ at 8 mi/h; swim $sqrt(4 + x^2)$ at 3 mi/h."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 0.80904,
+       "label": "$x$ ≈",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the minimum?",
+       "options": [
+        "Yes: the derivative changes from − to + there (or check the second derivative / endpoints)",
+        "We cannot tell",
+        "No, it is the opposite kind"
+       ],
+       "answer": 0,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "How far should they run (miles)?",
+       "answer": 5.19096,
+       "label": "Run ≈",
+       "tol": 0.01,
+       "explain": "Run $6 - 0.809$ ≈ 5.19 mi, then swim."
+      }
+     ],
+     "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">island</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
+     "id": "xo_P8",
+     "topic": "Optimization"
+    },
+    {
+     "type": "steps",
+     "text": "An isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
+     "steps": [
+      {
+       "type": "mc",
+       "text": "First: what quantity is being optimized?",
+       "options": [
+        "The area of the triangle (maximize)",
+        "The perimeter of the triangle (minimize)",
+        "The radius (maximize)"
+       ],
+       "answer": 0,
+       "explain": "Get this right first. It decides which function you differentiate."
+      },
+      {
+       "type": "mc",
+       "text": "What is the constraint?",
+       "options": [
+        "base · height = 25",
+        "half-base$^2$ + $x^2$ = 25",
+        "base + height = 10"
+       ],
+       "answer": 1,
+       "explain": "The fixed condition."
+      },
+      {
+       "type": "expr",
+       "text": "Write the quantity as a function of $x$ alone.",
+       "answer": "sqrt(25-x^2)*(5+x)",
+       "vars": [
+        "x"
+       ],
+       "label": "$A(x)$ =",
+       "show": "$sqrt(25 - x^2)(5 + x)$",
+       "keys": [
+        "sqrt("
+       ],
+       "explain": "Half-base $sqrt(25 - x^2)$, height $5 + x$. Area = half-base × height."
+      },
+      {
+       "type": "num",
+       "text": "Find the critical point.",
+       "answer": 2.5,
+       "label": "$x$ =",
+       "tol": 0.01,
+       "explain": "Solve the derivative = 0 inside the allowed range."
+      },
+      {
+       "type": "mc",
+       "text": "Is it really the maximum?",
+       "options": [
+        "We cannot tell",
+        "Yes: the derivative changes from + to − there (or check the second derivative / endpoints)",
+        "No, it is the opposite kind"
+       ],
+       "answer": 1,
+       "explain": "Always justify it. With one critical point, the first derivative test settles it."
+      },
+      {
+       "type": "num",
+       "text": "Largest area?",
+       "answer": 32.475953,
+       "label": "$A$ ≈",
+       "tol": 0.03247595264191645,
+       "explain": "Height 7.5 and base $2sqrt(18.75)$: the triangle is equilateral, area ≈ 32.48."
+      }
+     ],
+     "id": "xo_P13",
+     "topic": "Optimization"
+    },
+    {
+     "type": "crit",
+     "text": "Find every critical number of $f(x) = 2x^3 - 9x^2 + 12x$.",
+     "answers": [
+      1,
+      2
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "explain": "$f'(x) = 6x^2 - 18x + 12 = 6(x - 1)(x - 2)$.",
+     "id": "xc_T22",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "mc",
+     "text": "$f'$ changes from + to − at $x$ = 4. So $f$ has…",
+     "options": [
+      "an inflection point at 4",
+      "a local min at 4",
+      "a local max at 4"
+     ],
+     "answer": 2,
+     "explain": "Up, then down: a hilltop.",
+     "id": "xc_T9",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "crit",
+     "text": "Find the $x$-value of every inflection point of $f(x) = frac{x^2}{x - 1}$.",
+     "answers": [],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No inflection points",
+     "explain": "Where $f''$ changes sign.",
+     "id": "xc_D19",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "crit",
+     "text": "Where does $f(x) = x e^(-x)$ have a local max?",
+     "answers": [
+      1
+     ],
+     "var": "x",
+     "label": "$x$ =",
+     "noneText": "No local max",
+     "explain": "Where $f'$ changes from + to −.",
+     "id": "xc_D27",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "interval",
+     "text": "Where is $f(x) = frac{x^2 + 2x + 1}{x^2}$ concave up?",
+     "answer": [
+      "(-3/2,0)U(0,inf)",
+      "(-3/2,inf)"
+     ],
+     "label": "Concave up on",
+     "noneText": "Never concave up",
+     "explain": "Where $f''(x) > 0$.",
+     "id": "xc_D8",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "tf",
+     "text": "At an inflection point, $f'$ must be 0.",
+     "answer": false,
+     "explain": "$x^3 - 3x$ has an inflection at 0, where the slope is −3.",
+     "id": "xc_T19",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "sketch",
+     "text": "Sketch the graph of $f(x) = x^3 - 6x^2 + 9x + 1$ from its data.",
+     "fn": "1+x^3-6*x^2+9*x",
+     "window": [
+      -1,
+      5,
+      -4,
+      8
+     ],
+     "data": {
+      "points": [
+       [
+        1.0,
+        5.0,
+        "Local max"
+       ],
+       [
+        3.0,
+        1.0,
+        "Local min"
+       ],
+       [
+        2.0,
+        3.0,
+        "Inflection point"
+       ],
+       [
+        -0.1038,
+        -0.0,
+        "x-intercept"
+       ],
+       [
+        0.0,
+        1.0,
+        "y-intercept"
+       ]
+      ],
+      "crit": [
+       1.0,
+       3.0
+      ],
+      "infl": [
+       2.0
+      ],
+      "va": [],
+      "ha": [],
+      "lines": [
+       "Domain: all real numbers",
+       "$x$-intercepts: $≈−0.10$; $y$-intercept: $1$",
+       "Increasing on $(-∞, 1) ∪ (3, ∞)$; decreasing on $(1, 3)$",
+       "Local max: $(1, 5)$; local min: $(3, 1)$",
+       "Concave up on $(2, ∞)$; concave down on $(-∞, 2)$",
+       "Inflection point: $(2, 3)$"
+      ]
+     },
+     "ystep": 2,
+     "id": "xs_S2",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "sketch",
+     "text": "Sketch the graph of $f(x) = x e^(-x)$ from its data.",
+     "fn": "x*exp(-x)",
+     "window": [
+      -1,
+      6,
+      -3,
+      1
+     ],
+     "data": {
+      "points": [
+       [
+        1.0,
+        0.3679,
+        "Local max"
+       ],
+       [
+        2.0,
+        0.2707,
+        "Inflection point"
+       ],
+       [
+        0.0,
+        0.0,
+        "x-intercept"
+       ]
+      ],
+      "crit": [
+       1.0
+      ],
+      "infl": [
+       2.0
+      ],
+      "va": [],
+      "ha": [
+       0.0
+      ],
+      "lines": [
+       "Domain: all real numbers",
+       "$x$-intercepts: $0$; $y$-intercept: $0$",
+       "Horizontal asymptote: $y$ = 0",
+       "Increasing on $(-∞, 1)$; decreasing on $(1, ∞)$",
+       "Local max: $(1, ≈0.37)$; local min: none",
+       "Concave up on $(2, ∞)$; concave down on $(-∞, 2)$",
+       "Inflection point: $(2, ≈0.27)$"
+      ]
+     },
+     "ystep": 0.5,
+     "id": "xs_S16",
+     "topic": "Curve Sketching"
+    },
+    {
+     "type": "sketch",
+     "text": "Sketch the graph of $f(x) = x^5 - 5x$ from its data.",
+     "fn": "x^5-5*x",
+     "window": [
+      -2,
+      2,
+      -6,
+      6
+     ],
+     "data": {
+      "points": [
+       [
+        -1.0,
+        4.0,
+        "Local max"
+       ],
+       [
+        1.0,
+        -4.0,
+        "Local min"
+       ],
+       [
+        0.0,
+        0.0,
+        "Inflection point"
+       ]
+      ],
+      "crit": [
+       -1.0,
+       1.0
+      ],
+      "infl": [
+       0.0
+      ],
+      "va": [],
+      "ha": [],
+      "lines": [
+       "Domain: all real numbers",
+       "$x$-intercepts: $≈−1.50$, $0$, $≈1.50$; $y$-intercept: $0$",
+       "Increasing on $(-∞, -1) ∪ (1, ∞)$; decreasing on $(-1, 1)$",
+       "Local max: $(−1, 4)$; local min: $(1, −4)$",
+       "Concave up on $(0, ∞)$; concave down on $(-∞, 0)$",
+       "Inflection point: $(0, 0)$"
+      ]
+     },
+     "ystep": 2,
+     "id": "xs_S6",
+     "topic": "Curve Sketching"
+    }
+   ]
+  }
+ }
+}

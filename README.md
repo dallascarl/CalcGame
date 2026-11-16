@@ -97,7 +97,7 @@ Graphs: `window` is `[xmin, xmax, ymin, ymax]`. Each piece has `expr`, `from`, `
 - `sketch`: the graph-sketching experience. `fn`, `window`, and `data` with `points` (`[x, y, "label"]`), `crit`, `infl`, `va`, `ha`, optional `slant`, and `lines` (the data shown to the student). Phases: place the points and asymptotes on the grid, mark each region ↗/↘ and ∪/∩ on a sign chart, then draw with a finger or mouse. The drawing is graded on key points, coverage, rising/falling, concavity and asymptote behavior, and the real graph is shown afterward. `"phases": ["draw"]` with `"prefill": true` skips straight to drawing with the data already placed.
 - Explorers (lessons only): `optim` (drag $x$ and watch a scene and the quantity being optimized; `scene` type `rect` or `box`), `rr` (related-rates scenes `ladder`, `ripple`, `balloon`, `cone` with a time slider and live rates), `curvex` (slide along a curve; the tangent shows rising/falling, or the curve is colored by concavity), `ratio` (tap closer and closer to a limit and watch the two parts of an indeterminate form fight; `op` is `/`, `*`, `-` or `^`).
 
-## The stop format (Worlds 1, 2 and 4)
+## The stop format (every world)
 
 Every stop has three parts:
 
@@ -115,7 +115,7 @@ A set takes problems from every level in proportion to the pool, and shows them 
 
 In a multi-part `steps` problem, each finished part shrinks to one line of work (its `"work"` text, or its label and answer), so the whole solution so far stays on the screen. A missed part shows the right line, marked ✗, and the problem continues from the right answer. The problem grades itself when the last part is done.
 
-World 3 still uses the older drill rules (3 in a row or 80%), since students are in it now. Any drill without a `"mode"` keeps those rules.
+World 3 was converted to this format by `tools/gen/world3.py`, which reads the older decks kept in `tools/gen/src/w3/`. Its stops are laid out by class day (22 to 31), and four stops were split out of longer ones: Related Rates II, the First Derivative Test, Concavity, and Optimization II. Any drill without a `"mode"` still runs on the older rules (3 in a row or 80%); none do now except the practice tests, which have rules of their own.
 
 ### New item types
 

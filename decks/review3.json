@@ -1,6 +1,10 @@
 {
  "id": "review3",
- "title": "Chapter Review",
+ "course": "Calculus 1",
+ "unit": "Applications of Derivatives",
+ "title": "Chapter Review: Applications",
+ "subtitle": "A warm-up, mixed practice from every stop, and a practice test scored by topic.",
+ "version": 2,
  "graphs": {
   "maxmin_Eb": {
    "window": [
@@ -166,320 +170,11 @@
    ]
   }
  },
- "lesson": {
-  "slides": [
-   {
-    "type": "match",
-    "text": "Every World 3 problem starts with recognizing which tool it needs. Match each task with its tool.",
-    "pairs": [
-     [
-      "Biggest value of $f$ on $[a, b]$",
-      "Closed interval method"
-     ],
-     [
-      "Prove some $f'(c)$ equals the average slope",
-      "Mean Value Theorem"
-     ],
-     [
-      "Approximate a root to 6 decimals",
-      "Newton's Method"
-     ],
-     [
-      "Estimate $sqrt(9.1)$ by hand",
-      "Linearization"
-     ],
-     [
-      "Limit of the form $0/0$",
-      "L'Hôpital's Rule"
-     ],
-     [
-      "How fast is the shadow growing?",
-      "Related rates"
-     ]
-    ],
-    "explain": "Recognizing the problem type is half the test.",
-    "hint": "Look for the key words: \"on [a, b]\", \"some c\", \"root\", \"estimate\", \"0/0\", \"how fast\".",
-    "id": "L1"
-   },
-   {
-    "type": "match",
-    "text": "Three more.",
-    "pairs": [
-     [
-      "Largest pen from 600 ft of fence",
-      "Optimization"
-     ],
-     [
-      "Where is $f$ increasing?",
-      "Sign chart of $f'$"
-     ],
-     [
-      "Where is $f$ concave up?",
-      "Sign of $f''$"
-     ],
-     [
-      "Is the flat spot a max or a min?",
-      "First or second derivative test"
-     ]
-    ],
-    "explain": "Curve-sketching questions are about reading derivatives.",
-    "hint": "Increasing is about $f'$; bending is about $f''$.",
-    "id": "L2"
-   },
-   {
-    "type": "extrema",
-    "title": "Max and Mins in one minute",
-    "text": "Absolute max and min of $f(x) = x^3 - 3x$ on $[0, 2]$.",
-    "fn": {
-     "expr": "x^3-3*x",
-     "domain": [
-      0,
-      2
-     ]
-    },
-    "crit": [
-     1
-    ],
-    "deriv": "$f'(x) = 3x^2 - 3$",
-    "after": "Critical points **and** endpoints, every time.",
-    "id": "L3"
-   },
-   {
-    "type": "mvt",
-    "title": "MVT in one minute",
-    "text": "For $f(x) = x^2$ on $[0, 2]$, drag until the tangent is parallel to the secant.",
-    "fn": "x^2",
-    "a": 0,
-    "b": 2,
-    "cs": [
-     1
-    ],
-    "window": [
-     -0.5,
-     2.5,
-     -0.5,
-     4.5
-    ],
-    "secLabel": "Secant slope",
-    "start": 0.2,
-    "after": "$c$ = 1: $f'(1) = 2$ = the average slope $frac{4 - 0}{2 - 0}$.",
-    "id": "L4"
-   },
-   {
-    "type": "multi",
-    "text": "**Newton in one step.** $f(x) = x^2 - 2$, $x_0$ = 1. Fill in all three.",
-    "parts": [
-     {
-      "label": "$f(x_0)$ =",
-      "answer": -1
-     },
-     {
-      "label": "$f'(x_0)$ =",
-      "answer": 2
-     },
-     {
-      "label": "$x_1$ =",
-      "answer": 1.5
-     }
-    ],
-    "hint": "$x_1 = x_0 - frac{f(x_0)}{f'(x_0)}$",
-    "explain": "$x_1 = 1 - frac{-1}{2}$ = 1.5.",
-    "id": "L5"
-   },
-   {
-    "type": "num",
-    "text": "**Linearization.** Use the tangent line to $sqrt x$ at 4 to estimate $sqrt(4.1)$.",
-    "answer": 2.025,
-    "label": "≈",
-    "tol": 0.0005,
-    "explain": "$2 + frac{0.1}{4}$ = 2.025.",
-    "hint": "$L(x) = 2 + frac{1}{4}(x - 4)$",
-    "id": "L6"
-   },
-   {
-    "type": "num",
-    "text": "**L'Hôpital.** $lim[x->0] frac{sin(4x)}{x}$ = ?",
-    "answer": 4,
-    "label": "Limit =",
-    "explain": "4.",
-    "hint": "$0/0$: $frac{4cos(4x)}{1}$.",
-    "id": "L7"
-   },
-   {
-    "type": "steps",
-    "text": "**Related rates.** A circle’s radius grows at 3 cm/s. How fast is its area growing when $r$ = 10?",
-    "steps": [
-     {
-      "type": "expr",
-      "text": "Differentiate $A = pi r^2$ with respect to $t$.",
-      "answer": "2*pi*r*r'",
-      "vars": [
-       "r",
-       "r'"
-      ],
-      "label": "$A'$ =",
-      "keys": [
-       "pi"
-      ],
-      "explain": "$2pi r r'$.",
-      "hint": "Chain rule: tack on $r'$."
-     },
-     {
-      "type": "num",
-      "text": "Plug in.",
-      "answer": 188.495559,
-      "label": "$A'$ ≈",
-      "tol": 0.05,
-      "explain": "$60pi$ ≈ 188.5 cm²/s.",
-      "hint": "$2pi(10)(3)$"
-     }
-    ],
-    "title": "Related rates in one minute",
-    "id": "L8"
-   },
-   {
-    "type": "steps",
-    "text": "**Optimization.** Two positive numbers add to 20. Maximize their product.",
-    "steps": [
-     {
-      "type": "mc",
-      "text": "What is being optimized?",
-      "options": [
-       "The sum",
-       "The product"
-      ],
-      "answer": 1,
-      "explain": "The product (the sum is the constraint).",
-      "hint": "The sum is fixed."
-     },
-     {
-      "type": "expr",
-      "text": "Product as a function of $x$:",
-      "answer": "x*(20-x)",
-      "vars": [
-       "x"
-      ],
-      "label": "$P(x)$ =",
-      "explain": "$x(20 - x)$.",
-      "hint": "The other number is $20 - x$."
-     },
-     {
-      "type": "num",
-      "text": "Best $x$:",
-      "answer": 10,
-      "label": "$x$ =",
-      "explain": "10 and 10, product 100.",
-      "hint": "$P'(x) = 20 - 2x$"
-     }
-    ],
-    "title": "Optimization in one minute",
-    "id": "L9"
-   },
-   {
-    "type": "pick",
-    "text": "Common test traps. Which statements are TRUE?",
-    "options": [
-     "L'Hôpital's Rule works on any quotient.",
-     "The MVT needs $f$ continuous on $[a, b]$ and differentiable on $(a, b)$.",
-     "An inflection point is anywhere $f''(x) = 0$.",
-     "In related rates, plug in the numbers after differentiating.",
-     "The linearization of $f$ at $a$ is its tangent line at $a$.",
-     "Newton's method always converges.",
-     "If $f'(c) = 0$, then $f$ has a max or min at $c$."
-    ],
-    "answers": [
-     1,
-     3,
-     4
-    ],
-    "explain": "False: $f'(c) = 0$ does not guarantee an extreme ($x^3$); Newton can fail; L'Hôpital needs $0/0$ or $∞/∞$; inflection needs a sign change.",
-    "hint": "Three are true.",
-    "id": "L10"
-   },
-   {
-    "type": "order",
-    "text": "**Closed interval method**, in order.",
-    "items": [
-     "Check $f$ is continuous on $[a, b]$",
-     "Find the critical numbers in $(a, b)$",
-     "Evaluate $f$ at the critical numbers and the endpoints",
-     "The largest value is the absolute max; the smallest is the absolute min"
-    ],
-    "explain": "The Extreme Value Theorem guarantees an answer exists.",
-    "hint": "Endpoints come with the critical numbers.",
-    "id": "L11"
-   },
-   {
-    "type": "sketch",
-    "fn": "x^3-3*x^2",
-    "window": [
-     -2,
-     4,
-     -5,
-     3
-    ],
-    "prefill": true,
-    "phases": [
-     "draw"
-    ],
-    "data": {
-     "points": [
-      [
-       0,
-       0,
-       "Local max"
-      ],
-      [
-       2,
-       -4,
-       "Local min"
-      ],
-      [
-       1,
-       -2,
-       "Inflection point"
-      ],
-      [
-       3,
-       0,
-       "x-intercept"
-      ]
-     ],
-     "crit": [
-      0,
-      2
-     ],
-     "infl": [
-      1
-     ],
-     "lines": [
-      "Local max $(0, 0)$, local min $(2, -4)$",
-      "Inflection point $(1, -2)$",
-      "$x$-intercepts 0 and 3"
-     ]
-    },
-    "title": "Curve sketching in one minute",
-    "text": "**Sketch** $f(x) = x^3 - 3x^2$. The key points and regions are already marked: just draw.",
-    "id": "L12"
-   },
-   {
-    "type": "mc",
-    "text": "You are ready for the drills. What is the best way to use the **Practice test**?",
-    "options": [
-     "Retake it until you memorize the answers",
-     "Skip it",
-     "Take it like a real test: no notes, then study the red topics it reports"
-    ],
-    "answer": 2,
-    "explain": "The topic breakdown tells you which stop on the map to revisit.",
-    "hint": "It reports a score for each topic.",
-    "id": "L13"
-   }
-  ]
- },
  "drills": {
   "tool": {
-   "title": "Which tool? drill",
+   "title": "Which tool?",
+   "mode": "pool",
+   "setSize": 10,
    "questions": [
     {
      "type": "mc",
@@ -493,7 +188,8 @@
      "answer": 1,
      "explain": "Absolute extremes on a closed interval: test the critical points and the endpoints.",
      "topic": "Which tool?",
-     "id": "W1"
+     "id": "W1",
+     "level": 1
     },
     {
      "type": "mc",
@@ -507,7 +203,8 @@
      "answer": 3,
      "explain": "Average speed is 60, so the MVT guarantees an instant at 60.",
      "topic": "Which tool?",
-     "id": "W2"
+     "id": "W2",
+     "level": 1
     },
     {
      "type": "mc",
@@ -521,7 +218,8 @@
      "answer": 0,
      "explain": "Find a root of $cos x - x$ with tangent lines.",
      "topic": "Which tool?",
-     "id": "W3"
+     "id": "W3",
+     "level": 1
     },
     {
      "type": "mc",
@@ -535,7 +233,8 @@
      "answer": 0,
      "explain": "Use the tangent line to $sqrt x$ at 4.",
      "topic": "Which tool?",
-     "id": "W4"
+     "id": "W4",
+     "level": 1
     },
     {
      "type": "mc",
@@ -549,7 +248,8 @@
      "answer": 3,
      "explain": "Form $0/0$.",
      "topic": "Which tool?",
-     "id": "W5"
+     "id": "W5",
+     "level": 1
     },
     {
      "type": "mc",
@@ -563,7 +263,8 @@
      "answer": 0,
      "explain": "Rates of connected quantities at an instant.",
      "topic": "Which tool?",
-     "id": "W6"
+     "id": "W6",
+     "level": 1
     },
     {
      "type": "mc",
@@ -577,7 +278,8 @@
      "answer": 0,
      "explain": "Make something as large as possible under a constraint.",
      "topic": "Which tool?",
-     "id": "W7"
+     "id": "W7",
+     "level": 1
     },
     {
      "type": "mc",
@@ -591,7 +293,8 @@
      "answer": 0,
      "explain": "Sign chart of $f'$.",
      "topic": "Which tool?",
-     "id": "W8"
+     "id": "W8",
+     "level": 1
     },
     {
      "type": "mc",
@@ -605,7 +308,8 @@
      "answer": 2,
      "explain": "Sign of $f''$.",
      "topic": "Which tool?",
-     "id": "W9"
+     "id": "W9",
+     "level": 1
     },
     {
      "type": "mc",
@@ -619,7 +323,8 @@
      "answer": 1,
      "explain": "Second derivative test (or the first derivative test).",
      "topic": "Which tool?",
-     "id": "W10"
+     "id": "W10",
+     "level": 1
     },
     {
      "type": "mc",
@@ -633,7 +338,8 @@
      "answer": 3,
      "explain": "Two rates linked by $x^2 + y^2 = L^2$.",
      "topic": "Which tool?",
-     "id": "W11"
+     "id": "W11",
+     "level": 1
     },
     {
      "type": "mc",
@@ -647,7 +353,8 @@
      "answer": 1,
      "explain": "Form $∞/∞$.",
      "topic": "Which tool?",
-     "id": "W12"
+     "id": "W12",
+     "level": 1
     },
     {
      "type": "mc",
@@ -661,7 +368,8 @@
      "answer": 0,
      "explain": "Minimize cost subject to a volume constraint.",
      "topic": "Which tool?",
-     "id": "W13"
+     "id": "W13",
+     "level": 1
     },
     {
      "type": "mc",
@@ -675,7 +383,8 @@
      "answer": 3,
      "explain": "Differentials are linearization.",
      "topic": "Which tool?",
-     "id": "W14"
+     "id": "W14",
+     "level": 1
     },
     {
      "type": "mc",
@@ -689,7 +398,8 @@
      "answer": 3,
      "explain": "If it had two, Rolle's Theorem would give $f'(c) = 0$, but $f' = 3x^2 + 1 > 0$.",
      "topic": "Which tool?",
-     "id": "W15"
+     "id": "W15",
+     "level": 1
     },
     {
      "type": "mc",
@@ -703,7 +413,8 @@
      "answer": 2,
      "explain": "A quintic has no formula; iterate.",
      "topic": "Which tool?",
-     "id": "W16"
+     "id": "W16",
+     "level": 1
     },
     {
      "type": "mc",
@@ -717,7 +428,8 @@
      "answer": 2,
      "explain": "Rates linked by $V = frac{4}{3}pi r^3$.",
      "topic": "Which tool?",
-     "id": "W17"
+     "id": "W17",
+     "level": 1
     },
     {
      "type": "mc",
@@ -731,7 +443,8 @@
      "answer": 2,
      "explain": "Maximize area under a geometric constraint.",
      "topic": "Which tool?",
-     "id": "W18"
+     "id": "W18",
+     "level": 1
     },
     {
      "type": "mc",
@@ -745,7 +458,8 @@
      "answer": 1,
      "explain": "Closed interval: critical point 2 and both endpoints.",
      "topic": "Which tool?",
-     "id": "W19"
+     "id": "W19",
+     "level": 1
     },
     {
      "type": "mc",
@@ -759,7 +473,8 @@
      "answer": 0,
      "explain": "$0·∞$: rewrite as $frac{ln x}{1/x}$, then L’Hôpital.",
      "topic": "Which tool?",
-     "id": "W20"
+     "id": "W20",
+     "level": 1
     },
     {
      "type": "mc",
@@ -773,7 +488,8 @@
      "answer": 1,
      "explain": "Where $f''$ changes sign.",
      "topic": "Which tool?",
-     "id": "W21"
+     "id": "W21",
+     "level": 1
     },
     {
      "type": "mc",
@@ -787,13 +503,14 @@
      "answer": 1,
      "explain": "Tangent line to $x^5$ at 2.",
      "topic": "Which tool?",
-     "id": "W22"
+     "id": "W22",
+     "level": 1
     }
    ]
   },
-  "theory": {
-   "title": "Theory review drill",
-   "setSize": 12,
+  "practice": {
+   "title": "Mixed practice",
+   "mode": "pool",
    "questions": [
     {
      "id": "mm_t11",
@@ -801,7 +518,8 @@
      "text": "A critical point can occur where $f'(x)$ does not exist.",
      "answer": true,
      "explain": "Sharp corners, cusps, and vertical tangents are critical points as long as $f$ is defined there.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 1
     },
     {
      "id": "mm_t14",
@@ -815,7 +533,8 @@
      ],
      "answer": 0,
      "explain": "A flat tangent makes it a critical point, but that is only a suspect. For $x^3$ the graph keeps climbing, so it is neither.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 1
     },
     {
      "id": "mm_t18",
@@ -832,7 +551,8 @@
       "zeros"
      ],
      "explain": "Test every critical point and both endpoints. The largest value is the max and the smallest value is the min.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 1
     },
     {
      "id": "mm_t21",
@@ -847,7 +567,8 @@
      ],
      "answer": 1,
      "explain": "The highest point is $(0, 1)$. The graph only gets closer to 0 on the sides, so there is no lowest point.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 1
     },
     {
      "id": "mm_t15",
@@ -855,7 +576,8 @@
      "text": "$f(x) = |x|$ has a local minimum at $x = 0$, so Fermat's Theorem says $f'(0) = 0$.",
      "answer": false,
      "explain": "$|x|$ is not differentiable at 0, so Fermat's Theorem does not apply. The point $x = 0$ is critical because $f'(0)$ does not exist.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 1
     },
     {
      "id": "mm_t07",
@@ -863,7 +585,8 @@
      "text": "A function that is continuous on $[a, b]$ must have both an absolute maximum and an absolute minimum on $[a, b]$.",
      "answer": true,
      "explain": "That is exactly the Extreme Value Theorem.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 1
     },
     {
      "id": "mv_T19",
@@ -871,7 +594,8 @@
      "text": "If $f'(x) = g'(x)$ for every $x$, then $f(x) = g(x)$.",
      "answer": false,
      "explain": "Only $f = g + C$. For example $x^2$ and $x^2 + 5$.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 1
     },
     {
      "id": "mv_T18",
@@ -879,7 +603,8 @@
      "text": "If $f'(x) = 0$ for every $x$ in an interval, then $f$ is constant there.",
      "answer": true,
      "explain": "A corollary of the MVT.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 1
     },
     {
      "id": "mv_T20",
@@ -893,7 +618,8 @@
      ],
      "answer": 0,
      "explain": "Tilt the picture: subtract the secant line from $f$ and apply Rolle's Theorem.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 1
     },
     {
      "id": "mv_T9",
@@ -901,7 +627,8 @@
      "text": "The Mean Value Theorem tells you exactly where $c$ is.",
      "answer": false,
      "explain": "It only promises that some $c$ exists. You find it yourself by solving $f'(c)$ = the secant slope.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 1
     },
     {
      "id": "mv_T5",
@@ -918,7 +645,8 @@
       1
      ],
      "explain": "Only continuity on a closed interval. No derivatives needed.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 1
     },
     {
      "id": "mv_T14",
@@ -931,7 +659,8 @@
      ],
      "answer": 0,
      "explain": "Polynomials are continuous and differentiable everywhere. Equal ends are not required.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 1
     },
     {
      "id": "nw_T9",
@@ -945,7 +674,8 @@
      ],
      "answer": 0,
      "explain": "A nearly flat tangent crosses the axis far away. Dividing by a tiny $f'(x_0)$ makes a huge jump.",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 1
     },
     {
      "id": "nw_T4",
@@ -961,7 +691,8 @@
       "normal"
      ],
      "explain": "Follow the tangent line at $x_0$ down to the $x$-axis.",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 1
     },
     {
      "id": "nw_T2",
@@ -969,7 +700,8 @@
      "text": "Newton's method usually gives the exact root after one step.",
      "answer": false,
      "explain": "One step gives an approximation. Repeating the step makes it better and better.",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 1
     },
     {
      "id": "nw_T11",
@@ -977,7 +709,8 @@
      "text": "For a smooth function, if $x_0$ is close enough to a root, the guesses usually close in on that root very quickly.",
      "answer": true,
      "explain": "Near the root the curve looks like its tangent line, so each step lands very close. (It needs $f'$ not to be 0 at the root.)",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 1
     },
     {
      "id": "nw_T18",
@@ -991,7 +724,8 @@
      ],
      "answer": 0,
      "explain": "The fraction is negative, and subtracting a negative moves right. Below the axis and rising: the root is ahead.",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 1
     },
     {
      "id": "ln_T15",
@@ -999,7 +733,8 @@
      "text": "$dx$ and $Δx$ mean the same thing.",
      "answer": true,
      "explain": "Both are the change in $x$ that you choose.",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 1
     },
     {
      "id": "ln_T2",
@@ -1024,7 +759,8 @@
       ]
      ],
      "explain": "Point, slope, line.",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 1
     },
     {
      "id": "ln_T7",
@@ -1038,7 +774,8 @@
      ],
      "answer": 0,
      "explain": "$ln 1 = 0$ and 1 is close to 1.04. ($ln 0$ doesn't exist.)",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 1
     },
     {
      "id": "ln_T10",
@@ -1052,7 +789,8 @@
      ],
      "answer": 0,
      "explain": "A concave-up curve bends up away from its tangent line, so the line sits below it.",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 1
     },
     {
      "id": "ln_T4",
@@ -1066,7 +804,8 @@
      ],
      "answer": 0,
      "explain": "$L$ is a line with slope $f'(a)$.",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1080,7 +819,8 @@
      "answer": 1,
      "explain": "Find where each part goes on its own: that gives $0^0$.",
      "id": "lh_TF6",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 1
     },
     {
      "type": "pick",
@@ -1100,7 +840,8 @@
      ],
      "explain": "$∞·∞$ → ∞, $∞ + ∞$ → ∞, $0 - ∞$ → −∞.",
      "id": "lh_TF33",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1114,7 +855,8 @@
      "answer": 1,
      "explain": "Find where each part goes on its own: that gives $0/0$.",
      "id": "lh_TF15",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1128,7 +870,8 @@
      "answer": 2,
      "explain": "Find where each part goes on its own: that gives $∞ - ∞$.",
      "id": "lh_TF4",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1142,7 +885,8 @@
      "answer": 0,
      "explain": "Top → 0, bottom → 1: the form is $0/1$, so the limit is just 0.",
      "id": "lh_TF17",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 1
     },
     {
      "type": "match",
@@ -1171,7 +915,8 @@
      ],
      "explain": "Look at each part on its own.",
      "id": "lh_TF34",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 1
     },
     {
      "type": "tf",
@@ -1179,7 +924,8 @@
      "answer": true,
      "explain": "Cup shape.",
      "id": "cs_T17",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1193,7 +939,8 @@
      "answer": 2,
      "explain": "Examples: $x^3$ (neither), $x^4$ (min), $-x^4$ (max) all have this.",
      "id": "cs_T14",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1206,7 +953,8 @@
      "answer": 2,
      "explain": "Concave down at a flat spot: max.",
      "id": "cs_T12",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1221,7 +969,8 @@
      "explain": "$f'$ is above the axis between −2 and 2.",
      "graph": "curve_p2",
      "id": "cs_T1",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1234,7 +983,8 @@
      "answer": 2,
      "explain": "Concave up at a flat spot: min.",
      "id": "cs_T13",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1247,7 +997,8 @@
      "answer": 1,
      "explain": "No sign change: just a flat spot on the way down.",
      "id": "cs_T11",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1262,7 +1013,8 @@
      "explain": "$f'$ goes from + to − at 2.",
      "graph": "curve_p2",
      "id": "cs_T2",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1275,7 +1027,8 @@
      "answer": 2,
      "explain": "The constraint is the fixed condition you must obey. You use it to eliminate a variable.",
      "id": "op_S9",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1290,7 +1043,8 @@
      "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><ellipse class=\"f-line\" cx=\"160\" cy=\"30\" rx=\"60\" ry=\"13\" style=\"stroke-dasharray:5 4\"/><path class=\"f-fill\" d=\"M100 30 V140 A60 13 0 0 0 220 140 V30\"/><line class=\"f-acc\" x1=\"160\" y1=\"140\" x2=\"220\" y2=\"140\"/><text x=\"190\" y=\"134\" text-anchor=\"middle\">r</text><text x=\"232\" y=\"90\" text-anchor=\"start\">h</text><text x=\"160\" y=\"20\" text-anchor=\"middle\" class=\"f-s\">open top</text></svg>",
      "id": "op_S10",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1304,7 +1058,8 @@
      "answer": 2,
      "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
      "id": "op_S43",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1318,7 +1073,8 @@
      "answer": 1,
      "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
      "id": "op_S34",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 1
     },
     {
      "type": "mc",
@@ -1333,7 +1089,8 @@
      "explain": "Read the question at the end: that names the quantity to make biggest or smallest. Everything else is a constraint.",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" style=\"stroke-width:6\" x1=\"60\" y1=\"30\" x2=\"260\" y2=\"30\"/><text x=\"160\" y=\"22\" text-anchor=\"middle\" class=\"f-s\">wall</text><path class=\"f-line\" d=\"M80 33 V140 H240 V33\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
      "id": "op_S4",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 1
     },
     {
      "type": "expr",
@@ -1349,7 +1106,8 @@
      ],
      "explain": "$y' = frac{x'}{2sqrt x}$.",
      "id": "rr_D8",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 1
     },
     {
      "type": "expr",
@@ -1365,7 +1123,8 @@
      ],
      "explain": "$y' = -frac{x'}{x^2}$.",
      "id": "rr_D9",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 1
     },
     {
      "type": "expr",
@@ -1381,7 +1140,8 @@
      ],
      "explain": "$S' = 8pi r r'$.",
      "id": "rr_D6",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 1
     },
     {
      "type": "expr",
@@ -1397,14 +1157,9 @@
      ],
      "explain": "$V' = frac{pi}{4}h^2 h'$.",
      "id": "rr_D12",
-     "topic": "Related Rates"
-    }
-   ]
-  },
-  "problems": {
-   "title": "Problem review drill",
-   "setSize": 8,
-   "questions": [
+     "topic": "Related Rates",
+     "level": 1
+    },
     {
      "id": "mm_c14",
      "type": "graph",
@@ -1412,7 +1167,8 @@
      "ask": "absmin",
      "answer": "NONE",
      "explain": "The left piece heads down toward the open circle at height $-2$ but never reaches it, and the filled point is higher. There is no absolute minimum.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 2
     },
     {
      "id": "mm_c18",
@@ -1421,7 +1177,8 @@
      "ask": "absmax",
      "answer": "NONE",
      "explain": "The graph keeps climbing to the right. The hilltop is only a local maximum, so there is no absolute maximum.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 2
     },
     {
      "id": "mm_c13",
@@ -1430,7 +1187,8 @@
      "ask": "argmax",
      "answer": 0,
      "explain": "The highest point is $(0, 2)$. It occurs at $x = 0$.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 2
     },
     {
      "id": "mm_c28",
@@ -1447,7 +1205,8 @@
      "label": "Absolute min =",
      "answer": -6.75,
      "explain": "$f'(x) = 6x - 9 = 0$ at $x = 1.5$. The critical point: $x = 1.5$. Test the endpoints too: $f(-1) = 12$; $f(1.5) = -6.75$; $f(2) = -6$. The smallest is -6.75.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 2
     },
     {
      "id": "mm_c04",
@@ -1456,7 +1215,8 @@
      "ask": "argmax",
      "answer": 5,
      "explain": "The highest point is $(5, 9)$. It occurs at $x = 5$.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 2
     },
     {
      "id": "mm_c11",
@@ -1465,7 +1225,8 @@
      "ask": "absmax",
      "answer": "NONE",
      "explain": "The graph heads toward the open circle at height 9 but never reaches it. There is no absolute maximum.",
-     "topic": "Max and Mins"
+     "topic": "Max and Mins",
+     "level": 2
     },
     {
      "id": "mv_C2",
@@ -1485,7 +1246,8 @@
       ]
      },
      "explain": "$f(0) = f(6) = 0$. $2c - 6 = 0$ gives $c = 3$.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 2
     },
     {
      "id": "mv_C9",
@@ -1505,7 +1267,8 @@
       ]
      },
      "explain": "Secant slope = 27/3 = 9. $3c^2 = 9$ gives $c = √3 ≈ 1.7321$ (−√3 is outside).",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 2
     },
     {
      "id": "mv_C21",
@@ -1522,7 +1285,8 @@
       }
      ],
      "explain": "Average = (28 − 0)/4 = 7. $2c + 3 = 7$ gives $c = 2$.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 3
     },
     {
      "id": "mv_C8",
@@ -1542,7 +1306,8 @@
       ]
      },
      "explain": "Secant slope = (9 − 1)/2 = 4. $2c = 4$ gives $c = 2$.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 2
     },
     {
      "id": "mv_C23",
@@ -1551,7 +1316,8 @@
      "label": "mph =",
      "answer": 60,
      "explain": "150/2.5 = 60 mph.",
-     "topic": "Mean Value Theorem"
+     "topic": "Mean Value Theorem",
+     "level": 2
     },
     {
      "id": "nw_C10",
@@ -1580,7 +1346,8 @@
       }
      ],
      "explain": "$f'(x)$ = $2x$.  $x_1$ = $2 - frac{-1}{4}$ ≈ 2.25",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 3
     },
     {
      "id": "nw_C31",
@@ -1604,7 +1371,8 @@
       "x0": 1
      },
      "explain": "$x_1$ ≈ 1.25 and $x_2$ ≈ 1.178459",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 3
     },
     {
      "id": "nw_C3",
@@ -1618,7 +1386,8 @@
       }
      ],
      "explain": "$x_1$ = $2 - frac{5}{-2}$ = 4.5",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 3
     },
     {
      "id": "nw_C17",
@@ -1647,7 +1416,8 @@
       }
      ],
      "explain": "$f'(x)$ = $4x^3$.  $x_1$ = $1 - frac{-1}{4}$ ≈ 1.25",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 3
     },
     {
      "id": "nw_C16",
@@ -1676,7 +1446,8 @@
       }
      ],
      "explain": "$f'(x)$ = $-frac{2}{x^2} - 2x$.  $x_1$ = $2 - frac{-2}{-4.5}$ ≈ 1.555556",
-     "topic": "Newton's Method"
+     "topic": "Newton's Method",
+     "level": 3
     },
     {
      "id": "ln_C13",
@@ -1698,7 +1469,8 @@
       }
      ],
      "explain": "$f'(16) = 1/8$. $L = 4 + (0.125)(-0.2) ≈ 3.975$. (The real value is 3.974921.)",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 3
     },
     {
      "id": "ln_C25",
@@ -1708,7 +1480,8 @@
      "answer": 75,
      "tol": 0.01,
      "explain": "$dV = 3s^2 ds = 3(25)(1) = 75$ cm³. (With an error this big, the real change is 91: $dy$ is best for small $dx$.)",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 2
     },
     {
      "id": "ln_C9",
@@ -1730,7 +1503,8 @@
       }
      ],
      "explain": "$f'(x) = 2x$. $L = 9 + (6)(-0.02) ≈ 8.88$. (The real value is 8.8804.)",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 3
     },
     {
      "id": "ln_C20",
@@ -1749,7 +1523,8 @@
       }
      ],
      "explain": "$dy = 2(5)(−0.1)$ = -1, and $Δy = f(4.9) - f(5)$ = -0.99.",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 3
     },
     {
      "id": "ln_C19",
@@ -1768,7 +1543,8 @@
       }
      ],
      "explain": "$dy = frac{1}{2sqrt(4)}(0.2)$ = 0.05, and $Δy = f(4.2) - f(4)$ = 0.04939.",
-     "topic": "Linearization"
+     "topic": "Linearization",
+     "level": 3
     },
     {
      "type": "num",
@@ -1778,7 +1554,8 @@
      "tol": 0.001,
      "explain": "$frac{sec^2 x}{1}$ → 1.",
      "id": "lh_TB4",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "num",
@@ -1788,7 +1565,8 @@
      "tol": 0.002,
      "explain": "$ln y = frac{ln(1 + 3/x)}{1/x}$ → 3, so $y$ → $e^3$ ≈ 20.09.",
      "id": "lh_TO10",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "num",
@@ -1798,7 +1576,8 @@
      "tol": 0.001,
      "explain": "$frac{e^x - 1}{2x}$ is still $0/0$; again: $frac{e^x}{2}$ → $frac{1}{2}$.",
      "id": "lh_TB7",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "num",
@@ -1808,7 +1587,8 @@
      "tol": 0.002,
      "explain": "$frac{π/2 - x}{cot x}$ → $frac{-1}{-csc^2 x}$ → 1.",
      "id": "lh_TO17",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "num",
@@ -1818,7 +1598,8 @@
      "tol": 0.001,
      "explain": "$frac{e^x + e^(-x)}{cos x}$ → 2.",
      "id": "lh_TB19",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "num",
@@ -1828,7 +1609,8 @@
      "tol": 0.001,
      "explain": "$frac{2x}{e^x}$ → $frac{2}{e^x}$ → 0.",
      "id": "lh_TB8",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "num",
@@ -1838,7 +1620,8 @@
      "tol": 0.002,
      "explain": "$ln y = frac{ln(1 + x)}{x}$ → 1, so $y$ → e ≈ 2.718.",
      "id": "lh_TO11",
-     "topic": "L'Hôpital's Rule"
+     "topic": "L'Hôpital's Rule",
+     "level": 2
     },
     {
      "type": "steps",
@@ -1891,7 +1674,8 @@
      "title": "Two questions, one balloon",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><circle class=\"f-fill\" cx=\"160\" cy=\"85\" r=\"62\"/><line class=\"f-acc\" x1=\"160\" y1=\"85\" x2=\"222\" y2=\"85\"/><text x=\"191\" y=\"78\" text-anchor=\"middle\">r</text></svg>",
      "id": "rr_P4",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 3
     },
     {
      "type": "steps",
@@ -1936,7 +1720,8 @@
      "title": "Sand pile",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><path class=\"f-fill\" d=\"M70 150 L160 60 L250 150 Z\"/><line class=\"f-dash\" x1=\"160\" y1=\"60\" x2=\"160\" y2=\"150\"/><line class=\"f-acc\" x1=\"160\" y1=\"146\" x2=\"250\" y2=\"146\"/><text x=\"170\" y=\"110\" text-anchor=\"start\">h</text><text x=\"205\" y=\"140\" text-anchor=\"middle\">r</text></svg>",
      "id": "rr_P15",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 3
     },
     {
      "type": "steps",
@@ -1975,7 +1760,8 @@
      "title": "Lengthening shadow",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\"/><line class=\"f-line\" x1=\"40\" y1=\"150\" x2=\"40\" y2=\"20\"/><circle class=\"f-dot\" cx=\"40\" cy=\"20\" r=\"6\"/><line class=\"f-line\" x1=\"170\" y1=\"150\" x2=\"170\" y2=\"98\"/><line class=\"f-dash\" x1=\"40\" y1=\"20\" x2=\"290\" y2=\"150\"/><line class=\"f-acc\" x1=\"170\" y1=\"150\" x2=\"290\" y2=\"150\"/><text x=\"28\" y=\"90\" text-anchor=\"end\" class=\"f-s\">15 ft</text><text x=\"182\" y=\"126\" text-anchor=\"start\" class=\"f-s\">6 ft</text><text x=\"105\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"230\" y=\"166\" text-anchor=\"middle\">s</text></svg>",
      "id": "rr_P17",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2031,7 +1817,8 @@
      "title": "Draining funnel",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><path class=\"f-line\" d=\"M90 15 L160 155 L230 15 Z\"/><path class=\"f-water\" d=\"M118 71 L160 155 L202 71 Z\"/><line class=\"f-dash\" x1=\"118\" y1=\"71\" x2=\"202\" y2=\"71\"/><text x=\"170\" y=\"66\" text-anchor=\"middle\">r</text><line class=\"f-thin\" x1=\"250\" y1=\"71\" x2=\"250\" y2=\"155\"/><text x=\"262\" y=\"118\" text-anchor=\"middle\">h</text><text x=\"160\" y=\"12\" text-anchor=\"middle\" class=\"f-s\">10 ft across the top radius</text><line class=\"f-dash\" x1=\"60\" y1=\"15\" x2=\"60\" y2=\"155\"/><text x=\"48\" y=\"90\" text-anchor=\"end\" class=\"f-s\">20 ft</text></svg>",
      "id": "rr_P13",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2086,7 +1873,8 @@
      "title": "Rising kite",
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"150\" x2=\"300\" y2=\"150\"/><line class=\"f-acc\" x1=\"50\" y1=\"150\" x2=\"260\" y2=\"30\"/><path class=\"f-fill\" d=\"M260 18 l12 12 l-12 14 l-12 -14 Z\"/><line class=\"f-dash\" x1=\"260\" y1=\"30\" x2=\"260\" y2=\"150\"/><text x=\"272\" y=\"96\" text-anchor=\"start\" class=\"f-s\">100 ft</text><text x=\"155\" y=\"166\" text-anchor=\"middle\">x</text><text x=\"150\" y=\"82\" text-anchor=\"middle\">string</text><text x=\"80\" y=\"144\" text-anchor=\"middle\">θ</text></svg>",
      "id": "rr_P9",
-     "topic": "Related Rates"
+     "topic": "Related Rates",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2165,7 +1953,8 @@
      ],
      "figure": "<svg viewBox=\"0 0 320 190\" role=\"img\"><rect class=\"f-line\" x=\"100\" y=\"10\" width=\"120\" height=\"155\"/><rect class=\"f-fill\" x=\"120\" y=\"40\" width=\"80\" height=\"95\"/><text x=\"160\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">72 in²</text><text x=\"160\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"160\" y=\"153\" text-anchor=\"middle\" class=\"f-s\">4</text><text x=\"110\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"210\" y=\"92\" text-anchor=\"middle\" class=\"f-s\">2</text><text x=\"160\" y=\"182\" text-anchor=\"middle\">x</text><text x=\"92\" y=\"92\" text-anchor=\"end\">y</text></svg>",
      "id": "op_P5",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2244,7 +2033,8 @@
      ],
      "figure": "<svg viewBox=\"0 0 320 175\" role=\"img\"><rect class=\"f-fill\" x=\"90\" y=\"15\" width=\"140\" height=\"140\"/><rect x=\"90\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"15\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"90\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect x=\"200\" y=\"125\" width=\"30\" height=\"30\" style=\"fill:var(--curve);opacity:.35\"/><rect class=\"f-dash\" x=\"120\" y=\"45\" width=\"80\" height=\"80\"/><text x=\"105\" y=\"62\" text-anchor=\"middle\" class=\"f-s\">x</text><text x=\"160\" y=\"170\" text-anchor=\"middle\" class=\"f-s\">12 in</text></svg>",
      "id": "op_P20",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2323,7 +2113,8 @@
      ],
      "figure": "<svg viewBox=\"0 0 320 170\" role=\"img\"><line class=\"f-line\" style=\"stroke-width:6\" x1=\"60\" y1=\"30\" x2=\"260\" y2=\"30\"/><text x=\"160\" y=\"22\" text-anchor=\"middle\" class=\"f-s\">wall</text><path class=\"f-line\" d=\"M80 33 V140 H240 V33\"/><text x=\"66\" y=\"92\" text-anchor=\"end\">x</text><text x=\"160\" y=\"158\" text-anchor=\"middle\">y</text><text x=\"254\" y=\"92\" text-anchor=\"start\">x</text></svg>",
      "id": "op_P2",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2394,7 +2185,8 @@
       }
      ],
      "id": "op_P13",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 3
     },
     {
      "type": "steps",
@@ -2466,7 +2258,8 @@
      ],
      "figure": "<svg viewBox=\"0 0 320 160\" role=\"img\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/><text x=\"48\" y=\"84\" text-anchor=\"end\" class=\"f-s\">2 mi</text><text x=\"100\" y=\"136\" text-anchor=\"middle\">x</text><text x=\"170\" y=\"150\" text-anchor=\"middle\" class=\"f-s\">6 mi along the shore</text><text x=\"60\" y=\"30\" text-anchor=\"middle\" class=\"f-s\">island</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" class=\"f-s\"><line class=\"f-line\" x1=\"20\" y1=\"120\" x2=\"300\" y2=\"120\"/><circle class=\"f-dot\" cx=\"60\" cy=\"40\" r=\"5\"/><circle class=\"f-dot\" cx=\"280\" cy=\"120\" r=\"5\"/><line class=\"f-dash\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"120\"/><line class=\"f-acc\" x1=\"60\" y1=\"40\" x2=\"140\" y2=\"120\"/><line class=\"f-acc\" style=\"stroke:var(--teal)\" x1=\"140\" y1=\"120\" x2=\"280\" y2=\"120\"/></text></svg>",
      "id": "op_P8",
-     "topic": "Optimization"
+     "topic": "Optimization",
+     "level": 3
     },
     {
      "type": "crit",
@@ -2479,7 +2272,8 @@
      "noneText": "No inflection points",
      "explain": "Where $f''$ changes sign.",
      "id": "cs_D9",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 2
     },
     {
      "type": "crit",
@@ -2492,7 +2286,8 @@
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞.",
      "id": "cs_D28",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 2
     },
     {
      "type": "crit",
@@ -2505,7 +2300,8 @@
      "noneText": "No vertical asymptotes",
      "explain": "Where the function blows up: $x$ = 0.",
      "id": "cs_D23",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 2
     },
     {
      "type": "crit",
@@ -2518,7 +2314,8 @@
      "noneText": "No horizontal asymptotes",
      "explain": "Take the limits as $x$ → ±∞.",
      "id": "cs_D11",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 2
     },
     {
      "type": "interval",
@@ -2527,7 +2324,8 @@
      "label": "Domain:",
      "explain": "Exclude where it is undefined.",
      "id": "cs_D30",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 2
     },
     {
      "type": "interval",
@@ -2540,7 +2338,8 @@
      "noneText": "Never concave up",
      "explain": "Where $f''(x) > 0$.",
      "id": "cs_D8",
-     "topic": "Curve Sketching"
+     "topic": "Curve Sketching",
+     "level": 2
     }
    ]
   },
@@ -3990,5 +3789,205 @@
     }
    ]
   }
- }
+ },
+ "lesson": {
+  "slides": [
+   {
+    "type": "match",
+    "text": "Every World 3 problem starts with recognizing which tool it needs. Match each task with its tool.",
+    "pairs": [
+     [
+      "Biggest value of $f$ on $[a, b]$",
+      "Closed interval method"
+     ],
+     [
+      "Prove some $f'(c)$ equals the average slope",
+      "Mean Value Theorem"
+     ],
+     [
+      "Approximate a root to 6 decimals",
+      "Newton's Method"
+     ],
+     [
+      "Estimate $sqrt(9.1)$ by hand",
+      "Linearization"
+     ],
+     [
+      "Limit of the form $0/0$",
+      "L'Hôpital's Rule"
+     ],
+     [
+      "How fast is the shadow growing?",
+      "Related rates"
+     ]
+    ],
+    "explain": "Recognizing the problem type is half the test.",
+    "hint": "Look for the key words: \"on [a, b]\", \"some c\", \"root\", \"estimate\", \"0/0\", \"how fast\".",
+    "id": "L1"
+   },
+   {
+    "type": "extrema",
+    "title": "Max and Mins in one minute",
+    "text": "Absolute max and min of $f(x) = x^3 - 3x$ on $[0, 2]$.",
+    "fn": {
+     "expr": "x^3-3*x",
+     "domain": [
+      0,
+      2
+     ]
+    },
+    "crit": [
+     1
+    ],
+    "deriv": "$f'(x) = 3x^2 - 3$",
+    "after": "Critical points **and** endpoints, every time.",
+    "id": "L3"
+   },
+   {
+    "type": "multi",
+    "text": "**Newton in one step.** $f(x) = x^2 - 2$, $x_0$ = 1. Fill in all three.",
+    "parts": [
+     {
+      "label": "$f(x_0)$ =",
+      "answer": -1
+     },
+     {
+      "label": "$f'(x_0)$ =",
+      "answer": 2
+     },
+     {
+      "label": "$x_1$ =",
+      "answer": 1.5
+     }
+    ],
+    "hint": "$x_1 = x_0 - frac{f(x_0)}{f'(x_0)}$",
+    "explain": "$x_1 = 1 - frac{-1}{2}$ = 1.5.",
+    "id": "L5"
+   },
+   {
+    "type": "steps",
+    "text": "**Related rates.** A circle’s radius grows at 3 cm/s. How fast is its area growing when $r$ = 10?",
+    "steps": [
+     {
+      "type": "expr",
+      "text": "Differentiate $A = pi r^2$ with respect to $t$.",
+      "answer": "2*pi*r*r'",
+      "vars": [
+       "r",
+       "r'"
+      ],
+      "label": "$A'$ =",
+      "keys": [
+       "pi"
+      ],
+      "explain": "$2pi r r'$.",
+      "hint": "Chain rule: tack on $r'$."
+     },
+     {
+      "type": "num",
+      "text": "Plug in.",
+      "answer": 188.495559,
+      "label": "$A'$ ≈",
+      "tol": 0.05,
+      "explain": "$60pi$ ≈ 188.5 cm²/s.",
+      "hint": "$2pi(10)(3)$"
+     }
+    ],
+    "title": "Related rates in one minute",
+    "id": "L8"
+   },
+   {
+    "type": "steps",
+    "text": "**Optimization.** Two positive numbers add to 20. Maximize their product.",
+    "steps": [
+     {
+      "type": "mc",
+      "text": "What is being optimized?",
+      "options": [
+       "The sum",
+       "The product"
+      ],
+      "answer": 1,
+      "explain": "The product (the sum is the constraint).",
+      "hint": "The sum is fixed."
+     },
+     {
+      "type": "expr",
+      "text": "Product as a function of $x$:",
+      "answer": "x*(20-x)",
+      "vars": [
+       "x"
+      ],
+      "label": "$P(x)$ =",
+      "explain": "$x(20 - x)$.",
+      "hint": "The other number is $20 - x$."
+     },
+     {
+      "type": "num",
+      "text": "Best $x$:",
+      "answer": 10,
+      "label": "$x$ =",
+      "explain": "10 and 10, product 100.",
+      "hint": "$P'(x) = 20 - 2x$"
+     }
+    ],
+    "title": "Optimization in one minute",
+    "id": "L9"
+   },
+   {
+    "type": "sketch",
+    "fn": "x^3-3*x^2",
+    "window": [
+     -2,
+     4,
+     -5,
+     3
+    ],
+    "prefill": true,
+    "phases": [
+     "draw"
+    ],
+    "data": {
+     "points": [
+      [
+       0,
+       0,
+       "Local max"
+      ],
+      [
+       2,
+       -4,
+       "Local min"
+      ],
+      [
+       1,
+       -2,
+       "Inflection point"
+      ],
+      [
+       3,
+       0,
+       "x-intercept"
+      ]
+     ],
+     "crit": [
+      0,
+      2
+     ],
+     "infl": [
+      1
+     ],
+     "lines": [
+      "Local max $(0, 0)$, local min $(2, -4)$",
+      "Inflection point $(1, -2)$",
+      "$x$-intercepts 0 and 3"
+     ]
+    },
+    "title": "Curve sketching in one minute",
+    "text": "**Sketch** $f(x) = x^3 - 3x^2$. The key points and regions are already marked: just draw.",
+    "id": "L12"
+   }
+  ]
+ },
+ "lessonOptional": true
 }

@@ -212,20 +212,18 @@
      "level": 3
     },
     {
-     "type": "expr",
-     "text": "**Write it as a function of one variable.**\nAn open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.",
-     "answer": "3*pi*r^2/20+12*pi/(5*r)",
-     "vars": [
-      "r"
-     ],
-     "label": "$C(r)$ =",
-     "show": "$0.15pi r^2 + frac{2.4pi}{r}$",
-     "keys": [
-      "pi"
-     ],
-     "explain": "$h = frac{24}{r^2}$. Cost = $0.15pi r^2$ (bottom) + $0.05 · 2pi r h = frac{2.4pi}{r}$ (side). Different prices mean different coefficients.",
      "id": "S11",
-     "level": 2
+     "level": 2,
+     "explain": "$h = frac{24}{r^2}$. Cost = $0.15pi r^2$ (bottom) + $0.05 · 2pi r h = frac{2.4pi}{r}$ (side). Different prices mean different coefficients.",
+     "type": "mc",
+     "text": "**Write it as a function of one variable.**\nAn open-top cylindrical can must hold 24π in³. The bottom costs \\$0.15 per in² and the curved side costs \\$0.05 per in². Find the radius that makes the can cheapest.\n$C(r)$ =",
+     "options": [
+      "$3·pi·frac{r^2}{20}+12·frac{pi}{5·r}$",
+      "$3·pi·frac{r^2}{20}-12·frac{pi}{5·r}$",
+      "$3·pi·frac{r^3}{20}+12·frac{pi}{5·r}$",
+      "$12·frac{pi}{5·r}$"
+     ],
+     "answer": 0
     },
     {
      "type": "mc",
@@ -301,19 +299,17 @@
        "id": "U2.2"
       },
       {
-       "type": "expr",
-       "text": "**Write it as a function of one variable.**",
-       "answer": "6/5-x/5+sqrt(4+x^2)/3",
-       "vars": [
-        "x"
-       ],
-       "label": "$T(x)$ =",
-       "show": "$frac{sqrt(4 + x^2)}{3} + frac{6 - x}{5}$",
-       "keys": [
-        "sqrt("
-       ],
+       "id": "U2.3",
        "explain": "Row $sqrt(4 + x^2)$ at 3 mi/h, then walk $6 - x$ at 5 mi/h.",
-       "id": "U2.3"
+       "type": "mc",
+       "text": "**Write it as a function of one variable.**\n$T(x)$ =",
+       "options": [
+        "$frac{6}{5}-frac{x}{5}+frac{sqrt(4+x^2)}{3}$",
+        "$frac{6}{5}-frac{x}{5}-frac{sqrt(4+x^2)}{3}$",
+        "$frac{6}{5}-frac{x}{5}+frac{4+x^2}{3}$",
+        "$frac{6}{5}-frac{x}{5}+frac{sqrt(4+x^3)}{3}$"
+       ],
+       "answer": 0
       }
      ],
      "level": 3
@@ -375,20 +371,18 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "**Write it as a function of one variable.**\nAn island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.",
-     "answer": "3/4-x/8+sqrt(4+x^2)/3",
-     "vars": [
-      "x"
-     ],
-     "label": "$T(x)$ =",
-     "show": "$frac{6 - x}{8} + frac{sqrt(4 + x^2)}{3}$",
-     "keys": [
-      "sqrt("
-     ],
-     "explain": "Run $6 - x$ at 8 mi/h; swim $sqrt(4 + x^2)$ at 3 mi/h.",
      "id": "S23",
-     "level": 2
+     "level": 2,
+     "explain": "Run $6 - x$ at 8 mi/h; swim $sqrt(4 + x^2)$ at 3 mi/h.",
+     "type": "mc",
+     "text": "**Write it as a function of one variable.**\nAn island is 2 mi offshore. A visitor is at a cabin on the shore 6 mi from the point nearest the island. They run along the shore at 8 mi/h, then swim at 3 mi/h straight to the island. Let $x$ be the distance from the nearest point where they start swimming. Minimize the total time.\n$T(x)$ =",
+     "options": [
+      "$frac{3}{4}-frac{x}{8}+frac{sqrt(4+x^2)}{3}$",
+      "$frac{3}{4}+frac{x}{8}+frac{sqrt(4+x^2)}{3}$",
+      "$frac{3}{4}-frac{x}{8}+frac{4+x^2}{3}$",
+      "$frac{4}{4}-frac{x}{8}+frac{sqrt(4+x^2)}{3}$"
+     ],
+     "answer": 0
     },
     {
      "type": "mc",
@@ -435,19 +429,17 @@
        "id": "U3.2"
       },
       {
-       "type": "expr",
-       "text": "**Write it as a function of one variable.**",
-       "answer": "x^2/16+(4-x)^2/(4*pi)",
-       "vars": [
-        "x"
-       ],
-       "label": "$A(x)$ =",
-       "show": "$(frac{x}{4})^2 + frac{(4 - x)^2}{4pi}$",
-       "keys": [
-        "pi"
-       ],
+       "id": "U3.3",
        "explain": "Square side $frac{x}{4}$. Circle circumference $4 - x$, so $r = frac{4 - x}{2pi}$ and its area is $frac{(4 - x)^2}{4pi}$.",
-       "id": "U3.3"
+       "type": "mc",
+       "text": "**Write it as a function of one variable.**\n$A(x)$ =",
+       "options": [
+        "$frac{x^2}{16}+frac{(4-x)^2}{4·pi}$",
+        "$frac{x^2}{16}+frac{(4+x)^2}{4·pi}$",
+        "$frac{x^2}{15}+frac{(4-x)^2}{4·pi}$",
+        "$frac{x^2}{16}$"
+       ],
+       "answer": 0
       }
      ],
      "level": 3
@@ -467,17 +459,18 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "**Write it as a function of one variable.**\nA car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?",
-     "answer": "-500+(-10+p)*(1000-5*p)",
-     "vars": [
-      "p"
-     ],
-     "label": "$P(p)$ =",
-     "show": "$(p - 10)(1000 - 5p) - 500$",
-     "explain": "Each car earns $p - 10$ after cleaning; there are $n$ cars; subtract \\$500.",
      "id": "S29",
-     "level": 2
+     "level": 2,
+     "explain": "Each car earns $p - 10$ after cleaning; there are $n$ cars; subtract \\$500.",
+     "type": "mc",
+     "text": "**Write it as a function of one variable.**\nA car rental company rents $n = 1000 - 5p$ cars per day at a price of $p$ dollars ($50 ≤ p ≤ 200$). Each rental costs \\$10 to clean, plus \\$500 a day overhead. What price maximizes profit?\n$P(p)$ =",
+     "options": [
+      "$-500+(-10+p)·(1000-5·p)$",
+      "$-500+(-10-p)·(1000-5·p)$",
+      "$-501+(-10+p)·(1000-5·p)$",
+      "$-500$"
+     ],
+     "answer": 0
     },
     {
      "type": "mc",
@@ -508,20 +501,18 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "**Write it as a function of one variable.**\nA window is a rectangle with a semicircle on top. The outer frame (the perimeter) is 20 ft. Let $r$ be the radius of the semicircle. What $r$ lets in the most light (largest area)?",
-     "answer": "-2*r^2+20*r-pi*r^2/2",
-     "vars": [
-      "r"
-     ],
-     "label": "$A(r)$ =",
-     "show": "$20r - 2r^2 - frac{pi r^2}{2}$",
-     "keys": [
-      "pi"
-     ],
-     "explain": "$h = frac{20 - 2r - pi r}{2}$. Area = $2rh + frac{1}{2}pi r^2$, which simplifies to $20r - 2r^2 - frac{pi r^2}{2}$.",
      "id": "S32",
-     "level": 2
+     "level": 2,
+     "explain": "$h = frac{20 - 2r - pi r}{2}$. Area = $2rh + frac{1}{2}pi r^2$, which simplifies to $20r - 2r^2 - frac{pi r^2}{2}$.",
+     "type": "mc",
+     "text": "**Write it as a function of one variable.**\nA window is a rectangle with a semicircle on top. The outer frame (the perimeter) is 20 ft. Let $r$ be the radius of the semicircle. What $r$ lets in the most light (largest area)?\n$A(r)$ =",
+     "options": [
+      "$-2·r^2+20·r-pi·frac{r^2}{2}$",
+      "$-2·r^2-20·r-pi·frac{r^2}{2}$",
+      "$-2·r^3+20·r-pi·frac{r^2}{2}$",
+      "$frac{2}{-2·r^2+20·r-pi·r^2}$"
+     ],
+     "answer": 0
     },
     {
      "type": "mc",
@@ -568,16 +559,17 @@
        "id": "U4.2"
       },
       {
-       "type": "expr",
-       "text": "**Write it as a function of one variable.**",
-       "answer": "(-1+w)*(-4+400/w)",
-       "vars": [
-        "w"
-       ],
-       "label": "$P(w)$ =",
-       "show": "$(w - 1)(frac{400}{w} - 4)$",
+       "id": "U4.3",
        "explain": "Printed width $w - 1$, printed height $h - 4$ with $h = frac{400}{w}$.",
-       "id": "U4.3"
+       "type": "mc",
+       "text": "**Write it as a function of one variable.**\n$P(w)$ =",
+       "options": [
+        "$(-1+w)·(-4+frac{400}{w})$",
+        "$(-1-w)·(-4+frac{400}{w})$",
+        "$(-2+w)·(-4+frac{400}{w})$",
+        "$-(-1+w)·(-4+frac{400}{w})$"
+       ],
+       "answer": 0
       }
      ],
      "level": 3
@@ -597,20 +589,18 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "**Write it as a function of one variable.**\nAn isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.",
-     "answer": "sqrt(25-x^2)*(5+x)",
-     "vars": [
-      "x"
-     ],
-     "label": "$A(x)$ =",
-     "show": "$sqrt(25 - x^2)(5 + x)$",
-     "keys": [
-      "sqrt("
-     ],
-     "explain": "Half-base $sqrt(25 - x^2)$, height $5 + x$. Area = half-base × height.",
      "id": "S38",
-     "level": 2
+     "level": 2,
+     "explain": "Half-base $sqrt(25 - x^2)$, height $5 + x$. Area = half-base × height.",
+     "type": "mc",
+     "text": "**Write it as a function of one variable.**\nAn isosceles triangle is inscribed in a circle of radius 5, with its apex at the top of the circle. Let $x$ be the distance from the center down to the base. Maximize the area.\n$A(x)$ =",
+     "options": [
+      "$sqrt(25-x^2)·(5+x)$",
+      "$sqrt(25+x^2)·(5+x)$",
+      "$(25-x^2)·(5+x)$",
+      "$sqrt(24-x^2)·(5+x)$"
+     ],
+     "answer": 0
     },
     {
      "type": "mc",
@@ -740,20 +730,18 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "**Write it as a function of one variable.**\nAn 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.",
-     "answer": "sqrt(64+x^2)*(4+x)/x",
-     "vars": [
-      "x"
-     ],
-     "label": "$L(x)$ =",
-     "show": "$frac{(x + 4)sqrt(x^2 + 64)}{x}$",
-     "keys": [
-      "sqrt("
-     ],
-     "explain": "The ladder rises 8 ft over a run of $x$, so over the full run $x + 4$ its length is $(x + 4) · frac{sqrt(x^2 + 64)}{x}$.",
      "id": "S49",
-     "level": 2
+     "level": 2,
+     "explain": "The ladder rises 8 ft over a run of $x$, so over the full run $x + 4$ its length is $(x + 4) · frac{sqrt(x^2 + 64)}{x}$.",
+     "type": "mc",
+     "text": "**Write it as a function of one variable.**\nAn 8-ft fence stands 4 ft from a building. Find the shortest ladder that reaches from the ground, over the fence, to the building. Let $x$ be the distance from the foot of the ladder to the fence.\n$L(x)$ =",
+     "options": [
+      "$sqrt(64+x^2)·frac{4+x}{x}$",
+      "$sqrt(64+x^2)·frac{4-x}{x}$",
+      "$(64+x^2)·frac{4+x}{x}$",
+      "$sqrt(63+x^2)·frac{4+x}{x}$"
+     ],
+     "answer": 0
     },
     {
      "type": "mc",

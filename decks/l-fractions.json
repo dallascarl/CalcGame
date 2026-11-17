@@ -339,22 +339,17 @@
     },
     {
      "id": "C21",
-     "type": "expr",
-     "text": "Write $frac{3}{x - 1} + frac{2}{x + 1}$ as one fraction.",
-     "answer": "(5x + 1)/((x - 1)(x + 1))",
-     "vars": [
-      "x"
-     ],
-     "label": "one fraction =",
-     "ranges": {
-      "x": [
-       4,
-       6
-      ]
-     },
-     "show": "$frac{5x + 1}{(x - 1)(x + 1)}$",
      "level": 3,
-     "explain": "$frac{5x + 1}{(x - 1)(x + 1)}$"
+     "explain": "$frac{5x + 1}{(x - 1)(x + 1)}$",
+     "type": "mc",
+     "text": "Write $frac{3}{x - 1} + frac{2}{x + 1}$ as one fraction.",
+     "options": [
+      "$frac{5x + 1}{(x - 1)(x + 1)}$",
+      "$frac{5x - 1}{(x - 1)(x + 1)}$",
+      "$frac{6x + 1}{(x - 1)(x + 1)}$",
+      "$frac{((x - 1)(x + 1))}{(5x + 1)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "C22",
@@ -434,22 +429,17 @@
     },
     {
      "id": "C26",
-     "type": "expr",
-     "text": "Write $frac{4}{x^2 - 4} + frac{1}{x - 2}$ as one fraction.",
-     "answer": "(x + 6)/((x - 2)(x + 2))",
-     "vars": [
-      "x"
-     ],
-     "label": "one fraction =",
-     "ranges": {
-      "x": [
-       4,
-       6
-      ]
-     },
-     "show": "$frac{x + 6}{(x - 2)(x + 2)}$",
      "level": 3,
-     "explain": "$frac{x + 6}{(x - 2)(x + 2)}$"
+     "explain": "$frac{x + 6}{(x - 2)(x + 2)}$",
+     "type": "mc",
+     "text": "Write $frac{4}{x^2 - 4} + frac{1}{x - 2}$ as one fraction.",
+     "options": [
+      "$frac{x + 6}{(x - 2)(x + 2)}$",
+      "$frac{x - 6}{(x - 2)(x + 2)}$",
+      "$frac{x + 6}{(x - 2)(x + 1)}$",
+      "$frac{((x - 2)(x + 2))}{(x + 6)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "T27",

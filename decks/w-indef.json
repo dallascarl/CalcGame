@@ -655,34 +655,17 @@
     },
     {
      "id": "I19",
-     "type": "expr",
-     "text": "Find\n$$int (1 - x)/sqrt(x) dx$$",
-     "answer": "2sqrt(x) - (2/3)x^(3/2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt(",
-      "e^(",
-      "ln(",
-      "arctan(",
-      "sec("
-     ],
-     "label": "$int (1 - x)/sqrt(x) dx$ =",
-     "post": "$+ C$",
-     "ranges": {
-      "x": [
-       0.2,
-       1.2
-      ]
-     },
-     "upToC": true,
-     "show": "$2sqrt(x) - (2/3)x^(3/2)$",
      "level": 2,
-     "explain": "$2sqrt(x) - (2/3)x^(3/2) + C$"
+     "explain": "$2sqrt(x) - (2/3)x^(3/2) + C$",
+     "type": "mc",
+     "text": "Find\n$$int (1 - x)/sqrt(x) dx$$",
+     "options": [
+      "$2sqrt(x) - (frac{2}{3})x^(frac{3}{2}) + C$",
+      "$2sqrt(x) + (frac{2}{3})x^(frac{3}{2}) + C$",
+      "$2(x) - (frac{2}{3})x^(frac{3}{2}) + C$",
+      "$2sqrt(x) - (frac{1}{3})x^(frac{3}{2}) + C$"
+     ],
+     "answer": 0
     },
     {
      "id": "I20",

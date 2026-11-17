@@ -60,10 +60,10 @@
      "type": "mc",
      "text": "The quotient rule says\n$$(frac{g}{k})' =$$",
      "options": [
-      "$frac{kg' - gk'}{k^2}$",
-      "$frac{gk' - kg'}{k^2}$",
+      "$frac{k g' - gk'}{k^2}$",
+      "$frac{gk' - k g'}{k^2}$",
       "$frac{g'}{k'}$",
-      "$frac{kg' + gk'}{k^2}$"
+      "$frac{k g' + gk'}{k^2}$"
      ],
      "answer": 0,
      "explain": "Low d-high minus high d-low, over low squared. The order matters because of the minus sign."
@@ -584,7 +584,7 @@
     {
      "id": "U38",
      "type": "expr",
-     "text": "$$f(x) = frac{x^2}{x + 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x^2}{x + 1}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "2x",
      "vars": [
       "x"
@@ -598,7 +598,7 @@
     {
      "id": "U39",
      "type": "expr",
-     "text": "$$f(x) = frac{3x}{2x - 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{3x}{2x - 1}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "3",
      "vars": [
       "x"
@@ -612,7 +612,7 @@
     {
      "id": "U40",
      "type": "expr",
-     "text": "$$f(x) = frac{x^2 + 1}{x}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x^2 + 1}{x}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "2x",
      "vars": [
       "x"
@@ -626,7 +626,7 @@
     {
      "id": "U41",
      "type": "expr",
-     "text": "$$f(x) = frac{2x + 5}{x^2 + 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{2x + 5}{x^2 + 1}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "2",
      "vars": [
       "x"
@@ -640,7 +640,7 @@
     {
      "id": "U42",
      "type": "expr",
-     "text": "$$f(x) = frac{x - 2}{x + 3}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x - 2}{x + 3}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "1",
      "vars": [
       "x"
@@ -654,7 +654,7 @@
     {
      "id": "U43",
      "type": "expr",
-     "text": "$$f(x) = frac{4x^2}{2x + 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{4x^2}{2x + 1}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "8x",
      "vars": [
       "x"
@@ -668,7 +668,7 @@
     {
      "id": "U44",
      "type": "expr",
-     "text": "$$f(x) = frac{x}{x^2 + 4}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x}{x^2 + 4}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "1",
      "vars": [
       "x"
@@ -682,7 +682,7 @@
     {
      "id": "U45",
      "type": "expr",
-     "text": "$$f(x) = frac{5x}{x - 1}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{5x}{x - 1}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "5",
      "vars": [
       "x"
@@ -724,15 +724,16 @@
       },
       {
        "id": "W46.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(x^2 + 2)(3) + (2x)(3x + 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (x^2 + 2)(3) + (2x)(3x + 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(x^2 + 2)(3) + (2x)(3x + 1)$",
+        "$(3) + (2x)(3x + 1)$",
+        "$(x^2 + 2)(3) + (2x)(3x - 1)$",
+        "$(x^2 + 2)(3) + (3x)(3x + 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(x^2 + 2)(3) + (2x)(3x + 1)$",
-       "work": "$f'(x) = (x^2 + 2)(3) + (2x)(3x + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -769,15 +770,16 @@
       },
       {
        "id": "W47.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(2x - 1)(1) + (2)(x + 4)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (2x - 1)(1) + (2)(x + 4)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(2x - 1)(1) + (2)(x + 4)$",
+        "$(1) + (2)(x + 4)$",
+        "$(2x + 1)(1) + (2)(x + 4)$",
+        "$(2x - 1)(1) + (3)(x + 4)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(2x - 1)(1) + (2)(x + 4)$",
-       "work": "$f'(x) = (2x - 1)(1) + (2)(x + 4)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -814,15 +816,16 @@
       },
       {
        "id": "W48.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(x^2 - 3)(2) + (2x)(2x + 5)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (x^2 - 3)(2) + (2x)(2x + 5)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(x^2 - 3)(2) + (2x)(2x + 5)$",
+        "$(x^2 - 3)$",
+        "$(x^2 - 3)(2) + (2x)(2x - 5)$",
+        "$(x^2 - 2)(2) + (2x)(2x + 5)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(x^2 - 3)(2) + (2x)(2x + 5)$",
-       "work": "$f'(x) = (x^2 - 3)(2) + (2x)(2x + 5)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -859,15 +862,16 @@
       },
       {
        "id": "W49.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(3x)(2x - 2) + (3)(x^2 - 2x + 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (3x)(2x - 2) + (3)(x^2 - 2x + 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(3x)(2x - 2) + (3)(x^2 - 2x + 1)$",
+        "$(2x - 2) + (3)(x^2 - 2x + 1)$",
+        "$(3x)(2x - 2) - (3)(x^2 - 2x + 1)$",
+        "$(3x)(1x - 2) + (3)(x^2 - 2x + 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(3x)(2x - 2) + (3)(x^2 - 2x + 1)$",
-       "work": "$f'(x) = (3x)(2x - 2) + (3)(x^2 - 2x + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -904,15 +908,16 @@
       },
       {
        "id": "W50.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(x + 1)(1) + (1)(x - 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (x + 1)(1) + (1)(x - 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(x + 1)(1) + (1)(x - 1)$",
+        "$(x + 1)$",
+        "$(x + 1)(1) + (1)(x + 1)$",
+        "$(x + 1)(2) + (1)(x - 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(x + 1)(1) + (1)(x - 1)$",
-       "work": "$f'(x) = (x + 1)(1) + (1)(x - 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -949,15 +954,16 @@
       },
       {
        "id": "W51.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(4x - 1)(2x) + (4)(x^2 + 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (4x - 1)(2x) + (4)(x^2 + 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(4x - 1)(2x) + (4)(x^2 + 1)$",
+        "$(x^2 + 1)$",
+        "$(4x - 1)(2x) + (4)(x^2 - 1)$",
+        "$(4x - 1)(2x) + (5)(x^2 + 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(4x - 1)(2x) + (4)(x^2 + 1)$",
-       "work": "$f'(x) = (4x - 1)(2x) + (4)(x^2 + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -994,15 +1000,16 @@
       },
       {
        "id": "W52.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(x^3 + 1)(2) + (3x^2)(2x + 3)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (x^3 + 1)(2) + (3x^2)(2x + 3)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(x^3 + 1)(2) + (3x^2)(2x + 3)$",
+        "$(2x + 3)$",
+        "$(x^3 - 1)(2) + (3x^2)(2x + 3)$",
+        "$(x^3 + 1)(2) + (3x^1)(2x + 3)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(x^3 + 1)(2) + (3x^2)(2x + 3)$",
-       "work": "$f'(x) = (x^3 + 1)(2) + (3x^2)(2x + 3)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1039,15 +1046,16 @@
       },
       {
        "id": "W53.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(5x + 2)(2x) + (5)(x^2 - 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (5x + 2)(2x) + (5)(x^2 - 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(5x + 2)(2x) + (5)(x^2 - 1)$",
+        "$(x^2 - 1)$",
+        "$(5x + 2)(2x) - (5)(x^2 - 1)$",
+        "$(5x + 3)(2x) + (5)(x^2 - 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(5x + 2)(2x) + (5)(x^2 - 1)$",
-       "work": "$f'(x) = (5x + 2)(2x) + (5)(x^2 - 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1084,15 +1092,16 @@
       },
       {
        "id": "W54.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(x - 3)(4x) + (1)(2x^2 + 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(x - 3)(4x) + (1)(2x^2 + 1)$",
+        "$(x - 3)$",
+        "$(x + 3)(4x) + (1)(2x^2 + 1)$",
+        "$(x - 3)(4x) + (1)(1x^2 + 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(x - 3)(4x) + (1)(2x^2 + 1)$",
-       "work": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1129,15 +1138,16 @@
       },
       {
        "id": "W55.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(2x^2 + 1)(3) + (4x)(3x - 2)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (2x^2 + 1)(3) + (4x)(3x - 2)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(2x^2 + 1)(3) + (4x)(3x - 2)$",
+        "$(3) + (4x)(3x - 2)$",
+        "$(2x^2 - 1)(3) + (4x)(3x - 2)$",
+        "$(1x^2 + 1)(3) + (4x)(3x - 2)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(2x^2 + 1)(3) + (4x)(3x - 2)$",
-       "work": "$f'(x) = (2x^2 + 1)(3) + (4x)(3x - 2)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1172,21 +1182,16 @@
       },
       {
        "id": "V56.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x + 1)(2x) - (x^2)(1))/(x + 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$",
+        "$frac{(x + 1)(2x) + (x^2)(1)}{(x + 1)^2}$",
+        "$frac{(x + 1)(2x) - (x^1)(1)}{(x + 1)^2}$",
+        "$frac{(x + 1)(2x) - (x^2)(1)}{x + 1}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$",
-       "work": "$f'(x) = frac{(x + 1)(2x) - (x^2)(1)}{(x + 1)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1221,21 +1226,16 @@
       },
       {
        "id": "V57.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((2x - 1)(3) - (3x)(2))/(2x - 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$",
+        "$frac{(2x - 1)(3) - (3x)(2)}{(2x + 1)^2}$",
+        "$frac{(2x - 1)(3) - (2x)(2)}{(2x - 1)^2}$",
+        "$frac{(2x - 1)(3) - (3x)(2)}{2x - 1}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$",
-       "work": "$f'(x) = frac{(2x - 1)(3) - (3x)(2)}{(2x - 1)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1270,21 +1270,16 @@
       },
       {
        "id": "V58.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x)(2x) - (x^2 + 1)(1))/(x)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+        "$frac{(x)(2x) + (x^2 + 1)(1)}{(x)^2}$",
+        "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^3}$",
+        "$frac{(x)^2}{((x)(2x) - (x^2 + 1)(1))}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
-       "work": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1319,21 +1314,16 @@
       },
       {
        "id": "V59.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x^2 + 1)(2) - (2x + 5)(2x))/(x^2 + 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+        "$frac{(x^2 + 1)(2) + (2x + 5)(2x)}{(x^2 + 1)^2}$",
+        "$frac{(x^2 + 1)(1) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+        "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x + 1)^2}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
-       "work": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1368,21 +1358,16 @@
       },
       {
        "id": "V60.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x + 3)(1) - (x - 2)(1))/(x + 3)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$",
+        "$frac{(x + 3)(1) - (x - 2)(1)}{(x - 3)^2}$",
+        "$frac{(x + 2)(1) - (x - 2)(1)}{(x + 3)^2}$",
+        "$frac{(x + 3)(1) - (x - 2)(1)}{x + 3}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$",
-       "work": "$f'(x) = frac{(x + 3)(1) - (x - 2)(1)}{(x + 3)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1417,21 +1402,16 @@
       },
       {
        "id": "V61.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((2x + 1)(8x) - (4x^2)(2))/(2x + 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$",
+        "$frac{(2x + 1)(8x) - (4x^2)(2)}{(2x - 1)^2}$",
+        "$frac{(3x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$",
+        "$frac{(2x + 1)(8x) - (4x^2)(2)}{2x + 1}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$",
-       "work": "$f'(x) = frac{(2x + 1)(8x) - (4x^2)(2)}{(2x + 1)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1466,21 +1446,16 @@
       },
       {
        "id": "V62.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x^2 + 4)(1) - (x)(2x))/(x^2 + 4)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$",
+        "$frac{(x^2 + 4)(1) + (x)(2x)}{(x^2 + 4)^2}$",
+        "$frac{(x^1 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$",
+        "$frac{(x^2 + 4)(1) - (x)(2x)}{x^2 + 4}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$",
-       "work": "$f'(x) = frac{(x^2 + 4)(1) - (x)(2x)}{(x^2 + 4)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1515,21 +1490,16 @@
       },
       {
        "id": "V63.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x - 1)(5) - (5x)(1))/(x - 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$",
+        "$frac{(x - 1)(5) + (5x)(1)}{(x - 1)^2}$",
+        "$frac{(x - 1)(5) - (5x)(2)}{(x - 1)^2}$",
+        "$frac{(x - 1)(5) - (5x)(1)}{x - 1}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$",
-       "work": "$f'(x) = frac{(x - 1)(5) - (5x)(1)}{(x - 1)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1898,7 +1868,7 @@
    {
     "id": "L4",
     "type": "steps",
-    "text": "**Quotient rule**\n$$(frac{g}{k})' = frac{kg' - gk'}{k^2}$$\n“Low d-high minus high d-low, over low squared.” Take\n$$f(x) = frac{4x^2}{2x + 1}$$",
+    "text": "**Quotient rule**\n$$(frac{g}{k})' = frac{k g' - gk'}{k^2}$$\n“Low d-high minus high d-low, over low squared.” Take\n$$f(x) = frac{4x^2}{2x + 1}$$",
     "steps": [
      {
       "id": "L4.1",

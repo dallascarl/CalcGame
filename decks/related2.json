@@ -159,98 +159,74 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "$V = pi r^2 h$ (a cylinder). Both $r$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
-     "answer": "pi*r*(h'*r+2*h*r')",
-     "vars": [
-      "r",
-      "h",
-      "r'",
-      "h'"
-     ],
-     "label": "$V'$ =",
-     "keys": [
-      "pi"
-     ],
-     "explain": "Product rule: $V' = pi(2r r' h + r^2 h')$.",
      "id": "D17",
-     "level": 1
+     "level": 1,
+     "explain": "Product rule: $V' = pi(2r r' h + r^2 h')$.",
+     "type": "mc",
+     "text": "$V = pi r^2 h$ (a cylinder). Both $r$ and $h$ change. Differentiate with respect to $t$.\n$V'$ =",
+     "options": [
+      "$pi·r·(h'·r+2·h·r')$",
+      "$pi·r·(h'·r-2·h·r')$",
+      "$pi·r·(h'·r+3·h·r')$",
+      "$pi·r·(h'·r+2·h·r)$"
+     ],
+     "answer": 0
     },
     {
-     "type": "expr",
-     "text": "$V = frac{1}{3}pi r^2 h$ (a cone). Both $r$ and $h$ change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
-     "answer": "pi*r*(h'*r+2*h*r')/3",
-     "vars": [
-      "r",
-      "h",
-      "r'",
-      "h'"
-     ],
-     "label": "$V'$ =",
-     "keys": [
-      "pi"
-     ],
-     "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$.",
      "id": "D18",
-     "level": 1
+     "level": 1,
+     "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$.",
+     "type": "mc",
+     "text": "$V = frac{1}{3}pi r^2 h$ (a cone). Both $r$ and $h$ change. Differentiate with respect to $t$.\n$V'$ =",
+     "options": [
+      "$pi·r·frac{h'·r+2·h·r'}{3}$",
+      "$pi·r·frac{h'·r-2·h·r'}{3}$",
+      "$pi·r·frac{h'·r+3·h·r'}{3}$",
+      "$frac{3}{pi·r·(h'·r+2·h·r')}$"
+     ],
+     "answer": 0
     },
     {
-     "type": "expr",
-     "text": "$V = lwh$ (a box). All three change. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
-     "answer": "h*l*w'+h*l'*w+h'*l*w",
-     "vars": [
-      "l",
-      "w",
-      "h",
-      "l'",
-      "w'",
-      "h'"
-     ],
-     "label": "$V'$ =",
-     "keys": [
-      "pi"
-     ],
-     "explain": "Three-term product rule: $V' = l'wh + lw'h + lwh'$.",
      "id": "D19",
-     "level": 1
+     "level": 1,
+     "explain": "Three-term product rule: $V' = l'wh + lw'h + lwh'$.",
+     "type": "mc",
+     "text": "$V = lwh$ (a box). All three change. Differentiate with respect to $t$.\n$V'$ =",
+     "options": [
+      "$h·l·w'+h·l'·w+h'·l·w$",
+      "$h·l·w'-h·l'·w+h'·l·w$",
+      "$h·l·w'+h·l'·w+h·l·w$",
+      "$h·l·w'+h·l'·w-h'·l·w$"
+     ],
+     "answer": 0
     },
     {
-     "type": "expr",
-     "text": "$D = sqrt(x^2 + y^2)$. Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
-     "answer": "(x*x'+y*y')/sqrt(x^2+y^2)",
-     "vars": [
-      "x",
-      "y",
-      "x'",
-      "y'"
-     ],
-     "label": "$D'$ =",
-     "keys": [
-      "sqrt("
-     ],
-     "explain": "$D' = frac{x x' + y y'}{sqrt(x^2 + y^2)}$.",
      "id": "D20",
-     "level": 1
+     "level": 1,
+     "explain": "$D' = frac{x x' + y y'}{sqrt(x^2 + y^2)}$.",
+     "type": "mc",
+     "text": "$D = sqrt(x^2 + y^2)$. Differentiate with respect to $t$.\n$D'$ =",
+     "options": [
+      "$frac{x·x'+y·y'}{sqrt(x^2+y^2)}$",
+      "$frac{x·x'-y·y'}{sqrt(x^2+y^2)}$",
+      "$frac{x·x'+y·y'}{x^2+y^2}$",
+      "$frac{x·x'+y·y'}{sqrt(x^2+y^1)}$"
+     ],
+     "answer": 0
     },
     {
-     "type": "expr",
-     "text": "$P = frac{20x}{E} - H$ (the Profit slide). Differentiate with respect to $t$. Type $r'$ for $frac{dr}{dt}$ (and so on).",
-     "answer": "20*(x'*E-x*E')/E^2-H'",
-     "vars": [
-      "x",
-      "E",
-      "H",
-      "x'",
-      "E'",
-      "H'"
-     ],
-     "label": "$P'$ =",
-     "keys": [
-      "pi"
-     ],
-     "explain": "Quotient rule on the first term: $P' = frac{20(x'E - xE')}{E^2} - H'$.",
      "id": "D21",
-     "level": 1
+     "level": 1,
+     "explain": "Quotient rule on the first term: $P' = frac{20(x'E - xE')}{E^2} - H'$.",
+     "type": "mc",
+     "text": "$P = frac{20x}{E} - H$ (the Profit slide). Differentiate with respect to $t$.\n$P'$ =",
+     "options": [
+      "$20·frac{x'·E-x·E'}{E^2}-H'$",
+      "$20·frac{x'·E-x·E'}{E^2}+H'$",
+      "$21·frac{x'·E-x·E'}{E^2}-H'$",
+      "$frac{E^2-H'}{20·(x'·E-x·E')}$"
+     ],
+     "answer": 0
     },
     {
      "type": "expr",
@@ -506,22 +482,16 @@
        "explain": "Opposite over adjacent."
       },
       {
-       "type": "expr",
+       "explain": "$sec^2 θ · θ' = -frac{100x'}{x^2}$, so $θ' = -frac{100x'}{x^2 sec^2 θ}$.",
+       "type": "mc",
        "text": "Differentiate\n$$tan θ = frac{100}{x}$$\nSolve for $θ'$.",
-       "answer": "-100*x'/(x^2*sec(θ)^2)",
-       "vars": [
-        "x",
-        "θ",
-        "x'",
-        "θ'"
+       "options": [
+        "$-100·frac{x'}{x^2·sec(θ)^2}$",
+        "$-100·frac{x'}{x^2·tan(θ)^2}$",
+        "$-99·frac{x'}{x^2·sec(θ)^2}$",
+        "$frac{(x^2·sec(θ)^2)}{-100·x'}$"
        ],
-       "label": "$θ'$ =",
-       "keys": [
-        "sec(",
-        "cos(",
-        "^"
-       ],
-       "explain": "$sec^2 θ · θ' = -frac{100x'}{x^2}$, so $θ' = -frac{100x'}{x^2 sec^2 θ}$."
+       "answer": 0
       },
       {
        "type": "num",
@@ -748,20 +718,16 @@
        "explain": "Both $r$ and $h$ change, so expect the product rule."
       },
       {
-       "type": "expr",
-       "text": "$$V = frac{1}{3}pi r^2 h$$\nDifferentiate with respect to $t$.",
-       "answer": "pi/3*(2*r*r'*h+r^2*h')",
-       "vars": [
-        "r",
-        "h",
-        "r'",
-        "h'"
+       "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$.",
+       "type": "mc",
+       "text": "$$V = frac{1}{3}pi r^2 h$$\nDifferentiate with respect to $t$.\n$V'$ =",
+       "options": [
+        "$frac{pi}{3}·(2·r·r'·h+r^2·h')$",
+        "$frac{pi}{3}·(2·r·r'·h-r^2·h')$",
+        "$frac{pi}{3}·(1·r·r'·h+r^2·h')$",
+        "$frac{3·(2·r·r'·h+r^2·h')}{pi}$"
        ],
-       "label": "$V'$ =",
-       "keys": [
-        "pi"
-       ],
-       "explain": "$V' = frac{pi}{3}(2r r' h + r^2 h')$."
+       "answer": 0
       },
       {
        "type": "num",

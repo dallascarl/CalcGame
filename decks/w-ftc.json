@@ -524,30 +524,17 @@
     },
     {
      "id": "C23",
-     "type": "expr",
-     "text": "Find\n$$frac{d}{dx} int[0,sin(x)] e^t dt$$",
-     "answer": "e^(sin(x))cos(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt(",
-      "e^(",
-      "ln("
-     ],
-     "label": "derivative =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.2
-      ]
-     },
-     "show": "$e^(sin(x))cos(x)$",
      "level": 2,
-     "explain": "$f(g(x))·g'(x) = e^(sin(x))cos(x)$"
+     "explain": "$f(g(x))·g'(x) = e^(sin(x))cos(x)$",
+     "type": "mc",
+     "text": "Find\n$$frac{d}{dx} int[0,sin(x)] e^t dt$$\nderivative =",
+     "options": [
+      "$e^(sin(x))cos(x)$",
+      "$e^(sin(x))sin(x)$",
+      "$-e^(sin(x))cos(x)$",
+      "$e^(cos(x))cos(x)$"
+     ],
+     "answer": 0
     },
     {
      "id": "C24",
@@ -1211,30 +1198,17 @@
       },
       {
        "id": "S4.3",
-       "type": "expr",
-       "text": "Multiply the two.",
-       "answer": "(sin(x)^2)(cos(x))",
-       "vars": [
-        "x"
-       ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln("
-       ],
-       "label": "derivative =",
-       "show": "$(sin^2(x))(cos(x))$",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ]
-       },
        "hint": "$f(g(x))·g'(x)$",
-       "work": "$= (sin^2(x))(cos(x))$"
+       "work": "$= (sin^2(x))(cos(x))$",
+       "type": "mc",
+       "text": "Multiply the two.\nderivative =",
+       "options": [
+        "$(sin(x)^2)(cos(x))$",
+        "$(cos(x))$",
+        "$(cos(x)^2)(cos(x))$",
+        "$(sin(x)^3)(cos(x))$"
+       ],
+       "answer": 0
       }
      ]
     },

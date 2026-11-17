@@ -137,29 +137,17 @@
     },
     {
      "id": "A3",
-     "type": "expr",
-     "text": "$$y = (2x^4 + 1)^(sin(x))$$\nTake $ln$ of both sides and bring the power down.",
-     "answer": "sin(x)ln(2x^4 + 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$ln(y)$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$sin(x)ln(2x^4 + 1)$",
      "level": 1,
-     "explain": "$ln(y) = sin(x)ln(2x^4 + 1)$"
+     "explain": "$ln(y) = sin(x)ln(2x^4 + 1)$",
+     "type": "mc",
+     "text": "$$y = (2x^4 + 1)^(sin(x))$$\nTake $ln$ of both sides and bring the power down.\n$ln(y)$ =",
+     "options": [
+      "$sin(x)ln(2x^4 + 1)$",
+      "$sin(x)ln(2x^4 - 1)$",
+      "$cos(x)ln(2x^4 + 1)$",
+      "$sin(x)ln(2x^5 + 1)$"
+     ],
+     "answer": 0
     },
     {
      "id": "A4",
@@ -189,29 +177,17 @@
     },
     {
      "id": "A5",
-     "type": "expr",
-     "text": "$$y = (x^2 + 2x + 7)^(sqrt(x))$$\nTake $ln$ of both sides and bring the power down.",
-     "answer": "sqrt(x)ln(x^2 + 2x + 7)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$ln(y)$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$sqrt(x)ln(x^2 + 2x + 7)$",
      "level": 1,
-     "explain": "$ln(y) = sqrt(x)ln(x^2 + 2x + 7)$"
+     "explain": "$ln(y) = sqrt(x)ln(x^2 + 2x + 7)$",
+     "type": "mc",
+     "text": "$$y = (x^2 + 2x + 7)^(sqrt(x))$$\nTake $ln$ of both sides and bring the power down.\n$ln(y)$ =",
+     "options": [
+      "$sqrt(x)ln(x^2 + 2x + 7)$",
+      "$sqrt(x)ln(x^2 - 2x + 7)$",
+      "$sqrt(x)e^(x^2 + 2x + 7)$",
+      "$sqrt(x)ln(x^2 + 3x + 7)$"
+     ],
+     "answer": 0
     },
     {
      "id": "A6",
@@ -449,107 +425,59 @@
     },
     {
      "id": "A15",
-     "type": "expr",
-     "text": "$$y = frac{(x + 2)^2(3x - 1)^2}{sqrt(x + 1)}$$\nTake $ln$ of both sides and expand with log rules.",
-     "answer": "2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$ln(y)$ =",
-     "ranges": {
-      "x": [
-       1.2,
-       2.5
-      ]
-     },
-     "show": "$2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2$",
      "level": 1,
-     "explain": "$ln(y) = 2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2$"
+     "explain": "$ln(y) = 2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2$",
+     "type": "mc",
+     "text": "$$y = frac{(x + 2)^2(3x - 1)^2}{sqrt(x + 1)}$$\nTake $ln$ of both sides and expand with log rules.\n$ln(y)$ =",
+     "options": [
+      "$2ln(x + 2) + 2ln(3x - 1) - frac{ln(x + 1)}{2}$",
+      "$2ln(x + 2) + 2ln(3x - 1) + frac{ln(x + 1)}{2}$",
+      "$2ln(x + 2) + 2e^(3x - 1) - frac{ln(x + 1)}{2}$",
+      "$2ln(x + 2) + 2ln(3x - 2) - frac{ln(x + 1)}{2}$"
+     ],
+     "answer": 0
     },
     {
      "id": "A16",
-     "type": "expr",
-     "text": "$$y = frac{(x + 1)^(2/3)}{(x + 2)(x + 1)^5}$$\nTake $ln$ of both sides and expand with log rules.",
-     "answer": "(2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$ln(y)$ =",
-     "ranges": {
-      "x": [
-       1.2,
-       2.5
-      ]
-     },
-     "show": "$(2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)$",
      "level": 1,
-     "explain": "$ln(y) = (2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)$"
+     "explain": "$ln(y) = (2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)$",
+     "type": "mc",
+     "text": "$$y = frac{(x + 1)^(2/3)}{(x + 2)(x + 1)^5}$$\nTake $ln$ of both sides and expand with log rules.\n$ln(y)$ =",
+     "options": [
+      "$(frac{2}{3})ln(x + 1) - ln(x + 2) - 5ln(x + 1)$",
+      "$(frac{2}{3})ln(x - 1) - ln(x + 2) - 5ln(x + 1)$",
+      "$(frac{2}{3})e^(x + 1) - ln(x + 2) - 5ln(x + 1)$",
+      "$(frac{1}{3})ln(x + 1) - ln(x + 2) - 5ln(x + 1)$"
+     ],
+     "answer": 0
     },
     {
      "id": "A17",
-     "type": "expr",
-     "text": "$$y = frac{x^3 sqrt(x^2 + 1)}{(x - 1)^4}$$\nTake $ln$ of both sides and expand with log rules.",
-     "answer": "3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$ln(y)$ =",
-     "ranges": {
-      "x": [
-       1.2,
-       2.5
-      ]
-     },
-     "show": "$3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)$",
      "level": 1,
-     "explain": "$ln(y) = 3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)$"
+     "explain": "$ln(y) = 3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)$",
+     "type": "mc",
+     "text": "$$y = frac{x^3 sqrt(x^2 + 1)}{(x - 1)^4}$$\nTake $ln$ of both sides and expand with log rules.\n$ln(y)$ =",
+     "options": [
+      "$3ln(x) + frac{ln(x^2 + 1)}{2} - 4ln(x - 1)$",
+      "$3ln(x) + frac{ln(x^2 - 1)}{2} - 4ln(x - 1)$",
+      "$3ln(x) + frac{ln(x^2 + 1)}{2} - 4e^(x - 1)$",
+      "$3ln(x) + frac{ln(x^2 + 2)}{2} - 4ln(x - 1)$"
+     ],
+     "answer": 0
     },
     {
      "id": "A18",
-     "type": "expr",
-     "text": "$$y = x^2(x + 3)^5(2x - 1)^3$$\nTake $ln$ of both sides and expand with log rules.",
-     "answer": "2ln(x) + 5ln(x + 3) + 3ln(2x - 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$ln(y)$ =",
-     "ranges": {
-      "x": [
-       1.2,
-       2.5
-      ]
-     },
-     "show": "$2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$",
      "level": 1,
-     "explain": "$ln(y) = 2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$"
+     "explain": "$ln(y) = 2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$",
+     "type": "mc",
+     "text": "$$y = x^2(x + 3)^5(2x - 1)^3$$\nTake $ln$ of both sides and expand with log rules.\n$ln(y)$ =",
+     "options": [
+      "$2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$",
+      "$2ln(x) + 5ln(x + 3) - 3ln(2x - 1)$",
+      "$2e^(x) + 5ln(x + 3) + 3ln(2x - 1)$",
+      "$2ln(x) + 5ln(x + 4) + 3ln(2x - 1)$"
+     ],
+     "answer": 0
     },
     {
      "id": "B19",
@@ -579,159 +507,87 @@
     },
     {
      "id": "B20",
-     "type": "expr",
-     "text": "$ln(y) = sin(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "cos(x)ln(x) + sin(x)/x",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$cos(x)ln(x) + sin(x)/x$",
      "level": 2,
-     "explain": "$frac{y'}{y} = cos(x)ln(x) + sin(x)/x$"
+     "explain": "$frac{y'}{y} = cos(x)ln(x) + sin(x)/x$",
+     "type": "mc",
+     "text": "$ln(y) = sin(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$cos(x)ln(x) + frac{sin(x)}{x}$",
+      "$cos(x)ln(x) - frac{sin(x)}{x}$",
+      "$cos(x)ln(x) + frac{cos(x)}{x}$",
+      "$frac{x}{cos(x)ln(x) + sin(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B21",
-     "type": "expr",
-     "text": "$$ln(y) = sin(x)ln(2x^4 + 1)$$\nDifferentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$",
      "level": 2,
-     "explain": "$frac{y'}{y} = cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$"
+     "explain": "$frac{y'}{y} = cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$",
+     "type": "mc",
+     "text": "$$ln(y) = sin(x)ln(2x^4 + 1)$$\nDifferentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1}$",
+      "$cos(x)ln(2x^4 + 1) + sin(x)$",
+      "$cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 - 1}$",
+      "$cos(x)ln(2x^4 + 1) + cos(x)frac{8x^3}{2x^4 + 1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B22",
-     "type": "expr",
-     "text": "$ln(y) = sqrt(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(x)/(2sqrt(x)) + sqrt(x)/x",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$ln(x)/(2sqrt(x)) + sqrt(x)/x$",
      "level": 2,
-     "explain": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$"
+     "explain": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$",
+     "type": "mc",
+     "text": "$ln(y) = sqrt(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x}$",
+      "$frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x}$",
+      "$frac{ln(x)}{2(x)} + frac{sqrt(x)}{x}$",
+      "$frac{ln(x)}{2sqrt(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B23",
-     "type": "expr",
-     "text": "$$ln(y) = sqrt(x)ln(x^2 + 2x + 7)$$\nDifferentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$",
      "level": 2,
-     "explain": "$frac{y'}{y} = ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$"
+     "explain": "$frac{y'}{y} = ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$",
+     "type": "mc",
+     "text": "$$ln(y) = sqrt(x)ln(x^2 + 2x + 7)$$\nDifferentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7}$",
+      "$frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)$",
+      "$frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 - 2x + 7}$",
+      "$frac{ln(x^2 + 2x + 7)}{2(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B24",
-     "type": "expr",
-     "text": "$ln(y) = xln(sin(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(sin(x)) + xcos(x)/sin(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.2,
-       1.4
-      ]
-     },
-     "show": "$ln(sin(x)) + xcos(x)/sin(x)$",
      "level": 2,
-     "explain": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$"
+     "explain": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$",
+     "type": "mc",
+     "text": "$ln(y) = xln(sin(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$ln(sin(x)) + xcosfrac{x}{sin(x)}$",
+      "$ln(sin(x)) - xcosfrac{x}{sin(x)}$",
+      "$ln(cos(x)) + xcosfrac{x}{sin(x)}$",
+      "$frac{sin(x)}{ln(sin(x)) + xcos(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B25",
-     "type": "expr",
-     "text": "$ln(y) = xln(cos(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(cos(x)) - xsin(x)/cos(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.2,
-       1.2
-      ]
-     },
-     "show": "$ln(cos(x)) - xsin(x)/cos(x)$",
      "level": 2,
-     "explain": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$"
+     "explain": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$",
+     "type": "mc",
+     "text": "$ln(y) = xln(cos(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$ln(cos(x)) - xsinfrac{x}{cos(x)}$",
+      "$ln(cos(x)) + xsinfrac{x}{cos(x)}$",
+      "$ln(cos(x)) - xsinfrac{x}{sin(x)}$",
+      "$frac{cos(x)}{ln(cos(x)) - xsin(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B26",
@@ -787,55 +643,31 @@
     },
     {
      "id": "B28",
-     "type": "expr",
-     "text": "$ln(y) = xln(ln(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(ln(x)) + 1/ln(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       1.3,
-       2.8
-      ]
-     },
-     "show": "$ln(ln(x)) + 1/ln(x)$",
      "level": 2,
-     "explain": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$"
+     "explain": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$",
+     "type": "mc",
+     "text": "$ln(y) = xln(ln(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$ln(ln(x)) + frac{1}{ln(x)}$",
+      "$ln(ln(x)) - frac{1}{ln(x)}$",
+      "$ln(ln(x)) + frac{1}{e^(x)}$",
+      "$ln(ln(x)) + frac{2}{ln(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B29",
-     "type": "expr",
-     "text": "$ln(y) = xln(x^2 + 1)$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(x^2 + 1) + 2x^2/(x^2 + 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$ln(x^2 + 1) + 2x^2/(x^2 + 1)$",
      "level": 2,
-     "explain": "$frac{y'}{y} = ln(x^2 + 1) + 2x^2/(x^2 + 1)$"
+     "explain": "$frac{y'}{y} = ln(x^2 + 1) + 2x^2/(x^2 + 1)$",
+     "type": "mc",
+     "text": "$ln(y) = xln(x^2 + 1)$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$ln(x^2 + 1) + frac{2x^2}{x^2 + 1}$",
+      "$ln(x^2 + 1) + frac{2x^2}{x^2 - 1}$",
+      "$e^(x^2 + 1) + frac{2x^2}{x^2 + 1}$",
+      "$ln(x^2 + 1) + frac{2x^2}{x^1 + 1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "B30",
@@ -943,133 +775,73 @@
     },
     {
      "id": "C34",
-     "type": "expr",
-     "text": "$$y = x^(sin(x)) ;; frac{y'}{y} = cos(x)ln(x) + sin(x)/x$$\nMultiply by $y$.",
-     "answer": "x^(sin(x))(cos(x)ln(x) + sin(x)/x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$y'$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$x^(sin(x))(cos(x)ln(x) + sin(x)/x)$",
      "level": 2,
-     "explain": "$y' = x^(sin(x))(cos(x)ln(x) + sin(x)/x)$"
+     "explain": "$y' = x^(sin(x))(cos(x)ln(x) + sin(x)/x)$",
+     "type": "mc",
+     "text": "$$y = x^(sin(x)) ;; frac{y'}{y} = cos(x)ln(x) + sin(x)/x$$\nMultiply by $y$.",
+     "options": [
+      "$x^(sin(x))(cos(x)ln(x) + frac{sin(x)}{x})$",
+      "$(cos(x)ln(x) + frac{sin(x)}{x})$",
+      "$x^(sin(x))(cos(x)ln(x) - frac{sin(x)}{x})$",
+      "$x^(sin(x))(sin(x)ln(x) + frac{sin(x)}{x})$"
+     ],
+     "answer": 0
     },
     {
      "id": "C35",
-     "type": "expr",
-     "text": "$$y = (2x^4 + 1)^(sin(x)) ;; frac{y'}{y} = cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$$\nMultiply by $y$.",
-     "answer": "(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$y'$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))$",
      "level": 2,
-     "explain": "$y' = (2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))$"
+     "explain": "$y' = (2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))$",
+     "type": "mc",
+     "text": "$$y = (2x^4 + 1)^(sin(x)) ;; frac{y'}{y} = cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$$\nMultiply by $y$.",
+     "options": [
+      "$(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1})$",
+      "$(cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1})$",
+      "$(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) - sin(x)frac{8x^3}{2x^4 + 1})$",
+      "$(2x^4 + 1)^(cos(x))(cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1})$"
+     ],
+     "answer": 0
     },
     {
      "id": "C36",
-     "type": "expr",
-     "text": "$$y = x^(sqrt(x)) ;; frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$$\nMultiply by $y$.",
-     "answer": "x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$y'$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
      "level": 2,
-     "explain": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$"
+     "explain": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
+     "type": "mc",
+     "text": "$$y = x^(sqrt(x)) ;; frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$$\nMultiply by $y$.",
+     "options": [
+      "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x})$",
+      "$x^(sqrt(x))$",
+      "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x})$",
+      "$x^(sqrt(x))(frac{ln(x)}{2(x)} + frac{sqrt(x)}{x})$"
+     ],
+     "answer": 0
     },
     {
      "id": "C37",
-     "type": "expr",
-     "text": "$y = (x^2 + 2x + 7)^(sqrt(x))$ and $frac{y'}{y} = ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$. Multiply by $y$.",
-     "answer": "(x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$y'$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$(x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))$",
      "level": 2,
-     "explain": "$y' = (x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))$"
+     "explain": "$y' = (x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))$",
+     "type": "mc",
+     "text": "$y = (x^2 + 2x + 7)^(sqrt(x))$ and $frac{y'}{y} = ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$. Multiply by $y$.",
+     "options": [
+      "$(x^2 + 2x + 7)^(sqrt(x))(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$",
+      "$(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$",
+      "$(x^2 + 2x + 7)^(sqrt(x))(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} - sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$",
+      "$(x^2 + 2x + 7)^((x))(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$"
+     ],
+     "answer": 0
     },
     {
      "id": "C38",
-     "type": "expr",
-     "text": "$$y = (sin(x))^x ;; frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$$\nMultiply by $y$.",
-     "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$y'$ =",
-     "ranges": {
-      "x": [
-       0.2,
-       1.4
-      ]
-     },
-     "show": "$(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
      "level": 2,
-     "explain": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$"
+     "explain": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+     "type": "mc",
+     "text": "$$y = (sin(x))^x ;; frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$$\nMultiply by $y$.",
+     "options": [
+      "$(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$",
+      "$(sin(x))^x(ln(sin(x)) - xcosfrac{x}{sin(x)})$",
+      "$(sin(x))^x(e^(sin(x)) + xcosfrac{x}{sin(x)})$",
+      "$-(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$"
+     ],
+     "answer": 0
     },
     {
      "id": "W39",
@@ -1187,53 +959,29 @@
       },
       {
        "id": "W40.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "cos(x)ln(x) + sin(x)/x",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = cos(x)ln(x) + sin(x)/x$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$cos(x)ln(x) + frac{sin(x)}{x}$",
+        "$cos(x)ln(x) - frac{sin(x)}{x}$",
+        "$cos(x)e^(x) + frac{sin(x)}{x}$",
+        "$frac{x}{cos(x)ln(x) + sin(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$cos(x)ln(x) + sin(x)/x$",
-       "work": "$frac{y'}{y} = cos(x)ln(x) + sin(x)/x$"
+       "answer": 0
       },
       {
        "id": "W40.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(sin(x))(cos(x)ln(x) + sin(x)/x)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(sin(x))(cos(x)ln(x) + sin(x)/x)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(sin(x))(cos(x)ln(x) + frac{sin(x)}{x})$",
+        "$x^(sin(x))$",
+        "$x^(sin(x))(cos(x)ln(x) - frac{sin(x)}{x})$",
+        "$x^(sin(x))(cos(x)e^(x) + frac{sin(x)}{x})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(sin(x))(cos(x)ln(x) + sin(x)/x)$",
-       "work": "$y' = x^(sin(x))(cos(x)ln(x) + sin(x)/x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1246,78 +994,42 @@
      "steps": [
       {
        "id": "W41.1",
-       "type": "expr",
-       "text": "Take $ln$ of both sides.",
-       "answer": "sin(x)ln(2x^4 + 1)",
-       "vars": [
-        "x"
+       "work": "$ln(y) = sin(x)ln(2x^4 + 1)$",
+       "type": "mc",
+       "text": "Take $ln$ of both sides.\n$ln(y)$ =",
+       "options": [
+        "$sin(x)ln(2x^4 + 1)$",
+        "$sin(x)e^(2x^4 + 1)$",
+        "$sin(x)ln(2x^5 + 1)$",
+        "$-sin(x)ln(2x^4 + 1)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$ln(y)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$sin(x)ln(2x^4 + 1)$",
-       "work": "$ln(y) = sin(x)ln(2x^4 + 1)$"
+       "answer": 0
       },
       {
        "id": "W41.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1}$",
+        "$frac{8x^3}{2x^4 + 1}$",
+        "$cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 - 1}$",
+        "$cos(x)ln(2x^4 + 1) + cos(x)frac{8x^3}{2x^4 + 1}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$",
-       "work": "$frac{y'}{y} = cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1)$"
+       "answer": 0
       },
       {
        "id": "W41.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))",
-       "vars": [
-        "x"
+       "work": "$y' = (2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1})$",
+        "$(cos(x)ln(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1})$",
+        "$(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) - sin(x)frac{8x^3}{2x^4 + 1})$",
+        "$(2x^4 + 1)^(sin(x))(cos(x)e^(2x^4 + 1) + sin(x)frac{8x^3}{2x^4 + 1})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$(2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))$",
-       "work": "$y' = (2x^4 + 1)^(sin(x))(cos(x)ln(2x^4 + 1) + sin(x)(8x^3)/(2x^4 + 1))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1355,53 +1067,29 @@
       },
       {
        "id": "W42.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(x)/(2sqrt(x)) + sqrt(x)/x",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x}$",
+        "$frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x}$",
+        "$frac{e^(x)}{2sqrt(x)} + frac{sqrt(x)}{x}$",
+        "$frac{sqrt(x)}{x}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$ln(x)/(2sqrt(x)) + sqrt(x)/x$",
-       "work": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$"
+       "answer": 0
       },
       {
        "id": "W42.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x})$",
+        "$(frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x})$",
+        "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x})$",
+        "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} + frac{x}{x})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
-       "work": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1414,78 +1102,42 @@
      "steps": [
       {
        "id": "W43.1",
-       "type": "expr",
-       "text": "Take $ln$ of both sides.",
-       "answer": "sqrt(x)ln(x^2 + 2x + 7)",
-       "vars": [
-        "x"
+       "work": "$ln(y) = sqrt(x)ln(x^2 + 2x + 7)$",
+       "type": "mc",
+       "text": "Take $ln$ of both sides.\n$ln(y)$ =",
+       "options": [
+        "$sqrt(x)ln(x^2 + 2x + 7)$",
+        "$sqrt(x)ln(x^2 - 2x + 7)$",
+        "$(x)ln(x^2 + 2x + 7)$",
+        "$sqrt(x)ln(x^2 + 2x + 6)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$ln(y)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$sqrt(x)ln(x^2 + 2x + 7)$",
-       "work": "$ln(y) = sqrt(x)ln(x^2 + 2x + 7)$"
+       "answer": 0
       },
       {
        "id": "W43.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7}$",
+        "$frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)$",
+        "$frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x - 7}$",
+        "$frac{e^(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$",
-       "work": "$frac{y'}{y} = ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7)$"
+       "answer": 0
       },
       {
        "id": "W43.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))",
-       "vars": [
-        "x"
+       "work": "$y' = (x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(x^2 + 2x + 7)^(sqrt(x))(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$",
+        "$(x^2 + 2x + 7)^(sqrt(x))$",
+        "$(x^2 + 2x + 7)^(sqrt(x))(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} - sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$",
+        "$(x^2 + 2x + 7)^((x))(frac{ln(x^2 + 2x + 7)}{2sqrt(x)} + sqrt(x)frac{2x + 2}{x^2 + 2x + 7})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$(x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))$",
-       "work": "$y' = (x^2 + 2x + 7)^(sqrt(x))(ln(x^2 + 2x + 7)/(2sqrt(x)) + sqrt(x)(2x + 2)/(x^2 + 2x + 7))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1523,53 +1175,29 @@
       },
       {
        "id": "W44.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(sin(x)) + xcos(x)/sin(x)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(sin(x)) + xcosfrac{x}{sin(x)}$",
+        "$ln(sin(x)) - xcosfrac{x}{sin(x)}$",
+        "$ln(cos(x)) + xcosfrac{x}{sin(x)}$",
+        "$frac{sin(x)}{ln(sin(x)) + xcos(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.4
-        ]
-       },
-       "show": "$ln(sin(x)) + xcos(x)/sin(x)$",
-       "work": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$"
+       "answer": 0
       },
       {
        "id": "W44.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
-       "vars": [
-        "x"
+       "work": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$",
+        "$(sin(x))^x(ln(sin(x)) - xcosfrac{x}{sin(x)})$",
+        "$(sin(x))^x(e^(sin(x)) + xcosfrac{x}{sin(x)})$",
+        "$-(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.4
-        ]
-       },
-       "show": "$(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
-       "work": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1607,53 +1235,29 @@
       },
       {
        "id": "W45.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(cos(x)) - xsin(x)/cos(x)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(cos(x)) - xsinfrac{x}{cos(x)}$",
+        "$ln(cos(x)) + xsinfrac{x}{cos(x)}$",
+        "$e^(cos(x)) - xsinfrac{x}{cos(x)}$",
+        "$frac{cos(x)}{ln(cos(x)) - xsin(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "show": "$ln(cos(x)) - xsin(x)/cos(x)$",
-       "work": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$"
+       "answer": 0
       },
       {
        "id": "W45.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))",
-       "vars": [
-        "x"
+       "work": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(cos(x))^x(ln(cos(x)) - xsinfrac{x}{cos(x)})$",
+        "$(cos(x))^x(ln(cos(x)) + xsinfrac{x}{cos(x)})$",
+        "$(cos(x))^x(e^(cos(x)) - xsinfrac{x}{cos(x)})$",
+        "$-(cos(x))^x(ln(cos(x)) - xsinfrac{x}{cos(x)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "show": "$(cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
-       "work": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1716,28 +1320,16 @@
       },
       {
        "id": "W46.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(e^x)(e^xln(x) + e^x/x)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(e^x)(e^xln(x) + e^x/x)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(e^x)(e^xln(x) + frac{e^x}{x})$",
+        "$(e^xln(x) + frac{e^x}{x})$",
+        "$x^(e^x)(e^xln(x) - frac{e^x}{x})$",
+        "$-x^(e^x)(e^xln(x) + frac{e^x}{x})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(e^x)(e^xln(x) + e^x/x)$",
-       "work": "$y' = x^(e^x)(e^xln(x) + e^x/x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1800,28 +1392,16 @@
       },
       {
        "id": "W47.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(ln(x))(2ln(x)/x)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(ln(x))(2ln(x)/x)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(ln(x))(2frac{ln(x)}{x})$",
+        "$(2frac{ln(x)}{x})$",
+        "$x^(e^(x))(2frac{ln(x)}{x})$",
+        "$-x^(ln(x))(2frac{ln(x)}{x})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(ln(x))(2ln(x)/x)$",
-       "work": "$y' = x^(ln(x))(2ln(x)/x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1859,53 +1439,29 @@
       },
       {
        "id": "W48.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(ln(x)) + 1/ln(x)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(ln(x)) + frac{1}{ln(x)}$",
+        "$ln(ln(x)) - frac{1}{ln(x)}$",
+        "$ln(ln(x)) + frac{1}{e^(x)}$",
+        "$ln(ln(x)) + frac{2}{ln(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         1.3,
-         2.8
-        ]
-       },
-       "show": "$ln(ln(x)) + 1/ln(x)$",
-       "work": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$"
+       "answer": 0
       },
       {
        "id": "W48.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(ln(x))^x(ln(ln(x)) + 1/ln(x))",
-       "vars": [
-        "x"
+       "work": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(ln(x))^x(ln(ln(x)) + frac{1}{ln(x)})$",
+        "$(ln(x))^x(ln(ln(x)) - frac{1}{ln(x)})$",
+        "$(ln(x))^x(ln(ln(x)) + frac{1}{e^(x)})$",
+        "$(ln(x))^x(ln(ln(x)) + frac{2}{ln(x)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         1.3,
-         2.8
-        ]
-       },
-       "show": "$(ln(x))^x(ln(ln(x)) + 1/ln(x))$",
-       "work": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1943,53 +1499,29 @@
       },
       {
        "id": "W49.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(x^2 + 1) + 2x^2/(x^2 + 1)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(x^2 + 1) + 2x^2/(x^2 + 1)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(x^2 + 1) + frac{2x^2}{x^2 + 1}$",
+        "$ln(x^2 + 1) - frac{2x^2}{x^2 + 1}$",
+        "$e^(x^2 + 1) + frac{2x^2}{x^2 + 1}$",
+        "$ln(x^2 + 1) + frac{1x^2}{x^2 + 1}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$ln(x^2 + 1) + 2x^2/(x^2 + 1)$",
-       "work": "$frac{y'}{y} = ln(x^2 + 1) + 2x^2/(x^2 + 1)$"
+       "answer": 0
       },
       {
        "id": "W49.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(x^2 + 1)^x(ln(x^2 + 1) + 2x^2/(x^2 + 1))",
-       "vars": [
-        "x"
+       "work": "$y' = (x^2 + 1)^x(ln(x^2 + 1) + 2x^2/(x^2 + 1))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(x^2 + 1)^x(ln(x^2 + 1) + frac{2x^2}{x^2 + 1})$",
+        "$(x^2 + 1)^x(ln(x^2 + 1) - frac{2x^2}{x^2 + 1})$",
+        "$(x^2 + 1)^x(e^(x^2 + 1) + frac{2x^2}{x^2 + 1})$",
+        "$(x^2 + 1)^x(ln(x^2 + 1) + frac{3x^2}{x^2 + 1})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$(x^2 + 1)^x(ln(x^2 + 1) + 2x^2/(x^2 + 1))$",
-       "work": "$y' = (x^2 + 1)^x(ln(x^2 + 1) + 2x^2/(x^2 + 1))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2052,28 +1584,16 @@
       },
       {
        "id": "W50.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(1/x)((1 - ln(x))/x^2)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(1/x)((1 - ln(x))/x^2)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(frac{1}{x})(frac{1 - ln(x)}{x^2})$",
+        "$(frac{1 - ln(x)}{x^2})$",
+        "$x^(frac{1}{x})(frac{1 - e^(x)}{x^2})$",
+        "$x^(frac{1}{x})(frac{1 - ln(x)}{x^3})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(1/x)((1 - ln(x))/x^2)$",
-       "work": "$y' = x^(1/x)((1 - ln(x))/x^2)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2136,28 +1656,16 @@
       },
       {
        "id": "W51.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(x^2)(2xln(x) + x)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(x^2)(2xln(x) + x)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(x^2)(2xln(x) + x)$",
+        "$(2xln(x) + x)$",
+        "$x^(x^2)(2xln(x) - x)$",
+        "$x^(x^3)(2xln(x) + x)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(x^2)(2xln(x) + x)$",
-       "work": "$y' = x^(x^2)(2xln(x) + x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2220,28 +1728,16 @@
       },
       {
        "id": "W52.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(3x)^x(ln(3x) + 1)",
-       "vars": [
-        "x"
+       "work": "$y' = (3x)^x(ln(3x) + 1)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(3x)^x(ln(3x) + 1)$",
+        "$(3x)^x(ln(3x) - 1)$",
+        "$(3x)^x(e^(3x) + 1)$",
+        "$(3x)^x(ln(2x) + 1)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$(3x)^x(ln(3x) + 1)$",
-       "work": "$y' = (3x)^x(ln(3x) + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2254,78 +1750,42 @@
      "steps": [
       {
        "id": "W53.1",
-       "type": "expr",
-       "text": "Take $ln$ of both sides and expand.",
-       "answer": "2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2",
-       "vars": [
-        "x"
+       "work": "$ln(y) = 2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2$",
+       "type": "mc",
+       "text": "Take $ln$ of both sides and expand.\n$ln(y)$ =",
+       "options": [
+        "$2ln(x + 2) + 2ln(3x - 1) - frac{ln(x + 1)}{2}$",
+        "$2ln(x + 2) + 2ln(3x + 1) - frac{ln(x + 1)}{2}$",
+        "$2ln(x + 2) + 2e^(3x - 1) - frac{ln(x + 1)}{2}$",
+        "$2ln(x + 2) + 2ln(3x - 1) - frac{ln(x + 1)}{3}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$ln(y)$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2$",
-       "work": "$ln(y) = 2ln(x + 2) + 2ln(3x - 1) - ln(x + 1)/2$"
+       "answer": 0
       },
       {
        "id": "W53.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1))",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = 2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1))$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{2}{x + 2} + frac{6}{3x - 1} - frac{1}{2(x + 1)}$",
+        "$frac{2}{x + 2} - frac{6}{3x - 1} - frac{1}{2(x + 1)}$",
+        "$frac{2}{x + 2} + frac{5}{3x - 1} - frac{1}{2(x + 1)}$",
+        "$frac{6}{3x - 1} - frac{1}{2(x + 1)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1))$",
-       "work": "$frac{y'}{y} = 2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1))$"
+       "answer": 0
       },
       {
        "id": "W53.3",
-       "type": "expr",
-       "text": "Multiply by $y$. (Type $y$ back out in full.)",
-       "answer": "(((x + 2)^2(3x - 1)^2)/sqrt(x + 1))(2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1)))",
-       "vars": [
-        "x"
+       "work": "$y' = y·(2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1)))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(frac{(x + 2)^2(3x - 1)^2}{sqrt(x + 1)})(frac{2}{x + 2} + frac{6}{3x - 1} - frac{1}{2(x + 1)})$",
+        "$(frac{(x + 2)^2(3x - 1)^2}{sqrt(x + 1)})$",
+        "$(frac{(x + 2)^2(3x - 1)^2}{sqrt(x + 1)})(frac{2}{x + 2} + frac{6}{3x - 1} + frac{1}{2(x + 1)})$",
+        "$(frac{(x + 2)^2(3x - 1)^2}{x + 1})(frac{2}{x + 2} + frac{6}{3x - 1} - frac{1}{2(x + 1)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$(((x + 2)^2(3x - 1)^2)/sqrt(x + 1))(2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1)))$",
-       "work": "$y' = y·(2/(x + 2) + 6/(3x - 1) - 1/(2(x + 1)))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2338,78 +1798,42 @@
      "steps": [
       {
        "id": "W54.1",
-       "type": "expr",
-       "text": "Take $ln$ of both sides and expand.",
-       "answer": "(2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)",
-       "vars": [
-        "x"
+       "work": "$ln(y) = (2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)$",
+       "type": "mc",
+       "text": "Take $ln$ of both sides and expand.\n$ln(y)$ =",
+       "options": [
+        "$(frac{2}{3})ln(x + 1) - ln(x + 2) - 5ln(x + 1)$",
+        "$(frac{2}{3})ln(x + 1) + ln(x + 2) - 5ln(x + 1)$",
+        "$(frac{2}{3})ln(x + 1) - e^(x + 2) - 5ln(x + 1)$",
+        "$(frac{3}{3})ln(x + 1) - ln(x + 2) - 5ln(x + 1)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$ln(y)$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$(2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)$",
-       "work": "$ln(y) = (2/3)ln(x + 1) - ln(x + 2) - 5ln(x + 1)$"
+       "answer": 0
       },
       {
        "id": "W54.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "(2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = (2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{frac{2}{3}}{x + 1} - frac{1}{x + 2} - frac{5}{x + 1}$",
+        "$frac{frac{2}{3}}{x - 1} - frac{1}{x + 2} - frac{5}{x + 1}$",
+        "$frac{frac{2}{3}}{x + 1} - frac{1}{x + 3} - frac{5}{x + 1}$",
+        "$frac{frac{2}{3}}{x + 1} - frac{1}{x + 2}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$(2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1)$",
-       "work": "$frac{y'}{y} = (2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1)$"
+       "answer": 0
       },
       {
        "id": "W54.3",
-       "type": "expr",
-       "text": "Multiply by $y$. (Type $y$ back out in full.)",
-       "answer": "((x + 1)^(2/3)/((x + 2)(x + 1)^5))((2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1))",
-       "vars": [
-        "x"
+       "work": "$y' = y·((2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(frac{(x + 1)^(frac{2}{3})}{(x + 2)(x + 1)^5})(frac{frac{2}{3}}{x + 1} - frac{1}{x + 2} - frac{5}{x + 1})$",
+        "$(frac{frac{2}{3}}{x + 1} - frac{1}{x + 2} - frac{5}{x + 1})$",
+        "$(frac{(x + 1)^(frac{2}{3})}{(x + 2)(x + 1)^5})(frac{frac{2}{3}}{x + 1} - frac{1}{x + 2} + frac{5}{x + 1})$",
+        "$(frac{(x + 1)^(frac{2}{3})}{(x + 2)(x + 2)^5})(frac{frac{2}{3}}{x + 1} - frac{1}{x + 2} - frac{5}{x + 1})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$((x + 1)^(2/3)/((x + 2)(x + 1)^5))((2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1))$",
-       "work": "$y' = y·((2/3)/(x + 1) - 1/(x + 2) - 5/(x + 1))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2422,78 +1846,42 @@
      "steps": [
       {
        "id": "W55.1",
-       "type": "expr",
-       "text": "Take $ln$ of both sides and expand.",
-       "answer": "3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)",
-       "vars": [
-        "x"
+       "work": "$ln(y) = 3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)$",
+       "type": "mc",
+       "text": "Take $ln$ of both sides and expand.\n$ln(y)$ =",
+       "options": [
+        "$3ln(x) + frac{ln(x^2 + 1)}{2} - 4ln(x - 1)$",
+        "$3ln(x) - frac{ln(x^2 + 1)}{2} - 4ln(x - 1)$",
+        "$3ln(x) + frac{ln(x^2 + 1)}{2} - 4e^(x - 1)$",
+        "$3ln(x) + frac{ln(x^2 + 2)}{2} - 4ln(x - 1)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$ln(y)$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)$",
-       "work": "$ln(y) = 3ln(x) + ln(x^2 + 1)/2 - 4ln(x - 1)$"
+       "answer": 0
       },
       {
        "id": "W55.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "3/x + x/(x^2 + 1) - 4/(x - 1)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = 3/x + x/(x^2 + 1) - 4/(x - 1)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{3}{x} + frac{x}{x^2 + 1} - frac{4}{x - 1}$",
+        "$frac{3}{x} + frac{x}{x^2 + 1} - frac{4}{x + 1}$",
+        "$frac{3}{x} + frac{x}{x^2 + 1} - frac{3}{x - 1}$",
+        "$frac{3}{x} + frac{x}{x^2 + 1}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$3/x + x/(x^2 + 1) - 4/(x - 1)$",
-       "work": "$frac{y'}{y} = 3/x + x/(x^2 + 1) - 4/(x - 1)$"
+       "answer": 0
       },
       {
        "id": "W55.3",
-       "type": "expr",
-       "text": "Multiply by $y$. (Type $y$ back out in full.)",
-       "answer": "(x^3sqrt(x^2 + 1)/(x - 1)^4)(3/x + x/(x^2 + 1) - 4/(x - 1))",
-       "vars": [
-        "x"
+       "work": "$y' = y·(3/x + x/(x^2 + 1) - 4/(x - 1))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(x^3frac{sqrt(x^2 + 1)}{(x - 1)^4})(frac{3}{x} + frac{x}{x^2 + 1} - frac{4}{x - 1})$",
+        "$(x^3frac{sqrt(x^2 + 1)}{(x - 1)^4})$",
+        "$(x^3frac{sqrt(x^2 + 1)}{(x - 1)^4})(frac{3}{x} + frac{x}{x^2 + 1} + frac{4}{x - 1})$",
+        "$(x^3frac{x^2 + 1}{(x - 1)^4})(frac{3}{x} + frac{x}{x^2 + 1} - frac{4}{x - 1})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$(x^3sqrt(x^2 + 1)/(x - 1)^4)(3/x + x/(x^2 + 1) - 4/(x - 1))$",
-       "work": "$y' = y·(3/x + x/(x^2 + 1) - 4/(x - 1))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2506,78 +1894,42 @@
      "steps": [
       {
        "id": "W56.1",
-       "type": "expr",
-       "text": "Take $ln$ of both sides and expand.",
-       "answer": "2ln(x) + 5ln(x + 3) + 3ln(2x - 1)",
-       "vars": [
-        "x"
+       "work": "$ln(y) = 2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$",
+       "type": "mc",
+       "text": "Take $ln$ of both sides and expand.\n$ln(y)$ =",
+       "options": [
+        "$2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$",
+        "$2ln(x) + 5ln(x + 3) + 3ln(2x + 1)$",
+        "$2ln(x) + 5e^(x + 3) + 3ln(2x - 1)$",
+        "$2ln(x) + 5ln(x + 3) + 3ln(1x - 1)$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$ln(y)$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$",
-       "work": "$ln(y) = 2ln(x) + 5ln(x + 3) + 3ln(2x - 1)$"
+       "answer": 0
       },
       {
        "id": "W56.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "2/x + 5/(x + 3) + 6/(2x - 1)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = 2/x + 5/(x + 3) + 6/(2x - 1)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{2}{x} + frac{5}{x + 3} + frac{6}{2x - 1}$",
+        "$frac{2}{x} + frac{5}{x + 3} + frac{6}{2x + 1}$",
+        "$frac{2}{x} + frac{5}{x + 3} + frac{6}{1x - 1}$",
+        "$frac{5}{x + 3} + frac{6}{2x - 1}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$2/x + 5/(x + 3) + 6/(2x - 1)$",
-       "work": "$frac{y'}{y} = 2/x + 5/(x + 3) + 6/(2x - 1)$"
+       "answer": 0
       },
       {
        "id": "W56.3",
-       "type": "expr",
-       "text": "Multiply by $y$. (Type $y$ back out in full.)",
-       "answer": "(x^2(x + 3)^5(2x - 1)^3)(2/x + 5/(x + 3) + 6/(2x - 1))",
-       "vars": [
-        "x"
+       "work": "$y' = y·(2/x + 5/(x + 3) + 6/(2x - 1))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(x^2(x + 3)^5(2x - 1)^3)(frac{2}{x} + frac{5}{x + 3} + frac{6}{2x - 1})$",
+        "$(frac{2}{x} + frac{5}{x + 3} + frac{6}{2x - 1})$",
+        "$(x^2(x + 3)^5(2x - 1)^3)(frac{2}{x} - frac{5}{x + 3} + frac{6}{2x - 1})$",
+        "$(x^2(x + 3)^5(2x - 1)^4)(frac{2}{x} + frac{5}{x + 3} + frac{6}{2x - 1})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         1.2,
-         2.5
-        ]
-       },
-       "show": "$(x^2(x + 3)^5(2x - 1)^3)(2/x + 5/(x + 3) + 6/(2x - 1))$",
-       "work": "$y' = y·(2/x + 5/(x + 3) + 6/(2x - 1))$"
+       "answer": 0
       }
      ],
      "level": 3,

@@ -871,29 +871,17 @@
     },
     {
      "id": "P35",
-     "type": "expr",
-     "text": "$f(x) = sqrt(1 - x^2)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = 1 - x^2$ back in.",
-     "answer": "1/(2sqrt(1 - x^2))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sec(",
-      "sqrt("
-     ],
-     "label": "$h'(g(x))$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       0.9
-      ]
-     },
-     "show": "$frac{1}{2sqrt(1 - x^2)}$",
      "level": 2,
-     "explain": "Replace $u$ with $1 - x^2$ and leave it alone: $frac{1}{2sqrt(1 - x^2)}$."
+     "explain": "Replace $u$ with $1 - x^2$ and leave it alone: $frac{1}{2sqrt(1 - x^2)}$.",
+     "type": "mc",
+     "text": "$f(x) = sqrt(1 - x^2)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = 1 - x^2$ back in.\n$h'(g(x))$ =",
+     "options": [
+      "$frac{1}{2sqrt(1 - x^2)}$",
+      "$frac{1}{2(1 - x^2)}$",
+      "$frac{1}{2sqrt(2 - x^2)}$",
+      "$frac{(2sqrt(1 - x^2))}{1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "P36",
@@ -949,29 +937,17 @@
     },
     {
      "id": "P38",
-     "type": "expr",
-     "text": "$f(x) = sec(4x^5 + 5)$ has outside $h(u) = sec(u)$, so $h'(u) = sec(u)tan(u)$. Put the inside $g(x) = 4x^5 + 5$ back in.",
-     "answer": "sec(4x^5 + 5)tan(4x^5 + 5)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sec(",
-      "sqrt("
-     ],
-     "label": "$h'(g(x))$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       0.9
-      ]
-     },
-     "show": "$sec(4x^5 + 5)tan(4x^5 + 5)$",
      "level": 2,
-     "explain": "Replace $u$ with $4x^5 + 5$ and leave it alone: $sec(4x^5 + 5)tan(4x^5 + 5)$."
+     "explain": "Replace $u$ with $4x^5 + 5$ and leave it alone: $sec(4x^5 + 5)tan(4x^5 + 5)$.",
+     "type": "mc",
+     "text": "$f(x) = sec(4x^5 + 5)$ has outside $h(u) = sec(u)$, so $h'(u) = sec(u)tan(u)$. Put the inside $g(x) = 4x^5 + 5$ back in.\n$h'(g(x))$ =",
+     "options": [
+      "$sec(4x^5 + 5)tan(4x^5 + 5)$",
+      "$sec(4x^5 + 5)tan(4x^5 - 5)$",
+      "$tan(4x^5 + 5)tan(4x^5 + 5)$",
+      "$sec(4x^4 + 5)tan(4x^5 + 5)$"
+     ],
+     "answer": 0
     },
     {
      "id": "P39",
@@ -1053,29 +1029,17 @@
     },
     {
      "id": "P42",
-     "type": "expr",
-     "text": "$f(x) = sqrt(x^2 - x + 1)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = x^2 - x + 1$ back in.",
-     "answer": "1/(2sqrt(x^2 - x + 1))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sec(",
-      "sqrt("
-     ],
-     "label": "$h'(g(x))$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       0.9
-      ]
-     },
-     "show": "$frac{1}{2sqrt(x^2 - x + 1)}$",
      "level": 2,
-     "explain": "Replace $u$ with $x^2 - x + 1$ and leave it alone: $frac{1}{2sqrt(x^2 - x + 1)}$."
+     "explain": "Replace $u$ with $x^2 - x + 1$ and leave it alone: $frac{1}{2sqrt(x^2 - x + 1)}$.",
+     "type": "mc",
+     "text": "$f(x) = sqrt(x^2 - x + 1)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = x^2 - x + 1$ back in.\n$h'(g(x))$ =",
+     "options": [
+      "$frac{1}{2sqrt(x^2 - x + 1)}$",
+      "$frac{1}{2(x^2 - x + 1)}$",
+      "$frac{1}{2sqrt(x^1 - x + 1)}$",
+      "$frac{(2sqrt(x^2 - x + 1))}{1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "P43",
@@ -1691,28 +1655,16 @@
       },
       {
        "id": "W63.4",
-       "type": "expr",
+       "work": "$f'(x) = (10(3x^2 + 1)^9)(6x)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(10(3x^2 + 1)^9)(6x)",
-       "vars": [
-        "x"
+       "options": [
+        "$(10(3x^2 + 1)^9)(6x)$",
+        "$(6x)$",
+        "$(10(3x^2 + 2)^9)(6x)$",
+        "$-(10(3x^2 + 1)^9)(6x)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(10(3x^2 + 1)^9)(6x)$",
-       "work": "$f'(x) = (10(3x^2 + 1)^9)(6x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1794,28 +1746,16 @@
       },
       {
        "id": "W64.4",
-       "type": "expr",
+       "work": "$f'(x) = (1/(2sqrt(1 - x^2)))(-2x)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(1/(2sqrt(1 - x^2)))(-2x)",
-       "vars": [
-        "x"
+       "options": [
+        "$(frac{1}{2sqrt(1 - x^2)})(-2x)$",
+        "$(frac{1}{2sqrt(1 - x^2)})$",
+        "$(frac{1}{2(1 - x^2)})(-2x)$",
+        "$(frac{1}{2sqrt(1 - x^2)})(-1x)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(1/(2sqrt(1 - x^2)))(-2x)$",
-       "work": "$f'(x) = (1/(2sqrt(1 - x^2)))(-2x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1897,28 +1837,16 @@
       },
       {
        "id": "W65.4",
-       "type": "expr",
+       "work": "$f'(x) = (sec(x^2 - 2x + 5)^2)(2x - 2)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(sec(x^2 - 2x + 5)^2)(2x - 2)",
-       "vars": [
-        "x"
+       "options": [
+        "$(sec(x^2 - 2x + 5)^2)(2x - 2)$",
+        "$(2x - 2)$",
+        "$(sec(x^2 - 2x + 5)^2)(2x + 2)$",
+        "$(tan(x^2 - 2x + 5)^2)(2x - 2)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(sec(x^2 - 2x + 5)^2)(2x - 2)$",
-       "work": "$f'(x) = (sec(x^2 - 2x + 5)^2)(2x - 2)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2000,28 +1928,16 @@
       },
       {
        "id": "W66.4",
-       "type": "expr",
+       "work": "$f'(x) = (3(x + sin(x))^2)(cos(x) + 1)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(3(x + sin(x))^2)(cos(x) + 1)",
-       "vars": [
-        "x"
+       "options": [
+        "$(3(x + sin(x))^2)(cos(x) + 1)$",
+        "$(3(x + sin(x))^2)$",
+        "$(3(x + sin(x))^2)(cos(x) - 1)$",
+        "$(3(x + sin(x))^2)(sin(x) + 1)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(3(x + sin(x))^2)(cos(x) + 1)$",
-       "work": "$f'(x) = (3(x + sin(x))^2)(cos(x) + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2206,28 +2122,16 @@
       },
       {
        "id": "W68.4",
-       "type": "expr",
+       "work": "$f'(x) = (4(2x^3 - x)^3)(6x^2 - 1)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(4(2x^3 - x)^3)(6x^2 - 1)",
-       "vars": [
-        "x"
+       "options": [
+        "$(4(2x^3 - x)^3)(6x^2 - 1)$",
+        "$(4(2x^3 - x)^3)$",
+        "$(4(2x^3 - x)^3)(6x^2 + 1)$",
+        "$(4(2x^2 - x)^3)(6x^2 - 1)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(4(2x^3 - x)^3)(6x^2 - 1)$",
-       "work": "$f'(x) = (4(2x^3 - x)^3)(6x^2 - 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2309,28 +2213,16 @@
       },
       {
        "id": "W69.4",
-       "type": "expr",
+       "work": "$f'(x) = (5cos(x)^4)(-sin(x))$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(5cos(x)^4)(-sin(x))",
-       "vars": [
-        "x"
+       "options": [
+        "$(5cos(x)^4)(-sin(x))$",
+        "$(5cos(x)^4)$",
+        "$(5sin(x)^4)(-sin(x))$",
+        "$(5cos(x)^3)(-sin(x))$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(5cos(x)^4)(-sin(x))$",
-       "work": "$f'(x) = (5cos(x)^4)(-sin(x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2515,28 +2407,16 @@
       },
       {
        "id": "W71.4",
-       "type": "expr",
+       "work": "$f'(x) = (cos(sqrt(x)))(1/(2sqrt(x)))$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(cos(sqrt(x)))(1/(2sqrt(x)))",
-       "vars": [
-        "x"
+       "options": [
+        "$(cos(sqrt(x)))(frac{1}{2sqrt(x)})$",
+        "$(cos(sqrt(x)))$",
+        "$(cos(sqrt(x)))(frac{1}{2(x)})$",
+        "$(cos(sqrt(x)))(frac{2}{2sqrt(x)})$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(cos(sqrt(x)))(1/(2sqrt(x)))$",
-       "work": "$f'(x) = (cos(sqrt(x)))(1/(2sqrt(x)))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2618,28 +2498,16 @@
       },
       {
        "id": "W72.4",
-       "type": "expr",
+       "work": "$f'(x) = (2sin(x))(cos(x))$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(2sin(x))(cos(x))",
-       "vars": [
-        "x"
+       "options": [
+        "$(2sin(x))(cos(x))$",
+        "$(2sin(x))$",
+        "$(2cos(x))(cos(x))$",
+        "$-(2sin(x))(cos(x))$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(2sin(x))(cos(x))$",
-       "work": "$f'(x) = (2sin(x))(cos(x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2721,28 +2589,16 @@
       },
       {
        "id": "W73.4",
-       "type": "expr",
+       "work": "$f'(x) = (6(x^2 + x)^5)(2x + 1)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(6(x^2 + x)^5)(2x + 1)",
-       "vars": [
-        "x"
+       "options": [
+        "$(6(x^2 + x)^5)(2x + 1)$",
+        "$(6(x^2 + x)^5)$",
+        "$(6(x^2 + x)^5)(2x - 1)$",
+        "$(6(x^2 + x)^5)(1x + 1)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(6(x^2 + x)^5)(2x + 1)$",
-       "work": "$f'(x) = (6(x^2 + x)^5)(2x + 1)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2824,28 +2680,16 @@
       },
       {
        "id": "W74.4",
-       "type": "expr",
+       "work": "$f'(x) = (-sin(x^2 + 3x))(2x + 3)$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(-sin(x^2 + 3x))(2x + 3)",
-       "vars": [
-        "x"
+       "options": [
+        "$(-sin(x^2 + 3x))(2x + 3)$",
+        "$(-sin(x^2 + 3x))$",
+        "$(-sin(x^2 + 3x))(2x - 3)$",
+        "$(-cos(x^2 + 3x))(2x + 3)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(-sin(x^2 + 3x))(2x + 3)$",
-       "work": "$f'(x) = (-sin(x^2 + 3x))(2x + 3)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -3141,28 +2985,16 @@
       },
       {
        "id": "X83.4",
-       "type": "expr",
-       "text": "Multiply all the factors.",
-       "answer": "(2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))$",
+       "type": "mc",
+       "text": "Multiply all the factors.\n$f'(x)$ =",
+       "options": [
+        "$(2sin(sqrt(x)))(cos(sqrt(x)))(frac{1}{2sqrt(x)})$",
+        "$(frac{1}{2sqrt(x)})$",
+        "$(2sin(sqrt(x)))(cos(sqrt(x)))(frac{1}{2(x)})$",
+        "$(2sin(sqrt(x)))(cos(sqrt(x)))(frac{2}{2sqrt(x)})$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$(2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))$",
-       "work": "$f'(x) = (2sin(sqrt(x)))(cos(sqrt(x)))(1/(2sqrt(x)))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -3175,28 +3007,16 @@
      "steps": [
       {
        "id": "X84.1",
-       "type": "expr",
-       "text": "Derivative of the cube, with everything inside it left alone.",
-       "answer": "3tan(x^2 + 2x - 1)^2",
-       "vars": [
-        "x"
+       "work": "the cube: $3tan(x^2 + 2x - 1)^2$",
+       "type": "mc",
+       "text": "Derivative of the cube, with everything inside it left alone.\nfactor =",
+       "options": [
+        "$3tan(x^2 + 2x - 1)^2$",
+        "$3tan(x^2 - 2x - 1)^2$",
+        "$3sec(x^2 + 2x - 1)^2$",
+        "$3tan(x^2 + 1x - 1)^2$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "factor =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$3tan(x^2 + 2x - 1)^2$",
-       "work": "the cube: $3tan(x^2 + 2x - 1)^2$"
+       "answer": 0
       },
       {
        "id": "X84.2",
@@ -3250,28 +3070,16 @@
       },
       {
        "id": "X84.4",
-       "type": "expr",
-       "text": "Multiply all the factors.",
-       "answer": "(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$",
+       "type": "mc",
+       "text": "Multiply all the factors.\n$f'(x)$ =",
+       "options": [
+        "$(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$",
+        "$(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)$",
+        "$(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x - 2)$",
+        "$(3sec(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$(3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$",
-       "work": "$f'(x) = (3tan(x^2 + 2x - 1)^2)(sec(x^2 + 2x - 1)^2)(2x + 2)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -3284,28 +3092,16 @@
      "steps": [
       {
        "id": "X85.1",
-       "type": "expr",
-       "text": "Derivative of the outer sine, with everything inside it left alone.",
-       "answer": "cos(sin(sin(x)))",
-       "vars": [
-        "x"
+       "work": "the outer sine: $cos(sin(sin(x)))$",
+       "type": "mc",
+       "text": "Derivative of the outer sine, with everything inside it left alone.\nfactor =",
+       "options": [
+        "$cos(sin(sin(x)))$",
+        "$sin(sin(sin(x)))$",
+        "$-cos(sin(sin(x)))$",
+        "$cos(cos(sin(x)))$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "factor =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$cos(sin(sin(x)))$",
-       "work": "the outer sine: $cos(sin(sin(x)))$"
+       "answer": 0
       },
       {
        "id": "X85.2",
@@ -3359,28 +3155,16 @@
       },
       {
        "id": "X85.4",
-       "type": "expr",
-       "text": "Multiply all the factors.",
-       "answer": "(cos(sin(sin(x))))(cos(sin(x)))(cos(x))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (cos(sin(sin(x))))(cos(sin(x)))(cos(x))$",
+       "type": "mc",
+       "text": "Multiply all the factors.\n$f'(x)$ =",
+       "options": [
+        "$(cos(sin(sin(x))))(cos(sin(x)))(cos(x))$",
+        "$(cos(sin(x)))(cos(x))$",
+        "$(cos(sin(sin(x))))(cos(sin(x)))(sin(x))$",
+        "$-(cos(sin(sin(x))))(cos(sin(x)))(cos(x))$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$(cos(sin(sin(x))))(cos(sin(x)))(cos(x))$",
-       "work": "$f'(x) = (cos(sin(sin(x))))(cos(sin(x)))(cos(x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -3393,28 +3177,16 @@
      "steps": [
       {
        "id": "X86.1",
-       "type": "expr",
-       "text": "Derivative of the square root, with everything inside it left alone.",
-       "answer": "1/(2sqrt(cos(x^2 + 1)))",
-       "vars": [
-        "x"
+       "work": "the square root: $1/(2sqrt(cos(x^2 + 1)))$",
+       "type": "mc",
+       "text": "Derivative of the square root, with everything inside it left alone.\nfactor =",
+       "options": [
+        "$frac{1}{2sqrt(cos(x^2 + 1))}$",
+        "$frac{1}{2sqrt(sin(x^2 + 1))}$",
+        "$frac{1}{2sqrt(cos(x^3 + 1))}$",
+        "$frac{(2sqrt(cos(x^2 + 1)))}{1}$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "factor =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$frac{1}{2sqrt(cos(x^2 + 1))}$",
-       "work": "the square root: $1/(2sqrt(cos(x^2 + 1)))$"
+       "answer": 0
       },
       {
        "id": "X86.2",
@@ -3468,28 +3240,16 @@
       },
       {
        "id": "X86.4",
-       "type": "expr",
-       "text": "Multiply all the factors.",
-       "answer": "(1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)$",
+       "type": "mc",
+       "text": "Multiply all the factors.\n$f'(x)$ =",
+       "options": [
+        "$(frac{1}{2sqrt(cos(x^2 + 1))})(-sin(x^2 + 1))(2x)$",
+        "$(frac{1}{2sqrt(cos(x^2 + 1))})(-sin(x^2 + 1))$",
+        "$(frac{1}{2sqrt(cos(x^2 + 1))})(-cos(x^2 + 1))(2x)$",
+        "$(frac{1}{2sqrt(cos(x^2 + 1))})(-sin(x^3 + 1))(2x)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$(1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)$",
-       "work": "$f'(x) = (1/(2sqrt(cos(x^2 + 1))))(-sin(x^2 + 1))(2x)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -3577,28 +3337,16 @@
       },
       {
        "id": "X87.4",
-       "type": "expr",
-       "text": "Multiply all the factors.",
-       "answer": "(2cos(3x))(-sin(3x))(3)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (2cos(3x))(-sin(3x))(3)$",
+       "type": "mc",
+       "text": "Multiply all the factors.\n$f'(x)$ =",
+       "options": [
+        "$(2cos(3x))(-sin(3x))(3)$",
+        "$(-sin(3x))(3)$",
+        "$(2sin(3x))(-sin(3x))(3)$",
+        "$(2cos(3x))(-sin(3x))(2)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         0.6
-        ]
-       },
-       "show": "$(2cos(3x))(-sin(3x))(3)$",
-       "work": "$f'(x) = (2cos(3x))(-sin(3x))(3)$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -3690,23 +3438,17 @@
      },
      {
       "id": "L2.4",
-      "type": "expr",
-      "text": "Multiply.",
-      "answer": "10(3x^2 + 1)^9(6x)",
-      "vars": [
-       "x"
-      ],
-      "keys": [
-       "sin(",
-       "cos(",
-       "tan(",
-       "sec(",
-       "sqrt("
-      ],
-      "label": "$f'(x)$ =",
-      "show": "$10(3x^2 + 1)^9(6x)$",
       "hint": "$10(3x^2 + 1)^9·6x$",
-      "work": "$f'(x) = 10(3x^2 + 1)^9·6x$"
+      "work": "$f'(x) = 10(3x^2 + 1)^9·6x$",
+      "type": "mc",
+      "text": "Multiply.\n$f'(x)$ =",
+      "options": [
+       "$10(3x^2 + 1)^9(6x)$",
+       "$10(3x^2 - 1)^9(6x)$",
+       "$10(3x^1 + 1)^9(6x)$",
+       "$-10(3x^2 + 1)^9(6x)$"
+      ],
+      "answer": 0
      }
     ]
    },

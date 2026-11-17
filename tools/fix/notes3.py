@@ -59,7 +59,7 @@ s['steps'][0]['label'] = "$g = x^2 + 2$, so $g'$ ="
 s['steps'][1]['label'] = "$k = 3x + 1$, so $k'$ ="
 s['steps'][2] = product_bank('L3.3', 'f′(x)', '$x^2 + 2$', '$3$', '$2x$', '$3x + 1$', "$f'(x) = 3(x^2 + 2) + 2x(3x + 1)$", "$g$ times $k'$, plus $g'$ times $k$.")
 s = S(d, 'L4')
-s['text'] = "**Quotient rule**\n$$(frac{g}{k})' = frac{kg' - gk'}{k^2}$$\n“Low d-high minus high d-low, over low squared.” Take\n$$f(x) = frac{4x^2}{2x + 1}$$"
+s['text'] = "**Quotient rule**\n$$(frac{g}{k})' = frac{k g' - gk'}{k^2}$$\n“Low d-high minus high d-low, over low squared.” Take\n$$f(x) = frac{4x^2}{2x + 1}$$"
 s['steps'][0]['label'] = "top $g = 4x^2$, so $g'$ ="
 s['steps'][1]['label'] = "bottom $k = 2x + 1$, so $k'$ ="
 s['steps'][2] = quotient_bank('L4.3', 'f′(x)', '$4x^2$', '$8x$', '$2x + 1$', '$2$', '(2x + 1)²', "$f'(x) = frac{(2x + 1)(8x) - 8x^2}{(2x + 1)^2}$", 'Low is the bottom, $2x + 1$. High is the top, $4x^2$.')

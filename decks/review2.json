@@ -855,16 +855,16 @@
      "steps": [
       {
        "id": "FUNW54.1",
-       "type": "expr",
-       "text": "Replace $x$ with $x + h$ and multiply out.",
-       "answer": "3h^2 + 6hx - 4h + 3x^2 - 4x + 1",
-       "vars": [
-        "x",
-        "h"
+       "work": "$f(x + h) = 3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+       "type": "mc",
+       "text": "Replace $x$ with $x + h$ and multiply out.\n$f(x + h)$ =",
+       "options": [
+        "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+        "$3h^2 + 6hx - 4h + 3x^2 - 4x - 1$",
+        "$3h^2 + 7hx - 4h + 3x^2 - 4x + 1$",
+        "$3h^2 + 6hx - 4h + 3x - 4x + 1$"
        ],
-       "label": "$f(x + h)$ =",
-       "show": "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
-       "work": "$f(x + h) = 3h^2 + 6hx - 4h + 3x^2 - 4x + 1$"
+       "answer": 0
       },
       {
        "id": "FUNW54.2",
@@ -937,21 +937,16 @@
       },
       {
        "id": "RULV59.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x^2 + 1)(2) - (2x + 5)(2x))/(x^2 + 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+        "$frac{(x^2 + 1)(2) + (2x + 5)(2x)}{(x^2 + 1)^2}$",
+        "$frac{(x^2 + 1)(1) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
+        "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x + 1)^2}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
-       "work": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = frac{(x^2 + 1)(2) - (2x + 5)(2x)}{(x^2 + 1)^2}$",
@@ -960,7 +955,7 @@
     {
      "id": "RULU42",
      "type": "expr",
-     "text": "$$f(x) = frac{x - 2}{x + 3}$$\nFill in the missing piece of the quotient rule, $frac{kg' - gk'}{k^2}$.",
+     "text": "$$f(x) = frac{x - 2}{x + 3}$$\nFill in the missing piece of the quotient rule, $frac{k g' - gk'}{k^2}$.",
      "answer": "1",
      "vars": [
       "x"
@@ -1013,21 +1008,16 @@
       },
       {
        "id": "RULV58.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.",
-       "answer": "((x)(2x) - (x^2 + 1)(1))/(x)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared. Put ( ) around the whole top.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
+        "$frac{(x)(2x) + (x^2 + 1)(1)}{(x)^2}$",
+        "$frac{(x)(2x) - (x^1 + 1)(1)}{(x)^2}$",
+        "$frac{(x)^2}{((x)(2x) - (x^2 + 1)(1))}$"
        ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.35,
-         2.65
-        ]
-       },
-       "show": "$frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
-       "work": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = frac{(x)(2x) - (x^2 + 1)(1)}{(x)^2}$",
@@ -1078,15 +1068,16 @@
       },
       {
        "id": "RULW54.3",
-       "type": "expr",
-       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)",
-       "answer": "(x - 3)(4x) + (1)(2x^2 + 1)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$",
+       "type": "mc",
+       "text": "Put it together: $gk' + g'k$. (No need to multiply out.)\n$f'(x)$ =",
+       "options": [
+        "$(x - 3)(4x) + (1)(2x^2 + 1)$",
+        "$(x - 3)(4x) + (1)$",
+        "$(x + 3)(4x) + (1)(2x^2 + 1)$",
+        "$(x - 3)(5x) + (1)(2x^2 + 1)$"
        ],
-       "label": "$f'(x)$ =",
-       "show": "$(x - 3)(4x) + (1)(2x^2 + 1)$",
-       "work": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = (x - 3)(4x) + (1)(2x^2 + 1)$",
@@ -1215,27 +1206,16 @@
       },
       {
        "id": "TRIQ41.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared.",
-       "answer": "((1 + cos(x))(cos(x)) - (sin(x))(-sin(x)))/(1 + cos(x))^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared.\n$f'(x)$ =",
+       "options": [
+        "$frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
+        "$frac{(1 + cos(x))(cos(x)) + (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
+        "$frac{(1 + cos(x))(cos(x)) - (cos(x))(-sin(x))}{(1 + cos(x))^2}$",
+        "$frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^1}$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.3
-        ]
-       },
-       "show": "$frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
-       "work": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = frac{(1 + cos(x))(cos(x)) - (sin(x))(-sin(x))}{(1 + cos(x))^2}$",
@@ -1320,27 +1300,16 @@
       },
       {
        "id": "TRIQ40.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared.",
-       "answer": "((cos(x))(1) - (x)(-sin(x)))/(cos(x))^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared.\n$f'(x)$ =",
+       "options": [
+        "$frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
+        "$frac{(cos(x))(1) + (x)(-sin(x))}{(cos(x))^2}$",
+        "$frac{(cos(x))(1) - (x)(-sin(x))}{(sin(x))^2}$",
+        "$frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^3}$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.3
-        ]
-       },
-       "show": "$frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
-       "work": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = frac{(cos(x))(1) - (x)(-sin(x))}{(cos(x))^2}$",
@@ -1401,27 +1370,16 @@
       },
       {
        "id": "TRIW44.3",
-       "type": "expr",
-       "text": "$gk' + g'k$",
-       "answer": "x^2(cos(x)) + (2x)sin(x)",
-       "vars": [
-        "x"
+       "work": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$",
+       "type": "mc",
+       "text": "$gk' + g'k$\n$f'(x)$ =",
+       "options": [
+        "$x^2(cos(x)) + (2x)sin(x)$",
+        "$x^2(cos(x)) - (2x)sin(x)$",
+        "$x^2(cos(x)) + (2x)cos(x)$",
+        "$x^2(cos(x)) + (1x)sin(x)$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.3
-        ]
-       },
-       "show": "$x^2(cos(x)) + (2x)sin(x)$",
-       "work": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = x^2(cos(x)) + (2x)sin(x)$",
@@ -1583,28 +1541,16 @@
       },
       {
        "id": "CHAW69.4",
-       "type": "expr",
+       "work": "$f'(x) = (5cos(x)^4)(-sin(x))$",
+       "type": "mc",
        "text": "$$f'(x) = h'(g(x))·g'(x)$$",
-       "answer": "(5cos(x)^4)(-sin(x))",
-       "vars": [
-        "x"
+       "options": [
+        "$(5cos(x)^4)(-sin(x))$",
+        "$(-sin(x))$",
+        "$(5sin(x)^4)(-sin(x))$",
+        "$(5cos(x)^5)(-sin(x))$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec(",
-        "sqrt("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         0.9
-        ]
-       },
-       "show": "$(5cos(x)^4)(-sin(x))$",
-       "work": "$f'(x) = (5cos(x)^4)(-sin(x))$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = (5cos(x)^4)(-sin(x))$",
@@ -1612,29 +1558,17 @@
     },
     {
      "id": "CHAP42",
-     "type": "expr",
-     "text": "$f(x) = sqrt(x^2 - x + 1)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = x^2 - x + 1$ back in.",
-     "answer": "1/(2sqrt(x^2 - x + 1))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sec(",
-      "sqrt("
-     ],
-     "label": "$h'(g(x))$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       0.9
-      ]
-     },
-     "show": "$frac{1}{2sqrt(x^2 - x + 1)}$",
      "explain": "Replace $u$ with $x^2 - x + 1$ and leave it alone: $frac{1}{2sqrt(x^2 - x + 1)}$.",
-     "topic": "Chain rule"
+     "topic": "Chain rule",
+     "type": "mc",
+     "text": "$f(x) = sqrt(x^2 - x + 1)$ has outside $h(u) = sqrt(u)$, so $h'(u) = frac{1}{2sqrt(u)}$. Put the inside $g(x) = x^2 - x + 1$ back in.\n$h'(g(x))$ =",
+     "options": [
+      "$frac{1}{2sqrt(x^2 - x + 1)}$",
+      "$frac{1}{2(x^2 - x + 1)}$",
+      "$frac{2}{2sqrt(x^2 - x + 1)}$",
+      "$frac{(2sqrt(x^2 - x + 1))}{1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "CHAF51",
@@ -2119,27 +2053,16 @@
       },
       {
        "id": "EXPQ45.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared.",
-       "answer": "((3^x + 1)(3^xln(3)) - (3^x)(3^xln(3)))/(3^x + 1)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared.\n$f'(x)$ =",
+       "options": [
+        "$frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
+        "$frac{(3^x + 1)(3^xln(3)) + (3^x)(3^xln(3))}{(3^x + 1)^2}$",
+        "$frac{(3^x + 1)(2^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
+        "$frac{(3^x + 1)^2}{((3^x + 1)(3^xln(3)) - (3^x)(3^xln(3)))}$"
        ],
-       "keys": [
-        "e^(",
-        "ln(",
-        "sin(",
-        "cos("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "show": "$frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
-       "work": "$f'(x) = frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = frac{(3^x + 1)(3^xln(3)) - (3^x)(3^xln(3))}{(3^x + 1)^2}$",
@@ -2241,27 +2164,16 @@
       },
       {
        "id": "EXPQ44.3",
-       "type": "expr",
-       "text": "Low d-high minus high d-low, over low squared.",
-       "answer": "((x)(e^x) - (e^x)(1))/(x)^2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = frac{(x)(e^x) - (e^x)(1)}{(x)^2}$",
+       "type": "mc",
+       "text": "Low d-high minus high d-low, over low squared.\n$f'(x)$ =",
+       "options": [
+        "$frac{(x)(e^x) - (e^x)(1)}{(x)^2}$",
+        "$frac{(x)(e^x) + (e^x)(1)}{(x)^2}$",
+        "$frac{(x)(e^x) - (e^x)(1)}{(x)^3}$",
+        "$frac{(x)^2}{((x)(e^x) - (e^x)(1))}$"
        ],
-       "keys": [
-        "e^(",
-        "ln(",
-        "sin(",
-        "cos("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "show": "$frac{(x)(e^x) - (e^x)(1)}{(x)^2}$",
-       "work": "$f'(x) = frac{(x)(e^x) - (e^x)(1)}{(x)^2}$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = frac{(x)(e^x) - (e^x)(1)}{(x)^2}$",
@@ -2449,29 +2361,17 @@
     },
     {
      "id": "LOGC38",
-     "type": "expr",
-     "text": "$$y = (sin(x))^x ;; frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$$\nMultiply by $y$.",
-     "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$y'$ =",
-     "ranges": {
-      "x": [
-       0.2,
-       1.4
-      ]
-     },
-     "show": "$(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
      "explain": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
-     "topic": "Log. differentiation"
+     "topic": "Log. differentiation",
+     "type": "mc",
+     "text": "$$y = (sin(x))^x ;; frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$$\nMultiply by $y$.",
+     "options": [
+      "$(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$",
+      "$(sin(x))^x(ln(sin(x)) - xcosfrac{x}{sin(x)})$",
+      "$(sin(x))^x(e^(sin(x)) + xcosfrac{x}{sin(x)})$",
+      "$-(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$"
+     ],
+     "answer": 0
     },
     {
      "id": "LOGW42",
@@ -2505,53 +2405,29 @@
       },
       {
        "id": "LOGW42.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(x)/(2sqrt(x)) + sqrt(x)/x",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x}$",
+        "$frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x}$",
+        "$frac{ln(x)}{2(x)} + frac{sqrt(x)}{x}$",
+        "$frac{sqrt(x)}{x}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$ln(x)/(2sqrt(x)) + sqrt(x)/x$",
-       "work": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$"
+       "answer": 0
       },
       {
        "id": "LOGW42.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)",
-       "vars": [
-        "x"
+       "work": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x})$",
+        "$x^(sqrt(x))$",
+        "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x})$",
+        "$x^(sqrt(x))(frac{ln(x)}{2sqrt(x)} + frac{x}{x})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.4
-        ]
-       },
-       "show": "$x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
-       "work": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$"
+       "answer": 0
       }
      ],
      "explain": "$y' = x^(sqrt(x))(ln(x)/(2sqrt(x)) + sqrt(x)/x)$",
@@ -2559,29 +2435,17 @@
     },
     {
      "id": "LOGB24",
-     "type": "expr",
-     "text": "$ln(y) = xln(sin(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(sin(x)) + xcos(x)/sin(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.2,
-       1.4
-      ]
-     },
-     "show": "$ln(sin(x)) + xcos(x)/sin(x)$",
      "explain": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$",
-     "topic": "Log. differentiation"
+     "topic": "Log. differentiation",
+     "type": "mc",
+     "text": "$ln(y) = xln(sin(x))$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$ln(sin(x)) + xcosfrac{x}{sin(x)}$",
+      "$ln(sin(x)) - xcosfrac{x}{sin(x)}$",
+      "$ln(cos(x)) + xcosfrac{x}{sin(x)}$",
+      "$frac{sin(x)}{ln(sin(x)) + xcos(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "LOGW45",
@@ -2615,53 +2479,29 @@
       },
       {
        "id": "LOGW45.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(cos(x)) - xsin(x)/cos(x)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(cos(x)) - xsinfrac{x}{cos(x)}$",
+        "$ln(cos(x)) + xsinfrac{x}{cos(x)}$",
+        "$ln(sin(x)) - xsinfrac{x}{cos(x)}$",
+        "$frac{cos(x)}{ln(cos(x)) - xsin(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "show": "$ln(cos(x)) - xsin(x)/cos(x)$",
-       "work": "$frac{y'}{y} = ln(cos(x)) - xsin(x)/cos(x)$"
+       "answer": 0
       },
       {
        "id": "LOGW45.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))",
-       "vars": [
-        "x"
+       "work": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(cos(x))^x(ln(cos(x)) - xsinfrac{x}{cos(x)})$",
+        "$(cos(x))^x(ln(cos(x)) + xsinfrac{x}{cos(x)})$",
+        "$(cos(x))^x(ln(cos(x)) - xsinfrac{x}{sin(x)})$",
+        "$-(cos(x))^x(ln(cos(x)) - xsinfrac{x}{cos(x)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "show": "$(cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
-       "work": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$"
+       "answer": 0
       }
      ],
      "explain": "$y' = (cos(x))^x(ln(cos(x)) - xsin(x)/cos(x))$",
@@ -2699,53 +2539,29 @@
       },
       {
        "id": "LOGW44.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(sin(x)) + xcos(x)/sin(x)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(sin(x)) + xcosfrac{x}{sin(x)}$",
+        "$ln(sin(x)) - xcosfrac{x}{sin(x)}$",
+        "$ln(cos(x)) + xcosfrac{x}{sin(x)}$",
+        "$frac{sin(x)}{ln(sin(x)) + xcos(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.4
-        ]
-       },
-       "show": "$ln(sin(x)) + xcos(x)/sin(x)$",
-       "work": "$frac{y'}{y} = ln(sin(x)) + xcos(x)/sin(x)$"
+       "answer": 0
       },
       {
        "id": "LOGW44.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))",
-       "vars": [
-        "x"
+       "work": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$",
+        "$(sin(x))^x(ln(sin(x)) - xcosfrac{x}{sin(x)})$",
+        "$(sin(x))^x(ln(sin(x)) + xcosfrac{x}{cos(x)})$",
+        "$-(sin(x))^x(ln(sin(x)) + xcosfrac{x}{sin(x)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.2,
-         1.4
-        ]
-       },
-       "show": "$(sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
-       "work": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$"
+       "answer": 0
       }
      ],
      "explain": "$y' = (sin(x))^x(ln(sin(x)) + xcos(x)/sin(x))$",
@@ -2753,29 +2569,17 @@
     },
     {
      "id": "LOGB22",
-     "type": "expr",
-     "text": "$ln(y) = sqrt(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
-     "answer": "ln(x)/(2sqrt(x)) + sqrt(x)/x",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "ln(",
-      "e^(",
-      "sin(",
-      "cos(",
-      "sqrt("
-     ],
-     "label": "$frac{y'}{y}$ =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.4
-      ]
-     },
-     "show": "$ln(x)/(2sqrt(x)) + sqrt(x)/x$",
      "explain": "$frac{y'}{y} = ln(x)/(2sqrt(x)) + sqrt(x)/x$",
-     "topic": "Log. differentiation"
+     "topic": "Log. differentiation",
+     "type": "mc",
+     "text": "$ln(y) = sqrt(x)ln(x)$. Differentiate the right side: $frac{y'}{y} =$ ?",
+     "options": [
+      "$frac{ln(x)}{2sqrt(x)} + frac{sqrt(x)}{x}$",
+      "$frac{ln(x)}{2sqrt(x)} - frac{sqrt(x)}{x}$",
+      "$frac{ln(x)}{2sqrt(x)} + frac{x}{x}$",
+      "$frac{ln(x)}{2sqrt(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "LOGW48",
@@ -2809,53 +2613,29 @@
       },
       {
        "id": "LOGW48.2",
-       "type": "expr",
-       "text": "Differentiate the right side.",
-       "answer": "ln(ln(x)) + 1/ln(x)",
-       "vars": [
-        "x"
+       "work": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$",
+       "type": "mc",
+       "text": "Differentiate the right side.\n$frac{y'}{y}$ =",
+       "options": [
+        "$ln(ln(x)) + frac{1}{ln(x)}$",
+        "$ln(ln(x)) - frac{1}{ln(x)}$",
+        "$ln(ln(x)) + frac{1}{e^(x)}$",
+        "$ln(ln(x)) + frac{2}{ln(x)}$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$frac{y'}{y}$ =",
-       "ranges": {
-        "x": [
-         1.3,
-         2.8
-        ]
-       },
-       "show": "$ln(ln(x)) + 1/ln(x)$",
-       "work": "$frac{y'}{y} = ln(ln(x)) + 1/ln(x)$"
+       "answer": 0
       },
       {
        "id": "LOGW48.3",
-       "type": "expr",
-       "text": "Multiply by $y$.",
-       "answer": "(ln(x))^x(ln(ln(x)) + 1/ln(x))",
-       "vars": [
-        "x"
+       "work": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$",
+       "type": "mc",
+       "text": "Multiply by $y$.\n$y'$ =",
+       "options": [
+        "$(ln(x))^x(ln(ln(x)) + frac{1}{ln(x)})$",
+        "$(ln(x))^x(ln(ln(x)) - frac{1}{ln(x)})$",
+        "$(e^(x))^x(ln(ln(x)) + frac{1}{ln(x)})$",
+        "$(ln(x))^x(ln(ln(x)) + frac{2}{ln(x)})$"
        ],
-       "keys": [
-        "ln(",
-        "e^(",
-        "sin(",
-        "cos(",
-        "sqrt("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         1.3,
-         2.8
-        ]
-       },
-       "show": "$(ln(x))^x(ln(ln(x)) + 1/ln(x))$",
-       "work": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$"
+       "answer": 0
       }
      ],
      "explain": "$y' = (ln(x))^x(ln(ln(x)) + 1/ln(x))$",
@@ -2918,28 +2698,16 @@
       },
       {
        "id": "INVW41.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(e^x)(1/(1 + e^(2x)))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (e^x)(1/(1 + e^(2x)))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$(e^x)(frac{1}{1 + e^(2x)})$",
+        "$(frac{1}{1 + e^(2x)})$",
+        "$(e^x)(frac{1}{1 + e^(3x)})$",
+        "$-(e^x)(frac{1}{1 + e^(2x)})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$(e^x)(1/(1 + e^(2x)))$",
-       "work": "$f'(x) = (e^x)(1/(1 + e^(2x)))$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = (e^x)(1/(1 + e^(2x)))$",
@@ -3002,28 +2770,16 @@
       },
       {
        "id": "INVW45.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(3x^2)(1/(1 + x^6))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (3x^2)(1/(1 + x^6))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$(3x^2)(frac{1}{1 + x^6})$",
+        "$(frac{1}{1 + x^6})$",
+        "$(3x^2)(frac{1}{1 + x^5})$",
+        "$-(3x^2)(frac{1}{1 + x^6})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$(3x^2)(1/(1 + x^6))$",
-       "work": "$f'(x) = (3x^2)(1/(1 + x^6))$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = (3x^2)(1/(1 + x^6))$",
@@ -3041,30 +2797,17 @@
     },
     {
      "id": "INVC50",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = e^xarctan(x)$.",
-     "answer": "e^xarctan(x) + e^x/(1 + x^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$e^xarctan(x) + e^x/(1 + x^2)$",
      "explain": "$e^xarctan(x) + e^x/(1 + x^2)$",
-     "topic": "Inverse trig"
+     "topic": "Inverse trig",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = e^xarctan(x)$.\n$f'(x)$ =",
+     "options": [
+      "$e^xarctan(x) + frac{e^x}{1 + x^2}$",
+      "$e^xarctan(x) - frac{e^x}{1 + x^2}$",
+      "$e^xarctan(x) + frac{e^x}{1 + x^1}$",
+      "$frac{(1 + x^2)}{e^xarctan(x) + e^x}$"
+     ],
+     "answer": 0
     },
     {
      "id": "INVW44",
@@ -3123,28 +2866,16 @@
       },
       {
        "id": "INVW44.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "3(-1/sqrt(1 - 9x^2))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$3(-frac{1}{sqrt(1 - 9x^2)})$",
+        "$3(-frac{1}{1 - 9x^2})$",
+        "$3(-frac{2}{sqrt(1 - 9x^2)})$",
+        "$-3(-frac{1}{sqrt(1 - 9x^2)})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$3(-1/sqrt(1 - 9x^2))$",
-       "work": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$"
+       "answer": 0
       }
      ],
      "explain": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$",

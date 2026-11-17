@@ -574,17 +574,17 @@
     },
     {
      "id": "H46",
-     "type": "expr",
-     "text": "$$f(x) = x^2 - 4x$$\nFind $f(x + h)$ and multiply it out.",
-     "answer": "x^2 + 2xh + h^2 - 4x - 4h",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$x^2 + 2xh + h^2 - 4x - 4h$",
      "level": 2,
-     "explain": "$f(x + h) = (x + h)^2 - 4(x + h) = x^2 + 2xh + h^2 - 4x - 4h$"
+     "explain": "$f(x + h) = (x + h)^2 - 4(x + h) = x^2 + 2xh + h^2 - 4x - 4h$",
+     "type": "mc",
+     "text": "$$f(x) = x^2 - 4x$$\nFind $f(x + h)$ and multiply it out.",
+     "options": [
+      "$x^2 + 2xh + h^2 - 4x - 4h$",
+      "$x^2 + 2xh + h^2 - 4x + 4h$",
+      "$x^3 + 2xh + h^2 - 4x - 4h$",
+      "$x^2 + 2xh + h^2 - 4x$"
+     ],
+     "answer": 0
     },
     {
      "id": "H47",
@@ -602,17 +602,17 @@
     },
     {
      "id": "H48",
-     "type": "expr",
-     "text": "$$f(x) = x^2 + 2x + 1$$\nFind $f(x + h)$ and multiply it out.",
-     "answer": "x^2 + 2xh + h^2 + 2x + 2h + 1",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$x^2 + 2xh + h^2 + 2x + 2h + 1$",
      "level": 2,
-     "explain": "$f(x + h) = (x + h)^2 + 2(x + h) + 1 = x^2 + 2xh + h^2 + 2x + 2h + 1$"
+     "explain": "$f(x + h) = (x + h)^2 + 2(x + h) + 1 = x^2 + 2xh + h^2 + 2x + 2h + 1$",
+     "type": "mc",
+     "text": "$$f(x) = x^2 + 2x + 1$$\nFind $f(x + h)$ and multiply it out.",
+     "options": [
+      "$x^2 + 2xh + h^2 + 2x + 2h + 1$",
+      "$x^2 + 2xh + h^2 - 2x + 2h + 1$",
+      "$x^3 + 2xh + h^2 + 2x + 2h + 1$",
+      "$2xh + h^2 + 2x + 2h + 1$"
+     ],
+     "answer": 0
     },
     {
      "id": "H49",
@@ -843,16 +843,16 @@
      "steps": [
       {
        "id": "Q54.1",
-       "type": "expr",
+       "work": "$f(x + h) = x^2 + 2xh + h^2 - 4x - 4h$",
+       "type": "mc",
        "text": "First $f(x + h)$, multiplied out.",
-       "answer": "x^2 + 2xh + h^2 - 4x - 4h",
-       "vars": [
-        "x",
-        "h"
+       "options": [
+        "$x^2 + 2xh + h^2 - 4x - 4h$",
+        "$x^2 + 2xh + h^2 - 4x + 4h$",
+        "$x^2 + 2xh + h^2 - 4x - 3h$",
+        "$x^2 + 2xh + h^2 - 4x$"
        ],
-       "label": "$f(x + h)$ =",
-       "show": "$x^2 + 2xh + h^2 - 4x - 4h$",
-       "work": "$f(x + h) = x^2 + 2xh + h^2 - 4x - 4h$"
+       "answer": 0
       },
       {
        "id": "Q54.2",
@@ -1101,17 +1101,17 @@
    },
    {
     "id": "L5",
-    "type": "expr",
-    "text": "Now multiply out the whole thing.$$f(x + h) = (x + h)^2 - 3(x + h)$$\n",
-    "answer": "x^2 + 2xh + h^2 - 3x - 3h",
-    "vars": [
-     "x",
-     "h"
-    ],
-    "label": "$f(x + h)$ =",
-    "show": "$x^2 + 2xh + h^2 - 3x - 3h$",
     "hint": "$(x + h)^2 = x^2 + 2xh + h^2$, and $-3(x + h) = -3x - 3h$.",
-    "explain": ""
+    "explain": "",
+    "type": "mc",
+    "text": "Now multiply out the whole thing.$$f(x + h) = (x + h)^2 - 3(x + h)$$",
+    "options": [
+     "$x^2 + 2xh + h^2 - 3x - 3h$",
+     "$x^2 + 2xh + h^2 - 3x + 3h$",
+     "$x^2 + 2xh + h^3 - 3x - 3h$",
+     "$2xh + h^2 - 3x - 3h$"
+    ],
+    "answer": 0
    }
   ]
  }

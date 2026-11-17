@@ -144,45 +144,31 @@
     },
     {
      "id": "D5",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = xsinh(x)$.",
-     "answer": "sinh(x) + xcosh(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sinh(",
-      "cosh(",
-      "tanh(",
-      "e^(",
-      "ln(",
-      "sqrt("
-     ],
-     "label": "$f'(x)$ =",
-     "show": "$sinh(x) + xcosh(x)$",
      "level": 2,
-     "explain": "$sinh(x) + xcosh(x)$"
+     "explain": "$sinh(x) + xcosh(x)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = xsinh(x)$.\n$f'(x)$ =",
+     "options": [
+      "$sinh(x) + xcosh(x)$",
+      "$sinh(x) - xcosh(x)$",
+      "$cosh(x) + xcosh(x)$",
+      "$sinh(x)$"
+     ],
+     "answer": 0
     },
     {
      "id": "D6",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = sinh(x)cosh(x)$.",
-     "answer": "cosh(x)^2 + sinh(x)^2",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sinh(",
-      "cosh(",
-      "tanh(",
-      "e^(",
-      "ln(",
-      "sqrt("
-     ],
-     "label": "$f'(x)$ =",
-     "show": "$cosh(x)^2 + sinh(x)^2$",
      "level": 2,
-     "explain": "$cosh(x)^2 + sinh(x)^2$"
+     "explain": "$cosh(x)^2 + sinh(x)^2$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = sinh(x)cosh(x)$.\n$f'(x)$ =",
+     "options": [
+      "$cosh(x)^2 + sinh(x)^2$",
+      "$cosh(x)^2 - sinh(x)^2$",
+      "$sinh(x)^2 + sinh(x)^2$",
+      "$cosh(x)^2 + sinh(x)^3$"
+     ],
+     "answer": 0
     },
     {
      "id": "D7",
@@ -291,24 +277,17 @@
     },
     {
      "id": "D12",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = e^xcosh(x)$.",
-     "answer": "e^xcosh(x) + e^xsinh(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sinh(",
-      "cosh(",
-      "tanh(",
-      "e^(",
-      "ln(",
-      "sqrt("
-     ],
-     "label": "$f'(x)$ =",
-     "show": "$e^xcosh(x) + e^xsinh(x)$",
      "level": 2,
-     "explain": "$e^xcosh(x) + e^xsinh(x)$"
+     "explain": "$e^xcosh(x) + e^xsinh(x)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = e^xcosh(x)$.\n$f'(x)$ =",
+     "options": [
+      "$e^xcosh(x) + e^xsinh(x)$",
+      "$e^xcosh(x) - e^xsinh(x)$",
+      "$e^xsinh(x) + e^xsinh(x)$",
+      "$e^xcosh(x)$"
+     ],
+     "answer": 0
     },
     {
      "id": "D13",
@@ -333,24 +312,17 @@
     },
     {
      "id": "D14",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = sinh(sqrt(x))$.",
-     "answer": "cosh(sqrt(x))/(2sqrt(x))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sinh(",
-      "cosh(",
-      "tanh(",
-      "e^(",
-      "ln(",
-      "sqrt("
-     ],
-     "label": "$f'(x)$ =",
-     "show": "$frac{cosh(sqrt(x))}{2sqrt(x)}$",
      "level": 2,
-     "explain": "$frac{cosh(sqrt(x))}{2sqrt(x)}$"
+     "explain": "$frac{cosh(sqrt(x))}{2sqrt(x)}$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = sinh(sqrt(x))$.\n$f'(x)$ =",
+     "options": [
+      "$frac{cosh(sqrt(x))}{2sqrt(x)}$",
+      "$frac{cosh((x))}{2sqrt(x)}$",
+      "$frac{(2sqrt(x))}{cosh(sqrt(x))}$",
+      "$-frac{cosh(sqrt(x))}{2sqrt(x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "V15",

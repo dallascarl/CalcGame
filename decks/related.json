@@ -919,19 +919,16 @@
        "explain": "Shrinking means negative."
       },
       {
-       "type": "expr",
-       "text": "$V = wdh$. Differentiate with respect to $t$.",
-       "answer": "w'*d*h+w*d'*h+w*d*h'",
-       "vars": [
-        "w",
-        "d",
-        "h",
-        "w'",
-        "d'",
-        "h'"
+       "explain": "$V' = w'dh + wd'h + wdh'$.",
+       "type": "mc",
+       "text": "$V = wdh$. Differentiate with respect to $t$.\n$V'$ =",
+       "options": [
+        "$w'·d·h+w·d'·h+w·d·h'$",
+        "$w'·d·h+w·d'·h-w·d·h'$",
+        "$w'·d·h+w·d·h+w·d·h'$",
+        "$w'·d·h-w·d'·h+w·d·h'$"
        ],
-       "label": "$V'$ =",
-       "explain": "$V' = w'dh + wd'h + wdh'$."
+       "answer": 0
       },
       {
        "type": "num",

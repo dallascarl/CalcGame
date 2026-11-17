@@ -470,45 +470,45 @@
     },
     {
      "id": "A21",
-     "type": "expr",
-     "text": "For $f(x) = x^2 - 2x + 3$, find $f(x + h)$. Multiply it out.",
-     "answer": "h^2 + 2hx - 2h + x^2 - 2x + 3",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$h^2 + 2hx - 2h + x^2 - 2x + 3$",
      "level": 1,
-     "explain": "Replace every $x$ with $(x + h)$: $h^2 + 2hx - 2h + x^2 - 2x + 3$."
+     "explain": "Replace every $x$ with $(x + h)$: $h^2 + 2hx - 2h + x^2 - 2x + 3$.",
+     "type": "mc",
+     "text": "For $f(x) = x^2 - 2x + 3$, find $f(x + h)$. Multiply it out.",
+     "options": [
+      "$h^2 + 2hx - 2h + x^2 - 2x + 3$",
+      "$h^2 + 2hx - 2h + x^2 + 2x + 3$",
+      "$h^1 + 2hx - 2h + x^2 - 2x + 3$",
+      "$h^2 + 2hx - 2h + x^2 - 2x$"
+     ],
+     "answer": 0
     },
     {
      "id": "A22",
-     "type": "expr",
-     "text": "For $f(x) = -x^2 + 2x$, find $f(x + h)$. Multiply it out.",
-     "answer": "-h^2 - 2hx + 2h - x^2 + 2x",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$-h^2 - 2hx + 2h - x^2 + 2x$",
      "level": 1,
-     "explain": "Replace every $x$ with $(x + h)$: $-h^2 - 2hx + 2h - x^2 + 2x$."
+     "explain": "Replace every $x$ with $(x + h)$: $-h^2 - 2hx + 2h - x^2 + 2x$.",
+     "type": "mc",
+     "text": "For $f(x) = -x^2 + 2x$, find $f(x + h)$. Multiply it out.",
+     "options": [
+      "$-h^2 - 2hx + 2h - x^2 + 2x$",
+      "$-h^2 - 2hx + 2h - x^2 - 2x$",
+      "$-h^2 - 2hx + 2h - x^2 + 1x$",
+      "$-h^2 - 2hx + 2h - x^2$"
+     ],
+     "answer": 0
     },
     {
      "id": "A23",
-     "type": "expr",
-     "text": "For $f(x) = -2x^2 + 5$, find $f(x + h)$. Multiply it out.",
-     "answer": "-2h^2 - 4hx - 2x^2 + 5",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$-2h^2 - 4hx - 2x^2 + 5$",
      "level": 1,
-     "explain": "Replace every $x$ with $(x + h)$: $-2h^2 - 4hx - 2x^2 + 5$."
+     "explain": "Replace every $x$ with $(x + h)$: $-2h^2 - 4hx - 2x^2 + 5$.",
+     "type": "mc",
+     "text": "For $f(x) = -2x^2 + 5$, find $f(x + h)$. Multiply it out.",
+     "options": [
+      "$-2h^2 - 4hx - 2x^2 + 5$",
+      "$-2h^2 + 4hx - 2x^2 + 5$",
+      "$-2h^2 - 4hx - 2x^3 + 5$",
+      "$- 4hx - 2x^2 + 5$"
+     ],
+     "answer": 0
     },
     {
      "id": "A24",
@@ -540,31 +540,31 @@
     },
     {
      "id": "A26",
-     "type": "expr",
-     "text": "For $f(x) = 3x^2 - 4x + 1$, find $f(x + h)$. Multiply it out.",
-     "answer": "3h^2 + 6hx - 4h + 3x^2 - 4x + 1",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
      "level": 1,
-     "explain": "Replace every $x$ with $(x + h)$: $3h^2 + 6hx - 4h + 3x^2 - 4x + 1$."
+     "explain": "Replace every $x$ with $(x + h)$: $3h^2 + 6hx - 4h + 3x^2 - 4x + 1$.",
+     "type": "mc",
+     "text": "For $f(x) = 3x^2 - 4x + 1$, find $f(x + h)$. Multiply it out.",
+     "options": [
+      "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+      "$3h^2 + 6hx - 4h - 3x^2 - 4x + 1$",
+      "$3h^2 + 5hx - 4h + 3x^2 - 4x + 1$",
+      "$3h^2 + 6hx - 4h + 3x - 4x + 1$"
+     ],
+     "answer": 0
     },
     {
      "id": "A27",
-     "type": "expr",
-     "text": "For $f(x) = 2x^2 - x$, find $f(x + h)$. Multiply it out.",
-     "answer": "2h^2 + 4hx - h + 2x^2 - x",
-     "vars": [
-      "x",
-      "h"
-     ],
-     "label": "$f(x + h)$ =",
-     "show": "$2h^2 + 4hx - h + 2x^2 - x$",
      "level": 1,
-     "explain": "Replace every $x$ with $(x + h)$: $2h^2 + 4hx - h + 2x^2 - x$."
+     "explain": "Replace every $x$ with $(x + h)$: $2h^2 + 4hx - h + 2x^2 - x$.",
+     "type": "mc",
+     "text": "For $f(x) = 2x^2 - x$, find $f(x + h)$. Multiply it out.",
+     "options": [
+      "$2h^2 + 4hx - h + 2x^2 - x$",
+      "$2h^2 + 4hx - h - 2x^2 - x$",
+      "$2h^1 + 4hx - h + 2x^2 - x$",
+      "$4hx - h + 2x^2 - x$"
+     ],
+     "answer": 0
     },
     {
      "id": "Q28",
@@ -933,16 +933,16 @@
      "steps": [
       {
        "id": "W51.1",
-       "type": "expr",
-       "text": "Replace $x$ with $x + h$ and multiply out.",
-       "answer": "-h^2 - 2hx + 2h - x^2 + 2x",
-       "vars": [
-        "x",
-        "h"
+       "work": "$f(x + h) = -h^2 - 2hx + 2h - x^2 + 2x$",
+       "type": "mc",
+       "text": "Replace $x$ with $x + h$ and multiply out.\n$f(x + h)$ =",
+       "options": [
+        "$-h^2 - 2hx + 2h - x^2 + 2x$",
+        "$-h^2 - 2hx - 2h - x^2 + 2x$",
+        "$-h^1 - 2hx + 2h - x^2 + 2x$",
+        "$-h^2 - 2hx + 2h - x^2$"
        ],
-       "label": "$f(x + h)$ =",
-       "show": "$-h^2 - 2hx + 2h - x^2 + 2x$",
-       "work": "$f(x + h) = -h^2 - 2hx + 2h - x^2 + 2x$"
+       "answer": 0
       },
       {
        "id": "W51.2",
@@ -1113,16 +1113,16 @@
      "steps": [
       {
        "id": "W54.1",
-       "type": "expr",
-       "text": "Replace $x$ with $x + h$ and multiply out.",
-       "answer": "3h^2 + 6hx - 4h + 3x^2 - 4x + 1",
-       "vars": [
-        "x",
-        "h"
+       "work": "$f(x + h) = 3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+       "type": "mc",
+       "text": "Replace $x$ with $x + h$ and multiply out.\n$f(x + h)$ =",
+       "options": [
+        "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
+        "$3h^2 + 6hx - 4h - 3x^2 - 4x + 1$",
+        "$3h^2 + 5hx - 4h + 3x^2 - 4x + 1$",
+        "$3h^2 + 6hx - 4h + 3x - 4x + 1$"
        ],
-       "label": "$f(x + h)$ =",
-       "show": "$3h^2 + 6hx - 4h + 3x^2 - 4x + 1$",
-       "work": "$f(x + h) = 3h^2 + 6hx - 4h + 3x^2 - 4x + 1$"
+       "answer": 0
       },
       {
        "id": "W54.2",
@@ -1173,16 +1173,16 @@
      "steps": [
       {
        "id": "W55.1",
-       "type": "expr",
-       "text": "Replace $x$ with $x + h$ and multiply out.",
-       "answer": "h^2 + 2hx + 3h + x^2 + 3x - 2",
-       "vars": [
-        "x",
-        "h"
+       "work": "$f(x + h) = h^2 + 2hx + 3h + x^2 + 3x - 2$",
+       "type": "mc",
+       "text": "Replace $x$ with $x + h$ and multiply out.\n$f(x + h)$ =",
+       "options": [
+        "$h^2 + 2hx + 3h + x^2 + 3x - 2$",
+        "$h^2 + 2hx + 3h - x^2 + 3x - 2$",
+        "$h^2 + 2hx + 3h + x^1 + 3x - 2$",
+        "$h^2 + 2hx + 3h + x^2 + 3x$"
        ],
-       "label": "$f(x + h)$ =",
-       "show": "$h^2 + 2hx + 3h + x^2 + 3x - 2$",
-       "work": "$f(x + h) = h^2 + 2hx + 3h + x^2 + 3x - 2$"
+       "answer": 0
       },
       {
        "id": "W55.2",
@@ -1353,16 +1353,16 @@
      "steps": [
       {
        "id": "W58.1",
-       "type": "expr",
-       "text": "Replace $x$ with $x + h$ and multiply out.",
-       "answer": "-h^2 - 2hx + 2h - x^2 + 2x",
-       "vars": [
-        "x",
-        "h"
+       "work": "$f(x + h) = -h^2 - 2hx + 2h - x^2 + 2x$",
+       "type": "mc",
+       "text": "Replace $x$ with $x + h$ and multiply out.\n$f(x + h)$ =",
+       "options": [
+        "$-h^2 - 2hx + 2h - x^2 + 2x$",
+        "$-h^2 - 2hx + 2h + x^2 + 2x$",
+        "$-h^2 - 2hx + 2h - x^2 + 1x$",
+        "$- 2hx + 2h - x^2 + 2x$"
        ],
-       "label": "$f(x + h)$ =",
-       "show": "$-h^2 - 2hx + 2h - x^2 + 2x$",
-       "work": "$f(x + h) = -h^2 - 2hx + 2h - x^2 + 2x$"
+       "answer": 0
       },
       {
        "id": "W58.2",

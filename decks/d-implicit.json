@@ -578,35 +578,17 @@
     },
     {
      "id": "B16",
-     "type": "expr",
-     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(xsin(y))$$",
-     "answer": "xy'cos(y) + sin(y)",
-     "vars": [
-      "x",
-      "y",
-      "y'"
-     ],
-     "keys": [
-      "y'",
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt("
-     ],
-     "label": "derivative =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.2
-      ],
-      "y": [
-       0.3,
-       1.2
-      ]
-     },
-     "show": "$xy'cos(y) + sin(y)$",
      "level": 1,
-     "explain": "$xy'cos(y) + sin(y)$. Every derivative of something with $y$ gets a $y'$."
+     "explain": "$xy'cos(y) + sin(y)$. Every derivative of something with $y$ gets a $y'$.",
+     "type": "mc",
+     "text": "$y$ is a function of $x$. Find\n$$frac{d}{dx}(xsin(y))$$\nderivative =",
+     "options": [
+      "$xy'cos(y) + sin(y)$",
+      "$xy'cos(y) - sin(y)$",
+      "$xy'sin(y) + sin(y)$",
+      "$xy'cos(y)$"
+     ],
+     "answer": 0
     },
     {
      "id": "P17",
@@ -1974,33 +1956,16 @@
      "steps": [
       {
        "id": "W54.1",
-       "type": "expr",
+       "work": "left: $2xyy' + y^2 - sin(x)$",
+       "type": "mc",
        "text": "Take $frac{d}{dx}$ of the left side.",
-       "answer": "2xyy' + y^2 - sin(x)",
-       "vars": [
-        "x",
-        "y",
-        "y'"
+       "options": [
+        "$2xyy' + y^2 - sin(x)$",
+        "$2xyy' + y^2 + sin(x)$",
+        "$2xyy' + y^2 - cos(x)$",
+        "$3xyy' + y^2 - sin(x)$"
        ],
-       "keys": [
-        "y'",
-        "sin(",
-        "cos(",
-        "tan("
-       ],
-       "label": "left =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ],
-        "y": [
-         0.3,
-         1.2
-        ]
-       },
-       "show": "$2xyy' + y^2 - sin(x)$",
-       "work": "left: $2xyy' + y^2 - sin(x)$"
+       "answer": 0
       },
       {
        "id": "W54.2",
@@ -2034,31 +1999,16 @@
       },
       {
        "id": "W54.3",
-       "type": "expr",
+       "work": "$y' = frac{sin(x) - y^2}{2xy - 1}$",
+       "type": "mc",
        "text": "Solve for $y'$.",
-       "answer": "(sin(x) - y^2)/(2xy - 1)",
-       "vars": [
-        "x",
-        "y"
+       "options": [
+        "$frac{sin(x) - y^2}{2xy - 1}$",
+        "$frac{sin(x) + y^2}{2xy - 1}$",
+        "$frac{cos(x) - y^2}{2xy - 1}$",
+        "$frac{sin(x) - y^2}{2xy - 2}$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ],
-        "y": [
-         0.3,
-         1.2
-        ]
-       },
-       "show": "$frac{sin(x) - y^2}{2xy - 1}$",
-       "work": "$y' = frac{sin(x) - y^2}{2xy - 1}$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -2071,34 +2021,16 @@
      "steps": [
       {
        "id": "W55.1",
-       "type": "expr",
+       "work": "left: $20x^4 + sec(y)^2y'$",
+       "type": "mc",
        "text": "Take $frac{d}{dx}$ of the left side.",
-       "answer": "20x^4 + sec(y)^2y'",
-       "vars": [
-        "x",
-        "y",
-        "y'"
+       "options": [
+        "$20x^4 + sec(y)^2y'$",
+        "$20x^4 - sec(y)^2y'$",
+        "$20x^4 + tan(y)^2y'$",
+        "$20x^3 + sec(y)^2y'$"
        ],
-       "keys": [
-        "y'",
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec("
-       ],
-       "label": "left =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ],
-        "y": [
-         0.3,
-         1.2
-        ]
-       },
-       "show": "$20x^4 + sec(y)^2y'$",
-       "work": "left: $20x^4 + sec(y)^2y'$"
+       "answer": 0
       },
       {
        "id": "W55.2",
@@ -2132,32 +2064,16 @@
       },
       {
        "id": "W55.3",
-       "type": "expr",
+       "work": "$y' = frac{20x^4 - 5}{2y - sec(y)^2}$",
+       "type": "mc",
        "text": "Solve for $y'$.",
-       "answer": "(20x^4 - 5)/(2y - sec(y)^2)",
-       "vars": [
-        "x",
-        "y"
+       "options": [
+        "$frac{20x^4 - 5}{2y - sec(y)^2}$",
+        "$frac{20x^4 + 5}{2y - sec(y)^2}$",
+        "$frac{20x^4 - 5}{2y - tan(y)^2}$",
+        "$frac{20x^4 - 5}{2y - sec(y)^1}$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sec("
-       ],
-       "label": "$y'$ =",
-       "ranges": {
-        "x": [
-         0.3,
-         1.2
-        ],
-        "y": [
-         0.3,
-         1.2
-        ]
-       },
-       "show": "$frac{20x^4 - 5}{2y - sec(y)^2}$",
-       "work": "$y' = frac{20x^4 - 5}{2y - sec(y)^2}$"
+       "answer": 0
       }
      ],
      "level": 3,

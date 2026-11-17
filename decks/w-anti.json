@@ -1003,36 +1003,17 @@
     },
     {
      "id": "B40",
-     "type": "expr",
-     "text": "Find $int e^x + x^e dx$.",
-     "answer": "e^x + x^(e + 1)/(e + 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt(",
-      "e^(",
-      "ln(",
-      "arctan(",
-      "arcsin(",
-      "sec(",
-      "e"
-     ],
-     "label": "$int e^x + x^e dx$ =",
-     "post": "$+ C$",
-     "ranges": {
-      "x": [
-       0.2,
-       0.9
-      ]
-     },
-     "upToC": true,
-     "show": "$e^x + x^(e + 1)/(e + 1)$",
      "level": 2,
-     "explain": "$e^x + x^(e + 1)/(e + 1) + C$"
+     "explain": "$e^x + x^(e + 1)/(e + 1) + C$",
+     "type": "mc",
+     "text": "Find $int e^x + x^e dx$.",
+     "options": [
+      "$e^x + frac{x^(e + 1)}{e + 1} + C$",
+      "$e^x + frac{x^(e + 1)}{e - 1} + C$",
+      "$e^x + frac{x^(e + 2)}{e + 1} + C$",
+      "$frac{(e + 1)}{e^x + x^(e + 1)} + C$"
+     ],
+     "answer": 0
     },
     {
      "id": "I41",

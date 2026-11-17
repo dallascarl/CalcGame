@@ -298,28 +298,17 @@
     },
     {
      "id": "B9",
-     "type": "expr",
-     "text": "Find the derivative of\n$$f(x) = arcsin(x) + x^3$$",
-     "answer": "1/sqrt(1 - x^2) + 3x^2",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$1/sqrt(1 - x^2) + 3x^2$",
      "level": 1,
-     "explain": "$1/sqrt(1 - x^2) + 3x^2$"
+     "explain": "$1/sqrt(1 - x^2) + 3x^2$",
+     "type": "mc",
+     "text": "Find the derivative of\n$$f(x) = arcsin(x) + x^3$$\n$f'(x)$ =",
+     "options": [
+      "$frac{1}{sqrt(1 - x^2)} + 3x^2$",
+      "$frac{1}{sqrt(1 - x^2)} - 3x^2$",
+      "$frac{1}{1 - x^2} + 3x^2$",
+      "$frac{1}{sqrt(1 - x^2)} + 3x^1$"
+     ],
+     "answer": 0
     },
     {
      "id": "B10",
@@ -991,28 +980,16 @@
       },
       {
        "id": "W40.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "2(1/sqrt(1 - 4x^2))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = 2(1/sqrt(1 - 4x^2))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$2(frac{1}{sqrt(1 - 4x^2)})$",
+        "$2(frac{1}{1 - 4x^2})$",
+        "$2(frac{2}{sqrt(1 - 4x^2)})$",
+        "$-2(frac{1}{sqrt(1 - 4x^2)})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$2(1/sqrt(1 - 4x^2))$",
-       "work": "$f'(x) = 2(1/sqrt(1 - 4x^2))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1075,28 +1052,16 @@
       },
       {
        "id": "W41.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(e^x)(1/(1 + e^(2x)))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (e^x)(1/(1 + e^(2x)))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$(e^x)(frac{1}{1 + e^(2x)})$",
+        "$(e^x)$",
+        "$(e^x)(frac{1}{2 + e^(2x)})$",
+        "$-(e^x)(frac{1}{1 + e^(2x)})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$(e^x)(1/(1 + e^(2x)))$",
-       "work": "$f'(x) = (e^x)(1/(1 + e^(2x)))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1159,28 +1124,16 @@
       },
       {
        "id": "W42.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(2x)(1/sqrt(1 - x^4))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (2x)(1/sqrt(1 - x^4))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$(2x)(frac{1}{sqrt(1 - x^4)})$",
+        "$(frac{1}{sqrt(1 - x^4)})$",
+        "$(2x)(frac{1}{1 - x^4})$",
+        "$(2x)(frac{1}{sqrt(2 - x^4)})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$(2x)(1/sqrt(1 - x^4))$",
-       "work": "$f'(x) = (2x)(1/sqrt(1 - x^4))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1243,28 +1196,16 @@
       },
       {
        "id": "W43.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(1/(2sqrt(x)))(1/(1 + x))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (1/(2sqrt(x)))(1/(1 + x))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$(frac{1}{2sqrt(x)})(frac{1}{1 + x})$",
+        "$(frac{1}{1 + x})$",
+        "$(frac{1}{2(x)})(frac{1}{1 + x})$",
+        "$(frac{2}{2sqrt(x)})(frac{1}{1 + x})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$(1/(2sqrt(x)))(1/(1 + x))$",
-       "work": "$f'(x) = (1/(2sqrt(x)))(1/(1 + x))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1327,28 +1268,16 @@
       },
       {
        "id": "W44.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "3(-1/sqrt(1 - 9x^2))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$3(-frac{1}{sqrt(1 - 9x^2)})$",
+        "$3(-frac{1}{1 - 9x^2})$",
+        "$3(-frac{1}{sqrt(2 - 9x^2)})$",
+        "$-3(-frac{1}{sqrt(1 - 9x^2)})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$3(-1/sqrt(1 - 9x^2))$",
-       "work": "$f'(x) = 3(-1/sqrt(1 - 9x^2))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1411,28 +1340,16 @@
       },
       {
        "id": "W45.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(3x^2)(1/(1 + x^6))",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (3x^2)(1/(1 + x^6))$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$(3x^2)(frac{1}{1 + x^6})$",
+        "$(3x^2)$",
+        "$(3x^2)(frac{1}{1 + x^7})$",
+        "$-(3x^2)(frac{1}{1 + x^6})$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$(3x^2)(1/(1 + x^6))$",
-       "work": "$f'(x) = (3x^2)(1/(1 + x^6))$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1495,28 +1412,16 @@
       },
       {
        "id": "W46.3",
-       "type": "expr",
-       "text": "Multiply.",
-       "answer": "(1/sqrt(1 - x^2/4))/2",
-       "vars": [
-        "x"
+       "work": "$f'(x) = (1/sqrt(1 - x^2/4))/2$",
+       "type": "mc",
+       "text": "Multiply.\n$f'(x)$ =",
+       "options": [
+        "$frac{frac{1}{sqrt(1 - frac{x^2}{4})}}{2}$",
+        "$frac{frac{1}{1 - frac{x^2}{4}}}{2}$",
+        "$frac{frac{1}{sqrt(1 - frac{x^3}{4})}}{2}$",
+        "$frac{2}{(frac{1}{sqrt(1 - frac{x^2}{4})})}$"
        ],
-       "keys": [
-        "sqrt(",
-        "arcsin(",
-        "arctan(",
-        "arccos(",
-        "e^("
-       ],
-       "label": "$f'(x)$ =",
-       "ranges": {
-        "x": [
-         0.05,
-         0.45
-        ]
-       },
-       "show": "$frac{1/sqrt(1 - x^2/4)}{2}$",
-       "work": "$f'(x) = (1/sqrt(1 - x^2/4))/2$"
+       "answer": 0
       }
      ],
      "level": 3,
@@ -1524,165 +1429,87 @@
     },
     {
      "id": "C47",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = xarcsin(x)$.",
-     "answer": "arcsin(x) + x/sqrt(1 - x^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$arcsin(x) + x/sqrt(1 - x^2)$",
      "level": 3,
-     "explain": "$arcsin(x) + x/sqrt(1 - x^2)$"
+     "explain": "$arcsin(x) + x/sqrt(1 - x^2)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = xarcsin(x)$.\n$f'(x)$ =",
+     "options": [
+      "$arcsin(x) + frac{x}{sqrt(1 - x^2)}$",
+      "$arcsin(x) - frac{x}{sqrt(1 - x^2)}$",
+      "$arcsin(x) + frac{x}{1 - x^2}$",
+      "$arcsin(x) + frac{x}{sqrt(2 - x^2)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "C48",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = x^2arctan(x)$.",
-     "answer": "2xarctan(x) + x^2/(1 + x^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$2xarctan(x) + x^2/(1 + x^2)$",
      "level": 3,
-     "explain": "$2xarctan(x) + x^2/(1 + x^2)$"
+     "explain": "$2xarctan(x) + x^2/(1 + x^2)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = x^2arctan(x)$.\n$f'(x)$ =",
+     "options": [
+      "$2xarctan(x) + frac{x^2}{1 + x^2}$",
+      "$2xarctan(x) + frac{x^2}{1 - x^2}$",
+      "$2xarctan(x) + frac{x^2}{1 + x^3}$",
+      "$frac{(1 + x^2)}{2xarctan(x) + x^2}$"
+     ],
+     "answer": 0
     },
     {
      "id": "C49",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = arctan(x)/x$.",
-     "answer": "(x/(1 + x^2) - arctan(x))/x^2",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$frac{x/(1 + x^2) - arctan(x)}{x^2}$",
      "level": 3,
-     "explain": "$(x/(1 + x^2) - arctan(x))/x^2$"
+     "explain": "$(x/(1 + x^2) - arctan(x))/x^2$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = arctan(x)/x$.\n$f'(x)$ =",
+     "options": [
+      "$frac{frac{x}{1 + x^2} - arctan(x)}{x^2}$",
+      "$frac{frac{x}{1 + x^2} + arctan(x)}{x^2}$",
+      "$frac{frac{x}{1 + x^2} - arcsin(x)}{x^2}$",
+      "$frac{frac{x}{1 + x^3} - arctan(x)}{x^2}$"
+     ],
+     "answer": 0
     },
     {
      "id": "C50",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = e^xarctan(x)$.",
-     "answer": "e^xarctan(x) + e^x/(1 + x^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$e^xarctan(x) + e^x/(1 + x^2)$",
      "level": 3,
-     "explain": "$e^xarctan(x) + e^x/(1 + x^2)$"
+     "explain": "$e^xarctan(x) + e^x/(1 + x^2)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = e^xarctan(x)$.\n$f'(x)$ =",
+     "options": [
+      "$e^xarctan(x) + frac{e^x}{1 + x^2}$",
+      "$e^xarctan(x) + frac{e^x}{1 - x^2}$",
+      "$e^xarctan(x) + frac{e^x}{2 + x^2}$",
+      "$frac{(1 + x^2)}{e^xarctan(x) + e^x}$"
+     ],
+     "answer": 0
     },
     {
      "id": "C51",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = arcsin(x)^2$.",
-     "answer": "2arcsin(x)/sqrt(1 - x^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$frac{2arcsin(x)}{sqrt(1 - x^2)}$",
      "level": 3,
-     "explain": "$2arcsin(x)/sqrt(1 - x^2)$"
+     "explain": "$2arcsin(x)/sqrt(1 - x^2)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = arcsin(x)^2$.\n$f'(x)$ =",
+     "options": [
+      "$2frac{arcsin(x)}{sqrt(1 - x^2)}$",
+      "$2frac{arcsin(x)}{sqrt(1 + x^2)}$",
+      "$2frac{arcsin(x)}{1 - x^2}$",
+      "$2frac{arcsin(x)}{sqrt(1 - x^1)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "C52",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = 2^(arctan(x))$.",
-     "answer": "2^(arctan(x))ln(2)/(1 + x^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "ln("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.45
-      ]
-     },
-     "show": "$frac{2^(arctan(x))ln(2)}{1 + x^2}$",
      "level": 3,
-     "explain": "$2^(arctan(x))ln(2)/(1 + x^2)$"
+     "explain": "$2^(arctan(x))ln(2)/(1 + x^2)$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = 2^(arctan(x))$.\n$f'(x)$ =",
+     "options": [
+      "$2^(arctan(x))frac{ln(2)}{1 + x^2}$",
+      "$2^(arctan(x))frac{ln(2)}{1 - x^2}$",
+      "$2^(arctan(x))frac{e^(2)}{1 + x^2}$",
+      "$2^(arctan(x))frac{ln(2)}{1 + x^1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "G53",
@@ -1826,59 +1653,31 @@
     },
     {
      "id": "G58",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = arctan(e^(2x))$.",
-     "answer": "2e^(2x)/(1 + e^(4x))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "sin(",
-      "cos("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.18
-      ]
-     },
-     "show": "$frac{2e^(2x)}{1 + e^(4x)}$",
      "level": 3,
-     "explain": "$frac{2e^(2x)}{1 + e^(4x)}$"
+     "explain": "$frac{2e^(2x)}{1 + e^(4x)}$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = arctan(e^(2x))$.\n$f'(x)$ =",
+     "options": [
+      "$frac{2e^(2x)}{1 + e^(4x)}$",
+      "$frac{2e^(2x)}{1 - e^(4x)}$",
+      "$frac{2e^(2x)}{1 + e^(3x)}$",
+      "$frac{(1 + e^(4x))}{2e^(2x)}$"
+     ],
+     "answer": 0
     },
     {
      "id": "G59",
-     "type": "expr",
-     "text": "Find the derivative of\n$$f(x) = arcsin(sqrt(x))$$",
-     "answer": "1/(2sqrt(x)sqrt(1 - x))",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "sin(",
-      "cos("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.18
-      ]
-     },
-     "show": "$frac{1}{2sqrt(x)sqrt(1 - x)}$",
      "level": 2,
-     "explain": "$frac{1}{2sqrt(x)sqrt(1 - x)}$"
+     "explain": "$frac{1}{2sqrt(x)sqrt(1 - x)}$",
+     "type": "mc",
+     "text": "Find the derivative of\n$$f(x) = arcsin(sqrt(x))$$\n$f'(x)$ =",
+     "options": [
+      "$frac{1}{2sqrt(x)sqrt(1 - x)}$",
+      "$frac{1}{2sqrt(x)(1 - x)}$",
+      "$frac{1}{2sqrt(x)sqrt(2 - x)}$",
+      "$frac{(2sqrt(x)sqrt(1 - x))}{1}$"
+     ],
+     "answer": 0
     },
     {
      "id": "G60",
@@ -1938,31 +1737,17 @@
     },
     {
      "id": "G62",
-     "type": "expr",
-     "text": "Find the derivative of $f(x) = arctan(sin(x))$.",
-     "answer": "cos(x)/(1 + sin(x)^2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sqrt(",
-      "arcsin(",
-      "arctan(",
-      "arccos(",
-      "e^(",
-      "sin(",
-      "cos("
-     ],
-     "label": "$f'(x)$ =",
-     "ranges": {
-      "x": [
-       0.05,
-       0.18
-      ]
-     },
-     "show": "$frac{cos(x)}{1 + sin(x)^2}$",
      "level": 3,
-     "explain": "$frac{cos(x)}{1 + sin(x)^2}$"
+     "explain": "$frac{cos(x)}{1 + sin(x)^2}$",
+     "type": "mc",
+     "text": "Find the derivative of $f(x) = arctan(sin(x))$.\n$f'(x)$ =",
+     "options": [
+      "$frac{cos(x)}{1 + sin(x)^2}$",
+      "$frac{cos(x)}{1 - sin(x)^2}$",
+      "$frac{cos(x)}{1 + cos(x)^2}$",
+      "$frac{cos(x)}{1 + sin(x)^3}$"
+     ],
+     "answer": 0
     },
     {
      "id": "S63",

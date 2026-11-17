@@ -141,21 +141,18 @@
      "level": 1
     },
     {
-     "type": "expr",
-     "text": "Total surface area of a closed cylinder (radius $r$, height $h$):",
-     "answer": "2*pi*r^2+2*pi*r*h",
-     "vars": [
-      "r",
-      "h"
-     ],
-     "label": "=",
-     "show": "$2pir^2+2pirh$",
-     "keys": [
-      "pi"
-     ],
-     "explain": "Standard formula: $2pir^2+2pirh$.",
      "id": "F9",
-     "level": 1
+     "level": 1,
+     "explain": "Standard formula: $2pir^2+2pirh$.",
+     "type": "mc",
+     "text": "Total surface area of a closed cylinder (radius $r$, height $h$):",
+     "options": [
+      "$2·pi·r^2+2·pi·r·h$",
+      "$2·pi·r^2-2·pi·r·h$",
+      "$2·pi·r^3+2·pi·r·h$",
+      "$2·pi·r^2$"
+     ],
+     "answer": 0
     },
     {
      "type": "expr",

@@ -1732,32 +1732,16 @@
       },
       {
        "id": "S48.3",
-       "type": "expr",
-       "text": "Integrate, then put $x$ back.",
-       "answer": "(2/3)(x^2 + 5)^(3/2)",
-       "vars": [
-        "x"
+       "work": "$(2/3)(x^2 + 5)^(3/2) + C$",
+       "type": "mc",
+       "text": "Integrate, then put $x$ back.\nanswer =",
+       "options": [
+        "$(frac{2}{3})(x^2 + 5)^(frac{3}{2}) + C$",
+        "$(x^2 + 5)^(frac{3}{2}) + C$",
+        "$(frac{2}{3})(x^2 + 5)^(frac{2}{2}) + C$",
+        "$-(frac{2}{3})(x^2 + 5)^(frac{3}{2}) + C$"
        ],
-       "keys": [
-        "sin(",
-        "cos(",
-        "tan(",
-        "sqrt(",
-        "e^(",
-        "ln(",
-        "arctan("
-       ],
-       "label": "answer =",
-       "post": "$+ C$",
-       "ranges": {
-        "x": [
-         0.2,
-         1.2
-        ]
-       },
-       "upToC": true,
-       "show": "$(2/3)(x^2 + 5)^(3/2)$",
-       "work": "$(2/3)(x^2 + 5)^(3/2) + C$"
+       "answer": 0
       }
      ],
      "level": 3,

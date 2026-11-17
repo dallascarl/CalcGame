@@ -634,36 +634,17 @@
     },
     {
      "id": "ANTB40",
-     "type": "expr",
-     "text": "Find $int e^x + x^e dx$.",
-     "answer": "e^x + x^(e + 1)/(e + 1)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt(",
-      "e^(",
-      "ln(",
-      "arctan(",
-      "arcsin(",
-      "sec(",
-      "e"
-     ],
-     "label": "$int e^x + x^e dx$ =",
-     "post": "$+ C$",
-     "ranges": {
-      "x": [
-       0.2,
-       0.9
-      ]
-     },
-     "upToC": true,
-     "show": "$e^x + x^(e + 1)/(e + 1)$",
      "explain": "$e^x + x^(e + 1)/(e + 1) + C$",
-     "topic": "Antiderivatives"
+     "topic": "Antiderivatives",
+     "type": "mc",
+     "text": "Find $int e^x + x^e dx$.",
+     "options": [
+      "$e^x + frac{x^(e + 1)}{e + 1} + C$",
+      "$e^x - frac{x^(e + 1)}{e + 1} + C$",
+      "$e^x + frac{x^(e + 2)}{e + 1} + C$",
+      "$frac{(e + 1)}{e^x + x^(e + 1)} + C$"
+     ],
+     "answer": 0
     },
     {
      "id": "ANTB37",
@@ -1106,30 +1087,17 @@
     },
     {
      "id": "FTCC23",
-     "type": "expr",
-     "text": "Find\n$$frac{d}{dx} int[0,sin(x)] e^t dt$$",
-     "answer": "e^(sin(x))cos(x)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt(",
-      "e^(",
-      "ln("
-     ],
-     "label": "derivative =",
-     "ranges": {
-      "x": [
-       0.3,
-       1.2
-      ]
-     },
-     "show": "$e^(sin(x))cos(x)$",
      "explain": "$f(g(x))·g'(x) = e^(sin(x))cos(x)$",
-     "topic": "Fundamental Theorem"
+     "topic": "Fundamental Theorem",
+     "type": "mc",
+     "text": "Find\n$$frac{d}{dx} int[0,sin(x)] e^t dt$$\nderivative =",
+     "options": [
+      "$e^(sin(x))cos(x)$",
+      "$e^(cos(x))cos(x)$",
+      "$-e^(sin(x))cos(x)$",
+      "$e^(sin(x))sin(x)$"
+     ],
+     "answer": 0
     },
     {
      "id": "FTCW48",
@@ -1313,34 +1281,17 @@
     },
     {
      "id": "INDI19",
-     "type": "expr",
-     "text": "Find\n$$int (1 - x)/sqrt(x) dx$$",
-     "answer": "2sqrt(x) - (2/3)x^(3/2)",
-     "vars": [
-      "x"
-     ],
-     "keys": [
-      "sin(",
-      "cos(",
-      "tan(",
-      "sqrt(",
-      "e^(",
-      "ln(",
-      "arctan(",
-      "sec("
-     ],
-     "label": "$int (1 - x)/sqrt(x) dx$ =",
-     "post": "$+ C$",
-     "ranges": {
-      "x": [
-       0.2,
-       1.2
-      ]
-     },
-     "upToC": true,
-     "show": "$2sqrt(x) - (2/3)x^(3/2)$",
      "explain": "$2sqrt(x) - (2/3)x^(3/2) + C$",
-     "topic": "Net change"
+     "topic": "Net change",
+     "type": "mc",
+     "text": "Find\n$$int (1 - x)/sqrt(x) dx$$",
+     "options": [
+      "$2sqrt(x) - (frac{2}{3})x^(frac{3}{2}) + C$",
+      "$2sqrt(x) + (frac{2}{3})x^(frac{3}{2}) + C$",
+      "$2(x) - (frac{2}{3})x^(frac{3}{2}) + C$",
+      "$2sqrt(x) - (frac{2}{3})x^(frac{4}{2}) + C$"
+     ],
+     "answer": 0
     },
     {
      "id": "INDN23",

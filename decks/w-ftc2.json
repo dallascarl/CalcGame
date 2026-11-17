@@ -11,7 +11,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "**The Fundamental Theorem, Part 2:** if $F$ is any antiderivative of $f$, then $int[a,b] f(x) dx = F(b) - F(a)$. No more rectangles! For $int[0,2] x^2 dx$, which $F$ can you use?",
+    "text": "**The Fundamental Theorem, Part 2:** if $F$ is any antiderivative of $f$, then\n$$int[a,b] f(x) dx = F(b) - F(a)$$\nNo more rectangles! For $int[0,2] x^2 dx$, which $F$ can you use?",
     "options": [
      "$F(x) = frac{x^3}{3}$",
      "$F(x) = 2x$",

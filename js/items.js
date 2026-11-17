@@ -87,7 +87,7 @@ function pexp(s){
    (exactly how the answer is read, so 1/2x shows ½·x). An unfinished bottom shows an empty box. */
 function texprHTML(toks){
   let i=0; const n=toks.length,BOX='<i class="ph">□</i>';
-  const bare=h=>/^\(.*\)$/.test(h)?h.slice(1,-1):h,fr=(a,b)=>'<span class="frac"><span>'+bare(a)+'</span><span>'+bare(b)+'</span></span>';
+  const bare=h=>/^\(.*\)$/.test(h)?h.slice(1,-1):h,fr=(a,b,keep)=>'<span class="frac"><span>'+bare(a)+'</span><span>'+(keep?b:bare(b))+'</span></span>';
   const isOpen=t=>t==='('||/\($/.test(t);
   function group(strip){ /* from an opening token to its matching ) */
     const t=toks[i++],name=t==='('?'':t==='e^('?'e^':t.slice(0,-1); const inner=seq(true); let closed=false;
@@ -113,7 +113,7 @@ function texprHTML(toks){
     while(i<n){
       const t=toks[i];
       if(t===')'){ if(inParen)break; out.push({h:')',op:true});i++;continue; }
-      if(t==='/'){i++;const prev=out.length&&!out[out.length-1].op?out.pop().h:BOX,d=operand(false);out.push({h:fr(prev,d==null?BOX:d),op:false});continue;}
+      if(t==='/'){i++;const prev=out.length&&!out[out.length-1].op?out.pop().h:BOX,d=operand(false);out.push({h:fr(prev,d==null?BOX:d,i>=n&&toks[n-1]===')'),op:false});continue;}
       if(t==='+'||t==='*'||(t==='-'&&out.length&&!out[out.length-1].op)){out.push({h:t==='+'?' + ':t==='*'?'·':' − ',op:true});i++;continue;}
       const o=operand(false); if(o==null){out.push({h:esc(t),op:true});i++;} else out.push({h:o,op:false});
     }
@@ -130,7 +130,7 @@ const keyRow=(ks,cls)=>ks.map(k=>k==null?'<span></span>':'<button class="key'+(c
 
 function mountExpr(q,ix,onChange){
   const vars=q.vars||['x'],answers=[].concat(q.answer); let toks=[],locked=false;
-  const top=[...vars,...(q.keys||[])];
+  const top=[...new Set([...vars,...(q.keys||[])])];
   /* "template": "f([]) = ([])^2 - 3([])" shows the formula with a box for every [], and whatever the student types appears in all of them */
   const tparts=q.template?String(q.template).split('[]'):null;
   /* "maxLen": the answer must also be about as short as the key (so retyping the unsimplified expression does not count) */
@@ -150,7 +150,12 @@ function mountExpr(q,ix,onChange){
   const show=()=>{box.innerHTML=toks.length?'<span>'+texprHTML(toks)+'</span>':'?';box.classList.toggle('empty',!toks.length);
     if(tparts){const b='<span class="tbox'+(toks.length?'':' empty')+'">'+(toks.length?texprHTML(toks):'&nbsp;')+'</span>';
       $('.tmpl',ix).innerHTML='<span class="math">'+tparts.map(t=>mpart(t)).join(b)+'</span>';}
-    let m='';if(toks.length)try{xcompile(str(),vars);}catch(e){m=e.message;} err.hidden=!m||!toks.length; err.textContent=m?'Not finished yet: '+m+'.':'';};
+    let m='';if(toks.length)try{xcompile(str(),vars);}catch(e){m=e.message;}
+    /* inside an open exponent or function: say how to get out, and light up the ) key */
+    const open=[];toks.forEach((t,k)=>{if(t==='('||/\($/.test(t))open.push(t==='('&&toks[k-1]==='^'?'^(':t);else if(t===')')open.pop();});
+    const inn=open[open.length-1],tip=!inn?'':inn==='e^('||inn==='^('?'You are typing in the exponent. Tap ) to come back down.':inn!=='('?'You are inside '+inn+' ). Tap ) to step out.':'';
+    const rp=ix.querySelector('.key[data-k=")"]'); if(rp)rp.classList.toggle('lit',!!tip);
+    err.classList.toggle('tip',!m&&!!tip); err.textContent=m&&toks.length?'Not finished yet: '+m+'.':tip; err.hidden=false; err.classList.toggle('off',!err.textContent);};
   const press=k=>{ if(locked)return;
     if(k==='back')toks.pop(); else if(k==='clear')toks=[];
     else{
@@ -213,7 +218,7 @@ function mountInterval(q,ix,onChange){
   const show=()=>{
     box.innerHTML='<span>'+(none?esc(q.noneText):toks.length?pint(str()):'?')+'</span>'; box.classList.toggle('empty',!toks.length&&!none);
     let m='';if(toks.length&&!none)try{parseIntervals(str());}catch(e){m=e.message;}
-    err.hidden=!m; err.textContent=m?'Not finished yet: '+m+'.':''; if(nb)nb.setAttribute('aria-pressed',none);
+    err.hidden=false; err.classList.toggle('off',!m); err.textContent=m?'Not finished yet: '+m+'.':''; if(nb)nb.setAttribute('aria-pressed',none);
   };
   const press=k=>{ if(locked)return; none=false;
     if(k==='back')toks.pop(); else if(k==='clear')toks=[]; else toks.push(k==='a/b'?'/':k); show();onChange(); };

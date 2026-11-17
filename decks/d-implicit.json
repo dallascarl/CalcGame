@@ -2498,27 +2498,20 @@
    {
     "id": "L4",
     "type": "steps",
-    "text": "Find $frac{dy}{dx}$ for $x^3 sin(y) + y = 4x + 3$.",
+    "text": "Find $frac{dy}{dx}$ for\n$$x^3 sin(y) + y = 4x + 3$$",
     "steps": [
      {
       "id": "L4.1",
-      "type": "expr",
-      "text": "Left side: product rule on $x^3 sin(y)$, plus the derivative of $y$.",
-      "answer": "3x^2sin(y) + x^3cos(y)y' + y'",
-      "vars": [
-       "x",
-       "y",
-       "y'"
+      "type": "mc",
+      "text": "Differentiate the left side: the product rule on $x^3 sin(y)$, plus the derivative of $y$.",
+      "options": [
+       "$3x^2 sin(y) + x^3 cos(y) y' + y'$",
+       "$3x^2 cos(y) y' + y'$",
+       "$3x^2 sin(y) + x^3 cos(y) + 1$",
+       "$3x^2 sin(y) + x^3 cos(y) y'$"
       ],
-      "keys": [
-       "y'",
-       "sin(",
-       "cos(",
-       "tan("
-      ],
-      "label": "left =",
-      "show": "$3x^2sin(y) + x^3cos(y)y' + y'$",
-      "hint": "$3x^2 sin(y) + x^3·cos(y)y' + y'$",
+      "answer": 0,
+      "hint": "Every time you differentiate something with $y$ in it, a $y'$ appears.",
       "work": "$3x^2 sin(y) + x^3 cos(y)y' + y' = 4$"
      },
      {
@@ -2537,30 +2530,17 @@
      },
      {
       "id": "L4.3",
-      "type": "expr",
-      "text": "Divide.",
-      "answer": "(4 - 3x^2sin(y))/(x^3cos(y) + 1)",
-      "vars": [
-       "x",
-       "y"
+      "type": "bank",
+      "text": "Divide.\ny′ = frac{___}{___}",
+      "blanks": [
+       "$4 - 3x^2 sin(y)$",
+       "$x^3 cos(y) + 1$"
       ],
-      "keys": [
-       "sin(",
-       "cos("
+      "distractors": [
+       "$4$",
+       "$x^3 cos(y)$"
       ],
-      "label": "$y'$ =",
-      "ranges": {
-       "x": [
-        0.2,
-        0.8
-       ],
-       "y": [
-        0.2,
-        0.8
-       ]
-      },
-      "show": "$frac{4 - 3x^2sin(y)}{x^3cos(y) + 1}$",
-      "hint": "Put ( ) around the top and around the bottom.",
+      "hint": "Divide both sides by what multiplies $y'$.",
       "work": "$y' = frac{4 - 3x^2 sin(y)}{x^3 cos(y) + 1}$"
      }
     ]
@@ -2568,16 +2548,16 @@
    {
     "id": "L5",
     "type": "mc",
-    "text": "Implicit differentiation also proves the power rule for fractional powers. What is\n$$frac{d}{dx} x^(2/3)$$",
+    "text": "Back to the circle $x^2 + y^2 = 25$, where $y' = -frac{x}{y}$. At which point is the tangent line **vertical**?",
     "options": [
-     "$frac{2}{3}x^(-1/3)$",
-     "$frac{2}{3}x^(1/3)$",
-     "$frac{3}{2}x^(1/2)$",
-     "$x^(-1/3)$"
+     "$(5, 0)$",
+     "$(0, 5)$",
+     "$(3, 4)$",
+     "$(4, 3)$"
     ],
     "answer": 0,
-    "hint": "Same power rule: bring down $frac{2}{3}$ and subtract 1.",
-    "explain": "$frac{2}{3} - 1 = -frac{1}{3}$"
+    "hint": "A vertical line has no slope. Where is $-frac{x}{y}$ undefined?",
+    "explain": "At $(5, 0)$ the bottom is 0, so the slope is undefined and the tangent is vertical. Notice that $y'$ needed both coordinates of the point."
    }
   ]
  }

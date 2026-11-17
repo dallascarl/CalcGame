@@ -1716,7 +1716,7 @@
     "id": "L1",
     "type": "dtrace",
     "title": "A slope at every point",
-    "text": "Every point on $f$ has a slope. Slide along $f(x) = x^3 - 3x$. Each slope you visit drops a dot on the lower graph.",
+    "text": "Every point on $f$ has a slope. Slide along $f(x) = x^3 - 3x$. Each slope you visit drops a dot on the second graph.",
     "fn": "x^3-3*x",
     "window": [
      -2.2,

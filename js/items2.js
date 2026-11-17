@@ -42,10 +42,13 @@ function mountSecant(it,ix,onChange,host){
 function mountDtrace(it,ix,onChange,host){
   const F=fn(it.fn),W=it.window,DW=[W[0],W[1]].concat(it.dwindow||[W[2],W[3]]),bins=40,hit=new Set(),dots=[];
   let x=it.start==null?W[0]+(W[1]-W[0])*0.05:it.start,done=false;
-  const g1=document.createElement('div');g1.className='gwrap gw-s';host.insertBefore(g1,ix);
-  const cap1=document.createElement('p');cap1.className='gw-cap';cap1.innerHTML=fmt('the graph of $f$');host.insertBefore(cap1,ix);
-  const g2=document.createElement('div');g2.className='gwrap gw-s';host.insertBefore(g2,ix);
-  const cap2=document.createElement('p');cap2.className='gw-cap';cap2.innerHTML=fmt("the graph of $f'$: one dot for each slope you visit");host.insertBefore(cap2,ix);
+  /* the two graphs sit side by side so both are in view with the slider, even on a phone */
+  const pair=document.createElement('div');pair.className='dt-pair';host.insertBefore(pair,ix);
+  const c1=document.createElement('div'),c2=document.createElement('div');pair.append(c1,c2);
+  const g1=document.createElement('div');g1.className='gwrap gw-s';c1.append(g1);
+  const cap1=document.createElement('p');cap1.className='gw-cap';cap1.innerHTML=fmt('the graph of $f$');c1.append(cap1);
+  const g2=document.createElement('div');g2.className='gwrap gw-s';c2.append(g2);
+  const cap2=document.createElement('p');cap2.className='gw-cap';cap2.innerHTML=fmt("its slopes: the graph of $f'$");c2.append(cap2);
   ix.innerHTML='<label class="slide-l" for="dtx">'+fmt(it.pickText||'Drag to slide along the curve')+'</label><input type="range" id="dtx" min="'+W[0]+'" max="'+W[1]+'" step="'+((W[1]-W[0])/600)+'" value="'+x+'">'+
     '<div class="read lread" id="dtr"></div><div class="fb" id="dtfb" hidden></div>';
   const r=v=>Math.round(Math.max(-9999,Math.min(9999,v))*10)/10;

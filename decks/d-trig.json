@@ -59,19 +59,6 @@
      "explain": "It is $-sin(x)$: cosine starts falling right after $x = 0$."
     },
     {
-     "id": "T4",
-     "type": "mc",
-     "text": "Which limit is the key fact behind\n$$frac{d}{dx} sin(x) = cos(x)$$",
-     "options": [
-      "$lim[x->0] frac{sin(x)}{x} = 1$",
-      "$lim[x->0] sin(x) = 1$",
-      "$lim[x->infty] frac{sin(x)}{x} = 1$",
-      "$lim[x->0] frac{x}{sin(x)} = 0$"
-     ],
-     "answer": 0,
-     "explain": "It comes from the definition of the derivative with $sin(x + h)$."
-    },
-    {
      "id": "T5",
      "type": "mc",
      "text": "What is\n$$frac{d^47}{dx^47} cos(x)$$",
@@ -2191,7 +2178,7 @@
     "id": "L1",
     "type": "dtrace",
     "title": "The slopes of sine",
-    "text": "Slide along $f(x) = sin(x)$ and watch its slopes land on the lower graph. Does the new graph look familiar?",
+    "text": "Slide along $f(x) = sin(x)$ and watch its slopes land on the second graph. Does the new graph look familiar?",
     "fn": "sin(x)",
     "window": [
      -6.4,
@@ -2210,27 +2197,34 @@
    },
    {
     "id": "L2",
-    "type": "mc",
-    "text": "At $x = 0$, $cos(x)$ is at its top (flat), then it falls. Which graph has exactly those slopes?",
-    "options": [
-     "$-sin(x)$",
-     "$sin(x)$",
-     "$cos(x)$",
-     "$-cos(x)$"
+    "type": "dtrace",
+    "title": "The slopes of cosine",
+    "text": "Now $f(x) = cos(x)$. Slide again. At $x = 0$ the curve is at its peak, so the slope is 0. Then it goes **downhill**.",
+    "fn": "cos(x)",
+    "window": [
+     -6.4,
+     6.4,
+     -1.6,
+     1.6
     ],
-    "answer": 0,
-    "hint": "The slope starts at 0 and then goes negative. Which graph is 0 at $x = 0$ and then negative?",
-    "explain": "$frac{d}{dx} cos(x) = -sin(x)$"
+    "dwindow": [
+     -1.6,
+     1.6
+    ],
+    "xstep": 2,
+    "ystep": 1,
+    "dstep": 1,
+    "after": "The slopes of $cos(x)$ trace out an upside-down sine. So $frac{d}{dx} cos(x) = -sin(x)$. Mind the minus sign."
    },
    {
     "id": "L3",
     "type": "steps",
-    "text": "Trig functions follow all the same rules. Find $frac{dy}{dx}$ for $y = x^2 sin(x)$ with the product rule.",
+    "text": "Trig functions follow all the same rules. Use the product rule on\n$$y = x^2 sin(x)$$",
     "steps": [
      {
       "id": "L3.1",
       "type": "expr",
-      "text": "$g = x^2$",
+      "text": "",
       "answer": "2x",
       "vars": [
        "x"
@@ -2241,7 +2235,7 @@
        "tan(",
        "sec("
       ],
-      "label": "$g'$ =",
+      "label": "$g = x^2$, so $g'$ =",
       "show": "$2x$",
       "hint": "Power rule.",
       "work": "$g' = 2x$"
@@ -2249,7 +2243,7 @@
      {
       "id": "L3.2",
       "type": "expr",
-      "text": "$k = sin(x)$",
+      "text": "",
       "answer": "cos(x)",
       "vars": [
        "x"
@@ -2260,28 +2254,66 @@
        "tan(",
        "sec("
       ],
-      "label": "$k'$ =",
+      "label": "$k = sin(x)$, so $k'$ =",
       "show": "$cos(x)$",
       "hint": "What did the slider show?",
       "work": "$k' = cos(x)$"
      },
      {
       "id": "L3.3",
-      "type": "expr",
-      "text": "$gk' + g'k$",
-      "answer": "x^2cos(x) + 2xsin(x)",
-      "vars": [
-       "x"
+      "type": "bank",
+      "text": "Tap the pieces into the rule, $gk' + g'k$.\ny′ = ___ · ___ + ___ · ___",
+      "blanks": [
+       "$x^2$",
+       "$cos(x)$",
+       "$2x$",
+       "$sin(x)$"
       ],
-      "keys": [
-       "sin(",
-       "cos(",
-       "tan(",
-       "sec("
+      "alts": [
+       [
+        "$x^2$",
+        "$cos(x)$",
+        "$sin(x)$",
+        "$2x$"
+       ],
+       [
+        "$cos(x)$",
+        "$x^2$",
+        "$2x$",
+        "$sin(x)$"
+       ],
+       [
+        "$cos(x)$",
+        "$x^2$",
+        "$sin(x)$",
+        "$2x$"
+       ],
+       [
+        "$2x$",
+        "$sin(x)$",
+        "$x^2$",
+        "$cos(x)$"
+       ],
+       [
+        "$2x$",
+        "$sin(x)$",
+        "$cos(x)$",
+        "$x^2$"
+       ],
+       [
+        "$sin(x)$",
+        "$2x$",
+        "$x^2$",
+        "$cos(x)$"
+       ],
+       [
+        "$sin(x)$",
+        "$2x$",
+        "$cos(x)$",
+        "$x^2$"
+       ]
       ],
-      "label": "$y'$ =",
-      "show": "$x^2cos(x) + 2xsin(x)$",
-      "hint": "$x^2·cos(x) + 2x·sin(x)$",
+      "hint": "$g$ times $k'$, plus $g'$ times $k$.",
       "work": "$y' = x^2 cos(x) + 2x sin(x)$"
      }
     ]

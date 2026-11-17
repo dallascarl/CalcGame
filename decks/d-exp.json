@@ -2211,7 +2211,7 @@
     "id": "L1",
     "type": "dtrace",
     "title": "A function that is its own slope",
-    "text": "Slide along $f(x) = e^x$ and drop its slopes on the lower graph. Compare the two graphs.",
+    "text": "Slide along $f(x) = e^x$ and drop its slopes on the second graph. Compare the two graphs.",
     "fn": "exp(x)",
     "window": [
      -2,
@@ -2287,71 +2287,58 @@
     "steps": [
      {
       "id": "L5.1",
-      "type": "expr",
-      "text": "Top: $e^(x^2)$ (chain rule).",
-      "answer": "e^(x^2)(2x)",
-      "vars": [
-       "x"
+      "type": "mc",
+      "text": "The top is $g = e^(x^2)$. It needs the chain rule.",
+      "options": [
+       "$2x e^(x^2)$",
+       "$e^(x^2)$",
+       "$x^2 e^(x^2 - 1)$",
+       "$e^(2x)$"
       ],
-      "keys": [
-       "e^(",
-       "ln(",
-       "sin(",
-       "cos("
-      ],
-      "label": "$g'$ =",
-      "ranges": {
-       "x": [
-        0.2,
-        0.8
-       ]
-      },
-      "show": "$e^(x^2)(2x)$",
+      "answer": 0,
       "hint": "$e^(x^2)$ times the derivative of $x^2$.",
       "work": "$g' = 2x e^(x^2)$"
      },
      {
       "id": "L5.2",
-      "type": "expr",
-      "text": "Bottom: $x$.",
-      "answer": "1",
-      "vars": [
-       "x"
-      ],
-      "keys": [
-       "e^(",
-       "ln(",
-       "sin(",
-       "cos("
-      ],
+      "type": "num",
+      "text": "The bottom is $k = x$.",
+      "answer": 1,
       "label": "$k'$ =",
-      "show": "$1$",
       "hint": "The slope of $x$.",
       "work": "$k' = 1$"
      },
      {
       "id": "L5.3",
-      "type": "expr",
-      "text": "Low d-high minus high d-low, over low squared.",
-      "answer": "(x(2xe^(x^2)) - e^(x^2))/x^2",
-      "vars": [
-       "x"
+      "type": "bank",
+      "text": "Tap the pieces into the rule: low d-high minus high d-low, over low squared.\nf′(x) = frac{___ · ___ − ___ · ___}{x²}",
+      "blanks": [
+       "$x$",
+       "$2x e^(x^2)$",
+       "$e^(x^2)$",
+       "$1$"
       ],
-      "keys": [
-       "e^(",
-       "ln(",
-       "sin(",
-       "cos("
-      ],
-      "label": "$f'(x)$ =",
-      "ranges": {
-       "x": [
-        0.2,
-        0.8
+      "alts": [
+       [
+        "$x$",
+        "$2x e^(x^2)$",
+        "$1$",
+        "$e^(x^2)$"
+       ],
+       [
+        "$2x e^(x^2)$",
+        "$x$",
+        "$e^(x^2)$",
+        "$1$"
+       ],
+       [
+        "$2x e^(x^2)$",
+        "$x$",
+        "$1$",
+        "$e^(x^2)$"
        ]
-      },
-      "show": "$frac{x(2xe^(x^2)) - e^(x^2)}{x^2}$",
-      "hint": "$frac{x·2xe^(x^2) - e^(x^2)·1}{x^2}$",
+      ],
+      "hint": "Low is the bottom, $x$. High is the top, $e^(x^2)$.",
       "work": "$f'(x) = frac{2x^2 e^(x^2) - e^(x^2)}{x^2}$"
      }
     ]

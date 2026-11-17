@@ -81,6 +81,12 @@ function radHTML(inner,cube){return '<span class="rad'+(cube?' rad3':'')+'">'+(c
 function math(m){return '<span class="math">'+minner(m)+'</span>';}
 /* {{table: x | f(x) ;; 1.9 | 3.61 ;; 1.99 | 3.9601}} draws a small table; the first row is the heading.
    A row that starts with ! is highlighted (the row the question is about). */
+/* {{triangle: hypotenuse | opposite | adjacent | angle}} draws a labelled right triangle (the angle sits at the left corner) */
+function triHTML(body){
+  const [hyp,opp,adj,ang]=body.split('|').map(t=>t.trim()),L=t=>t?math(t):'';
+  return '<span class="tri"><svg viewBox="0 0 220 130" aria-hidden="true"><path d="M20 110H190V20Z"/><path class="tri-r" d="M176 110V96H190"/><path class="tri-a" d="M52 110A32 32 0 0 0 48.3 95.2"/></svg>'+
+    '<span class="tri-l tri-h">'+L(hyp)+'</span><span class="tri-l tri-o">'+L(opp)+'</span><span class="tri-l tri-j">'+L(adj)+'</span><span class="tri-l tri-t">'+L(ang)+'</span></span>';
+}
 function tableHTML(body){
   const rows=body.split(';;').map(r=>r.trim()).filter(Boolean);
   return '<span class="vtab">'+rows.map((r,i)=>{const hi=r[0]==='!';if(hi)r=r.slice(1);
@@ -91,7 +97,7 @@ function tableHTML(body){
 function fmt(s){
   let on=false; const blocks=[];
   const src=String(s).replace(/\\\$/g,'\u0003')
-    .replace(/\n?(?:\{\{table:([^}]*)\}\}|\$\$([^$]+)\$\$)\n?/g,(_,t,m)=>{blocks.push(t!=null?tableHTML(t):'<span class="dmath">'+m.split(';;').map(l=>math(l.trim())).join('<br>')+'</span>');return '\u0005';});
+    .replace(/\n?(?:\{\{triangle:([^}]*)\}\}|\{\{table:([^}]*)\}\}|\$\$([^$]+)\$\$)\n?/g,(_,tr,t,m)=>{blocks.push(tr!=null?triHTML(tr):t!=null?tableHTML(t):'<span class="dmath">'+m.split(';;').map(l=>math(l.trim())).join('<br>')+'</span>');return '\u0005';});
   const out=src.split('$').map((t,i)=>i%2?math(t):esc(t).split('**').map((u,k)=>(k?((on=!on)?'<strong>':'</strong>'):'')+u).join('').replace(/\n/g,'<br>')).join('');
   return (on?out+'</strong>':out).replace(/\u0003/g,'$').replace(/\u0005/g,()=>blocks.shift());
 }
@@ -436,11 +442,11 @@ function mountMC(it,ix,onChange){
 function mountBank(it,ix,onChange){
   /* blanks may sit inside a stacked fraction written as frac{top}{bottom} in the plain text, e.g. frac{___}{___} */
   const n=it.blanks.length,chips=shuffle([...it.blanks,...(it.distractors||[])]);
-  const tmpl=fmt(String(it.text).replace(/___/g,'\u0005').split('$').map((t,i)=>i%2?t:t.replace(/frac\{([^{}]*)\}\{([^{}]*)\}/g,'\u0006$1\u0007$2\u0008')).join('$'))
+  const tmpl=fmt(String(it.text).replace(/___/g,'\u000e').split('$').map((t,i)=>i%2?t:t.replace(/frac\{([^{}]*)\}\{([^{}]*)\}/g,'\u0006$1\u0007$2\u0008')).join('$'))
     .replace(/\u0006/g,'<span class="frac bf"><span>').replace(/\u0007/g,'</span><span>').replace(/\u0008/g,'</span></span>');
   let fill=Array(n).fill(null),locked=false,marks=null;
   const draw=()=>{ let b=0;
-    ix.innerHTML='<p class="txt bank-t">'+tmpl.replace(/\u0005/g,()=>{const i=b++;return '<button class="blank'+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-b="'+i+'" aria-label="Blank '+(i+1)+'">'+(fill[i]!=null?fmt(chips[fill[i]]):'&nbsp;')+'</button>';})+
+    ix.innerHTML='<p class="txt bank-t">'+tmpl.replace(/\u000e/g,()=>{const i=b++;return '<button class="blank'+(marks?(marks[i]?' is-right':' is-wrong'):'')+'" data-b="'+i+'" aria-label="Blank '+(i+1)+'">'+(fill[i]!=null?fmt(chips[fill[i]]):'&nbsp;')+'</button>';})+
       '</p><div class="chips">'+chips.map((c,i)=>'<button class="chip" data-c="'+i+'"'+(fill.includes(i)||locked?' disabled':'')+'>'+fmt(c)+'</button>').join('')+'</div>';
   };
   ix.addEventListener('click',e=>{
@@ -451,9 +457,11 @@ function mountBank(it,ix,onChange){
     draw();onChange();
   });
   draw();
-  const got=i=>fill[i]!=null&&chips[fill[i]]===it.blanks[i];
-  return {kind:'q',canGo:()=>!fill.includes(null),check:()=>it.blanks.every((_,i)=>got(i)),
-    lock(){locked=true;marks=it.blanks.map((_,i)=>got(i));draw();},
+  /* "alts": other fillings that are just as right (the two factors of a product swapped, say). Marks follow the closest one. */
+  const keys=[it.blanks].concat(it.alts||[]),hits=k=>k.map((c,i)=>fill[i]!=null&&chips[fill[i]]===c),
+    best=()=>keys.map(hits).sort((a,b)=>b.filter(Boolean).length-a.filter(Boolean).length)[0];
+  return {kind:'q',canGo:()=>!fill.includes(null),check:()=>best().every(Boolean),
+    lock(){locked=true;marks=best();draw();},
     reset(){locked=false;marks=null;fill=Array(n).fill(null);draw();onChange();}};
 }
 function mountExplore(sl,ix,onChange,host){

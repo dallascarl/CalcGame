@@ -5,7 +5,44 @@
  "title": "Definition of the Derivative",
  "subtitle": "Slopes of secant lines become the slope of the tangent line.",
  "version": 2,
- "graphs": {},
+ "graphs": {
+  "sec": {
+   "window": [
+    -0.6,
+    3.4,
+    -1,
+    9.6
+   ],
+   "pieces": [
+    {
+     "expr": "x^2",
+     "from": -0.6,
+     "to": 3.2
+    }
+   ],
+   "dots": [
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     2.5,
+     6.25
+    ]
+   ],
+   "labels": [
+    [
+     2,
+     4,
+     "x = 2"
+    ]
+   ]
+  }
+ },
  "drills": {
   "theory": {
    "title": "Theory",
@@ -51,19 +88,19 @@
      "pairs": [
       [
        "Secant line",
-       "meets the curve at two points"
+       "a line through two points of the curve"
       ],
       [
        "Tangent line",
-       "has the slope of the curve at one point"
-      ],
-      [
-       "Derivative $f'(a)$",
-       "the slope of the tangent line"
+       "a line that touches the curve at one point and has the curve’s slope there"
       ],
       [
        "Difference quotient",
-       "$frac{f(a+h) - f(a)}{h}$"
+       "the slope of a secant line"
+      ],
+      [
+       "Derivative $f'(a)$",
+       "the slope of the tangent line at $x = a$"
       ]
      ],
      "explain": "The difference quotient is a secant slope. Its limit as $h -> 0$ is the derivative."
@@ -80,19 +117,6 @@
      ],
      "answer": 0,
      "explain": "Point-slope form with slope $f'(a)$ through the point $(a, f(a))$."
-    },
-    {
-     "id": "T6",
-     "type": "mc",
-     "text": "Which limit is also equal to $f'(a)$?",
-     "options": [
-      "$lim[x->a] frac{f(x) - f(a)}{x - a}$",
-      "$lim[x->a] frac{f(x) + f(a)}{x + a}$",
-      "$lim[x->0] frac{f(x)}{x}$",
-      "$lim[h->a] frac{f(h)}{h}$"
-     ],
-     "answer": 0,
-     "explain": "This is the same idea with $b$ called $x$: the secant from $a$ to $x$, as $x -> a$."
     },
     {
      "id": "T7",
@@ -1704,10 +1728,42 @@
  "lesson": {
   "slides": [
    {
+    "id": "L0",
+    "type": "multi",
+    "title": "From secant to tangent",
+    "graph": "sec",
+    "text": "The slope of a **secant line** through two points on a curve is\n$$m = frac{f(b) - f(a)}{b - a}$$\nOn $f(x) = x^2$, find the slope from $x = 2$ to each point below. Watch the slopes as the second point closes in. (The **Calc** button is at the top.)",
+    "parts": [
+     {
+      "label": "to $x = 3$:",
+      "answer": 5,
+      "tol": 0.0005
+     },
+     {
+      "label": "to $x = 2.5$:",
+      "answer": 4.5,
+      "tol": 0.0005
+     },
+     {
+      "label": "to $x = 2.1$:",
+      "answer": 4.1,
+      "tol": 0.0005
+     },
+     {
+      "label": "to $x = 2.01$:",
+      "answer": 4.01,
+      "tol": 0.0005
+     }
+    ],
+    "picture": false,
+    "hint": "For $x = 3$: $frac{9 - 4}{3 - 2}$. For $x = 2.5$: $frac{6.25 - 4}{0.5}$.",
+    "explain": "5, 4.5, 4.1, 4.01: the secant slopes are settling on **4**."
+   },
+   {
     "id": "L1",
     "type": "secant",
-    "title": "From secant to tangent",
-    "text": "The slope of a secant line is\n$$m = frac{f(b) - f(a)}{b - a}$$\nSlide the teal point toward the black point at $x = 2$ on $f(x) = x^2$ and watch the slope.",
+    "title": "Watch it happen",
+    "text": "Slide the teal point toward the black point at $x = 2$ and watch the secant line turn into the tangent line.",
     "fn": "x^2",
     "a": 2,
     "h": -2,
@@ -1738,7 +1794,7 @@
    {
     "id": "L3",
     "type": "steps",
-    "text": "Use the definition to find $f'(1)$ for $f(x) = x^2 + x$. One line at a time.",
+    "text": "$$f'(a) = lim[h->0] frac{f(a+h) - f(a)}{h}$$\nUse the definition to find $f'(1)$ for $f(x) = x^2 + x$, one line at a time.",
     "steps": [
      {
       "id": "L3.1",

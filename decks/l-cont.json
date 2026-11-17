@@ -789,7 +789,7 @@
    {
     "id": "L5",
     "type": "mc",
-    "text": "**Intermediate Value Theorem:** if $f$ is continuous on $[a, b]$, it hits every height between $f(a)$ and $f(b)$. $f(x) = x^3 - x^2 - 3x + 1$ has $f(0) = 1$ and $f(1) = -2$. So on $[0, 1]$ it…",
+    "text": "**Intermediate Value Theorem:** if $f$ is continuous on $[a, b]$, it hits every height between $f(a)$ and $f(b)$.\n$$f(x) = x^3 - x^2 - 3x + 1 ;; f(0) = 1 ;; f(1) = -2$$\nSo on $[0, 1]$ it…",
     "options": [
      "has at least one zero",
      "has no zeros",

@@ -2011,22 +2011,17 @@
   "slides": [
    {
     "id": "L1",
-    "type": "mc",
-    "text": "$y = arcsin(x)$ (also written $sin^(-1)(x)$) means $sin(y) = x$. Differentiate implicitly: $cos(y)·y' = 1$, so $y' = frac{1}{cos(y)}$. A right triangle with opposite side $x$ and hypotenuse 1 shows $cos(y) = sqrt(1 - x^2)$. So $frac{d}{dx} arcsin(x) =$",
-    "options": [
-     "$frac{1}{sqrt(1 - x^2)}$",
-     "$frac{1}{cos(x)}$",
-     "$-frac{1}{sqrt(1 - x^2)}$",
-     "$sqrt(1 - x^2)$"
-    ],
-    "answer": 0,
-    "hint": "Put $sqrt(1 - x^2)$ in for $cos(y)$.",
-    "explain": "$frac{d}{dx} arcsin(x) = frac{1}{sqrt(1 - x^2)}$"
+    "type": "num",
+    "text": "$arcsin(x)$, also written $sin^(-1)(x)$, is the angle whose sine is $x$. Its derivative is one to memorize:\n$$frac{d}{dx} arcsin(x) = frac{1}{sqrt(1 - x^2)}$$\nUse it: what is the slope of $y = arcsin(x)$ at $x = 0$?",
+    "answer": 1,
+    "label": "slope =",
+    "hint": "Put 0 in for $x$.",
+    "explain": "$frac{1}{sqrt(1 - 0)} = 1$. (The formula comes from implicit differentiation of $sin(y) = x$.)"
    },
    {
     "id": "L2",
     "type": "match",
-    "text": "The same trick gives the others. Match each function to its derivative.",
+    "text": "Match each function to its derivative.",
     "pairs": [
      [
       "$arcsin(x)$",
@@ -2066,7 +2061,7 @@
    {
     "id": "L4",
     "type": "mc",
-    "text": "Triangles also simplify things like $sin(arccos(x))$. Let $theta = arccos(x)$: adjacent side $x$, hypotenuse 1. Then the opposite side is $sqrt(1 - x^2)$, so $sin(arccos(x)) =$",
+    "text": "A triangle simplifies things like $sin(arccos(x))$. Let $theta = arccos(x)$, so $cos(theta) = x$: the adjacent side is $x$ and the hypotenuse is 1.\n{{triangle: 1 | ? | x | theta}}\nFind the missing side. Then $sin(arccos(x)) =$",
     "options": [
      "$sqrt(1 - x^2)$",
      "$x$",
@@ -2074,27 +2069,65 @@
      "$sqrt(1 + x^2)$"
     ],
     "answer": 0,
-    "hint": "Sine is opposite over hypotenuse.",
-    "explain": "$sin(arccos(x)) = sqrt(1 - x^2)$"
+    "hint": "Pythagoras: $x^2 + ?^2 = 1$. Sine is opposite over hypotenuse.",
+    "explain": "The missing side is $sqrt(1 - x^2)$, and sine is that over 1."
    },
    {
     "id": "L5",
-    "type": "expr",
-    "text": "Old rules still apply. Use the product rule on $f(x) = x arctan(x)$.",
-    "answer": "arctan(x) + x/(1 + x^2)",
-    "vars": [
-     "x"
+    "type": "bank",
+    "text": "Old rules still apply. Use the product rule, $gk' + g'k$, on\n$$f(x) = x arctan(x)$$\nf′(x) = ___ · ___ + ___ · ___",
+    "blanks": [
+     "$x$",
+     "$frac{1}{1 + x^2}$",
+     "$1$",
+     "$arctan(x)$"
     ],
-    "keys": [
-     "sqrt(",
-     "arcsin(",
-     "arctan(",
-     "arccos("
+    "alts": [
+     [
+      "$x$",
+      "$frac{1}{1 + x^2}$",
+      "$arctan(x)$",
+      "$1$"
+     ],
+     [
+      "$frac{1}{1 + x^2}$",
+      "$x$",
+      "$1$",
+      "$arctan(x)$"
+     ],
+     [
+      "$frac{1}{1 + x^2}$",
+      "$x$",
+      "$arctan(x)$",
+      "$1$"
+     ],
+     [
+      "$1$",
+      "$arctan(x)$",
+      "$x$",
+      "$frac{1}{1 + x^2}$"
+     ],
+     [
+      "$1$",
+      "$arctan(x)$",
+      "$frac{1}{1 + x^2}$",
+      "$x$"
+     ],
+     [
+      "$arctan(x)$",
+      "$1$",
+      "$x$",
+      "$frac{1}{1 + x^2}$"
+     ],
+     [
+      "$arctan(x)$",
+      "$1$",
+      "$frac{1}{1 + x^2}$",
+      "$x$"
+     ]
     ],
-    "label": "$f'(x)$ =",
-    "show": "$arctan(x) + x/(1 + x^2)$",
-    "hint": "$1·arctan(x) + x·frac{1}{1 + x^2}$",
-    "explain": "$arctan(x) + frac{x}{1 + x^2}$"
+    "hint": "With $g = x$ and $k = arctan(x)$: $g' = 1$ and $k' = frac{1}{1 + x^2}$.",
+    "explain": "$f'(x) = frac{x}{1 + x^2} + arctan(x)$"
    }
   ]
  }

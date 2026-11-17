@@ -2591,7 +2591,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "Find the derivative of $y = x^x$. The power rule needs a constant power, and $b^x$ needs a constant base. Neither works! The trick: take $ln$ of both sides. Since $ln(a^r) = r ln(a)$, $ln(y) =$",
+    "text": "$$y = x^x$$\nThe power rule needs a constant power. The rule for $b^x$ needs a constant base. Neither fits.\nThe trick: take $ln$ of both sides, and use $ln(a^r) = r ln(a)$. What is $ln(y)$?",
     "options": [
      "$x ln(x)$",
      "$ln(x)^x$",

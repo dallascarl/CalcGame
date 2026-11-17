@@ -1576,7 +1576,7 @@
    {
     "id": "L1",
     "type": "mc",
-    "text": "$y = ln(x)$ means $e^y = x$. Differentiate both sides: $e^y·y' = 1$, so $y' = frac{1}{e^y}$. Since $e^y = x$, that is",
+    "text": "Where does the derivative of $ln(x)$ come from? Start with what $ln$ means:\n$$y = ln(x) ;; e^y = x$$\nDifferentiate both sides of $e^y = x$. The left side needs the chain rule:\n$$e^y · y' = 1$$\nSolve for $y'$, then swap $e^y$ for $x$. What is $y'$?",
     "options": [
      "$frac{1}{x}$",
      "$e^x$",
@@ -1584,26 +1584,22 @@
      "$frac{1}{e}$"
     ],
     "answer": 0,
-    "hint": "Replace $e^y$ with what it equals.",
+    "hint": "$y' = frac{1}{e^y}$, and $e^y$ is $x$.",
     "explain": "$frac{d}{dx} ln(x) = frac{1}{x}$"
    },
    {
     "id": "L2",
-    "type": "expr",
-    "text": "With the chain rule, $frac{d}{dx} ln(f(x)) = frac{f'(x)}{f(x)}$: the derivative of the inside over the inside. Try $y = ln(x^3 + 2x + 1)$.",
-    "answer": "(3x^2 + 2)/(x^3 + 2x + 1)",
-    "vars": [
-     "x"
+    "type": "bank",
+    "text": "With the chain rule, the derivative of the inside goes over the inside:\n$$frac{d}{dx} ln(f(x)) = frac{f'(x)}{f(x)}$$\nTry $y = ln(x^3 + 2x + 1)$.\ny′ = frac{___}{___}",
+    "blanks": [
+     "$3x^2 + 2$",
+     "$x^3 + 2x + 1$"
     ],
-    "keys": [
-     "ln(",
-     "e^(",
-     "sin(",
-     "cos("
+    "distractors": [
+     "$3x^2$",
+     "$1$"
     ],
-    "label": "$y'$ =",
-    "show": "$frac{3x^2 + 2}{x^3 + 2x + 1}$",
-    "hint": "Top: the derivative of $x^3 + 2x + 1$. Bottom: $x^3 + 2x + 1$.",
+    "hint": "Top: the derivative of $x^3 + 2x + 1$. Bottom: $x^3 + 2x + 1$ itself.",
     "explain": "$frac{3x^2 + 2}{x^3 + 2x + 1}$"
    },
    {

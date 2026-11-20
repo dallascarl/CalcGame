@@ -7,19 +7,22 @@
 <meta name="theme-color" content="#EDF1F7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F1524" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;600;700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap">
-<link rel="stylesheet" href="css/app.css?v=202611201500">
+<link rel="stylesheet" href="css/app.css?v=202611201600">
 <style>html{box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
 <div id="app"></div>
-<script src="js/config.js?v=202611201500"></script>
-<script src="js/backend.js?v=202611201500"></script>
-<script src="js/avatars.js?v=202611201500"></script>
-<script src="js/items.js?v=202611201500"></script>
-<script src="js/items2.js?v=202611201500"></script>
-<script src="js/items3.js?v=202611201500"></script>
-<script src="js/appcode.js?v=202611201500"></script>
-<script src="js/account.js?v=202611201500"></script>
-<script src="js/app.js?v=202611201500"></script>
+<script src="js/config.js?v=202611201600"></script>
+<script src="js/backend.js?v=202611201600"></script>
+<script src="js/avatars.js?v=202611201600"></script>
+<script src="js/items.js?v=202611201600"></script>
+<script src="js/items2.js?v=202611201600"></script>
+<script src="js/items3.js?v=202611201600"></script>
+<script src="js/appcode.js?v=202611201600"></script>
+<script src="js/account.js?v=202611201600"></script>
+<script src="js/app.js?v=202611201600"></script>
+<script>/* tester mode: a link with ?tester turns on the Note button in this browser (?tester=off turns it off). Real students never see it. */
+(function(){var q=location.search,k='calcgame.tester';try{if(/[?&]tester=off/.test(q))localStorage.removeItem(k);else if(/[?&]tester/.test(q))localStorage.setItem(k,'1');
+if(localStorage.getItem(k)){var s=document.createElement('script');s.src='js/review.js?v=202611201600';s.defer=true;document.body?document.body.appendChild(s):document.addEventListener('DOMContentLoaded',function(){document.body.appendChild(s);});}}catch(e){}})();</script>
 </body>
 </html>

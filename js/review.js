@@ -115,6 +115,8 @@
     const a=b.dataset.a;
     if(a==='cancel'||a==='close'){sheet.remove();sheet=null;listOpen=false;clearMarks();return;}
     if(a==='list'){showList();return;}
+    if(a==='send'){sendNotes();return;}
+    if(a==='copy'){copyNotes(b);return;}
     if(a==='new'){sheet.remove();sheet=null;listOpen=false;startPick();return;}
     if(a==='save'){
       const txt=sheet.querySelector('#rv-text').value.trim();
@@ -141,8 +143,17 @@
         (n.tags&&n.tags.length?'<div><b>'+e(n.tags.join(' · '))+'</b></div>':'')+(n.note?'<div>'+e(n.note)+'</div>':'')+
         (n.status==='done'&&n.reply?'<div class="rv-where">Fix: '+e(n.reply)+'</div>':'')+'</li>').join('')+'</ul>'
         :'<p class="rv-where">No notes yet. Tap ✎ Note on any screen.</p>')+
-      '<div class="rv-row"><button class="rv-save" data-a="new">New note</button></div>';
+      '<div class="rv-row"><button class="rv-save" data-a="new">New note</button>'+(!db&&notes.length?'<button class="rv-save rv-send" data-a="send">Send my notes</button>':'')+'</div>'+
+      (!db&&notes.length?'<p class="rv-where">Send my notes makes a file of every note. Email it to Dr Smith (on a phone, pick Mail in the share menu). <button class="rv-del" data-a="copy" style="color:var(--teal)">Or copy them as text</button></p>':'');
   }
+  /* on the live site (no Claude database) notes live in this browser; this hands them over as a file */
+  const notesText=()=>JSON.stringify({app:'CalcGame',sent:new Date().toISOString(),device:navigator.userAgent,notes},null,1);
+  async function sendNotes(){
+    const name='calcgame-notes-'+new Date().toISOString().slice(0,10)+'.json',file=new File([notesText()],name,{type:'application/json'});
+    try{if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'CalcGame notes'});return;}}catch(x){if(x&&x.name==='AbortError')return;}
+    const a=document.createElement('a');a.href=URL.createObjectURL(file);a.download=name;document.body.appendChild(a);a.click();a.remove();
+  }
+  async function copyNotes(btn){try{await navigator.clipboard.writeText(notesText());btn.textContent='Copied. Paste it into an email.';}catch(x){btn.textContent='Could not copy here. Use Send my notes.';}}
   fab.addEventListener('click',()=>{if(sheet){sheet.remove();sheet=null;clearMarks();}startPick();});
   /* keep the button's count in step with the screen the app is showing */
   new MutationObserver(()=>drawFab()).observe(document.getElementById('app'),{childList:true});

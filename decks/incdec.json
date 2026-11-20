@@ -1457,32 +1457,29 @@
    },
    {
     "type": "pick",
-    "text": "$f'(x) = frac{x^2 + 5x + 6}{x(x - 3)}$, and $f$ is undefined at 0 and 3. Which $x$-values split the number line for the sign chart of $f'$?",
+    "text": "$$f'(x) = frac{x + 2}{x - 3}$$\nand $f$ is undefined at 3. Which $x$-values split the number line for the sign chart of $f'$?",
     "options": [
      "−2",
-     "5",
+     "2",
+     "3",
      "−3",
-     "0",
-     "1",
-     "3"
+     "0"
     ],
     "answers": [
      0,
-     2,
-     3,
-     5
+     2
     ],
-    "explain": "The top $(x + 2)(x + 3)$ is 0 at −2 and −3; the bottom is 0 at 0 and 3. Points where $f$ is undefined are not critical numbers, but they still split the sign chart.",
+    "explain": "The top is 0 at −2; the bottom is 0 at 3. A point where $f$ is undefined is not a critical number, but it still splits the sign chart.",
     "hint": "Where the top is 0 and where the bottom is 0.",
     "id": "L6"
    },
    {
     "type": "interval",
-    "text": "Test a point in each piece. Where is $f$ increasing? (Use open intervals.)",
-    "answer": "(-inf,-3)U(-2,0)U(3,inf)",
+    "text": "$$f'(x) = frac{x + 2}{x - 3}$$\nThat makes three pieces. Here is one test point in each:\n{{table: test x | −3 | 0 | 4 ;; f′(x) | 1/6 | −2/3 | 6}}\nWhere is $f$ increasing? (Use open intervals.)",
+    "answer": "(-inf,-2)U(3,inf)",
     "label": "Increasing on",
-    "explain": "Signs: + on $(-∞, -3)$, − on $(-3, -2)$, + on $(-2, 0)$, − on $(0, 3)$, + on $(3, ∞)$.",
-    "hint": "Try $x$ = −4, −2.5, −1, 1 and 4 in $frac{(x + 2)(x + 3)}{x(x - 3)}$.",
+    "explain": "Positive on $(-∞, -2)$ and $(3, ∞)$, negative on $(-2, 3)$.",
+    "hint": "Increasing where $f'$ is positive.",
     "id": "L7"
    }
   ]

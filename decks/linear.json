@@ -903,7 +903,7 @@
     "id": "N17",
     "type": "diff",
     "title": "See dy and Δy",
-    "text": "Start at the dot. Move right by $dx$, then go up two ways: to the tangent line and to the curve.",
+    "text": "Start at the dot. Move right by $dx$, then go up two ways: to the tangent line ($dy$) and to the curve ($Δy$).\nDrag the slider **left, toward 0**, until $dy$ and $Δy$ are within 0.01 of each other.",
     "fn": "0.3*x^2",
     "a": 1.5,
     "window": [

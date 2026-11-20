@@ -1672,7 +1672,7 @@
     "type": "newton",
     "slow": true,
     "title": "Try it, one piece at a time",
-    "text": "Same function. Pick a first guess $x_0$. Then **draw the tangent line** and **tap where it crosses the $x$-axis**: that is $x_1$. Repeat from $x_1$. Use **Zoom +** to see how close you are. Keep going until the digits stop changing.",
+    "text": "Same function. Do it by hand this time:\n1. Drag to pick a first guess $x_0$.\n2. Tap where the dashed tangent line crosses the $x$-axis. That is $x_1$.\n3. Repeat from the new point until the digits in the table stop changing.\nUse **Zoom +** to look closely.",
     "fn": "x^5+8*x^4+4*x^3-2*x-7",
     "window": [
      -0.4,

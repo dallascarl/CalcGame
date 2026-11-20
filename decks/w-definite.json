@@ -274,6 +274,38 @@
      "to": 3
     }
    ]
+  },
+  "lin2x": {
+   "window": [
+    -3.6,
+    3.6,
+    -7,
+    7
+   ],
+   "pieces": [
+    {
+     "expr": "2*x",
+     "from": -3,
+     "to": 3
+    }
+   ],
+   "vlines": [
+    -3,
+    3
+   ],
+   "ystep": 2,
+   "labels": [
+    [
+     2.1,
+     1.4,
+     "area 9"
+    ],
+    [
+     -2.1,
+     -1.6,
+     "area 9"
+    ]
+   ]
   }
  },
  "drills": {
@@ -309,7 +341,7 @@
       "$-int[a,b] f(x) dx$",
       "$int[a,b] f(x) dx$",
       "0",
-      "$frac{1}{int[a,b] f(x) dx}$"
+      "$2int[a,b] f(x) dx$"
      ],
      "answer": 0,
      "explain": "Running backwards flips the sign."
@@ -330,7 +362,7 @@
     {
      "id": "T5",
      "type": "mc",
-     "text": "$f(x) = 2x$ on $[-3, 3]$. Which is true?",
+     "text": "$f(x) = 2x$ on $[-3, 3]$. The region is two triangles, one above the axis and one below. Which is true?",
      "options": [
       "The net signed area is 0 but the total area is 18",
       "The net signed area is 18",
@@ -338,7 +370,8 @@
       "Both are 18"
      ],
      "answer": 0,
-     "explain": "Two triangles of area 9, one below the axis: $-9 + 9 = 0$, but total area $9 + 9 = 18$."
+     "explain": "Two triangles of area 9, one below the axis: $-9 + 9 = 0$, but total area $9 + 9 = 18$.",
+     "graph": "lin2x"
     },
     {
      "id": "T6",

@@ -733,7 +733,7 @@
      "e^(",
      "ln("
     ],
-    "label": "$int (x^5 + 2) dx$ =",
+    "label": "answer =",
     "post": "$+ C$",
     "upToC": true,
     "show": "$x^6/6 + 2x$",
@@ -770,7 +770,7 @@
      "e^(",
      "ln("
     ],
-    "label": "$int (6x^2 - 4sin(x)) dx$ =",
+    "label": "answer =",
     "show": "$2x^3 + 4cos(x)$",
     "ranges": {
      "x": [

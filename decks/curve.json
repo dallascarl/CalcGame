@@ -2934,25 +2934,8 @@
     "explain": "The first derivative gives the direction and the second gives the bend."
    },
    {
-    "type": "order",
-    "text": "Put the curve-sketching checklist in order.",
-    "items": [
-     "Domain",
-     "Intercepts",
-     "Vertical asymptotes",
-     "Horizontal (or slant) asymptotes",
-     "Increasing / decreasing",
-     "Local max and min",
-     "Concavity and inflection points",
-     "Sketch"
-    ],
-    "explain": "Start with where the function lives and finish with the drawing. The review stops next to this one cover the first four.",
-    "hint": "Start with where the function lives; sketch last.",
-    "id": "L16"
-   },
-   {
     "type": "sketch",
-    "text": "Put it all together. Here is the data for\n$$f(x) = x^3 - 6x^2 + 9x + 1$$\nPlace it on the graph, mark the regions, then sketch.",
+    "text": "Put it all together for\n$$f(x) = x^3 - 6x^2 + 9x + 1$$",
     "fn": "1+x^3-6*x^2+9*x",
     "window": [
      -1,

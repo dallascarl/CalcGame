@@ -1233,18 +1233,18 @@
    },
    {
     "type": "steps",
-    "text": "Use the second derivative test on\n$$f(x) = x^3 - frac{3}{2}x^2 - 18x$$\nThe critical numbers are $c$ = 3 and $c$ = −2.",
+    "text": "Use the second derivative test on\n$$f(x) = x^3 - frac{3}{2}x^2 - 18x ;; f'(x) = 3x^2 - 3x - 18$$\nThe critical numbers are $c$ = 3 and $c$ = −2.",
     "steps": [
      {
       "type": "expr",
-      "text": "Find $f''(x)$.",
+      "text": "Differentiate $f'$ once more.",
       "answer": "6*x-3",
       "vars": [
        "x"
       ],
       "label": "$f''(x)$ =",
       "explain": "$f''(x) = 6x - 3$.",
-      "hint": "$f'(x) = 3x^2 - 3x - 18$."
+      "hint": "The derivative of $3x^2 - 3x - 18$."
      },
      {
       "type": "mc",

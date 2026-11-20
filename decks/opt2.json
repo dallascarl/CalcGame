@@ -1941,7 +1941,7 @@
    },
    {
     "type": "num",
-    "text": "Set it equal to 0. The critical point is:",
+    "text": "$$A(x) = x(1200 - 2x)$$\n$A'(x) = 1200 - 4x$. Set it equal to 0. The critical point is:",
     "answer": 300,
     "label": "$x$ =",
     "explain": "$x$ = 300.",
@@ -1950,7 +1950,7 @@
    },
    {
     "type": "mc",
-    "text": "How do we know $x$ = 300 is the maximum?",
+    "text": "$$A(x) = x(1200 - 2x)$$\nHow do we know $x$ = 300 is the maximum?",
     "options": [
      "Because it is the only number we found",
      "$A''(x) = -4 < 0$, so it is a max (and the endpoints give area 0)",
@@ -1963,7 +1963,7 @@
    },
    {
     "type": "num",
-    "text": "Answer the question: what is the largest area?",
+    "text": "$$A(x) = x(1200 - 2x)$$\nAnswer the question: what is the largest area?",
     "answer": 180000,
     "label": "$A$ =",
     "explain": "300 ft by 600 ft: 180,000 ft².",
@@ -1976,8 +1976,8 @@
     "items": [
      "Draw a diagram and name the variables",
      "Decide what to optimize (max or min)",
-     "Write the constraint equation",
-     "Use the constraint to get one variable",
+     "Write an equation for what you are trying to optimize",
+     "Write the constraint, and use it to get down to one variable",
      "Find the critical points",
      "Check it is really a max or min, then answer the question"
     ],

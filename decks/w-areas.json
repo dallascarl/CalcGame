@@ -987,7 +987,7 @@
      {
       "id": "L3.3",
       "type": "num",
-      "text": "Add up the heights:\n$$f(0.5) + f(1) + f(1.5) + f(2)$$",
+      "text": "The heights are $f(x) = x^2$ at each right endpoint:\n{{table: x | 0.5 | 1 | 1.5 | 2 ;; f(x) | 0.25 | 1 | 2.25 | 4}}\nAdd them up.",
       "answer": 7.5,
       "label": "sum of heights =",
       "hint": "0.25 + 1 + 2.25 + 4",

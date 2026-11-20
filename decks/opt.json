@@ -981,7 +981,7 @@
    },
    {
     "type": "interval",
-    "text": "What values of $x$ make sense?",
+    "text": "The pen: 1200 ft of fence, width $x$, length $y$, with the river as the fourth side, so $2x + y = 1200$.\nWhat values of $x$ make sense?",
     "answer": "[0,600]",
     "label": "$x$ in",
     "explain": "$x ≥ 0$ and $y = 1200 - 2x ≥ 0$, so $0 ≤ x ≤ 600$.",

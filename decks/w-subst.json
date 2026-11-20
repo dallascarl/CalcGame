@@ -2597,26 +2597,52 @@
    },
    {
     "id": "L3",
-    "type": "expr",
-    "text": "Your turn:\n$$int 3x^2(x^3 - 3)^2 dx$$\n(Let $u = x^3 - 3$.)",
-    "answer": "(x^3 - 3)^3/3",
-    "vars": [
-     "x"
-    ],
-    "keys": [
-     "sin(",
-     "cos(",
-     "tan(",
-     "sqrt(",
-     "e^(",
-     "ln("
-    ],
-    "label": "answer =",
-    "post": "$+ C$",
-    "upToC": true,
-    "show": "$frac{(x^3 - 3)^3}{3}$",
-    "hint": "$du = 3x^2 dx$, so it is $int u^2 du = frac{u^3}{3}$.",
-    "explain": "$frac{(x^3 - 3)^3}{3} + C$"
+    "type": "steps",
+    "text": "Your turn:\n$$int 3x^2(x^3 - 3)^2 dx$$",
+    "steps": [
+     {
+      "id": "L3.1",
+      "type": "mc",
+      "text": "Let $u = x^3 - 3$. Then $du$ =",
+      "options": [
+       "$3x^2 dx$",
+       "$x^3 dx$",
+       "$3x dx$",
+       "$(x^3 - 3) dx$"
+      ],
+      "answer": 0,
+      "hint": "Differentiate $x^3 - 3$, then tack on $dx$.",
+      "work": "$du = 3x^2 dx$"
+     },
+     {
+      "id": "L3.2",
+      "type": "mc",
+      "text": "Swap in $u$ and $du$. The integral becomes",
+      "options": [
+       "$int u^2 du$",
+       "$int 3x^2 u^2 du$",
+       "$int u du$",
+       "$int u^3 du$"
+      ],
+      "answer": 0,
+      "hint": "$(x^3 - 3)^2$ is $u^2$, and $3x^2 dx$ is $du$.",
+      "work": "$int u^2 du$"
+     },
+     {
+      "id": "L3.3",
+      "type": "mc",
+      "text": "Integrate, then put $x$ back in for $u$.",
+      "options": [
+       "$frac{(x^3 - 3)^3}{3} + C$",
+       "$frac{u^3}{3} + C$",
+       "$(x^3 - 3)^3 + C$",
+       "$frac{(x^3 - 3)^3}{9x^2} + C$"
+      ],
+      "answer": 0,
+      "hint": "$int u^2 du = frac{u^3}{3} + C$. The answer should be in terms of $x$.",
+      "work": "$frac{(x^3 - 3)^3}{3} + C$"
+     }
+    ]
    },
    {
     "id": "L4",

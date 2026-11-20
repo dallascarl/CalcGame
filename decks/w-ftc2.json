@@ -48,25 +48,26 @@
    {
     "id": "L4",
     "type": "steps",
-    "text": "A particle moves with velocity $v(t) = t^2 - 4t$ (m/s) for $0 <= t <= 6$.",
+    "text": "A particle moves with velocity $v(t) = t^2 - 4t$ (m/s) for $0 <= t <= 6$. It moves backward while $v < 0$, which is for $0 < t < 4$. The two pieces are\n$$int[0,4] v dt = -frac{32}{3} ;; int[4,6] v dt = frac{32}{3}$$",
     "steps": [
      {
       "id": "L4.1",
       "type": "num",
-      "text": "Displacement:\n$$int[0,6] (t^2 - 4t) dt$$",
+      "text": "**Displacement** is the net change: add the two pieces as they are.",
       "answer": 0,
       "label": "displacement =",
-      "hint": "$frac{t^3}{3} - 2t^2$ from 0 to 6: $72 - 72$.",
+      "hint": "$-frac{32}{3} + frac{32}{3}$",
       "work": "displacement $= 0$ m"
      },
      {
       "id": "L4.2",
       "type": "num",
-      "text": "Total distance: it moves backward for $0 < t < 4$ (where $v < 0$) and forward after. Add\n$$|int[0,4] v dt| + int[4,6] v dt$$",
+      "text": "**Total distance** counts both pieces as positive: add their sizes.",
       "answer": 21.333333,
       "label": "distance =",
-      "hint": "$int[0,4] v = -frac{32}{3}$ and $int[4,6] v = frac{32}{3}$.",
-      "work": "distance $= frac{64}{3}$ m"
+      "hint": "$frac{32}{3} + frac{32}{3}$",
+      "work": "distance $= frac{64}{3}$ m",
+      "tol": 0.01
      }
     ]
    },

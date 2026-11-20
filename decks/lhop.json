@@ -13,7 +13,7 @@
    "questions": [
     {
      "type": "mc",
-     "text": "What form does $lim[x->0] frac{sin(3x)}{x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0] frac{sin(3x)}{x}$$",
      "options": [
       "$0^0$",
       "$0/0$",
@@ -26,7 +26,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] (1 + frac{2}{x})^x$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] (1 + frac{2}{x})^x$$",
      "options": [
       "$1^(∞)$",
       "$0·∞$",
@@ -39,7 +39,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0] frac{x}{x + 1}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0] frac{x}{x + 1}$$",
      "options": [
       "Not indeterminate",
       "$∞^0$",
@@ -119,7 +119,7 @@
    "questions": [
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] frac{x^2}{e^x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] frac{x^2}{e^x}$$",
      "options": [
       "$1^(∞)$",
       "$∞/∞$",
@@ -133,7 +133,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] x ln x$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] x ln x$$",
      "options": [
       "$∞^0$",
       "$0·∞$",
@@ -147,7 +147,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] (x - ln x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] (x - ln x)$$",
      "options": [
       "$1^(∞)$",
       "Not indeterminate",
@@ -161,7 +161,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] x^(sin x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] x^(sin x)$$",
      "options": [
       "$∞^0$",
       "$0^0$",
@@ -175,7 +175,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] x^(1/x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] x^(1/x)$$",
      "options": [
       "$∞ - ∞$",
       "$∞^0$",
@@ -189,7 +189,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] (frac{1}{x} - frac{1}{sin x})$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] (frac{1}{x} - frac{1}{sin x})$$",
      "options": [
       "$0/0$",
       "Not indeterminate",
@@ -203,7 +203,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->1] frac{ln x}{x - 1}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->1] frac{ln x}{x - 1}$$",
      "options": [
       "$0/0$",
       "$∞/∞$",
@@ -217,7 +217,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] frac{ln x}{sqrt x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] frac{ln x}{sqrt x}$$",
      "options": [
       "$0^0$",
       "$0/0$",
@@ -231,7 +231,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] x sin(frac{1}{x})$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] x sin(frac{1}{x})$$",
      "options": [
       "$0·∞$",
       "$∞/∞$",
@@ -245,7 +245,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] (1 + x)^(1/x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] (1 + x)^(1/x)$$",
      "options": [
       "Not indeterminate",
       "$∞/∞$",
@@ -259,7 +259,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] (frac{1}{x})^x$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] (frac{1}{x})^x$$",
      "options": [
       "$0^0$",
       "$∞^0$",
@@ -273,7 +273,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] x e^(-x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] x e^(-x)$$",
      "options": [
       "$∞^0$",
       "$0/0$",
@@ -287,7 +287,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0] frac{e^x - 1}{x^2 + x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0] frac{e^x - 1}{x^2 + x}$$",
      "options": [
       "$∞/∞$",
       "$0/0$",
@@ -301,7 +301,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] (sin x)^x$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] (sin x)^x$$",
      "options": [
       "$0·∞$",
       "$0^0$",
@@ -315,7 +315,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] frac{ln x}{x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] frac{ln x}{x}$$",
      "options": [
       "$0/0$",
       "Not indeterminate",
@@ -329,7 +329,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] x e^x$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] x e^x$$",
      "options": [
       "$0·∞$",
       "$∞^0$",
@@ -343,7 +343,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] x^(1/x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] x^(1/x)$$",
      "options": [
       "$∞^0$",
       "$∞ - ∞$",
@@ -357,7 +357,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] (x^2 + ln x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] (x^2 + ln x)$$",
      "options": [
       "$∞^0$",
       "$0^0$",
@@ -1496,20 +1496,12 @@
        "Combine into one fraction (common denominator or conjugate)"
       ],
       [
-       "$1^(∞)$",
+       "$1^(∞)$, $0^0$ and $∞^0$",
        "Take $ln$: the exponent comes down"
-      ],
-      [
-       "$0^0$",
-       "Take $ln$ as well"
-      ],
-      [
-       "$∞^0$",
-       "Take $ln$ too"
       ]
      ],
-     "explain": "Products become quotients; differences become one fraction; powers get a logarithm.",
-     "hint": "Three of them are exponent forms.",
+     "explain": "Products become quotients, differences become one fraction, and all three powers get a logarithm.",
+     "hint": "The three power forms all use the same move.",
      "id": "O1"
     },
     {

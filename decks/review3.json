@@ -809,7 +809,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0^+] x^(sin x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0^+] x^(sin x)$$",
      "options": [
       "$∞^0$",
       "$0^0$",
@@ -845,7 +845,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0] frac{e^x - 1}{x^2 + x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0] frac{e^x - 1}{x^2 + x}$$",
      "options": [
       "$∞/∞$",
       "$0/0$",
@@ -860,7 +860,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->∞] (x - ln x)$ have?",
+     "text": "What form does this limit have?\n$$lim[x->∞] (x - ln x)$$",
      "options": [
       "$1^(∞)$",
       "Not indeterminate",
@@ -875,7 +875,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0] frac{x}{x + 1}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0] frac{x}{x + 1}$$",
      "options": [
       "Not indeterminate",
       "$∞^0$",
@@ -2760,7 +2760,7 @@
     },
     {
      "type": "mc",
-     "text": "What form does $lim[x->0] frac{e^x - 1}{x^2 + x}$ have?",
+     "text": "What form does this limit have?\n$$lim[x->0] frac{e^x - 1}{x^2 + x}$$",
      "options": [
       "$∞/∞$",
       "$0/0$",
@@ -3862,12 +3862,16 @@
       "hint": "Chain rule: tack on $r'$."
      },
      {
-      "type": "num",
-      "text": "Plug in.",
-      "answer": 188.495559,
-      "label": "$A'$ ≈",
-      "tol": 0.05,
-      "explain": "$60pi$ ≈ 188.5 cm²/s.",
+      "type": "expr",
+      "text": "Plug in $r = 10$ and $r' = 3$.",
+      "answer": "60*pi",
+      "vars": [],
+      "keys": [
+       "pi"
+      ],
+      "label": "$A'$ =",
+      "show": "$60pi$",
+      "explain": "$2pi(10)(3) = 60pi ≈ 188.5$ cm²/s.",
       "hint": "$2pi(10)(3)$"
      }
     ],
@@ -3902,11 +3906,11 @@
      },
      {
       "type": "num",
-      "text": "Best $x$:",
+      "text": "$P'(x) = 20 - 2x$. Set it equal to 0. Best $x$:",
       "answer": 10,
       "label": "$x$ =",
       "explain": "10 and 10, product 100.",
-      "hint": "$P'(x) = 20 - 2x$"
+      "hint": "$20 - 2x = 0$"
      }
     ],
     "title": "Optimization in one minute",

@@ -94,7 +94,7 @@ function texprHTML(toks){
     if(toks[i]===')'){i++;closed=true;}
     if(t==='e^(')return 'e<sup>'+(inner||BOX)+'</sup>';
     const nm=name==='sqrt'?'√':name==='cbrt'?'∛':name;
-    return (strip&&!name?inner:esc(nm)+'('+inner+(closed?')':''));
+    return (strip&&!name?(inner||BOX):esc(nm)+'('+inner+(closed?')':''));
   }
   function operand(inSup){
     if(i>=n)return null; const t=toks[i]; let h;
@@ -155,16 +155,14 @@ function mountExpr(q,ix,onChange){
     const open=[];toks.forEach((t,k)=>{if(t==='('||/\($/.test(t))open.push(t==='('&&toks[k-1]==='^'?'^(':t);else if(t===')')open.pop();});
     const inn=open[open.length-1],tip=!inn?'':inn==='e^('||inn==='^('?'You are typing in the exponent. Tap ) to come back down.':inn!=='('?'You are inside '+inn+' ). Tap ) to step out.':'';
     const rp=ix.querySelector('.key[data-k=")"]'); if(rp)rp.classList.toggle('lit',!!tip);
+    const fresh=tip&&/\($/.test(toks[toks.length-1]||''); if(fresh)m='';
     err.classList.toggle('tip',!m&&!!tip); err.textContent=m&&toks.length?'Not finished yet: '+m+'.':tip; err.hidden=false; err.classList.toggle('off',!err.textContent);};
   const press=k=>{ if(locked)return;
-    if(k==='back')toks.pop(); else if(k==='clear')toks=[];
-    else{
-      /* a fraction typed right after a power goes into the exponent: x, xⁿ, 3, fraction, 2 gives x^(3/2) */
-      const cur=toks.join('');
-      if(k==='/'&&/\^\d+$/.test(cur)){let j=toks.length-1;while(j>=0&&toks[j]!=='^')j--; if(j>=0)toks.splice(j+1,0,'(');}
-      else if(/\^\(\d+\/\d+$/.test(cur)&&!/^[0-9.]$/.test(k))toks.push(')');
-      toks.push(k);
-    }
+    /* xⁿ opens the exponent right away (the ) key lights up), and ) brings you back down: x, xⁿ, 3, fraction, 2, ) gives x^(3/2) */
+    if(k==='back'){toks.pop(); if(toks[toks.length-1]==='^')toks.pop();}
+    else if(k==='clear')toks=[];
+    else if(k==='^')toks.push('^','(');
+    else toks.push(k);
     show();onChange(); };
   ix.addEventListener('click',e=>{const b=e.target.closest('.key');if(b)press(b.dataset.k);});
   itemKeys=e=>{ if(e.key==='Backspace'){press('back');e.preventDefault();return true;}
@@ -333,7 +331,10 @@ function mountSketch(it,ix,onChange,host){
   const rows={inc:cellsOf(incB,'inc'),cc:cellsOf(ccB,'cc')};
   const regionsDone=()=>!phases.includes('regions')||phases.indexOf('regions')<ph||pre;
   /* drawing surface */
+  if(D.lines&&D.lines.length){const de=document.createElement('details');de.className='sk-data';de.open=true;
+    de.innerHTML='<summary>The data</summary><ul>'+D.lines.map(l=>'<li>'+fmt(l)+'</li>').join('')+'</ul>';host.insertBefore(de,ix);}
   const gw=document.createElement('div');gw.className='gwrap gw-big sk';host.insertBefore(gw,ix);
+  const SHORT={'local max':'max','local min':'min','inflection point':'inflection','x-intercept':'x-int','y-intercept':'y-int'};
   const P=plot({window:W,pieces:[],xstep:it.xstep,ystep:it.ystep,autoTicks:it.autoTicks},false);
   gw.innerHTML=P.svg.replace('</svg>','<g class="sk-o"></g><rect class="sk-cap" x="0" y="0" width="320" height="2000"/></svg>');
   const svg=$('svg',gw),og=$('.sk-o',gw),ux=(P.sx(x1)-P.sx(x0))/(x1-x0),uy=(P.sy(y0)-P.sy(y1))/(y1-y0);
@@ -351,7 +352,8 @@ function mountSketch(it,ix,onChange,host){
     if(showTrue)o+='<path class="sk-true" d="'+curvePath(F,P,W,500)+'"/>';
     strokes.concat(curS?[curS]:[]).forEach(s=>{o+='<path class="sk-ink" d="'+s.map((p,k)=>(k?'L':'M')+X(p[0])+' '+Y(p[1])).join('')+'"/>';});
     o+='</g>';
-    targets.forEach(t=>{if(t.kind==='pt'&&placed.has(t.id))o+='<circle class="sk-pt" cx="'+X(t.x)+'" cy="'+Y(t.y)+'" r="4.6"/>';});
+    targets.forEach(t=>{if(t.kind==='pt'&&placed.has(t.id)){const lab=pts[+t.id.slice(1)].lab,sl=SHORT[lab.toLowerCase()]||lab,right=X(t.x)<260;
+      o+='<circle class="sk-pt" cx="'+X(t.x)+'" cy="'+Y(t.y)+'" r="4.6"/>'+(sl?'<text class="sk-lab" x="'+(X(t.x)+(right?7:-7))+'" y="'+(Y(t.y)-7)+'" text-anchor="'+(right?'start':'end')+'">'+esc(sl)+'</text>':'');}});
     og.innerHTML=o;
   };
   /* sign-chart strips under the graph */
@@ -366,7 +368,6 @@ function mountSketch(it,ix,onChange,host){
   };
   const ui=()=>{
     const p=phases[ph]; let h='';
-    if(D.lines&&D.lines.length)h+='<details class="sk-data"'+(p==='regions'||(p==='draw'&&!phases.includes('regions')&&!pre)?' open':'')+'><summary>The data</summary><ul>'+D.lines.map(l=>'<li>'+fmt(l)+'</li>').join('')+'</ul></details>';
     if(p==='place'){
       h+='<p class="txt">'+fmt(it.placeText||'**Put the data on the graph.** Tap an item, then tap where it goes.')+'</p><div class="chips sk-chips">'+
         targets.map(t=>'<button class="chip'+(sel===t.id?' on':'')+'" data-t="'+t.id+'"'+(placed.has(t.id)?' disabled':'')+'>'+fmt(t.text)+(placed.has(t.id)?' ✓':'')+'</button>').join('')+'</div>';
@@ -480,7 +481,7 @@ function sceneSVG(sc,x){
   if(sc.type==='rect'||sc.type==='window'){
     const w=v(sc.w),h=v(sc.h),mw=sc.maxW,mh=sc.maxH,s=Math.min((W-80)/mw,(H-40)/mh),pw=Math.max(1,w*s),phh=Math.max(1,h*s),ox=(W-pw)/2,oy=sc.wall==='top'?24:(H-phh)/2+(sc.type==='window'?pw/4:0);
     let o='<svg class="scene" viewBox="0 0 '+W+' '+H+'">';
-    if(sc.wall==='top')o+='<path class="sc-water" d="M10 16 Q30 8 50 16 T90 16 T130 16 T170 16 T210 16 T250 16 T290 16 T310 16"/><text class="sc-t" x="'+(W-12)+'" y="12" text-anchor="end">'+esc(sc.wallLabel||'river')+'</text>';
+    if(sc.wall==='top')o+='<rect class="sc-river" x="6" y="9" width="'+(W-12)+'" height="11" rx="2"/><text class="sc-t" x="'+(W-12)+'" y="7" text-anchor="end">'+esc(sc.wallLabel||'river')+'</text>';
     o+='<rect class="sc-fill" x="'+ox+'" y="'+oy+'" width="'+pw+'" height="'+phh+'"/>';
     if(sc.type==='window')o+='<path class="sc-fill sc-line" d="M'+ox+' '+oy+' A'+(pw/2)+' '+(pw/2)+' 0 0 1 '+(ox+pw)+' '+oy+'"/>';
     o+=sc.wall==='top'?'<path class="sc-line" d="M'+ox+' '+oy+' V'+(oy+phh)+' H'+(ox+pw)+' V'+oy+'"/><line class="sc-wall" x1="'+ox+'" x2="'+(ox+pw)+'" y1="'+oy+'" y2="'+oy+'"/>':'<rect class="sc-line" x="'+ox+'" y="'+oy+'" width="'+pw+'" height="'+phh+'"/>';

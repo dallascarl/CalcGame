@@ -864,21 +864,35 @@
    },
    {
     "id": "M12",
-    "type": "multi",
+    "type": "steps",
     "title": "Find the $c$",
-    "text": "$f(x) = sqrt(x)$ on $[0, 9]$. Find the secant slope, then the $c$ the MVT guarantees.",
-    "parts": [
+    "text": "$$f(x) = sqrt(x) ;; [0, 9]$$",
+    "steps": [
      {
-      "label": "Secant slope =",
-      "answer": 0.333333
+      "id": "M12.1",
+      "type": "num",
+      "text": "Find the secant slope.",
+      "answer": 0.333333,
+      "tol": 0.002,
+      "label": "slope =",
+      "hint": "$frac{sqrt(9) - sqrt(0)}{9 - 0}$",
+      "work": "secant slope $= frac{1}{3}$"
      },
      {
-      "label": "$c$ =",
-      "answer": 2.25
+      "id": "M12.2",
+      "type": "mc",
+      "text": "$f'(x) = frac{1}{2sqrt(x)}$. The MVT promises a $c$ where $f'(c) = frac{1}{3}$. Which one?",
+      "options": [
+       "$c = 2.25$",
+       "$c = 1.5$",
+       "$c = 3$",
+       "$c = 4.5$"
+      ],
+      "answer": 0,
+      "hint": "Try each: which makes $2sqrt(c) = 3$?",
+      "explain": "$sqrt(2.25) = 1.5$, so $frac{1}{2(1.5)} = frac{1}{3}$."
      }
-    ],
-    "hint": "Secant slope: $frac{sqrt(9) - sqrt(0)}{9 - 0}$. Then solve $frac{1}{2sqrt(c)} = frac{1}{3}$.",
-    "explain": "Slope = 3/9 = 1/3. $frac{1}{2sqrt(c)} = frac{1}{3}$ gives $sqrt(c) = 1.5$, so $c = 2.25$."
+    ]
    },
    {
     "id": "M15",

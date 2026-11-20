@@ -34,7 +34,7 @@
     {
      "id": "T3",
      "type": "mc",
-     "text": "How can you check that\n$$int x cos(x) dx = x sin(x) + cos(x) + C$$",
+     "text": "How can you check this answer?\n$$int x cos(x) dx ;; = x sin(x) + cos(x) + C$$",
      "options": [
       "Take the derivative of $x sin(x) + cos(x)$",
       "Take the derivative of $x cos(x)$",
@@ -47,7 +47,7 @@
     {
      "id": "T4",
      "type": "mc",
-     "text": "$$int (f(x) + g(x)) dx =$$",
+     "text": "Say $F' = f$ and $G' = g$. Then\n$$int (f(x) + g(x)) dx =$$",
      "options": [
       "$F(x) + G(x) + C$",
       "$F(x)G(x) + C$",
@@ -60,7 +60,7 @@
     {
      "id": "T5",
      "type": "mc",
-     "text": "$int kf(x) dx$ for a constant $k$ is",
+     "text": "Say $F' = f$, and $k$ is a constant. Then\n$$int kf(x) dx =$$",
      "options": [
       "$kF(x) + C$",
       "$F(kx) + C$",
@@ -1979,7 +1979,7 @@
    {
     "id": "L5",
     "type": "steps",
-    "text": "**Initial value problem:** a little extra information pins down $C$. Solve $frac{dy}{dx} = 6x^2$ with $y(1) = 5$.",
+    "text": "**Initial value problem:** a little extra information pins down $C$.\nSolve\n$$frac{dy}{dx} = 6x^2 ;; y(1) = 5$$",
     "steps": [
      {
       "id": "L5.1",
